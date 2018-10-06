@@ -39,7 +39,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(-1, 169);
             this.panel1.Name = "panel1";
@@ -55,7 +55,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Location = new System.Drawing.Point(-1, -1);
             this.panel3.Name = "panel3";
@@ -72,12 +72,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(103, 55);
+            this.label1.Font = new System.Drawing.Font("Wingdings 3", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.label1.Location = new System.Drawing.Point(24, 80);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 60);
+            this.label1.Size = new System.Drawing.Size(285, 15);
             this.label1.TabIndex = 3;
-            this.label1.Text = "  Logo\r\nCatioro\'s";
+            this.label1.Text = "Quem e mais inteligente ?";
             // 
             // splash
             // 
