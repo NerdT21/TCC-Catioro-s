@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{20BAA929-7EC9-4903-BFD0-18AECA7018BA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Catiotro_s</RootNamespace>
+    <AssemblyName>Catiotro%27s</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="classes\Base\Connection.cs" />
+    <Compile Include="classes\Base\DataBase.cs" />
+    <Compile Include="classes\Classes\.Feito\AddConsultar\Agenda\AgendaBusiness.cs" />
+    <Compile Include="classes\Classes\.Feito\AddConsultar\Agenda\AgendaDataBase.cs" />
+    <Compile Include="classes\Classes\.Feito\AddConsultar\Agenda\AgendaDTO.cs" />
+    <Compile Include="classes\Classes\.Feito\AddConsultar\Agenda\Animal\AnimalBusiness.cs" />
+    <Compile Include="classes\Classes\.Feito\AddConsultar\Agenda\Animal\AnimalDataBase.cs" />
+    <Compile Include="classes\Classes\.Feito\AddConsultar\Agenda\Animal\AnimalDTO.cs" />
+    <Compile Include="classes\Classes\.Feito\AddConsultar\Cliente\ClienteBusiness.cs" />
+    <Compile Include="classes\Classes\.Feito\AddConsultar\Cliente\ClienteDataBase.cs" />
+    <Compile Include="classes\Classes\.Feito\AddConsultar\Cliente\ClienteDTO.cs" />
+    <Compile Include="classes\Classes\.Feito\AddConsultar\Departamento\DepartamentoBusiness.cs" />
+    <Compile Include="classes\Classes\.Feito\AddConsultar\Departamento\DepartamentoDataBase.cs" />
+    <Compile Include="classes\Classes\.Feito\AddConsultar\Departamento\DepartamentoDTO.cs" />
+    <Content Include="classes\Classes\Esqueleto Database.txt" />
+    <Compile Include="classes\Classes\Estados\EstadoBusiness.cs" />
+    <Compile Include="classes\Classes\Estados\EstadoDataBase.cs" />
+    <Compile Include="classes\Classes\Estados\EstadoDTO.cs" />
+    <Compile Include="classes\Classes\.Feito\AddConsultar\Ficha Animal\FichaAnimalBusiness.cs" />
+    <Compile Include="classes\Classes\.Feito\AddConsultar\Ficha Animal\FichaAnimalDataBase.cs" />
+    <Compile Include="classes\Classes\.Feito\AddConsultar\Ficha Animal\FichaAnimalDTO.cs" />
+    <Compile Include="classes\Classes\.Feito\Folha de pagamento\FPagamentoBusiness.cs" />
+    <Compile Include="classes\Classes\.Feito\Folha de pagamento\FPagamentoDataBase.cs" />
+    <Compile Include="classes\Classes\.Feito\Folha de pagamento\FPagamentoDTO.cs" />
+    <Compile Include="classes\Classes\Fornecedores\FonecedoresBusiness.cs" />
+    <Compile Include="classes\Classes\Fornecedores\FonecedoresDataBase.cs" />
+    <Compile Include="classes\Classes\Fornecedores\FonecedoresDTO.cs" />
+    <Compile Include="classes\Classes\.Feito\Funcionarios\FuncionariosBusiness.cs" />
+    <Compile Include="classes\Classes\.Feito\Funcionarios\FuncionariosDataBase.cs" />
+    <Compile Include="classes\Classes\.Feito\Funcionarios\FuncionariosDTO.cs" />
+    <Compile Include="classes\Classes\Historico\HistoricoBusiness.cs" />
+    <Compile Include="classes\Classes\Historico\HistoricoDataBase.cs" />
+    <Compile Include="classes\Classes\Historico\HistoricoDTO.cs" />
+    <Compile Include="classes\Classes\.Feito\Imposto de Renda\ImpostoRendaBusiness.cs" />
+    <Compile Include="classes\Classes\.Feito\Imposto de Renda\ImpostoRendaDataBase.cs" />
+    <Compile Include="classes\Classes\.Feito\Imposto de Renda\ImpostoRendaDTO.cs" />
+    <Compile Include="classes\Classes\.Feito\INSS\INSSBusiness.cs" />
+    <Compile Include="classes\Classes\.Feito\INSS\INSSDataBase.cs" />
+    <Compile Include="classes\Classes\.Feito\INSS\INSSDTO.cs" />
+    <Compile Include="classes\Classes\.Feito\Pedido Item\PedidoItemBusiness.cs" />
+    <Compile Include="classes\Classes\.Feito\Pedido Item\PedidoItemDataBase.cs" />
+    <Compile Include="classes\Classes\.Feito\Pedido Item\PedidoItemDTO.cs" />
+    <Compile Include="classes\Classes\.Feito\Pedido\PedidoBusiness.cs" />
+    <Compile Include="classes\Classes\.Feito\Pedido\PedidoDataBase.cs" />
+    <Compile Include="classes\Classes\.Feito\Pedido\PedidoDTO.cs" />
+    <Compile Include="classes\Classes\Permissao\PermissaoBusiness.cs" />
+    <Compile Include="classes\Classes\Permissao\PermissaoDataBase.cs" />
+    <Compile Include="classes\Classes\Permissao\PermissaoDTO.cs" />
+    <Compile Include="classes\Classes\.Feito\Preco\PrecoBusiness.cs" />
+    <Compile Include="classes\Classes\.Feito\Preco\PrecoDataBase.cs" />
+    <Compile Include="classes\Classes\.Feito\Preco\PrecoDTO.cs" />
+    <Compile Include="classes\Classes\Produto\ProdutoBusiness.cs" />
+    <Compile Include="classes\Classes\Produto\ProdutoDataBase.cs" />
+    <Compile Include="classes\Classes\Produto\ProdutoDTO.cs" />
+    <Compile Include="classes\Classes\.Feito\Raca\RacaBusiness.cs" />
+    <Compile Include="classes\Classes\.Feito\Raca\RacaDataBase.cs" />
+    <Compile Include="classes\Classes\.Feito\Raca\RacaDTO.cs" />
+    <Compile Include="classes\Classes\.Feito\Salario Familha\SFamilhaBusiness.cs" />
+    <Compile Include="classes\Classes\.Feito\Salario Familha\SFamilhaDataBase.cs" />
+    <Compile Include="classes\Classes\.Feito\Salario Familha\SFamilhaDTO.cs" />
+    <Compile Include="classes\Classes\Servico\ServicoBusiness.cs" />
+    <Compile Include="classes\Classes\Servico\ServicoDataBase.cs" />
+    <Compile Include="classes\Classes\Servico\ServicoDTO.cs" />
+    <Compile Include="classes\Classes\Usuario\UsuarioBusiness.cs" />
+    <Compile Include="classes\Classes\Usuario\UsuarioDataBase.cs" />
+    <Compile Include="classes\Classes\Usuario\UsuarioDTO.cs" />
+    <Compile Include="classes\Classes\.Feito\Vacina\VacinaBusiness.cs" />
+    <Compile Include="classes\Classes\.Feito\Vacina\VacinaDataBase.cs" />
+    <Compile Include="classes\Classes\.Feito\Vacina\VacinaDTO.cs" />
+    <Compile Include="Telas\Consultar\frmConsultaFuncionario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Consultar\frmConsultaFuncionario.Designer.cs">
+      <DependentUpon>frmConsultaFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Consultar\frmConsultarAnimal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Consultar\frmConsultarAnimal.Designer.cs">
+      <DependentUpon>frmConsultarAnimal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Consultar\frmConsultarCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Consultar\frmConsultarCliente.Designer.cs">
+      <DependentUpon>frmConsultarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Consultar\frmConsultarFornecedor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Consultar\frmConsultarFornecedor.Designer.cs">
+      <DependentUpon>frmConsultarFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Consultar\MenuConsultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Consultar\MenuConsultar.Designer.cs">
+      <DependentUpon>MenuConsultar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\FolhaDePagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\FolhaDePagamento.Designer.cs">
+      <DependentUpon>FolhaDePagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Resgistros\frmMenuRegisto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Resgistros\frmMenuRegisto.Designer.cs">
+      <DependentUpon>frmMenuRegisto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Resgistros\frmRegistrarAnimal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Resgistros\frmRegistrarAnimal.Designer.cs">
+      <DependentUpon>frmRegistrarAnimal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Resgistros\frmRegistrarCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Resgistros\frmRegistrarCliente.Designer.cs">
+      <DependentUpon>frmRegistrarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Resgistros\frmRegistrarDepartamento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Resgistros\frmRegistrarDepartamento.Designer.cs">
+      <DependentUpon>frmRegistrarDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Resgistros\frmRegistrarFornecedor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Resgistros\frmRegistrarFornecedor.Designer.cs">
+      <DependentUpon>frmRegistrarFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Resgistros\frmReigistrarFuncionario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Resgistros\frmReigistrarFuncionario.Designer.cs">
+      <DependentUpon>frmReigistrarFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\splash.Designer.cs">
+      <DependentUpon>splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Telas\Consultar\frmConsultaFuncionario.resx">
+      <DependentUpon>frmConsultaFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Consultar\frmConsultarAnimal.resx">
+      <DependentUpon>frmConsultarAnimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Consultar\frmConsultarCliente.resx">
+      <DependentUpon>frmConsultarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Consultar\frmConsultarFornecedor.resx">
+      <DependentUpon>frmConsultarFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Consultar\MenuConsultar.resx">
+      <DependentUpon>MenuConsultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\FolhaDePagamento.resx">
+      <DependentUpon>FolhaDePagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Resgistros\frmMenuRegisto.resx">
+      <DependentUpon>frmMenuRegisto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Resgistros\frmRegistrarAnimal.resx">
+      <DependentUpon>frmRegistrarAnimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Resgistros\frmRegistrarCliente.resx">
+      <DependentUpon>frmRegistrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Resgistros\frmRegistrarDepartamento.resx">
+      <DependentUpon>frmRegistrarDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Resgistros\frmRegistrarFornecedor.resx">
+      <DependentUpon>frmRegistrarFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Resgistros\frmReigistrarFuncionario.resx">
+      <DependentUpon>frmReigistrarFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\splash.resx">
+      <DependentUpon>splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="classes\Script.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

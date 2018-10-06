@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Catiotro_s.classes.Classes.Cliente
+{
+   public class FPamentoDTO
+    {
+        public int Id { get; set; }
+
+        public int IdFuncio { get; set; }
+
+        public string HorasExtras { get; set; }
+
+        public int Faltas { get; set; }
+
+        public decimal SalBruto { get; set; }
+
+        public decimal ImpostoRenda { get; set; }
+
+        public decimal Fgts { get; set; }
+
+        public decimal VLTars { get; set; }
+       
+        public decimal SalLiq { get; set; }
+
+        public int Inss { get; set; }
+
+        public int SalFamilia { get; set; }
+        
+    }
+}
