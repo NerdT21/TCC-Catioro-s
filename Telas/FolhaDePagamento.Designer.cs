@@ -168,7 +168,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(12, 256);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(141, 25);
+            this.label9.Size = new System.Drawing.Size(140, 25);
             this.label9.TabIndex = 33;
             this.label9.Text = "Vale transporte";
             // 
@@ -198,7 +198,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(12, 144);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 25);
+            this.label6.Size = new System.Drawing.Size(59, 25);
             this.label6.TabIndex = 30;
             this.label6.Text = "Faltas";
             // 
@@ -255,7 +255,7 @@
             // btnCalcular
             // 
             this.btnCalcular.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcular.Location = new System.Drawing.Point(193, 325);
+            this.btnCalcular.Location = new System.Drawing.Point(192, 325);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(99, 47);
             this.btnCalcular.TabIndex = 50;
