@@ -122,10 +122,17 @@
     <Compile Include="classes\Classes\.Feito\Vacina\VacinaBusiness.cs" />
     <Compile Include="classes\Classes\.Feito\Vacina\VacinaDataBase.cs" />
     <Compile Include="classes\Classes\.Feito\Vacina\VacinaDTO.cs" />
-    <Compile Include="Telas\Consultar\frmConsultaFuncionario.cs">
+    <Compile Include="Telas\Entregavel I\FolhaDePagto.cs" />
+    <Compile Include="Telas\Entregavel I\frmFolhaPagto.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Telas\Consultar\frmConsultaFuncionario.Designer.cs">
+    <Compile Include="Telas\Entregavel I\frmFolhaPagto.Designer.cs">
+      <DependentUpon>frmFolhaPagto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel I\Funcionários\frmConsultaFuncionario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel I\Funcionários\frmConsultaFuncionario.Designer.cs">
       <DependentUpon>frmConsultaFuncionario.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Consultar\frmConsultarAnimal.cs">
@@ -152,16 +159,10 @@
     <Compile Include="Telas\Consultar\MenuConsultar.Designer.cs">
       <DependentUpon>MenuConsultar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\FolhaDePagamento.cs">
+    <Compile Include="Telas\Entregavel I\Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\FolhaDePagamento.Designer.cs">
-      <DependentUpon>FolhaDePagamento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Telas\Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Telas\Login.Designer.cs">
+    <Compile Include="Telas\Entregavel I\Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Menu.cs">
@@ -188,11 +189,11 @@
     <Compile Include="Telas\Resgistros\frmRegistrarCliente.Designer.cs">
       <DependentUpon>frmRegistrarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Resgistros\frmRegistrarDepartamento.cs">
+    <Compile Include="Telas\Entregavel I\Departamento\frmDepto.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Telas\Resgistros\frmRegistrarDepartamento.Designer.cs">
-      <DependentUpon>frmRegistrarDepartamento.cs</DependentUpon>
+    <Compile Include="Telas\Entregavel I\Departamento\frmDepto.Designer.cs">
+      <DependentUpon>frmDepto.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Resgistros\frmRegistrarFornecedor.cs">
       <SubType>UserControl</SubType>
@@ -200,22 +201,28 @@
     <Compile Include="Telas\Resgistros\frmRegistrarFornecedor.Designer.cs">
       <DependentUpon>frmRegistrarFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Resgistros\frmReigistrarFuncionario.cs">
+    <Compile Include="Telas\Entregavel I\Funcionários\frmReigistrarFuncionario.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Telas\Resgistros\frmReigistrarFuncionario.Designer.cs">
+    <Compile Include="Telas\Entregavel I\Funcionários\frmReigistrarFuncionario.Designer.cs">
       <DependentUpon>frmReigistrarFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\splash.cs">
+    <Compile Include="Telas\Entregavel I\Splash\frmSplash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\splash.Designer.cs">
-      <DependentUpon>splash.cs</DependentUpon>
+    <Compile Include="Telas\Entregavel I\Splash\frmSplash.Designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\icons8-excluir-filled-50.png" />
+    <None Include="Resources\icons8-minimizar-janela-32.png" />
+    <None Include="Resources\icons8-excluir-48.png" />
     <None Include="Resources\Catioro%27s Logo.jpeg" />
-    <EmbeddedResource Include="Telas\Consultar\frmConsultaFuncionario.resx">
+    <EmbeddedResource Include="Telas\Entregavel I\frmFolhaPagto.resx">
+      <DependentUpon>frmFolhaPagto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel I\Funcionários\frmConsultaFuncionario.resx">
       <DependentUpon>frmConsultaFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Consultar\frmConsultarAnimal.resx">
@@ -230,10 +237,7 @@
     <EmbeddedResource Include="Telas\Consultar\MenuConsultar.resx">
       <DependentUpon>MenuConsultar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\FolhaDePagamento.resx">
-      <DependentUpon>FolhaDePagamento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Login.resx">
+    <EmbeddedResource Include="Telas\Entregavel I\Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Menu.resx">
@@ -248,17 +252,17 @@
     <EmbeddedResource Include="Telas\Resgistros\frmRegistrarCliente.resx">
       <DependentUpon>frmRegistrarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Resgistros\frmRegistrarDepartamento.resx">
-      <DependentUpon>frmRegistrarDepartamento.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\Entregavel I\Departamento\frmDepto.resx">
+      <DependentUpon>frmDepto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Resgistros\frmRegistrarFornecedor.resx">
       <DependentUpon>frmRegistrarFornecedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Resgistros\frmReigistrarFuncionario.resx">
+    <EmbeddedResource Include="Telas\Entregavel I\Funcionários\frmReigistrarFuncionario.resx">
       <DependentUpon>frmReigistrarFuncionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\splash.resx">
-      <DependentUpon>splash.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\Entregavel I\Splash\frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -285,6 +289,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="classes\Script.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Telas\Entregavel III\" />
+    <Folder Include="Telas\Entregavel II\" />
+    <Folder Include="Telas\Entregavel IV\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

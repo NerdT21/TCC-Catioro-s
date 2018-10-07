@@ -21,5 +21,10 @@ namespace Catiotro_s
         {
 
         }
+
+        private void lblRegistrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
