@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.ckbConsultar = new System.Windows.Forms.CheckBox();
             this.ckbCadastar = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,6 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtConfirm = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label6
@@ -57,17 +57,6 @@
             this.label6.TabIndex = 59;
             this.label6.Text = "X";
             this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(125, 217);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 39);
-            this.button1.TabIndex = 58;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ckbConsultar
             // 
@@ -197,15 +186,25 @@
             this.txtConfirm.Size = new System.Drawing.Size(186, 20);
             this.txtConfirm.TabIndex = 61;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(124, 216);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 40);
+            this.button1.TabIndex = 62;
+            this.button1.Text = "Salvar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // frmCadastrarLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 268);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtConfirm);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.ckbConsultar);
             this.Controls.Add(this.ckbCadastar);
             this.Controls.Add(this.label5);
@@ -231,7 +230,6 @@
         #endregion
 
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox ckbConsultar;
         private System.Windows.Forms.CheckBox ckbCadastar;
         private System.Windows.Forms.Label label5;
@@ -246,5 +244,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtConfirm;
+        private System.Windows.Forms.Button button1;
     }
 }

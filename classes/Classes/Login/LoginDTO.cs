@@ -19,11 +19,11 @@ namespace Catiotro_s.classes.Classes.Login
 
         public string Senha { get; set; }
 
-        public Boolean PermicaoADM { get; set; }
+        public bool PermicaoADM { get; set; }
 
-        public Boolean PermicaoCadastro { get; set; }
+        public bool PermicaoCadastro { get; set; }
 
-        public Boolean PermicaoConsulta { get; set; }
+        public bool PermicaoConsulta { get; set; }
 
 
     }

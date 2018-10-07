@@ -166,8 +166,10 @@ CREATE TABLE `tb_Depto` (
 
 CREATE TABLE `tb_login` (
 	`id_usuario` int NOT NULL AUTO_INCREMENT,
-	`nm_usuario` int NOT NULL,
+    `nm_funcionario` varchar(50) NOT NULL,
+	`nm_usuario` varchar(50) NOT NULL,
 	`ds_senha` varchar(20) NOT NULL,
+    `ds_email` varchar(150) NOT NULL,
 	`pr_permissaoADM` bool NOT NULL,
 	`pr_permissaoCadastro` bool NOT NULL,
 	`pr_permissaoConsulta` bool NOT NULL,
@@ -249,3 +251,125 @@ ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk0` FOREIGN KEY (`id_produto`
 ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk1` FOREIGN KEY (`id_fornecedor`) REFERENCES `tb_fornecedor`(`id_fornecedor`);
 
 ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk2` FOREIGN KEY (`id_formaPagto`) REFERENCES `tb_formaDePagamento`(`id_formaPagto`);
+
+-- INSERTS & SELECTS
+
+INSERT INTO tb_login(`id_usuario`,`nm_funcionario`, `nm_usuario`, `ds_senha`,`ds_email`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`)
+		      VALUES('1','adm', 'adm', 'adm','adm', '1', '1', '1');
+              
+INSERT INTO tb_Depto(`id_depto`, `nm_depto`, `ds_depto`)
+              VALUES('1','nome','descrudas');
+              
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('1','AC');
+                
+ INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('2','AL');     
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('3','AP');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('4','AM');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('5','BA');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('6','CE');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('7','DF');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('8','ES');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('9','GO');
+                		
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('10','MA');                
+		
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('11','MT');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('12','MS');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('13','MG');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('14','PA');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('15','PB');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('16','PR');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('17','PE');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('18','PI');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('19','RJ');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('20','RN');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('21','RS');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('22','RO');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('23','RR');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('24','SC');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('25','SP');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('26','SE');
+                
+INSERT INTO tb_estados(`id_estado`,`nm_estado`)
+				VALUES('27','TO');
+             
+              
+INSERT INTO tb_funcionario(`id_funcionario`, `ds_salario`,`id_depto`, `nm_nome`, `ds_email`,`ds_cpf`,`ds_rg`, `id_estado`,`ds_cidade`, `ds_cep`, `ds_telefone`,`img_funcionario`)
+					VALUES('1', '123432', '1', 'fdsgfsd', 'fdsafda', '542523', 'fdsaf', '1', 'fdaf', 'fdas', '3424453', '');
+
+USE CatiorosDB;
+SELECT * FROM tb_Depto;
+SELECT * FROM tb_estados;
+SELECT * FROM tb_funcionario;              
+SELECT * FROM tb_login;
+SELECT * FROM vw_consultarFuncionario;
+
+
+-- VIEW
+
+CREATE VIEW vw_consultarFuncionario AS
+SELECT tb_funcionario.id_funcionario,
+		tb_funcionario.nm_nome,
+        tb_funcionario.id_depto,
+        tb_funcionario.ds_salario,
+        tb_funcionario.ds_email,
+        tb_funcionario.ds_cpf,
+        tb_funcionario.ds_rg,
+        tb_funcionario.ds_telefone,
+        tb_funcionario.ds_cidade,
+        tb_funcionario.id_estado,
+        tb_funcionario.ds_cep
+FROM tb_funcionario
+JOIN tb_Depto
+ON tb_funcionario.id_depto = tb_Depto.id_depto
+JOIN tb_estados
+ON tb_funcionario.id_estado = tb_estados.id_estado;
+

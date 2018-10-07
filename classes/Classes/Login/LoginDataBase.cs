@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Catiotro_s.classes.Classes.Login
 {
-    class LoginDataBase
+    public class LoginDataBase
     {
 
         public int Salvar(LoginDTO dto)
