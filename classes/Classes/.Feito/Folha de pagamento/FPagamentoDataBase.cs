@@ -24,7 +24,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                                                                 vl_salario_liq,
                                                                 id_inss,
                                                                 id_sal_familia)
-                                                         VALUE (@ds_horas_extras,
+                                                         VALUES (@ds_horas_extras,
                                                                 @int_faltas,
                                                                 @vl_salario_bruto,
                                                                 @vl_imposto_e_renda,

@@ -14,8 +14,7 @@ namespace Catiotro_s.classes.Classes.Cliente
         public int Salvar(FuncionarioDTO funcio)
         {
 
-            string script = @"INSERT INTO tb_funcionario (int_salario,
-                                                              id_log,
+            string script = @"INSERT INTO tb_funcionario (ds_salario,
                                                               id_depto,
                                                               id_estado,
                                                               nm_nome,
@@ -24,12 +23,9 @@ namespace Catiotro_s.classes.Classes.Cliente
                                                               ds_rg,
                                                               ds_cep,
                                                               ds_cidade,
-                                                              ds_celular,
                                                               ds_telefone,
-                                                              ds_especialidade,
-                                                              img_funci)
-                                                       VALUE (@int_salario,
-                                                              @id_log,
+                                                              img_funcionario)
+                                                       VALUES (@int_salario,
                                                               @id_depto,
                                                               @id_estado,
                                                               @nm_nome,
@@ -38,26 +34,22 @@ namespace Catiotro_s.classes.Classes.Cliente
                                                               @ds_rg,
                                                               @ds_cep,
                                                               @ds_cidade,
-                                                              @ds_celular,
                                                               @ds_telefone,
-                                                              @ds_especialidade,
-                                                              @img_funci)";
+                                                              @img_funcionario)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("int_salario", funcio.Idsalario));
-            parms.Add(new MySqlParameter("id_log", funcio.Idlog));
+            parms.Add(new MySqlParameter("ds_salario", funcio.Salario));
+            
             parms.Add(new MySqlParameter("id_depto", funcio.IdDepto));
-            parms.Add(new MySqlParameter("id_estado", funcio.Idestado));
+            parms.Add(new MySqlParameter("id_estado", funcio.IdEstado));
             parms.Add(new MySqlParameter("nm_nome", funcio.Nome));
             parms.Add(new MySqlParameter("ds_email", funcio.Email));
             parms.Add(new MySqlParameter("ds_cpf", funcio.Cpf));
             parms.Add(new MySqlParameter("ds_rg", funcio.Rg));
             parms.Add(new MySqlParameter("ds_cep", funcio.Cep));
             parms.Add(new MySqlParameter("ds_cidade", funcio.Cidade));
-            parms.Add(new MySqlParameter("ds_celular", funcio.Celular));
             parms.Add(new MySqlParameter("ds_telefone", funcio.Telefone));
-            parms.Add(new MySqlParameter("ds_especialidade", funcio.Especialidade));
-            parms.Add(new MySqlParameter("img_funci", funcio.Imagem));
+            parms.Add(new MySqlParameter("img_funcionario", funcio.Imagem));
 
             Database db = new Database();
             int pk = db.ExecuteInsertScriptWithPk(script, parms);
@@ -68,24 +60,34 @@ namespace Catiotro_s.classes.Classes.Cliente
         public void Alterar(FuncionarioDTO funcio)
         {
 
-            string script = @"UPDATE tb_funcionario SET WHERE ";
+            string script = @"UPDATE tb_funcionario SET nm_nome = @nm_nome,
+                                                        ds_salario = @ds_salario,
+                                                        id_depto = @id_depto,
+                                                        id_estado = @id_estado,
+                                                        nm_nome = @nm_nome,
+                                                        ds_email = @ds_email,
+                                                        ds_cpf = @ds_cpf,
+                                                        ds_rg = @ds_rg,
+                                                        ds_cep = @ds_cep,
+                                                        ds_cidade = @ds_cidade,
+                                                        ds_telefone = @ds_telefone,
+                                                        img_funcionario = @img_funcionario
+                                                            
+                                                        WHERE id_funcionario = @id_funcionario ";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_funcionario", funcio.Id));
-            parms.Add(new MySqlParameter("int_salario", funcio.Idsalario));
-            parms.Add(new MySqlParameter("id_log", funcio.Idlog));
+            parms.Add(new MySqlParameter("ds_salario", funcio.Salario));
             parms.Add(new MySqlParameter("id_depto", funcio.IdDepto));
-            parms.Add(new MySqlParameter("id_estado", funcio.Idestado));
+            parms.Add(new MySqlParameter("id_estado", funcio.IdEstado));
             parms.Add(new MySqlParameter("nm_nome", funcio.Nome));
             parms.Add(new MySqlParameter("ds_email", funcio.Email));
             parms.Add(new MySqlParameter("ds_cpf", funcio.Cpf));
             parms.Add(new MySqlParameter("ds_rg", funcio.Rg));
             parms.Add(new MySqlParameter("ds_cep", funcio.Cep));
             parms.Add(new MySqlParameter("ds_cidade", funcio.Cidade));
-            parms.Add(new MySqlParameter("ds_celular", funcio.Celular));
             parms.Add(new MySqlParameter("ds_telefone", funcio.Telefone));
-            parms.Add(new MySqlParameter("ds_especialidade", funcio.Especialidade));
-            parms.Add(new MySqlParameter("img_funci", funcio.Imagem));
+            parms.Add(new MySqlParameter("img_funcionario", funcio.Imagem));
 
             Database db = new Database();
             db.ExecuteInsertScriptWithPk(script, parms);
@@ -121,20 +123,17 @@ namespace Catiotro_s.classes.Classes.Cliente
 
                 FuncionarioDTO add = new FuncionarioDTO();
                 add.Id = reader.GetInt32("id_funcionario");
-                add.Idsalario = reader.GetInt32("int_salario");
-                add.Idlog = reader.GetInt32("id_log");
+                add.Salario = reader.GetInt32("ds_salario");
                 add.IdDepto = reader.GetInt32("id_depto");
-                add.Idestado = reader.GetInt32("id_estado");
+                add.IdEstado = reader.GetInt32("id_estado");
                 add.Nome = reader.GetString("nm_nome");
                 add.Email = reader.GetString("ds_email");
                 add.Cpf = reader.GetString("ds_cpf");
                 add.Rg = reader.GetString("ds_rg");
                 add.Cep = reader.GetString("ds_cep");
                 add.Cidade = reader.GetString("ds_cidade");
-                add.Celular = reader.GetString("ds_celular");
                 add.Telefone = reader.GetString("ds_telefone");
-                add.Especialidade = reader.GetString("ds_especialidade");
-                add.Imagem = reader.GetByte("img_funci");
+                add.Imagem = reader.GetString("img_funcionario");
 
                 lista.Add(add);
             }
@@ -148,7 +147,7 @@ namespace Catiotro_s.classes.Classes.Cliente
         public List<FuncionarioDTO> Consultar(string nome)
         {
 
-            string script = @"SELECT * FROM tb_funcionario WHERE id_funcionario LIKE @id_funcionario";
+            string script = @"SELECT * FROM tb_funcionario WHERE nm_nome LIKE @nm_nome";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_funcionario", nome + "%"));
@@ -163,20 +162,17 @@ namespace Catiotro_s.classes.Classes.Cliente
 
                 FuncionarioDTO add = new FuncionarioDTO();
                 add.Id = reader.GetInt32("id_funcionario");
-                add.Idsalario = reader.GetInt32("int_salario");
-                add.Idlog = reader.GetInt32("id_log");
+                add.Salario = reader.GetInt32("int_salario");
                 add.IdDepto = reader.GetInt32("id_depto");
-                add.Idestado = reader.GetInt32("id_estado");
+                add.IdEstado = reader.GetInt32("id_estado");
                 add.Nome = reader.GetString("nm_nome");
                 add.Email = reader.GetString("ds_email");
                 add.Cpf = reader.GetString("ds_cpf");
                 add.Rg = reader.GetString("ds_rg");
                 add.Cep = reader.GetString("ds_cep");
                 add.Cidade = reader.GetString("ds_cidade");
-                add.Celular = reader.GetString("ds_celular");
                 add.Telefone = reader.GetString("ds_telefone");
-                add.Especialidade = reader.GetString("ds_especialidade");
-                add.Imagem = reader.GetByte("img_funci");
+                add.Imagem = reader.GetString("img_funcionario");
 
 
 

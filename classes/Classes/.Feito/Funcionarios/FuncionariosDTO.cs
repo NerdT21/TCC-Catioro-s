@@ -10,15 +10,11 @@ namespace Catiotro_s.classes.Classes.Cliente
     {
         public int Id { get; set; }
 
-        public decimal Idsalario { get; set; }
-
-        public int Idlog { get; set; }
-
-        public int IdFolha { get; set; }
+        public decimal Salario { get; set; }
 
         public int IdDepto { get; set; }
 
-        public int Idestado { get; set; }
+        public int IdEstado { get; set; }
 
         public string Nome { get; set; }
 
@@ -32,14 +28,10 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         public string Cidade { get; set; }
 
-        public string Celular { get; set; }
-
         public string Telefone { get; set; }
 
-        public string Especialidade { get; set; }
-
-        public Byte Imagem { get; set; }
+        public string Imagem { get; set; }
 
 
-}
+    }
 }
