@@ -26,5 +26,10 @@ namespace Catiotro_s
         {
 
         }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

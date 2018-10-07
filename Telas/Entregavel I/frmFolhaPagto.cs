@@ -16,5 +16,10 @@ namespace Catiotro_s.Telas.Entregavel_I
         {
             InitializeComponent();
         }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

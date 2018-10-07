@@ -58,6 +58,7 @@
             this.btnEntrar.TabIndex = 22;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // txtPass
             // 
