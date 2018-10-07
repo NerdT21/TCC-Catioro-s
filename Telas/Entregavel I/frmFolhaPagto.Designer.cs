@@ -164,6 +164,7 @@
             this.cboFuncionario.Name = "cboFuncionario";
             this.cboFuncionario.Size = new System.Drawing.Size(265, 21);
             this.cboFuncionario.TabIndex = 132;
+            this.cboFuncionario.SelectedIndexChanged += new System.EventHandler(this.cboFuncionario_SelectedIndexChanged);
             // 
             // label12
             // 

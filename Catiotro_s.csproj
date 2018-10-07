@@ -122,6 +122,7 @@
     <Compile Include="classes\Classes\.Feito\Vacina\VacinaBusiness.cs" />
     <Compile Include="classes\Classes\.Feito\Vacina\VacinaDataBase.cs" />
     <Compile Include="classes\Classes\.Feito\Vacina\VacinaDTO.cs" />
+    <Compile Include="PlugIn\ImagemPlugIn.cs" />
     <Compile Include="Telas\Entregavel I\FolhaDePagto.cs" />
     <Compile Include="Telas\Entregavel I\frmFolhaPagto.cs">
       <SubType>UserControl</SubType>

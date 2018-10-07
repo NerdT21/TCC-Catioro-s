@@ -14,7 +14,7 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         public int Salvar(DeptoDTO depto)
         {
-            string script = @"INSERT INTO tb_depto(nm_depto, ds_depto) VALUES(@nm_depto, @ds_depto)";
+            string script = @"INSERT INTO tb_Depto(nm_depto, ds_depto) VALUES(@nm_depto, @ds_depto)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_depto", depto.Nome));
@@ -47,7 +47,7 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         public List<DeptoDTO> Consultar(string depto)
         {
-            string script = @"SELECT * FROM tb_depto WHERE nm_depto LIKE @nm_depto";
+            string script = @"SELECT * FROM tb_Depto WHERE nm_depto LIKE @nm_depto";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_depto", depto + "%"));
@@ -72,7 +72,7 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         public void Alterar(DeptoDTO depto)
         {
-            string script = @"UPDATE tb_depto SET nm_depto = @nm_depto WHERE id_depto = @id_depto";
+            string script = @"UPDATE tb_Depto SET nm_depto = @nm_depto WHERE id_depto = @id_depto";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_depto", depto.Id));
@@ -85,7 +85,7 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         public void Remover(int Iddepto)
         {
-            string script = @"DELETE FROM tb_depto WHERE id_depto = @id_depto";
+            string script = @"DELETE FROM tb_Depto WHERE id_depto = @id_depto";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_depto", Iddepto));
