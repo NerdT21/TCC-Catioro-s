@@ -129,6 +129,12 @@
     <Compile Include="Telas\Entregavel I\frmFolhaPagto.Designer.cs">
       <DependentUpon>frmFolhaPagto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Entregavel I\Funcionários\frmCadastrarFuncionario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel I\Funcionários\frmCadastrarFuncionario.Designer.cs">
+      <DependentUpon>frmCadastrarFuncionario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Entregavel I\Funcionários\frmConsultaFuncionario.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -201,12 +207,6 @@
     <Compile Include="Telas\Resgistros\frmRegistrarFornecedor.Designer.cs">
       <DependentUpon>frmRegistrarFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Entregavel I\Funcionários\frmReigistrarFuncionario.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Telas\Entregavel I\Funcionários\frmReigistrarFuncionario.Designer.cs">
-      <DependentUpon>frmReigistrarFuncionario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Telas\Entregavel I\Splash\frmSplash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +221,9 @@
     <None Include="Resources\Catioro%27s Logo.jpeg" />
     <EmbeddedResource Include="Telas\Entregavel I\frmFolhaPagto.resx">
       <DependentUpon>frmFolhaPagto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel I\Funcionários\frmCadastrarFuncionario.resx">
+      <DependentUpon>frmCadastrarFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel I\Funcionários\frmConsultaFuncionario.resx">
       <DependentUpon>frmConsultaFuncionario.cs</DependentUpon>
@@ -257,9 +260,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Resgistros\frmRegistrarFornecedor.resx">
       <DependentUpon>frmRegistrarFornecedor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Entregavel I\Funcionários\frmReigistrarFuncionario.resx">
-      <DependentUpon>frmReigistrarFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel I\Splash\frmSplash.resx">
       <DependentUpon>frmSplash.cs</DependentUpon>

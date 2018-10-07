@@ -1,5 +1,6 @@
 ﻿using Catiotro_s.Consultar;
 using Catiotro_s.Resgistros;
+using Catiotro_s.Telas.Entregavel_I.Funcionários;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,7 +69,7 @@ namespace Catiotro_s
 
         private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmReigistrarFuncionario tela = new frmReigistrarFuncionario();
+            frmCadastrarFuncionario tela = new frmCadastrarFuncionario();
             OpenScreen(tela);
         }
 
