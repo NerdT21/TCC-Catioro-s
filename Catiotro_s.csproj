@@ -165,17 +165,17 @@
     <Compile Include="Telas\Consultar\MenuConsultar.Designer.cs">
       <DependentUpon>MenuConsultar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Entregavel I\Login\frmCadastrarLogin.cs">
+    <Compile Include="Telas\Entregavel I\LogIn\frmCadastrarLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\Entregavel I\Login\frmCadastrarLogin.Designer.cs">
+    <Compile Include="Telas\Entregavel I\LogIn\frmCadastrarLogin.Designer.cs">
       <DependentUpon>frmCadastrarLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Entregavel I\Login\Login.cs">
+    <Compile Include="Telas\Entregavel I\LogIn\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\Entregavel I\Login\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Telas\Entregavel I\LogIn\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Menu.cs">
       <SubType>Form</SubType>
@@ -249,11 +249,11 @@
     <EmbeddedResource Include="Telas\Consultar\MenuConsultar.resx">
       <DependentUpon>MenuConsultar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Entregavel I\Login\frmCadastrarLogin.resx">
+    <EmbeddedResource Include="Telas\Entregavel I\LogIn\frmCadastrarLogin.resx">
       <DependentUpon>frmCadastrarLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Entregavel I\Login\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\Entregavel I\LogIn\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

@@ -220,6 +220,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCadastrarLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadastrarLogin";
             this.Load += new System.EventHandler(this.frmCadastrarLogin_Load);
             this.ResumeLayout(false);

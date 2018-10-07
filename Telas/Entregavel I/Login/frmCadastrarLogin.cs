@@ -1,4 +1,5 @@
 ﻿using Catiotro_s.classes.Classes.Login;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,13 +26,17 @@ namespace Catiotro_s.Telas.Entregavel_I.Login
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            if (txtSenha.Text == txtConfirm.Text)
+            try
             {
+                if (txtSenha.Text != txtConfirm.Text)
+                {
+                    MessageBox.Show("Senha incorreta", "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
                 LoginDTO dto = new LoginDTO();
-                dto.Nome = txtUsuario.Text;
+                dto.Nome = txtNome.Text;
                 dto.Senha = txtSenha.Text;
-                dto.NmUsuario = txtNome.Text;
+                dto.NmUsuario = txtUsuario.Text;
                 dto.Email = txtEmail.Text;
                 dto.PermicaoADM = ckbAdm.Checked;
                 dto.PermicaoCadastro = ckbCadastar.Checked;
@@ -41,11 +46,22 @@ namespace Catiotro_s.Telas.Entregavel_I.Login
                 buss.Salvar(dto);
 
                 MessageBox.Show("Novo usuário criado com sucesso!", "Catioro's", MessageBoxButtons.OK);
+                this.Close();
+            
             }
-            else
+            catch (MySqlException ex)
             {
-                MessageBox.Show("Senha incorreta", "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }         
+                if (ex.Number == 1062)
+                {
+                    MessageBox.Show("O nome de usuário já existe.", "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception es)
+            {
+                MessageBox.Show("Ocorreu um erro: " +es.Message, "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+           
         }
 
         private void frmCadastrarLogin_Load(object sender, EventArgs e)

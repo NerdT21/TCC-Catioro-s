@@ -45,7 +45,7 @@ namespace Catiotro_s.classes.Classes.Login
         public LoginDTO Logar (string usuario, string senha)
         {
 
-            string script = @"SELECT * FROM tb_login WHERE nm_usuario = @nm_usuari AND ds_senha = @ds_senha";
+            string script = @"SELECT * FROM tb_login WHERE nm_usuario = @nm_usuario AND ds_senha = @ds_senha";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_usuario", usuario));

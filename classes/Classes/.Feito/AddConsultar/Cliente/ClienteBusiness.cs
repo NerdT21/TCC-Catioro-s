@@ -14,21 +14,23 @@ namespace Catiotro_s.classes.Classes.Cliente
             int id = DB.Salvar(cliente);
             return id;
         }
+
         public void Alterar(ClienteDTO cliente)
         {
             ClienteDataBase DB = new ClienteDataBase();
             DB.Alterar(cliente);
         }
+
         public void Remover(int idcliente)
         {
             ClienteDataBase DB = new ClienteDataBase();
             DB.Remover(idcliente);
         }
-        public List<ClienteDTO> Listar()
-        {
-            ClienteDataBase DB = new ClienteDataBase();
-            List<ClienteDTO> cliente = DB.Listar();
-            return cliente;
-        }
+
+        //public List<ClienteDTO> Listar()
+        //{
+        //    ClienteDataBase DB = new ClienteDataBase();
+        //    DB.Listar();
+        //}
     }
 }

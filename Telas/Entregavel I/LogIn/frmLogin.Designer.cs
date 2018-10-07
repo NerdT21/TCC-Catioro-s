@@ -64,6 +64,7 @@
             // 
             this.txtPass.Location = new System.Drawing.Point(80, 45);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(155, 20);
             this.txtPass.TabIndex = 21;
             // 
@@ -106,7 +107,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUser);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

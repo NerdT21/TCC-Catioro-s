@@ -1,5 +1,6 @@
 ﻿using Catiotro_s.Consultar;
 using Catiotro_s.Resgistros;
+using Catiotro_s.Telas.Entregavel_I;
 using Catiotro_s.Telas.Entregavel_I.Funcionários;
 using System;
 using System.Collections.Generic;
@@ -82,6 +83,19 @@ namespace Catiotro_s
         private void departamentosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmRegistrarDepartamento tela = new frmRegistrarDepartamento();
+            OpenScreen(tela);
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login tela = new Login();
+            tela.Show();
+            this.Close();
+        }
+
+        private void folhaDePagamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFolhaPagto tela = new frmFolhaPagto();
             OpenScreen(tela);
         }
 

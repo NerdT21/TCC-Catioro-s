@@ -14,7 +14,7 @@ namespace Catiotro_s.classes.Classes.Cliente
             int id = DB.Salvar(depto);
             return id;
         }
-        public void Alterar(DeptoDTO cliente)
+        public void Alterar(DeptoDTO depto)
         {
             DeptoDataBase DB = new DeptoDataBase();
             DB.Alterar(depto);

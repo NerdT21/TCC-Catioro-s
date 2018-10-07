@@ -70,6 +70,7 @@
             // 
             // pbxMinimize
             // 
+            this.pbxMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxMinimize.Image = global::Catiotro_s.Properties.Resources.icons8_minimizar_janela_32;
             this.pbxMinimize.Location = new System.Drawing.Point(541, 3);
             this.pbxMinimize.Name = "pbxMinimize";
@@ -91,6 +92,7 @@
             // 
             // pbxClose
             // 
+            this.pbxClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxClose.Image = global::Catiotro_s.Properties.Resources.icons8_excluir_filled_50;
             this.pbxClose.Location = new System.Drawing.Point(570, 3);
             this.pbxClose.Name = "pbxClose";
@@ -170,6 +172,7 @@
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logOutToolStripMenuItem.Text = "LogOut";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // cadastroToolStripMenuItem
             // 
@@ -214,6 +217,7 @@
             this.folhaDePagamentoToolStripMenuItem.Name = "folhaDePagamentoToolStripMenuItem";
             this.folhaDePagamentoToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.folhaDePagamentoToolStripMenuItem.Text = "Folha de Pagamento";
+            this.folhaDePagamentoToolStripMenuItem.Click += new System.EventHandler(this.folhaDePagamentoToolStripMenuItem_Click);
             // 
             // departamentosToolStripMenuItem
             // 

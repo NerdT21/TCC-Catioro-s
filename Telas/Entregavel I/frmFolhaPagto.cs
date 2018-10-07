@@ -21,5 +21,10 @@ namespace Catiotro_s.Telas.Entregavel_I
         {
 
         }
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

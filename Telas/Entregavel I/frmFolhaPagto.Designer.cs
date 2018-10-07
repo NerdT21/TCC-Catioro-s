@@ -122,7 +122,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(57, 289);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 21);
+            this.label3.Size = new System.Drawing.Size(115, 21);
             this.label3.TabIndex = 136;
             this.label3.Text = "Salário Família ";
             // 
@@ -139,7 +139,7 @@
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(57, 332);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(70, 21);
+            this.label13.Size = new System.Drawing.Size(68, 21);
             this.label13.TabIndex = 134;
             this.label13.Text = "Total R$:";
             // 
@@ -154,6 +154,7 @@
             this.btnCalcular.TabIndex = 133;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = false;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // cboFuncionario
             // 
@@ -258,7 +259,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(290, 248);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(125, 21);
+            this.label9.Size = new System.Drawing.Size(123, 21);
             this.label9.TabIndex = 120;
             this.label9.Text = "Vale-Transporte ";
             // 
@@ -288,7 +289,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(372, 177);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 21);
+            this.label6.Size = new System.Drawing.Size(53, 21);
             this.label6.TabIndex = 117;
             this.label6.Text = "Faltas ";
             // 
