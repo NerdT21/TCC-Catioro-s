@@ -94,6 +94,10 @@
     <Compile Include="classes\Classes\.Feito\Pedido\PedidoBusiness.cs" />
     <Compile Include="classes\Classes\.Feito\Pedido\PedidoDataBase.cs" />
     <Compile Include="classes\Classes\.Feito\Pedido\PedidoDTO.cs" />
+    <Compile Include="classes\Classes\Login\LoginBusiness.cs" />
+    <Compile Include="classes\Classes\Login\LoginDataBase.cs" />
+    <Compile Include="classes\Classes\Login\LoginDTO.cs" />
+    <Compile Include="classes\Classes\Login\UserSession.cs" />
     <Compile Include="classes\Classes\Permissao\PermissaoBusiness.cs" />
     <Compile Include="classes\Classes\Permissao\PermissaoDataBase.cs" />
     <Compile Include="classes\Classes\Permissao\PermissaoDTO.cs" />
