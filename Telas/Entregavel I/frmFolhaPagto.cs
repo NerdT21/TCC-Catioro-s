@@ -35,8 +35,9 @@ namespace Catiotro_s.Telas.Entregavel_I
                 mkbCPF.Text = dto.Cpf;
                 txtSalario.Text = dto.Salario.ToString();
                 txtDepto.Text = dto.IdDepto.ToString();
-                pbxImgFuncionario.Image = ImagemPlugIn.ConverterParaImagem(dto.Imagem);
+                //pbxImgFuncionario.Image = ImagemPlugIn.ConverterParaImagem(dto.Imagem);
             }
+
 
         }
 
