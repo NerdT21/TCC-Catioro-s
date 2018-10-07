@@ -55,7 +55,7 @@ CREATE TABLE `tb_historicoAnimal` (
 
 CREATE TABLE `tb_funcionario` (
 	`id_funcionario` int NOT NULL AUTO_INCREMENT,
-	`int_salario` DECIMAL(15,2) NOT NULL,
+	`ds_salario` DECIMAL(15,2) NOT NULL,
 	`id_depto` int NOT NULL,
 	`nm_nome` varchar(50) NOT NULL,
 	`ds_email` varchar(50) NOT NULL,

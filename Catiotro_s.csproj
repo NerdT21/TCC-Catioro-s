@@ -215,6 +215,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\icons8-save-26.png" />
+    <None Include="Resources\icons8-save-48.png" />
     <None Include="Resources\icons8-excluir-filled-50.png" />
     <None Include="Resources\icons8-minimizar-janela-32.png" />
     <None Include="Resources\icons8-excluir-48.png" />

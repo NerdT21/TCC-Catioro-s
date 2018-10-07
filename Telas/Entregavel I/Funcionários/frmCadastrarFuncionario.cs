@@ -16,5 +16,10 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
         {
             InitializeComponent();
         }
+
+        private void frmCadastrarFuncionario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
