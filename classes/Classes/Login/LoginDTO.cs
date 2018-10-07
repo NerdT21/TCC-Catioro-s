@@ -13,6 +13,10 @@ namespace Catiotro_s.classes.Classes.Login
 
         public string Nome { get; set; }
 
+        public string NmUsuario { get; set; }
+
+        public string Email { get; set; }
+
         public string Senha { get; set; }
 
         public Boolean PermicaoADM { get; set; }
