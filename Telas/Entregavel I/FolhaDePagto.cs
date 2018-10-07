@@ -16,6 +16,7 @@ namespace FamosoAça.Screens.Entregavel_I
             return salarioH;
         }
 
+        
         public decimal ValeTransporte(decimal salario)
         {
 
@@ -181,5 +182,7 @@ namespace FamosoAça.Screens.Entregavel_I
 
             return faltas;
         }
+
+        
     }
 }
