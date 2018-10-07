@@ -17,6 +17,11 @@ namespace Catiotro_s.Consultar
             InitializeComponent();
         }
 
+        void AutoCarregar()
+        {
+
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
