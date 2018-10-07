@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Catiotro_s.classes.Classes.Agenda
 {
-    class EstadoDTO
+    public class EstadoDTO
     {
         public int Id { get; set; }
         public string Estado { get; set; }

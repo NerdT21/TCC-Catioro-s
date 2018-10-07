@@ -8,5 +8,10 @@ namespace Catiotro_s.classes.Classes.Agenda
 {
    public class EstadoBusiness
     {
+        public List<EstadoDTO> Listar()
+        {
+            EstadoDatabase db = new EstadoDatabase();
+            return db.Listar();
+        }   
     }
 }
