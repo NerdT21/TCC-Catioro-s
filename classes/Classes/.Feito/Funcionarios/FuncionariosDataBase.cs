@@ -144,14 +144,14 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         }
 
-        public List<FuncionarioDTO> Consultar(string nome)
+        public List<FuncionarioDTO> Consultar(string nome, string depto)
         {
 
-            string script = @"SELECT * FROM tb_funcionario WHERE nm_nome LIKE @nm_nome";
+            string script = @"SELECT * FROM tb_funcionario WHERE nm_nome LIKE @nm_nome AND id_depto LIKE @id_depto";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_funcionario", nome + "%"));
-
+            parms.Add(new MySqlParameter("nm_nome", nome + "%"));
+            parms.Add(new MySqlParameter("id_depto", depto + "%"));
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, null);
@@ -162,7 +162,7 @@ namespace Catiotro_s.classes.Classes.Cliente
 
                 FuncionarioDTO add = new FuncionarioDTO();
                 add.Id = reader.GetInt32("id_funcionario");
-                add.Salario = reader.GetInt32("int_salario");
+                add.Salario = reader.GetInt32("ds_salario");
                 add.IdDepto = reader.GetInt32("id_depto");
                 add.IdEstado = reader.GetInt32("id_estado");
                 add.Nome = reader.GetString("nm_nome");
@@ -174,14 +174,10 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Telefone = reader.GetString("ds_telefone");
                 add.Imagem = reader.GetString("img_funcionario");
 
-
-
-
                 lista.Add(add);
             }
 
             reader.Close();
-
             return lista;
 
         }
