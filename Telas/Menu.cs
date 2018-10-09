@@ -99,6 +99,11 @@ namespace Catiotro_s
             OpenScreen(tela);
         }
 
+        private void pnlCentro_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void pnlTopo_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastrarLogin));
             this.label6 = new System.Windows.Forms.Label();
             this.ckbConsultar = new System.Windows.Forms.CheckBox();
             this.ckbCadastar = new System.Windows.Forms.CheckBox();
@@ -84,7 +85,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(8, 184);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 21);
+            this.label5.Size = new System.Drawing.Size(89, 21);
             this.label5.TabIndex = 55;
             this.label5.Text = "Permissões";
             // 
@@ -218,6 +219,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCadastrarLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadastrarLogin";

@@ -32,6 +32,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
       <HintPath>..\..\..\AppMusica\AppMusica\conexão\MySql.Data.dll</HintPath>
@@ -222,6 +229,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="favicon %281%29.ico" />
+    <Content Include="favicon.ico" />
     <None Include="Resources\icons8-search-26.png" />
     <None Include="Resources\icons8-save-26.png" />
     <None Include="Resources\icons8-save-48.png" />

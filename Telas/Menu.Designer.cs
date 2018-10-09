@@ -66,7 +66,7 @@
             this.pnlTopo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopo.Location = new System.Drawing.Point(0, 0);
             this.pnlTopo.Name = "pnlTopo";
-            this.pnlTopo.Size = new System.Drawing.Size(603, 28);
+            this.pnlTopo.Size = new System.Drawing.Size(603, 25);
             this.pnlTopo.TabIndex = 4;
             this.pnlTopo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTopo_MouseDown);
             this.pnlTopo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTopo_MouseMove);
@@ -110,18 +110,18 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(593, 28);
+            this.panel1.Location = new System.Drawing.Point(593, 25);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 442);
+            this.panel1.Size = new System.Drawing.Size(10, 445);
             this.panel1.TabIndex = 5;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 28);
+            this.panel2.Location = new System.Drawing.Point(0, 25);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 442);
+            this.panel2.Size = new System.Drawing.Size(10, 445);
             this.panel2.TabIndex = 6;
             // 
             // panel4
@@ -142,6 +142,7 @@
             this.pnlCentro.Name = "pnlCentro";
             this.pnlCentro.Size = new System.Drawing.Size(583, 405);
             this.pnlCentro.TabIndex = 8;
+            this.pnlCentro.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCentro_Paint);
             // 
             // menuStrip1
             // 
@@ -151,7 +152,7 @@
             this.consultaToolStripMenuItem,
             this.financeiroToolStripMenuItem,
             this.departamentosToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(10, 28);
+            this.menuStrip1.Location = new System.Drawing.Point(10, 25);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(583, 24);
             this.menuStrip1.TabIndex = 9;
@@ -246,13 +247,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(603, 470);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlCentro);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlTopo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
