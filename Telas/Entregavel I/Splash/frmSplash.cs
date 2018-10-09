@@ -44,5 +44,10 @@ namespace Catiotro_s
         {
 
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
