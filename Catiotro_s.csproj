@@ -58,49 +58,49 @@
   <ItemGroup>
     <Compile Include="classes\Base\Connection.cs" />
     <Compile Include="classes\Base\DataBase.cs" />
-    <Compile Include="classes\Classes\.Feito\AddConsultar\Agenda\AgendaBusiness.cs" />
-    <Compile Include="classes\Classes\.Feito\AddConsultar\Agenda\AgendaDataBase.cs" />
-    <Compile Include="classes\Classes\.Feito\AddConsultar\Agenda\AgendaDTO.cs" />
-    <Compile Include="classes\Classes\.Feito\AddConsultar\Agenda\Animal\AnimalBusiness.cs" />
-    <Compile Include="classes\Classes\.Feito\AddConsultar\Agenda\Animal\AnimalDataBase.cs" />
-    <Compile Include="classes\Classes\.Feito\AddConsultar\Agenda\Animal\AnimalDTO.cs" />
-    <Compile Include="classes\Classes\.Feito\AddConsultar\Cliente\ClienteBusiness.cs" />
-    <Compile Include="classes\Classes\.Feito\AddConsultar\Cliente\ClienteDataBase.cs" />
-    <Compile Include="classes\Classes\.Feito\AddConsultar\Cliente\ClienteDTO.cs" />
-    <Compile Include="classes\Classes\.Feito\AddConsultar\Departamento\DepartamentoBusiness.cs" />
-    <Compile Include="classes\Classes\.Feito\AddConsultar\Departamento\DepartamentoDataBase.cs" />
-    <Compile Include="classes\Classes\.Feito\AddConsultar\Departamento\DepartamentoDTO.cs" />
+    <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\AgendaBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\AgendaDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\AgendaDTO.cs" />
+    <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\Animal\AnimalBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\Animal\AnimalDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\Animal\AnimalDTO.cs" />
+    <Compile Include="classes\Classes\Feito\AddConsultar\Cliente\ClienteBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\AddConsultar\Cliente\ClienteDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\AddConsultar\Cliente\ClienteDTO.cs" />
+    <Compile Include="classes\Classes\Departamento\DepartamentoBusiness.cs" />
+    <Compile Include="classes\Classes\Departamento\DepartamentoDataBase.cs" />
+    <Compile Include="classes\Classes\Departamento\DepartamentoDTO.cs" />
     <Content Include="classes\Classes\Esqueleto Database.txt" />
     <Compile Include="classes\Classes\Estados\EstadoBusiness.cs" />
     <Compile Include="classes\Classes\Estados\EstadoDataBase.cs" />
     <Compile Include="classes\Classes\Estados\EstadoDTO.cs" />
-    <Compile Include="classes\Classes\.Feito\AddConsultar\Ficha Animal\FichaAnimalBusiness.cs" />
-    <Compile Include="classes\Classes\.Feito\AddConsultar\Ficha Animal\FichaAnimalDataBase.cs" />
-    <Compile Include="classes\Classes\.Feito\AddConsultar\Ficha Animal\FichaAnimalDTO.cs" />
-    <Compile Include="classes\Classes\.Feito\Folha de pagamento\FPagamentoBusiness.cs" />
-    <Compile Include="classes\Classes\.Feito\Folha de pagamento\FPagamentoDataBase.cs" />
-    <Compile Include="classes\Classes\.Feito\Folha de pagamento\FPagamentoDTO.cs" />
+    <Compile Include="classes\Classes\Feito\AddConsultar\Ficha Animal\FichaAnimalBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\AddConsultar\Ficha Animal\FichaAnimalDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\AddConsultar\Ficha Animal\FichaAnimalDTO.cs" />
+    <Compile Include="classes\Classes\Feito\Folha de pagamento\FPagamentoBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\Folha de pagamento\FPagamentoDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\Folha de pagamento\FPagamentoDTO.cs" />
     <Compile Include="classes\Classes\Fornecedores\FonecedoresBusiness.cs" />
     <Compile Include="classes\Classes\Fornecedores\FonecedoresDataBase.cs" />
     <Compile Include="classes\Classes\Fornecedores\FonecedoresDTO.cs" />
-    <Compile Include="classes\Classes\.Feito\Funcionarios\FuncionariosBusiness.cs" />
-    <Compile Include="classes\Classes\.Feito\Funcionarios\FuncionariosDataBase.cs" />
-    <Compile Include="classes\Classes\.Feito\Funcionarios\FuncionariosDTO.cs" />
+    <Compile Include="classes\Classes\Feito\Funcionarios\FuncionariosBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\Funcionarios\FuncionariosDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\Funcionarios\FuncionariosDTO.cs" />
     <Compile Include="classes\Classes\Historico\HistoricoBusiness.cs" />
     <Compile Include="classes\Classes\Historico\HistoricoDataBase.cs" />
     <Compile Include="classes\Classes\Historico\HistoricoDTO.cs" />
-    <Compile Include="classes\Classes\.Feito\Imposto de Renda\ImpostoRendaBusiness.cs" />
-    <Compile Include="classes\Classes\.Feito\Imposto de Renda\ImpostoRendaDataBase.cs" />
-    <Compile Include="classes\Classes\.Feito\Imposto de Renda\ImpostoRendaDTO.cs" />
-    <Compile Include="classes\Classes\.Feito\INSS\INSSBusiness.cs" />
-    <Compile Include="classes\Classes\.Feito\INSS\INSSDataBase.cs" />
-    <Compile Include="classes\Classes\.Feito\INSS\INSSDTO.cs" />
-    <Compile Include="classes\Classes\.Feito\Pedido Item\PedidoItemBusiness.cs" />
-    <Compile Include="classes\Classes\.Feito\Pedido Item\PedidoItemDataBase.cs" />
-    <Compile Include="classes\Classes\.Feito\Pedido Item\PedidoItemDTO.cs" />
-    <Compile Include="classes\Classes\.Feito\Pedido\PedidoBusiness.cs" />
-    <Compile Include="classes\Classes\.Feito\Pedido\PedidoDataBase.cs" />
-    <Compile Include="classes\Classes\.Feito\Pedido\PedidoDTO.cs" />
+    <Compile Include="classes\Classes\Feito\Imposto de Renda\ImpostoRendaBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\Imposto de Renda\ImpostoRendaDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\Imposto de Renda\ImpostoRendaDTO.cs" />
+    <Compile Include="classes\Classes\Feito\INSS\INSSBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\INSS\INSSDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\INSS\INSSDTO.cs" />
+    <Compile Include="classes\Classes\Feito\Pedido Item\PedidoItemBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\Pedido Item\PedidoItemDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\Pedido Item\PedidoItemDTO.cs" />
+    <Compile Include="classes\Classes\Feito\Pedido\PedidoBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\Pedido\PedidoDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\Pedido\PedidoDTO.cs" />
     <Compile Include="classes\Classes\Login\LoginBusiness.cs" />
     <Compile Include="classes\Classes\Login\LoginDataBase.cs" />
     <Compile Include="classes\Classes\Login\LoginDTO.cs" />
@@ -108,27 +108,27 @@
     <Compile Include="classes\Classes\Permissao\PermissaoBusiness.cs" />
     <Compile Include="classes\Classes\Permissao\PermissaoDataBase.cs" />
     <Compile Include="classes\Classes\Permissao\PermissaoDTO.cs" />
-    <Compile Include="classes\Classes\.Feito\Preco\PrecoBusiness.cs" />
-    <Compile Include="classes\Classes\.Feito\Preco\PrecoDataBase.cs" />
-    <Compile Include="classes\Classes\.Feito\Preco\PrecoDTO.cs" />
+    <Compile Include="classes\Classes\Feito\Preco\PrecoBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\Preco\PrecoDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\Preco\PrecoDTO.cs" />
     <Compile Include="classes\Classes\Produto\ProdutoBusiness.cs" />
     <Compile Include="classes\Classes\Produto\ProdutoDataBase.cs" />
     <Compile Include="classes\Classes\Produto\ProdutoDTO.cs" />
-    <Compile Include="classes\Classes\.Feito\Raca\RacaBusiness.cs" />
-    <Compile Include="classes\Classes\.Feito\Raca\RacaDataBase.cs" />
-    <Compile Include="classes\Classes\.Feito\Raca\RacaDTO.cs" />
-    <Compile Include="classes\Classes\.Feito\Salario Familha\SFamilhaBusiness.cs" />
-    <Compile Include="classes\Classes\.Feito\Salario Familha\SFamilhaDataBase.cs" />
-    <Compile Include="classes\Classes\.Feito\Salario Familha\SFamilhaDTO.cs" />
+    <Compile Include="classes\Classes\Feito\Raca\RacaBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\Raca\RacaDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\Raca\RacaDTO.cs" />
+    <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaDTO.cs" />
     <Compile Include="classes\Classes\Servico\ServicoBusiness.cs" />
     <Compile Include="classes\Classes\Servico\ServicoDataBase.cs" />
     <Compile Include="classes\Classes\Servico\ServicoDTO.cs" />
     <Compile Include="classes\Classes\Usuario\UsuarioBusiness.cs" />
     <Compile Include="classes\Classes\Usuario\UsuarioDataBase.cs" />
     <Compile Include="classes\Classes\Usuario\UsuarioDTO.cs" />
-    <Compile Include="classes\Classes\.Feito\Vacina\VacinaBusiness.cs" />
-    <Compile Include="classes\Classes\.Feito\Vacina\VacinaDataBase.cs" />
-    <Compile Include="classes\Classes\.Feito\Vacina\VacinaDTO.cs" />
+    <Compile Include="classes\Classes\Feito\Vacina\VacinaBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\Vacina\VacinaDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\Vacina\VacinaDTO.cs" />
     <Compile Include="PlugIn\ImagemPlugIn.cs" />
     <Compile Include="Telas\Entregavel I\FolhaDePagto.cs" />
     <Compile Include="Telas\Entregavel I\frmFolhaPagto.cs">
@@ -149,29 +149,23 @@
     <Compile Include="Telas\Entregavel I\Funcionários\frmConsultaFuncionario.Designer.cs">
       <DependentUpon>frmConsultaFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Consultar\frmConsultarAnimal.cs">
+    <Compile Include="Telas\Entregavel III\Animal\frmConsultarAnimal.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Telas\Consultar\frmConsultarAnimal.Designer.cs">
+    <Compile Include="Telas\Entregavel III\Animal\frmConsultarAnimal.Designer.cs">
       <DependentUpon>frmConsultarAnimal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Consultar\frmConsultarCliente.cs">
+    <Compile Include="Telas\Entregavel III\Cliente\frmConsultarCliente.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Telas\Consultar\frmConsultarCliente.Designer.cs">
+    <Compile Include="Telas\Entregavel III\Cliente\frmConsultarCliente.Designer.cs">
       <DependentUpon>frmConsultarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Consultar\frmConsultarFornecedor.cs">
+    <Compile Include="Telas\Entregavel II\Furnecedor\frmConsultarFornecedor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Telas\Consultar\frmConsultarFornecedor.Designer.cs">
+    <Compile Include="Telas\Entregavel II\Furnecedor\frmConsultarFornecedor.Designer.cs">
       <DependentUpon>frmConsultarFornecedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Telas\Consultar\MenuConsultar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Telas\Consultar\MenuConsultar.Designer.cs">
-      <DependentUpon>MenuConsultar.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Entregavel I\LogIn\frmCadastrarLogin.cs">
       <SubType>Form</SubType>
@@ -191,22 +185,16 @@
     <Compile Include="Telas\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Resgistros\frmMenuRegisto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Telas\Resgistros\frmMenuRegisto.Designer.cs">
-      <DependentUpon>frmMenuRegisto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Telas\Resgistros\frmRegistrarAnimal.cs">
+    <Compile Include="Telas\Entregavel III\Animal\frmRegistrarAnimal.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Telas\Resgistros\frmRegistrarAnimal.Designer.cs">
+    <Compile Include="Telas\Entregavel III\Animal\frmRegistrarAnimal.Designer.cs">
       <DependentUpon>frmRegistrarAnimal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Resgistros\frmRegistrarCliente.cs">
+    <Compile Include="Telas\Entregavel III\Cliente\frmRegistrarCliente.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Telas\Resgistros\frmRegistrarCliente.Designer.cs">
+    <Compile Include="Telas\Entregavel III\Cliente\frmRegistrarCliente.Designer.cs">
       <DependentUpon>frmRegistrarCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Entregavel I\Departamento\frmDepto.cs">
@@ -215,10 +203,10 @@
     <Compile Include="Telas\Entregavel I\Departamento\frmDepto.Designer.cs">
       <DependentUpon>frmDepto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Resgistros\frmRegistrarFornecedor.cs">
+    <Compile Include="Telas\Entregavel II\Furnecedor\frmRegistrarFornecedor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Telas\Resgistros\frmRegistrarFornecedor.Designer.cs">
+    <Compile Include="Telas\Entregavel II\Furnecedor\frmRegistrarFornecedor.Designer.cs">
       <DependentUpon>frmRegistrarFornecedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Entregavel I\Splash\frmSplash.cs">
@@ -247,17 +235,14 @@
     <EmbeddedResource Include="Telas\Entregavel I\Funcionários\frmConsultaFuncionario.resx">
       <DependentUpon>frmConsultaFuncionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Consultar\frmConsultarAnimal.resx">
+    <EmbeddedResource Include="Telas\Entregavel III\Animal\frmConsultarAnimal.resx">
       <DependentUpon>frmConsultarAnimal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Consultar\frmConsultarCliente.resx">
+    <EmbeddedResource Include="Telas\Entregavel III\Cliente\frmConsultarCliente.resx">
       <DependentUpon>frmConsultarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Consultar\frmConsultarFornecedor.resx">
+    <EmbeddedResource Include="Telas\Entregavel II\Furnecedor\frmConsultarFornecedor.resx">
       <DependentUpon>frmConsultarFornecedor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Consultar\MenuConsultar.resx">
-      <DependentUpon>MenuConsultar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel I\LogIn\frmCadastrarLogin.resx">
       <DependentUpon>frmCadastrarLogin.cs</DependentUpon>
@@ -268,19 +253,16 @@
     <EmbeddedResource Include="Telas\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Resgistros\frmMenuRegisto.resx">
-      <DependentUpon>frmMenuRegisto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Resgistros\frmRegistrarAnimal.resx">
+    <EmbeddedResource Include="Telas\Entregavel III\Animal\frmRegistrarAnimal.resx">
       <DependentUpon>frmRegistrarAnimal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Resgistros\frmRegistrarCliente.resx">
+    <EmbeddedResource Include="Telas\Entregavel III\Cliente\frmRegistrarCliente.resx">
       <DependentUpon>frmRegistrarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel I\Departamento\frmDepto.resx">
       <DependentUpon>frmDepto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Resgistros\frmRegistrarFornecedor.resx">
+    <EmbeddedResource Include="Telas\Entregavel II\Furnecedor\frmRegistrarFornecedor.resx">
       <DependentUpon>frmRegistrarFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel I\Splash\frmSplash.resx">
@@ -313,9 +295,8 @@
     <Content Include="classes\Script.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Telas\Entregavel III\" />
-    <Folder Include="Telas\Entregavel II\" />
     <Folder Include="Telas\Entregavel IV\" />
+    <Folder Include="Telas\Resgistros\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

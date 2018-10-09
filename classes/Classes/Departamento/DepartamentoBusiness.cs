@@ -30,5 +30,12 @@ namespace Catiotro_s.classes.Classes.Cliente
             List<DeptoDTO> depto = DB.Listar();
             return depto;
         }
+
+        public List<DeptoDTO> Consultar(string depto)
+        {
+            DeptoDataBase database = new DeptoDataBase();
+            return database.Consultar(depto);
+        }
+
     }
 }

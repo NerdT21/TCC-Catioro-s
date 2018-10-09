@@ -14,7 +14,7 @@ namespace Catiotro_s.classes.Classes.Cliente
         public int Salvar(FuncionarioDTO funcio)
         {
 
-            string script = @"INSERT INTO tb_funcionario (ds_salario,
+            string script = @"INSERT INTO tb_funcionario   (ds_salario,
                                                               id_depto,
                                                               id_estado,
                                                               nm_nome,

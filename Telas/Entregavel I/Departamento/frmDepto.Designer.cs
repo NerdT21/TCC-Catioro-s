@@ -57,6 +57,7 @@
             this.btnSalvar.TabIndex = 22;
             this.btnSalvar.Text = "Buscar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // txtProcurarDepto
             // 
@@ -143,6 +144,7 @@
             this.btnCadastrar.TabIndex = 16;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // txtDepto
             // 
