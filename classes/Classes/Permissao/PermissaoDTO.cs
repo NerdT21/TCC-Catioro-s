@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Catiotro_s.classes.Classes.Agenda
 {
-   public class ServicoBusiness
+   public class PermissaoDTO
     {
+        public int Id { get; set; }
+        public int LvlPermissao { get; set; }
     }
 }

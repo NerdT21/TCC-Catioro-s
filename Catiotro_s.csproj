@@ -58,25 +58,26 @@
   <ItemGroup>
     <Compile Include="classes\Base\Connection.cs" />
     <Compile Include="classes\Base\DataBase.cs" />
-    <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\AgendaBusiness.cs" />
-    <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\AgendaDataBase.cs" />
-    <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\AgendaDTO.cs" />
-    <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\Animal\AnimalBusiness.cs" />
-    <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\Animal\AnimalDataBase.cs" />
-    <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\Animal\AnimalDTO.cs" />
-    <Compile Include="classes\Classes\Feito\AddConsultar\Cliente\ClienteBusiness.cs" />
-    <Compile Include="classes\Classes\Feito\AddConsultar\Cliente\ClienteDataBase.cs" />
-    <Compile Include="classes\Classes\Feito\AddConsultar\Cliente\ClienteDTO.cs" />
-    <Compile Include="classes\Classes\Departamento\DepartamentoBusiness.cs" />
-    <Compile Include="classes\Classes\Departamento\DepartamentoDataBase.cs" />
-    <Compile Include="classes\Classes\Departamento\DepartamentoDTO.cs" />
-    <Content Include="classes\Classes\Esqueleto Database.txt" />
-    <Compile Include="classes\Classes\Estados\EstadoBusiness.cs" />
-    <Compile Include="classes\Classes\Estados\EstadoDataBase.cs" />
-    <Compile Include="classes\Classes\Estados\EstadoDTO.cs" />
-    <Compile Include="classes\Classes\Feito\AddConsultar\Ficha Animal\FichaAnimalBusiness.cs" />
-    <Compile Include="classes\Classes\Feito\AddConsultar\Ficha Animal\FichaAnimalDataBase.cs" />
-    <Compile Include="classes\Classes\Feito\AddConsultar\Ficha Animal\FichaAnimalDTO.cs" />
+    <Compile Include="classes\Classes\AddConsultar\Agenda\AgendaBusiness.cs" />
+    <Compile Include="classes\Classes\AddConsultar\Agenda\AgendaDataBase.cs" />
+    <Compile Include="classes\Classes\AddConsultar\Agenda\AgendaDTO.cs" />
+    <Compile Include="classes\Classes\AddConsultar\Animal\AnimalBusiness.cs" />
+    <Compile Include="classes\Classes\AddConsultar\Animal\AnimalDataBase.cs" />
+    <Compile Include="classes\Classes\AddConsultar\Animal\AnimalDTO.cs" />
+    <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteBusiness.cs" />
+    <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteDataBase.cs" />
+    <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteDTO.cs" />
+    <Compile Include="classes\Classes\Feito\Departamento\DepartamentoBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\Departamento\DepartamentoDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\Departamento\DepartamentoDTO.cs" />
+    <Content Include="Notas\Esqueleto Business.txt" />
+    <Content Include="Notas\Esqueleto Database.txt" />
+    <Compile Include="classes\Classes\Feito\Estados\EstadoBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\Estados\EstadoDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\Estados\EstadoDTO.cs" />
+    <Compile Include="classes\Classes\AddConsultar\Ficha Animal\FichaAnimalBusiness.cs" />
+    <Compile Include="classes\Classes\AddConsultar\Ficha Animal\FichaAnimalDataBase.cs" />
+    <Compile Include="classes\Classes\AddConsultar\Ficha Animal\FichaAnimalDTO.cs" />
     <Compile Include="classes\Classes\Feito\Folha de pagamento\FPagamentoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Folha de pagamento\FPagamentoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Folha de pagamento\FPagamentoDTO.cs" />
@@ -86,9 +87,9 @@
     <Compile Include="classes\Classes\Feito\Funcionarios\FuncionariosBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Funcionarios\FuncionariosDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Funcionarios\FuncionariosDTO.cs" />
-    <Compile Include="classes\Classes\Feito\Historico\HistoricoBusiness.cs" />
-    <Compile Include="classes\Classes\Feito\Historico\HistoricoDataBase.cs" />
-    <Compile Include="classes\Classes\Feito\Historico\HistoricoDTO.cs" />
+    <Compile Include="classes\Classes\Historico\HistoricoBusiness.cs" />
+    <Compile Include="classes\Classes\Historico\HistoricoDataBase.cs" />
+    <Compile Include="classes\Classes\Historico\HistoricoDTO.cs" />
     <Compile Include="classes\Classes\Feito\Imposto de Renda\ImpostoRendaBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Imposto de Renda\ImpostoRendaDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Imposto de Renda\ImpostoRendaDTO.cs" />
@@ -101,10 +102,13 @@
     <Compile Include="classes\Classes\Feito\Pedido\PedidoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Pedido\PedidoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Pedido\PedidoDTO.cs" />
-    <Compile Include="classes\Classes\Feito\Login\LoginBusiness.cs" />
-    <Compile Include="classes\Classes\Feito\Login\LoginDataBase.cs" />
-    <Compile Include="classes\Classes\Feito\Login\LoginDTO.cs" />
-    <Compile Include="classes\Classes\Feito\Login\UserSession.cs" />
+    <Compile Include="classes\Classes\Login\LoginBusiness.cs" />
+    <Compile Include="classes\Classes\Login\LoginDataBase.cs" />
+    <Compile Include="classes\Classes\Login\LoginDTO.cs" />
+    <Compile Include="classes\Classes\Login\UserSession.cs" />
+    <Compile Include="classes\Classes\Feito\Permissao\PermissaoBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\Permissao\PermissaoDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\Permissao\PermissaoDTO.cs" />
     <Compile Include="classes\Classes\Feito\Preco\PrecoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Preco\PrecoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Preco\PrecoDTO.cs" />
@@ -289,7 +293,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="classes\Script.txt" />
+    <Content Include="Notas\Script.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Telas\Entregavel IV\" />

@@ -69,8 +69,5 @@ namespace Catiotro_s.classes.Classes.Agenda
 
         }
 
-
-
-
     }
 }

@@ -30,5 +30,10 @@ namespace Catiotro_s.classes.Classes.Cliente
             List<FPamentoDTO> folhapag = DB.Listar();
             return folhapag;
         }
+        public List<FPamentoDTO> Consultar(string consult)
+        {
+            FPagamentoDataBase db = new FPagamentoDataBase();
+            return db.Consultar(consult);
+        }
     }
 }
