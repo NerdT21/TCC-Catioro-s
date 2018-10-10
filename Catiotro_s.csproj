@@ -123,9 +123,9 @@
     <Compile Include="classes\Classes\Servico\ServicoBusiness.cs" />
     <Compile Include="classes\Classes\Servico\ServicoDataBase.cs" />
     <Compile Include="classes\Classes\Servico\ServicoDTO.cs" />
-    <Compile Include="classes\Classes\Usuario\UsuarioBusiness.cs" />
-    <Compile Include="classes\Classes\Usuario\UsuarioDataBase.cs" />
-    <Compile Include="classes\Classes\Usuario\UsuarioDTO.cs" />
+    <Compile Include="classes\Classes\Feito\Usuario\UsuarioBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\Usuario\UsuarioDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\Usuario\UsuarioDTO.cs" />
     <Compile Include="classes\Classes\Feito\Vacina\VacinaBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Vacina\VacinaDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Vacina\VacinaDTO.cs" />
