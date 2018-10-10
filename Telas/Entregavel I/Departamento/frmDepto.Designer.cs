@@ -43,6 +43,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtDecricao = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepto)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +53,7 @@
             // 
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(124, 231);
+            this.btnSalvar.Location = new System.Drawing.Point(124, 267);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(84, 28);
             this.btnSalvar.TabIndex = 22;
@@ -61,7 +63,7 @@
             // 
             // txtProcurarDepto
             // 
-            this.txtProcurarDepto.Location = new System.Drawing.Point(88, 196);
+            this.txtProcurarDepto.Location = new System.Drawing.Point(88, 232);
             this.txtProcurarDepto.Name = "txtProcurarDepto";
             this.txtProcurarDepto.Size = new System.Drawing.Size(174, 20);
             this.txtProcurarDepto.TabIndex = 21;
@@ -73,7 +75,7 @@
             this.label4.Enabled = false;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(85, 174);
+            this.label4.Location = new System.Drawing.Point(85, 210);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(154, 20);
             this.label4.TabIndex = 20;
@@ -90,11 +92,11 @@
             this.Departamento,
             this.Column1});
             this.dgvDepto.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dgvDepto.Location = new System.Drawing.Point(280, 196);
+            this.dgvDepto.Location = new System.Drawing.Point(280, 232);
             this.dgvDepto.Name = "dgvDepto";
             this.dgvDepto.ReadOnly = true;
             this.dgvDepto.RowHeadersVisible = false;
-            this.dgvDepto.Size = new System.Drawing.Size(240, 150);
+            this.dgvDepto.Size = new System.Drawing.Size(240, 129);
             this.dgvDepto.TabIndex = 19;
             // 
             // Id
@@ -128,7 +130,7 @@
             this.label3.Enabled = false;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(84, 130);
+            this.label3.Location = new System.Drawing.Point(84, 170);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(180, 21);
             this.label3.TabIndex = 17;
@@ -138,7 +140,7 @@
             // 
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(436, 81);
+            this.btnCadastrar.Location = new System.Drawing.Point(436, 67);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(84, 28);
             this.btnCadastrar.TabIndex = 16;
@@ -148,7 +150,7 @@
             // 
             // txtDepto
             // 
-            this.txtDepto.Location = new System.Drawing.Point(256, 87);
+            this.txtDepto.Location = new System.Drawing.Point(256, 73);
             this.txtDepto.Name = "txtDepto";
             this.txtDepto.Size = new System.Drawing.Size(174, 20);
             this.txtDepto.TabIndex = 15;
@@ -157,7 +159,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(88, 68);
+            this.panel1.Location = new System.Drawing.Point(88, 54);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(432, 5);
             this.panel1.TabIndex = 14;
@@ -165,9 +167,9 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Location = new System.Drawing.Point(-2, -2);
+            this.panel2.Location = new System.Drawing.Point(-53, -7);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(432, 5);
+            this.panel2.Size = new System.Drawing.Size(483, 12);
             this.panel2.TabIndex = 4;
             // 
             // label2
@@ -177,7 +179,7 @@
             this.label2.Enabled = false;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(84, 43);
+            this.label2.Location = new System.Drawing.Point(84, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(264, 25);
             this.label2.TabIndex = 13;
@@ -190,7 +192,7 @@
             this.label1.Enabled = false;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(85, 85);
+            this.label1.Location = new System.Drawing.Point(85, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(173, 20);
             this.label1.TabIndex = 12;
@@ -199,15 +201,38 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Location = new System.Drawing.Point(88, 153);
+            this.panel3.Location = new System.Drawing.Point(88, 193);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(432, 5);
             this.panel3.TabIndex = 18;
+            // 
+            // txtDecricao
+            // 
+            this.txtDecricao.Location = new System.Drawing.Point(271, 102);
+            this.txtDecricao.Multiline = true;
+            this.txtDecricao.Name = "txtDecricao";
+            this.txtDecricao.Size = new System.Drawing.Size(159, 71);
+            this.txtDecricao.TabIndex = 24;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Enabled = false;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(79, 100);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(195, 20);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "descrição do Departamento";
             // 
             // frmRegistrarDepartamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtDecricao);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtProcurarDepto);
             this.Controls.Add(this.label4);
@@ -246,5 +271,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox txtDecricao;
+        private System.Windows.Forms.Label label5;
     }
 }

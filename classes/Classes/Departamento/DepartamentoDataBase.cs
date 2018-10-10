@@ -14,11 +14,11 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         public int Salvar(DeptoDTO depto)
         {
-            string script = @"INSERT INTO tb_Depto(nm_depto/*, ds_depto*/) VALUES(@nm_depto/*, @ds_depto*/)";
+            string script = @"INSERT INTO tb_Depto(nm_depto, ds_depto) VALUES(@nm_depto, @ds_depto)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_depto", depto.Nome));
-            //parms.Add(new MySqlParameter("ds_depto", depto.Descricao));
+            parms.Add(new MySqlParameter("ds_depto", depto.Descricao));
 
             Database db = new Database();
             return db.ExecuteInsertScriptWithPk(script, parms);
@@ -37,7 +37,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                 DeptoDTO dto = new DeptoDTO();
                 dto.Id = reader.GetInt32("id_depto");
                 dto.Nome = reader.GetString("nm_depto");
-                //dto.Descricao = reader.GetString("ds_depto");
+                dto.Descricao = reader.GetString("ds_depto");
 
                 deptos.Add(dto);
             }
@@ -51,7 +51,7 @@ namespace Catiotro_s.classes.Classes.Cliente
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_depto", depto + "%"));
-            //parms.Add(new MySqlParameter("ds_depto", depto + "%"));
+            parms.Add(new MySqlParameter("ds_depto", depto + "%"));
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
@@ -62,7 +62,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                 DeptoDTO dto = new DeptoDTO();
                 dto.Id = reader.GetInt32("id_depto");
                 dto.Nome = reader.GetString("nm_depto");
-                //dto.Descricao = reader.GetString("ds_depto");
+                dto.Descricao = reader.GetString("ds_depto");
 
                 lista.Add(dto);
             }
@@ -77,7 +77,7 @@ namespace Catiotro_s.classes.Classes.Cliente
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_depto", depto.Id));
             parms.Add(new MySqlParameter("nm_depto", depto.Nome));
-            //parms.Add(new MySqlParameter("ds_depto", depto.Descricao));
+            parms.Add(new MySqlParameter("ds_depto", depto.Descricao));
 
             Database db = new Database();
             db.ExecuteInsertScript(script, parms);

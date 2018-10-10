@@ -20,11 +20,12 @@ namespace Catiotro_s.Resgistros
 
         public void Cadastro()
         {
-           // try
-           // {
+            try
+            {
                 //Vai intanciar o DTO e dps joga um valor nesse DTO
                 classes.Classes.Cliente.DeptoDTO dto = new classes.Classes.Cliente.DeptoDTO();
                 dto.Nome = txtDepto.Text;
+                dto.Descricao = txtDecricao.Text;
 
                 //Chama a função de salvar de business que em sua vez grava essas açoes no DTO 
                 classes.Classes.Cliente.DeptoBusiness business = new classes.Classes.Cliente.DeptoBusiness();
@@ -33,13 +34,13 @@ namespace Catiotro_s.Resgistros
                 //Exibe de uma msg de suceso 
                 MessageBox.Show("Departamento cadastrado.", "Catioro's", MessageBoxButtons.OK);
 
-            //}
-            //catch (Exception ex)
-            //{
-            //    //Caso o try nn funcione o Catch roda e exibe uma msg de erro 
-            //  MessageBox.Show("Ocorreu um Erro: " + ex.Message);
-            //}
         }
+            catch (Exception ex)
+            {
+                //Caso o try nn funcione o Catch roda e exibe uma msg de erro 
+              MessageBox.Show("Ocorreu um Erro: " + ex.Message);
+            }
+}
          public void CarregarGrid()
          {
             string depto = txtProcurarDepto.Text;
