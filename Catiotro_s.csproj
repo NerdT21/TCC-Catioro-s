@@ -87,6 +87,7 @@
     <Compile Include="classes\Classes\Feito\Funcionarios\FuncionariosBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Funcionarios\FuncionariosDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Funcionarios\FuncionariosDTO.cs" />
+    <Compile Include="classes\Classes\Feito\Servico\ServicoBusiness.cs" />
     <Compile Include="classes\Classes\Historico\HistoricoBusiness.cs" />
     <Compile Include="classes\Classes\Historico\HistoricoDataBase.cs" />
     <Compile Include="classes\Classes\Historico\HistoricoDTO.cs" />
@@ -106,9 +107,6 @@
     <Compile Include="classes\Classes\Login\LoginDataBase.cs" />
     <Compile Include="classes\Classes\Login\LoginDTO.cs" />
     <Compile Include="classes\Classes\Login\UserSession.cs" />
-    <Compile Include="classes\Classes\Feito\Permissao\PermissaoBusiness.cs" />
-    <Compile Include="classes\Classes\Feito\Permissao\PermissaoDataBase.cs" />
-    <Compile Include="classes\Classes\Feito\Permissao\PermissaoDTO.cs" />
     <Compile Include="classes\Classes\Feito\Preco\PrecoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Preco\PrecoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Preco\PrecoDTO.cs" />
@@ -121,7 +119,6 @@
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaDTO.cs" />
-    <Compile Include="classes\Classes\Feito\Servico\ServicoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Servico\ServicoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Servico\ServicoDTO.cs" />
     <Compile Include="classes\Classes\Feito\Usuario\UsuarioBusiness.cs" />
