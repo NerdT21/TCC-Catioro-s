@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace Catiotro_s.classes.Classes.Agenda
 {
-   public class PermissaoDTO
+  public  class HistoricoDTO
     {
         public int Id { get; set; }
-        public int LvlPermissao { get; set; }
+
+        public int IdAnimal { get; set; }
+
+        public int IdVacina { get; set; }
+
+        public int IdFuncionario { get; set; }
+
+        public string Dose { get; set; }
     }
 }

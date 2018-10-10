@@ -134,7 +134,7 @@ namespace Catiotro_s.classes.Classes.Agenda
             {
 
                 UsuarioDTO add = new UsuarioDTO();
-                add. = reader.Get("");
+                add.Nome = reader.GetString("nm_usuario");
 
 
                 lista.Add(add);

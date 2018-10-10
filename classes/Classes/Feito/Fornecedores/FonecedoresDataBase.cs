@@ -91,7 +91,7 @@ namespace Catiotro_s.classes.Classes.Cliente
         public List<FornecedoresDTO> Listar()
         {
 
-            string script = @"SELECT * FROM ";
+            string script = @"SELECT * FROM tb_fornecedor";
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, null);
@@ -119,30 +119,31 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         }
 
-        public List<FornecedoresDTO> Consultar(string nome)
+        public List<FornecedoresDTO> Consultar(string nome, string id)
         {
 
-            string script = @"SELECT * FROM  WHERE  LIKE";
+            string script = @"SELECT * FROM tb_fornecedor WHERE nm_nome LIKE @nm_nome AND id_fornecedor LIKE @id_fornecedor";
 
-            List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("", nome + "%"));
+        List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("nm_fornecedor", nome + "%"));
+            parms.Add(new MySqlParameter("id_fornecedor", id));
 
 
             Database db = new Database();
-            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
+        MySqlDataReader reader = db.ExecuteSelectScript(script, null);
 
-            List<FornecedoresDTO> lista = new List<FornecedoresDTO>();
+        List<FornecedoresDTO> lista = new List<FornecedoresDTO>();
             while (reader.Read())
             {
 
                 FornecedoresDTO add = new FornecedoresDTO();
-                add. = reader.Get("");
-
+                add.Nome = reader.GetString("nm_fornecedor");
+                add.Id = reader.GetInt32("id_fornecedor");
 
                 lista.Add(add);
             }
 
-            reader.Close();
+    reader.Close();
 
             return lista;
 
