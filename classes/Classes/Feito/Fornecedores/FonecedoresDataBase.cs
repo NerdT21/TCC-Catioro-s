@@ -91,7 +91,7 @@ namespace Catiotro_s.classes.Classes.Cliente
         public List<FornecedoresDTO> Listar()
         {
 
-            string script = @"SELECT * FROM ";
+            string script = @"SELECT * FROM tb_fornecedor";
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, null);
@@ -122,10 +122,10 @@ namespace Catiotro_s.classes.Classes.Cliente
         public List<FornecedoresDTO> Consultar(string nome)
         {
 
-            string script = @"SELECT * FROM  WHERE  LIKE";
+            string script = @"SELECT * FROM ttb_fornecedor WHERE nm_fornecedor LIKE @nm_fornecedor ";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("", nome + "%"));
+            parms.Add(new MySqlParameter("nm_fornecedor", nome + "%"));
 
 
             Database db = new Database();
@@ -136,8 +136,14 @@ namespace Catiotro_s.classes.Classes.Cliente
             {
 
                 FornecedoresDTO add = new FornecedoresDTO();
-                add. = reader.Get("");
-
+                add.Id = reader.GetInt32("id_fornecedor");
+                add.IdEstado = reader.GetInt32("id_estado");
+                add.Nome = reader.GetString("nm_fornecedor");
+                add.Email = reader.GetString("ds_email");
+                add.Cnpj = reader.GetString("ds_cnpj");
+                add.Telefone = reader.GetString("ds_telefone");
+                add.Cidade = reader.GetString("ds_cidade");
+                add.Bairro = reader.GetString("ds_bairro");
 
                 lista.Add(add);
             }
