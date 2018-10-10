@@ -13,100 +13,113 @@ namespace Catiotro_s.classes.Classes.Agenda
 
 
 
-        //public int Salvar(ProdutoDTO produto)
-        //{
+        public int Salvar(ProdutoDTO produto)
+        {
 
-        //    string script = @"INSERT INTO ()  VALUE ()";
+            string script = @"INSERT INTO tb_produto (nm_produto,
+	                                                  ds_marca,
+                                                      ds_produto)  VALUES (
+                                                      @nm_produto,
+	                                                  @ds_marca,
+                                                      @ds_produto)";
 
-        //    List<MySqlParameter> parms = new List<MySqlParameter>();
-        //    parms.Add(new MySqlParameter("", .));
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("nm_produto", produto.Produto));
+            parms.Add(new MySqlParameter("ds_marca", produto.Marca));
+            parms.Add(new MySqlParameter("ds_produto", produto.Tipo));
 
-        //    Database db = new Database();
-        //    int pk = db.ExecuteInsertScriptWithPk(script, parms);
-        //    return pk;
+            Database db = new Database();
+            int pk = db.ExecuteInsertScriptWithPk(script, parms);
+            return pk;
 
-        //}
+        }
 
-        //public void Alterar(ProdutoDTO produto)
-        //{
+        public void Alterar(ProdutoDTO produto)
+        {
 
-        //    string script = @"UPDATE SET WHERE ";
+            string script = @"UPDATE tb_produto SET  nm_produto = @nm_produto,
+	                                                 ds_marca = @ds_marca,
+                                                     ds_produto = @ds_produto WHERE  id_produto = @id_produto";
 
-        //    List<MySqlParameter> parms = new List<MySqlParameter>();
-        //    parms.Add(new MySqlParameter("", .));
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_produto", produto.Id));
+            parms.Add(new MySqlParameter("nm_produto", produto.Produto));
+            parms.Add(new MySqlParameter("ds_marca", produto.Marca));
+            parms.Add(new MySqlParameter("ds_produto", produto.Tipo));
+            Database db = new Database();
+            db.ExecuteInsertScriptWithPk(script, parms);
 
-        //    Database db = new Database();
-        //    db.ExecuteInsertScriptWithPk(script, parms);
+        }
 
-        //}
+        public void Remover(int Id)
+        {
 
-        //public void Remover(int Id)
-        //{
-
-        //    string script =
-        //        "DELETE  FROM  WHERE ";
-
-
-        //    List<MySqlParameter> parms = new List<MySqlParameter>();
-        //    parms.Add(new MySqlParameter("", Id));
-
-        //    Database db = new Database();
-        //    db.ExecuteInsertScript(script, parms);
-
-        //}
-
-        //public List<ProdutoDTO> Listar()
-        //{
-
-        //    string script = @"SELECT * FROM ";
-
-        //    Database db = new Database();
-        //    MySqlDataReader reader = db.ExecuteSelectScript(script, null);
-
-        //    List<ProdutoDTO> lista = new List<ProdutoDTO>();
-        //    while (reader.Read())
-        //    {
-
-        //        ProdutoDTO add = new ProdutoDTO();
-        //        add. = reader.Get("");
-
-        //        lista.Add(add);
-        //    }
-
-        //    reader.Close();
-
-        //    return lista;
-
-        //}
-
-        //public List<PermissaoDTO> Consultar(string nome)
-        //{
-
-        //    string script = @"SELECT * FROM  WHERE  LIKE";
-
-        //    List<MySqlParameter> parms = new List<MySqlParameter>();
-        //    parms.Add(new MySqlParameter("", nome + "%"));
+            string script =
+                "DELETE  FROM tb_produto WHERE id_produto = @id_produto";
 
 
-        //    Database db = new Database();
-        //    MySqlDataReader reader = db.ExecuteSelectScript(script, null);
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_produto", Id));
 
-        //    List<ProdutoDTO> lista = new List<ProdutoDTO>();
-        //    while (reader.Read())
-        //    {
+            Database db = new Database();
+            db.ExecuteInsertScript(script, parms);
 
-        //        ProdutoDTO add = new ProdutoDTO();
-        //        add. = reader.Get("");
+        }
+
+        public List<ProdutoDTO> Listar()
+        {
+
+            string script = @"SELECT * FROM tb_produto ";
+
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
+
+            List<ProdutoDTO> lista = new List<ProdutoDTO>();
+            while (reader.Read())
+            {
+
+                ProdutoDTO add = new ProdutoDTO();
+                add.Id = reader.GetInt32("id_produto");
+                add.Marca = reader.GetString("ds_marca");
+                add.Tipo = reader.GetString("ds_produto");
+
+                lista.Add(add);
+            }
+
+            reader.Close();
+
+            return lista;
+
+        }
+
+        public List<ProdutoDTO> Consultar(string nome)
+        {
+
+            string script = @"SELECT * FROM tp_produto WHERE nm_produto LIKE @nm_produto";
+
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("nm_produto", nome + "%"));
 
 
-        //        lista.Add(add);
-        //    }
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
 
-        //    reader.Close();
+            List<ProdutoDTO> lista = new List<ProdutoDTO>();
+            while (reader.Read())
+            {
 
-        //    return lista;
+                ProdutoDTO add = new ProdutoDTO();
+                add.Produto = reader.GetString("nm_produto");
 
-        //}
+
+                lista.Add(add);
+            }
+
+            reader.Close();
+
+            return lista;
+
+        }
 
 
 

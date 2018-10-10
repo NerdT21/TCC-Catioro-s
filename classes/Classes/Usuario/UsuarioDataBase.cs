@@ -24,7 +24,7 @@ namespace Catiotro_s.classes.Classes.Agenda
 	                                              pr_permissaoADM,
 	                                              pr_permissaoCadastro,
 	                                              pr_permissaoConsulta)  
-                                                  VALUE (@nm_funcionario,
+                                                  VALUES (@nm_funcionario,
 	                                              @nm_usuario,
 	                                              @ds_senha,
                                                   @ds_email,
@@ -60,6 +60,7 @@ namespace Catiotro_s.classes.Classes.Agenda
                                                   id_usuario = @id_usuario";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_usario", user.Id));
             parms.Add(new MySqlParameter("nm_funcionario", user.Nome));
             parms.Add(new MySqlParameter("nm_usuario", user.Login));
             parms.Add(new MySqlParameter("ds_senha", user.Senha));
@@ -123,7 +124,7 @@ namespace Catiotro_s.classes.Classes.Agenda
             string script = @"SELECT * FROM tb_login WHERE nm_usuario LIKE @nm_usuario";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("nm_usario", nome + "%"));
+            parms.Add(new MySqlParameter("nm_usuario", nome + "%"));
 
 
             Database db = new Database();
@@ -134,7 +135,8 @@ namespace Catiotro_s.classes.Classes.Agenda
             {
 
                 UsuarioDTO add = new UsuarioDTO();
-                add. = reader.Get("");
+                add.Id = reader.GetInt32("id_usuario");
+                add.Nome = reader.GetString("nm_usuario");
 
 
                 lista.Add(add);

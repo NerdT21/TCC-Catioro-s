@@ -13,100 +13,122 @@ namespace Catiotro_s.classes.Classes.Agenda
 
 
 
-        //public int Salvar(ServicoDTO servico)
-        //{
+        public int Salvar(ServicoDTO servico)
+        {
 
-        //    string script = @"INSERT INTO ()  VALUE ()";
+            string script = @"INSERT INTO tb_servico (id_animal,
+	                                                  dt_duracao,
+	                                                  ds_servico,
+	                                                  ds_valor)  VALUES (
+                                                      @id_animal,
+	                                                  @dt_duracao,
+	                                                  @ds_servico,
+	                                                  @ds_valor)";
 
-        //    List<MySqlParameter> parms = new List<MySqlParameter>();
-        //    parms.Add(new MySqlParameter("", .));
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_animal",servico.IdAnimal));
+            parms.Add(new MySqlParameter("dt_duracao", servico.Duracao));
+            parms.Add(new MySqlParameter("ds_servico", servico.Servico));
+            parms.Add(new MySqlParameter("ds_valor", servico.Valor));
 
-        //    Database db = new Database();
-        //    int pk = db.ExecuteInsertScriptWithPk(script, parms);
-        //    return pk;
+            Database db = new Database();
+            int pk = db.ExecuteInsertScriptWithPk(script, parms);
+            return pk;
 
-        //}
+        }
 
-        //public void Alterar(ServicoDTO servico)
-        //{
+        public void Alterar(ServicoDTO servico)
+        {
 
-        //    string script = @"UPDATE SET WHERE ";
+            string script = @"UPDATE tb_servico SET   id_animal = @id_animal,
+	                                                  dt_duracao = @dt_duracao,
+	                                                  ds_servico = @ds_servico,
+	                                                  ds_valor = @ds_valor WHERE id_servico = @id_servico";
 
-        //    List<MySqlParameter> parms = new List<MySqlParameter>();
-        //    parms.Add(new MySqlParameter("", .));
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_servico", servico.Id));
+            parms.Add(new MySqlParameter("id_animal", servico.IdAnimal));
+            parms.Add(new MySqlParameter("dt_duracao", servico.Duracao));
+            parms.Add(new MySqlParameter("ds_servico", servico.Servico));
+            parms.Add(new MySqlParameter("ds_valor", servico.Valor));
 
-        //    Database db = new Database();
-        //    db.ExecuteInsertScriptWithPk(script, parms);
+            Database db = new Database();
+            db.ExecuteInsertScriptWithPk(script, parms);
 
-        //}
+        }
 
-        //public void Remover(int Id)
-        //{
+        public void Remover(int Id)
+        {
 
-        //    string script =
-        //        "DELETE  FROM  WHERE ";
-
-
-        //    List<MySqlParameter> parms = new List<MySqlParameter>();
-        //    parms.Add(new MySqlParameter("", Id));
-
-        //    Database db = new Database();
-        //    db.ExecuteInsertScript(script, parms);
-
-        //}
-
-        //public List<> Listar()
-        //{
-
-        //    string script = @"SELECT * FROM ";
-
-        //    Database db = new Database();
-        //    MySqlDataReader reader = db.ExecuteSelectScript(script, null);
-
-        //    List<ServicoDTO> lista = new List<ServicoDTO>();
-        //    while (reader.Read())
-        //    {
-
-        //        ServicoDTO add = new ServicoDTO();
-        //        add. = reader.Get("");
-
-        //        lista.Add(add);
-        //    }
-
-        //    reader.Close();
-
-        //    return lista;
-
-        //}
-
-        //public List<ServicoDTO> Consultar(string nome)
-        //{
-
-        //    string script = @"SELECT * FROM  WHERE  LIKE";
-
-        //    List<MySqlParameter> parms = new List<MySqlParameter>();
-        //    parms.Add(new MySqlParameter("", nome + "%"));
+            string script =
+                "DELETE FROM tb_servico WHERE id_servico = @id_servico ";
 
 
-        //    Database db = new Database();
-        //    MySqlDataReader reader = db.ExecuteSelectScript(script, null);
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_servico", Id));
 
-        //    List<ServicoDTO> lista = new List<ServicoDTO>();
-        //    while (reader.Read())
-        //    {
+            Database db = new Database();
+            db.ExecuteInsertScript(script, parms);
 
-        //        ServicoDTO add = new ServicoDTO();
-        //        add. = reader.Get("");
+        }
+
+        public List<ServicoDTO> Listar()
+        {
+
+            string script = @"SELECT * FROM tb_servico";
+
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
+
+            List<ServicoDTO> lista = new List<ServicoDTO>();
+            while (reader.Read())
+            {
+
+                ServicoDTO add = new ServicoDTO();
+                add.Id = reader.GetInt32("id_servico");
+                add.IdAnimal = reader.GetInt32("id_animal");
+                add.Duracao = reader.GetString("dt_duracao");
+                add.Valor = reader.GetDecimal("ds_valor");
+                add.Servico = reader.GetString("ds_servico");
+
+                lista.Add(add);
+            }
+
+            reader.Close();
+
+            return lista;
+
+        }
+
+        public List<ServicoDTO> Consultar(string nome)
+        {
+
+            string script = @"SELECT * FROM tb_servico WHERE id_animal  LIKE @id_animal";
+
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_animal", nome + "%"));
 
 
-        //        lista.Add(add);
-        //    }
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
 
-        //    reader.Close();
+            List<ServicoDTO> lista = new List<ServicoDTO>();
+            while (reader.Read())
+            {
 
-        //    return lista;
+                ServicoDTO add = new ServicoDTO();
+                add.Id = reader.GetInt32("id_servico");
+                add.IdAnimal = reader.GetInt32("id_animal");
 
-        //}
+
+                lista.Add(add);
+            }
+
+            reader.Close();
+
+            return lista;
+
+        }
 
 
 
