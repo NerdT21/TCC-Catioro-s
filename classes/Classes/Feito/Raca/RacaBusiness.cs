@@ -12,36 +12,37 @@ namespace Catiotro_s.classes.Classes.Agenda
 
         public int Salvar(RacaDTO dto)
         {
-            RacaDatabase DB = new RacaDatabase();
-            int id = DB.Salvar(dto);
+            RacaDatabase db = new RacaDatabase();
+            int id = db.Salvar(dto);
             return id;
         }
 
         public void Altera(RacaDTO dto)
         {
-            RacaDatabase DB = new RacaDatabase();
-            DB.Alterar(dto);
+            RacaDatabase db = new RacaDatabase();
+            db.Alterar(dto);
         }
 
-        public void Remover(int Id)
+        public void Remover(int id)
         {
-            RacaDatabase DB = new RacaDatabase();
-            DB.Remover(Id);
+            RacaDatabase db = new RacaDatabase();
+            db.Remover(id);
         }
 
 
         public List<RacaDTO> Listar()
         {
-            RacaDatabase DB = new RacaDatabase();
-            List<RacaDTO> list = DB.Listar();
+            RacaDatabase db = new RacaDatabase();
+            List<RacaDTO> list = db.Listar();
             return list;
         }
 
-        public List<RacaDTO> Consultar(string consult)
-        {
-            RacaDatabase DB = new RacaDatabase();
-            return DB.Consultar(consult);
-        }
+        //public List<RacaDTO> Consultar(string consult)
+        //{
+        //    RacaDatabase db = new RacaDatabase();
+        //    return db.Consultar(consult);
+             
+        //}
 
 
 

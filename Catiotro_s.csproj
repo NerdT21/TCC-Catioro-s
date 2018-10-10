@@ -61,16 +61,17 @@
     <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\AgendaBusiness.cs" />
     <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\AgendaDataBase.cs" />
     <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\AgendaDTO.cs" />
-    <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\Animal\AnimalBusiness.cs" />
-    <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\Animal\AnimalDataBase.cs" />
-    <Compile Include="classes\Classes\Feito\AddConsultar\Agenda\Animal\AnimalDTO.cs" />
+    <Compile Include="classes\Classes\Feito\AddConsultar\Animal\AnimalBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\AddConsultar\Animal\AnimalDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\AddConsultar\Animal\AnimalDTO.cs" />
     <Compile Include="classes\Classes\Feito\AddConsultar\Cliente\ClienteBusiness.cs" />
     <Compile Include="classes\Classes\Feito\AddConsultar\Cliente\ClienteDataBase.cs" />
     <Compile Include="classes\Classes\Feito\AddConsultar\Cliente\ClienteDTO.cs" />
     <Compile Include="classes\Classes\Departamento\DepartamentoBusiness.cs" />
     <Compile Include="classes\Classes\Departamento\DepartamentoDataBase.cs" />
     <Compile Include="classes\Classes\Departamento\DepartamentoDTO.cs" />
-    <Content Include="classes\Classes\Esqueleto Database.txt" />
+    <Content Include="Notas\Esqueleto Business.txt" />
+    <Content Include="Notas\Esqueleto Database.txt" />
     <Compile Include="classes\Classes\Estados\EstadoBusiness.cs" />
     <Compile Include="classes\Classes\Estados\EstadoDataBase.cs" />
     <Compile Include="classes\Classes\Estados\EstadoDTO.cs" />
@@ -105,24 +106,24 @@
     <Compile Include="classes\Classes\Login\LoginDataBase.cs" />
     <Compile Include="classes\Classes\Login\LoginDTO.cs" />
     <Compile Include="classes\Classes\Login\UserSession.cs" />
-    <Compile Include="classes\Classes\Permissao\PermissaoBusiness.cs" />
-    <Compile Include="classes\Classes\Permissao\PermissaoDataBase.cs" />
-    <Compile Include="classes\Classes\Permissao\PermissaoDTO.cs" />
+    <Compile Include="classes\Classes\Feito\Permissao\PermissaoBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\Permissao\PermissaoDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\Permissao\PermissaoDTO.cs" />
     <Compile Include="classes\Classes\Feito\Preco\PrecoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Preco\PrecoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Preco\PrecoDTO.cs" />
-    <Compile Include="classes\Classes\Produto\ProdutoBusiness.cs" />
-    <Compile Include="classes\Classes\Produto\ProdutoDataBase.cs" />
-    <Compile Include="classes\Classes\Produto\ProdutoDTO.cs" />
+    <Compile Include="classes\Classes\Feito\Produto\ProdutoBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\Produto\ProdutoDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\Produto\ProdutoDTO.cs" />
     <Compile Include="classes\Classes\Feito\Raca\RacaBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Raca\RacaDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Raca\RacaDTO.cs" />
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaDTO.cs" />
-    <Compile Include="classes\Classes\Servico\ServicoBusiness.cs" />
-    <Compile Include="classes\Classes\Servico\ServicoDataBase.cs" />
-    <Compile Include="classes\Classes\Servico\ServicoDTO.cs" />
+    <Compile Include="classes\Classes\Feito\Servico\ServicoBusiness.cs" />
+    <Compile Include="classes\Classes\Feito\Servico\ServicoDataBase.cs" />
+    <Compile Include="classes\Classes\Feito\Servico\ServicoDTO.cs" />
     <Compile Include="classes\Classes\Feito\Usuario\UsuarioBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Usuario\UsuarioDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Usuario\UsuarioDTO.cs" />
@@ -292,7 +293,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="classes\Script.txt" />
+    <Content Include="Notas\Script.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Telas\Entregavel IV\" />

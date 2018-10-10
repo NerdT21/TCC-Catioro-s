@@ -21,5 +21,12 @@ namespace Catiotro_s.classes.Classes.Agenda
             List<ImpostoRendaDTO> impostorenda = DB.Listar();
             return impostorenda;
         }
+
+        public List<ImpostoRendaDTO> Consultar(string consult)
+        {
+            ImpostoRendaDatabase db = new ImpostoRendaDatabase();
+            return db.Consultar(consult);
+        }
+
     }
 }

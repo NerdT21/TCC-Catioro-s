@@ -30,5 +30,11 @@ namespace Catiotro_s.classes.Classes.Cliente
             List<FuncionarioDTO> funcionario = DB.Listar();
             return funcionario;
         }
+
+        public List<FuncionarioDTO> Consultar(string consult)
+        {
+            FuncionariosDataBase db = new FuncionariosDataBase();
+            return db.Consultar(consult);
+        }
     }
 }
