@@ -65,6 +65,7 @@ namespace Catiotro_s
 
         private void pbxClose_Click(object sender, EventArgs e)
         {
+            //Fechao o progrma por inteiro 
             Application.Exit();
         }
 
@@ -106,6 +107,7 @@ namespace Catiotro_s
 
         private void pnlTopo_MouseDown(object sender, MouseEventArgs e)
         {
+           //Codigo pra mexer a tela 
             if (e.Button == MouseButtons.Left)
             {
                 cX = e.X;
