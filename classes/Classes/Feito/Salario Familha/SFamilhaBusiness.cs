@@ -8,7 +8,7 @@ namespace Catiotro_s.classes.Classes.Agenda
 {
    public class SFamilhaBusiness
     {
-
+                                       
         public List<SFamilhaDTO> Listar()
         {
             SFamilhaDatabase DB = new SFamilhaDatabase();
