@@ -42,7 +42,7 @@
             this.lblRegistrar.AutoSize = true;
             this.lblRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblRegistrar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistrar.Location = new System.Drawing.Point(102, 117);
+            this.lblRegistrar.Location = new System.Drawing.Point(103, 117);
             this.lblRegistrar.Name = "lblRegistrar";
             this.lblRegistrar.Size = new System.Drawing.Size(49, 13);
             this.lblRegistrar.TabIndex = 23;
