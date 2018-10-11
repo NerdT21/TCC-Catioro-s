@@ -26,7 +26,7 @@ namespace Catiotro_s.classes.Classes.Agenda
 
                 SFamilhaDTO add = new SFamilhaDTO();
                 add.Id = reader.GetInt32("id_salFamilia");
-                add.SalFamilia = reader.GetDecimal("vl_salfamilia");
+                add.SalFamilia = reader.GetDecimal("vl_salFamilia");
                 add.QtdDepentes = reader.GetInt32("int_qtdDependente");
                 add.IdFolhaPag = reader.GetInt32("id_folhaPagto");
 
