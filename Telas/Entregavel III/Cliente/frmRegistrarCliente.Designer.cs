@@ -48,13 +48,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboUF = new System.Windows.Forms.ComboBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.label10 = new System.Windows.Forms.Label();
             this.txtCEP = new System.Windows.Forms.MaskedTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtRua = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNr = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -120,6 +120,7 @@
             this.btnCadastrar.TabIndex = 42;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // mkbTelefone
             // 
@@ -262,14 +263,14 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Nome :";
             // 
-            // comboBox1
+            // cboUF
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(301, 194);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(31, 21);
-            this.comboBox1.TabIndex = 45;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cboUF.FormattingEnabled = true;
+            this.cboUF.Location = new System.Drawing.Point(301, 194);
+            this.cboUF.Name = "cboUF";
+            this.cboUF.Size = new System.Drawing.Size(31, 21);
+            this.cboUF.TabIndex = 45;
+            this.cboUF.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -292,12 +293,12 @@
             this.txtCEP.TabIndex = 103;
             this.txtCEP.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtCEP_MaskInputRejected);
             // 
-            // textBox1
+            // txtRua
             // 
-            this.textBox1.Location = new System.Drawing.Point(284, 240);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(116, 20);
-            this.textBox1.TabIndex = 105;
+            this.txtRua.Location = new System.Drawing.Point(284, 240);
+            this.txtRua.Name = "txtRua";
+            this.txtRua.Size = new System.Drawing.Size(116, 20);
+            this.txtRua.TabIndex = 105;
             // 
             // label11
             // 
@@ -311,12 +312,12 @@
             this.label11.TabIndex = 104;
             this.label11.Text = "Rua :";
             // 
-            // textBox2
+            // txtNr
             // 
-            this.textBox2.Location = new System.Drawing.Point(456, 240);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(57, 20);
-            this.textBox2.TabIndex = 107;
+            this.txtNr.Location = new System.Drawing.Point(456, 240);
+            this.txtNr.Name = "txtNr";
+            this.txtNr.Size = new System.Drawing.Size(57, 20);
+            this.txtNr.TabIndex = 107;
             // 
             // label12
             // 
@@ -334,13 +335,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtNr);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtRua);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtCEP);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboUF);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.panel1);
@@ -391,13 +392,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboUF;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.MaskedTextBox txtCEP;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtRua;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNr;
         private System.Windows.Forms.Label label12;
     }
 }

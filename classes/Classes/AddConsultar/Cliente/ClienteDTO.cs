@@ -16,7 +16,7 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         public string Email { get; set; }
 
-        public int Cpf { get; set; }
+        public string Cpf { get; set; }
 
         public string Endereco { get; set; }
 
@@ -26,7 +26,7 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         public int Cep { get; set; }
 
-        public int Telefone { get; set; }
+        public string Telefone { get; set; }
 
         public string DataNascimento { get; set; }
 
@@ -37,6 +37,8 @@ namespace Catiotro_s.classes.Classes.Cliente
         public string Bairro { get; set; }
 
         public int NumeroCasa { get; set; }
+
+        public string Rua { get; set; }
 
 
     }
