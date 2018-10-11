@@ -65,12 +65,13 @@
             // 
             // btnProcurar
             // 
+            this.btnProcurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProcurar.Location = new System.Drawing.Point(485, 24);
             this.btnProcurar.Name = "btnProcurar";
             this.btnProcurar.Size = new System.Drawing.Size(75, 29);
             this.btnProcurar.TabIndex = 11;
-            this.btnProcurar.Text = "procurar";
+            this.btnProcurar.Text = "Procurar";
             this.btnProcurar.UseVisualStyleBackColor = true;
             // 
             // frmConsultarAnimal
