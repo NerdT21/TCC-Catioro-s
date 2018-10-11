@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Catiotro_s.classes.Classes.Cliente;
 
 namespace Catiotro_s.Resgistros
 {
@@ -69,7 +70,24 @@ namespace Catiotro_s.Resgistros
 
         private void button1_Click(object sender, EventArgs e)
         {
+           
 
+                FornecedoresDTO dto = new FornecedoresDTO();
+
+                dto.Nome = txtNome.Text;
+                dto.Email = txtEmail.Text;
+                dto.Cnpj = txtCnpj.Text;
+                dto.Cidade = txtCidade.Text;
+                dto.Bairro = txtBairro.Text;
+                dto.Telefone = txtTelefone.Text;
+                dto.IdEstado = Convert.ToInt32(mbkEstado.Text); 
+
+                FornecedoresBusiness business = new FornecedoresBusiness();
+                business.Salvar(dto);
+
+                MessageBox.Show("Fornecedor cadastrado com sucesso!", "Catioro´s", MessageBoxButtons.OK);
+            }
+            
         }
     }
-}
+
