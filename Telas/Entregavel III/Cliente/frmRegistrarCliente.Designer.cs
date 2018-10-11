@@ -111,7 +111,7 @@
             // 
             this.btnCadastrar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCadastrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.Black;
             this.btnCadastrar.Location = new System.Drawing.Point(401, 288);
