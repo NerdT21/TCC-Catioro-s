@@ -148,7 +148,7 @@
             this.btnCalcular.BackColor = System.Drawing.Color.Transparent;
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCalcular.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcular.Location = new System.Drawing.Point(252, 351);
+            this.btnCalcular.Location = new System.Drawing.Point(229, 351);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(114, 41);
             this.btnCalcular.TabIndex = 133;
