@@ -10,7 +10,7 @@
 //{
 //    public class ClienteDataBase
 //    {
-//        public int Salvar(ClienteDTO cliente)
+//   //     public int Salvar(ClienteDTO cliente)
 //        {
 
 //            string script = @"INSERT INTO tb_cliente
