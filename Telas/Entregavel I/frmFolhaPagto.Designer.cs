@@ -30,7 +30,6 @@
         {
             this.nudFaltas = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
             this.mkbCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtSalFam = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,7 +39,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtValTrans = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.txtINSS = new System.Windows.Forms.TextBox();
             this.txtIR = new System.Windows.Forms.TextBox();
             this.txtFGTS = new System.Windows.Forms.TextBox();
@@ -57,6 +55,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.mkbHE = new System.Windows.Forms.MaskedTextBox();
             this.mkbAtraso = new System.Windows.Forms.MaskedTextBox();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudFaltas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImgFuncionario)).BeginInit();
             this.SuspendLayout();
@@ -72,21 +74,10 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Location = new System.Drawing.Point(5, 145);
+            this.panel1.Location = new System.Drawing.Point(5, 147);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(573, 5);
             this.panel1.TabIndex = 141;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(191, 94);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(106, 20);
-            this.label14.TabIndex = 140;
-            this.label14.Text = "Departamento";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // mkbCPF
             // 
@@ -99,7 +90,7 @@
             // 
             // txtSalFam
             // 
-            this.txtSalFam.Location = new System.Drawing.Point(298, 296);
+            this.txtSalFam.Location = new System.Drawing.Point(297, 289);
             this.txtSalFam.Name = "txtSalFam";
             this.txtSalFam.ReadOnly = true;
             this.txtSalFam.Size = new System.Drawing.Size(107, 20);
@@ -128,7 +119,7 @@
             this.btnCalcular.BackColor = System.Drawing.Color.Transparent;
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCalcular.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcular.Location = new System.Drawing.Point(227, 333);
+            this.btnCalcular.Location = new System.Drawing.Point(21, 347);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(114, 41);
             this.btnCalcular.TabIndex = 133;
@@ -173,16 +164,6 @@
             this.txtValTrans.ReadOnly = true;
             this.txtValTrans.Size = new System.Drawing.Size(51, 20);
             this.txtValTrans.TabIndex = 129;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(185, 296);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(110, 20);
-            this.label10.TabIndex = 128;
-            this.label10.Text = "Salário líquido ";
             // 
             // txtINSS
             // 
@@ -332,16 +313,64 @@
             this.mkbAtraso.TabIndex = 147;
             this.mkbAtraso.ValidatingType = typeof(System.DateTime);
             // 
+            // btnLimpar
+            // 
+            this.btnLimpar.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLimpar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Location = new System.Drawing.Point(141, 347);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(114, 41);
+            this.btnLimpar.TabIndex = 148;
+            this.btnLimpar.Text = "Limpar ";
+            this.btnLimpar.UseVisualStyleBackColor = false;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Location = new System.Drawing.Point(453, 347);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(114, 41);
+            this.btnSalvar.TabIndex = 150;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(176, 289);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(112, 20);
+            this.label10.TabIndex = 152;
+            this.label10.Text = "Salário Líquido:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(194, 94);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(106, 20);
+            this.label13.TabIndex = 153;
+            this.label13.Text = "Departamento";
+            // 
             // frmFolhaPagto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.mkbAtraso);
             this.Controls.Add(this.mkbHE);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.nudFaltas);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.mkbCPF);
             this.Controls.Add(this.pbxImgFuncionario);
             this.Controls.Add(this.txtSalFam);
@@ -352,7 +381,6 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtValTrans);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.txtINSS);
             this.Controls.Add(this.txtIR);
             this.Controls.Add(this.txtFGTS);
@@ -378,7 +406,6 @@
 
         private System.Windows.Forms.NumericUpDown nudFaltas;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.MaskedTextBox mkbCPF;
         private System.Windows.Forms.PictureBox pbxImgFuncionario;
         private System.Windows.Forms.TextBox txtSalFam;
@@ -389,7 +416,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtValTrans;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtINSS;
         private System.Windows.Forms.TextBox txtIR;
         private System.Windows.Forms.TextBox txtFGTS;
@@ -405,5 +431,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox mkbHE;
         private System.Windows.Forms.MaskedTextBox mkbAtraso;
+        private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label13;
     }
 }

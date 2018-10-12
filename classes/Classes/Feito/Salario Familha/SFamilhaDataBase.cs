@@ -19,7 +19,7 @@ namespace Catiotro_s.classes.Classes.Agenda
 
             Database db = new Database();
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("ds_salFamilia", salario + "%"));
+            parms.Add(new MySqlParameter("ds_salFamilia", salario));
 
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
@@ -28,8 +28,8 @@ namespace Catiotro_s.classes.Classes.Agenda
             {
                 add = new SFamilhaDTO();
                 add.Id = reader.GetInt32("id_salFamilia");
-                add.SalFamilia = reader.GetDecimal("vl_salFamilia");
-                add.Valor = reader.GetInt32("int_qtdDependente");
+                add.SalFamilia = reader.GetDecimal("ds_salFamilia");
+                add.Valor = reader.GetInt32("vl_salFamilia");
             }
 
             reader.Close();
