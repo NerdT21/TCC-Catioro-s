@@ -10,7 +10,6 @@ namespace Catiotro_s.classes.Classes.Agenda
     {
         public int Id { get; set; }
         public decimal SalFamilia { get; set; }
-        public int QtdDepentes { get; set; }
-        public int IdFolhaPag { get; set; }
+        public decimal Valor { get; set; }
     }
 }

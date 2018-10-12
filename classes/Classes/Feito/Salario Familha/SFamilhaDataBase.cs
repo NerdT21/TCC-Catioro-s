@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Catiotro_s.classes.Classes.Agenda
 {
-   public class SFamilhaDatabase
+    public class SFamilhaDatabase
     {
 
 
-        public List<SFamilhaDTO> Listar()
+        public SFamilhaDTO Consultar(decimal salario)
         {
 
             string script = @"SELECT * FROM tb_salarioFamilia ";
@@ -20,52 +20,19 @@ namespace Catiotro_s.classes.Classes.Agenda
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, null);
 
-            List<SFamilhaDTO> lista = new List<SFamilhaDTO>();
-            while (reader.Read())
+            SFamilhaDTO add = null;
+            if (reader.Read())
             {
 
-                SFamilhaDTO add = new SFamilhaDTO();
+                add = new SFamilhaDTO();
                 add.Id = reader.GetInt32("id_salFamilia");
                 add.SalFamilia = reader.GetDecimal("vl_salFamilia");
-                add.QtdDepentes = reader.GetInt32("int_qtdDependente");
-                add.IdFolhaPag = reader.GetInt32("id_folhaPagto");
-
-                lista.Add(add);
+                add.Valor = reader.GetInt32("int_qtdDependente");
             }
 
             reader.Close();
 
-            return lista;
-
-        }
-
-        public List<SFamilhaDTO> Consultar(string nome)
-        {
-
-            string script = @"SELECT * FROM tb_salarioFamilia WHERE id_salFamilia LIKE @id_salFamilia";
-
-            List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_salFamilia", nome + "%"));
-
-
-            Database db = new Database();
-            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
-
-            List<SFamilhaDTO> lista = new List<SFamilhaDTO>();
-            while (reader.Read())
-            {
-                SFamilhaDTO add = new SFamilhaDTO();
-                add.Id = reader.GetInt32("id_salFamilia");
-                add.SalFamilia = reader.GetDecimal("vl_salfamilia");
-                add.QtdDepentes = reader.GetInt32("int_qtdDependente");
-                add.IdFolhaPag = reader.GetInt32("id_folhaPagto");
-
-                lista.Add(add);
-            }
-
-            reader.Close();
-
-            return lista;
+            return add;
 
         }
 

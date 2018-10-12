@@ -8,17 +8,10 @@ namespace Catiotro_s.classes.Classes.Agenda
 {
    public class INSSBusiness
    { 
-      public List<INSSDTO> Listar()
-      {
-          INSSDatabase DB = new INSSDatabase();
-          List<INSSDTO> impostorenda = DB.Listar();
-          return impostorenda;
-      }
-
-        public List<INSSDTO> Consultar(string consult)
+        public INSSDTO Consultar(decimal salario)
         {
             INSSDatabase db = new INSSDatabase();
-            return db.Consultar(consult);
+            return db.Consultar(salario);
         }
     }
 }

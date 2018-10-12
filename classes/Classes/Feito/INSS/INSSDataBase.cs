@@ -11,62 +11,28 @@ namespace Catiotro_s.classes.Classes.Agenda
     public class INSSDatabase
     {
 
-        public List<INSSDTO> Listar()
+        public INSSDTO Consultar(decimal salario)
         {
 
-            string script = @"SELECT * FROM tb_inss ";
-
-            Database db = new Database();
-            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
-
-            List<INSSDTO> lista = new List<INSSDTO>();
-            while (reader.Read())
-            {
-
-                INSSDTO add = new INSSDTO();
-                add.Id = reader.GetInt32("id_inss");
-                add.IdFolhaPag = reader.GetInt32("id_folha_pag");
-                add.Aliquota = reader.GetDecimal("vl_aliquota");
-
-                lista.Add(add);
-
-            }
-
-            reader.Close();
-
-            return lista;
-
-        }
-
-        public List<INSSDTO> Consultar(string nome)
-        {
-
-            string script = @"SELECT * FROM tb_inss WHERE id_inss LIKE @id_inss";
+            string script = @"SELECT * FROM tb_inss WHERE ds_salarioDeContribuicao LIKE @ds_salarioDeContribuicao";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_inss", nome + "%"));
-
-
+            parms.Add(new MySqlParameter("ds_salarioDeContribuicao", salario + "%"));
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, null);
 
-            List<INSSDTO> lista = new List<INSSDTO>();
-            while (reader.Read())
+            INSSDTO add = null;
+            if (reader.Read())
             {
-                INSSDTO add = new INSSDTO();
+                add = new INSSDTO();
                 add.Id = reader.GetInt32("id_inss");
-                add.IdFolhaPag = reader.GetInt32("id_folha_pag");
+                add.SalarioContribuicao = reader.GetDecimal("ds_salarioDeContribuicao");
                 add.Aliquota = reader.GetDecimal("vl_aliquota");
-
-                lista.Add(add);
-
             }
 
             reader.Close();
-
-            return lista;
-
+            return add;
         }
 
     }
