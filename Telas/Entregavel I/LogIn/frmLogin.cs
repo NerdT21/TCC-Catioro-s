@@ -24,29 +24,62 @@ namespace Catiotro_s
 
         }
 
-        private void lblRegistrar_Click(object sender, EventArgs e)
+        //private void lblRegistrar_Click(object sender, EventArgs e)
+        //{
+        //    LoginBusiness business = new LoginBusiness();
+        //    string user = txtUser.Text;
+        //    string pass = txtPass.Text;
+
+        //    LoginDTO usuario = business.Logar(user, pass);
+
+
+        //    if (usuario != null)
+        //    {
+        //        frmCadastrarLogin tela = new frmCadastrarLogin();
+        //        tela.Show();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("É preciso ser um administrador do sistema para acessar o cadastro de Logins.");
+        //    }
+            
+            
+        //}
+
+        //private void btnEntrar_Click(object sender, EventArgs e)
+        //{
+        //    LoginBusiness business = new LoginBusiness();
+        //    string user = txtUser.Text;
+        //    string pass = txtPass.Text;
+
+        //    LoginDTO usuario = business.Logar(user, pass);
+
+
+        //    if (usuario != null)
+        //    {
+        //        UserSession.UsuarioLogado = usuario;
+
+        //        Menu tela = new Menu();
+        //        tela.Show();
+        //        this.Close();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Nome de usuário ou senha incorretos.");
+        //    }
+        //}
+
+        private void Login_Load(object sender, EventArgs e)
         {
-            LoginBusiness business = new LoginBusiness();
-            string user = txtUser.Text;
-            string pass = txtPass.Text;
 
-            LoginDTO usuario = business.Logar(user, pass);
-
-
-            if (usuario != null)
-            {
-                frmCadastrarLogin tela = new frmCadastrarLogin();
-                tela.Show();
-            }
-            else
-            {
-                MessageBox.Show("É preciso ser um administrador do sistema para acessar o cadastro de Logins.");
-            }
-            
-            
         }
 
-        private void btnEntrar_Click(object sender, EventArgs e)
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEntrar_Click_1(object sender, EventArgs e)
         {
             LoginBusiness business = new LoginBusiness();
             string user = txtUser.Text;
@@ -69,9 +102,36 @@ namespace Catiotro_s
             }
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void lblRegistrar_Click_1(object sender, EventArgs e)
         {
+            LoginBusiness business = new LoginBusiness();
+            string user = txtUser.Text;
+            string pass = txtPass.Text;
 
+            LoginDTO usuario = business.Logar(user, pass);
+
+
+            if (usuario != null)
+            {
+                frmCadastrarLogin tela = new frmCadastrarLogin();
+                tela.Show();
+            }
+            else
+            {
+                MessageBox.Show("É preciso ser um administrador do sistema para acessar o cadastro de Logins.");
+            }
+
+        }
+
+        private void pbxClose_Click(object sender, EventArgs e)
+        {
+            //Fechao o progrma por inteiro 
+            Application.Exit();
+        }
+
+        private void pbxMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
