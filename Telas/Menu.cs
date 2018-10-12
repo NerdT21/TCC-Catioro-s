@@ -105,6 +105,21 @@ namespace Catiotro_s
 
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void pnlTopo_MouseDown(object sender, MouseEventArgs e)
         {
            //Codigo pra mexer a tela 
