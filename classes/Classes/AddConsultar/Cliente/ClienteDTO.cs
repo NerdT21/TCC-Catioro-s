@@ -18,13 +18,9 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         public string Cpf { get; set; }
 
-        public string Endereco { get; set; }
-
-        public string Local { get; set; }
-
         public string Cidade { get; set; }
 
-        public int Cep { get; set; }
+        public string Cep { get; set; }
 
         public string Telefone { get; set; }
 

@@ -56,6 +56,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtNr = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.mskCadastro = new System.Windows.Forms.MaskedTextBox();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -331,10 +333,33 @@
             this.label12.TabIndex = 106;
             this.label12.Text = "N° :";
             // 
+            // mskCadastro
+            // 
+            this.mskCadastro.Location = new System.Drawing.Point(186, 293);
+            this.mskCadastro.Mask = "00/00/0000";
+            this.mskCadastro.Name = "mskCadastro";
+            this.mskCadastro.Size = new System.Drawing.Size(67, 20);
+            this.mskCadastro.TabIndex = 108;
+            this.mskCadastro.ValidatingType = typeof(System.DateTime);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(54, 290);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(133, 21);
+            this.label13.TabIndex = 109;
+            this.label13.Text = "Data de cadastro :";
+            // 
             // frmRegistrarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.mskCadastro);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.txtNr);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtRua);
@@ -400,5 +425,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtNr;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.MaskedTextBox mskCadastro;
+        private System.Windows.Forms.Label label13;
     }
 }

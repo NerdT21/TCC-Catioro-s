@@ -16,39 +16,47 @@ namespace Catiotro_s.classes.Classes.Cliente
             string script = @"INSERT INTO tb_cliente
                                          ( id_estado,
                                            nm_nome,
-                                           int_cpf,
-                                           ds_endereco,
-                                           nm_local,
+                                           ds_cpf,
                                            ds_cidade,
-                                           int_cep,
+                                           ds_cep,
                                            ds_email,
-                                           int_tel,
+                                           ds_telefone,
                                            dt_nasc,
-                                           dt_data_cadastro)                                           
+                                           dt_dataCadastro,
+                                           ds_rg,
+                                           ds_bairro,
+                                           ds_rua,
+                                           nr_casa)                                           
                                    VALUES( @id_estado,
                                            @nm_nome,
-                                           @int_cpf,
+                                           @ds_cpf,
                                            @ds_endereco,
-                                           @nm_local,
                                            @ds_cidade,
-                                           @int_cep,
+                                           @ds_cep,
                                            @ds_email,
-                                           @int_tel,
+                                           @ds_telefone,
                                            @dt_nasc,
-                                           @dt_data_cadastro)";
+                                           @dt_dataCadastro,
+                                           @ds_rg,
+                                           @ds_bairro,
+                                           @ds_rua,
+                                           @nr_casa)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_cliente", cliente.id));
             parms.Add(new MySqlParameter("id_estado", cliente.IdEstado));
             parms.Add(new MySqlParameter("nm_nome", cliente.Nome));
-            parms.Add(new MySqlParameter("int_cpf", cliente.CPF));
-            parms.Add(new MySqlParameter("ds_endereco", cliente.Endereco));
-            parms.Add(new MySqlParameter("nm_local", cliente.Local));
+            parms.Add(new MySqlParameter("ds_cep", cliente.Cpf));
             parms.Add(new MySqlParameter("ds_cidade", cliente.Cidade));
-            parms.Add(new MySqlParameter("int_cep", cliente.CEP));
+            parms.Add(new MySqlParameter("ds_cep", cliente.Cep));
             parms.Add(new MySqlParameter("ds_email", cliente.Email));
-            parms.Add(new MySqlParameter("int_tel", cliente.Telefone));
-            parms.Add(new MySqlParameter("dt_nasc", cliente.DataNasc));
-            parms.Add(new MySqlParameter("dt_data_cadastro", cliente.DataCadastro));
+            parms.Add(new MySqlParameter("ds_telefone", cliente.Telefone));
+            parms.Add(new MySqlParameter("dt_nasc", cliente.DataNascimento));
+            parms.Add(new MySqlParameter("dt_dataCadastro", cliente.DataCadastro));
+            parms.Add(new MySqlParameter("ds_rg", cliente.Rg));
+            parms.Add(new MySqlParameter("ds_bairro", cliente.Bairro));
+            parms.Add(new MySqlParameter("ds_rua", cliente.Rua));
+            parms.Add(new MySqlParameter("nr_casa", cliente.NumeroCasa));
 
             Database db = new Database();
             int pk = db.ExecuteInsertScriptWithPk(script, parms);
@@ -62,29 +70,34 @@ namespace Catiotro_s.classes.Classes.Cliente
             string script = @"UPDATE tb_cliente SET id_estado = @id_estado,
                                                     nm_nome = @nm_nome,
                                                     int_cpf = @int_cpf,
-                                                    ds_endereco = @ds_endereco,
                                                     nm_local = @nm_local,
-                                                    ds_cidad  = @ds_cidade,
-                                                    int_cep = @int_cep,
+                                                    ds_cidade  = @ds_cidade,
+                                                    ds_cep = @ds_cep,
                                                     ds_email = @ds_email,
-                                                    int_tel = @int_tel,
+                                                    ds_telefone = @ds_telefone,
                                                     dt_nasc = @dt_nasc,
-                                                    dt_data_cadastro = @dt_data_cadastro,
-                                              WHERE id_pessoa = @id_pessoa";
+                                                    dt_dataCadastro = @dt_dataCadastro,
+                                                    ds_rg = @ds_rg,
+                                                    ds_bairro = @ds_bairro,
+                                                    ds_rua = @ds_rua,
+                                                    nr_casa
+                                              WHERE id_cliente = @id_cliente";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_estado", cliente.Pessoa));
+            parms.Add(new MySqlParameter("id_cliente", cliente.id));
             parms.Add(new MySqlParameter("id_estado", cliente.IdEstado));
             parms.Add(new MySqlParameter("nm_nome", cliente.Nome));
-            parms.Add(new MySqlParameter("int_cpf", cliente.CPF));
-            parms.Add(new MySqlParameter("ds_endereco", cliente.Endereco));
-            parms.Add(new MySqlParameter("nm_local", cliente.Local));
+            parms.Add(new MySqlParameter("ds_cep", cliente.Cpf));
             parms.Add(new MySqlParameter("ds_cidade", cliente.Cidade));
-            parms.Add(new MySqlParameter("int_cep", cliente.CEP));
+            parms.Add(new MySqlParameter("ds_cep", cliente.Cep));
             parms.Add(new MySqlParameter("ds_email", cliente.Email));
-            parms.Add(new MySqlParameter("int_tel", cliente.Telefone));
-            parms.Add(new MySqlParameter("dt_nasc", cliente.DataNasc));
-            parms.Add(new MySqlParameter("dt_data_cadastro", cliente.DataCadastro));
+            parms.Add(new MySqlParameter("ds_telefone", cliente.Telefone));
+            parms.Add(new MySqlParameter("dt_nasc", cliente.DataNascimento));
+            parms.Add(new MySqlParameter("dt_dataCadastro", cliente.DataCadastro));
+            parms.Add(new MySqlParameter("ds_rg", cliente.Rg));
+            parms.Add(new MySqlParameter("ds_bairro", cliente.Bairro));
+            parms.Add(new MySqlParameter("ds_rua", cliente.Rua));
+            parms.Add(new MySqlParameter("nr_casa", cliente.NumeroCasa));
 
             Database db = new Database();
             db.ExecuteInsertScript(script, parms);

@@ -58,8 +58,15 @@ namespace Catiotro_s.Resgistros
             dta.Cidade = txtCidade.Text;
             dta.Bairro = txtBairro.Text;
             dta.Rua = txtRua.Text;
+            dta.DataCadastro = mskCadastro.Text;
+            dta.Cep = txtCEP.Text;
             dta.NumeroCasa = Convert.ToInt32(txtNr.Text);
             dta.IdEstado = Convert.ToInt32(dto.Estado);
+
+            ClienteBusiness business = new ClienteBusiness();
+            business.Salvar(dta);
+
+            MessageBox.Show("Cliente Cadastrado com sucesso", "Catioro´s", MessageBoxButtons.OK);
         }
     }
 }
