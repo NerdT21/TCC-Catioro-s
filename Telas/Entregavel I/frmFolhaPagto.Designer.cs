@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFolhaPagto));
             this.nudFaltas = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
             this.mkbCPF = new System.Windows.Forms.MaskedTextBox();
@@ -102,7 +103,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(295, 242);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 20);
+            this.label3.Size = new System.Drawing.Size(111, 20);
             this.label3.TabIndex = 136;
             this.label3.Text = "Salário Família ";
             // 
@@ -211,7 +212,7 @@
             this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(124, 243);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(115, 20);
+            this.label9.Size = new System.Drawing.Size(117, 20);
             this.label9.TabIndex = 120;
             this.label9.Text = "Vale Transporte ";
             // 
@@ -241,7 +242,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(354, 168);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 20);
+            this.label6.Size = new System.Drawing.Size(51, 20);
             this.label6.TabIndex = 117;
             this.label6.Text = "Faltas ";
             // 
@@ -278,9 +279,10 @@
             // pbxImgFuncionario
             // 
             this.pbxImgFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbxImgFuncionario.Image = ((System.Drawing.Image)(resources.GetObject("pbxImgFuncionario.Image")));
             this.pbxImgFuncionario.Location = new System.Drawing.Point(59, 10);
             this.pbxImgFuncionario.Name = "pbxImgFuncionario";
-            this.pbxImgFuncionario.Size = new System.Drawing.Size(126, 126);
+            this.pbxImgFuncionario.Size = new System.Drawing.Size(126, 119);
             this.pbxImgFuncionario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImgFuncionario.TabIndex = 138;
             this.pbxImgFuncionario.TabStop = false;
