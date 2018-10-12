@@ -88,7 +88,7 @@ namespace FamosoAça.Screens.Entregavel_I
                 INSSBusiness buss = new INSSBusiness();
                 INSSDTO dto = buss.Consultar(sal);
 
-                decimal inss = baseInss * (dto.Aliquota / 100);
+                decimal inss = baseInss * ((decimal)dto.Aliquota / 100);
                 return inss;
             }
             else if (baseInss >= 1659.39m && baseInss <= 2765.66m)
@@ -98,7 +98,7 @@ namespace FamosoAça.Screens.Entregavel_I
                 INSSBusiness buss = new INSSBusiness();
                 INSSDTO dto = buss.Consultar(sal);
 
-                decimal inss = baseInss * (dto.Aliquota / 100);
+                var inss = ((decimal)dto.Aliquota / 100) * baseInss;
                 return inss;
             }
             else
@@ -108,7 +108,8 @@ namespace FamosoAça.Screens.Entregavel_I
                 INSSBusiness buss = new INSSBusiness();
                 INSSDTO dto = buss.Consultar(sal);
 
-                decimal inss = baseInss * (dto.Aliquota / 100);
+                // na porcentagem, colocar o (decimal) pra indicar ponto flutuante. . 
+                decimal inss = baseInss * ((decimal)dto.Aliquota / 100);
                 return inss;
             }
         }
@@ -126,34 +127,108 @@ namespace FamosoAça.Screens.Entregavel_I
         {
             decimal baseIr = CalcularBaseIR();
 
-            ImpostoRendaBusiness buss = new ImpostoRendaBusiness();
-            ImpostoRendaDTO dto = buss.Consultar(baseIr);
+            if (baseIr <= 1903.98m)
+            {
+                decimal Base = 1903.98m;
 
-            decimal calculo = baseIr * (dto.Aliquota / 100);
-            decimal ir = calculo - dto.Deducao;
-            return ir;
+                ImpostoRendaBusiness buss = new ImpostoRendaBusiness();
+                ImpostoRendaDTO dto = buss.Consultar(Base);
+
+                decimal calculo = baseIr * ((decimal)dto.Aliquota / 100);
+                decimal ir = calculo - dto.Deducao;
+                return ir;
+            }
+            else if (baseIr >= 1903.99m && baseIr <= 2826.65m)
+            {
+                decimal Base = 1903.99m;
+
+                ImpostoRendaBusiness buss = new ImpostoRendaBusiness();
+                ImpostoRendaDTO dto = buss.Consultar(Base);
+
+                decimal calculo = baseIr * ((decimal)dto.Aliquota / 100);
+                decimal ir = calculo - dto.Deducao;
+                return ir;
+            }
+            else if (baseIr >= 2826.66m && baseIr <= 3751.05m)
+            {
+                decimal Base = 2826.66m;
+
+                ImpostoRendaBusiness buss = new ImpostoRendaBusiness();
+                ImpostoRendaDTO dto = buss.Consultar(Base);
+
+                decimal calculo = baseIr * ((decimal)dto.Aliquota / 100);
+                decimal ir = calculo - dto.Deducao;
+                return ir;
+            }
+            else if (baseIr >= 3751.06m && baseIr <= 4664.68m)
+            {
+                decimal Base = 3751.06m;
+
+                ImpostoRendaBusiness buss = new ImpostoRendaBusiness();
+                ImpostoRendaDTO dto = buss.Consultar(Base);
+
+                decimal calculo = baseIr * ((decimal)dto.Aliquota / 100);
+                decimal ir = calculo - dto.Deducao;
+                return ir;
+            }
+            else
+            {
+                decimal Base = 4664.68m;
+
+                ImpostoRendaBusiness buss = new ImpostoRendaBusiness();
+                ImpostoRendaDTO dto = buss.Consultar(Base);
+
+                decimal calculo = baseIr * ((decimal)dto.Aliquota / 100);
+                decimal ir = calculo - dto.Deducao;
+                return ir;
+            }
         }
 
         public decimal CalcularFGTS()
         {
             decimal salario = this.Salario;
-            return salario * (8 / 100);
+            return salario * ((decimal)8 / 100);
         }
 
         public decimal CalcularValeTransporte()
         {
             decimal salario = this.Salario;
-            return salario * (6 / 100);
+            return salario * ((decimal)6 / 100);
         }
 
         public decimal VerificarSalarioFamilia()
         {
             decimal salario = this.Salario;
 
-            SFamilhaBusiness buss = new SFamilhaBusiness();
-            SFamilhaDTO dto = buss.Consultar(salario);
+            if (salario <= 859.88m)
+            {
+                decimal sal = 859.88m;
 
-            return dto.Valor;
+                SFamilhaBusiness buss = new SFamilhaBusiness();
+                SFamilhaDTO dto = buss.Consultar(sal);
+
+                return dto.Valor;
+            }
+            else if (salario >= 859.89m && salario <= 1292.43m)
+            {
+                decimal sal = 1292.43m;
+
+                SFamilhaBusiness buss = new SFamilhaBusiness();
+                SFamilhaDTO dto = buss.Consultar(sal);
+
+                return dto.Valor;
+            }
+            else
+            {
+                decimal sal = 1292.44m;
+
+                SFamilhaBusiness buss = new SFamilhaBusiness();
+                SFamilhaDTO dto = buss.Consultar(sal);
+
+                return dto.Valor;
+
+            }
+
 
         }
 

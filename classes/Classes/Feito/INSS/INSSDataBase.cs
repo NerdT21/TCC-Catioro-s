@@ -17,12 +17,13 @@ namespace Catiotro_s.classes.Classes.Agenda
             string script = @"SELECT * FROM tb_inss WHERE ds_salarioDeContribuicao = @ds_salarioDeContribuicao";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("ds_salarioDeContribuicao", salario + "%"));
+            parms.Add(new MySqlParameter("ds_salarioDeContribuicao", salario));
 
             Database db = new Database();
-            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
+            MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
             INSSDTO add = null;
+
             if (reader.Read())
             {
                 add = new INSSDTO();
@@ -34,6 +35,5 @@ namespace Catiotro_s.classes.Classes.Agenda
             reader.Close();
             return add;
         }
-
     }
 }

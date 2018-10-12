@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.PlugIn;
 using FamosoAça.Screens.Entregavel_I;
+using System.Globalization;
 
 namespace Catiotro_s.Telas.Entregavel_I
 {
@@ -64,20 +65,20 @@ namespace Catiotro_s.Telas.Entregavel_I
             pagto.HoraExtra = Convert.ToDateTime(mkbAtraso.Text);
             pagto.Atrasos = Convert.ToDateTime(mkbHE.Text);
 
-            txtINSS.Text = pagto.CalcularINSS().ToString();
-            txtIR.Text = pagto.CalcularIR().ToString();
-            TxtSalLiq.Text = pagto.CalcularSalarioLiquido().ToString();
-            txtFGTS.Text = pagto.CalcularFGTS().ToString();
-            txtSalFam.Text = pagto.VerificarSalarioFamilia().ToString();
-            txtValTrans.Text = pagto.CalcularValeTransporte().ToString();
+            txtINSS.Text = pagto.CalcularINSS().ToString("F2");
+            txtIR.Text = pagto.CalcularIR().ToString("F2");
+            txtFGTS.Text = pagto.CalcularFGTS().ToString("F2");
+            txtSalFam.Text = pagto.VerificarSalarioFamilia().ToString("F2");
+            txtValTrans.Text = pagto.CalcularValeTransporte().ToString("F2");
+            TxtSalLiq.Text = pagto.CalcularSalarioLiquido().ToString("F2");
         }
 
         private void cboFuncionario_SelectedIndexChanged(object sender, EventArgs e)
         {
             GerarCredenciais();
-        }
-
-        private void label14_Click(object sender, EventArgs e)
+        }   
+    
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
 
         }

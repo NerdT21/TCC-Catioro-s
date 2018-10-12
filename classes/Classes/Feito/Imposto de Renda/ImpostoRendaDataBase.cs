@@ -16,7 +16,7 @@ namespace Catiotro_s.classes.Classes.Agenda
             string script = @"SELECT * FROM tb_impostoDeRenda WHERE ds_baseDeCalculo = @ds_baseDeCalculo";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("tb_impostoDeRenda", baseCalculo + "%"));
+            parms.Add(new MySqlParameter("ds_baseDeCalculo", baseCalculo));
 
 
             Database db = new Database();
@@ -26,8 +26,8 @@ namespace Catiotro_s.classes.Classes.Agenda
             if (reader.Read())
             {
                 add = new ImpostoRendaDTO();
-                add.Id = reader.GetInt32("id_impost_rend");
-                add.Base = reader.GetInt32("tb_impostoDeRenda");
+                add.Id = reader.GetInt32("id_impostoRenda");
+                add.Base = reader.GetInt32("ds_baseDeCalculo");
                 add.Aliquota = reader.GetDecimal("vl_aliquota");
                 add.Deducao = reader.GetDecimal("vl_deducao");
             }
