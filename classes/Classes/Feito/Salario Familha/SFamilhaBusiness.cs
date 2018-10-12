@@ -6,21 +6,13 @@ using System.Threading.Tasks;
 
 namespace Catiotro_s.classes.Classes.Agenda
 {
-   public class SFamilhaBusiness
+    public class SFamilhaBusiness
     {
-                                       
-        public List<SFamilhaDTO> Listar()
+        public SFamilhaDTO Consultar(decimal salario)
         {
             SFamilhaDatabase DB = new SFamilhaDatabase();
-            List<SFamilhaDTO> lista = DB.Listar();
-            return lista;
+            return DB.Consultar(salario);
         }
-
-        public List<SFamilhaDTO> Consultar(string consult)
-        {
-            SFamilhaDatabase DB = new SFamilhaDatabase();
-            return DB.Consultar(consult);
-        }
-
+    }
 }
-}
+

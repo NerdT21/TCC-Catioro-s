@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.PlugIn;
+using FamosoAça.Screens.Entregavel_I;
 
 namespace Catiotro_s.Telas.Entregavel_I
 {
@@ -26,19 +27,18 @@ namespace Catiotro_s.Telas.Entregavel_I
             string nome = cboFuncionario.Text;
             FuncionarioDTO dto = cboFuncionario.SelectedItem as FuncionarioDTO;
 
-            if (dto == null)
-            {
+            mkbCPF.Text = dto.Cpf;
+            txtSalario.Text = dto.Salario.ToString();
+            txtDepto.Text = dto.IdDepto.ToString();
 
+            if (dto.Imagem == string.Empty)
+            {
+                pbxImgFuncionario.Image = null;
             }
             else
             {
-                mkbCPF.Text = dto.Cpf;
-                txtSalario.Text = dto.Salario.ToString();
-                txtDepto.Text = dto.IdDepto.ToString();
-                //pbxImgFuncionario.Image = ImagemPlugIn.ConverterParaImagem(dto.Imagem);
+                pbxImgFuncionario.Image = ImagemPlugIn.ConverterParaImagem(dto.Imagem);
             }
-
-
         }
 
         void CarregarCombos()
@@ -58,12 +58,28 @@ namespace Catiotro_s.Telas.Entregavel_I
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
+            FolhaPagto pagto = new FolhaPagto();
+            pagto.Salario = Convert.ToDecimal(txtSalario.Text);
+            pagto.Faltas = Convert.ToInt32(nudFaltas.Value);
+            pagto.HoraExtra = Convert.ToDateTime(mkbAtraso.Text);
+            pagto.Atrasos = Convert.ToDateTime(mkbHE.Text);
 
+            txtINSS.Text = pagto.CalcularINSS().ToString();
+            txtIR.Text = pagto.CalcularIR().ToString();
+            TxtSalLiq.Text = pagto.CalcularSalarioLiquido().ToString();
+            txtFGTS.Text = pagto.CalcularFGTS().ToString();
+            txtSalFam.Text = pagto.VerificarSalarioFamilia().ToString();
+            txtValTrans.Text = pagto.CalcularValeTransporte().ToString();
         }
 
         private void cboFuncionario_SelectedIndexChanged(object sender, EventArgs e)
         {
             GerarCredenciais();
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,15 +29,8 @@ namespace FamosoAça.Screens.Entregavel_I
 
             decimal horaExtra = (horaPorDia + AddPorHora) * convertToDecimal;
             return horaExtra;
-        } 
-
-        private decimal CalcularDSR()
-        {
-            decimal horaExtra = CalcularHoraExtra();
-            decimal dsr = (horaExtra / 26) * 4;
-            return dsr;
         }
-        
+
         private int CalcularFaltas()
         {
             int faltas = this.Faltas;
@@ -52,6 +45,13 @@ namespace FamosoAça.Screens.Entregavel_I
 
         }
 
+        private decimal CalcularDSR()
+        {
+            decimal horaExtra = CalcularHoraExtra();
+            decimal dsr = (horaExtra / 26) * 4;
+            return dsr;
+        }            
+
         private decimal CalcularAtraso()
         {
             DateTime atraso = this.Atrasos;
@@ -62,17 +62,24 @@ namespace FamosoAça.Screens.Entregavel_I
             return Atraso;
         }
 
-        private decimal CalcularINSS()
+        private decimal CalcularBaseINSS()
         {
             decimal salario = this.Salario;
             decimal HoraExtra = CalcularHoraExtra();
-            decimal dsr = CalculaDSR();
+            decimal dsr = CalcularDSR();
             int faltas = this.Faltas;
 
             DateTime atraso = this.Atrasos;
             int horaAtraso = atraso.Hour;
 
             decimal baseInss = salario + HoraExtra + dsr - faltas - horaAtraso;
+            return baseInss;
+           
+        }
+
+        public decimal CalcularINSS()
+        {
+            decimal baseInss = CalcularBaseINSS(); 
 
             if (baseInss <= 1659.38m)
             {
@@ -106,20 +113,47 @@ namespace FamosoAça.Screens.Entregavel_I
             }
         }
 
-        private decimal CalcularFGTS()
+        private decimal CalcularBaseIR()
+        {
+            decimal baseInss = CalcularBaseINSS();
+            decimal inss = CalcularINSS();
+
+            decimal baseIr = baseInss - inss;
+            return baseIr;
+        }
+
+        public decimal CalcularIR()
+        {
+            decimal baseIr = CalcularBaseIR();
+
+            ImpostoRendaBusiness buss = new ImpostoRendaBusiness();
+            ImpostoRendaDTO dto = buss.Consultar(baseIr);
+
+            decimal calculo = baseIr * (dto.Aliquota / 100);
+            decimal ir = calculo - dto.Deducao;
+            return ir;
+        }
+
+        public decimal CalcularFGTS()
         {
             decimal salario = this.Salario;
             return salario * (8 / 100);
         }
 
-        private decimal CalcularValeTransporte()
+        public decimal CalcularValeTransporte()
         {
             decimal salario = this.Salario;
             return salario * (6 / 100);
         }
 
-        private decimal VerificarSalarioFamilia()
+        public decimal VerificarSalarioFamilia()
         {
+            decimal salario = this.Salario;
+
+            SFamilhaBusiness buss = new SFamilhaBusiness();
+            SFamilhaDTO dto = buss.Consultar(salario);
+
+            return dto.Valor;
 
         }
 
@@ -127,7 +161,10 @@ namespace FamosoAça.Screens.Entregavel_I
         {
             decimal salario = this.Salario;
 
-            decimal salarioLiquido = salario + CalcularHoraExtra() + CalcularDSR() +  
+            decimal salarioLiquido = salario + CalcularHoraExtra() + CalcularDSR() + VerificarSalarioFamilia() - CalcularAtraso() -
+                CalcularFaltas() - CalcularINSS() - CalcularIR() - CalcularValeTransporte();
+
+            return salarioLiquido;
         } 
     }
 }

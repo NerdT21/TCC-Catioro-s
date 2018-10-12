@@ -14,7 +14,7 @@ namespace Catiotro_s.classes.Classes.Agenda
         public INSSDTO Consultar(decimal salario)
         {
 
-            string script = @"SELECT * FROM tb_inss WHERE ds_salarioDeContribuicao LIKE @ds_salarioDeContribuicao";
+            string script = @"SELECT * FROM tb_inss WHERE ds_salarioDeContribuicao = @ds_salarioDeContribuicao";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("ds_salarioDeContribuicao", salario + "%"));

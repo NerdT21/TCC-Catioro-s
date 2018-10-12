@@ -15,15 +15,17 @@ namespace Catiotro_s.classes.Classes.Agenda
         public SFamilhaDTO Consultar(decimal salario)
         {
 
-            string script = @"SELECT * FROM tb_salarioFamilia ";
+            string script = @"SELECT * FROM tb_salarioFamilia WHERE ds_salFamilia = @ds_salFamilia";
 
             Database db = new Database();
-            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("ds_salFamilia", salario + "%"));
+
+            MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
             SFamilhaDTO add = null;
             if (reader.Read())
             {
-
                 add = new SFamilhaDTO();
                 add.Id = reader.GetInt32("id_salFamilia");
                 add.SalFamilia = reader.GetDecimal("vl_salFamilia");
