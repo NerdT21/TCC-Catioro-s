@@ -8,7 +8,6 @@ namespace Catiotro_s.classes.Classes.Agenda
 {
    public class ProdutoBusiness
     {
-
         public int Salvar(ProdutoDTO dto)
         {
             ProdutoDatabase db = new ProdutoDatabase ();
@@ -28,7 +27,6 @@ namespace Catiotro_s.classes.Classes.Agenda
             db.Remover(id);
         }
 
-
         public List<ProdutoDTO> Listar()
         {
             ProdutoDatabase db = new ProdutoDatabase();
@@ -39,11 +37,7 @@ namespace Catiotro_s.classes.Classes.Agenda
         public List<ProdutoDTO> Consultar(string nome, string marca)
         {
             ProdutoDatabase db = new ProdutoDatabase();
-            return db.Consultar(nome,marca);
+            return db.Consultar(nome, marca);
         }
-
-
-
-
     }
 }

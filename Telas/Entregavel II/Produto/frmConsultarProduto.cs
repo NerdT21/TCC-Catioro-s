@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Catiotro_s.classes.Classes.Agenda;
 
 namespace Catiotro_s.Telas.Entregavel_II.Produto
 {
@@ -15,6 +16,26 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
         public frmConsultarProduto()
         {
             InitializeComponent();
+            AutoCarregar();
+        }
+
+        void AutoCarregar()
+        {
+            ProdutoBusiness buss = new ProdutoBusiness();
+            List<ProdutoDTO> lista = buss.Listar();
+
+            dgvProduto.DataSource = lista;
+        }
+
+        void CarregarGrid()
+        {
+            string nome = txtNome.Text;
+            string marca = txtMarca.Text;
+
+            ProdutoBusiness buss = new ProdutoBusiness();
+            List<ProdutoDTO> lista = buss.Consultar(nome, marca);
+
+            dgvProduto.DataSource = lista;
         }
 
         private void lblprocurar_Click(object sender, EventArgs e)
@@ -34,7 +55,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
 
         private void txtprocurar_TextChanged(object sender, EventArgs e)
         {
-
+            CarregarGrid();
         }
     }
 }
