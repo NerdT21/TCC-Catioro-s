@@ -59,13 +59,12 @@ namespace Catiotro_s.classes.Classes.Compras
             return lista;
         }
 
-        public List<ComprasDTO> Consultar(string nome, string data)
+        public List<ComprasDTO> Consultar(string data)
         {
-            string script = @"SELECT * FROM tb_compra WHERE id_item LIKE @id_item AND dt_compra LIKE @dt_compra";
+            string script = @"SELECT * FROM tb_compra WHERE dt_compra LIKE @dt_compra";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_item ", nome + "%"));
-            parms.Add(new MySqlParameter("ds_compra", data + "%"));
+            parms.Add(new MySqlParameter("dt_compra", data + "%"));
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);

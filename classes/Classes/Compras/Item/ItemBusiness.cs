@@ -26,5 +26,11 @@ namespace Catiotro_s.classes.Classes.Compras.Item
             return db.Consultar(nome);
         }
 
+        public ItemDTO ConsultarProTxt(string nome, int fornecedor)
+        {
+            ItemDatabase db = new ItemDatabase();
+            return db.ConsultarProTxt(nome, fornecedor);
+        }
+
     }
 }

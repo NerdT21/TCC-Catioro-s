@@ -33,17 +33,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.mkbData = new System.Windows.Forms.MaskedTextBox();
-            this.dgvCompras = new System.Windows.Forms.DataGridView();
             this.btnProcurar = new System.Windows.Forms.Button();
             this.nudPreco = new System.Windows.Forms.NumericUpDown();
+            this.dgvCompras = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -94,25 +94,6 @@
             this.mkbData.TabIndex = 4;
             this.mkbData.ValidatingType = typeof(System.DateTime);
             // 
-            // dgvCompras
-            // 
-            this.dgvCompras.AllowUserToAddRows = false;
-            this.dgvCompras.AllowUserToDeleteRows = false;
-            this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            this.dgvCompras.Location = new System.Drawing.Point(13, 92);
-            this.dgvCompras.Name = "dgvCompras";
-            this.dgvCompras.ReadOnly = true;
-            this.dgvCompras.RowHeadersVisible = false;
-            this.dgvCompras.Size = new System.Drawing.Size(557, 301);
-            this.dgvCompras.TabIndex = 6;
-            // 
             // btnProcurar
             // 
             this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -140,8 +121,28 @@
             this.nudPreco.Size = new System.Drawing.Size(59, 20);
             this.nudPreco.TabIndex = 8;
             // 
+            // dgvCompras
+            // 
+            this.dgvCompras.AllowUserToAddRows = false;
+            this.dgvCompras.AllowUserToDeleteRows = false;
+            this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            this.dgvCompras.Location = new System.Drawing.Point(3, 75);
+            this.dgvCompras.Name = "dgvCompras";
+            this.dgvCompras.ReadOnly = true;
+            this.dgvCompras.RowHeadersVisible = false;
+            this.dgvCompras.Size = new System.Drawing.Size(577, 327);
+            this.dgvCompras.TabIndex = 9;
+            // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "Id";
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -150,12 +151,14 @@
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "ItemId";
             this.Column2.HeaderText = "Item";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
+            this.Column3.DataPropertyName = "Qtd";
             this.Column3.HeaderText = "QTD";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -163,20 +166,23 @@
             // 
             // Column4
             // 
-            this.Column4.HeaderText = "Data ";
+            this.Column4.DataPropertyName = "Data";
+            this.Column4.HeaderText = "Data";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             this.Column4.Width = 70;
             // 
             // Column5
             // 
+            this.Column5.DataPropertyName = "FormaPagto";
             this.Column5.HeaderText = "Forma de Pagamento";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 150;
+            this.Column5.Width = 140;
             // 
             // Column6
             // 
+            this.Column6.DataPropertyName = "Preco";
             this.Column6.HeaderText = "Preço";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -185,9 +191,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dgvCompras);
             this.Controls.Add(this.nudPreco);
             this.Controls.Add(this.btnProcurar);
-            this.Controls.Add(this.dgvCompras);
             this.Controls.Add(this.mkbData);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -195,8 +201,9 @@
             this.Controls.Add(this.label1);
             this.Name = "frmVerCompras";
             this.Size = new System.Drawing.Size(583, 405);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).EndInit();
+            this.Load += new System.EventHandler(this.frmVerCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,9 +216,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox mkbData;
-        private System.Windows.Forms.DataGridView dgvCompras;
         private System.Windows.Forms.Button btnProcurar;
         private System.Windows.Forms.NumericUpDown nudPreco;
+        private System.Windows.Forms.DataGridView dgvCompras;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

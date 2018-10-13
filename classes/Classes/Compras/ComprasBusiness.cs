@@ -11,7 +11,7 @@ namespace Catiotro_s.classes.Classes.Compras
         public int Salvar(ComprasDTO dto)
         {
             ComprasDatabase db = new ComprasDatabase();
-            return db.Salvar();
+            return db.Salvar(dto);
         }
 
         public List<ComprasDTO> Listar()
@@ -20,10 +20,10 @@ namespace Catiotro_s.classes.Classes.Compras
             return db.Listar();
         }
 
-        public List<ComprasDTO> Consultar(string nome, string data)
+        public List<ComprasDTO> Consultar(string data)
         {
             ComprasDatabase db = new ComprasDatabase();
-            return db.Consultar(nome, data);
+            return db.Consultar(data);
         }
     }
 }

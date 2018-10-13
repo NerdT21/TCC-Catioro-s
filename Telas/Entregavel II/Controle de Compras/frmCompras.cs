@@ -20,6 +20,28 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
         {
             InitializeComponent();
             CarregarCombos();
+            DataParaHoje();
+            CarregarTxt();
+        }
+
+        void DataParaHoje()
+        {
+            DateTime hoje = DateTime.Now;
+            int dia = hoje.Day;
+            int mes = hoje.Month;
+            int ano = hoje.Year;
+
+            string data = dia + "/" + mes + "/" + ano;
+            mkbDataCompra.Text = data;
+        }
+
+        void CarregarTxt()
+        {
+            ItemDTO item = cboProduto.SelectedItem as ItemDTO;
+            txtProduto.Text = item.Nome;
+
+            txtPrecoTotal.Text = Convert.ToString(item.Preco);
+            txtFornecedor.Text = item.FornecedorId.ToString();
         }
 
         void CarregarCombos()
@@ -32,15 +54,6 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             cboProduto.ValueMember = nameof(ProdutoDTO.Id);
             cboProduto.DisplayMember = nameof(ProdutoDTO.Nome);
             cboProduto.DataSource = lista;
-
-            //cboFornecedor
-
-            FornecedoresBusiness buss2 = new FornecedoresBusiness();
-            List<FornecedoresDTO> lista2 = buss2.Listar();
-
-            cboFornecedor.ValueMember = nameof(FornecedoresDTO.Id);
-            cboFornecedor.DisplayMember = nameof(FornecedoresDTO.Nome);
-            cboFornecedor.DataSource = lista2;
         }
 
         void CarregarGrid(string produto, string fornecedor, string qtd, string preco)
@@ -54,7 +67,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -126,7 +139,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
         {
             ItemDTO item = cboProduto.SelectedItem as ItemDTO;
             string i = item.Nome;
-            string f = cboFornecedor.SelectedText;
+            string f = txtFornecedor.Text;
             string q = nudQuantidade.Value.ToString();
             string p = item.Preco.ToString();
 
@@ -134,7 +147,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             dto.ItemId = item.Id;
             dto.Qtd = Convert.ToInt32(nudQuantidade.Value);
             dto.Data = mkbDataCompra.Text;
-            dto.FormaPagto = cboTipoPag.SelectedText;
+            dto.FormaPagto = Convert.ToString(cboTipoPag.SelectedItem);
             dto.Preco = Convert.ToDecimal(txtPrecoTotal.Text);
 
             ComprasBusiness buss = new ComprasBusiness();
@@ -143,6 +156,11 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             CarregarGrid(i, f, q, p);
 
             MessageBox.Show("Compra realizada!", "Catioro's", MessageBoxButtons.OK);
+        }
+
+        private void cboProduto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CarregarTxt();
         }
     }
 }

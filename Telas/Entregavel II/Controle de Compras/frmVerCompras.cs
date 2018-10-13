@@ -34,7 +34,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             string data = mkbData.Text;
 
             ComprasBusiness bus = new ComprasBusiness();
-            List<ComprasDTO> dto = bus.Consultar(nome, data);
+            List<ComprasDTO> dto = bus.Consultar(data);
 
             dgvCompras.AutoGenerateColumns = false;
             dgvCompras.DataSource = dto;
@@ -53,6 +53,30 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
         private void btnProcurar_Click(object sender, EventArgs e)
         {
             CarregarGrid();
+        }
+
+        private void frmVerCompras_Load(object sender, EventArgs e)
+        {
+            //Design das Linhas
+            dgvCompras.BorderStyle = BorderStyle.None;
+            dgvCompras.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(0, 116, 186);
+            dgvCompras.RowsDefaultCellStyle.BackColor = Color.FromArgb(0, 81, 130);
+            dgvCompras.RowsDefaultCellStyle.ForeColor = Color.White;
+
+            //Design da seleção de células da GV e da GV "pelada"
+            dgvCompras.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvCompras.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgvCompras.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvCompras.BackgroundColor = Color.White;
+
+            //Estilo da GV
+            dgvCompras.EnableHeadersVisualStyles = false;
+            dgvCompras.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvCompras.RowHeadersVisible = false;
+
+            //Cabeça da GV
+            dgvCompras.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvCompras.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
         }
     }
 }

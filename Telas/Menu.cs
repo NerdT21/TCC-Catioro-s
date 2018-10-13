@@ -2,6 +2,7 @@
 using Catiotro_s.Resgistros;
 using Catiotro_s.Telas.Entregavel_I;
 using Catiotro_s.Telas.Entregavel_I.Funcionários;
+using Catiotro_s.Telas.Entregavel_II.Controle_de_Compras;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -176,6 +177,23 @@ namespace Catiotro_s
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Telas.Home tela = new Telas.Home();
+            OpenScreen(tela);
+        }
+
+        private void itensToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCompras tela = new frmCompras();
+            OpenScreen(tela);
+        }
+
+        private void verComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVerCompras tela = new frmVerCompras();
             OpenScreen(tela);
         }
 
