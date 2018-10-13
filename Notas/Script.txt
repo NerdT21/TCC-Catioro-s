@@ -10,7 +10,7 @@ CREATE TABLE `tb_fornecedor` (
 	`ds_telefone` varchar(14) NOT NULL,
 	`id_estado` int NOT NULL,
 	`ds_cidade` varchar(50) NOT NULL,
-	`ds_bairro` varchar(50) NOT NULL,
+	`ds_cep` varchar(50) NOT NULL,
 	PRIMARY KEY (`id_fornecedor`)
 );
 
@@ -19,6 +19,7 @@ CREATE TABLE `tb_produto` (
 	`nm_produto` varchar(50) NOT NULL,
 	`ds_marca` varchar(100) NOT NULL,
 	`ds_produto` varchar(250) NOT NULL,
+    `vl_preco` decimal(15,2) NOT NULL,
 	PRIMARY KEY (`id_produto`)
 );
 
