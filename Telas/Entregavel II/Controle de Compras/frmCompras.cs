@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Catiotro_s.classes.Classes.Agenda;
+using Catiotro_s.classes.Classes.Cliente;
 
 namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 {
@@ -15,6 +17,33 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
         public frmCompras()
         {
             InitializeComponent();
+            CarregarCombos();
+        }
+
+        void CarregarCombos()
+        {
+            //cboProduto
+
+            ItemBusiness buss = new ItemBusiness();
+            List<ItemDTO> lista = buss.Listar();
+
+            cboProduto.ValueMember = nameof(ProdutoDTO.Id);
+            cboProduto.DisplayMember = nameof(ProdutoDTO.Nome);
+            cboProduto.DataSource = lista;
+
+            //cboFornecedor
+
+            FornecedoresBusiness buss2 = new FornecedoresBusiness();
+            List<FornecedoresDTO> lista2 = buss2.Listar();
+
+            cboFornecedor.ValueMember = nameof(FornecedoresDTO.Id);
+            cboFornecedor.DisplayMember = nameof(FornecedoresDTO.Nome);
+            cboFornecedor.DataSource = lista2;
+        }
+
+        void CarregarGrid()
+        {
+            ComprasBusiness buss = new CompraBusiness();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)

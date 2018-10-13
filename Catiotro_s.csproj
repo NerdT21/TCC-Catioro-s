@@ -67,6 +67,9 @@
     <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteBusiness.cs" />
     <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteDataBase.cs" />
     <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteDTO.cs" />
+    <Compile Include="classes\Classes\Compras\ComprasBusiness.cs" />
+    <Compile Include="classes\Classes\Compras\ComprasDatabase.cs" />
+    <Compile Include="classes\Classes\Compras\ComprasDTO.cs" />
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoDTO.cs" />
@@ -244,6 +247,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="favicon %281%29.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\icons8-plus-32.png" />
     <None Include="Resources\icons8-search-26.png" />
     <None Include="Resources\icons8-save-26.png" />
     <None Include="Resources\icons8-save-48.png" />
@@ -335,7 +339,6 @@
     <Content Include="Notas\Script.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Telas\Entregavel II\Compra\" />
     <Folder Include="Telas\Entregavel IV\" />
     <Folder Include="Telas\Resgistros\" />
   </ItemGroup>
