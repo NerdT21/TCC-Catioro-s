@@ -378,7 +378,9 @@ INSERT INTO tb_impostoDeRenda(`id_impostoRenda`, `ds_baseDeCalculo`, `vl_aliquot
                        
 INSERT INTO tb_impostoDeRenda(`id_impostoRenda`, `ds_baseDeCalculo`, `vl_aliquota`, `vl_deducao`)
 					   VALUES('5', '4664.68', '27.5', '869.36');
-                       
+
+INSERT INTO tb_fornecedor VALUES('1', 'Cobasi' ,'cobasi@gmail.com', '123.123.123/00021', '(11)53536-2563', '1', 'São Paulo', '05236-000');
+					
 INSERT INTO tb_item(`id_item`, `nm_item`, `id_fornecedor`, `vl_preco`, `ds_item`)
 			VALUES ('1', 'Ração', '1', '35.90', 'Comida para cães');
 
@@ -389,7 +391,7 @@ USE CatiorosDB;
 SELECT * FROM tb_Depto;
 SELECT * FROM tb_estados;
 SELECT * FROM tb_funcionario;              
-SELECT * FROM tb_login;
+SELECT * FROM tb_login;,
 SELECT * FROM vw_consultarFuncionario;
 SELECT * FROM tb_inss;
 SELECT * FROM tb_salarioFamilia;

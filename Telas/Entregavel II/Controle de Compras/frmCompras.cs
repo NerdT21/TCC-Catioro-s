@@ -38,10 +38,19 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
         void CarregarTxt()
         {
             ItemDTO item = cboProduto.SelectedItem as ItemDTO;
-            txtProduto.Text = item.Nome;
 
-            txtPrecoTotal.Text = Convert.ToString(item.Preco);
-            txtFornecedor.Text = item.FornecedorId.ToString();
+            if (item.Nome != null)
+            {
+                txtProduto.Text = item.Nome;
+
+                txtPrecoTotal.Text = Convert.ToString(item.Preco);
+                txtFornecedor.Text = item.FornecedorId.ToString();
+            }
+            else
+            {
+                txtProduto.Text = "NULL";
+            }
+           
         }
 
         void CarregarCombos()
@@ -143,19 +152,28 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             string q = nudQuantidade.Value.ToString();
             string p = item.Preco.ToString();
 
-            ComprasDTO dto = new ComprasDTO();
-            dto.ItemId = item.Id;
-            dto.Qtd = Convert.ToInt32(nudQuantidade.Value);
-            dto.Data = mkbDataCompra.Text;
-            dto.FormaPagto = Convert.ToString(cboTipoPag.SelectedItem);
-            dto.Preco = Convert.ToDecimal(txtPrecoTotal.Text);
+            if (txtProduto.Text == "NULL")
+            {
+                MessageBox.Show("Nenhum produto selecionado", "Carioro's", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                ComprasDTO dto = new ComprasDTO();
+                dto.ItemId = item.Id;
+                dto.Qtd = Convert.ToInt32(nudQuantidade.Value);
+                dto.Data = mkbDataCompra.Text;
+                dto.FormaPagto = Convert.ToString(cboTipoPag.SelectedItem);
+                dto.Preco = Convert.ToDecimal(txtPrecoTotal.Text);
 
-            ComprasBusiness buss = new ComprasBusiness();
-            buss.Salvar(dto);
+                ComprasBusiness buss = new ComprasBusiness();
+                buss.Salvar(dto);
 
-            CarregarGrid(i, f, q, p);
+                CarregarGrid(i, f, q, p);
 
-            MessageBox.Show("Compra realizada!", "Catioro's", MessageBoxButtons.OK);
+                MessageBox.Show("Compra realizada!", "Catioro's", MessageBoxButtons.OK);
+            }
+
+            
         }
 
         private void cboProduto_SelectedIndexChanged(object sender, EventArgs e)
