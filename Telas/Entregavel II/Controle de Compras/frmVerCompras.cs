@@ -21,5 +21,10 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
