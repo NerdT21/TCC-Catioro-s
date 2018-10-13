@@ -16,5 +16,10 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
