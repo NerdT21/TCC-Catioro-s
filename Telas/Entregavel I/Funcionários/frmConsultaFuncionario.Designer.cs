@@ -31,9 +31,6 @@
             this.lblProcurar = new System.Windows.Forms.Label();
             this.txtProcurar = new System.Windows.Forms.TextBox();
             this.dgvFuncionario = new System.Windows.Forms.DataGridView();
-            this.cboDepartamento = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnProcurar = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +42,9 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboDepartamento = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnProcurar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,37 +86,6 @@
             this.dgvFuncionario.RowHeadersVisible = false;
             this.dgvFuncionario.Size = new System.Drawing.Size(573, 302);
             this.dgvFuncionario.TabIndex = 6;
-            // 
-            // cboDepartamento
-            // 
-            this.cboDepartamento.FormattingEnabled = true;
-            this.cboDepartamento.Location = new System.Drawing.Point(135, 39);
-            this.cboDepartamento.Name = "cboDepartamento";
-            this.cboDepartamento.Size = new System.Drawing.Size(138, 21);
-            this.cboDepartamento.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 21);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Departamento";
-            // 
-            // btnProcurar
-            // 
-            this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcurar.Image = global::Catiotro_s.Properties.Resources.icons8_search_26;
-            this.btnProcurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProcurar.Location = new System.Drawing.Point(473, 15);
-            this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(94, 45);
-            this.btnProcurar.TabIndex = 5;
-            this.btnProcurar.Text = "Procurar";
-            this.btnProcurar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnProcurar.UseVisualStyleBackColor = true;
             // 
             // Column1
             // 
@@ -184,6 +153,37 @@
             this.Column11.DataPropertyName = "Cep";
             this.Column11.HeaderText = "CEP";
             this.Column11.Name = "Column11";
+            // 
+            // cboDepartamento
+            // 
+            this.cboDepartamento.FormattingEnabled = true;
+            this.cboDepartamento.Location = new System.Drawing.Point(135, 39);
+            this.cboDepartamento.Name = "cboDepartamento";
+            this.cboDepartamento.Size = new System.Drawing.Size(138, 21);
+            this.cboDepartamento.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 21);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Departamento";
+            // 
+            // btnProcurar
+            // 
+            this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProcurar.Image = global::Catiotro_s.Properties.Resources.icons8_search_26;
+            this.btnProcurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProcurar.Location = new System.Drawing.Point(473, 15);
+            this.btnProcurar.Name = "btnProcurar";
+            this.btnProcurar.Size = new System.Drawing.Size(94, 45);
+            this.btnProcurar.TabIndex = 5;
+            this.btnProcurar.Text = "Procurar";
+            this.btnProcurar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnProcurar.UseVisualStyleBackColor = true;
             // 
             // frmConsultaFuncionario
             // 

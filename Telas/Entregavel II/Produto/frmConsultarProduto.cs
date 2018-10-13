@@ -21,5 +21,20 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
         {
 
         }
+
+        private void dgvFornecedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnProcurar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtprocurar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

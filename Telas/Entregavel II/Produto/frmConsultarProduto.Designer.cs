@@ -38,25 +38,27 @@
             // btnProcurar
             // 
             this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcurar.Location = new System.Drawing.Point(486, 25);
+            this.btnProcurar.Location = new System.Drawing.Point(482, 25);
             this.btnProcurar.Name = "btnProcurar";
             this.btnProcurar.Size = new System.Drawing.Size(75, 29);
             this.btnProcurar.TabIndex = 18;
             this.btnProcurar.Text = "procurar";
             this.btnProcurar.UseVisualStyleBackColor = true;
+            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // txtprocurar
             // 
-            this.txtprocurar.Location = new System.Drawing.Point(112, 28);
+            this.txtprocurar.Location = new System.Drawing.Point(108, 28);
             this.txtprocurar.Name = "txtprocurar";
             this.txtprocurar.Size = new System.Drawing.Size(356, 20);
             this.txtprocurar.TabIndex = 17;
+            this.txtprocurar.TextChanged += new System.EventHandler(this.txtprocurar_TextChanged);
             // 
             // lblprocurar
             // 
             this.lblprocurar.AutoSize = true;
             this.lblprocurar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblprocurar.Location = new System.Drawing.Point(36, 28);
+            this.lblprocurar.Location = new System.Drawing.Point(32, 28);
             this.lblprocurar.Name = "lblprocurar";
             this.lblprocurar.Size = new System.Drawing.Size(70, 21);
             this.lblprocurar.TabIndex = 16;
@@ -66,10 +68,11 @@
             // dgvFornecedor
             // 
             this.dgvFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFornecedor.Location = new System.Drawing.Point(16, 78);
+            this.dgvFornecedor.Location = new System.Drawing.Point(12, 78);
             this.dgvFornecedor.Name = "dgvFornecedor";
             this.dgvFornecedor.Size = new System.Drawing.Size(573, 285);
             this.dgvFornecedor.TabIndex = 15;
+            this.dgvFornecedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellContentClick);
             // 
             // frmConsultarProduto
             // 

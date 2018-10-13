@@ -38,7 +38,7 @@
             // dgvFornecedor
             // 
             this.dgvFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFornecedor.Location = new System.Drawing.Point(16, 79);
+            this.dgvFornecedor.Location = new System.Drawing.Point(13, 79);
             this.dgvFornecedor.Name = "dgvFornecedor";
             this.dgvFornecedor.Size = new System.Drawing.Size(573, 285);
             this.dgvFornecedor.TabIndex = 10;
@@ -46,7 +46,7 @@
             // btnProcurar
             // 
             this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcurar.Location = new System.Drawing.Point(486, 26);
+            this.btnProcurar.Location = new System.Drawing.Point(483, 26);
             this.btnProcurar.Name = "btnProcurar";
             this.btnProcurar.Size = new System.Drawing.Size(75, 29);
             this.btnProcurar.TabIndex = 14;
@@ -58,7 +58,7 @@
             // 
             this.lblprocurar.AutoSize = true;
             this.lblprocurar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblprocurar.Location = new System.Drawing.Point(36, 29);
+            this.lblprocurar.Location = new System.Drawing.Point(33, 29);
             this.lblprocurar.Name = "lblprocurar";
             this.lblprocurar.Size = new System.Drawing.Size(70, 21);
             this.lblprocurar.TabIndex = 12;
@@ -66,7 +66,7 @@
             // 
             // txtprocurar
             // 
-            this.txtprocurar.Location = new System.Drawing.Point(112, 29);
+            this.txtprocurar.Location = new System.Drawing.Point(109, 29);
             this.txtprocurar.Name = "txtprocurar";
             this.txtprocurar.Size = new System.Drawing.Size(356, 20);
             this.txtprocurar.TabIndex = 13;

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Catiotro_s.classes.Classes.Agenda
 {
-   public class ProdutoDatabase
+    public class ProdutoDatabase
     {
 
 
@@ -25,10 +25,10 @@ namespace Catiotro_s.classes.Classes.Agenda
                                                     @nm_produto,
                                                     @ds_marca,
                                                     @ds_produto
-                                                    @ds_preco)";
+                                                   @ds_preco)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("nm_produto",produto.Nome));
+            parms.Add(new MySqlParameter("nm_produto", produto.Nome));
             parms.Add(new MySqlParameter("ds_marca", produto.Marca));
             parms.Add(new MySqlParameter("ds_produto", produto.Descricao));
             parms.Add(new MySqlParameter("ds_preco", produto.Preco));
@@ -45,7 +45,8 @@ namespace Catiotro_s.classes.Classes.Agenda
 
             string script = @"UPDATE tb_produto SET nm_produto = @nm_produto,
                                                     ds_marca = @ds_marca,
-                                                     ds_produto = @ds_produto
+                                                     ds_produto = @ds_produt,
+                                                      ds_preco = @ds_preco,
                                               WHERE id_produto = @id_produto ";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
@@ -93,7 +94,7 @@ namespace Catiotro_s.classes.Classes.Agenda
                 add.Marca = reader.GetString("ds_marca");
                 add.Descricao = reader.GetString("ds_produto");
                 add.Preco = reader.GetDecimal("ds_preco");
-                
+
 
                 lista.Add(add);
             }
