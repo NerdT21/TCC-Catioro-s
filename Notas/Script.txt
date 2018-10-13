@@ -379,6 +379,10 @@ INSERT INTO tb_impostoDeRenda(`id_impostoRenda`, `ds_baseDeCalculo`, `vl_aliquot
 INSERT INTO tb_impostoDeRenda(`id_impostoRenda`, `ds_baseDeCalculo`, `vl_aliquota`, `vl_deducao`)
 					   VALUES('5', '4664.68', '27.5', '869.36');
                        
+INSERT INTO tb_item(`id_item`, `nm_item`, `id_fornecedor`, `vl_preco`, `ds_item`)
+			VALUES ('1', 'Ração', '1', '35.90', 'Comida para cães');
+
+
 
 
 USE CatiorosDB;
@@ -390,6 +394,7 @@ SELECT * FROM vw_consultarFuncionario;
 SELECT * FROM tb_inss;
 SELECT * FROM tb_salarioFamilia;
 SELECT * FROM tb_impostoDeRenda;
+SELECT * FROM tb_compra;
 
 
 
