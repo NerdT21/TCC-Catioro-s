@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Catiotro_s.classes.Classes.Agenda;
 
 namespace Catiotro_s.Telas.Entregavel_II.Produto
 {
@@ -32,29 +33,19 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
 
         }
 
-      
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-                classes.Classes.Agenda.ProdutoDTO dto = new classes.Classes.Agenda.ProdutoDTO();
-                dto.Nome = txtNome.Text;
-                dto.Marca = txtMarca.Text;
-                dto.Descricao = txtDesc.Text;
-                dto.Preco = nudPreco.Value;
-                // dto.Imagem =imgProduto
+            ProdutoDTO dto = new ProdutoDTO();
+            dto.Nome = txtNome.Text;
+            dto.Marca = txtMarca.Text;
+            dto.Descricao = txtDesc.Text;
+            dto.Preco = nudPreco.Value;
 
-                classes.Classes.Agenda.ProdutoBusiness business = new classes.Classes.Agenda.ProdutoBusiness();
-                business.Salvar(dto);
+            ProdutoBusiness business = new ProdutoBusiness();
+            business.Salvar(dto);
 
-                MessageBox.Show("Produto Cadastrado com sucesso!", "Catioro's", MessageBoxButtons.OK);
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    MessageBox.Show(ex.Message, "Catioros's", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-
+            MessageBox.Show("Produto Cadastrado com sucesso!", "Catioro's", MessageBoxButtons.OK);
         }
 
         private void nudPreco_ValueChanged(object sender, EventArgs e)
