@@ -19,17 +19,20 @@ namespace Catiotro_s.classes.Classes.Agenda
             string script = @"INSERT INTO tb_produto(nm_produto,
                                                     ds_marca,
                                                     ds_produto
+                                                    ds_preco 
                                                      ) 
                                               VALUES (
                                                     @nm_produto,
                                                     @ds_marca,
-                                                    @ds_produto)";
+                                                    @ds_produto
+                                                    @ds_preco)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_produto",produto.Nome));
             parms.Add(new MySqlParameter("ds_marca", produto.Marca));
             parms.Add(new MySqlParameter("ds_produto", produto.Descricao));
-            
+            parms.Add(new MySqlParameter("ds_preco", produto.Preco));
+
 
             Database db = new Database();
             int pk = db.ExecuteInsertScriptWithPk(script, parms);
@@ -50,6 +53,7 @@ namespace Catiotro_s.classes.Classes.Agenda
             parms.Add(new MySqlParameter("nm_produto", produto.Nome));
             parms.Add(new MySqlParameter("ds_marca", produto.Marca));
             parms.Add(new MySqlParameter("ds_produto", produto.Descricao));
+            parms.Add(new MySqlParameter("ds_preco", produto.Preco));
 
             Database db = new Database();
             db.ExecuteInsertScriptWithPk(script, parms);
@@ -88,6 +92,7 @@ namespace Catiotro_s.classes.Classes.Agenda
                 add.Nome = reader.GetString("nm_produto");
                 add.Marca = reader.GetString("ds_marca");
                 add.Descricao = reader.GetString("ds_produto");
+                add.Preco = reader.GetDecimal("ds_preco");
                 
 
                 lista.Add(add);

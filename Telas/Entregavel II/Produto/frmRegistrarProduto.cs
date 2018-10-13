@@ -32,15 +32,11 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
 
         }
 
+      
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void nudPreco_ValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
+            //try
+            //{
                 classes.Classes.Agenda.ProdutoDTO dto = new classes.Classes.Agenda.ProdutoDTO();
                 dto.Nome = txtNome.Text;
                 dto.Marca = txtMarca.Text;
@@ -52,18 +48,27 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
                 business.Salvar(dto);
 
                 MessageBox.Show("Produto Cadastrado com sucesso!", "Catioro's", MessageBoxButtons.OK);
-            }
-            catch (Exception ex)
-            {
+            //}
+            //catch (Exception ex)
+            //{
 
-                MessageBox.Show(ex.Message,"Catioros's",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-            
+            //    MessageBox.Show(ex.Message, "Catioros's", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
 
+        }
+
+        private void nudPreco_ValueChanged(object sender, EventArgs e)
+        {
+           
 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
 
         }
