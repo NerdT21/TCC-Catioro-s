@@ -29,14 +29,21 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNomeProduto = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
+            this.mkbData = new System.Windows.Forms.MaskedTextBox();
             this.dgvCompras = new System.Windows.Forms.DataGridView();
             this.btnProcurar = new System.Windows.Forms.Button();
+            this.nudPreco = new System.Windows.Forms.NumericUpDown();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -50,13 +57,13 @@
             this.label1.Text = "Nome do Produto";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // txtNomeProduto
+            // txtNome
             // 
-            this.txtNomeProduto.Location = new System.Drawing.Point(143, 19);
-            this.txtNomeProduto.Name = "txtNomeProduto";
-            this.txtNomeProduto.Size = new System.Drawing.Size(251, 20);
-            this.txtNomeProduto.TabIndex = 1;
-            this.txtNomeProduto.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtNome.Location = new System.Drawing.Point(143, 19);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(251, 20);
+            this.txtNome.TabIndex = 1;
+            this.txtNome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -78,30 +85,31 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Preço do Produto";
             // 
-            // maskedTextBox1
+            // mkbData
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(143, 49);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(71, 20);
-            this.maskedTextBox1.TabIndex = 4;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            // 
-            // domainUpDown1
-            // 
-            this.domainUpDown1.Location = new System.Drawing.Point(335, 48);
-            this.domainUpDown1.Name = "domainUpDown1";
-            this.domainUpDown1.Size = new System.Drawing.Size(59, 20);
-            this.domainUpDown1.TabIndex = 5;
+            this.mkbData.Location = new System.Drawing.Point(143, 49);
+            this.mkbData.Mask = "00/00/0000";
+            this.mkbData.Name = "mkbData";
+            this.mkbData.Size = new System.Drawing.Size(71, 20);
+            this.mkbData.TabIndex = 4;
+            this.mkbData.ValidatingType = typeof(System.DateTime);
             // 
             // dgvCompras
             // 
             this.dgvCompras.AllowUserToAddRows = false;
             this.dgvCompras.AllowUserToDeleteRows = false;
             this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
             this.dgvCompras.Location = new System.Drawing.Point(13, 92);
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.ReadOnly = true;
+            this.dgvCompras.RowHeadersVisible = false;
             this.dgvCompras.Size = new System.Drawing.Size(557, 301);
             this.dgvCompras.TabIndex = 6;
             // 
@@ -117,22 +125,78 @@
             this.btnProcurar.Text = "Procurar";
             this.btnProcurar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProcurar.UseVisualStyleBackColor = true;
+            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
+            // 
+            // nudPreco
+            // 
+            this.nudPreco.DecimalPlaces = 2;
+            this.nudPreco.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudPreco.Location = new System.Drawing.Point(335, 48);
+            this.nudPreco.Name = "nudPreco";
+            this.nudPreco.Size = new System.Drawing.Size(59, 20);
+            this.nudPreco.TabIndex = 8;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 30;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Item";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "QTD";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 50;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Data ";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 70;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Forma de Pagamento";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 150;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Preço";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // frmVerCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.nudPreco);
             this.Controls.Add(this.btnProcurar);
             this.Controls.Add(this.dgvCompras);
-            this.Controls.Add(this.domainUpDown1);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.mkbData);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtNomeProduto);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
             this.Name = "frmVerCompras";
             this.Size = new System.Drawing.Size(583, 405);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPreco)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,12 +205,18 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNomeProduto;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.DomainUpDown domainUpDown1;
+        private System.Windows.Forms.MaskedTextBox mkbData;
         private System.Windows.Forms.DataGridView dgvCompras;
         private System.Windows.Forms.Button btnProcurar;
+        private System.Windows.Forms.NumericUpDown nudPreco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

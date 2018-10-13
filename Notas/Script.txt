@@ -191,14 +191,24 @@ CREATE TABLE `tb_estoque` (
 	PRIMARY KEY (`id_estoque`)
 );
 
+CREATE TABLE `tb_item`(
+	`id_item` INT NOT NULL AUTO_INCREMENT,
+    `nm_item` varchar(50) NOT NULL,
+    `id_fornecedor` INT NOT NULL,
+    `vl_preco` decimal(15,2) NOT NULL,
+    `ds_item` varchar(300) NOT NULL,
+    PRIMARY KEY (`id_item`),
+    FOREIGN KEY (`id_fornecedor`) 
+    REFERENCES tb_fornecedor(id_fornecedor)
+);
+
 CREATE TABLE `tb_compra` (
 	`id_compra` int NOT NULL AUTO_INCREMENT,
-	`id_produto` int NOT NULL,
-	`id_fornecedor` int NOT NULL,
-	`qtd_comprado` bigint NOT NULL,
+	`id_item` int NOT NULL,
+	`qtd_comprado` int NOT NULL,
 	`dt_compra` varchar(10) NOT NULL,
-	`id_formaPagto` int NOT NULL,
-	`vl_preco` varchar(10) NOT NULL,
+	`ds_formaPagamento` varchar(50) NOT NULL,
+	`vl_preco` decimal(15,2) NOT NULL,
 	PRIMARY KEY (`id_compra`)
 );
 
@@ -240,12 +250,7 @@ ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk3` FOREI
 
 ALTER TABLE `tb_estoque` ADD CONSTRAINT `tb_estoque_fk0` FOREIGN KEY (`id_compra`) REFERENCES `tb_compra`(`id_compra`);
 
-ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk0` FOREIGN KEY (`id_produto`) REFERENCES `tb_produto`(`id_produto`);
-
-ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk1` FOREIGN KEY (`id_fornecedor`) REFERENCES `tb_fornecedor`(`id_fornecedor`);
-
-ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk2` FOREIGN KEY (`id_formaPagto`) REFERENCES `tb_formaDePagamento`(`id_formaPagto`);
-
+ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk0` FOREIGN KEY (`id_item`) REFERENCES `tb_item`(`id_item`);
 -- INSERTS & SELECTS
 
 INSERT INTO tb_login(`id_usuario`,`nm_funcionario`, `nm_usuario`, `ds_senha`,`ds_email`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`)

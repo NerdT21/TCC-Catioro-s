@@ -74,7 +74,7 @@
             // 
             // nudQuantidade
             // 
-            this.nudQuantidade.Location = new System.Drawing.Point(180, 166);
+            this.nudQuantidade.Location = new System.Drawing.Point(170, 168);
             this.nudQuantidade.Name = "nudQuantidade";
             this.nudQuantidade.Size = new System.Drawing.Size(67, 23);
             this.nudQuantidade.TabIndex = 2;
@@ -95,7 +95,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(69, 209);
+            this.label5.Location = new System.Drawing.Point(59, 211);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 17);
             this.label5.TabIndex = 9;
@@ -106,7 +106,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(35, 246);
+            this.label6.Location = new System.Drawing.Point(25, 248);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(139, 17);
             this.label6.TabIndex = 10;
@@ -115,7 +115,7 @@
             // 
             // txtProduto
             // 
-            this.txtProduto.Location = new System.Drawing.Point(180, 129);
+            this.txtProduto.Location = new System.Drawing.Point(170, 131);
             this.txtProduto.Name = "txtProduto";
             this.txtProduto.ReadOnly = true;
             this.txtProduto.Size = new System.Drawing.Size(140, 23);
@@ -126,7 +126,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(119, 132);
+            this.label4.Location = new System.Drawing.Point(109, 134);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 17);
             this.label4.TabIndex = 12;
@@ -141,7 +141,7 @@
             "A vista",
             "Cartão",
             "Boleto"});
-            this.cboTipoPag.Location = new System.Drawing.Point(180, 245);
+            this.cboTipoPag.Location = new System.Drawing.Point(170, 247);
             this.cboTipoPag.Name = "cboTipoPag";
             this.cboTipoPag.Size = new System.Drawing.Size(140, 23);
             this.cboTipoPag.TabIndex = 13;
@@ -162,7 +162,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(98, 167);
+            this.label3.Location = new System.Drawing.Point(88, 169);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 7;
@@ -198,16 +198,16 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dgvCompras.Location = new System.Drawing.Point(372, 129);
+            this.dgvCompras.Location = new System.Drawing.Point(333, 131);
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.ReadOnly = true;
             this.dgvCompras.RowHeadersVisible = false;
-            this.dgvCompras.Size = new System.Drawing.Size(284, 162);
+            this.dgvCompras.Size = new System.Drawing.Size(324, 162);
             this.dgvCompras.TabIndex = 17;
             // 
             // mkbDataCompra
             // 
-            this.mkbDataCompra.Location = new System.Drawing.Point(182, 206);
+            this.mkbDataCompra.Location = new System.Drawing.Point(172, 208);
             this.mkbDataCompra.Mask = "00/00/0000";
             this.mkbDataCompra.Name = "mkbDataCompra";
             this.mkbDataCompra.Size = new System.Drawing.Size(65, 23);
@@ -219,7 +219,7 @@
             this.btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComprar.Image = global::Catiotro_s.Properties.Resources.icons8_plus_32;
             this.btnComprar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComprar.Location = new System.Drawing.Point(208, 285);
+            this.btnComprar.Location = new System.Drawing.Point(198, 287);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(68, 36);
             this.btnComprar.TabIndex = 18;
@@ -260,6 +260,7 @@
             this.Column5.HeaderText = "Preço";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            this.Column5.Width = 70;
             // 
             // frmCompras
             // 
@@ -311,10 +312,10 @@
         private System.Windows.Forms.DataGridView dgvCompras;
         private System.Windows.Forms.Button btnComprar;
         private System.Windows.Forms.MaskedTextBox mkbDataCompra;
+        private System.Windows.Forms.TextBox txtPrecoTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.TextBox txtPrecoTotal;
     }
 }

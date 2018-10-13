@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Agenda;
 using Catiotro_s.classes.Classes.Cliente;
+using Catiotro_s.classes.Classes.Compras.Item;
+using Catiotro_s.classes.Classes.Compras;
 
 namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 {
@@ -41,9 +43,13 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             cboFornecedor.DataSource = lista2;
         }
 
-        void CarregarGrid()
+        void CarregarGrid(string produto, string fornecedor, string qtd, string preco)
         {
-            ComprasBusiness buss = new CompraBusiness();
+            int n = dgvCompras.Rows.Add();
+            dgvCompras.Rows[n].Cells[0].Value = produto;
+            dgvCompras.Rows[n].Cells[1].Value = fornecedor;
+            dgvCompras.Rows[n].Cells[2].Value = qtd;
+            dgvCompras.Rows[n].Cells[3].Value = preco;
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -118,7 +124,25 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
+            ItemDTO item = cboProduto.SelectedItem as ItemDTO;
+            string i = item.Nome;
+            string f = cboFornecedor.SelectedText;
+            string q = nudQuantidade.Value.ToString();
+            string p = item.Preco.ToString();
 
+            ComprasDTO dto = new ComprasDTO();
+            dto.ItemId = item.Id;
+            dto.Qtd = Convert.ToInt32(nudQuantidade.Value);
+            dto.Data = mkbDataCompra.Text;
+            dto.FormaPagto = cboTipoPag.SelectedText;
+            dto.Preco = Convert.ToDecimal(txtPrecoTotal.Text);
+
+            ComprasBusiness buss = new ComprasBusiness();
+            buss.Salvar(dto);
+
+            CarregarGrid(i, f, q, p);
+
+            MessageBox.Show("Compra realizada!", "Catioro's", MessageBoxButtons.OK);
         }
     }
 }
