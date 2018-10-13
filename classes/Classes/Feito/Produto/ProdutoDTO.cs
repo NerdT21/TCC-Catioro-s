@@ -16,6 +16,8 @@ namespace Catiotro_s.classes.Classes.Agenda
 
         public string Descricao { get; set; }
 
+        public decimal Preco { get; set; }
 
+        //public byte Imagem { get; set; }      
     }
 }

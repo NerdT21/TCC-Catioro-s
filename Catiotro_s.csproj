@@ -125,6 +125,18 @@
     <Compile Include="classes\Classes\Login\LoginDTO.cs" />
     <Compile Include="classes\Classes\Login\UserSession.cs" />
     <Compile Include="PlugIn\ImagemPlugIn.cs" />
+    <Compile Include="Telas\Entregavel II\Produto\frmConsultarProduto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel II\Produto\frmConsultarProduto.Designer.cs">
+      <DependentUpon>frmConsultarProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel II\Produto\frmRegistrarProduto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel II\Produto\frmRegistrarProduto.Designer.cs">
+      <DependentUpon>frmRegistrarProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Entregavel I\FolhaDePagto.cs" />
     <Compile Include="Telas\Entregavel I\frmFolhaPagto.cs">
       <SubType>UserControl</SubType>
@@ -174,6 +186,12 @@
     <Compile Include="Telas\Entregavel I\LogIn\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +239,12 @@
     <None Include="Resources\icons8-minimizar-janela-32.png" />
     <None Include="Resources\icons8-excluir-48.png" />
     <None Include="Resources\Catioro%27s Logo.jpeg" />
+    <EmbeddedResource Include="Telas\Entregavel II\Produto\frmConsultarProduto.resx">
+      <DependentUpon>frmConsultarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel II\Produto\frmRegistrarProduto.resx">
+      <DependentUpon>frmRegistrarProduto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel I\frmFolhaPagto.resx">
       <DependentUpon>frmFolhaPagto.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel I\LogIn\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

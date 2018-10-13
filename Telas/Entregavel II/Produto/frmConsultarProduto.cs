@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Catiotro_s.Consultar
+namespace Catiotro_s.Telas.Entregavel_II.Produto
 {
-    public partial class frmConsultarFornecedor : UserControl
+    public partial class frmConsultarProduto : UserControl
     {
-        public frmConsultarFornecedor()
+        public frmConsultarProduto()
         {
             InitializeComponent();
         }
 
-        private void btnProcurar_Click(object sender, EventArgs e)
+        private void lblprocurar_Click(object sender, EventArgs e)
         {
 
         }

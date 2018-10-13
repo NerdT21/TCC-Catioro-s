@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Catiotro_s.Consultar
+namespace Catiotro_s.Telas
 {
-    public partial class frmConsultarFornecedor : UserControl
+    public partial class Home : UserControl
     {
-        public frmConsultarFornecedor()
+        public Home()
         {
             InitializeComponent();
         }
 
-        private void btnProcurar_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

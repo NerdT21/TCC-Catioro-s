@@ -87,7 +87,11 @@ namespace Catiotro_s.Resgistros
 
                 MessageBox.Show("Fornecedor cadastrado com sucesso!", "Catioro´s", MessageBoxButtons.OK);
             }
-            
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
+    }
     }
 

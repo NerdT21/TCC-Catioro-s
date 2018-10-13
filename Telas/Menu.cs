@@ -120,6 +120,65 @@ namespace Catiotro_s
 
         }
 
+        private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           frmRegistrarFornecedor tela = new frmRegistrarFornecedor();
+            OpenScreen(tela);
+        }
+
+        private void animalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRegistrarAnimal tela = new frmRegistrarAnimal();
+            OpenScreen(tela);
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRegistrarCliente tela = new frmRegistrarCliente();
+            OpenScreen(tela);
+        }
+
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void produtoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Telas.Entregavel_II.Produto.frmRegistrarProduto tela = new Telas.Entregavel_II.Produto.frmRegistrarProduto();
+            OpenScreen(tela);
+        }
+
+        private void fornecedorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmConsultarFornecedor tela = new frmConsultarFornecedor();
+            OpenScreen(tela);
+        }
+
+        private void animalToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmConsultarAnimal tela = new frmConsultarAnimal();
+            OpenScreen(tela);
+        }
+
+        private void clienteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmConsultarCliente tela = new frmConsultarCliente();
+            OpenScreen(tela);
+        }
+
+        private void produtoToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Telas.Entregavel_II.Produto.frmConsultarProduto tela = new Telas.Entregavel_II.Produto.frmConsultarProduto();
+            OpenScreen(tela);
+        }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Telas.Home tela = new Telas.Home();
+            OpenScreen(tela);
+        }
+
         private void pnlTopo_MouseDown(object sender, MouseEventArgs e)
         {
            //Codigo pra mexer a tela 

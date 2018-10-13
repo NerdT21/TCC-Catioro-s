@@ -256,3 +256,6 @@ C:\Users\LEZADO\Source\Repos\TCC-Catioro-s4\obj\Debug\Catiotro_s.splash.resource
 C:\Users\LEZADO\Source\Repos\TCC-Catioro-s4\obj\Debug\Catiotro_s.Properties.Resources.resources
 C:\Users\LEZADO\Source\Repos\TCC-Catioro-s4\obj\Debug\Catiotro_s.csproj.GenerateResource.cache
 C:\Users\LEZADO\Source\Repos\TCC-Catioro-s4\obj\Debug\Catiotro_s.csproj.CoreCompileInputs.cache
+C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_II.Produto.frmConsultarProduto.resources
+C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_II.Produto.frmRegistrarProduto.resources
+C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Home.resources
