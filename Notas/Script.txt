@@ -1,4 +1,4 @@
-﻿DROP DATABASE CatiorosDB; 
+﻿ DROP DATABASE CatiorosDB; 
 CREATE DATABASE CatiorosDB;
 USE CatiorosDB;
 
@@ -19,7 +19,6 @@ CREATE TABLE `tb_produto` (
 	`nm_produto` varchar(50) NOT NULL,
 	`ds_marca` varchar(100) NOT NULL,
 	`ds_produto` varchar(250) NOT NULL,
-	`ds_preco` Decimal(30) NOT NULL,
 	PRIMARY KEY (`id_produto`)
 );
 
@@ -42,10 +41,6 @@ CREATE TABLE `tb_cliente` (
 	`ds_telefone` varchar(20) NOT NULL,
 	`dt_nasc` varchar(20) NOT NULL,
 	`dt_dataCadastro` varchar(20) NOT NULL,
-	`ds_rg` varchar(14) NOT NULL,
-	`ds_bairro` varchar(50) NOT NULL,
-	`ds_rua` varchar(50) NOT NULL,
-	`nr_casa` bigint NOT NULL,
 	PRIMARY KEY (`id_cliente`)
 );
 
@@ -132,33 +127,32 @@ CREATE TABLE `tb_folhaDePagamento` (
 	`vl_impostoDeRenda` DECIMAL(15,2) NOT NULL,
 	`vl_ftgs` DECIMAL(15,2) NOT NULL,
 	`vl_valeTransporte` DECIMAL(15,2) NOT NULL,
+	`id_funcionario` int NOT NULL,
 	`vl_salarioLiq` DECIMAL(15,2) NOT NULL,
 	`id_inss` int NOT NULL,
 	`id_salFamilia` int NOT NULL,
-	`id_funcionario` int NOT NULL,
 	PRIMARY KEY (`id_folhaPagto`)
 );
 
 CREATE TABLE `tb_inss` (
 	`id_inss` int NOT NULL AUTO_INCREMENT,
-	`id_folhaPagto` int NOT NULL,
+	`ds_salarioDeContribuicao` decimal(15,2) NOT NULL,
 	`vl_aliquota` DECIMAL(4,2) NOT NULL,
 	PRIMARY KEY (`id_inss`)
 );
 
 CREATE TABLE `tb_impostoDeRenda` (
 	`id_impostoRenda` int NOT NULL AUTO_INCREMENT,
+    `ds_baseDeCalculo` decimal(15,2) NOT NULL,
 	`vl_aliquota` DECIMAL(4,2) NOT NULL,
 	`vl_deducao` DECIMAL(15,2) NOT NULL,
-	`id_folhaPagto` int NOT NULL,
 	PRIMARY KEY (`id_impostoRenda`)
 );
 
 CREATE TABLE `tb_salarioFamilia` (
 	`id_salFamilia` int NOT NULL AUTO_INCREMENT,
-	`vl_salFamilia` DECIMAL(15,2) NOT NULL,
-	`ds_qtdDependentes` int NOT NULL,
-	`id_folhaPagto` int NOT NULL,
+	`ds_salFamilia` DECIMAL(15,2) NOT NULL,
+    `vl_salFamilia` Decimal(15,2) NOT NULL,
 	PRIMARY KEY (`id_salFamilia`)
 );
 
@@ -171,10 +165,10 @@ CREATE TABLE `tb_Depto` (
 
 CREATE TABLE `tb_login` (
 	`id_usuario` int NOT NULL AUTO_INCREMENT,
-	`nm_usuario` varchar (100) NOT NULL,
-	`nm_funcionario` varchar(100) NOT NULL,
-	`ds_email` varchar(200) NOT NULL,
+    `nm_funcionario` varchar(50) NOT NULL,
+	`nm_usuario` varchar(50) NOT NULL UNIQUE,
 	`ds_senha` varchar(20) NOT NULL,
+    `ds_email` varchar(150) NOT NULL UNIQUE,
 	`pr_permissaoADM` bool NOT NULL,
 	`pr_permissaoCadastro` bool NOT NULL,
 	`pr_permissaoConsulta` bool NOT NULL,
@@ -217,9 +211,9 @@ ALTER TABLE `tb_historicoAnimal` ADD CONSTRAINT `tb_historicoAnimal_fk1` FOREIGN
 
 ALTER TABLE `tb_historicoAnimal` ADD CONSTRAINT `tb_historicoAnimal_fk2` FOREIGN KEY (`id_funcionario`) REFERENCES `tb_funcionario`(`id_funcionario`);
 
-ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk0` FOREIGN KEY (`id_depto`) REFERENCES `tb_Depto`(`id_depto`);
+ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk1` FOREIGN KEY (`id_depto`) REFERENCES `tb_Depto`(`id_depto`);
 
-ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk1` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
+ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk2` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
 
 ALTER TABLE `tb_pedido` ADD CONSTRAINT `tb_pedido_fk0` FOREIGN KEY (`id_cliente`) REFERENCES `tb_cliente`(`id_cliente`);
 
@@ -235,17 +229,13 @@ ALTER TABLE `tb_animal` ADD CONSTRAINT `tb_animal_fk1` FOREIGN KEY (`id_cliente`
 
 ALTER TABLE `tb_servico` ADD CONSTRAINT `tb_servico_fk0` FOREIGN KEY (`id_animal`) REFERENCES `tb_animal`(`id_animal`);
 
-ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk0` FOREIGN KEY (`id_inss`) REFERENCES `tb_inss`(`id_inss`);
+ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk0` FOREIGN KEY (`id_funcionario`) REFERENCES `tb_funcionario`(`id_funcionario`);
 
-ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk1` FOREIGN KEY (`id_salFamilia`) REFERENCES `tb_salarioFamilia`(`id_salFamilia`);
+ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk1` FOREIGN KEY (`id_inss`) REFERENCES `tb_inss`(`id_inss`);
 
-ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk2` FOREIGN KEY (`id_funcionario`) REFERENCES `tb_funcionario`(`id_funcionario`);
+ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk2` FOREIGN KEY (`id_salFamilia`) REFERENCES `tb_salarioFamilia`(`id_salFamilia`);
 
-ALTER TABLE `tb_inss` ADD CONSTRAINT `tb_inss_fk0` FOREIGN KEY (`id_folhaPagto`) REFERENCES `tb_folhaDePagamento`(`id_folhaPagto`);
-
-ALTER TABLE `tb_impostoDeRenda` ADD CONSTRAINT `tb_impostoDeRenda_fk0` FOREIGN KEY (`id_folhaPagto`) REFERENCES `tb_folhaDePagamento`(`id_folhaPagto`);
-
-ALTER TABLE `tb_salarioFamilia` ADD CONSTRAINT `tb_salarioFamilia_fk0` FOREIGN KEY (`id_folhaPagto`) REFERENCES `tb_folhaDePagamento`(`id_folhaPagto`);
+ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk3` FOREIGN KEY (`id_funcionario`) REFERENCES `tb_funcionario`(`id_funcionario`);
 
 ALTER TABLE `tb_estoque` ADD CONSTRAINT `tb_estoque_fk0` FOREIGN KEY (`id_compra`) REFERENCES `tb_compra`(`id_compra`);
 
@@ -255,14 +245,10 @@ ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk1` FOREIGN KEY (`id_forneced
 
 ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk2` FOREIGN KEY (`id_formaPagto`) REFERENCES `tb_formaDePagamento`(`id_formaPagto`);
 
-
 -- INSERTS & SELECTS
 
-
-
 INSERT INTO tb_login(`id_usuario`,`nm_funcionario`, `nm_usuario`, `ds_senha`,`ds_email`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`)
-		      VALUES('2','q', 'q', 'q','q', '1', '1', '1');
-
+		      VALUES('1','adm', 'adm', 'adm','adm', '1', '1', '1');
               
 INSERT INTO tb_Depto(`id_depto`, `nm_depto`, `ds_depto`)
               VALUES('1','nome','descrudas');
@@ -352,12 +338,53 @@ INSERT INTO tb_estados(`id_estado`,`nm_estado`)
 INSERT INTO tb_funcionario(`id_funcionario`, `ds_salario`,`id_depto`, `nm_nome`, `ds_email`,`ds_cpf`,`ds_rg`, `id_estado`,`ds_cidade`, `ds_cep`, `ds_telefone`,`img_funcionario`)
 					VALUES('1', '123432', '1', 'fdsgfsd', 'fdsafda', '542523', 'fdsaf', '1', 'fdaf', 'fdas', '3424453', '');
 
+INSERT INTO tb_inss(`id_inss`, `ds_salarioDeContribuicao`, `vl_aliquota`)
+			VALUES('1', '1659.38', '8');
+            
+INSERT INTO tb_inss(`id_inss`, `ds_salarioDeContribuicao`, `vl_aliquota`)
+			VALUES('2', '2765.66', '9');
+            
+INSERT INTO tb_inss(`id_inss`, `ds_salarioDeContribuicao`, `vl_aliquota`)
+			VALUES('3', '5531.31', '11');
+                        
+              
+INSERT INTO tb_salarioFamilia(`id_salFamilia`, `ds_salFamilia`, `vl_salFamilia`)
+				   VALUES('1', '859.88', '44.00');
+                   
+INSERT INTO tb_salarioFamilia(`id_salFamilia`, `ds_salFamilia`, `vl_salFamilia`)
+				   VALUES('2', '1292.43', '31.07');
+                   
+INSERT INTO tb_salarioFamilia(`id_salFamilia`, `ds_salFamilia`, `vl_salFamilia`)
+				   VALUES('3', '1292.44', '0');
+                
+
+INSERT INTO tb_impostoDeRenda(`id_impostoRenda`, `ds_baseDeCalculo`, `vl_aliquota`, `vl_deducao`)
+					   VALUES('1', '1903.98', '0', '0');
+                       
+INSERT INTO tb_impostoDeRenda(`id_impostoRenda`, `ds_baseDeCalculo`, `vl_aliquota`, `vl_deducao`)
+					   VALUES('2', '1903.99', '7.5', '142.80');
+                       
+INSERT INTO tb_impostoDeRenda(`id_impostoRenda`, `ds_baseDeCalculo`, `vl_aliquota`, `vl_deducao`)
+					   VALUES('3', '2826.66', '15', '354.80');
+                       
+INSERT INTO tb_impostoDeRenda(`id_impostoRenda`, `ds_baseDeCalculo`, `vl_aliquota`, `vl_deducao`)
+					   VALUES('4', '3751.06', '22.5', '636.13');
+                       
+INSERT INTO tb_impostoDeRenda(`id_impostoRenda`, `ds_baseDeCalculo`, `vl_aliquota`, `vl_deducao`)
+					   VALUES('5', '4664.68', '27.5', '869.36');
+                       
+
+
 USE CatiorosDB;
 SELECT * FROM tb_Depto;
 SELECT * FROM tb_estados;
 SELECT * FROM tb_funcionario;              
 SELECT * FROM tb_login;
 SELECT * FROM vw_consultarFuncionario;
+SELECT * FROM tb_inss;
+SELECT * FROM tb_salarioFamilia;
+SELECT * FROM tb_impostoDeRenda;
+
 
 
 -- VIEW
@@ -379,3 +406,4 @@ JOIN tb_Depto
 ON tb_funcionario.id_depto = tb_Depto.id_depto
 JOIN tb_estados
 ON tb_funcionario.id_estado = tb_estados.id_estado;
+
