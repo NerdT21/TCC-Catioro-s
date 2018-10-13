@@ -125,6 +125,18 @@
     <Compile Include="classes\Classes\Login\LoginDTO.cs" />
     <Compile Include="classes\Classes\Login\UserSession.cs" />
     <Compile Include="PlugIn\ImagemPlugIn.cs" />
+    <Compile Include="Telas\Entregavel II\Controle de Compras\frmCompras.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel II\Controle de Compras\frmCompras.Designer.cs">
+      <DependentUpon>frmCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel II\Controle de Compras\frmVerCompras.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel II\Controle de Compras\frmVerCompras.Designer.cs">
+      <DependentUpon>frmVerCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Entregavel II\Produto\frmConsultarProduto.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -239,6 +251,12 @@
     <None Include="Resources\icons8-minimizar-janela-32.png" />
     <None Include="Resources\icons8-excluir-48.png" />
     <None Include="Resources\Catioro%27s Logo.jpeg" />
+    <EmbeddedResource Include="Telas\Entregavel II\Controle de Compras\frmCompras.resx">
+      <DependentUpon>frmCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel II\Controle de Compras\frmVerCompras.resx">
+      <DependentUpon>frmVerCompras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel II\Produto\frmConsultarProduto.resx">
       <DependentUpon>frmConsultarProduto.cs</DependentUpon>
     </EmbeddedResource>
