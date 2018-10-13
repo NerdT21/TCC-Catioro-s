@@ -84,36 +84,6 @@ namespace Catiotro_s.Resgistros
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-           
-        {
-            try
-            {
-                EstadoDTO estado = cboEstado.SelectedItem as EstadoDTO;
-
-                FornecedoresDTO dto = new FornecedoresDTO();
-
-                dto.Nome = txtNome.Text;
-                dto.Email = txtEmail.Text;
-                dto.Cnpj = txtCnpj.Text;
-                dto.Cidade = txtCidade.Text;
-                dto.Bairro = txtBairro.Text;
-                dto.Telefone = txtTelefone.Text;
-                dto.IdEstado = estado.Id;
-
-                FornecedoresBusiness business = new FornecedoresBusiness();
-                business.Salvar(dto);
-
-                MessageBox.Show("Fornecedor cadastrado com sucesso!", "Catioro´s", MessageBoxButtons.OK);
-            }
-            catch (Exception)
-            {
-
-                ;
-            }
-               
-            }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -125,6 +95,39 @@ namespace Catiotro_s.Resgistros
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+
+        {
+            try
+            {
+                EstadoDTO estado = cboEstado.SelectedItem as EstadoDTO;
+
+                FornecedoresDTO dto = new FornecedoresDTO();
+
+                dto.Nome = txtNome.Text;
+                dto.Email = txtEmail.Text;
+                dto.CNPJ = txtCnpj.Text;
+                dto.Cidade = txtCidade.Text;
+                dto.CEP = mkbCep.Text;
+                dto.Telefone = txtTelefone.Text;
+                dto.IdEstado = estado.Id;
+
+                FornecedoresBusiness business = new FornecedoresBusiness();
+                business.Salvar(dto);
+
+                MessageBox.Show("Fornecedor cadastrado com sucesso!", "Catioro´s", MessageBoxButtons.OK);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
-    }
+}
 

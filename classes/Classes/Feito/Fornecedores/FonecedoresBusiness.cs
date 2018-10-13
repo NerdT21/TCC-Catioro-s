@@ -30,5 +30,11 @@ namespace Catiotro_s.classes.Classes.Cliente
             List<FornecedoresDTO> forncedor = DB.Listar();
             return forncedor;
         }
+
+        public List<FornecedoresDTO> Consultar(string nome, string cidade)
+        {
+            FornecedoresDataBase db = new FornecedoresDataBase();
+            return db.Consultar(nome, cidade);
+        }
     }
 }

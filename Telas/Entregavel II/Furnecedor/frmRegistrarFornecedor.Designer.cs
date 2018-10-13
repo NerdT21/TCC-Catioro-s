@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistrarFornecedor));
             this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.lblCidadeF = new System.Windows.Forms.Label();
@@ -40,12 +39,10 @@
             this.lblNomeJuridico = new System.Windows.Forms.Label();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.lbltelefone = new System.Windows.Forms.Label();
-            this.txtBairro = new System.Windows.Forms.TextBox();
             this.lblBairro = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cboEstado = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.mkbCep = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // txtCnpj
@@ -93,7 +90,7 @@
             this.lblCNPJ.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCNPJ.Location = new System.Drawing.Point(90, 95);
             this.lblCNPJ.Name = "lblCNPJ";
-            this.lblCNPJ.Size = new System.Drawing.Size(56, 25);
+            this.lblCNPJ.Size = new System.Drawing.Size(55, 25);
             this.lblCNPJ.TabIndex = 95;
             this.lblCNPJ.Text = "CNPJ";
             this.lblCNPJ.Click += new System.EventHandler(this.lblCNPJ_Click);
@@ -135,9 +132,9 @@
             // txtTelefone
             // 
             this.txtTelefone.Location = new System.Drawing.Point(158, 130);
-            this.txtTelefone.Mask = "9999-9999";
+            this.txtTelefone.Mask = "(99)9999-9999";
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(57, 20);
+            this.txtTelefone.Size = new System.Drawing.Size(77, 20);
             this.txtTelefone.TabIndex = 112;
             // 
             // lbltelefone
@@ -146,17 +143,9 @@
             this.lbltelefone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltelefone.Location = new System.Drawing.Point(61, 125);
             this.lbltelefone.Name = "lbltelefone";
-            this.lbltelefone.Size = new System.Drawing.Size(85, 25);
+            this.lbltelefone.Size = new System.Drawing.Size(83, 25);
             this.lbltelefone.TabIndex = 111;
             this.lbltelefone.Text = "Telefone";
-            // 
-            // txtBairro
-            // 
-            this.txtBairro.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
-            this.txtBairro.Location = new System.Drawing.Point(158, 216);
-            this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(123, 20);
-            this.txtBairro.TabIndex = 114;
             // 
             // lblBairro
             // 
@@ -165,9 +154,9 @@
             this.lblBairro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBairro.Location = new System.Drawing.Point(83, 210);
             this.lblBairro.Name = "lblBairro";
-            this.lblBairro.Size = new System.Drawing.Size(63, 25);
+            this.lblBairro.Size = new System.Drawing.Size(45, 25);
             this.lblBairro.TabIndex = 113;
-            this.lblBairro.Text = "Bairro";
+            this.lblBairro.Text = "CEP";
             // 
             // button1
             // 
@@ -186,18 +175,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(446, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(124, 123);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 115;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // cboEstado
             // 
             this.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -208,14 +185,22 @@
             this.cboEstado.TabIndex = 117;
             this.cboEstado.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // mkbCep
+            // 
+            this.mkbCep.Location = new System.Drawing.Point(157, 215);
+            this.mkbCep.Mask = "00000-000";
+            this.mkbCep.Name = "mkbCep";
+            this.mkbCep.Size = new System.Drawing.Size(58, 20);
+            this.mkbCep.TabIndex = 118;
+            this.mkbCep.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            // 
             // frmRegistrarFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.mkbCep);
             this.Controls.Add(this.cboEstado);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.lblBairro);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.lbltelefone);
@@ -231,7 +216,6 @@
             this.Name = "frmRegistrarFornecedor";
             this.Size = new System.Drawing.Size(605, 388);
             this.Load += new System.EventHandler(this.RegistrarFornecedor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,10 +234,9 @@
         private System.Windows.Forms.Label lblNomeJuridico;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.Label lbltelefone;
-        private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Label lblBairro;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cboEstado;
+        private System.Windows.Forms.MaskedTextBox mkbCep;
     }
 }
