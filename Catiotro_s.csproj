@@ -317,6 +317,7 @@
     <Content Include="Notas\Script.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Telas\Entregavel II\Compra\" />
     <Folder Include="Telas\Entregavel IV\" />
     <Folder Include="Telas\Resgistros\" />
   </ItemGroup>

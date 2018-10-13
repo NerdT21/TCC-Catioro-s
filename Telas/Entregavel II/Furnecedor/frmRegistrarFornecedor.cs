@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Cliente;
+using Catiotro_s.classes.Classes.Agenda;
 
 namespace Catiotro_s.Resgistros
 {
@@ -16,6 +17,21 @@ namespace Catiotro_s.Resgistros
         public frmRegistrarFornecedor()
         {
             InitializeComponent();
+            CarregarCombos();
+        }
+
+        void CarregarCombos()
+        {
+
+            EstadoBusiness biss = new EstadoBusiness();
+            List<EstadoDTO> lista = biss.Listar();
+
+            //DisplayMember = Motra,ValueMember=oque de verdade , DataSource = Lista
+            cboEstado.ValueMember = nameof(EstadoDTO.Id);
+            cboEstado.DisplayMember = nameof(EstadoDTO.Estado);
+            cboEstado.DataSource = lista;
+
+
         }
 
         private void txtCidadeF_TextChanged(object sender, EventArgs e)
@@ -69,8 +85,11 @@ namespace Catiotro_s.Resgistros
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
            
+        {
+            try
+            {
+                EstadoDTO estado = cboEstado.SelectedItem as EstadoDTO;
 
                 FornecedoresDTO dto = new FornecedoresDTO();
 
@@ -80,15 +99,29 @@ namespace Catiotro_s.Resgistros
                 dto.Cidade = txtCidade.Text;
                 dto.Bairro = txtBairro.Text;
                 dto.Telefone = txtTelefone.Text;
-                dto.IdEstado = Convert.ToInt32(mbkEstado.Text); 
+                dto.IdEstado = estado.Id;
 
                 FornecedoresBusiness business = new FornecedoresBusiness();
                 business.Salvar(dto);
 
                 MessageBox.Show("Fornecedor cadastrado com sucesso!", "Catioro´s", MessageBoxButtons.OK);
             }
+            catch (Exception)
+            {
+
+                ;
+            }
+               
+            }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

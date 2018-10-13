@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistrarFornecedor));
             this.txtCnpj = new System.Windows.Forms.MaskedTextBox();
-            this.mbkEstado = new System.Windows.Forms.MaskedTextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.lblCidadeF = new System.Windows.Forms.Label();
             this.lblestado = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.lblBairro = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cboEstado = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,15 +56,6 @@
             this.txtCnpj.Size = new System.Drawing.Size(105, 20);
             this.txtCnpj.TabIndex = 100;
             this.txtCnpj.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtCPF_CNPJ_MaskInputRejected);
-            // 
-            // mbkEstado
-            // 
-            this.mbkEstado.Location = new System.Drawing.Point(355, 190);
-            this.mbkEstado.Mask = "AA";
-            this.mbkEstado.Name = "mbkEstado";
-            this.mbkEstado.Size = new System.Drawing.Size(20, 20);
-            this.mbkEstado.TabIndex = 99;
-            this.mbkEstado.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mkbEstado_MaskInputRejected);
             // 
             // txtCidade
             // 
@@ -207,10 +198,21 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // cboEstado
+            // 
+            this.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEstado.FormattingEnabled = true;
+            this.cboEstado.Location = new System.Drawing.Point(357, 188);
+            this.cboEstado.Name = "cboEstado";
+            this.cboEstado.Size = new System.Drawing.Size(42, 21);
+            this.cboEstado.TabIndex = 117;
+            this.cboEstado.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // frmRegistrarFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cboEstado);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtBairro);
@@ -222,7 +224,6 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtCnpj);
-            this.Controls.Add(this.mbkEstado);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.lblCidadeF);
             this.Controls.Add(this.lblestado);
@@ -239,7 +240,6 @@
         #endregion
 
         private System.Windows.Forms.MaskedTextBox txtCnpj;
-        private System.Windows.Forms.MaskedTextBox mbkEstado;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.Label lblCidadeF;
         private System.Windows.Forms.Label lblestado;
@@ -254,5 +254,6 @@
         private System.Windows.Forms.Label lblBairro;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cboEstado;
     }
 }
