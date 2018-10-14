@@ -121,7 +121,7 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         public List<FornecedoresDTO> Consultar(string nome, string cidade)
         {
-            string script = @"SELECT * FROM tb_fornecedor WHERE nm_nome LIKE @nm_nome AND ds_cidade LIKE @ds_cidade";
+            string script = @"SELECT * FROM tb_fornecedor WHERE nm_fornecedor LIKE @nm_fornecedor AND ds_cidade LIKE @ds_cidade";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_fornecedor", nome + "%"));
