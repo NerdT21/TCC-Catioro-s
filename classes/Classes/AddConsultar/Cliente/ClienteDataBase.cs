@@ -1,112 +1,166 @@
-﻿//using Catiotro_s.classes.Base;
-//using MySql.Data.MySqlClient;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+﻿using Catiotro_s.classes.Base;
+using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-//namespace Catiotro_s.classes.Classes.Cliente
-//{
-//    public class ClienteDataBase
-//    {
-//   //     public int Salvar(ClienteDTO cliente)
-//        {
+namespace Catiotro_s.classes.Classes.Cliente
+{
+    public class ClienteDataBase
+    {
+        public int Salvar(ClienteDTO cliente)
+        {
 
-//            string script = @"INSERT INTO tb_cliente
-//                                         ( id_estado,
-//                                           nm_nome,
-//                                           int_cpf,
-//                                           ds_endereco,
-//                                           nm_local,
-//                                           ds_cidade,
-//                                           int_cep,
-//                                           ds_email,
-//                                           int_tel,
-//                                           dt_nasc,
-//                                           dt_data_cadastro)                                           
-//                                   VALUES( @id_estado,
-//                                           @nm_nome,
-//                                           @int_cpf,
-//                                           @ds_endereco,
-//                                           @nm_local,
-//                                           @ds_cidade,
-//                                           @int_cep,
-//                                           @ds_email,
-//                                           @int_tel,
-//                                           @dt_nasc,
-//                                           @dt_data_cadastro)";
+            string script = @"INSERT INTO tb_cliente(
+                                           nm_nome,
+                                           ds_email,
+                                           ds_rg,
+                                           ds_cpf,
+                                           id_estado,
+                                           ds_cidade,
+                                           ds_cep,
+                                           ds_telefone,
+                                           dt_nasc,
+                                           dt_dataCadastro)                                           
+                                    VALUES(@nm_nome,
+                                           @ds_email,
+                                           @ds_rg,
+                                           @ds_cpf,
+                                           @id_estado,
+                                           @ds_cidade,
+                                           @ds_cep,
+                                           @ds_telefone,
+                                           @dt_nasc,
+                                           @dt_dataCadastro)";                                           
+                                   
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("nm_nome", cliente.Nome));
+            parms.Add(new MySqlParameter("ds_cpf", cliente.Cpf));
+            parms.Add(new MySqlParameter("ds_email", cliente.Email));
+            parms.Add(new MySqlParameter("ds_rg", cliente.Rg));
+            parms.Add(new MySqlParameter("id_estado", cliente.EstadoId));
+            parms.Add(new MySqlParameter("ds_cidade", cliente.Cidade));
+            parms.Add(new MySqlParameter("ds_cep", cliente.Cep));
+            parms.Add(new MySqlParameter("ds_telefone", cliente.Telefone));
+            parms.Add(new MySqlParameter("dt_nasc", cliente.DataNascimento));
+            parms.Add(new MySqlParameter("dt_dataCadastro", cliente.DataCadastro));
 
-//            List<MySqlParameter> parms = new List<MySqlParameter>();
-//            parms.Add(new MySqlParameter("id_estado", cliente.IdEstado));
-//            parms.Add(new MySqlParameter("nm_nome", cliente.Nome));
-//            parms.Add(new MySqlParameter("int_cpf", cliente.CPF));
-//            parms.Add(new MySqlParameter("ds_endereco", cliente.Endereco));
-//            parms.Add(new MySqlParameter("nm_local", cliente.Local));
-//            parms.Add(new MySqlParameter("ds_cidade", cliente.Cidade));
-//            parms.Add(new MySqlParameter("int_cep", cliente.CEP));
-//            parms.Add(new MySqlParameter("ds_email", cliente.Email));
-//            parms.Add(new MySqlParameter("int_tel", cliente.Telefone));
-//            parms.Add(new MySqlParameter("dt_nasc", cliente.DataNasc));
-//            parms.Add(new MySqlParameter("dt_data_cadastro", cliente.DataCadastro));
+            Database db = new Database();
+            int pk = db.ExecuteInsertScriptWithPk(script, parms);
+            return pk;
 
-//            Database db = new Database();
-//            int pk = db.ExecuteInsertScriptWithPk(script, parms);
-//            return pk;
+        }
 
-//        }
+        public void Alterar(ClienteDTO cliente)
+        {
 
-//        public void Alterar(ClienteDTO cliente)
-//        {
+            string script = @"UPDATE tb_cliente SET nm_nome = @nm_nome,
+                                                    ds_cpf = @ds_cpf,
+                                                    ds_email = @ds_email,
+                                                    ds_rg = @ds_rg,
+                                                    id_estado = @id_estado,
+                                                    ds_cidade  = @ds_cidade,
+                                                    ds_cep = @ds_cep,
+                                                    ds_email = @ds_email,
+                                                    ds_telefone = @ds_telefone,
+                                                    dt_nasc = @dt_nasc,
+                                                    dt_dataCadastro = @dt_dataCadastro,
+                                              WHERE id_cliente = @id_cliente";
 
-//            string script = @"UPDATE tb_cliente SET id_estado = @id_estado,
-//                                                    nm_nome = @nm_nome,
-//                                                    int_cpf = @int_cpf,
-//                                                    ds_endereco = @ds_endereco,
-//                                                    nm_local = @nm_local,
-//                                                    ds_cidad  = @ds_cidade,
-//                                                    int_cep = @int_cep,
-//                                                    ds_email = @ds_email,
-//                                                    int_tel = @int_tel,
-//                                                    dt_nasc = @dt_nasc,
-//                                                    dt_data_cadastro = @dt_data_cadastro,
-//                                              WHERE id_pessoa = @id_pessoa";
-
-//            List<MySqlParameter> parms = new List<MySqlParameter>();
-//            parms.Add(new MySqlParameter("id_estado", cliente.Pessoa));
-//            parms.Add(new MySqlParameter("id_estado", cliente.IdEstado));
-//            parms.Add(new MySqlParameter("nm_nome", cliente.Nome));
-//            parms.Add(new MySqlParameter("int_cpf", cliente.CPF));
-//            parms.Add(new MySqlParameter("ds_endereco", cliente.Endereco));
-//            parms.Add(new MySqlParameter("nm_local", cliente.Local));
-//            parms.Add(new MySqlParameter("ds_cidade", cliente.Cidade));
-//            parms.Add(new MySqlParameter("int_cep", cliente.CEP));
-//            parms.Add(new MySqlParameter("ds_email", cliente.Email));
-//            parms.Add(new MySqlParameter("int_tel", cliente.Telefone));
-//            parms.Add(new MySqlParameter("dt_nasc", cliente.DataNasc));
-//            parms.Add(new MySqlParameter("dt_data_cadastro", cliente.DataCadastro));
-
-//            Database db = new Database();
-//        //    db.ExecuteInsertScript(script, parms);
-
-//        //}
-
-//        //public void Remover(int IdCliente)
-//        //{
-
-//        //    string script = @"DELETE FROM tb_cliente WHERE id_pessoa = @id_pessoa";
-
-//        //    List<MySqlParameter> parms = new List<MySqlParameter>();
-//        //    parms.Add(new MySqlParameter("id_pessoa", IdCliente));
-
-//        //    Database db = new Database();
-//        //    db.ExecuteInsertScript(script, parms);
-
-//        //}
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("nm_nome", cliente.Nome));
+            parms.Add(new MySqlParameter("ds_cpf", cliente.Cpf));
+            parms.Add(new MySqlParameter("ds_email", cliente.Email));
+            parms.Add(new MySqlParameter("ds_rg", cliente.Rg));
+            parms.Add(new MySqlParameter("id_estado", cliente.EstadoId));
+            parms.Add(new MySqlParameter("ds_cidade", cliente.Cidade));
+            parms.Add(new MySqlParameter("ds_cep", cliente.Cep));
+            parms.Add(new MySqlParameter("ds_telefone", cliente.Telefone));
+            parms.Add(new MySqlParameter("dt_nasc", cliente.DataNascimento));
+            parms.Add(new MySqlParameter("dt_dataCadastro", cliente.DataCadastro));
 
 
+            Database db = new Database();
+            db.ExecuteInsertScript(script, parms);
+
+        }
+
+        public void Remover(int IdCliente)
+        {
+
+            string script = @"DELETE FROM tb_cliente WHERE id_cliente = @id_cliente";
+
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_cliente", IdCliente));
+
+            Database db = new Database();
+            db.ExecuteInsertScript(script, parms);
+
+        }
+
+        public List<ClienteDTO> Listar()
+        {
+            string script = @"SELECT * FROM tb_cliente";
 
 
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
 
-//    }
-//}
+            List<ClienteDTO> lista = new List<ClienteDTO>();
+            while (reader.Read())
+            {
+                ClienteDTO dto = new ClienteDTO();
+                dto.id = reader.GetInt32("id_cliente");
+                dto.Nome = reader.GetString("nm_nome");
+                dto.Email = reader.GetString("ds_email");
+                dto.Rg = reader.GetString("ds_rg");
+                dto.Cpf = reader.GetString("ds_cpf");
+                dto.EstadoId = reader.GetInt32("id_estado");
+                dto.Cidade = reader.GetString("ds_cidade");
+                dto.Cep = reader.GetString("ds_cep");
+                dto.Telefone = reader.GetString("ds_telefone");
+                dto.DataNascimento = reader.GetString("dt_nasc");
+                dto.DataCadastro = reader.GetString("dt_dataCadastro");
+
+                lista.Add(dto);
+            }
+            reader.Close();
+            return lista;
+        }
+
+        public List<ClienteDTO> Consultar(string nome, string cpf)
+        {
+            string script = @"SELECT * FROM tb_cliente WHERE nm_nome LIKE @nm_nome AND ds_cpf LIKE @ds_cpf";
+
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("nm_nome", nome + "%"));
+            parms.Add(new MySqlParameter("ds_cpf", cpf + "%"));
+
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
+
+            List<ClienteDTO> lista = new List<ClienteDTO>();
+            while (reader.Read())
+            {
+                ClienteDTO dto = new ClienteDTO();
+                dto.id = reader.GetInt32("id_cliente");
+                dto.Nome = reader.GetString("nm_nome");
+                dto.Email = reader.GetString("ds_email");
+                dto.Rg = reader.GetString("ds_rg");
+                dto.Cpf = reader.GetString("ds_cpf");
+                dto.EstadoId = reader.GetInt32("id_estado");
+                dto.Cidade = reader.GetString("ds_cidade");
+                dto.Cep = reader.GetString("ds_cep");
+                dto.Telefone = reader.GetString("ds_telefone");
+                dto.DataNascimento = reader.GetString("dt_nasc");
+                dto.DataCadastro = reader.GetString("dt_dataCadastro");
+
+                lista.Add(dto);
+            }
+            reader.Close();
+            return lista;
+        }
+    }
+}
