@@ -47,7 +47,7 @@
             // 
             // txtCnpj
             // 
-            this.txtCnpj.Location = new System.Drawing.Point(157, 101);
+            this.txtCnpj.Location = new System.Drawing.Point(218, 104);
             this.txtCnpj.Mask = "99.999.999/9999-99";
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(105, 20);
@@ -56,7 +56,7 @@
             // 
             // txtCidade
             // 
-            this.txtCidade.Location = new System.Drawing.Point(157, 187);
+            this.txtCidade.Location = new System.Drawing.Point(218, 190);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(123, 20);
             this.txtCidade.TabIndex = 98;
@@ -66,7 +66,7 @@
             // 
             this.lblCidadeF.AutoSize = true;
             this.lblCidadeF.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCidadeF.Location = new System.Drawing.Point(75, 180);
+            this.lblCidadeF.Location = new System.Drawing.Point(136, 183);
             this.lblCidadeF.Name = "lblCidadeF";
             this.lblCidadeF.Size = new System.Drawing.Size(71, 25);
             this.lblCidadeF.TabIndex = 97;
@@ -77,7 +77,7 @@
             // 
             this.lblestado.AutoSize = true;
             this.lblestado.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblestado.Location = new System.Drawing.Point(287, 185);
+            this.lblestado.Location = new System.Drawing.Point(348, 188);
             this.lblestado.Name = "lblestado";
             this.lblestado.Size = new System.Drawing.Size(68, 25);
             this.lblestado.TabIndex = 96;
@@ -88,9 +88,9 @@
             // 
             this.lblCNPJ.AutoSize = true;
             this.lblCNPJ.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCNPJ.Location = new System.Drawing.Point(90, 95);
+            this.lblCNPJ.Location = new System.Drawing.Point(151, 98);
             this.lblCNPJ.Name = "lblCNPJ";
-            this.lblCNPJ.Size = new System.Drawing.Size(55, 25);
+            this.lblCNPJ.Size = new System.Drawing.Size(56, 25);
             this.lblCNPJ.TabIndex = 95;
             this.lblCNPJ.Text = "CNPJ";
             this.lblCNPJ.Click += new System.EventHandler(this.lblCNPJ_Click);
@@ -99,7 +99,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(83, 61);
+            this.lblEmail.Location = new System.Drawing.Point(144, 64);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(66, 25);
             this.lblEmail.TabIndex = 105;
@@ -107,14 +107,14 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(157, 67);
+            this.txtEmail.Location = new System.Drawing.Point(218, 70);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(215, 20);
             this.txtEmail.TabIndex = 106;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(159, 31);
+            this.txtNome.Location = new System.Drawing.Point(220, 34);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(215, 20);
             this.txtNome.TabIndex = 108;
@@ -123,7 +123,7 @@
             // 
             this.lblNomeJuridico.AutoSize = true;
             this.lblNomeJuridico.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeJuridico.Location = new System.Drawing.Point(79, 31);
+            this.lblNomeJuridico.Location = new System.Drawing.Point(140, 34);
             this.lblNomeJuridico.Name = "lblNomeJuridico";
             this.lblNomeJuridico.Size = new System.Drawing.Size(68, 25);
             this.lblNomeJuridico.TabIndex = 107;
@@ -131,7 +131,7 @@
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(158, 130);
+            this.txtTelefone.Location = new System.Drawing.Point(219, 133);
             this.txtTelefone.Mask = "(99)9999-9999";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(77, 20);
@@ -141,9 +141,9 @@
             // 
             this.lbltelefone.AutoSize = true;
             this.lbltelefone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltelefone.Location = new System.Drawing.Point(61, 125);
+            this.lbltelefone.Location = new System.Drawing.Point(122, 128);
             this.lbltelefone.Name = "lbltelefone";
-            this.lbltelefone.Size = new System.Drawing.Size(83, 25);
+            this.lbltelefone.Size = new System.Drawing.Size(85, 25);
             this.lbltelefone.TabIndex = 111;
             this.lbltelefone.Text = "Telefone";
             // 
@@ -152,7 +152,7 @@
             this.lblBairro.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
             this.lblBairro.AutoSize = true;
             this.lblBairro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBairro.Location = new System.Drawing.Point(83, 210);
+            this.lblBairro.Location = new System.Drawing.Point(144, 213);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(45, 25);
             this.lblBairro.TabIndex = 113;
@@ -166,7 +166,7 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::Catiotro_s.Properties.Resources.icons8_save_26;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(243, 294);
+            this.button1.Location = new System.Drawing.Point(237, 292);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 47);
             this.button1.TabIndex = 116;
@@ -179,7 +179,7 @@
             // 
             this.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEstado.FormattingEnabled = true;
-            this.cboEstado.Location = new System.Drawing.Point(357, 188);
+            this.cboEstado.Location = new System.Drawing.Point(418, 191);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(42, 21);
             this.cboEstado.TabIndex = 117;
@@ -187,7 +187,7 @@
             // 
             // mkbCep
             // 
-            this.mkbCep.Location = new System.Drawing.Point(157, 215);
+            this.mkbCep.Location = new System.Drawing.Point(218, 218);
             this.mkbCep.Mask = "00000-000";
             this.mkbCep.Name = "mkbCep";
             this.mkbCep.Size = new System.Drawing.Size(58, 20);
