@@ -46,8 +46,6 @@
             this.txtEmailDono = new System.Windows.Forms.TextBox();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.cboSexo = new System.Windows.Forms.ComboBox();
-            this.txtEspecie = new System.Windows.Forms.TextBox();
-            this.lblEspecie = new System.Windows.Forms.Label();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -221,23 +219,6 @@
             this.cboSexo.TabIndex = 17;
             this.cboSexo.Text = "Escolha o sexo do animal";
             // 
-            // txtEspecie
-            // 
-            this.txtEspecie.Location = new System.Drawing.Point(134, 62);
-            this.txtEspecie.Name = "txtEspecie";
-            this.txtEspecie.Size = new System.Drawing.Size(238, 20);
-            this.txtEspecie.TabIndex = 19;
-            // 
-            // lblEspecie
-            // 
-            this.lblEspecie.AutoSize = true;
-            this.lblEspecie.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEspecie.Location = new System.Drawing.Point(57, 61);
-            this.lblEspecie.Name = "lblEspecie";
-            this.lblEspecie.Size = new System.Drawing.Size(61, 21);
-            this.lblEspecie.TabIndex = 18;
-            this.lblEspecie.Text = "Espécie";
-            // 
             // btnRegistrar
             // 
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -248,6 +229,7 @@
             this.btnRegistrar.TabIndex = 117;
             this.btnRegistrar.Text = "Cadastrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // pictureBox1
             // 
@@ -274,8 +256,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRegistrar);
-            this.Controls.Add(this.txtEspecie);
-            this.Controls.Add(this.lblEspecie);
             this.Controls.Add(this.cboSexo);
             this.Controls.Add(this.txtObs);
             this.Controls.Add(this.txtEmailDono);
@@ -323,8 +303,6 @@
         private System.Windows.Forms.TextBox txtEmailDono;
         private System.Windows.Forms.TextBox txtObs;
         private System.Windows.Forms.ComboBox cboSexo;
-        private System.Windows.Forms.TextBox txtEspecie;
-        private System.Windows.Forms.Label lblEspecie;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Catiotro_s.classes.Classes.Animal;
 
 namespace Catiotro_s.Consultar
 {
@@ -15,7 +16,16 @@ namespace Catiotro_s.Consultar
         public frmConsultarAnimal()
         {
             InitializeComponent();
+            AutoCarregar();
         }
+        void AutoCarregar()
+        {
+            AnimalBusiness business = new AnimalBusiness();
+            List<AnimalDTO> lista = business.Listar();
+
+            dgvAnimal.DataSource = lista;
+        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -33,6 +43,11 @@ namespace Catiotro_s.Consultar
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProcurar_Click(object sender, EventArgs e)
         {
 
         }

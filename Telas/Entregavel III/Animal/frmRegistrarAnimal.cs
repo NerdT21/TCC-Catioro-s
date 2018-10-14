@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Catiotro_s.classes.Classes.Animal;
 
 namespace Catiotro_s.Resgistros
 {
@@ -69,6 +70,32 @@ namespace Catiotro_s.Resgistros
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AnimalDTO dto = new AnimalDTO();
+                dto.NomeAnimal = txtNomeAnimal.Text;
+                dto.Sexo = cboSexo.Text;
+                dto.IdRaca = Convert.ToInt32(txtRaca.Text);
+                dto.Pelagem = txtTipoPelo.Text;
+                dto.CorPelo = txtCorPelo.Text;
+                dto.Pedigree = txtPedigree.Text;
+                dto.Obs = txtObs.Text;
+                dto.IdCliente = Convert.ToInt32(txtNomeDono.Text);
+                dto.IdCliente = Convert.ToInt32(txtEmailDono.Text);
+
+                AnimalBusiness business = new AnimalBusiness();
+                business.Salvar(dto);
+            }
+            catch (Exception ex)
+            { 
+                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
 
         }
     }
