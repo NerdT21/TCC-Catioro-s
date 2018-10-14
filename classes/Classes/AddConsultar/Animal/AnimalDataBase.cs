@@ -136,15 +136,33 @@ namespace Catiotro_s.classes.Classes.Animal
 
         }
 
+        public List<AnimalDTO> Consultar(string nome, string nomeDono)
+        {
+            string script = @"SELECT * FROM tb_animal WHERE nm_animal LIKE @nm_animal AND id_cliente LIKE @id_cliente";
+
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("nm_animal", nome + "%"));
+            parms.Add(new MySqlParameter("id_cliente", nomeDono + "%"));
+
+
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
+
+            List<AnimalDTO> lista = new List<AnimalDTO>();
+            while (reader.Read())
+            {
+
+                AnimalDTO add = new AnimalDTO();
+                add.NomeAnimal = reader.GetString("nm_animal");
+                add.IdCliente = reader.GetInt32("id_cliente");
+
+                lista.Add(add);
+            }
+
+            reader.Close();
+            return lista;
+        }
+
     }
 }
-                                    //nm_animal,
-                                    //ds_pelagem,
-                                    //ds_cor_da_pelagem,
-                                    //ds_data_nasc,
-                                    //ds_pedigree,
-                                    //id_raca,
-                                    //ds_sexo,
-                                    //id_cliente,
-                                    //ds_obs,
-                                    //id_ficha_animal
+                                   

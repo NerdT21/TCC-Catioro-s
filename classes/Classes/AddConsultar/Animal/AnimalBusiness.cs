@@ -30,5 +30,10 @@ namespace Catiotro_s.classes.Classes.Animal
             List<AnimalDTO> animal = DB.Listar();
             return animal;
         }
+        public List<AnimalDTO> Consultar(string nome, string nomeDono)
+        {
+            AnimalDataBase db = new AnimalDataBase();
+            return db.Consultar(nome, nomeDono);
+        }
     }
 }

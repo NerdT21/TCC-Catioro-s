@@ -1,4 +1,4 @@
-﻿ DROP DATABASE CatiorosDB; 
+﻿DROP DATABASE CatiorosDB; 
 CREATE DATABASE CatiorosDB;
 USE CatiorosDB;
 
@@ -35,6 +35,7 @@ CREATE TABLE `tb_cliente` (
 	`id_cliente` int NOT NULL AUTO_INCREMENT,
 	`nm_nome` varchar(255) NOT NULL,
 	`ds_email` varchar(100) NOT NULL,
+    `ds_rg` varchar(25) NOT NULL,
 	`ds_cpf` varchar(25) NOT NULL,
 	`id_estado` int NOT NULL,
 	`ds_cidade` varchar(50) NOT NULL,
@@ -391,7 +392,7 @@ USE CatiorosDB;
 SELECT * FROM tb_Depto;
 SELECT * FROM tb_estados;
 SELECT * FROM tb_funcionario;              
-SELECT * FROM tb_login;,
+SELECT * FROM tb_login;
 SELECT * FROM vw_consultarFuncionario;
 SELECT * FROM tb_inss;
 SELECT * FROM tb_salarioFamilia;
@@ -419,4 +420,3 @@ JOIN tb_Depto
 ON tb_funcionario.id_depto = tb_Depto.id_depto
 JOIN tb_estados
 ON tb_funcionario.id_estado = tb_estados.id_estado;
-

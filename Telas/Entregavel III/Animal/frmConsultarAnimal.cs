@@ -25,6 +25,16 @@ namespace Catiotro_s.Consultar
 
             dgvAnimal.DataSource = lista;
         }
+        void CarregarGrid()
+        {
+            string nome = txtAnimal.Text;
+            string nomeDono = txtDono.Text;
+
+            AnimalBusiness buss = new AnimalBusiness();
+            List<AnimalDTO> lista = buss.Consultar(nome, nomeDono);
+
+            dgvAnimal.DataSource = lista;
+        }
        
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,6 +58,11 @@ namespace Catiotro_s.Consultar
         }
 
         private void btnProcurar_Click(object sender, EventArgs e)
+        {
+            CarregarGrid();
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }
