@@ -94,5 +94,10 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 pbxFoto.ImageLocation = dialog.FileName;
             }
         }
+
+        private void cboUF_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

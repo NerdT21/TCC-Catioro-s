@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Animal;
+using Catiotro_s.classes.Classes.Agenda;
+using Catiotro_s.classes.Classes.Cliente;
 
 namespace Catiotro_s.Resgistros
 {
@@ -16,6 +18,20 @@ namespace Catiotro_s.Resgistros
         public frmRegistrarAnimal()
         {
             InitializeComponent();
+            CarregarCombos();
+        }
+        void CarregarCombos()
+        {
+
+            ClienteBusiness biss = new ClienteBusiness();
+            List<ClienteDTO> lista = biss.Listar();
+
+            //DisplayMember = Motra,ValueMember=oque de verdade , DataSource = Lista
+            cboDono.ValueMember = nameof(ClienteDTO.id);
+            cboDono.DisplayMember = nameof(ClienteDTO.Nome);
+            cboDono.DataSource = lista;
+
+
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -75,26 +91,29 @@ namespace Catiotro_s.Resgistros
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            try
-            {
+                ClienteDTO IdCliente = cboDono.SelectedItem as ClienteDTO;
+            //try
+            //{
                 AnimalDTO dto = new AnimalDTO();
                 dto.NomeAnimal = txtNomeAnimal.Text;
                 dto.Sexo = cboSexo.Text;
-                dto.IdRaca = Convert.ToInt32(txtRaca.Text);
+                //dto.IdRaca = Convert.ToInt32(txtRaca.Text);
                 dto.Pelagem = txtTipoPelo.Text;
                 dto.CorPelo = txtCorPelo.Text;
                 dto.Pedigree = txtPedigree.Text;
                 dto.Obs = txtObs.Text;
-                dto.IdCliente = Convert.ToInt32(txtNomeDono.Text);
-                dto.IdCliente = Convert.ToInt32(txtEmailDono.Text);
+                dto.IdCliente = IdCliente.id;
+                
 
                 AnimalBusiness business = new AnimalBusiness();
                 business.Salvar(dto);
-            }
-            catch (Exception ex)
-            { 
-                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            MessageBox.Show("Animal Cadastrado com sucesso");
+            //}
+            //catch (Exception ex)
+            //{ 
+            //    MessageBox.Show("Ocorreu um erro: " + ex.Message, "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
            
 
         }

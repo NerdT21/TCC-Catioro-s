@@ -33,7 +33,6 @@
             this.lblSexo = new System.Windows.Forms.Label();
             this.lblCorPelo = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblEmailDono = new System.Windows.Forms.Label();
             this.lblpedigree = new System.Windows.Forms.Label();
             this.lblTipoPelo = new System.Windows.Forms.Label();
             this.lblNomeDono = new System.Windows.Forms.Label();
@@ -42,13 +41,12 @@
             this.txtTipoPelo = new System.Windows.Forms.TextBox();
             this.txtCorPelo = new System.Windows.Forms.TextBox();
             this.txtPedigree = new System.Windows.Forms.TextBox();
-            this.txtNomeDono = new System.Windows.Forms.TextBox();
-            this.txtEmailDono = new System.Windows.Forms.TextBox();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.cboSexo = new System.Windows.Forms.ComboBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cboDono = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,17 +102,6 @@
             this.label5.Size = new System.Drawing.Size(43, 21);
             this.label5.TabIndex = 4;
             this.label5.Text = "Raça";
-            // 
-            // lblEmailDono
-            // 
-            this.lblEmailDono.AutoSize = true;
-            this.lblEmailDono.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailDono.Location = new System.Drawing.Point(13, 343);
-            this.lblEmailDono.Name = "lblEmailDono";
-            this.lblEmailDono.Size = new System.Drawing.Size(120, 21);
-            this.lblEmailDono.TabIndex = 5;
-            this.lblEmailDono.Text = "E-mail do dono ";
-            this.lblEmailDono.Click += new System.EventHandler(this.label6_Click);
             // 
             // lblpedigree
             // 
@@ -184,20 +171,6 @@
             this.txtPedigree.TabIndex = 13;
             this.txtPedigree.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // txtNomeDono
-            // 
-            this.txtNomeDono.Location = new System.Drawing.Point(131, 313);
-            this.txtNomeDono.Name = "txtNomeDono";
-            this.txtNomeDono.Size = new System.Drawing.Size(198, 20);
-            this.txtNomeDono.TabIndex = 14;
-            // 
-            // txtEmailDono
-            // 
-            this.txtEmailDono.Location = new System.Drawing.Point(131, 346);
-            this.txtEmailDono.Name = "txtEmailDono";
-            this.txtEmailDono.Size = new System.Drawing.Size(198, 20);
-            this.txtEmailDono.TabIndex = 15;
-            // 
             // txtObs
             // 
             this.txtObs.Location = new System.Drawing.Point(134, 215);
@@ -223,7 +196,7 @@
             // 
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(460, 328);
+            this.btnRegistrar.Location = new System.Drawing.Point(460, 316);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(124, 56);
             this.btnRegistrar.TabIndex = 117;
@@ -249,17 +222,24 @@
             this.panel1.Size = new System.Drawing.Size(423, 10);
             this.panel1.TabIndex = 119;
             // 
+            // cboDono
+            // 
+            this.cboDono.FormattingEnabled = true;
+            this.cboDono.Location = new System.Drawing.Point(129, 316);
+            this.cboDono.Name = "cboDono";
+            this.cboDono.Size = new System.Drawing.Size(121, 21);
+            this.cboDono.TabIndex = 120;
+            // 
             // frmRegistrarAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cboDono);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.cboSexo);
             this.Controls.Add(this.txtObs);
-            this.Controls.Add(this.txtEmailDono);
-            this.Controls.Add(this.txtNomeDono);
             this.Controls.Add(this.txtPedigree);
             this.Controls.Add(this.txtCorPelo);
             this.Controls.Add(this.txtTipoPelo);
@@ -268,7 +248,6 @@
             this.Controls.Add(this.lblNomeDono);
             this.Controls.Add(this.lblTipoPelo);
             this.Controls.Add(this.lblpedigree);
-            this.Controls.Add(this.lblEmailDono);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblCorPelo);
             this.Controls.Add(this.lblSexo);
@@ -290,7 +269,6 @@
         private System.Windows.Forms.Label lblSexo;
         private System.Windows.Forms.Label lblCorPelo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblEmailDono;
         private System.Windows.Forms.Label lblpedigree;
         private System.Windows.Forms.Label lblTipoPelo;
         private System.Windows.Forms.Label lblNomeDono;
@@ -299,12 +277,11 @@
         private System.Windows.Forms.TextBox txtTipoPelo;
         private System.Windows.Forms.TextBox txtCorPelo;
         private System.Windows.Forms.TextBox txtPedigree;
-        private System.Windows.Forms.TextBox txtNomeDono;
-        private System.Windows.Forms.TextBox txtEmailDono;
         private System.Windows.Forms.TextBox txtObs;
         private System.Windows.Forms.ComboBox cboSexo;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox cboDono;
     }
 }

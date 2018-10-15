@@ -7,7 +7,7 @@
     <ProjectGuid>{20BAA929-7EC9-4903-BFD0-18AECA7018BA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Catiotro_s</RootNamespace>
-    <AssemblyName>Catiotro%27s</AssemblyName>
+    <AssemblyName>Catiotros</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -38,6 +38,9 @@
   <PropertyGroup />
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Catiotro_s.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">

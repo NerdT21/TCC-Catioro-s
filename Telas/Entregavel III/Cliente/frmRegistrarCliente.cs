@@ -18,6 +18,7 @@ namespace Catiotro_s.Resgistros
         {
             InitializeComponent();
             CarregarData();
+            CarregarCombos();
         }
 
         void CarregarCombos()
