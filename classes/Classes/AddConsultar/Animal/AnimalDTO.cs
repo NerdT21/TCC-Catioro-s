@@ -20,7 +20,7 @@ namespace Catiotro_s.classes.Classes.Animal
 
         public string Pedigree { get; set; }
 
-        public int IdRaca { get; set; }
+        public string Raca { get; set; }
 
         public string Sexo { get; set; }
 

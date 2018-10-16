@@ -114,9 +114,6 @@
     <Compile Include="classes\Classes\Feito\Produto\ProdutoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Produto\ProdutoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Produto\ProdutoDTO.cs" />
-    <Compile Include="classes\Classes\Feito\Raca\RacaBusiness.cs" />
-    <Compile Include="classes\Classes\Feito\Raca\RacaDataBase.cs" />
-    <Compile Include="classes\Classes\Feito\Raca\RacaDTO.cs" />
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaDTO.cs" />
