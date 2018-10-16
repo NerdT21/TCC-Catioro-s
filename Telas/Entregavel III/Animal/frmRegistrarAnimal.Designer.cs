@@ -47,6 +47,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboDono = new System.Windows.Forms.ComboBox();
+            this.lblnasc = new System.Windows.Forms.Label();
+            this.txtdtnasc = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +66,7 @@
             // 
             this.lblObs.AutoSize = true;
             this.lblObs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObs.Location = new System.Drawing.Point(67, 212);
+            this.lblObs.Location = new System.Drawing.Point(110, 227);
             this.lblObs.Name = "lblObs";
             this.lblObs.Size = new System.Drawing.Size(38, 21);
             this.lblObs.TabIndex = 1;
@@ -86,7 +88,7 @@
             // 
             this.lblCorPelo.AutoSize = true;
             this.lblCorPelo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorPelo.Location = new System.Drawing.Point(3, 155);
+            this.lblCorPelo.Location = new System.Drawing.Point(31, 160);
             this.lblCorPelo.Name = "lblCorPelo";
             this.lblCorPelo.Size = new System.Drawing.Size(120, 21);
             this.lblCorPelo.TabIndex = 3;
@@ -97,7 +99,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(80, 93);
+            this.label5.Location = new System.Drawing.Point(105, 108);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 21);
             this.label5.TabIndex = 4;
@@ -107,7 +109,7 @@
             // 
             this.lblpedigree.AutoSize = true;
             this.lblpedigree.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpedigree.Location = new System.Drawing.Point(52, 186);
+            this.lblpedigree.Location = new System.Drawing.Point(80, 186);
             this.lblpedigree.Name = "lblpedigree";
             this.lblpedigree.Size = new System.Drawing.Size(71, 21);
             this.lblpedigree.TabIndex = 6;
@@ -118,7 +120,7 @@
             // 
             this.lblTipoPelo.AutoSize = true;
             this.lblTipoPelo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoPelo.Location = new System.Drawing.Point(3, 125);
+            this.lblTipoPelo.Location = new System.Drawing.Point(23, 134);
             this.lblTipoPelo.Name = "lblTipoPelo";
             this.lblTipoPelo.Size = new System.Drawing.Size(125, 21);
             this.lblTipoPelo.TabIndex = 7;
@@ -143,21 +145,21 @@
             // 
             // txtRaca
             // 
-            this.txtRaca.Location = new System.Drawing.Point(134, 96);
+            this.txtRaca.Location = new System.Drawing.Point(154, 111);
             this.txtRaca.Name = "txtRaca";
             this.txtRaca.Size = new System.Drawing.Size(198, 20);
             this.txtRaca.TabIndex = 10;
             // 
             // txtTipoPelo
             // 
-            this.txtTipoPelo.Location = new System.Drawing.Point(134, 128);
+            this.txtTipoPelo.Location = new System.Drawing.Point(154, 137);
             this.txtTipoPelo.Name = "txtTipoPelo";
             this.txtTipoPelo.Size = new System.Drawing.Size(198, 20);
             this.txtTipoPelo.TabIndex = 11;
             // 
             // txtCorPelo
             // 
-            this.txtCorPelo.Location = new System.Drawing.Point(134, 158);
+            this.txtCorPelo.Location = new System.Drawing.Point(154, 163);
             this.txtCorPelo.Name = "txtCorPelo";
             this.txtCorPelo.Size = new System.Drawing.Size(198, 20);
             this.txtCorPelo.TabIndex = 12;
@@ -165,7 +167,7 @@
             // 
             // txtPedigree
             // 
-            this.txtPedigree.Location = new System.Drawing.Point(134, 189);
+            this.txtPedigree.Location = new System.Drawing.Point(154, 189);
             this.txtPedigree.Name = "txtPedigree";
             this.txtPedigree.Size = new System.Drawing.Size(166, 20);
             this.txtPedigree.TabIndex = 13;
@@ -173,10 +175,10 @@
             // 
             // txtObs
             // 
-            this.txtObs.Location = new System.Drawing.Point(134, 215);
+            this.txtObs.Location = new System.Drawing.Point(154, 215);
             this.txtObs.Multiline = true;
             this.txtObs.Name = "txtObs";
-            this.txtObs.Size = new System.Drawing.Size(166, 67);
+            this.txtObs.Size = new System.Drawing.Size(166, 33);
             this.txtObs.TabIndex = 16;
             this.txtObs.TextChanged += new System.EventHandler(this.txtObs_TextChanged);
             // 
@@ -230,10 +232,29 @@
             this.cboDono.Size = new System.Drawing.Size(121, 21);
             this.cboDono.TabIndex = 120;
             // 
+            // lblnasc
+            // 
+            this.lblnasc.AutoSize = true;
+            this.lblnasc.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnasc.Location = new System.Drawing.Point(3, 253);
+            this.lblnasc.Name = "lblnasc";
+            this.lblnasc.Size = new System.Drawing.Size(145, 20);
+            this.lblnasc.TabIndex = 121;
+            this.lblnasc.Text = "Data de Nascimento";
+            // 
+            // txtdtnasc
+            // 
+            this.txtdtnasc.Location = new System.Drawing.Point(154, 253);
+            this.txtdtnasc.Name = "txtdtnasc";
+            this.txtdtnasc.Size = new System.Drawing.Size(198, 20);
+            this.txtdtnasc.TabIndex = 122;
+            // 
             // frmRegistrarAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtdtnasc);
+            this.Controls.Add(this.lblnasc);
             this.Controls.Add(this.cboDono);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
@@ -283,5 +304,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cboDono;
+        private System.Windows.Forms.Label lblnasc;
+        private System.Windows.Forms.TextBox txtdtnasc;
     }
 }

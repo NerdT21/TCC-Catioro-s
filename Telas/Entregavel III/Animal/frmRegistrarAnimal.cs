@@ -97,18 +97,19 @@ namespace Catiotro_s.Resgistros
                 AnimalDTO dto = new AnimalDTO();
                 dto.NomeAnimal = txtNomeAnimal.Text;
                 dto.Sexo = cboSexo.Text;
-                //dto.IdRaca = Convert.ToInt32(txtRaca.Text);
+                dto.Raca = txtRaca.Text;
                 dto.Pelagem = txtTipoPelo.Text;
                 dto.CorPelo = txtCorPelo.Text;
                 dto.Pedigree = txtPedigree.Text;
                 dto.Obs = txtObs.Text;
                 dto.IdCliente = IdCliente.id;
+                dto.DataNasc = txtdtnasc.Text;
                 
 
                 AnimalBusiness business = new AnimalBusiness();
                 business.Salvar(dto);
 
-            MessageBox.Show("Animal Cadastrado com sucesso");
+                MessageBox.Show("Animal Cadastrado com sucesso");
             //}
             //catch (Exception ex)
             //{ 

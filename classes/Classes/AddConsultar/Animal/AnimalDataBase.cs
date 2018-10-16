@@ -14,26 +14,21 @@ namespace Catiotro_s.classes.Classes.Animal
         {
 
             string scrip =
-            @"INSERT INTO tb_animal(nm_animal,
-                                    ds_pelagem,
-                                    ds_cor_da_pelagem,
-                                    ds_data_nasc,
-                                    ds_pedigree,
-                                    id_raca,
-                                    ds_sexo,
-                                    id_cliente,
-                                    ds_obs,
-                                    id_ficha_animal)
+            @"INSERT INTO tb_animal(
+	                                nm_animal,
+	                                ds_pelagem,
+	                                dt_dataNasc,
+	                                ds_raca,
+	                                ds_sexo,
+	                                id_cliente,
+	                                ds_obs)
                              VALUES(@nm_animal,
-                                    @ds_pelagem,
-                                    @ds_cor_da_pelagem,
-                                    @ds_data_nasc,
-                                    @ds_pedigree,
-                                    @id_raca,
-                                    @ds_sexo,
-                                    @id_cliente,
-                                    @ds_obs,
-                                    @id_ficha_animal)";
+	                                @ds_pelagem,
+	                                @dt_dataNasc,
+	                                @ds_raca,
+	                                @ds_sexo,
+	                                @id_cliente,
+	                                @ds_obs)";
 
 
 
@@ -41,14 +36,11 @@ namespace Catiotro_s.classes.Classes.Animal
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_animal", animal.NomeAnimal));
             parms.Add(new MySqlParameter("ds_pelagem", animal.Pelagem));
-            parms.Add(new MySqlParameter("ds_cor_da_pelagem", animal.CorPelo));
-            parms.Add(new MySqlParameter("ds_data_nasc", animal.DataNasc));
-            parms.Add(new MySqlParameter("ds_pedigree", animal.Pedigree));
-            parms.Add(new MySqlParameter("id_raca", animal.IdRaca));
+            parms.Add(new MySqlParameter("dt_dataNasc", animal.DataNasc));
+            parms.Add(new MySqlParameter("ds_raca", animal.Raca));
             parms.Add(new MySqlParameter("ds_sexo", animal.Sexo));
             parms.Add(new MySqlParameter("id_cliente", animal.IdCliente));
             parms.Add(new MySqlParameter("ds_obs", animal.Obs));
-            parms.Add(new MySqlParameter("id_ficha_animal", animal.IdFichaAnimal));
 
             Database db = new Database();
             int pk = db.ExecuteInsertScriptWithPk(scrip, parms);
@@ -59,29 +51,21 @@ namespace Catiotro_s.classes.Classes.Animal
         {
 
             string script = @"UPDATE tb_animal SET nm_animal = @nm_animal,
-                                                   ds_pelagem = @ds_pelagem,
-                                                   ds_cor_da_pelagem = @ds_cor_da_pelagem,
-                                                   ds_data_nasc = @ds_data_nasc,
-                                                   ds_pedigree = @ds_pedigree,
-                                                   id_raca = @id_raca,
+	                                               ds_pelagem = @ds_pelagem,
+	                                               dt_dataNasc = @dt_dataNasc,
                                                    ds_sexo = @ds_sexo,
-                                                   id_cliente = @id_cliente,
-                                                   ds_obs = @ds_obs,
-                                                   id_ficha_animal = @id_ficha_animal,
+	                                               id_cliente = @id_cliente,
+	                                               ds_obs = @ds_obs
                                              WHERE id_animal = @id_animal";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_animal", animal.Id));
             parms.Add(new MySqlParameter("nm_animal", animal.NomeAnimal));
             parms.Add(new MySqlParameter("ds_pelagem", animal.Pelagem));
-            parms.Add(new MySqlParameter("ds_cor_da_pelagem", animal.CorPelo));
-            parms.Add(new MySqlParameter("ds_data_nasc", animal.DataNasc));
-            parms.Add(new MySqlParameter("ds_pedigree", animal.Pedigree));
-            parms.Add(new MySqlParameter("id_raca",animal.IdRaca));
+            parms.Add(new MySqlParameter("dt_dataNasc", animal.DataNasc));
+            parms.Add(new MySqlParameter("ds_raca", animal.Raca));
             parms.Add(new MySqlParameter("ds_sexo", animal.Sexo));
             parms.Add(new MySqlParameter("id_cliente", animal.IdCliente));
             parms.Add(new MySqlParameter("ds_obs", animal.Obs));
-            parms.Add(new MySqlParameter("id_ficha_animal", animal.IdFichaAnimal));
 
             Database db = new Database();
             db.ExecuteInsertScript(script, parms);
@@ -94,7 +78,7 @@ namespace Catiotro_s.classes.Classes.Animal
             string script = @"DELETE FROM tb_animal WHERE id_animal = @id_animal";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_curso",idAnimal));
+            parms.Add(new MySqlParameter("id_animal",idAnimal));
 
             Database db = new Database();
             db.ExecuteInsertScript(script, parms);
@@ -117,14 +101,12 @@ namespace Catiotro_s.classes.Classes.Animal
                     animal.Id = reader.GetInt32("id_animal");
                     animal.NomeAnimal = reader.GetString("nm_animal");
                     animal.Pelagem = reader.GetString("ds_pelagem");
-                    animal.CorPelo = reader.GetString("ds_cor_da_pelagem");
-                    animal.DataNasc = reader.GetString("ds_data_nasc");
-                    animal.Pedigree = reader.GetString("ds_pedigree");
-                    animal.IdRaca = reader.GetInt32("id_raca");
+                    animal.DataNasc = reader.GetString("ds_dataNasc");
+                    animal.Raca = reader.GetString("ds_raca");
                     animal.Sexo = reader.GetString("ds_sexo");
                     animal.IdCliente = reader.GetInt32("id_cliente");
                     animal.Obs = reader.GetString("ds_obs");
-                    animal.IdFichaAnimal = reader.GetInt32("id_ficha_animal");
+                   
 
                 animalL.Add(animal);
 
