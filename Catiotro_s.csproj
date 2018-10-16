@@ -73,6 +73,9 @@
     <Compile Include="classes\Classes\Compras\ComprasBusiness.cs" />
     <Compile Include="classes\Classes\Compras\ComprasDatabase.cs" />
     <Compile Include="classes\Classes\Compras\ComprasDTO.cs" />
+    <Compile Include="classes\Classes\Compras\ItemCompras\ItemComprasBusiness.cs" />
+    <Compile Include="classes\Classes\Compras\ItemCompras\ItemComprasDatabase.cs" />
+    <Compile Include="classes\Classes\Compras\ItemCompras\ItemComprasDTO.cs" />
     <Compile Include="classes\Classes\Compras\Item\ItemBusiness.cs" />
     <Compile Include="classes\Classes\Compras\Item\ItemDatabase.cs" />
     <Compile Include="classes\Classes\Compras\Item\ItemDTO.cs" />

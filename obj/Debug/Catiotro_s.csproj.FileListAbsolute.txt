@@ -204,9 +204,6 @@ C:\Users\INSTITUTO\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Properties.Re
 C:\Users\INSTITUTO\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.csproj.GenerateResource.Cache
 C:\Users\INSTITUTO\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro's.exe
 C:\Users\INSTITUTO\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro's.pdb
-C:\Users\infod32\Source\Repos\TCC-Catioro-s\bin\Debug\Catiotro's.exe.config
-C:\Users\infod32\Source\Repos\TCC-Catioro-s\bin\Debug\Catiotro's.exe
-C:\Users\infod32\Source\Repos\TCC-Catioro-s\bin\Debug\Catiotro's.pdb
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\bin\Debug\MySql.Data.dll
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\bin\Debug\MySql.Data.xml
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.csprojResolveAssemblyReference.cache
@@ -226,8 +223,6 @@ C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Resgistros.frmR
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.splash.resources
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Properties.Resources.resources
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.csproj.GenerateResource.Cache
-C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro's.exe
-C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro's.pdb
 C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro_s.Telas.Entregavel_I.frmFolhaPagto.resources
 C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro_s.Telas.Entregavel_I.Funcionários.frmCadastrarFuncionario.resources
 C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro_s.Telas.Entregavel_I.Login.frmCadastrarLogin.resources
@@ -350,3 +345,13 @@ C:\Users\infod32\Source\Repos\TCC-Catioro-s2\bin\Debug\Catiotros.exe
 C:\Users\infod32\Source\Repos\TCC-Catioro-s2\bin\Debug\Catiotros.pdb
 C:\Users\infod32\Source\Repos\TCC-Catioro-s2\obj\Debug\Catiotros.exe
 C:\Users\infod32\Source\Repos\TCC-Catioro-s2\obj\Debug\Catiotros.pdb
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\bin\Debug\Catiotros.exe.config
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\bin\Debug\Catiotros.exe
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\bin\Debug\Catiotros.pdb
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_II.Controle_de_Compras.frmCompras.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_II.Controle_de_Compras.frmVerCompras.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_II.Produto.frmConsultarProduto.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_II.Produto.frmRegistrarProduto.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Home.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotros.exe
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotros.pdb

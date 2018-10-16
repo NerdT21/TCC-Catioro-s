@@ -167,6 +167,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 
                 ComprasBusiness buss = new ComprasBusiness();
                 buss.Salvar(dto);
+                
 
                 CarregarGrid(i, f, q, p);
 
