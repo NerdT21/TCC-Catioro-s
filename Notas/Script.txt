@@ -1,4 +1,4 @@
-﻿DROP DATABASE CatiorosDB; 
+﻿ DROP DATABASE CatiorosDB; 
 CREATE DATABASE CatiorosDB;
 USE CatiorosDB;
 
@@ -205,12 +205,23 @@ CREATE TABLE `tb_item`(
 
 CREATE TABLE `tb_compra` (
 	`id_compra` int NOT NULL AUTO_INCREMENT,
-	`id_item` int NOT NULL,
-	`qtd_comprado` int NOT NULL,
+    `id_usuario` int NOT NULL,
 	`dt_compra` varchar(10) NOT NULL,
 	`ds_formaPagamento` varchar(50) NOT NULL,
-	`vl_preco` decimal(15,2) NOT NULL,
-	PRIMARY KEY (`id_compra`)
+	PRIMARY KEY (`id_compra`),
+    FOREIGN KEY(`id_usuario`)
+    REFERENCES tb_login(`id_usuario`)
+);
+
+CREATE TABLE `tb_item_compra`(
+	`id_itemCompra` int NOT NULL AUTO_INCREMENT,
+    `id_item` int NOT NULL,
+    `id_compra` int NOT NULL,
+    PRIMARY KEY(`id_itemCompra`),
+    FOREIGN KEY(`id_item`)
+    REFERENCES tb_item(`id_item`),
+    FOREIGN KEY(`id_compra`)
+    REFERENCES tb_compra(`id_compra`)
 );
 
 ALTER TABLE `tb_fornecedor` ADD CONSTRAINT `tb_fornecedor_fk0` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
@@ -251,7 +262,6 @@ ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk3` FOREI
 
 ALTER TABLE `tb_estoque` ADD CONSTRAINT `tb_estoque_fk0` FOREIGN KEY (`id_compra`) REFERENCES `tb_compra`(`id_compra`);
 
-ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk0` FOREIGN KEY (`id_item`) REFERENCES `tb_item`(`id_item`);
 -- INSERTS & SELECTS
 
 INSERT INTO tb_login(`id_usuario`,`nm_funcionario`, `nm_usuario`, `ds_senha`,`ds_email`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`)
@@ -386,37 +396,41 @@ INSERT INTO tb_item(`id_item`, `nm_item`, `id_fornecedor`, `vl_preco`, `ds_item`
 			VALUES ('1', 'Ração', '1', '35.90', 'Comida para cães');
 
 
-
+-- SELECT Tabelas
 
 USE CatiorosDB;
 SELECT * FROM tb_Depto;
 SELECT * FROM tb_estados;
 SELECT * FROM tb_funcionario;              
 SELECT * FROM tb_login;
-SELECT * FROM vw_consultarFuncionario;
 SELECT * FROM tb_inss;
 SELECT * FROM tb_salarioFamilia;
 SELECT * FROM tb_impostoDeRenda;
 SELECT * FROM tb_compra;
+SELECT * FROM tb_item;
+SELECT * FROM tb_item_compra;
 
 
 
--- VIEW
+-- VIEWs
 
-CREATE VIEW vw_consultarFuncionario AS
-SELECT tb_funcionario.id_funcionario,
-		tb_funcionario.nm_nome,
-        tb_funcionario.id_depto,
-        tb_funcionario.ds_salario,
-        tb_funcionario.ds_email,
-        tb_funcionario.ds_cpf,
-        tb_funcionario.ds_rg,
-        tb_funcionario.ds_telefone,
-        tb_funcionario.ds_cidade,
-        tb_funcionario.id_estado,
-        tb_funcionario.ds_cep
-FROM tb_funcionario
-JOIN tb_Depto
-ON tb_funcionario.id_depto = tb_Depto.id_depto
-JOIN tb_estados
-ON tb_funcionario.id_estado = tb_estados.id_estado;
+CREATE VIEW vw_compra_consultar AS
+SELECT tb_compra.id_compra,
+       tb_compra.ds_formaPagamento,
+       tb_compra.dt_compra,
+       count(tb_item_compra.id_itemCompra)  as qtd_item,
+       sum(tb_item.vl_preco)                as vl_total
+FROM tb_compra
+JOIN tb_item_compra
+  ON tb_compra.id_compra = tb_item_compra.id_itemCompra
+JOIN tb_item
+  ON tb_item_compra.id_item = tb_item.id_item
+GROUP
+  BY tb_compra.id_compra,
+	 tb_compra.dt_compra;
+
+
+-- SELECT Views
+
+USE CatiorosDB;
+SELECT * FROM vw_compra_consultar;
