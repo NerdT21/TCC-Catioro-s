@@ -28,13 +28,13 @@ namespace Catiotro_s.classes.Classes.Compras
             return IdCompra;
         }
 
-        public List<ComprasDTO> Listar()
+        public List<ItemComprasView> Listar()
         {
             ComprasDatabase db = new ComprasDatabase();
             return db.Listar();
         }
 
-        public List<ComprasDTO> Consultar(string data)
+        public List<ItemComprasView> Consultar(string data)
         {
             ComprasDatabase db = new ComprasDatabase();
             return db.Consultar(data);

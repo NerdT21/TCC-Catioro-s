@@ -42,5 +42,10 @@ namespace Catiotro_s.Consultar
         {
             CarregarGrid();
         }
+
+        private void frmConsultarFornecedor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

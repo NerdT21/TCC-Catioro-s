@@ -57,5 +57,10 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
         {
             CarregarGrid();
         }
+
+        private void frmConsultarProduto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

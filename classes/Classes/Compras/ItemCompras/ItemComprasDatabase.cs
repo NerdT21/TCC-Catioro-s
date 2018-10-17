@@ -12,7 +12,7 @@ namespace Catiotro_s.classes.Classes.Compras.ItemCompras
     {
         public int Salvar(ItemComprasDTO dto)
         {
-            string script = @"INSERT INTO tb_itemCompra(id_item, id_compra) VALUES(@id_item, @id_compra)";
+            string script = @"INSERT INTO tb_item_compra(id_item, id_compra) VALUES(@id_item, @id_compra)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_item", dto.ItemId));

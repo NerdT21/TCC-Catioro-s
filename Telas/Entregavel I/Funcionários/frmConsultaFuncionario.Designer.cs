@@ -197,6 +197,7 @@
             this.Controls.Add(this.lblProcurar);
             this.Name = "frmConsultaFuncionario";
             this.Size = new System.Drawing.Size(605, 388);
+            this.Load += new System.EventHandler(this.frmConsultaFuncionario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

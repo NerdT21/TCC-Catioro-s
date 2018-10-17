@@ -41,14 +41,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCompras = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mkbDataCompra = new System.Windows.Forms.MaskedTextBox();
-            this.btnComprar = new System.Windows.Forms.Button();
             this.txtPrecoTotal = new System.Windows.Forms.TextBox();
             this.txtFornecedor = new System.Windows.Forms.TextBox();
+            this.btnComprar = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +65,7 @@
             // 
             // nudQuantidade
             // 
-            this.nudQuantidade.Location = new System.Drawing.Point(148, 168);
+            this.nudQuantidade.Location = new System.Drawing.Point(148, 149);
             this.nudQuantidade.Name = "nudQuantidade";
             this.nudQuantidade.Size = new System.Drawing.Size(67, 23);
             this.nudQuantidade.TabIndex = 2;
@@ -86,7 +86,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(37, 211);
+            this.label5.Location = new System.Drawing.Point(37, 192);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 17);
             this.label5.TabIndex = 9;
@@ -97,7 +97,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 248);
+            this.label6.Location = new System.Drawing.Point(3, 229);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(139, 17);
             this.label6.TabIndex = 10;
@@ -106,7 +106,7 @@
             // 
             // txtProduto
             // 
-            this.txtProduto.Location = new System.Drawing.Point(148, 131);
+            this.txtProduto.Location = new System.Drawing.Point(148, 112);
             this.txtProduto.Name = "txtProduto";
             this.txtProduto.ReadOnly = true;
             this.txtProduto.Size = new System.Drawing.Size(140, 23);
@@ -117,7 +117,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(87, 134);
+            this.label4.Location = new System.Drawing.Point(87, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 17);
             this.label4.TabIndex = 12;
@@ -132,7 +132,7 @@
             "A vista",
             "Cartão",
             "Boleto"});
-            this.cboTipoPag.Location = new System.Drawing.Point(148, 247);
+            this.cboTipoPag.Location = new System.Drawing.Point(148, 228);
             this.cboTipoPag.Name = "cboTipoPag";
             this.cboTipoPag.Size = new System.Drawing.Size(140, 23);
             this.cboTipoPag.TabIndex = 13;
@@ -142,7 +142,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(341, 306);
+            this.label7.Location = new System.Drawing.Point(341, 287);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 17);
             this.label7.TabIndex = 15;
@@ -153,7 +153,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(66, 169);
+            this.label3.Location = new System.Drawing.Point(66, 150);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 7;
@@ -187,68 +187,26 @@
             this.dgvCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2,
             this.Column3,
-            this.Column4,
             this.Column5});
-            this.dgvCompras.Location = new System.Drawing.Point(294, 131);
+            this.dgvCompras.Location = new System.Drawing.Point(317, 112);
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.ReadOnly = true;
             this.dgvCompras.RowHeadersVisible = false;
-            this.dgvCompras.Size = new System.Drawing.Size(286, 162);
+            this.dgvCompras.Size = new System.Drawing.Size(244, 162);
             this.dgvCompras.TabIndex = 17;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Produto";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 80;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Fornecedor";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "QTD";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 50;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Preço";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 70;
             // 
             // mkbDataCompra
             // 
-            this.mkbDataCompra.Location = new System.Drawing.Point(150, 208);
+            this.mkbDataCompra.Location = new System.Drawing.Point(150, 189);
             this.mkbDataCompra.Mask = "00/00/0000";
             this.mkbDataCompra.Name = "mkbDataCompra";
             this.mkbDataCompra.Size = new System.Drawing.Size(65, 23);
             this.mkbDataCompra.TabIndex = 19;
             this.mkbDataCompra.ValidatingType = typeof(System.DateTime);
             // 
-            // btnComprar
-            // 
-            this.btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComprar.Image = global::Catiotro_s.Properties.Resources.icons8_plus_32;
-            this.btnComprar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComprar.Location = new System.Drawing.Point(176, 287);
-            this.btnComprar.Name = "btnComprar";
-            this.btnComprar.Size = new System.Drawing.Size(68, 36);
-            this.btnComprar.TabIndex = 18;
-            this.btnComprar.Text = "Add";
-            this.btnComprar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnComprar.UseVisualStyleBackColor = true;
-            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
-            // 
             // txtPrecoTotal
             // 
-            this.txtPrecoTotal.Location = new System.Drawing.Point(392, 304);
+            this.txtPrecoTotal.Location = new System.Drawing.Point(392, 285);
             this.txtPrecoTotal.Name = "txtPrecoTotal";
             this.txtPrecoTotal.ReadOnly = true;
             this.txtPrecoTotal.Size = new System.Drawing.Size(100, 23);
@@ -262,14 +220,65 @@
             this.txtFornecedor.Size = new System.Drawing.Size(127, 23);
             this.txtFornecedor.TabIndex = 21;
             // 
+            // btnComprar
+            // 
+            this.btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComprar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComprar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnComprar.Location = new System.Drawing.Point(229, 340);
+            this.btnComprar.Name = "btnComprar";
+            this.btnComprar.Size = new System.Drawing.Size(115, 50);
+            this.btnComprar.TabIndex = 22;
+            this.btnComprar.Text = "Emitir";
+            this.btnComprar.UseVisualStyleBackColor = true;
+            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Image = global::Catiotro_s.Properties.Resources.icons8_plus_32;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(178, 268);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(68, 36);
+            this.btnAdd.TabIndex = 23;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Nome";
+            this.Column2.HeaderText = "Produto";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 80;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "FornecedorId";
+            this.Column3.HeaderText = "Fornecedor";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Preco";
+            this.Column5.HeaderText = "Preço";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 60;
+            // 
             // frmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.txtFornecedor);
             this.Controls.Add(this.txtPrecoTotal);
             this.Controls.Add(this.mkbDataCompra);
-            this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.dgvCompras);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
@@ -309,13 +318,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvCompras;
-        private System.Windows.Forms.Button btnComprar;
         private System.Windows.Forms.MaskedTextBox mkbDataCompra;
         private System.Windows.Forms.TextBox txtPrecoTotal;
         private System.Windows.Forms.TextBox txtFornecedor;
+        private System.Windows.Forms.Button btnComprar;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

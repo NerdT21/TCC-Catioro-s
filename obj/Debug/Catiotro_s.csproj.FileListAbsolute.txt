@@ -226,11 +226,6 @@ C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.csproj.Generate
 C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro_s.Telas.Entregavel_I.frmFolhaPagto.resources
 C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro_s.Telas.Entregavel_I.Funcionários.frmCadastrarFuncionario.resources
 C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro_s.Telas.Entregavel_I.Login.frmCadastrarLogin.resources
-C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro's.exe
-C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro's.pdb
-C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\bin\Debug\Catiotro's.exe.config
-C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\bin\Debug\Catiotro's.exe
-C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\bin\Debug\Catiotro's.pdb
 C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\bin\Debug\MySql.Data.dll
 C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro_s.csproj.CopyComplete
 C:\Users\LEZADO\Source\Repos\TCC-Catioro-s4\obj\Debug\Catiotro_s.csprojAssemblyReference.cache
@@ -355,3 +350,8 @@ C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregave
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Home.resources
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotros.exe
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotros.pdb
+C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\bin\Debug\Catiotros.exe.config
+C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\bin\Debug\Catiotros.exe
+C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\bin\Debug\Catiotros.pdb
+C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotros.exe
+C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotros.pdb

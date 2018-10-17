@@ -11,6 +11,7 @@ using Catiotro_s.classes.Classes.Agenda;
 using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.classes.Classes.Compras.Item;
 using Catiotro_s.classes.Classes.Compras;
+using Catiotro_s.classes.Classes.Login;
 
 namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 {
@@ -23,6 +24,8 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             DataParaHoje();
             CarregarTxt();
         }
+
+        BindingList<ItemDTO> carrinhoAdd = new BindingList<ItemDTO>();
 
         void DataParaHoje()
         {
@@ -65,13 +68,10 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             cboProduto.DataSource = lista;
         }
 
-        void CarregarGrid(string produto, string fornecedor, string qtd, string preco)
+        void CarregarGrid()
         {
-            int n = dgvCompras.Rows.Add();
-            dgvCompras.Rows[n].Cells[0].Value = produto;
-            dgvCompras.Rows[n].Cells[1].Value = fornecedor;
-            dgvCompras.Rows[n].Cells[2].Value = qtd;
-            dgvCompras.Rows[n].Cells[3].Value = preco;
+            dgvCompras.AutoGenerateColumns = false;
+            dgvCompras.DataSource = carrinhoAdd;
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -91,7 +91,26 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 
         private void frmCompras_Load(object sender, EventArgs e)
         {
+            //Design das Linhas
+            dgvCompras.BorderStyle = BorderStyle.None;
+            dgvCompras.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(0, 116, 186);
+            dgvCompras.RowsDefaultCellStyle.BackColor = Color.FromArgb(0, 81, 130);
+            dgvCompras.RowsDefaultCellStyle.ForeColor = Color.White;
 
+            //Design da seleção de células da GV e da GV "pelada"
+            dgvCompras.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvCompras.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgvCompras.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvCompras.BackgroundColor = Color.White;
+
+            //Estilo da GV
+            dgvCompras.EnableHeadersVisualStyles = false;
+            dgvCompras.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvCompras.RowHeadersVisible = false;
+
+            //Cabeça da GV
+            dgvCompras.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvCompras.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -144,42 +163,36 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 
         }
 
-        private void btnComprar_Click(object sender, EventArgs e)
-        {
-            ItemDTO item = cboProduto.SelectedItem as ItemDTO;
-            string i = item.Nome;
-            string f = txtFornecedor.Text;
-            string q = nudQuantidade.Value.ToString();
-            string p = item.Preco.ToString();
-
-            if (txtProduto.Text == "NULL")
-            {
-                MessageBox.Show("Nenhum produto selecionado", "Carioro's", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                ComprasDTO dto = new ComprasDTO();
-                dto.ItemId = item.Id;
-                dto.Qtd = Convert.ToInt32(nudQuantidade.Value);
-                dto.Data = mkbDataCompra.Text;
-                dto.FormaPagto = Convert.ToString(cboTipoPag.SelectedItem);
-                dto.Preco = Convert.ToDecimal(txtPrecoTotal.Text);
-
-                ComprasBusiness buss = new ComprasBusiness();
-                buss.Salvar(dto);
-                
-
-                CarregarGrid(i, f, q, p);
-
-                MessageBox.Show("Compra realizada!", "Catioro's", MessageBoxButtons.OK);
-            }
-
-            
-        }
-
         private void cboProduto_SelectedIndexChanged(object sender, EventArgs e)
         {
             CarregarTxt();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ItemDTO dto = cboProduto.SelectedItem as ItemDTO;
+
+            int quantidade = Convert.ToInt32(nudQuantidade.Value);
+
+            for (int i = 0; i < quantidade; i++)
+            {
+                carrinhoAdd.Add(dto);
+            }
+
+            CarregarGrid();
+        }
+
+        private void btnComprar_Click(object sender, EventArgs e)
+        {
+            ComprasDTO dto = new ComprasDTO();
+            dto.UsuarioId = UserSession.UsuarioLogado.Id;
+            dto.Data = mkbDataCompra.Text;
+            dto.FormaPagto = Convert.ToString(cboTipoPag.SelectedItem);
+
+            ComprasBusiness buss = new ComprasBusiness();
+            buss.Salvar(dto, carrinhoAdd.ToList());
+
+            MessageBox.Show("Compra salva com sucesso!", "Catioro's", MessageBoxButtons.OK);
         }
     }
 }

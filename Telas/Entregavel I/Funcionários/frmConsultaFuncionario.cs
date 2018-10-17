@@ -26,5 +26,10 @@ namespace Catiotro_s.Consultar
         {
 
         }
+
+        private void frmConsultaFuncionario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
