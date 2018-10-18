@@ -134,6 +134,15 @@
     <Compile Include="classes\Classes\Login\LoginDatabase.cs" />
     <Compile Include="classes\Classes\Login\LoginDTO.cs" />
     <Compile Include="classes\Classes\Login\UserSession.cs" />
+    <Compile Include="classes\Classes\Vendas\ProdutoVendas\ProdutoVendasBusiness.cs" />
+    <Compile Include="classes\Classes\Vendas\ProdutoVendas\ProdutoVendasDatabase.cs" />
+    <Compile Include="classes\Classes\Vendas\ProdutoVendas\ProdutoVendasDTO.cs" />
+    <Compile Include="classes\Classes\Vendas\Produto\ProdutoBusiness.cs" />
+    <Compile Include="classes\Classes\Vendas\Produto\ProdutoDatabase.cs" />
+    <Compile Include="classes\Classes\Vendas\Produto\ProdutoDTO.cs" />
+    <Compile Include="classes\Classes\Vendas\VendaBusiness.cs" />
+    <Compile Include="classes\Classes\Vendas\VendaDatabase.cs" />
+    <Compile Include="classes\Classes\Vendas\VendaDTO.cs" />
     <Compile Include="PlugIn\ImagemPlugIn.cs" />
     <Compile Include="Telas\Entregavel III\Produtos\frmConsultarProdutos.cs">
       <SubType>UserControl</SubType>
