@@ -135,6 +135,30 @@
     <Compile Include="classes\Classes\Login\LoginDTO.cs" />
     <Compile Include="classes\Classes\Login\UserSession.cs" />
     <Compile Include="PlugIn\ImagemPlugIn.cs" />
+    <Compile Include="Telas\Entregavel III\Produtos\frmConsultarProdutos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Produtos\frmConsultarProdutos.Designer.cs">
+      <DependentUpon>frmConsultarProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Produtos\frmProdutos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Produtos\frmProdutos.Designer.cs">
+      <DependentUpon>frmProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Vendas\frmVendas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Vendas\frmVendas.Designer.cs">
+      <DependentUpon>frmVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Vendas\frmVerVendas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Vendas\frmVerVendas.Designer.cs">
+      <DependentUpon>frmVerVendas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Entregavel II\Controle de Compras\frmCompras.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -262,6 +286,18 @@
     <None Include="Resources\icons8-minimizar-janela-32.png" />
     <None Include="Resources\icons8-excluir-48.png" />
     <None Include="Resources\Catioro%27s Logo.jpeg" />
+    <EmbeddedResource Include="Telas\Entregavel III\Produtos\frmConsultarProdutos.resx">
+      <DependentUpon>frmConsultarProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel III\Produtos\frmProdutos.resx">
+      <DependentUpon>frmProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel III\Vendas\frmVendas.resx">
+      <DependentUpon>frmVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel III\Vendas\frmVerVendas.resx">
+      <DependentUpon>frmVerVendas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel II\Controle de Compras\frmCompras.resx">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </EmbeddedResource>
