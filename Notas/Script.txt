@@ -14,15 +14,6 @@ CREATE TABLE `tb_fornecedor` (
 	PRIMARY KEY (`id_fornecedor`)
 );
 
-CREATE TABLE `tb_produto` (
-	`id_produto` int NOT NULL AUTO_INCREMENT,
-	`nm_produto` varchar(50) NOT NULL,
-	`ds_marca` varchar(100) NOT NULL,
-	`ds_produto` varchar(250) NOT NULL,
-    `vl_preco` decimal(15,2) NOT NULL,
-	PRIMARY KEY (`id_produto`)
-);
-
 CREATE TABLE `tb_vacina` (
 	`id_vacina` int(50) NOT NULL AUTO_INCREMENT,
 	`nm_vacina` varchar(50) NOT NULL,
@@ -97,9 +88,10 @@ CREATE TABLE `tb_raca` (
 CREATE TABLE `tb_animal` (
 	`id_animal` int NOT NULL AUTO_INCREMENT,
 	`nm_animal` varchar(100) NOT NULL,
-	`ds_pelagem` varchar(50) NOT NULL,
+	`ds_pelagem` varchar(300) NOT NULL,
+    `ds_corPelagem` varchar(50) NOT NULL,
 	`dt_dataNasc` varchar(10) NOT NULL,
-	`id_raca` int NOT NULL,
+	`ds_raca` varchar(50) NOT NULL,
 	`ds_sexo` varchar(5) NOT NULL,
 	`id_cliente` int NOT NULL,
 	`ds_obs` varchar(300) NOT NULL,
@@ -183,6 +175,36 @@ CREATE TABLE `tb_formaDePagamento` (
 	PRIMARY KEY (`id_formaPagto`)
 );
 
+CREATE TABLE `tb_venda` (
+	`id_venda` int NOT NULL AUTO_INCREMENT,
+    `dt_venda` varchar(10)NOT NULL,
+    `id_usuario` int NOT NULL,
+    PRIMARY KEY(`id_venda`),
+    FOREIGN KEY(`id_usuario`)
+    REFERENCES tb_login(`id_usuario`)
+);
+
+CREATE TABLE `tb_produto` (
+	`id_produto` int NOT NULL AUTO_INCREMENT,
+	`nm_produto` varchar(50) NOT NULL,
+	`ds_marca` varchar(100) NOT NULL,
+	`ds_produto` varchar(250) NOT NULL,
+    `vl_preco` decimal(15,2) NOT NULL,
+	PRIMARY KEY (`id_produto`)
+);
+
+CREATE TABLE `tb_produtoVenda`(
+	`id_produtoVenda` int NOT NULL AUTO_INCREMENT,
+    `id_produto` int NOT NULL,
+    `id_venda` int NOT NULL,
+    PRIMARY KEY(`id_produtoVenda`),
+    FOREIGN KEY(`id_produto`)
+    REFERENCES tb_produto(`id_produto`),
+    FOREIGN KEY(`id_venda`)
+    REFERENCES tb_venda(`id_venda`)
+);
+    
+
 CREATE TABLE `tb_estoque` (
 	`id_estoque` int NOT NULL AUTO_INCREMENT,
 	`nm_produto` varchar(250) NOT NULL,
@@ -262,7 +284,9 @@ ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk3` FOREI
 
 ALTER TABLE `tb_estoque` ADD CONSTRAINT `tb_estoque_fk0` FOREIGN KEY (`id_compra`) REFERENCES `tb_compra`(`id_compra`);
 
--- INSERTS & SELECTS
+
+
+-- INSERTS
 
 INSERT INTO tb_login(`id_usuario`,`nm_funcionario`, `nm_usuario`, `ds_senha`,`ds_email`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`)
 		      VALUES('1','adm', 'adm', 'adm','adm', '1', '1', '1');
@@ -396,22 +420,6 @@ INSERT INTO tb_item(`id_item`, `nm_item`, `id_fornecedor`, `vl_preco`, `ds_item`
 			VALUES ('1', 'Ração', '1', '35.90', 'Comida para cães');
 
 
--- SELECT Tabelas
-
-USE CatiorosDB;
-SELECT * FROM tb_Depto;
-SELECT * FROM tb_estados;
-SELECT * FROM tb_funcionario;              
-SELECT * FROM tb_login;
-SELECT * FROM tb_inss;
-SELECT * FROM tb_salarioFamilia;
-SELECT * FROM tb_impostoDeRenda;
-SELECT * FROM tb_compra;
-SELECT * FROM tb_item;
-SELECT * FROM tb_item_compra;
-
-
-
 -- VIEWs
 
 CREATE VIEW vw_compra_consultar AS
@@ -434,3 +442,17 @@ GROUP
 
 USE CatiorosDB;
 SELECT * FROM vw_compra_consultar;
+
+-- SELECT Tabelas
+
+USE CatiorosDB;
+SELECT * FROM tb_Depto;
+SELECT * FROM tb_estados;
+SELECT * FROM tb_funcionario;              
+SELECT * FROM tb_login;
+SELECT * FROM tb_inss;
+SELECT * FROM tb_salarioFamilia;
+SELECT * FROM tb_impostoDeRenda;
+SELECT * FROM tb_compra;
+SELECT * FROM tb_item;
+SELECT * FROM tb_item_compra;
