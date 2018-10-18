@@ -46,7 +46,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboDono = new System.Windows.Forms.ComboBox();
             this.lblnasc = new System.Windows.Forms.Label();
-            this.mkbCadastro = new System.Windows.Forms.MaskedTextBox();
+            this.mkbDataNasc = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -222,20 +222,20 @@
             this.lblnasc.TabIndex = 121;
             this.lblnasc.Text = "Data de Nascimento";
             // 
-            // mkbCadastro
+            // mkbDataNasc
             // 
-            this.mkbCadastro.Location = new System.Drawing.Point(183, 223);
-            this.mkbCadastro.Mask = "00/00/0000";
-            this.mkbCadastro.Name = "mkbCadastro";
-            this.mkbCadastro.Size = new System.Drawing.Size(67, 20);
-            this.mkbCadastro.TabIndex = 122;
-            this.mkbCadastro.ValidatingType = typeof(System.DateTime);
+            this.mkbDataNasc.Location = new System.Drawing.Point(183, 223);
+            this.mkbDataNasc.Mask = "00/00/0000";
+            this.mkbDataNasc.Name = "mkbDataNasc";
+            this.mkbDataNasc.Size = new System.Drawing.Size(67, 20);
+            this.mkbDataNasc.TabIndex = 122;
+            this.mkbDataNasc.ValidatingType = typeof(System.DateTime);
             // 
             // frmRegistrarAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.mkbCadastro);
+            this.Controls.Add(this.mkbDataNasc);
             this.Controls.Add(this.lblnasc);
             this.Controls.Add(this.cboDono);
             this.Controls.Add(this.panel1);
@@ -283,6 +283,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cboDono;
         private System.Windows.Forms.Label lblnasc;
-        private System.Windows.Forms.MaskedTextBox mkbCadastro;
+        private System.Windows.Forms.MaskedTextBox mkbDataNasc;
     }
 }

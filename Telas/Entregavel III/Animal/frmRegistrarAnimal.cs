@@ -103,7 +103,7 @@ namespace Catiotro_s.Resgistros
                 
                 dto.Obs = txtObs.Text;
                 dto.IdCliente = IdCliente.id;
-                dto.DataNasc = txtdtnasc.Text;
+                dto.DataNasc = mkbDataNasc.Text;
                 
 
                 AnimalBusiness business = new AnimalBusiness();
