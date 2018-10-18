@@ -18,7 +18,7 @@ namespace Catiotro_s.classes.Classes.Animal
 
         public string DataNasc { get; set; }
 
-        public string Pedigree { get; set; }
+        
 
         public string Raca { get; set; }
 
@@ -28,6 +28,6 @@ namespace Catiotro_s.classes.Classes.Animal
 
         public string Obs { get; set; }
 
-        public int IdFichaAnimal { get; set; }
+       
     }
 }

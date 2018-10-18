@@ -355,3 +355,7 @@ C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\bin\De
 C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\bin\Debug\Catiotros.pdb
 C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotros.exe
 C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotros.pdb
+C:\Users\infod32\Source\Repos\TCC-Catioro-s2\obj\Debug\Catiotro_s.Telas.Entregavel_III.Produtos.frmConsultarProdutos.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s2\obj\Debug\Catiotro_s.Telas.Entregavel_III.Produtos.frmProdutos.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s2\obj\Debug\Catiotro_s.Telas.Entregavel_III.Vendas.frmVendas.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s2\obj\Debug\Catiotro_s.Telas.Entregavel_III.Vendas.frmVerVendas.resources
