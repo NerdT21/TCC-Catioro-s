@@ -100,7 +100,7 @@ namespace Catiotro_s.Resgistros
                 dto.Raca = txtRaca.Text;
                 dto.Pelagem = txtTipoPelo.Text;
                 dto.CorPelo = txtCorPelo.Text;
-                dto.Pedigree = txtPedigree.Text;
+                
                 dto.Obs = txtObs.Text;
                 dto.IdCliente = IdCliente.id;
                 dto.DataNasc = txtdtnasc.Text;
@@ -116,6 +116,11 @@ namespace Catiotro_s.Resgistros
             //    MessageBox.Show("Ocorreu um erro: " + ex.Message, "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
            
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

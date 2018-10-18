@@ -21,14 +21,16 @@ namespace Catiotro_s.classes.Classes.Animal
 	                                ds_raca,
 	                                ds_sexo,
 	                                id_cliente,
-	                                ds_obs)
+	                                ds_obs,
+                                    ds_corPelagem)
                              VALUES(@nm_animal,
 	                                @ds_pelagem,
 	                                @dt_dataNasc,
 	                                @ds_raca,
 	                                @ds_sexo,
 	                                @id_cliente,
-	                                @ds_obs)";
+	                                @ds_obs,
+                                    @ds_corPelagem)";
 
 
 
@@ -41,6 +43,7 @@ namespace Catiotro_s.classes.Classes.Animal
             parms.Add(new MySqlParameter("ds_sexo", animal.Sexo));
             parms.Add(new MySqlParameter("id_cliente", animal.IdCliente));
             parms.Add(new MySqlParameter("ds_obs", animal.Obs));
+            parms.Add(new MySqlParameter("ds_corPelagem", animal.CorPelo));
 
             Database db = new Database();
             int pk = db.ExecuteInsertScriptWithPk(scrip, parms);
@@ -55,7 +58,8 @@ namespace Catiotro_s.classes.Classes.Animal
 	                                               dt_dataNasc = @dt_dataNasc,
                                                    ds_sexo = @ds_sexo,
 	                                               id_cliente = @id_cliente,
-	                                               ds_obs = @ds_obs
+	                                               ds_obs = @ds_obs,
+                                                   ds_corPelagem = @ds_corPelagem
                                              WHERE id_animal = @id_animal";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
@@ -66,6 +70,7 @@ namespace Catiotro_s.classes.Classes.Animal
             parms.Add(new MySqlParameter("ds_sexo", animal.Sexo));
             parms.Add(new MySqlParameter("id_cliente", animal.IdCliente));
             parms.Add(new MySqlParameter("ds_obs", animal.Obs));
+            parms.Add(new MySqlParameter("ds_corPelagem", animal.CorPelo));
 
             Database db = new Database();
             db.ExecuteInsertScript(script, parms);
@@ -101,11 +106,12 @@ namespace Catiotro_s.classes.Classes.Animal
                     animal.Id = reader.GetInt32("id_animal");
                     animal.NomeAnimal = reader.GetString("nm_animal");
                     animal.Pelagem = reader.GetString("ds_pelagem");
-                    animal.DataNasc = reader.GetString("ds_dataNasc");
+                    animal.DataNasc = reader.GetString("dt_dataNasc");
                     animal.Raca = reader.GetString("ds_raca");
                     animal.Sexo = reader.GetString("ds_sexo");
                     animal.IdCliente = reader.GetInt32("id_cliente");
                     animal.Obs = reader.GetString("ds_obs");
+                animal.CorPelo = reader.GetString("ds_corPelagem");
                    
 
                 animalL.Add(animal);
