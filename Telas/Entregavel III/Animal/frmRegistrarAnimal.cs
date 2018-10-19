@@ -100,7 +100,6 @@ namespace Catiotro_s.Resgistros
                 dto.Raca = txtRaca.Text;
                 dto.Pelagem = txtTipoPelo.Text;
                 dto.CorPelo = txtCorPelo.Text;
-                
                 dto.Obs = txtObs.Text;
                 dto.IdCliente = IdCliente.id;
                 dto.DataNasc = mkbDataNasc.Text;
