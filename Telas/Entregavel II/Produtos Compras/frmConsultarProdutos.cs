@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Catiotro_s.classes.Classes.Compras.Item;
 
 namespace Catiotro_s.Telas.Entregavel_III.Produtos
 {
@@ -15,6 +16,27 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
         public frmConsultarProdutos()
         {
             InitializeComponent();
+            AutoCarregar();
+        }
+
+        void AutoCarregar()
+        {
+            ItemBusiness dto = new ItemBusiness();
+            List<ItemDTO> lista = dto.ListarPraGrid();
+
+            dgvProdutos.AutoGenerateColumns = false;
+            dgvProdutos.DataSource = lista;
+        }
+
+        void CarregarGrid()
+        {
+            string nome = txtNome.Text;
+
+            ItemBusiness dto = new ItemBusiness();
+            List<ItemDTO> lista = dto.Consultar(nome);
+
+            dgvProdutos.AutoGenerateColumns = false;
+            dgvProdutos.DataSource = lista;
         }
 
         private void frmConsultarProdutos_Load(object sender, EventArgs e)
@@ -40,6 +62,11 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
             dgvProdutos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvProdutos.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            CarregarGrid();
         }
     }
 }

@@ -261,14 +261,14 @@
             this.produtoToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("produtoToolStripMenuItem1.Image")));
             this.produtoToolStripMenuItem1.Name = "produtoToolStripMenuItem1";
             this.produtoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.produtoToolStripMenuItem1.Text = "Produto";
+            this.produtoToolStripMenuItem1.Text = "Item";
             this.produtoToolStripMenuItem1.Click += new System.EventHandler(this.produtoToolStripMenuItem1_Click);
             // 
             // itensToolStripMenuItem
             // 
             this.itensToolStripMenuItem.Name = "itensToolStripMenuItem";
             this.itensToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.itensToolStripMenuItem.Text = "Item";
+            this.itensToolStripMenuItem.Text = "Produto";
             this.itensToolStripMenuItem.Click += new System.EventHandler(this.itensToolStripMenuItem_Click);
             // 
             // consultaToolStripMenuItem
@@ -330,6 +330,7 @@
             this.itensToolStripMenuItem1.Name = "itensToolStripMenuItem1";
             this.itensToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.itensToolStripMenuItem1.Text = "Produtos";
+            this.itensToolStripMenuItem1.Click += new System.EventHandler(this.itensToolStripMenuItem1_Click);
             // 
             // financeiroToolStripMenuItem
             // 

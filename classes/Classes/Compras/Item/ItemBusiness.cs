@@ -20,6 +20,12 @@ namespace Catiotro_s.classes.Classes.Compras.Item
             return db.Listar();
         }
 
+        public List<ItemDTO> ListarPraGrid()
+        {
+            ItemDatabase db = new ItemDatabase();
+            return db.ListarPraGrid();
+        }
+
         public List<ItemDTO> Consultar(string nome)
         {
             ItemDatabase db = new ItemDatabase();

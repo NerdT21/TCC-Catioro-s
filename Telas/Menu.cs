@@ -3,6 +3,7 @@ using Catiotro_s.Resgistros;
 using Catiotro_s.Telas.Entregavel_I;
 using Catiotro_s.Telas.Entregavel_I.Funcionários;
 using Catiotro_s.Telas.Entregavel_II.Controle_de_Compras;
+using Catiotro_s.Telas.Entregavel_III.Produtos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -146,7 +147,8 @@ namespace Catiotro_s
 
         private void produtoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Telas.Entregavel_II.Produto.frmRegistrarProduto tela = new Telas.Entregavel_II.Produto.frmRegistrarProduto();
+            //
+            frmProdutos tela = new frmProdutos();
             OpenScreen(tela);
         }
 
@@ -170,7 +172,7 @@ namespace Catiotro_s
 
         private void produtoToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Telas.Entregavel_II.Produto.frmConsultarProduto tela = new Telas.Entregavel_II.Produto.frmConsultarProduto();
+            frmConsultarProdutos tela = new frmConsultarProdutos();
             OpenScreen(tela);
         }
 
@@ -183,6 +185,8 @@ namespace Catiotro_s
         private void itensToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+            Telas.Entregavel_II.Produto.frmRegistrarProduto tela = new Telas.Entregavel_II.Produto.frmRegistrarProduto();
+            OpenScreen(tela);
         }
 
         private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -194,6 +198,12 @@ namespace Catiotro_s
         private void verComprasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmVerCompras tela = new frmVerCompras();
+            OpenScreen(tela);
+        }
+
+        private void itensToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Telas.Entregavel_II.Produto.frmConsultarProduto tela = new Telas.Entregavel_II.Produto.frmConsultarProduto();
             OpenScreen(tela);
         }
 
