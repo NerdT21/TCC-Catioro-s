@@ -161,7 +161,7 @@
             // 
             // Column6
             // 
-            this.Column6.DataPropertyName = "dsCorPelo";
+            this.Column6.DataPropertyName = "dsCorPelagem";
             this.Column6.HeaderText = "Cor da pelagem";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;

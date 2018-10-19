@@ -10,11 +10,11 @@ namespace Catiotro_s.classes.Classes.AddConsultar.Animal
     {
         public int Id { get; set; }
 
-        public int IdCliente { get; set; }
+        public string IdCliente { get; set; }
 
         public string Nome { get; set; }
 
-        public string DsPelagem { get; set; }
+        public string dsPelagem { get; set; }
 
         public string dsCorPelagem { get; set; }
 

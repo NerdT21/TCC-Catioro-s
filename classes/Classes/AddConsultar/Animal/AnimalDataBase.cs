@@ -106,12 +106,12 @@ namespace Catiotro_s.classes.Classes.Animal
                 AnimalView animal = new AnimalView();
                 animal.Id = reader.GetInt32("id_animal");
                 animal.Nome = reader.GetString("nm_animal");
-                animal.DsPelagem = reader.GetString("ds_pelagem");
+                animal.dsPelagem = reader.GetString("ds_pelagem");
                 animal.dsCorPelagem = reader.GetString("ds_corPelagem");
                 animal.DtDataNasc = reader.GetString("dt_dataNasc");
                 animal.dsRaca = reader.GetString("ds_raca");
                 animal.dsSexo = reader.GetString("ds_sexo");
-                animal.IdCliente = reader.GetInt32("nm_nome");
+                animal.IdCliente = reader.GetString("nm_nome");
                 animal.dsObs = reader.GetString("ds_obs");
 
                 animalL.Add(animal);
@@ -123,7 +123,7 @@ namespace Catiotro_s.classes.Classes.Animal
 
         public List<AnimalView> Consultar(string nome, string nomeDono)
         {
-            string script = @"SELECT * FROM vw_animal_animal WHERE nm_animal LIKE @nm_animal AND nm_nome LIKE @nm_nome";
+            string script = @"SELECT * FROM vw_animal_nmcliente WHERE nm_animal LIKE @nm_animal AND nm_nome LIKE @nm_nome";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_animal", nome + "%"));
@@ -139,12 +139,12 @@ namespace Catiotro_s.classes.Classes.Animal
                 AnimalView animal = new AnimalView();
                 animal.Id = reader.GetInt32("id_animal");
                 animal.Nome = reader.GetString("nm_animal");
-                animal.DsPelagem = reader.GetString("ds_pelagem");
+                animal.dsPelagem = reader.GetString("ds_pelagem");
                 animal.dsCorPelagem = reader.GetString("ds_corPelagem");
                 animal.DtDataNasc = reader.GetString("dt_dataNasc");
                 animal.dsRaca = reader.GetString("ds_raca");
                 animal.dsSexo = reader.GetString("ds_sexo");
-                animal.IdCliente = reader.GetInt32("nm_nome");
+                animal.IdCliente = reader.GetString("nm_nome");
                 animal.dsObs = reader.GetString("ds_obs");
 
                 lista.Add(animal);
