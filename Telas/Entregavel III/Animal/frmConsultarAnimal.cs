@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Animal;
+using Catiotro_s.classes.Classes.AddConsultar.Animal;
 
 namespace Catiotro_s.Consultar
 {
@@ -21,7 +22,7 @@ namespace Catiotro_s.Consultar
         void AutoCarregar()
         {
             AnimalBusiness business = new AnimalBusiness();
-            List<AnimalDTO> lista = business.Listar();
+            List<AnimalView> lista = business.Listar();
 
             dgvAnimal.DataSource = lista;
         }
@@ -31,7 +32,7 @@ namespace Catiotro_s.Consultar
             string nomeDono = txtDono.Text;
 
             AnimalBusiness buss = new AnimalBusiness();
-            List<AnimalDTO> lista = buss.Consultar(nome, nomeDono);
+            List<AnimalView> lista = buss.Consultar(nome, nomeDono);
 
             dgvAnimal.DataSource = lista;
         }

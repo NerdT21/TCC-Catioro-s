@@ -67,6 +67,7 @@
     <Compile Include="classes\Classes\AddConsultar\Animal\AnimalBusiness.cs" />
     <Compile Include="classes\Classes\AddConsultar\Animal\AnimalDataBase.cs" />
     <Compile Include="classes\Classes\AddConsultar\Animal\AnimalDTO.cs" />
+    <Compile Include="classes\Classes\AddConsultar\Animal\AnimalView.cs" />
     <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteBusiness.cs" />
     <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteDataBase.cs" />
     <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteDTO.cs" />

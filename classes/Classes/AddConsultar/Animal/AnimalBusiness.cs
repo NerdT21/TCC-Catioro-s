@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Catiotro_s.classes.Classes.AddConsultar.Animal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,13 +25,13 @@ namespace Catiotro_s.classes.Classes.Animal
             AnimalDataBase DB = new AnimalDataBase();
             DB.Remover(idanimal);
         }
-        public List<AnimalDTO> Listar()
+        public List<AnimalView> Listar()
         {
             AnimalDataBase DB = new AnimalDataBase();
-            List<AnimalDTO> animal = DB.Listar();
+            List<AnimalView> animal = DB.Listar();
             return animal;
         }
-        public List<AnimalDTO> Consultar(string nome, string nomeDono)
+        public List<AnimalView> Consultar(string nome, string nomeDono)
         {
             AnimalDataBase db = new AnimalDataBase();
             return db.Consultar(nome, nomeDono);

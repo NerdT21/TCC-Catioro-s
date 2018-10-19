@@ -1,4 +1,5 @@
 ﻿using Catiotro_s.classes.Base;
+using Catiotro_s.classes.Classes.AddConsultar.Animal;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace Catiotro_s.classes.Classes.Animal
 {
     public class AnimalDataBase
     {
-        public int Salvar (AnimalDTO animal)
+        public int Salvar(AnimalDTO animal)
         {
 
             string scrip =
@@ -83,68 +84,70 @@ namespace Catiotro_s.classes.Classes.Animal
             string script = @"DELETE FROM tb_animal WHERE id_animal = @id_animal";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_animal",idAnimal));
+            parms.Add(new MySqlParameter("id_animal", idAnimal));
 
             Database db = new Database();
             db.ExecuteInsertScript(script, parms);
 
         }
 
-        public List<AnimalDTO> Listar()
+        public List<AnimalView> Listar()
         {
 
-            string script = @"SELECT * FROM tb_animal";
+            string script = @"SELECT * FROM vw_animal_nmcliente";
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, null);
 
-            List<AnimalDTO> animalL = new List<AnimalDTO>();
+            List<AnimalView> animalL = new List<AnimalView>();
             while (reader.Read())
             {
 
-                AnimalDTO animal = new AnimalDTO();
-                    animal.Id = reader.GetInt32("id_animal");
-                    animal.NomeAnimal = reader.GetString("nm_animal");
-                    animal.Pelagem = reader.GetString("ds_pelagem");
-                    animal.DataNasc = reader.GetString("dt_dataNasc");
-                    animal.Raca = reader.GetString("ds_raca");
-                    animal.Sexo = reader.GetString("ds_sexo");
-                    animal.IdCliente = reader.GetInt32("id_cliente");
-                    animal.Obs = reader.GetString("ds_obs");
-                animal.CorPelo = reader.GetString("ds_corPelagem");
-                   
+                AnimalView animal = new AnimalView();
+                animal.Id = reader.GetInt32("id_animal");
+                animal.Nome = reader.GetString("nm_animal");
+                animal.DsPelagem = reader.GetString("ds_pelagem");
+                animal.dsCorPelagem = reader.GetString("ds_corPelagem");
+                animal.DtDataNasc = reader.GetString("dt_dataNasc");
+                animal.dsRaca = reader.GetString("ds_raca");
+                animal.dsSexo = reader.GetString("ds_sexo");
+                animal.IdCliente = reader.GetInt32("nm_nome");
+                animal.dsObs = reader.GetString("ds_obs");
 
                 animalL.Add(animal);
 
             }
-
             reader.Close();
-
             return animalL;
-
         }
 
-        public List<AnimalDTO> Consultar(string nome, string nomeDono)
+        public List<AnimalView> Consultar(string nome, string nomeDono)
         {
-            string script = @"SELECT * FROM tb_animal WHERE nm_animal LIKE @nm_animal AND id_cliente LIKE @id_cliente";
+            string script = @"SELECT * FROM vw_animal_animal WHERE nm_animal LIKE @nm_animal AND nm_nome LIKE @nm_nome";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_animal", nome + "%"));
-            parms.Add(new MySqlParameter("id_cliente", nomeDono + "%"));
+            parms.Add(new MySqlParameter("nm_nome", nomeDono + "%"));
 
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
-            List<AnimalDTO> lista = new List<AnimalDTO>();
+            List<AnimalView> lista = new List<AnimalView>();
             while (reader.Read())
             {
+                AnimalView animal = new AnimalView();
+                animal.Id = reader.GetInt32("id_animal");
+                animal.Nome = reader.GetString("nm_animal");
+                animal.DsPelagem = reader.GetString("ds_pelagem");
+                animal.dsCorPelagem = reader.GetString("ds_corPelagem");
+                animal.DtDataNasc = reader.GetString("dt_dataNasc");
+                animal.dsRaca = reader.GetString("ds_raca");
+                animal.dsSexo = reader.GetString("ds_sexo");
+                animal.IdCliente = reader.GetInt32("nm_nome");
+                animal.dsObs = reader.GetString("ds_obs");
 
-                AnimalDTO add = new AnimalDTO();
-                add.NomeAnimal = reader.GetString("nm_animal");
-                add.IdCliente = reader.GetInt32("id_cliente");
-
-                lista.Add(add);
+                lista.Add(animal);
             }
 
             reader.Close();
