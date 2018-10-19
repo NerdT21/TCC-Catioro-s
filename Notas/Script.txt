@@ -79,12 +79,6 @@ CREATE TABLE `tb_item_pedido` (
 	PRIMARY KEY (`id_itemPedido`)
 );
 
-CREATE TABLE `tb_raca` (
-	`id_raca` int NOT NULL AUTO_INCREMENT,
-	`nm_raca` varchar(100) NOT NULL,
-	PRIMARY KEY (`id_raca`)
-);
-
 CREATE TABLE `tb_animal` (
 	`id_animal` int NOT NULL AUTO_INCREMENT,
 	`nm_animal` varchar(100) NOT NULL,
@@ -462,4 +456,4 @@ CREATE VIEW vw_animal_nmcliente AS
 	SELECT tb_animal.id_animal
     FROM tb_animal
     JOIN tb_cliente
-		ON tb_animal.id_animal = tb_cliente.id_cliente
+		ON tb_animal.id_cliente = tb_cliente.nm_cliente
