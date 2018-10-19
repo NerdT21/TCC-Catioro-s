@@ -8,5 +8,6 @@ namespace Catiotro_s.classes.Classes.Vendas
 {
     public class VendaDTO
     {
+
     }
 }

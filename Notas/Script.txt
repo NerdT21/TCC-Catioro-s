@@ -438,11 +438,11 @@ CREATE VIEW vw_animal_nmcliente AS
            tb_animal.dt_dataNasc,
            tb_animal.ds_raca,
            tb_animal.ds_sexo,
-           tb_animal.id_cliente,
+           tb_cliente.nm_nome,
            tb_animal.ds_obs
     FROM tb_animal
     JOIN tb_cliente
-		ON tb_animal.id_cliente = tb_cliente.nm_nome;
+		ON tb_animal.id_cliente = tb_cliente.id_cliente;
 
 -- SELECT Views
 
@@ -463,4 +463,5 @@ SELECT * FROM tb_impostoDeRenda;
 SELECT * FROM tb_compra;
 SELECT * FROM tb_item;
 SELECT * FROM tb_item_compra;
+SELECT * FROM tb_animal;
 
