@@ -13,6 +13,6 @@ namespace Catiotro_s.classes.Classes.Vendas.Produto
         public string Descricao { get; set; }
         public string Marca { get; set; }
 
-        public decimal Preco { get; set}
+        public decimal Preco { get; set; }
     }
 }
