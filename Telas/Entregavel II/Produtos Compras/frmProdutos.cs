@@ -21,8 +21,8 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
 
         void CarregarCombos()
         {
-            ItemBusiness buss = new ItemBusiness();
-            ItemDTO lista = buss.Listar();
+            FornecedoresBusiness buss = new FornecedoresBusiness();
+            FornecedoresDTO lista = buss.Listar();
 
             cboFornecedor.ValueMember = nameof(ItemDTO.Id);
             cboFornecedor.DisplayMember = nameof(ItemDTO.Nome);

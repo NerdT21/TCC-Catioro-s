@@ -88,7 +88,7 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         }
 
-        public List<FornecedoresDTO> Listar()
+        public FornecedoresDTO Listar()
         {
 
             string script = @"SELECT * FROM tb_fornecedor";
@@ -96,11 +96,11 @@ namespace Catiotro_s.classes.Classes.Cliente
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, null);
 
-            List<FornecedoresDTO> lista = new List<FornecedoresDTO>();
+            FornecedoresDTO add = null;
             while (reader.Read())
             {
 
-                FornecedoresDTO add = new FornecedoresDTO();
+                add = new FornecedoresDTO();
                 add.Id = reader.GetInt32("id_fornecedor");
                 add.IdEstado = reader.GetInt32("id_estado");
                 add.Nome = reader.GetString("nm_fornecedor");
@@ -109,13 +109,11 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Telefone = reader.GetString("ds_telefone");
                 add.Cidade = reader.GetString("ds_cidade");
                 add.CEP = reader.GetString("ds_cep");
-
-                lista.Add(add);
             }
 
             reader.Close();
 
-            return lista;
+            return add;
 
         }
 

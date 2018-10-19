@@ -24,7 +24,7 @@ namespace Catiotro_s.classes.Classes.Cliente
             FornecedoresDataBase DB = new FornecedoresDataBase();
             DB.Remover(idforncedor);
         }
-        public List<FornecedoresDTO> Listar()
+        public FornecedoresDTO Listar()
         {
             FornecedoresDataBase DB = new FornecedoresDataBase();
             List<FornecedoresDTO> forncedor = DB.Listar();
