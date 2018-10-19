@@ -67,5 +67,30 @@ namespace Catiotro_s.Consultar
         {
 
         }
+
+        private void frmConsultarAnimal_Load(object sender, EventArgs e)
+        {
+            //Design das Linhas
+            dgvAnimal.BorderStyle = BorderStyle.None;
+            dgvAnimal.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(0, 116, 186);
+            dgvAnimal.RowsDefaultCellStyle.BackColor = Color.FromArgb(0, 81, 130);
+            dgvAnimal.RowsDefaultCellStyle.ForeColor = Color.White;
+
+            //Design da seleção de células da GV e da GV "pelada"
+            dgvAnimal.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvAnimal.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgvAnimal.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvAnimal.BackgroundColor = Color.White;
+
+            //Estilo da GV
+            dgvAnimal.EnableHeadersVisualStyles = false;
+            dgvAnimal.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvAnimal.RowHeadersVisible = false;
+
+            //Cabeça da GV
+            dgvAnimal.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvAnimal.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
+        }
     }
 }

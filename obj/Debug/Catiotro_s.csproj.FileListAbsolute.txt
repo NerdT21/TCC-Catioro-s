@@ -359,3 +359,7 @@ C:\Users\infod32\Source\Repos\TCC-Catioro-s2\obj\Debug\Catiotro_s.Telas.Entregav
 C:\Users\infod32\Source\Repos\TCC-Catioro-s2\obj\Debug\Catiotro_s.Telas.Entregavel_III.Produtos.frmProdutos.resources
 C:\Users\infod32\Source\Repos\TCC-Catioro-s2\obj\Debug\Catiotro_s.Telas.Entregavel_III.Vendas.frmVendas.resources
 C:\Users\infod32\Source\Repos\TCC-Catioro-s2\obj\Debug\Catiotro_s.Telas.Entregavel_III.Vendas.frmVerVendas.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_III.Produtos.frmConsultarProdutos.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_III.Produtos.frmProdutos.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_III.Vendas.frmVendas.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_III.Vendas.frmVerVendas.resources

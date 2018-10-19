@@ -61,10 +61,10 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             //cboProduto
 
             ItemBusiness buss = new ItemBusiness();
-            List<ItemDTO> lista = buss.Listar();
+            ItemDTO lista = buss.Listar();
 
-            cboProduto.ValueMember = nameof(ProdutoDTO.Id);
-            cboProduto.DisplayMember = nameof(ProdutoDTO.Nome);
+            cboProduto.ValueMember = nameof(ItemDTO.Id);
+            cboProduto.DisplayMember = nameof(ItemDTO.Nome);
             cboProduto.DataSource = lista;
         }
 

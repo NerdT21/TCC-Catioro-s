@@ -60,6 +60,26 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
 
         private void frmConsultarProduto_Load(object sender, EventArgs e)
         {
+            //Design das Linhas
+            dgvProduto.BorderStyle = BorderStyle.None;
+            dgvProduto.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(0, 116, 186);
+            dgvProduto.RowsDefaultCellStyle.BackColor = Color.FromArgb(0, 81, 130);
+            dgvProduto.RowsDefaultCellStyle.ForeColor = Color.White;
+
+            //Design da seleção de células da GV e da GV "pelada"
+            dgvProduto.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvProduto.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgvProduto.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvProduto.BackgroundColor = Color.White;
+
+            //Estilo da GV
+            dgvProduto.EnableHeadersVisualStyles = false;
+            dgvProduto.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvProduto.RowHeadersVisible = false;
+
+            //Cabeça da GV
+            dgvProduto.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvProduto.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
         }
     }

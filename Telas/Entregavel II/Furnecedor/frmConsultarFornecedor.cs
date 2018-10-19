@@ -45,7 +45,26 @@ namespace Catiotro_s.Consultar
 
         private void frmConsultarFornecedor_Load(object sender, EventArgs e)
         {
+            //Design das Linhas
+            dgvFornecedor.BorderStyle = BorderStyle.None;
+            dgvFornecedor.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(0, 116, 186);
+            dgvFornecedor.RowsDefaultCellStyle.BackColor = Color.FromArgb(0, 81, 130);
+            dgvFornecedor.RowsDefaultCellStyle.ForeColor = Color.White;
 
+            //Design da seleção de células da GV e da GV "pelada"
+            dgvFornecedor.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvFornecedor.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgvFornecedor.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvFornecedor.BackgroundColor = Color.White;
+
+            //Estilo da GV
+            dgvFornecedor.EnableHeadersVisualStyles = false;
+            dgvFornecedor.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvFornecedor.RowHeadersVisible = false;
+
+            //Cabeça da GV
+            dgvFornecedor.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvFornecedor.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
         }
     }
 }

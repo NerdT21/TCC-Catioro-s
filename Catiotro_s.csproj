@@ -145,16 +145,16 @@
     <Compile Include="classes\Classes\Vendas\VendaDatabase.cs" />
     <Compile Include="classes\Classes\Vendas\VendaDTO.cs" />
     <Compile Include="PlugIn\ImagemPlugIn.cs" />
-    <Compile Include="Telas\Entregavel III\Produtos\frmConsultarProdutos.cs">
+    <Compile Include="Telas\Entregavel II\Produtos Compras\frmConsultarProdutos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Telas\Entregavel III\Produtos\frmConsultarProdutos.Designer.cs">
+    <Compile Include="Telas\Entregavel II\Produtos Compras\frmConsultarProdutos.Designer.cs">
       <DependentUpon>frmConsultarProdutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Entregavel III\Produtos\frmProdutos.cs">
+    <Compile Include="Telas\Entregavel II\Produtos Compras\frmProdutos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Telas\Entregavel III\Produtos\frmProdutos.Designer.cs">
+    <Compile Include="Telas\Entregavel II\Produtos Compras\frmProdutos.Designer.cs">
       <DependentUpon>frmProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Entregavel III\Vendas\frmVendas.cs">
@@ -181,16 +181,16 @@
     <Compile Include="Telas\Entregavel II\Controle de Compras\frmVerCompras.Designer.cs">
       <DependentUpon>frmVerCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Entregavel II\Produto\frmConsultarProduto.cs">
+    <Compile Include="Telas\Entregavel III\Produto Vendas\frmConsultarProduto.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Telas\Entregavel II\Produto\frmConsultarProduto.Designer.cs">
+    <Compile Include="Telas\Entregavel III\Produto Vendas\frmConsultarProduto.Designer.cs">
       <DependentUpon>frmConsultarProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Entregavel II\Produto\frmRegistrarProduto.cs">
+    <Compile Include="Telas\Entregavel III\Produto Vendas\frmRegistrarProduto.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Telas\Entregavel II\Produto\frmRegistrarProduto.Designer.cs">
+    <Compile Include="Telas\Entregavel III\Produto Vendas\frmRegistrarProduto.Designer.cs">
       <DependentUpon>frmRegistrarProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Entregavel I\FolhaDePagto.cs" />
@@ -296,10 +296,10 @@
     <None Include="Resources\icons8-minimizar-janela-32.png" />
     <None Include="Resources\icons8-excluir-48.png" />
     <None Include="Resources\Catioro%27s Logo.jpeg" />
-    <EmbeddedResource Include="Telas\Entregavel III\Produtos\frmConsultarProdutos.resx">
+    <EmbeddedResource Include="Telas\Entregavel II\Produtos Compras\frmConsultarProdutos.resx">
       <DependentUpon>frmConsultarProdutos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Entregavel III\Produtos\frmProdutos.resx">
+    <EmbeddedResource Include="Telas\Entregavel II\Produtos Compras\frmProdutos.resx">
       <DependentUpon>frmProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel III\Vendas\frmVendas.resx">
@@ -314,10 +314,10 @@
     <EmbeddedResource Include="Telas\Entregavel II\Controle de Compras\frmVerCompras.resx">
       <DependentUpon>frmVerCompras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Entregavel II\Produto\frmConsultarProduto.resx">
+    <EmbeddedResource Include="Telas\Entregavel III\Produto Vendas\frmConsultarProduto.resx">
       <DependentUpon>frmConsultarProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Entregavel II\Produto\frmRegistrarProduto.resx">
+    <EmbeddedResource Include="Telas\Entregavel III\Produto Vendas\frmRegistrarProduto.resx">
       <DependentUpon>frmRegistrarProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel I\frmFolhaPagto.resx">
