@@ -131,7 +131,7 @@
             // 
             // Column4
             // 
-            this.Column4.DataPropertyName = "IdRaca";
+            this.Column4.DataPropertyName = "Raca";
             this.Column4.HeaderText = "Raça";
             this.Column4.Name = "Column4";
             // 

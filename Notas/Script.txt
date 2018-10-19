@@ -456,3 +456,10 @@ SELECT * FROM tb_impostoDeRenda;
 SELECT * FROM tb_compra;
 SELECT * FROM tb_item;
 SELECT * FROM tb_item_compra;
+
+
+CREATE VIEW vw_animal_nmcliente AS 
+	SELECT tb_animal.id_animal
+    FROM tb_animal
+    JOIN tb_cliente
+		ON tb_animal.id_animal = tb_cliente.id_cliente
