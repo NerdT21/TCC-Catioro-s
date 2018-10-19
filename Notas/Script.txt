@@ -262,8 +262,6 @@ ALTER TABLE `tb_item_pedido` ADD CONSTRAINT `tb_item_pedido_fk0` FOREIGN KEY (`i
 
 ALTER TABLE `tb_item_pedido` ADD CONSTRAINT `tb_item_pedido_fk1` FOREIGN KEY (`id_produto`) REFERENCES `tb_produto`(`id_produto`);
 
-ALTER TABLE `tb_animal` ADD CONSTRAINT `tb_animal_fk0` FOREIGN KEY (`id_raca`) REFERENCES `tb_raca`(`id_raca`);
-
 ALTER TABLE `tb_animal` ADD CONSTRAINT `tb_animal_fk1` FOREIGN KEY (`id_cliente`) REFERENCES `tb_cliente`(`id_cliente`);
 
 ALTER TABLE `tb_servico` ADD CONSTRAINT `tb_servico_fk0` FOREIGN KEY (`id_animal`) REFERENCES `tb_animal`(`id_animal`);
@@ -432,10 +430,25 @@ GROUP
 	 tb_compra.dt_compra;
 
 
+CREATE VIEW vw_animal_nmcliente AS 
+	SELECT tb_animal.id_animal,
+		   tb_animal.nm_animal,
+           tb_animal.ds_pelagem,
+           tb_animal.ds_corPelagem,
+           tb_animal.dt_dataNasc,
+           tb_animal.ds_raca,
+           tb_animal.ds_sexo,
+           tb_animal.id_cliente,
+           tb_animal.ds_obs
+    FROM tb_animal
+    JOIN tb_cliente
+		ON tb_animal.id_cliente = tb_cliente.nm_nome;
+
 -- SELECT Views
 
 USE CatiorosDB;
 SELECT * FROM vw_compra_consultar;
+SELECT * FROM vw_animal_nmcliente;
 
 -- SELECT Tabelas
 
@@ -451,9 +464,3 @@ SELECT * FROM tb_compra;
 SELECT * FROM tb_item;
 SELECT * FROM tb_item_compra;
 
-
-CREATE VIEW vw_animal_nmcliente AS 
-	SELECT tb_animal.id_animal
-    FROM tb_animal
-    JOIN tb_cliente
-		ON tb_animal.id_cliente = tb_cliente.nm_cliente
