@@ -50,12 +50,12 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
 
         private void btnProcurar_Click(object sender, EventArgs e)
         {
-
+            CarregarGrid();
         }
 
         private void txtprocurar_TextChanged(object sender, EventArgs e)
         {
-            CarregarGrid();
+            
         }
 
         private void frmConsultarProduto_Load(object sender, EventArgs e)
