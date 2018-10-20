@@ -443,6 +443,7 @@ CREATE VIEW vw_animal_nmcliente AS
     FROM tb_animal
     JOIN tb_cliente
 		ON tb_animal.id_cliente = tb_cliente.id_cliente;
+
         
 CREATE VIEW vw_consultarFuncionario AS
 	SELECT tb_funcionario.id_funcionario,
