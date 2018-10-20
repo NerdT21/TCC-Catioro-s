@@ -27,11 +27,11 @@ namespace Catiotro_s.Telas.Entregavel_I
         void GerarCredenciais()
         {
             string nome = cboFuncionario.Text;
-            FuncionarioDTO dto = cboFuncionario.SelectedItem as FuncionarioDTO;
+            FuncionarioView dto = cboFuncionario.SelectedItem as FuncionarioView;
 
             mkbCPF.Text = dto.Cpf;
             txtSalario.Text = dto.Salario.ToString();
-            txtDepto.Text = dto.IdDepto.ToString();
+            txtDepto.Text = dto.Depto.ToString();
 
             if (dto.Imagem == string.Empty)
             {
@@ -48,8 +48,8 @@ namespace Catiotro_s.Telas.Entregavel_I
             FuncionarioBusiness buss = new FuncionarioBusiness();
             List<FuncionarioView> lista = buss.Listar();
 
-            cboFuncionario.ValueMember = nameof(FuncionarioDTO.Id);
-            cboFuncionario.DisplayMember = nameof(FuncionarioDTO.Nome);
+            cboFuncionario.ValueMember = nameof(FuncionarioView.Id);
+            cboFuncionario.DisplayMember = nameof(FuncionarioView.Nome);
             cboFuncionario.DataSource = lista;
         }
 
