@@ -144,6 +144,7 @@
     <Compile Include="classes\Classes\Vendas\VendaBusiness.cs" />
     <Compile Include="classes\Classes\Vendas\VendaDatabase.cs" />
     <Compile Include="classes\Classes\Vendas\VendaDTO.cs" />
+    <Compile Include="CustomException\ValidacaoException.cs" />
     <Compile Include="PlugIn\ImagemPlugIn.cs" />
     <Compile Include="Telas\Entregavel II\Produtos Compras\frmConsultarProdutos.cs">
       <SubType>UserControl</SubType>
@@ -288,6 +289,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="favicon %281%29.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\icons8-cancel-48.png" />
     <None Include="Resources\icons8-plus-32.png" />
     <None Include="Resources\icons8-search-26.png" />
     <None Include="Resources\icons8-save-26.png" />

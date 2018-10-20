@@ -149,5 +149,33 @@ namespace Catiotro_s.classes.Classes.Cliente
             reader.Close();
             return lista;
         }
+
+        public List<FornecedoresDTO> ListarPraGrid()
+        {
+            string script = @"SELECT * FROM tb_fornecedor";
+
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
+
+            List<FornecedoresDTO> lista = new List<FornecedoresDTO>();
+            while (reader.Read())
+            {
+
+                FornecedoresDTO add = new FornecedoresDTO();
+                add.Id = reader.GetInt32("id_fornecedor");
+                add.IdEstado = reader.GetInt32("id_estado");
+                add.Nome = reader.GetString("nm_fornecedor");
+                add.Email = reader.GetString("ds_email");
+                add.CNPJ = reader.GetString("ds_cnpj");
+                add.Telefone = reader.GetString("ds_telefone");
+                add.Cidade = reader.GetString("ds_cidade");
+                add.CEP = reader.GetString("ds_cep");
+
+                lista.Add(add);
+            }
+
+            reader.Close();
+            return lista;
+        }
     }
 }

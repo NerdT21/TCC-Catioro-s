@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Catiotro_s.classes.Classes.Cliente;
 
 namespace Catiotro_s.Consultar
 {
@@ -15,12 +16,31 @@ namespace Catiotro_s.Consultar
         public frmConsultaFuncionario()
         {
             InitializeComponent();
+            AutoCarregar();
         }
 
         void AutoCarregar()
         {
+            FuncionarioBusiness buss = new FuncionarioBusiness();
+            List<FuncionarioDTO> dto = buss.Listar();
 
+            dgvFuncionario.AutoGenerateColumns = false;
+            dgvFuncionario.DataSource = dto;
         }
+
+
+        void CarregarGrid()
+        {
+            string nome = txtNome.Text;
+            string cpf = mkbCpf.Text;
+
+            FuncionarioBusiness buss = new FuncionarioBusiness();
+            List<FuncionarioDTO> dto = buss.Consultar(nome, cpf);
+
+            dgvFuncionario.AutoGenerateColumns = false;
+            dgvFuncionario.DataSource = dto;
+        }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -49,6 +69,11 @@ namespace Catiotro_s.Consultar
             //Cabeça da GV
             dgvFuncionario.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvFuncionario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+        }
+
+        private void btnProcurar_Click(object sender, EventArgs e)
+        {
+            CarregarGrid();
         }
     }
 }

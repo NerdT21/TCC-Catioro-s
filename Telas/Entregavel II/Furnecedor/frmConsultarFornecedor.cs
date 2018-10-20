@@ -22,7 +22,7 @@ namespace Catiotro_s.Consultar
         void AutoCarregar()
         {
             FornecedoresBusiness buss = new FornecedoresBusiness();
-            List<FornecedoresDTO> lista = buss.Listar();
+            List<FornecedoresDTO> lista = buss.ListarPraGrid();
 
             dgvFornecedor.DataSource = lista;
         }
