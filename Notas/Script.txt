@@ -369,7 +369,7 @@ INSERT INTO tb_estados(`id_estado`,`nm_estado`)
              
               
 INSERT INTO tb_funcionario(`id_funcionario`, `ds_salario`,`id_depto`, `nm_nome`, `ds_email`,`ds_cpf`,`ds_rg`, `id_estado`,`ds_cidade`, `ds_cep`, `ds_telefone`,`img_funcionario`)
-					VALUES('1', '123432', '2', 'fdsgfsd', 'fdsafda', '542523', 'fdsaf', '1', 'fdaf', 'fdas', '3424453', '');
+					VALUES('1', '2500.00', '1', 'Jhonny', 'Jhonn@gmail.com', '253.256.256.21', '25.526.254-X', '1', 'São Paulo', '04556.000', '(11)22342-5652', '');
 
 INSERT INTO tb_inss(`id_inss`, `ds_salarioDeContribuicao`, `vl_aliquota`)
 			VALUES('1', '1659.38', '8');
@@ -443,12 +443,32 @@ CREATE VIEW vw_animal_nmcliente AS
     FROM tb_animal
     JOIN tb_cliente
 		ON tb_animal.id_cliente = tb_cliente.id_cliente;
+        
+CREATE VIEW vw_consultarFuncionario AS
+	SELECT tb_funcionario.id_funcionario,
+		   tb_funcionario.ds_salario, 
+           tb_Depto.nm_depto,
+           tb_funcionario.nm_nome,
+           tb_funcionario.ds_email,
+           tb_funcionario.ds_cpf,
+           tb_funcionario.ds_rg,
+           tb_estados.nm_estado,
+           tb_funcionario.ds_cidade,
+		   tb_funcionario.ds_cep,
+           tb_funcionario.ds_telefone,
+           tb_funcionario.img_funcionario
+	FROM tb_funcionario
+    JOIN tb_estados
+    ON tb_funcionario.id_estado = tb_estados.id_estado
+    JOIN tb_Depto
+    ON tb_funcionario.id_depto = tb_Depto.id_depto;
 
 -- SELECT Views
 
 USE CatiorosDB;
 SELECT * FROM vw_compra_consultar;
 SELECT * FROM vw_animal_nmcliente;
+SELECT * FROM vw_consultarFuncionario;
 
 -- SELECT Tabelas
 

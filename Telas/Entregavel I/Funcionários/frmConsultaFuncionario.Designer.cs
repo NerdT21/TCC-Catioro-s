@@ -43,8 +43,10 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtCpf = new System.Windows.Forms.TextBox();
+            this.btnDeletar = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.btnProcurar = new System.Windows.Forms.Button();
-            this.mkbCpf = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,12 +85,13 @@
             this.Column9,
             this.Column10,
             this.Column11});
-            this.dgvFuncionario.Location = new System.Drawing.Point(15, 72);
+            this.dgvFuncionario.Location = new System.Drawing.Point(3, 71);
             this.dgvFuncionario.Name = "dgvFuncionario";
             this.dgvFuncionario.ReadOnly = true;
             this.dgvFuncionario.RowHeadersVisible = false;
-            this.dgvFuncionario.Size = new System.Drawing.Size(573, 302);
+            this.dgvFuncionario.Size = new System.Drawing.Size(577, 280);
             this.dgvFuncionario.TabIndex = 6;
+            this.dgvFuncionario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellContentClick);
             // 
             // Column1
             // 
@@ -107,7 +110,7 @@
             // 
             // Column4
             // 
-            this.Column4.DataPropertyName = "IdDepto";
+            this.Column4.DataPropertyName = "Depto";
             this.Column4.HeaderText = "Departamento";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -178,6 +181,41 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "CPF";
             // 
+            // txtCpf
+            // 
+            this.txtCpf.Location = new System.Drawing.Point(79, 40);
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(117, 20);
+            this.txtCpf.TabIndex = 12;
+            // 
+            // btnDeletar
+            // 
+            this.btnDeletar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletar.Image = global::Catiotro_s.Properties.Resources.icons8_cancel_30;
+            this.btnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeletar.Location = new System.Drawing.Point(118, 359);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(94, 37);
+            this.btnDeletar.TabIndex = 11;
+            this.btnDeletar.Text = "Deletar";
+            this.btnDeletar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.Image = global::Catiotro_s.Properties.Resources.icons8_edit_file_30;
+            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlterar.Location = new System.Drawing.Point(18, 359);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(94, 37);
+            this.btnAlterar.TabIndex = 10;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
             // btnProcurar
             // 
             this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -192,26 +230,20 @@
             this.btnProcurar.UseVisualStyleBackColor = true;
             this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
-            // mkbCpf
-            // 
-            this.mkbCpf.Location = new System.Drawing.Point(78, 41);
-            this.mkbCpf.Mask = "999.999.999.99";
-            this.mkbCpf.Name = "mkbCpf";
-            this.mkbCpf.Size = new System.Drawing.Size(85, 20);
-            this.mkbCpf.TabIndex = 9;
-            // 
             // frmConsultaFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.mkbCpf);
+            this.Controls.Add(this.txtCpf);
+            this.Controls.Add(this.btnDeletar);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvFuncionario);
             this.Controls.Add(this.btnProcurar);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblProcurar);
             this.Name = "frmConsultaFuncionario";
-            this.Size = new System.Drawing.Size(605, 388);
+            this.Size = new System.Drawing.Size(583, 405);
             this.Load += new System.EventHandler(this.frmConsultaFuncionario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
             this.ResumeLayout(false);
@@ -226,6 +258,8 @@
         private System.Windows.Forms.Button btnProcurar;
         private System.Windows.Forms.DataGridView dgvFuncionario;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btnDeletar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
@@ -237,6 +271,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.MaskedTextBox mkbCpf;
+        private System.Windows.Forms.TextBox txtCpf;
     }
 }

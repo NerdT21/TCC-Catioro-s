@@ -81,7 +81,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
             {
                 MessageBox.Show(ex.Message, "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+
         }
 
         private void pbxFoto_Click(object sender, EventArgs e)

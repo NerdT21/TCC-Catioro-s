@@ -11,6 +11,7 @@ using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.PlugIn;
 using FamosoAça.Screens.Entregavel_I;
 using System.Globalization;
+using Catiotro_s.classes.Classes.Feito.Funcionarios;
 
 namespace Catiotro_s.Telas.Entregavel_I
 {
@@ -45,7 +46,7 @@ namespace Catiotro_s.Telas.Entregavel_I
         void CarregarCombos()
         {
             FuncionarioBusiness buss = new FuncionarioBusiness();
-            List<FuncionarioDTO> lista = buss.Listar();
+            List<FuncionarioView> lista = buss.Listar();
 
             cboFuncionario.ValueMember = nameof(FuncionarioDTO.Id);
             cboFuncionario.DisplayMember = nameof(FuncionarioDTO.Nome);

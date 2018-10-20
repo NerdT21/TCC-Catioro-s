@@ -4,24 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Catiotro_s.classes.Classes.Cliente
+namespace Catiotro_s.classes.Classes.Feito.Funcionarios
 {
-    public class FuncionarioDTO
+    public class FuncionarioView
     {
         public int Id { get; set; }
 
         public decimal Salario { get; set; }
 
-        public int IdDepto { get; set; }
+        public string Depto { get; set; }
 
-        public int IdEstado { get; set; }
+        public string Estado { get; set; }
 
         public string Nome { get; set; }
 
         public string Email { get; set; }
 
         public string Cpf { get; set; }
-    
+
         public string Rg { get; set; }
 
         public string Cep { get; set; }
@@ -31,7 +31,5 @@ namespace Catiotro_s.classes.Classes.Cliente
         public string Telefone { get; set; }
 
         public string Imagem { get; set; }
-
-
     }
 }

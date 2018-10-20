@@ -101,6 +101,7 @@
     <Compile Include="classes\Classes\Feito\Funcionarios\FuncionariosBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Funcionarios\FuncionariosDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Funcionarios\FuncionariosDTO.cs" />
+    <Compile Include="classes\Classes\Feito\Funcionarios\FuncionarioView.cs" />
     <Compile Include="classes\Classes\Feito\Imposto de Renda\ImpostoRendaBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Imposto de Renda\ImpostoRendaDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Imposto de Renda\ImpostoRendaDTO.cs" />
@@ -201,6 +202,12 @@
     <Compile Include="Telas\Entregavel I\frmFolhaPagto.Designer.cs">
       <DependentUpon>frmFolhaPagto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Entregavel I\Funcionários\frmAlterarFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel I\Funcionários\frmAlterarFuncionarios.Designer.cs">
+      <DependentUpon>frmAlterarFuncionarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Entregavel I\Funcionários\frmCadastrarFuncionario.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -289,6 +296,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="favicon %281%29.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\icons8-cancel-30.png" />
+    <None Include="Resources\icons8-cancel-481.png" />
+    <None Include="Resources\icons8-edit-file-30.png" />
+    <None Include="Resources\icons8-edit-file-16.png" />
+    <None Include="Resources\icons8-edit-file-48.png" />
     <None Include="Resources\icons8-cancel-48.png" />
     <None Include="Resources\icons8-plus-32.png" />
     <None Include="Resources\icons8-search-26.png" />
@@ -324,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel I\frmFolhaPagto.resx">
       <DependentUpon>frmFolhaPagto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel I\Funcionários\frmAlterarFuncionarios.resx">
+      <DependentUpon>frmAlterarFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel I\Funcionários\frmCadastrarFuncionario.resx">
       <DependentUpon>frmCadastrarFuncionario.cs</DependentUpon>

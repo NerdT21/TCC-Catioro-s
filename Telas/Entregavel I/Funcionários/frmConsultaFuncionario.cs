@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Cliente;
+using Catiotro_s.Telas.Entregavel_I.Funcionários;
+using Catiotro_s.classes.Classes.Feito.Funcionarios;
 
 namespace Catiotro_s.Consultar
 {
@@ -22,7 +24,7 @@ namespace Catiotro_s.Consultar
         void AutoCarregar()
         {
             FuncionarioBusiness buss = new FuncionarioBusiness();
-            List<FuncionarioDTO> dto = buss.Listar();
+            List<FuncionarioView> dto = buss.Listar();
 
             dgvFuncionario.AutoGenerateColumns = false;
             dgvFuncionario.DataSource = dto;
@@ -32,10 +34,10 @@ namespace Catiotro_s.Consultar
         void CarregarGrid()
         {
             string nome = txtNome.Text;
-            string cpf = mkbCpf.Text;
+            string cpf = txtCpf.Text;
 
             FuncionarioBusiness buss = new FuncionarioBusiness();
-            List<FuncionarioDTO> dto = buss.Consultar(nome, cpf);
+            List<FuncionarioView> dto = buss.Consultar(nome, cpf);
 
             dgvFuncionario.AutoGenerateColumns = false;
             dgvFuncionario.DataSource = dto;
@@ -74,6 +76,62 @@ namespace Catiotro_s.Consultar
         private void btnProcurar_Click(object sender, EventArgs e)
         {
             CarregarGrid();
+        }
+
+        FuncionarioView funcionario;
+
+        private void dgvFuncionario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                funcionario = dgvFuncionario.Rows[e.RowIndex].DataBoundItem as FuncionarioView;
+            }
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (funcionario == null)
+                {
+                    MessageBox.Show("Selecione um registro para alterar-lo.", "Catioro's",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    frmAlterarFuncionarios screen = new frmAlterarFuncionarios();
+                    screen.LoadScreen(funcionario);
+                    screen.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro: " +ex.Message, "Catioro's",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+                    
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+            if (funcionario == null)
+            {
+                MessageBox.Show("Selecione um registro para remove-lo.", "Catioro's",
+                       MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                DialogResult dialog = MessageBox.Show("Quer mesmo deletar o funcionário " + funcionario.Id + " do sistema?",
+                                            "Catioro's", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (dialog == DialogResult.Yes)
+                {
+                    FuncionarioBusiness buss = new FuncionarioBusiness();
+                    int Id = funcionario.Id;
+                    buss.Remover(Id);
+
+                    CarregarGrid();
+                }
+            }
         }
     }
 }
