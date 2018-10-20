@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Catiotro_s.classes.Classes.Agenda
 {
-   public class ProdutoDatabase
+    public class ProdutoDatabase
     {
 
 
@@ -17,19 +17,20 @@ namespace Catiotro_s.classes.Classes.Agenda
         {
 
             string script = @"INSERT INTO tb_produto(nm_produto,
-                                                    ds_marca,
-                                                    ds_produto
-                                                     ) 
-                                              VALUES (
-                                                    @nm_produto,
-                                                    @ds_marca,
-                                                    @ds_produto)";
+                                                     ds_marca,
+                                                     ds_produto,
+                                                     vl_preco)
+                                              VALUES(@nm_produto,
+                                                     @ds_marca,
+                                                     @ds_produto,
+                                                     @vl_preco)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("nm_produto",produto.Nome));
+            parms.Add(new MySqlParameter("nm_produto", produto.Nome));
             parms.Add(new MySqlParameter("ds_marca", produto.Marca));
             parms.Add(new MySqlParameter("ds_produto", produto.Descricao));
-            
+            parms.Add(new MySqlParameter("vl_preco", produto.Preco));
+
 
             Database db = new Database();
             int pk = db.ExecuteInsertScriptWithPk(script, parms);
@@ -42,14 +43,16 @@ namespace Catiotro_s.classes.Classes.Agenda
 
             string script = @"UPDATE tb_produto SET nm_produto = @nm_produto,
                                                     ds_marca = @ds_marca,
-                                                     ds_produto = @ds_produto
-                                              WHERE id_produto = @id_produto ";
+                                                    ds_produto = @ds_produto,
+                                                    vl_preco = vl_preco,
+                                              WHERE id_produto = @id_produto";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_produto", produto.Id));
             parms.Add(new MySqlParameter("nm_produto", produto.Nome));
             parms.Add(new MySqlParameter("ds_marca", produto.Marca));
             parms.Add(new MySqlParameter("ds_produto", produto.Descricao));
+            parms.Add(new MySqlParameter("vl_preco", produto.Preco));
 
             Database db = new Database();
             db.ExecuteInsertScriptWithPk(script, parms);
@@ -60,7 +63,7 @@ namespace Catiotro_s.classes.Classes.Agenda
         {
 
             string script =
-                "DELETE  FROM tb_produto WHERE id_produto = @id_produto";
+                "DELETE FROM tb_produto WHERE id_produto = @id_produto";
 
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
@@ -74,7 +77,7 @@ namespace Catiotro_s.classes.Classes.Agenda
         public List<ProdutoDTO> Listar()
         {
 
-            string script = @"SELECT * FROM tb_produto ";
+            string script = @"SELECT * FROM tb_produto";
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, null);
@@ -88,47 +91,40 @@ namespace Catiotro_s.classes.Classes.Agenda
                 add.Nome = reader.GetString("nm_produto");
                 add.Marca = reader.GetString("ds_marca");
                 add.Descricao = reader.GetString("ds_produto");
-                
+                add.Preco = reader.GetDecimal("vl_preco");
 
                 lista.Add(add);
             }
-
             reader.Close();
-
             return lista;
-
         }
 
         public List<ProdutoDTO> Consultar(string nome, string marca)
         {
-
             string script = @"SELECT * FROM tb_produto WHERE nm_produto LIKE @nm_produto 
-                                                        AND ds_marca LIKE @ds_marca";
-
+                                                           AND ds_marca LIKE @ds_marca";
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_produto", nome + "%"));
             parms.Add(new MySqlParameter("ds_marca", marca + "%"));
 
-
             Database db = new Database();
-            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
+            MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
             List<ProdutoDTO> lista = new List<ProdutoDTO>();
             while (reader.Read())
             {
-
                 ProdutoDTO add = new ProdutoDTO();
+
+                add.Id = reader.GetInt32("id_produto");
                 add.Nome = reader.GetString("nm_produto");
                 add.Marca = reader.GetString("ds_marca");
-
+                add.Descricao = reader.GetString("ds_produto");
+                add.Preco = reader.GetDecimal("vl_preco");
 
                 lista.Add(add);
             }
-
             reader.Close();
-
             return lista;
-
         }
 
 

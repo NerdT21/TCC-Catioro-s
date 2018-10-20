@@ -83,5 +83,21 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
             }
            
         }
+
+        private void pbxFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            DialogResult result = dialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                pbxFoto.ImageLocation = dialog.FileName;
+            }
+        }
+
+        private void cboUF_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

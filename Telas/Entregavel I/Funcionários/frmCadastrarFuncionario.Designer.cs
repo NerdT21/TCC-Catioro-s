@@ -223,6 +223,7 @@
             this.cboUF.Name = "cboUF";
             this.cboUF.Size = new System.Drawing.Size(33, 21);
             this.cboUF.TabIndex = 25;
+            this.cboUF.SelectedIndexChanged += new System.EventHandler(this.cboUF_SelectedIndexChanged);
             // 
             // mkbCEP
             // 
@@ -268,6 +269,7 @@
             this.pbxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxFoto.TabIndex = 2;
             this.pbxFoto.TabStop = false;
+            this.pbxFoto.Click += new System.EventHandler(this.pbxFoto_Click);
             // 
             // frmCadastrarFuncionario
             // 

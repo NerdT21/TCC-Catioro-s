@@ -7,7 +7,7 @@
     <ProjectGuid>{20BAA929-7EC9-4903-BFD0-18AECA7018BA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Catiotro_s</RootNamespace>
-    <AssemblyName>Catiotro%27s</AssemblyName>
+    <AssemblyName>Catiotros</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -39,6 +39,9 @@
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Catiotro_s.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
       <HintPath>..\..\..\AppMusica\AppMusica\conexão\MySql.Data.dll</HintPath>
@@ -64,9 +67,20 @@
     <Compile Include="classes\Classes\AddConsultar\Animal\AnimalBusiness.cs" />
     <Compile Include="classes\Classes\AddConsultar\Animal\AnimalDataBase.cs" />
     <Compile Include="classes\Classes\AddConsultar\Animal\AnimalDTO.cs" />
+    <Compile Include="classes\Classes\AddConsultar\Animal\AnimalView.cs" />
     <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteBusiness.cs" />
     <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteDataBase.cs" />
     <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteDTO.cs" />
+    <Compile Include="classes\Classes\Compras\ComprasBusiness.cs" />
+    <Compile Include="classes\Classes\Compras\ComprasDatabase.cs" />
+    <Compile Include="classes\Classes\Compras\ComprasDTO.cs" />
+    <Compile Include="classes\Classes\Compras\ItemCompras\ItemComprasBusiness.cs" />
+    <Compile Include="classes\Classes\Compras\ItemCompras\ItemComprasDatabase.cs" />
+    <Compile Include="classes\Classes\Compras\ItemCompras\ItemComprasDTO.cs" />
+    <Compile Include="classes\Classes\Compras\ItemCompras\ItemComprasView.cs" />
+    <Compile Include="classes\Classes\Compras\Item\ItemBusiness.cs" />
+    <Compile Include="classes\Classes\Compras\Item\ItemDatabase.cs" />
+    <Compile Include="classes\Classes\Compras\Item\ItemDTO.cs" />
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoDTO.cs" />
@@ -105,9 +119,6 @@
     <Compile Include="classes\Classes\Feito\Produto\ProdutoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Produto\ProdutoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Produto\ProdutoDTO.cs" />
-    <Compile Include="classes\Classes\Feito\Raca\RacaBusiness.cs" />
-    <Compile Include="classes\Classes\Feito\Raca\RacaDataBase.cs" />
-    <Compile Include="classes\Classes\Feito\Raca\RacaDTO.cs" />
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaDTO.cs" />
@@ -124,7 +135,65 @@
     <Compile Include="classes\Classes\Login\LoginDatabase.cs" />
     <Compile Include="classes\Classes\Login\LoginDTO.cs" />
     <Compile Include="classes\Classes\Login\UserSession.cs" />
+    <Compile Include="classes\Classes\Vendas\ProdutoVendas\ProdutoVendasBusiness.cs" />
+    <Compile Include="classes\Classes\Vendas\ProdutoVendas\ProdutoVendasDatabase.cs" />
+    <Compile Include="classes\Classes\Vendas\ProdutoVendas\ProdutoVendasDTO.cs" />
+    <Compile Include="classes\Classes\Vendas\Produto\ProdutoBusiness.cs" />
+    <Compile Include="classes\Classes\Vendas\Produto\ProdutoDatabase.cs" />
+    <Compile Include="classes\Classes\Vendas\Produto\ProdutoDTO.cs" />
+    <Compile Include="classes\Classes\Vendas\VendaBusiness.cs" />
+    <Compile Include="classes\Classes\Vendas\VendaDatabase.cs" />
+    <Compile Include="classes\Classes\Vendas\VendaDTO.cs" />
+    <Compile Include="CustomException\ValidacaoException.cs" />
     <Compile Include="PlugIn\ImagemPlugIn.cs" />
+    <Compile Include="Telas\Entregavel II\Produtos Compras\frmConsultarProdutos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel II\Produtos Compras\frmConsultarProdutos.Designer.cs">
+      <DependentUpon>frmConsultarProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel II\Produtos Compras\frmProdutos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel II\Produtos Compras\frmProdutos.Designer.cs">
+      <DependentUpon>frmProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Vendas\frmVendas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Vendas\frmVendas.Designer.cs">
+      <DependentUpon>frmVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Vendas\frmVerVendas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Vendas\frmVerVendas.Designer.cs">
+      <DependentUpon>frmVerVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel II\Controle de Compras\frmCompras.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel II\Controle de Compras\frmCompras.Designer.cs">
+      <DependentUpon>frmCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel II\Controle de Compras\frmVerCompras.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel II\Controle de Compras\frmVerCompras.Designer.cs">
+      <DependentUpon>frmVerCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Produto Vendas\frmConsultarProduto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Produto Vendas\frmConsultarProduto.Designer.cs">
+      <DependentUpon>frmConsultarProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Produto Vendas\frmRegistrarProduto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Produto Vendas\frmRegistrarProduto.Designer.cs">
+      <DependentUpon>frmRegistrarProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Entregavel I\FolhaDePagto.cs" />
     <Compile Include="Telas\Entregavel I\frmFolhaPagto.cs">
       <SubType>UserControl</SubType>
@@ -174,6 +243,12 @@
     <Compile Include="Telas\Entregavel I\LogIn\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +289,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="favicon %281%29.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\icons8-cancel-48.png" />
+    <None Include="Resources\icons8-plus-32.png" />
     <None Include="Resources\icons8-search-26.png" />
     <None Include="Resources\icons8-save-26.png" />
     <None Include="Resources\icons8-save-48.png" />
@@ -221,6 +298,30 @@
     <None Include="Resources\icons8-minimizar-janela-32.png" />
     <None Include="Resources\icons8-excluir-48.png" />
     <None Include="Resources\Catioro%27s Logo.jpeg" />
+    <EmbeddedResource Include="Telas\Entregavel II\Produtos Compras\frmConsultarProdutos.resx">
+      <DependentUpon>frmConsultarProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel II\Produtos Compras\frmProdutos.resx">
+      <DependentUpon>frmProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel III\Vendas\frmVendas.resx">
+      <DependentUpon>frmVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel III\Vendas\frmVerVendas.resx">
+      <DependentUpon>frmVerVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel II\Controle de Compras\frmCompras.resx">
+      <DependentUpon>frmCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel II\Controle de Compras\frmVerCompras.resx">
+      <DependentUpon>frmVerCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel III\Produto Vendas\frmConsultarProduto.resx">
+      <DependentUpon>frmConsultarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel III\Produto Vendas\frmRegistrarProduto.resx">
+      <DependentUpon>frmRegistrarProduto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel I\frmFolhaPagto.resx">
       <DependentUpon>frmFolhaPagto.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel I\LogIn\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Catiotro_s.classes.Classes.Agenda
 {
-  public  class ProdutoDTO
+    public class ProdutoDTO
     {
         public int Id { get; set; }
 
@@ -16,6 +16,6 @@ namespace Catiotro_s.classes.Classes.Agenda
 
         public string Descricao { get; set; }
 
-
+        public decimal Preco { get; set; }    
     }
 }

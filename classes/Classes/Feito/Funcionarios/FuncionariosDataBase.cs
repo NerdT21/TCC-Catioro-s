@@ -144,14 +144,14 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         }
 
-        public List<FuncionarioDTO> Consultar(string nome, string depto)
+        public List<FuncionarioDTO> Consultar(string nome, string cpf)
         {
 
-            string script = @"SELECT * FROM tb_funcionario WHERE nm_nome LIKE @nm_nome AND id_depto LIKE @id_depto";
+            string script = @"SELECT * FROM tb_funcionario WHERE nm_nome LIKE @nm_nome AND ds_cpf LIKE @ds_cpf";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_nome", nome + "%"));
-            parms.Add(new MySqlParameter("id_depto", depto + "%"));
+            parms.Add(new MySqlParameter("ds_cpf", cpf + "%"));
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, null);

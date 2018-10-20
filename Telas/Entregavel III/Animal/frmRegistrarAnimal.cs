@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Catiotro_s.classes.Classes.Animal;
+using Catiotro_s.classes.Classes.Agenda;
+using Catiotro_s.classes.Classes.Cliente;
 
 namespace Catiotro_s.Resgistros
 {
@@ -15,6 +18,20 @@ namespace Catiotro_s.Resgistros
         public frmRegistrarAnimal()
         {
             InitializeComponent();
+            CarregarCombos();
+        }
+        void CarregarCombos()
+        {
+
+            ClienteBusiness biss = new ClienteBusiness();
+            List<ClienteDTO> lista = biss.Listar();
+
+            //DisplayMember = Motra,ValueMember=oque de verdade , DataSource = Lista
+            cboDono.ValueMember = nameof(ClienteDTO.id);
+            cboDono.DisplayMember = nameof(ClienteDTO.Nome);
+            cboDono.DataSource = lista;
+
+
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -68,6 +85,40 @@ namespace Catiotro_s.Resgistros
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+                ClienteDTO IdCliente = cboDono.SelectedItem as ClienteDTO;
+            //try
+            //{
+                AnimalDTO dto = new AnimalDTO();
+                dto.NomeAnimal = txtNomeAnimal.Text;
+                dto.Sexo = cboSexo.Text;
+                dto.Raca = txtRaca.Text;
+                dto.Pelagem = txtTipoPelo.Text;
+                dto.CorPelo = txtCorPelo.Text;
+                dto.Obs = txtObs.Text;
+                dto.IdCliente = IdCliente.id;
+                dto.DataNasc = mkbDataNasc.Text;
+                
+
+                AnimalBusiness business = new AnimalBusiness();
+                business.Salvar(dto);
+
+                MessageBox.Show("Animal Cadastrado com sucesso");
+            //}
+            //catch (Exception ex)
+            //{ 
+            //    MessageBox.Show("Ocorreu um erro: " + ex.Message, "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+           
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

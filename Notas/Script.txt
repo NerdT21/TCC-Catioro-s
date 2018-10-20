@@ -1,4 +1,4 @@
-﻿-- DROP DATABASE CatiorosDB; 
+﻿ DROP DATABASE CatiorosDB; 
 CREATE DATABASE CatiorosDB;
 USE CatiorosDB;
 
@@ -10,16 +10,8 @@ CREATE TABLE `tb_fornecedor` (
 	`ds_telefone` varchar(14) NOT NULL,
 	`id_estado` int NOT NULL,
 	`ds_cidade` varchar(50) NOT NULL,
-	`ds_bairro` varchar(50) NOT NULL,
+	`ds_cep` varchar(50) NOT NULL,
 	PRIMARY KEY (`id_fornecedor`)
-);
-
-CREATE TABLE `tb_produto` (
-	`id_produto` int NOT NULL AUTO_INCREMENT,
-	`nm_produto` varchar(50) NOT NULL,
-	`ds_marca` varchar(100) NOT NULL,
-	`ds_produto` varchar(250) NOT NULL,
-	PRIMARY KEY (`id_produto`)
 );
 
 CREATE TABLE `tb_vacina` (
@@ -34,6 +26,7 @@ CREATE TABLE `tb_cliente` (
 	`id_cliente` int NOT NULL AUTO_INCREMENT,
 	`nm_nome` varchar(255) NOT NULL,
 	`ds_email` varchar(100) NOT NULL,
+    `ds_rg` varchar(25) NOT NULL,
 	`ds_cpf` varchar(25) NOT NULL,
 	`id_estado` int NOT NULL,
 	`ds_cidade` varchar(50) NOT NULL,
@@ -86,18 +79,13 @@ CREATE TABLE `tb_item_pedido` (
 	PRIMARY KEY (`id_itemPedido`)
 );
 
-CREATE TABLE `tb_raca` (
-	`id_raca` int NOT NULL AUTO_INCREMENT,
-	`nm_raca` varchar(100) NOT NULL,
-	PRIMARY KEY (`id_raca`)
-);
-
 CREATE TABLE `tb_animal` (
 	`id_animal` int NOT NULL AUTO_INCREMENT,
 	`nm_animal` varchar(100) NOT NULL,
-	`ds_pelagem` varchar(50) NOT NULL,
+	`ds_pelagem` varchar(300) NOT NULL,
+    `ds_corPelagem` varchar(50) NOT NULL,
 	`dt_dataNasc` varchar(10) NOT NULL,
-	`id_raca` int NOT NULL,
+	`ds_raca` varchar(50) NOT NULL,
 	`ds_sexo` varchar(5) NOT NULL,
 	`id_cliente` int NOT NULL,
 	`ds_obs` varchar(300) NOT NULL,
@@ -136,40 +124,39 @@ CREATE TABLE `tb_folhaDePagamento` (
 
 CREATE TABLE `tb_inss` (
 	`id_inss` int NOT NULL AUTO_INCREMENT,
-	`id_folhaPagto` int NOT NULL,
+	`ds_salarioDeContribuicao` decimal(15,2) NOT NULL,
 	`vl_aliquota` DECIMAL(4,2) NOT NULL,
 	PRIMARY KEY (`id_inss`)
 );
 
 CREATE TABLE `tb_impostoDeRenda` (
 	`id_impostoRenda` int NOT NULL AUTO_INCREMENT,
+    `ds_baseDeCalculo` decimal(15,2) NOT NULL,
 	`vl_aliquota` DECIMAL(4,2) NOT NULL,
 	`vl_deducao` DECIMAL(15,2) NOT NULL,
-	`id_folhaPagto` int NOT NULL,
 	PRIMARY KEY (`id_impostoRenda`)
 );
 
 CREATE TABLE `tb_salarioFamilia` (
 	`id_salFamilia` int NOT NULL AUTO_INCREMENT,
-	`vl_salFamilia` DECIMAL(15,2) NOT NULL,
-	`ds_qtdDependentes` int NOT NULL,
-	`id_folhaPagto` int NOT NULL,
+	`ds_salFamilia` DECIMAL(15,2) NOT NULL,
+    `vl_salFamilia` Decimal(15,2) NOT NULL,
 	PRIMARY KEY (`id_salFamilia`)
 );
 
 CREATE TABLE `tb_Depto` (
 	`id_depto` int NOT NULL AUTO_INCREMENT,
 	`nm_depto` varchar(50) NOT NULL,
-	`ds_depto` varchar(50) NOT NULL,
+	`ds_depto` varchar(300) NOT NULL,
 	PRIMARY KEY (`id_depto`)
 );
 
 CREATE TABLE `tb_login` (
 	`id_usuario` int NOT NULL AUTO_INCREMENT,
     `nm_funcionario` varchar(50) NOT NULL,
-	`nm_usuario` varchar(50) NOT NULL,
+	`nm_usuario` varchar(50) NOT NULL UNIQUE,
 	`ds_senha` varchar(20) NOT NULL,
-    `ds_email` varchar(150) NOT NULL,
+    `ds_email` varchar(150) NOT NULL UNIQUE,
 	`pr_permissaoADM` bool NOT NULL,
 	`pr_permissaoCadastro` bool NOT NULL,
 	`pr_permissaoConsulta` bool NOT NULL,
@@ -182,6 +169,36 @@ CREATE TABLE `tb_formaDePagamento` (
 	PRIMARY KEY (`id_formaPagto`)
 );
 
+CREATE TABLE `tb_venda` (
+	`id_venda` int NOT NULL AUTO_INCREMENT,
+    `dt_venda` varchar(10)NOT NULL,
+    `id_usuario` int NOT NULL,
+    PRIMARY KEY(`id_venda`),
+    FOREIGN KEY(`id_usuario`)
+    REFERENCES tb_login(`id_usuario`)
+);
+
+CREATE TABLE `tb_produto` (
+	`id_produto` int NOT NULL AUTO_INCREMENT,
+	`nm_produto` varchar(50) NOT NULL,
+	`ds_marca` varchar(100) NOT NULL,
+	`ds_produto` varchar(250) NOT NULL,
+    `vl_preco` decimal(15,2) NOT NULL,
+	PRIMARY KEY (`id_produto`)
+);
+
+CREATE TABLE `tb_produtoVenda`(
+	`id_produtoVenda` int NOT NULL AUTO_INCREMENT,
+    `id_produto` int NOT NULL,
+    `id_venda` int NOT NULL,
+    PRIMARY KEY(`id_produtoVenda`),
+    FOREIGN KEY(`id_produto`)
+    REFERENCES tb_produto(`id_produto`),
+    FOREIGN KEY(`id_venda`)
+    REFERENCES tb_venda(`id_venda`)
+);
+    
+
 CREATE TABLE `tb_estoque` (
 	`id_estoque` int NOT NULL AUTO_INCREMENT,
 	`nm_produto` varchar(250) NOT NULL,
@@ -191,15 +208,36 @@ CREATE TABLE `tb_estoque` (
 	PRIMARY KEY (`id_estoque`)
 );
 
+CREATE TABLE `tb_item`(
+	`id_item` INT NOT NULL AUTO_INCREMENT,
+    `nm_item` varchar(50) NOT NULL,
+    `id_fornecedor` INT NOT NULL,
+    `vl_preco` decimal(15,2) NOT NULL,
+    `ds_item` varchar(300) NOT NULL,
+    PRIMARY KEY (`id_item`),
+    FOREIGN KEY (`id_fornecedor`) 
+    REFERENCES tb_fornecedor(id_fornecedor)
+);
+
 CREATE TABLE `tb_compra` (
 	`id_compra` int NOT NULL AUTO_INCREMENT,
-	`id_produto` int NOT NULL,
-	`id_fornecedor` int NOT NULL,
-	`qtd_comprado` bigint NOT NULL,
+    `id_usuario` int NOT NULL,
 	`dt_compra` varchar(10) NOT NULL,
-	`id_formaPagto` int NOT NULL,
-	`vl_preco` varchar(10) NOT NULL,
-	PRIMARY KEY (`id_compra`)
+	`ds_formaPagamento` varchar(50) NOT NULL,
+	PRIMARY KEY (`id_compra`),
+    FOREIGN KEY(`id_usuario`)
+    REFERENCES tb_login(`id_usuario`)
+);
+
+CREATE TABLE `tb_item_compra`(
+	`id_itemCompra` int NOT NULL AUTO_INCREMENT,
+    `id_item` int NOT NULL,
+    `id_compra` int NOT NULL,
+    PRIMARY KEY(`id_itemCompra`),
+    FOREIGN KEY(`id_item`)
+    REFERENCES tb_item(`id_item`),
+    FOREIGN KEY(`id_compra`)
+    REFERENCES tb_compra(`id_compra`)
 );
 
 ALTER TABLE `tb_fornecedor` ADD CONSTRAINT `tb_fornecedor_fk0` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
@@ -212,7 +250,7 @@ ALTER TABLE `tb_historicoAnimal` ADD CONSTRAINT `tb_historicoAnimal_fk1` FOREIGN
 
 ALTER TABLE `tb_historicoAnimal` ADD CONSTRAINT `tb_historicoAnimal_fk2` FOREIGN KEY (`id_funcionario`) REFERENCES `tb_funcionario`(`id_funcionario`);
 
-ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk1` FOREIGN KEY (`id_depto`) REFERENCES `tb_Depto`(`id_depto`);
+ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk1` FOREIGN KEY (`id_depto`) REFERENCES `tb_Depto`(`id_depto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk2` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
 
@@ -223,8 +261,6 @@ ALTER TABLE `tb_pedido` ADD CONSTRAINT `tb_pedido_fk1` FOREIGN KEY (`id_formaPag
 ALTER TABLE `tb_item_pedido` ADD CONSTRAINT `tb_item_pedido_fk0` FOREIGN KEY (`id_pedido`) REFERENCES `tb_pedido`(`id_pedido`);
 
 ALTER TABLE `tb_item_pedido` ADD CONSTRAINT `tb_item_pedido_fk1` FOREIGN KEY (`id_produto`) REFERENCES `tb_produto`(`id_produto`);
-
-ALTER TABLE `tb_animal` ADD CONSTRAINT `tb_animal_fk0` FOREIGN KEY (`id_raca`) REFERENCES `tb_raca`(`id_raca`);
 
 ALTER TABLE `tb_animal` ADD CONSTRAINT `tb_animal_fk1` FOREIGN KEY (`id_cliente`) REFERENCES `tb_cliente`(`id_cliente`);
 
@@ -238,21 +274,11 @@ ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk2` FOREI
 
 ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk3` FOREIGN KEY (`id_funcionario`) REFERENCES `tb_funcionario`(`id_funcionario`);
 
-ALTER TABLE `tb_inss` ADD CONSTRAINT `tb_inss_fk0` FOREIGN KEY (`id_folhaPagto`) REFERENCES `tb_folhaDePagamento`(`id_folhaPagto`);
-
-ALTER TABLE `tb_impostoDeRenda` ADD CONSTRAINT `tb_impostoDeRenda_fk0` FOREIGN KEY (`id_folhaPagto`) REFERENCES `tb_folhaDePagamento`(`id_folhaPagto`);
-
-ALTER TABLE `tb_salarioFamilia` ADD CONSTRAINT `tb_salarioFamilia_fk0` FOREIGN KEY (`id_folhaPagto`) REFERENCES `tb_folhaDePagamento`(`id_folhaPagto`);
-
 ALTER TABLE `tb_estoque` ADD CONSTRAINT `tb_estoque_fk0` FOREIGN KEY (`id_compra`) REFERENCES `tb_compra`(`id_compra`);
 
-ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk0` FOREIGN KEY (`id_produto`) REFERENCES `tb_produto`(`id_produto`);
 
-ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk1` FOREIGN KEY (`id_fornecedor`) REFERENCES `tb_fornecedor`(`id_fornecedor`);
 
-ALTER TABLE `tb_compra` ADD CONSTRAINT `tb_compra_fk2` FOREIGN KEY (`id_formaPagto`) REFERENCES `tb_formaDePagamento`(`id_formaPagto`);
-
--- INSERTS & SELECTS
+-- INSERTS
 
 INSERT INTO tb_login(`id_usuario`,`nm_funcionario`, `nm_usuario`, `ds_senha`,`ds_email`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`)
 		      VALUES('1','adm', 'adm', 'adm','adm', '1', '1', '1');
@@ -343,33 +369,99 @@ INSERT INTO tb_estados(`id_estado`,`nm_estado`)
              
               
 INSERT INTO tb_funcionario(`id_funcionario`, `ds_salario`,`id_depto`, `nm_nome`, `ds_email`,`ds_cpf`,`ds_rg`, `id_estado`,`ds_cidade`, `ds_cep`, `ds_telefone`,`img_funcionario`)
-					VALUES('1', '123432', '1', 'fdsgfsd', 'fdsafda', '542523', 'fdsaf', '1', 'fdaf', 'fdas', '3424453', '');
+					VALUES('1', '123432', '2', 'fdsgfsd', 'fdsafda', '542523', 'fdsaf', '1', 'fdaf', 'fdas', '3424453', '');
+
+INSERT INTO tb_inss(`id_inss`, `ds_salarioDeContribuicao`, `vl_aliquota`)
+			VALUES('1', '1659.38', '8');
+            
+INSERT INTO tb_inss(`id_inss`, `ds_salarioDeContribuicao`, `vl_aliquota`)
+			VALUES('2', '2765.66', '9');
+            
+INSERT INTO tb_inss(`id_inss`, `ds_salarioDeContribuicao`, `vl_aliquota`)
+			VALUES('3', '5531.31', '11');
+                        
+              
+INSERT INTO tb_salarioFamilia(`id_salFamilia`, `ds_salFamilia`, `vl_salFamilia`)
+				   VALUES('1', '859.88', '44.00');
+                   
+INSERT INTO tb_salarioFamilia(`id_salFamilia`, `ds_salFamilia`, `vl_salFamilia`)
+				   VALUES('2', '1292.43', '31.07');
+                   
+INSERT INTO tb_salarioFamilia(`id_salFamilia`, `ds_salFamilia`, `vl_salFamilia`)
+				   VALUES('3', '1292.44', '0');
+                
+
+INSERT INTO tb_impostoDeRenda(`id_impostoRenda`, `ds_baseDeCalculo`, `vl_aliquota`, `vl_deducao`)
+					   VALUES('1', '1903.98', '0', '0');
+                       
+INSERT INTO tb_impostoDeRenda(`id_impostoRenda`, `ds_baseDeCalculo`, `vl_aliquota`, `vl_deducao`)
+					   VALUES('2', '1903.99', '7.5', '142.80');
+                       
+INSERT INTO tb_impostoDeRenda(`id_impostoRenda`, `ds_baseDeCalculo`, `vl_aliquota`, `vl_deducao`)
+					   VALUES('3', '2826.66', '15', '354.80');
+                       
+INSERT INTO tb_impostoDeRenda(`id_impostoRenda`, `ds_baseDeCalculo`, `vl_aliquota`, `vl_deducao`)
+					   VALUES('4', '3751.06', '22.5', '636.13');
+                       
+INSERT INTO tb_impostoDeRenda(`id_impostoRenda`, `ds_baseDeCalculo`, `vl_aliquota`, `vl_deducao`)
+					   VALUES('5', '4664.68', '27.5', '869.36');
+
+INSERT INTO tb_fornecedor VALUES('1', 'Cobasi' ,'cobasi@gmail.com', '123.123.123/00021', '(11)53536-2563', '1', 'São Paulo', '05236-000');
+					
+INSERT INTO tb_item(`id_item`, `nm_item`, `id_fornecedor`, `vl_preco`, `ds_item`)
+			VALUES ('1', 'Ração', '1', '35.90', 'Comida para cães');
+
+
+-- VIEWs
+
+CREATE VIEW vw_compra_consultar AS
+SELECT tb_compra.id_compra,
+       tb_compra.ds_formaPagamento,
+       tb_compra.dt_compra,
+       count(tb_item_compra.id_itemCompra)  as qtd_item,
+       sum(tb_item.vl_preco)                as vl_total
+FROM tb_compra
+JOIN tb_item_compra
+  ON tb_compra.id_compra = tb_item_compra.id_itemCompra
+JOIN tb_item
+  ON tb_item_compra.id_item = tb_item.id_item
+GROUP
+  BY tb_compra.id_compra,
+	 tb_compra.dt_compra;
+
+
+CREATE VIEW vw_animal_nmcliente AS 
+	SELECT tb_animal.id_animal,
+		   tb_animal.nm_animal,
+           tb_animal.ds_pelagem,
+           tb_animal.ds_corPelagem,
+           tb_animal.dt_dataNasc,
+           tb_animal.ds_raca,
+           tb_animal.ds_sexo,
+           tb_cliente.nm_nome,
+           tb_animal.ds_obs
+    FROM tb_animal
+    JOIN tb_cliente
+		ON tb_animal.id_cliente = tb_cliente.id_cliente;
+
+-- SELECT Views
+
+USE CatiorosDB;
+SELECT * FROM vw_compra_consultar;
+SELECT * FROM vw_animal_nmcliente;
+
+-- SELECT Tabelas
 
 USE CatiorosDB;
 SELECT * FROM tb_Depto;
 SELECT * FROM tb_estados;
 SELECT * FROM tb_funcionario;              
 SELECT * FROM tb_login;
-SELECT * FROM vw_consultarFuncionario;
-
-
--- VIEW
-
-CREATE VIEW vw_consultarFuncionario AS
-SELECT tb_funcionario.id_funcionario,
-		tb_funcionario.nm_nome,
-        tb_funcionario.id_depto,
-        tb_funcionario.ds_salario,
-        tb_funcionario.ds_email,
-        tb_funcionario.ds_cpf,
-        tb_funcionario.ds_rg,
-        tb_funcionario.ds_telefone,
-        tb_funcionario.ds_cidade,
-        tb_funcionario.id_estado,
-        tb_funcionario.ds_cep
-FROM tb_funcionario
-JOIN tb_Depto
-ON tb_funcionario.id_depto = tb_Depto.id_depto
-JOIN tb_estados
-ON tb_funcionario.id_estado = tb_estados.id_estado;
+SELECT * FROM tb_inss;
+SELECT * FROM tb_salarioFamilia;
+SELECT * FROM tb_impostoDeRenda;
+SELECT * FROM tb_compra;
+SELECT * FROM tb_item;
+SELECT * FROM tb_item_compra;
+SELECT * FROM tb_animal;
 

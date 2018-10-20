@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Catiotro_s.classes.Classes.Cliente
 {
-   public class FornecedoresDataBase
+    public class FornecedoresDataBase
     {
 
 
@@ -22,7 +22,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                                                         ds_cnpj,
                                                         ds_telefone,
                                                         ds_cidade,
-                                                        ds_bairro
+                                                        ds_cep
                                                         )  VALUES (
                                                         @id_estado,
                                                         @nm_fornecedor,
@@ -30,16 +30,16 @@ namespace Catiotro_s.classes.Classes.Cliente
                                                         @ds_cnpj,
                                                         @ds_telefone,
                                                         @ds_cidade,
-                                                        @ds_bairro)";
+                                                        @ds_cep)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_estado", fornecedor.IdEstado));
             parms.Add(new MySqlParameter("nm_fornecedor", fornecedor.Nome));
             parms.Add(new MySqlParameter("ds_email", fornecedor.Email));
-            parms.Add(new MySqlParameter("ds_cnpj", fornecedor.Cnpj));
+            parms.Add(new MySqlParameter("ds_cnpj", fornecedor.CNPJ));
             parms.Add(new MySqlParameter("ds_telefone", fornecedor.Telefone));
             parms.Add(new MySqlParameter("ds_cidade", fornecedor.Cidade));
-            parms.Add(new MySqlParameter("ds_bairro", fornecedor.Bairro));
+            parms.Add(new MySqlParameter("ds_cep", fornecedor.CEP));
 
             Database db = new Database();
             int pk = db.ExecuteInsertScriptWithPk(script, parms);
@@ -56,17 +56,17 @@ namespace Catiotro_s.classes.Classes.Cliente
                                                         ds_cnpj = @ds_cnpj,
                                                         ds_telefone = @ds_telefone,
                                                         ds_cidade = @ds_cidade,
-                                                        ds_bairro = @ds_bairro
-                                                        WHERE ";
+                                                        ds_cep = @ds_cep
+                                                        WHERE id_fornecedor = @id_fornecedor";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_estado", fornecedor.IdEstado));
             parms.Add(new MySqlParameter("nm_fornecedor", fornecedor.Nome));
             parms.Add(new MySqlParameter("ds_email", fornecedor.Email));
-            parms.Add(new MySqlParameter("ds_cnpj", fornecedor.Cnpj));
+            parms.Add(new MySqlParameter("ds_cnpj", fornecedor.CNPJ));
             parms.Add(new MySqlParameter("ds_telefone", fornecedor.Telefone));
             parms.Add(new MySqlParameter("ds_cidade", fornecedor.Cidade));
-            parms.Add(new MySqlParameter("ds_bairro", fornecedor.Bairro));
+            parms.Add(new MySqlParameter("ds_cep", fornecedor.CEP));
 
             Database db = new Database();
             db.ExecuteInsertScriptWithPk(script, parms);
@@ -77,7 +77,7 @@ namespace Catiotro_s.classes.Classes.Cliente
         {
 
             string script =
-                "DELETE  FROM tb_fornecedor WHERE id_fornecedor = @id_fornecedor ";
+                "DELETE FROM tb_fornecedor WHERE id_fornecedor = @id_fornecedor ";
 
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
@@ -88,9 +88,70 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         }
 
-        public List<FornecedoresDTO> Listar()
+        public FornecedoresDTO Listar()
         {
 
+            string script = @"SELECT * FROM tb_fornecedor";
+
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
+
+            FornecedoresDTO add = null;
+            while (reader.Read())
+            {
+
+                add = new FornecedoresDTO();
+                add.Id = reader.GetInt32("id_fornecedor");
+                add.IdEstado = reader.GetInt32("id_estado");
+                add.Nome = reader.GetString("nm_fornecedor");
+                add.Email = reader.GetString("ds_email");
+                add.CNPJ = reader.GetString("ds_cnpj");
+                add.Telefone = reader.GetString("ds_telefone");
+                add.Cidade = reader.GetString("ds_cidade");
+                add.CEP = reader.GetString("ds_cep");
+            }
+
+            reader.Close();
+
+            return add;
+
+        }
+
+        public List<FornecedoresDTO> Consultar(string nome, string cidade)
+        {
+            string script = @"SELECT * FROM tb_fornecedor WHERE nm_fornecedor LIKE @nm_fornecedor AND ds_cidade LIKE @ds_cidade";
+
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("nm_fornecedor", nome + "%"));
+            parms.Add(new MySqlParameter("ds_cidade", cidade + "%"));
+
+
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
+
+            List<FornecedoresDTO> lista = new List<FornecedoresDTO>();
+            while (reader.Read())
+            {
+
+                FornecedoresDTO add = new FornecedoresDTO();
+                add.Id = reader.GetInt32("id_fornecedor");
+                add.IdEstado = reader.GetInt32("id_estado");
+                add.Nome = reader.GetString("nm_fornecedor");
+                add.Email = reader.GetString("ds_email");
+                add.CNPJ = reader.GetString("ds_cnpj");
+                add.Telefone = reader.GetString("ds_telefone");
+                add.Cidade = reader.GetString("ds_cidade");
+                add.CEP = reader.GetString("ds_cep");
+
+                lista.Add(add);
+            }
+
+            reader.Close();
+            return lista;
+        }
+
+        public List<FornecedoresDTO> ListarPraGrid()
+        {
             string script = @"SELECT * FROM tb_fornecedor";
 
             Database db = new Database();
@@ -105,53 +166,16 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.IdEstado = reader.GetInt32("id_estado");
                 add.Nome = reader.GetString("nm_fornecedor");
                 add.Email = reader.GetString("ds_email");
-                add.Cnpj = reader.GetString("ds_cnpj");
+                add.CNPJ = reader.GetString("ds_cnpj");
                 add.Telefone = reader.GetString("ds_telefone");
                 add.Cidade = reader.GetString("ds_cidade");
-                add.Bairro = reader.GetString("ds_bairro");
+                add.CEP = reader.GetString("ds_cep");
 
                 lista.Add(add);
             }
 
             reader.Close();
-
             return lista;
-
         }
-
-        public List<FornecedoresDTO> Consultar(string nome, string id)
-        {
-
-            string script = @"SELECT * FROM tb_fornecedor WHERE nm_nome LIKE @nm_nome AND id_fornecedor LIKE @id_fornecedor";
-
-        List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("nm_fornecedor", nome + "%"));
-            parms.Add(new MySqlParameter("id_fornecedor", id));
-
-
-            Database db = new Database();
-        MySqlDataReader reader = db.ExecuteSelectScript(script, null);
-
-        List<FornecedoresDTO> lista = new List<FornecedoresDTO>();
-            while (reader.Read())
-            {
-
-                FornecedoresDTO add = new FornecedoresDTO();
-                add.Nome = reader.GetString("nm_fornecedor");
-                add.Id = reader.GetInt32("id_fornecedor");
-
-                lista.Add(add);
-            }
-
-    reader.Close();
-
-            return lista;
-
-        }
-
-
-
-
-
     }
 }
