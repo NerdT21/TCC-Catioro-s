@@ -147,7 +147,7 @@ CREATE TABLE `tb_salarioFamilia` (
 CREATE TABLE `tb_Depto` (
 	`id_depto` int NOT NULL AUTO_INCREMENT,
 	`nm_depto` varchar(50) NOT NULL,
-	`ds_depto` varchar(50) NOT NULL,
+	`ds_depto` varchar(300) NOT NULL,
 	PRIMARY KEY (`id_depto`)
 );
 
@@ -250,7 +250,7 @@ ALTER TABLE `tb_historicoAnimal` ADD CONSTRAINT `tb_historicoAnimal_fk1` FOREIGN
 
 ALTER TABLE `tb_historicoAnimal` ADD CONSTRAINT `tb_historicoAnimal_fk2` FOREIGN KEY (`id_funcionario`) REFERENCES `tb_funcionario`(`id_funcionario`);
 
-ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk1` FOREIGN KEY (`id_depto`) REFERENCES `tb_Depto`(`id_depto`);
+ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk1` FOREIGN KEY (`id_depto`) REFERENCES `tb_Depto`(`id_depto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk2` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
 
@@ -369,7 +369,7 @@ INSERT INTO tb_estados(`id_estado`,`nm_estado`)
              
               
 INSERT INTO tb_funcionario(`id_funcionario`, `ds_salario`,`id_depto`, `nm_nome`, `ds_email`,`ds_cpf`,`ds_rg`, `id_estado`,`ds_cidade`, `ds_cep`, `ds_telefone`,`img_funcionario`)
-					VALUES('1', '123432', '1', 'fdsgfsd', 'fdsafda', '542523', 'fdsaf', '1', 'fdaf', 'fdas', '3424453', '');
+					VALUES('1', '123432', '2', 'fdsgfsd', 'fdsafda', '542523', 'fdsaf', '1', 'fdaf', 'fdas', '3424453', '');
 
 INSERT INTO tb_inss(`id_inss`, `ds_salarioDeContribuicao`, `vl_aliquota`)
 			VALUES('1', '1659.38', '8');
