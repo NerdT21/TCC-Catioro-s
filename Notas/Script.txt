@@ -173,6 +173,7 @@ CREATE TABLE `tb_venda` (
 	`id_venda` int NOT NULL AUTO_INCREMENT,
     `dt_venda` varchar(10)NOT NULL,
     `id_usuario` int NOT NULL,
+    `ds_formaPagto` varchar(20) NOT NULL,
     PRIMARY KEY(`id_venda`),
     FOREIGN KEY(`id_usuario`)
     REFERENCES tb_login(`id_usuario`)
@@ -430,6 +431,22 @@ GROUP
 	 tb_compra.dt_compra;
 
 
+CREATE VIEW vw_venda_consultar AS
+SELECT tb_venda.id_venda,
+	   tb_venda.dt_venda,
+       tb_venda.ds_formaPagto,
+       count(tb_produtoVenda.id_produtoVenda) as qtd_item,
+       sum(tb_produto.vl_preco)				   as vl_total
+FROM tb_venda
+JOIN tb_produtoVenda
+  ON tb_venda.id_venda = tb_produtoVenda.id_produtoVenda
+JOIN tb_produto
+  ON tb_produtoVenda.id_produtoVenda = tb_produto.id_produto
+GROUP 
+  BY tb_venda.id_venda,
+     tb_venda.dt_venda;
+  
+
 CREATE VIEW vw_animal_nmcliente AS 
 	SELECT tb_animal.id_animal,
 		   tb_animal.nm_animal,
@@ -463,12 +480,14 @@ CREATE VIEW vw_consultarFuncionario AS
     JOIN tb_Depto
     ON tb_funcionario.id_depto = tb_Depto.id_depto;
 
+
 -- SELECT Views
 
 USE CatiorosDB;
 SELECT * FROM vw_compra_consultar;
 SELECT * FROM vw_animal_nmcliente;
 SELECT * FROM vw_consultarFuncionario;
+SELECt * FROM vw_venda_consultar;
 
 -- SELECT Tabelas
 
