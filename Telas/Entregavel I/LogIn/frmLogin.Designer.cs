@@ -39,13 +39,13 @@
             this.txtUser = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pbxMinimize = new System.Windows.Forms.PictureBox();
             this.pbxClose = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -89,6 +89,7 @@
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click_1);
+            this.btnEntrar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnEntrar_KeyUp);
             // 
             // txtPass
             // 
@@ -97,6 +98,7 @@
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(155, 20);
             this.txtPass.TabIndex = 27;
+            this.txtPass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyUp);
             // 
             // label2
             // 
@@ -125,6 +127,7 @@
             this.txtUser.Size = new System.Drawing.Size(155, 20);
             this.txtUser.TabIndex = 24;
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
+            this.txtUser.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtUser_KeyUp);
             // 
             // panel3
             // 
@@ -146,16 +149,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(242, 26);
             this.panel4.TabIndex = 31;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(-2, -30);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(101, 86);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
             // 
             // pbxMinimize
             // 
@@ -181,6 +174,16 @@
             this.pbxClose.TabStop = false;
             this.pbxClose.Click += new System.EventHandler(this.pbxClose_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(-2, -30);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(101, 86);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,10 +205,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Login_KeyPress);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Login_KeyUp);
+            this.Layout += new System.Windows.Forms.LayoutEventHandler(this.Login_Layout);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

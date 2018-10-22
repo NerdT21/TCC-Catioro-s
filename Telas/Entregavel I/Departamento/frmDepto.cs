@@ -22,26 +22,17 @@ namespace Catiotro_s.Resgistros
 
         public void Cadastro()
         {
-            try
-            {
-                //Vai intanciar o DTO e dps joga um valor nesse DTO
-                classes.Classes.Cliente.DeptoDTO dto = new classes.Classes.Cliente.DeptoDTO();
-                dto.Nome = txtDepto.Text;
-                dto.Descricao = txtDecricao.Text;
+            //Vai intanciar o DTO e dps joga um valor nesse DTO
+            classes.Classes.Cliente.DeptoDTO dto = new classes.Classes.Cliente.DeptoDTO();
+            dto.Nome = txtDepto.Text;
+            dto.Descricao = txtDecricao.Text;
 
-                //Chama a função de salvar de business que em sua vez grava essas açoes no DTO 
-                classes.Classes.Cliente.DeptoBusiness business = new classes.Classes.Cliente.DeptoBusiness();
-                business.Salvar(dto);
+            //Chama a função de salvar de business que em sua vez grava essas açoes no DTO 
+            classes.Classes.Cliente.DeptoBusiness business = new classes.Classes.Cliente.DeptoBusiness();
+            business.Salvar(dto);
 
-                //Exibe de uma msg de suceso 
-                MessageBox.Show("Departamento cadastrado.", "Catioro's", MessageBoxButtons.OK);
-
-            }
-            catch (Exception ex)
-            {
-                //Caso o try nn funcione o Catch roda e exibe uma msg de erro 
-                MessageBox.Show("Ocorreu um Erro: " + ex.Message);
-            }
+            //Exibe de uma msg de suceso 
+            MessageBox.Show("Departamento cadastrado.", "Catioro's", MessageBoxButtons.OK);
         }
 
         public void CarregarGrid()
@@ -94,33 +85,7 @@ namespace Catiotro_s.Resgistros
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             try
-            {
-                string nome = txtDepto.Text;
-                nome = nome.Trim();
-                int qtdNome = nome.Count();
-
-                if (qtdNome > 50)
-                {
-                    throw new ValidacaoException("O campo 'Nome do Departamento' não pode possuir mais de 50 caracteres.");
-                }
-                else if (qtdNome == 0)
-                {
-                    throw new ValidacaoException("O campo 'Nome do Departamento' não pode estar vazio.");
-                }
-
-                string desc = txtDecricao.Text;
-                desc = desc.Trim();
-                int qtdDesc = desc.Count();
-
-                if (qtdDesc > 300)
-                {
-                    throw new ValidacaoException("O campo 'Descrição do Departamento' não pode possuir mais de 300 caracteres.");
-                }
-                else if (qtdDesc == 0)
-                {
-                    throw new ValidacaoException("O campo 'Descrição do Departamento' não pode estar vazio.");
-                }
-
+            {           
                 Cadastro();
                 CarregarGrid();
             }

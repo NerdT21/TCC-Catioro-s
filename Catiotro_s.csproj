@@ -139,6 +139,7 @@
     <Compile Include="classes\Classes\Vendas\ProdutoVendas\ProdutoVendasBusiness.cs" />
     <Compile Include="classes\Classes\Vendas\ProdutoVendas\ProdutoVendasDatabase.cs" />
     <Compile Include="classes\Classes\Vendas\ProdutoVendas\ProdutoVendasDTO.cs" />
+    <Compile Include="classes\Classes\Vendas\ProdutoVendas\ProdutoVendasView.cs" />
     <Compile Include="classes\Classes\Vendas\Produto\ProdutoBusiness.cs" />
     <Compile Include="classes\Classes\Vendas\Produto\ProdutoDatabase.cs" />
     <Compile Include="classes\Classes\Vendas\Produto\ProdutoDTO.cs" />
@@ -194,6 +195,18 @@
     </Compile>
     <Compile Include="Telas\Entregavel III\Produto Vendas\frmRegistrarProduto.Designer.cs">
       <DependentUpon>frmRegistrarProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel IV\Estoque\frmEstoque.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel IV\Estoque\frmEstoque.Designer.cs">
+      <DependentUpon>frmEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel IV\Floxo de Caixa\frmFluxoDeCaixa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel IV\Floxo de Caixa\frmFluxoDeCaixa.Designer.cs">
+      <DependentUpon>frmFluxoDeCaixa.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Entregavel I\FolhaDePagto.cs" />
     <Compile Include="Telas\Entregavel I\frmFolhaPagto.cs">
@@ -334,6 +347,12 @@
     <EmbeddedResource Include="Telas\Entregavel III\Produto Vendas\frmRegistrarProduto.resx">
       <DependentUpon>frmRegistrarProduto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel IV\Estoque\frmEstoque.resx">
+      <DependentUpon>frmEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel IV\Floxo de Caixa\frmFluxoDeCaixa.resx">
+      <DependentUpon>frmFluxoDeCaixa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel I\frmFolhaPagto.resx">
       <DependentUpon>frmFolhaPagto.cs</DependentUpon>
     </EmbeddedResource>
@@ -409,7 +428,6 @@
     <Content Include="Notas\Script.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Telas\Entregavel IV\" />
     <Folder Include="Telas\Resgistros\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Catiotro_s.classes.Classes.Vendas;
+using Catiotro_s.classes.Classes.Vendas.ProdutoVendas;
 
 namespace Catiotro_s.Telas.Entregavel_III.Vendas
 {
@@ -15,7 +17,29 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
         public frmVerVendas()
         {
             InitializeComponent();
+            AutoCarregar();
         }
+
+        void AutoCarregar()
+        {
+            VendaBusiness buss = new VendaBusiness();
+            List<ProdutoVendasView> lista = buss.Listar();
+
+            dgvVendas.AutoGenerateColumns = false;
+            dgvVendas.DataSource = lista;
+        }
+
+        void CarregarGrid()
+        {
+            string data = mkbData.Text;
+
+            VendaBusiness buss = new VendaBusiness();
+            List<ProdutoVendasView> lista = buss.Consultar(data);
+
+            dgvVendas.AutoGenerateColumns = false;
+            dgvVendas.DataSource = lista;
+        }
+
 
         private void frmVerVendas_Load(object sender, EventArgs e)
         {
@@ -40,6 +64,11 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
             dgvVendas.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvVendas.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
+        }
+
+        private void btnProcurar_Click(object sender, EventArgs e)
+        {
+            CarregarGrid();
         }
     }
 }
