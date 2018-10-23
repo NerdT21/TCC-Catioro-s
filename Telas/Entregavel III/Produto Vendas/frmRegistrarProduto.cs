@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Agenda;
+using Catiotro_s.classes.Classes.Estoque;
 
 namespace Catiotro_s.Telas.Entregavel_II.Produto
 {
@@ -44,6 +45,14 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
 
             ProdutoBusiness business = new ProdutoBusiness();
             business.Salvar(dto);
+
+            EstoqueDTO estoque = new EstoqueDTO();
+            estoque.Produto = txtNome.Text;
+            estoque.ItemProdutoId = business.Salvar(dto);
+            estoque.QtdEstocado = 0;
+
+            EstoqueBusiness buss = new EstoqueBusiness();
+            buss.Salvar(estoque);
 
             MessageBox.Show("Produto Cadastrado com sucesso!", "Catioro's", MessageBoxButtons.OK);
         }

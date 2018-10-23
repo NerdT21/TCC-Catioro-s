@@ -38,7 +38,7 @@ namespace Catiotro_s.classes.Classes.Compras
         {
             ComprasDatabase db = new ComprasDatabase();
             return db.Consultar(data);
-        }
+        }      
     }
 }
 

@@ -31,6 +31,10 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtProcurarDepto = new System.Windows.Forms.TextBox();
             this.dgvDepto = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.txtDepto = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -42,13 +46,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepto)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSalvar
@@ -82,13 +84,45 @@
             this.Column2,
             this.Column1});
             this.dgvDepto.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dgvDepto.Location = new System.Drawing.Point(241, 211);
+            this.dgvDepto.Location = new System.Drawing.Point(7, 16);
             this.dgvDepto.Name = "dgvDepto";
             this.dgvDepto.ReadOnly = true;
             this.dgvDepto.RowHeadersVisible = false;
             this.dgvDepto.Size = new System.Drawing.Size(316, 146);
             this.dgvDepto.TabIndex = 19;
             this.dgvDepto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepto_CellContentClick);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 30;
+            // 
+            // Departamento
+            // 
+            this.Departamento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Departamento.DataPropertyName = "Nome";
+            this.Departamento.HeaderText = "Nome Do Departamento";
+            this.Departamento.Name = "Departamento";
+            this.Departamento.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Descricao";
+            this.Column2.HeaderText = "Descrição";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "";
+            this.Column1.Image = global::Catiotro_s.Properties.Resources.icons8_cancel_48;
+            this.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 30;
             // 
             // btnCadastrar
             // 
@@ -129,7 +163,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Location = new System.Drawing.Point(52, 200);
+            this.panel3.Location = new System.Drawing.Point(52, 196);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(479, 5);
             this.panel3.TabIndex = 18;
@@ -186,34 +220,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(48, 172);
+            this.label5.Location = new System.Drawing.Point(48, 168);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(217, 25);
             this.label5.TabIndex = 29;
             this.label5.Text = "Lista dos departamentos";
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "ID";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 30;
-            // 
-            // Departamento
-            // 
-            this.Departamento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Departamento.DataPropertyName = "Nome";
-            this.Departamento.HeaderText = "Nome Do Departamento";
-            this.Departamento.Name = "Departamento";
-            this.Departamento.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Descricao";
-            this.Column2.HeaderText = "Descrição";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
             // 
             // dataGridViewImageColumn1
             // 
@@ -223,19 +234,24 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 30;
             // 
-            // Column1
+            // groupBox1
             // 
-            this.Column1.HeaderText = "";
-            this.Column1.Image = global::Catiotro_s.Properties.Resources.icons8_cancel_48;
-            this.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 30;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.dgvDepto);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(255, 207);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(330, 168);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Departamentos";
             // 
             // frmRegistrarDepartamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -244,7 +260,6 @@
             this.Controls.Add(this.txtDecricao);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtProcurarDepto);
-            this.Controls.Add(this.dgvDepto);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.txtDepto);
@@ -254,6 +269,7 @@
             this.Load += new System.EventHandler(this.frmRegistrarDepartamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepto)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,5 +296,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewImageColumn Column1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

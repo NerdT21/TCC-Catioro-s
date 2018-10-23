@@ -415,8 +415,9 @@ CREATE VIEW vw_compra_consultar AS
 SELECT tb_compra.id_compra,
        tb_compra.ds_formaPagamento,
        tb_compra.dt_compra,
-       count(tb_item_compra.id_itemCompra)  as qtd_item,
-       sum(tb_item.vl_preco)                as vl_total
+       count(tb_item_compra.id_itemCompra)   as qtd_item,
+       sum(tb_item_compra.id_itemCompra)     as qtd_comprado,
+       sum(tb_item.vl_preco * qtd_comprado)  as vl_total
 FROM tb_compra
 JOIN tb_item_compra
   ON tb_compra.id_compra = tb_item_compra.id_itemCompra

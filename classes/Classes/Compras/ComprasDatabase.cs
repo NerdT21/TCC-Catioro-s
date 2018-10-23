@@ -75,8 +75,9 @@ namespace Catiotro_s.classes.Classes.Compras
 
                 lista.Add(view);
             }
+
             reader.Close();
-            return lista;
+            return lista;                     
         }
     }
 }

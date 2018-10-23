@@ -13,6 +13,7 @@ using Catiotro_s.classes.Classes.Compras.Item;
 using Catiotro_s.classes.Classes.Compras;
 using Catiotro_s.classes.Classes.Login;
 using Catiotro_s.classes.Classes.Estoque;
+using Catiotro_s.classes.Classes.Compras.ItemCompras;
 
 namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 {
@@ -27,7 +28,6 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
         }
 
         BindingList<ItemDTO> carrinhoAdd = new BindingList<ItemDTO>();
-
         void DataParaHoje()
         {
             DateTime hoje = DateTime.Now;
@@ -192,7 +192,12 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 
             ComprasBusiness buss = new ComprasBusiness();
             buss.Salvar(dto, carrinhoAdd.ToList());
-            
+
+
+
+            EstoqueBusiness EstoqueBuss = new EstoqueBusiness();
+            EstoqueBuss.Adicionar();
+
             MessageBox.Show("Compra salva com sucesso!", "Catioro's", MessageBoxButtons.OK);
         }
     }

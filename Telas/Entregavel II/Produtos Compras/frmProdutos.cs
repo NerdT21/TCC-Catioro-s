@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Compras.Item;
 using Catiotro_s.classes.Classes.Cliente;
+using Catiotro_s.classes.Classes.Estoque;
 
 namespace Catiotro_s.Telas.Entregavel_III.Produtos
 {
@@ -24,8 +25,8 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
             FornecedoresBusiness buss = new FornecedoresBusiness();
             FornecedoresDTO lista = buss.Listar();
 
-            cboFornecedor.ValueMember = nameof(ItemDTO.Id);
-            cboFornecedor.DisplayMember = nameof(ItemDTO.Nome);
+            cboFornecedor.ValueMember = nameof(FornecedoresDTO.Id);
+            cboFornecedor.DisplayMember = nameof(FornecedoresDTO.Nome);
             cboFornecedor.DataSource = lista;
         }
 
@@ -41,6 +42,14 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
 
             ItemBusiness buss = new ItemBusiness();
             buss.Salvar(dto);
+
+            EstoqueDTO estoque = new EstoqueDTO();
+            estoque.Produto = txtNome.Text;
+            estoque.ItemProdutoId = buss.Salvar(dto);
+            estoque.QtdEstocado = 0;
+
+            EstoqueBusiness business = new EstoqueBusiness();
+            business.Salvar(estoque);
 
             MessageBox.Show("Item salvo com sucesso!", "Catioro's",
                 MessageBoxButtons.OK);
