@@ -12,6 +12,7 @@ using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.classes.Classes.Compras.Item;
 using Catiotro_s.classes.Classes.Compras;
 using Catiotro_s.classes.Classes.Login;
+using Catiotro_s.classes.Classes.Estoque;
 
 namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 {
@@ -61,7 +62,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             //cboProduto
 
             ItemBusiness buss = new ItemBusiness();
-            ItemDTO lista = buss.Listar();
+            List<ItemDTO> lista = buss.Listar();
 
             cboProduto.ValueMember = nameof(ItemDTO.Id);
             cboProduto.DisplayMember = nameof(ItemDTO.Nome);
@@ -191,7 +192,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 
             ComprasBusiness buss = new ComprasBusiness();
             buss.Salvar(dto, carrinhoAdd.ToList());
-
+            
             MessageBox.Show("Compra salva com sucesso!", "Catioro's", MessageBoxButtons.OK);
         }
     }

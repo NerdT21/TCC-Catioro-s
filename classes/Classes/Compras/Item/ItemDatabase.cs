@@ -32,25 +32,27 @@ namespace Catiotro_s.classes.Classes.Compras.Item
             return db.ExecuteInsertScriptWithPk(script, parms);
         }
 
-        public ItemDTO Listar()
+        public List<ItemDTO> Listar()
         {
             string script = @"SELECT * FROM tb_item";
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, null);
 
-            ItemDTO dto = null;
+            List<ItemDTO> lista = new List<ItemDTO>();
             if (reader.Read())
             {
-                dto = new ItemDTO();
+                ItemDTO dto = new ItemDTO();
                 dto.Id = reader.GetInt32("id_item");
                 dto.Nome = reader.GetString("nm_item");
                 dto.FornecedorId = reader.GetInt32("id_fornecedor");
                 dto.Preco = reader.GetDecimal("vl_preco");
                 dto.Descricao = reader.GetString("ds_item");
+
+                lista.Add(dto);
             }
             reader.Close();
-            return dto;
+            return lista;
         }
 
         public List<ItemDTO> ListarPraGrid()

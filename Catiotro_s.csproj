@@ -81,6 +81,10 @@
     <Compile Include="classes\Classes\Compras\Item\ItemBusiness.cs" />
     <Compile Include="classes\Classes\Compras\Item\ItemDatabase.cs" />
     <Compile Include="classes\Classes\Compras\Item\ItemDTO.cs" />
+    <Compile Include="classes\Classes\Estoque\EstoqueBusiness.cs" />
+    <Compile Include="classes\Classes\Estoque\EstoqueDatabase.cs" />
+    <Compile Include="classes\Classes\Estoque\EstoqueDTO.cs" />
+    <Compile Include="classes\Classes\Estoque\EstoqueView.cs" />
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoDTO.cs" />
@@ -114,9 +118,6 @@
     <Compile Include="classes\Classes\Feito\Pedido\PedidoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Pedido\PedidoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Pedido\PedidoDTO.cs" />
-    <Compile Include="classes\Classes\Feito\Preco\PrecoBusiness.cs" />
-    <Compile Include="classes\Classes\Feito\Preco\PrecoDataBase.cs" />
-    <Compile Include="classes\Classes\Feito\Preco\PrecoDTO.cs" />
     <Compile Include="classes\Classes\Feito\Produto\ProdutoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Produto\ProdutoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Produto\ProdutoDTO.cs" />
@@ -202,10 +203,10 @@
     <Compile Include="Telas\Entregavel IV\Estoque\frmEstoque.Designer.cs">
       <DependentUpon>frmEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\Entregavel IV\Floxo de Caixa\frmFluxoDeCaixa.cs">
+    <Compile Include="Telas\Entregavel IV\Fluxo de Caixa\frmFluxoDeCaixa.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Telas\Entregavel IV\Floxo de Caixa\frmFluxoDeCaixa.Designer.cs">
+    <Compile Include="Telas\Entregavel IV\Fluxo de Caixa\frmFluxoDeCaixa.Designer.cs">
       <DependentUpon>frmFluxoDeCaixa.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Entregavel I\FolhaDePagto.cs" />
@@ -350,7 +351,7 @@
     <EmbeddedResource Include="Telas\Entregavel IV\Estoque\frmEstoque.resx">
       <DependentUpon>frmEstoque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Telas\Entregavel IV\Floxo de Caixa\frmFluxoDeCaixa.resx">
+    <EmbeddedResource Include="Telas\Entregavel IV\Fluxo de Caixa\frmFluxoDeCaixa.resx">
       <DependentUpon>frmFluxoDeCaixa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel I\frmFolhaPagto.resx">
@@ -427,8 +428,6 @@
   <ItemGroup>
     <Content Include="Notas\Script.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Telas\Resgistros\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -198,16 +198,7 @@ CREATE TABLE `tb_produtoVenda`(
     FOREIGN KEY(`id_venda`)
     REFERENCES tb_venda(`id_venda`)
 );
-    
 
-CREATE TABLE `tb_estoque` (
-	`id_estoque` int NOT NULL AUTO_INCREMENT,
-	`nm_produto` varchar(250) NOT NULL,
-	`id_compra` int NOT NULL,
-	`qtd_estocado` bigint NOT NULL,
-	`qtd_minima` bigint NOT NULL,
-	PRIMARY KEY (`id_estoque`)
-);
 
 CREATE TABLE `tb_item`(
 	`id_item` INT NOT NULL AUTO_INCREMENT,
@@ -239,6 +230,14 @@ CREATE TABLE `tb_item_compra`(
     REFERENCES tb_item(`id_item`),
     FOREIGN KEY(`id_compra`)
     REFERENCES tb_compra(`id_compra`)
+);
+
+CREATE TABLE `tb_estoque` (
+	`id_estoque` int NOT NULL AUTO_INCREMENT,
+    `id_itemProduto` int NOT NULL,
+	`nm_produto` varchar(250) NOT NULL,
+	`qtd_estocado` bigint NOT NULL,
+	PRIMARY KEY (`id_estoque`)
 );
 
 ALTER TABLE `tb_fornecedor` ADD CONSTRAINT `tb_fornecedor_fk0` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
@@ -274,9 +273,6 @@ ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk1` FOREI
 ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk2` FOREIGN KEY (`id_salFamilia`) REFERENCES `tb_salarioFamilia`(`id_salFamilia`);
 
 ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk3` FOREIGN KEY (`id_funcionario`) REFERENCES `tb_funcionario`(`id_funcionario`);
-
-ALTER TABLE `tb_estoque` ADD CONSTRAINT `tb_estoque_fk0` FOREIGN KEY (`id_compra`) REFERENCES `tb_compra`(`id_compra`);
-
 
 
 -- INSERTS
@@ -461,6 +457,7 @@ CREATE VIEW vw_animal_nmcliente AS
     JOIN tb_cliente
 		ON tb_animal.id_cliente = tb_cliente.id_cliente;
         
+        
 CREATE VIEW vw_consultarFuncionario AS
 	SELECT tb_funcionario.id_funcionario,
 		   tb_funcionario.ds_salario, 
@@ -481,13 +478,26 @@ CREATE VIEW vw_consultarFuncionario AS
     ON tb_funcionario.id_depto = tb_Depto.id_depto;
 
 
+CREATE VIEW vw_estoque AS
+	SELECT tb_estoque.id_estoque,
+		   tb_item_compra.id_item,	
+		   tb_estoque.nm_produto,
+           sum(tb_item_compra.id_item) as qtd_estocado
+	FROM tb_estoque
+	JOIN tb_item_compra
+	  ON tb_estoque.id_itemProduto = tb_item_compra.id_itemCompra
+	GROUP 
+	BY tb_estoque.id_estoque;
+
+
 -- SELECT Views
 
 USE CatiorosDB;
 SELECT * FROM vw_compra_consultar;
 SELECT * FROM vw_animal_nmcliente;
 SELECT * FROM vw_consultarFuncionario;
-SELECt * FROM vw_venda_consultar;
+SELECT * FROM vw_venda_consultar;
+SELECT * FROM vw_estoque;
 
 -- SELECT Tabelas
 
@@ -503,4 +513,8 @@ SELECT * FROM tb_compra;
 SELECT * FROM tb_item;
 SELECT * FROM tb_item_compra;
 SELECT * FROM tb_animal;
+SELECT * FROM tb_estoque;
 
+-- calculos
+
+SELECT qtd_estocado - @qtd_vendido FROM tb_estoque WHERE nm_produto = @nm_produto;
