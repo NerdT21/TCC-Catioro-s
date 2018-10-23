@@ -18,6 +18,7 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
         public frmProdutos()
         {
             InitializeComponent();
+            CarregarCombos();
         }
 
         void CarregarCombos()
