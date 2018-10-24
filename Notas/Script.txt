@@ -491,6 +491,35 @@ CREATE VIEW vw_estoque AS
 	BY tb_estoque.id_estoque;
 
 
+CREATE VIEW vw_consultarFornecedor AS
+	SELECT tb_fornecedor.id_fornecedor,
+		   tb_fornecedor.nm_fornecedor,
+           tb_fornecedor.ds_cnpj,
+           tb_fornecedor.ds_email,
+           tb_fornecedor.ds_telefone,
+           tb_fornecedor.ds_cidade,
+           tb_estados.nm_estado,
+           tb_fornecedor.ds_cep
+	FROM tb_fornecedor
+    JOIN tb_estados
+      ON tb_fornecedor.id_estado = tb_estados.id_estado;
+      
+CREATE VIEW vw_consultarCliente AS
+	SELECT tb_cliente.id_cliente,
+		   tb_cliente.nm_nome,
+           tb_cliente.ds_cpf,
+           tb_cliente.ds_rg,
+           tb_cliente.ds_email,
+           tb_cliente.ds_telefone,
+           tb_cliente.dt_nasc,
+           tb_cliente.dt_dataCadastro,
+           tb_cliente.ds_cidade,
+           tb_estados.nm_estado,
+           tb_cliente.ds_cep
+	FROM tb_cliente
+    JOIN tb_estados
+      ON tb_cliente.id_estado = tb_estados.nm_estado;
+           
 -- SELECT Views
 
 USE CatiorosDB;
@@ -499,6 +528,9 @@ SELECT * FROM vw_animal_nmcliente;
 SELECT * FROM vw_consultarFuncionario;
 SELECT * FROM vw_venda_consultar;
 SELECT * FROM vw_estoque;
+SELECT * FROM vw_consultarFornecedor;
+SELECT * FROM vw_consultarCliente;
+
 
 -- SELECT Tabelas
 
@@ -515,6 +547,7 @@ SELECT * FROM tb_item;
 SELECT * FROM tb_item_compra;
 SELECT * FROM tb_animal;
 SELECT * FROM tb_estoque;
+SELECT * FROM tb_cliente;
 
 -- calculos
 

@@ -64,6 +64,10 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
             dgvVendas.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvVendas.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
+            //Fonte
+            dgvVendas.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
+            dgvVendas.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvVendas.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
 
         private void btnProcurar_Click(object sender, EventArgs e)

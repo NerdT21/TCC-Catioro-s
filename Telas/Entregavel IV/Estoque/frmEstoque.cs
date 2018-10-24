@@ -37,5 +37,34 @@ namespace Catiotro_s.Telas.Entregavel_IV.Estoque
             dgvEstoque.AutoGenerateColumns = false;
             dgvEstoque.DataSource = list;
         }
+
+        private void frmEstoque_Load(object sender, EventArgs e)
+        {
+            //Design das Linhas
+            dgvEstoque.BorderStyle = BorderStyle.None;
+            dgvEstoque.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(0, 116, 186);
+            dgvEstoque.RowsDefaultCellStyle.BackColor = Color.FromArgb(0, 81, 130);
+            dgvEstoque.RowsDefaultCellStyle.ForeColor = Color.White;
+
+            //Design da seleção de células da GV e da GV "pelada"
+            dgvEstoque.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvEstoque.DefaultCellStyle.SelectionBackColor = Color.White;
+            dgvEstoque.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvEstoque.BackgroundColor = Color.White;
+
+            //Estilo da GV
+            dgvEstoque.EnableHeadersVisualStyles = false;
+            dgvEstoque.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvEstoque.RowHeadersVisible = false;
+
+            //Cabeça da GV
+            dgvEstoque.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
+            dgvEstoque.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
+            //Fonte
+            dgvEstoque.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
+            dgvEstoque.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvEstoque.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+        }
     }
 }

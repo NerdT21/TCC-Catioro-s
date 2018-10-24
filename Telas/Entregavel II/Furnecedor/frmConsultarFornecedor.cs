@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Cliente;
+using Catiotro_s.classes.Classes.Feito.Fornecedores;
 
 namespace Catiotro_s.Consultar
 {
@@ -22,7 +23,7 @@ namespace Catiotro_s.Consultar
         void AutoCarregar()
         {
             FornecedoresBusiness buss = new FornecedoresBusiness();
-            List<FornecedoresDTO> lista = buss.ListarPraGrid();
+            List<FornecedorView> lista = buss.ListarPraGrid();
 
             dgvFornecedor.DataSource = lista;
         }
@@ -33,7 +34,7 @@ namespace Catiotro_s.Consultar
             string cidade = txtCidade.Text;
 
             FornecedoresBusiness buss = new FornecedoresBusiness();
-            List<FornecedoresDTO> lista = buss.Consultar(nome, cidade);
+            List<FornecedorView> lista = buss.Consultar(nome, cidade);
 
             dgvFornecedor.DataSource = lista;
         }
@@ -65,6 +66,11 @@ namespace Catiotro_s.Consultar
             //Cabeça da GV
             dgvFornecedor.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvFornecedor.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
+            //Fonte
+            dgvFornecedor.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
+            dgvFornecedor.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvFornecedor.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
     }
 }

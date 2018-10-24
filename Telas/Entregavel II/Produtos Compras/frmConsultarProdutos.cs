@@ -62,6 +62,10 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
             dgvProdutos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvProdutos.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
+            //Fonte
+            dgvProdutos.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
+            dgvProdutos.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvProdutos.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

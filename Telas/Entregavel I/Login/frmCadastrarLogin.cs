@@ -1,4 +1,11 @@
 ﻿using Catiotro_s.classes.Classes.Login;
+using Catiotro_s.Consultar;
+using Catiotro_s.Resgistros;
+using Catiotro_s.Telas.Entregavel_I;
+using Catiotro_s.Telas.Entregavel_I.Funcionários;
+using Catiotro_s.Telas.Entregavel_I.LogIn;
+using Catiotro_s.Telas.Entregavel_II.Controle_de_Compras;
+using Catiotro_s.Telas.Entregavel_III.Produtos;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -21,6 +28,8 @@ namespace Catiotro_s.Telas.Entregavel_I.Login
 
         private void label6_Click(object sender, EventArgs e)
         {
+            frmLogin tela = new frmLogin();
+            tela.Show();
             this.Close();
         }
 

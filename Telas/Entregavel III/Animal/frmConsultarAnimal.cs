@@ -91,6 +91,10 @@ namespace Catiotro_s.Consultar
             dgvAnimal.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvAnimal.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
+            //Fonte
+            dgvAnimal.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
+            dgvAnimal.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvAnimal.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
     }
 }

@@ -77,6 +77,11 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             //Cabeça da GV
             dgvCompras.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvCompras.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
+            //Fonte
+            dgvCompras.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
+            dgvCompras.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvCompras.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
     }
 }

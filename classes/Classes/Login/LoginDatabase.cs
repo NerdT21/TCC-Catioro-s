@@ -22,10 +22,12 @@ namespace Catiotro_s.classes.Classes.Login
                                                    pr_permissaoCadastro,
                                                    pr_permissaoConsulta)
                                            VALUES (@nm_usuario,
+                                                   @nm_funcionario,
                                                    @ds_senha,
+                                                   @ds_email,
                                                    @pr_permissaoADM,
                                                    @pr_permissaoCadastro,
-                                                   @pr_permissaoConsulta) ";
+                                                   @pr_permissaoConsulta)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_usuario", dto.Nome));

@@ -139,6 +139,7 @@
             this.Controls.Add(this.dgvEstoque);
             this.Name = "frmEstoque";
             this.Size = new System.Drawing.Size(583, 405);
+            this.Load += new System.EventHandler(this.frmEstoque_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

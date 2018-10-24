@@ -240,7 +240,7 @@
             this.groupBox1.Controls.Add(this.dgvDepto);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(255, 207);
+            this.groupBox1.Location = new System.Drawing.Point(241, 207);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(330, 168);
             this.groupBox1.TabIndex = 30;
@@ -265,7 +265,7 @@
             this.Controls.Add(this.txtDepto);
             this.Controls.Add(this.panel1);
             this.Name = "frmRegistrarDepartamento";
-            this.Size = new System.Drawing.Size(605, 388);
+            this.Size = new System.Drawing.Size(583, 405);
             this.Load += new System.EventHandler(this.frmRegistrarDepartamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepto)).EndInit();
             this.panel1.ResumeLayout(false);

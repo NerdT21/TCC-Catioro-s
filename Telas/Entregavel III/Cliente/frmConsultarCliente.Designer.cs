@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.btnProcurar = new System.Windows.Forms.Button();
+            this.txtprocurar = new System.Windows.Forms.TextBox();
+            this.lblprocurar = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.mkbCpf = new System.Windows.Forms.MaskedTextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,11 +45,6 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnProcurar = new System.Windows.Forms.Button();
-            this.txtprocurar = new System.Windows.Forms.TextBox();
-            this.lblprocurar = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.mkbCpf = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,73 +68,6 @@
             this.dgvCliente.RowHeadersVisible = false;
             this.dgvCliente.Size = new System.Drawing.Size(573, 285);
             this.dgvCliente.TabIndex = 10;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Id";
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 30;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Nome";
-            this.Column2.HeaderText = "Nome";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Email";
-            this.Column3.HeaderText = "E-mail";
-            this.Column3.Name = "Column3";
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "Telefone";
-            this.Column9.HeaderText = "Telefone";
-            this.Column9.Name = "Column9";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Rg";
-            this.Column4.HeaderText = "RG";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Cpf";
-            this.Column5.HeaderText = "CPF";
-            this.Column5.Name = "Column5";
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "Cidade";
-            this.Column7.HeaderText = "Cidade";
-            this.Column7.Name = "Column7";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "EstadoId";
-            this.Column6.HeaderText = "Estado";
-            this.Column6.Name = "Column6";
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "Cep";
-            this.Column8.HeaderText = "CEP";
-            this.Column8.Name = "Column8";
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "DataNascimento";
-            this.Column10.HeaderText = "Nascimento";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "DataCadastro";
-            this.Column11.HeaderText = "Data de Cadastro";
-            this.Column11.Name = "Column11";
             // 
             // btnProcurar
             // 
@@ -181,6 +114,73 @@
             this.mkbCpf.Name = "mkbCpf";
             this.mkbCpf.Size = new System.Drawing.Size(85, 20);
             this.mkbCpf.TabIndex = 16;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Id";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 30;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Nome";
+            this.Column2.HeaderText = "Nome";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Email";
+            this.Column3.HeaderText = "E-mail";
+            this.Column3.Name = "Column3";
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "Telefone";
+            this.Column9.HeaderText = "Telefone";
+            this.Column9.Name = "Column9";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Rg";
+            this.Column4.HeaderText = "RG";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Cpf";
+            this.Column5.HeaderText = "CPF";
+            this.Column5.Name = "Column5";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "Cidade";
+            this.Column7.HeaderText = "Cidade";
+            this.Column7.Name = "Column7";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Estado";
+            this.Column6.HeaderText = "Estado";
+            this.Column6.Name = "Column6";
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "Cep";
+            this.Column8.HeaderText = "CEP";
+            this.Column8.Name = "Column8";
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "DataNascimento";
+            this.Column10.HeaderText = "Nascimento";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "DataCadastro";
+            this.Column11.HeaderText = "Data de Cadastro";
+            this.Column11.Name = "Column11";
             // 
             // frmConsultarCliente
             // 

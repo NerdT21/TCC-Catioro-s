@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Cliente;
+using Catiotro_s.classes.Classes.AddConsultar.Cliente;
 
 namespace Catiotro_s.Consultar
 {
@@ -22,7 +23,7 @@ namespace Catiotro_s.Consultar
         void AutoCarregar()
         {
             ClienteBusiness buss = new ClienteBusiness();
-            List<ClienteDTO> lista = buss.Listar();
+            List<ClienteView> lista = buss.Listar();
 
             dgvCliente.AutoGenerateColumns = false;
             dgvCliente.DataSource = lista;
@@ -34,7 +35,7 @@ namespace Catiotro_s.Consultar
             string cpf = mkbCpf.Text;
 
             ClienteBusiness buss = new ClienteBusiness();
-            List<ClienteDTO> lista = buss.Consultar(nome, cpf);
+            List<ClienteView> lista = buss.Consultar(nome, cpf);
 
             dgvCliente.AutoGenerateColumns = false;
             dgvCliente.DataSource = lista;
@@ -68,6 +69,10 @@ namespace Catiotro_s.Consultar
             dgvCliente.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvCliente.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
+            //Fonte
+            dgvCliente.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
+            dgvCliente.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvCliente.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
     }
 }

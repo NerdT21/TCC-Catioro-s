@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Catiotro_s.classes.Classes.Feito.Fornecedores;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,13 +31,13 @@ namespace Catiotro_s.classes.Classes.Cliente
             return DB.Listar();
         }
 
-        public List<FornecedoresDTO> Consultar(string nome, string cidade)
+        public List<FornecedorView> Consultar(string nome, string cidade)
         {
             FornecedoresDataBase db = new FornecedoresDataBase();
             return db.Consultar(nome, cidade);
         }
 
-        public List<FornecedoresDTO> ListarPraGrid()
+        public List<FornecedorView> ListarPraGrid()
         {
             FornecedoresDataBase db = new FornecedoresDataBase();
             return db.ListarPraGrid();

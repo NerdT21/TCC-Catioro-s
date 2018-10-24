@@ -2,6 +2,7 @@
 using Catiotro_s.Resgistros;
 using Catiotro_s.Telas.Entregavel_I;
 using Catiotro_s.Telas.Entregavel_I.Funcionários;
+using Catiotro_s.Telas.Entregavel_I.LogIn;
 using Catiotro_s.Telas.Entregavel_II.Controle_de_Compras;
 using Catiotro_s.Telas.Entregavel_III.Produtos;
 using System;
@@ -91,7 +92,7 @@ namespace Catiotro_s
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Login tela = new Login();
+            frmLogin tela = new frmLogin();
             tela.Show();
             this.Close();
         }
