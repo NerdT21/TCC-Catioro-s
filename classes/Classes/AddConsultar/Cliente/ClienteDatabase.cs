@@ -131,6 +131,36 @@ namespace Catiotro_s.classes.Classes.Cliente
             return lista;
         }
 
+        public List<ClienteDTO> ListarPraCombo()
+        {
+            string script = @"SELECT * FROM tb_cliente";
+
+
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
+
+            List<ClienteDTO> lista = new List<ClienteDTO>();
+            while (reader.Read())
+            {
+                ClienteDTO dto = new ClienteDTO();
+                dto.id = reader.GetInt32("id_cliente");
+                dto.Nome = reader.GetString("nm_nome");
+                dto.Email = reader.GetString("ds_email");
+                dto.Rg = reader.GetString("ds_rg");
+                dto.Cpf = reader.GetString("ds_cpf");
+                dto.EstadoId = reader.GetInt32("id_estado");
+                dto.Cidade = reader.GetString("ds_cidade");
+                dto.Cep = reader.GetString("ds_cep");
+                dto.Telefone = reader.GetString("ds_telefone");
+                dto.DataNascimento = reader.GetString("dt_nasc");
+                dto.DataCadastro = reader.GetString("dt_dataCadastro");
+
+                lista.Add(dto);
+            }
+            reader.Close();
+            return lista;
+        }
+
         public List<ClienteView> Consultar(string nome, string cpf)
         {
             string script = @"SELECT * FROM vw_consultarCliente WHERE nm_nome LIKE @nm_nome AND ds_cpf LIKE @ds_cpf";

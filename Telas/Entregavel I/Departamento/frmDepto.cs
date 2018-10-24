@@ -82,7 +82,7 @@ namespace Catiotro_s.Resgistros
             dgvDepto.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
             //Fonte
-            dgvDepto.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
+            dgvDepto.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 10);
             dgvDepto.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
             dgvDepto.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }

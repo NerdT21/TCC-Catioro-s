@@ -34,6 +34,12 @@ namespace Catiotro_s.classes.Classes.Cliente
             return DB.Listar();
         }
 
+        public List<ClienteDTO> ListarPraCombo()
+        {
+            ClienteDataBase DB = new ClienteDataBase();
+            return DB.ListarPraCombo();
+        }
+
         public List<ClienteView> Consultar(string nome, string cpf)
         {
             ClienteDataBase DB = new ClienteDataBase();

@@ -24,7 +24,7 @@ namespace Catiotro_s.Resgistros
         {
 
             ClienteBusiness biss = new ClienteBusiness();
-            List<ClienteDTO> lista = biss.Listar();
+            List<ClienteDTO> lista = biss.ListarPraCombo();
 
             //DisplayMember = Motra,ValueMember=oque de verdade , DataSource = Lista
             cboDono.ValueMember = nameof(ClienteDTO.id);
