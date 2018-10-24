@@ -65,6 +65,11 @@ namespace Catiotro_s.Consultar
             //Cabeça da GV
             dgvFornecedor.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvFornecedor.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
+            //Fonte
+            dgvFornecedor.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
+            dgvFornecedor.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvFornecedor.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
     }
 }

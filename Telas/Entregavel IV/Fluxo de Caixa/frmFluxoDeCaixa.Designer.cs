@@ -28,18 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvFluxoDeCaixa = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFluxoDeCaixa)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvFluxoDeCaixa
+            // 
+            this.dgvFluxoDeCaixa.AllowUserToAddRows = false;
+            this.dgvFluxoDeCaixa.AllowUserToDeleteRows = false;
+            this.dgvFluxoDeCaixa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFluxoDeCaixa.Location = new System.Drawing.Point(233, 135);
+            this.dgvFluxoDeCaixa.Name = "dgvFluxoDeCaixa";
+            this.dgvFluxoDeCaixa.ReadOnly = true;
+            this.dgvFluxoDeCaixa.Size = new System.Drawing.Size(240, 150);
+            this.dgvFluxoDeCaixa.TabIndex = 0;
             // 
             // frmFluxoDeCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dgvFluxoDeCaixa);
             this.Name = "frmFluxoDeCaixa";
             this.Size = new System.Drawing.Size(583, 405);
+            this.Load += new System.EventHandler(this.frmFluxoDeCaixa_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFluxoDeCaixa)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvFluxoDeCaixa;
     }
 }

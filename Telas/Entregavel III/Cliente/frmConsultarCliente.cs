@@ -68,6 +68,10 @@ namespace Catiotro_s.Consultar
             dgvCliente.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvCliente.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
+            //Fonte
+            dgvCliente.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
+            dgvCliente.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvCliente.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
     }
 }

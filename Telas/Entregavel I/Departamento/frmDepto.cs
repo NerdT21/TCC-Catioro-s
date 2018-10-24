@@ -80,6 +80,11 @@ namespace Catiotro_s.Resgistros
             //Cabeça da GV
             dgvDepto.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvDepto.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
+            //Fonte
+            dgvDepto.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
+            dgvDepto.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvDepto.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
