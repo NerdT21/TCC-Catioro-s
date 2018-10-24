@@ -24,11 +24,10 @@ namespace Catiotro_s.classes.Classes.Cliente
             FornecedoresDataBase DB = new FornecedoresDataBase();
             DB.Remover(idforncedor);
         }
-        public List<FornecedoresDTO> Listar()
+        public FornecedoresDTO Listar()
         {
             FornecedoresDataBase DB = new FornecedoresDataBase();
-            List<FornecedoresDTO> forncedor = DB.Listar();
-            return forncedor;
+            return DB.Listar();
         }
 
         public List<FornecedoresDTO> Consultar(string nome, string cidade)
@@ -36,5 +35,12 @@ namespace Catiotro_s.classes.Classes.Cliente
             FornecedoresDataBase db = new FornecedoresDataBase();
             return db.Consultar(nome, cidade);
         }
+
+        public List<FornecedoresDTO> ListarPraGrid()
+        {
+            FornecedoresDataBase db = new FornecedoresDataBase();
+            return db.ListarPraGrid();
+        }
+
     }
 }

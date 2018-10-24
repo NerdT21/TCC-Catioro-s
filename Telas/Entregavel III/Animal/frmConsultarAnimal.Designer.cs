@@ -32,12 +32,11 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtAnimal = new System.Windows.Forms.TextBox();
             this.lblprocurar = new System.Windows.Forms.Label();
             this.btnProcurar = new System.Windows.Forms.Button();
@@ -48,20 +47,23 @@
             // 
             // dgvAnimal
             // 
+            this.dgvAnimal.AllowUserToAddRows = false;
+            this.dgvAnimal.AllowUserToDeleteRows = false;
             this.dgvAnimal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvAnimal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvAnimal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
             this.Column7,
-            this.Column8,
-            this.Column9});
-            this.dgvAnimal.Location = new System.Drawing.Point(15, 85);
+            this.Column5,
+            this.Column4,
+            this.Column6,
+            this.Column8});
+            this.dgvAnimal.Location = new System.Drawing.Point(15, 90);
             this.dgvAnimal.Name = "dgvAnimal";
+            this.dgvAnimal.ReadOnly = true;
+            this.dgvAnimal.RowHeadersVisible = false;
             this.dgvAnimal.Size = new System.Drawing.Size(573, 285);
             this.dgvAnimal.TabIndex = 10;
             this.dgvAnimal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -71,54 +73,56 @@
             this.Column1.DataPropertyName = "Id";
             this.Column1.HeaderText = "Id";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "NomeAnimal";
+            this.Column2.DataPropertyName = "Nome";
             this.Column2.HeaderText = "Nome do Animal";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "Sexo";
+            this.Column3.DataPropertyName = "dsSexo";
             this.Column3.HeaderText = "Sexo do Animal";
             this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "IdRaca";
-            this.Column4.HeaderText = "Raça";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Pelagem";
-            this.Column5.HeaderText = "Tipo da Pelagem";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "CorPelo";
-            this.Column6.HeaderText = "Cor da pelagem";
-            this.Column6.Name = "Column6";
+            this.Column3.ReadOnly = true;
             // 
             // Column7
             // 
-            this.Column7.DataPropertyName = "Pedigree";
-            this.Column7.HeaderText = "Pedigree";
+            this.Column7.DataPropertyName = "dtDataNasc";
+            this.Column7.HeaderText = "Data de Nascimento";
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "dsPelagem";
+            this.Column5.HeaderText = "Tipo da Pelagem";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "dsRaca";
+            this.Column4.HeaderText = "Raca";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "dsCorPelagem";
+            this.Column6.HeaderText = "Cor da pelagem";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Column8
             // 
             this.Column8.DataPropertyName = "IdCliente";
             this.Column8.HeaderText = "Nome do dono";
             this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "IdCliente";
-            this.Column9.HeaderText = "E-mail ";
-            this.Column9.Name = "Column9";
+            this.Column8.ReadOnly = true;
             // 
             // txtAnimal
             // 
@@ -181,6 +185,7 @@
             this.Controls.Add(this.lblprocurar);
             this.Name = "frmConsultarAnimal";
             this.Size = new System.Drawing.Size(605, 388);
+            this.Load += new System.EventHandler(this.frmConsultarAnimal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnimal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -193,16 +198,15 @@
         private System.Windows.Forms.TextBox txtAnimal;
         private System.Windows.Forms.Label lblprocurar;
         private System.Windows.Forms.Button btnProcurar;
+        private System.Windows.Forms.TextBox txtDono;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.TextBox txtDono;
-        private System.Windows.Forms.Label label1;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Catiotro_s.classes.Base;
+using Catiotro_s.classes.Classes.Compras.ItemCompras;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -13,45 +14,38 @@ namespace Catiotro_s.classes.Classes.Compras
         public int Salvar(ComprasDTO dto)
         {
             string script = @"INSERT INTO tb_compra(
-                                            id_item, 
-                                            qtd_comprado,
+                                            id_usuario,
                                             dt_compra,
-                                            ds_formaPagamento,
-                                            vl_preco) VALUES(                                            
-                                            @id_item, 
-                                            @qtd_comprado,
-                                            @dt_compra,
-                                            @ds_formaPagamento,
-                                            @vl_preco)";
+                                            ds_formaPagamento)                                                                     
+                                     VALUES(@id_usuario,
+                                            @dt_compra, 
+                                            @ds_formaPagamento)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_item", dto.ItemId));
-            parms.Add(new MySqlParameter("qtd_comprado", dto.Qtd));
+            parms.Add(new MySqlParameter("id_usuario", dto.UsuarioId));
             parms.Add(new MySqlParameter("dt_compra", dto.Data));
             parms.Add(new MySqlParameter("ds_formaPagamento", dto.FormaPagto));
-            parms.Add(new MySqlParameter("vl_preco", dto.Preco));
 
             Database db = new Database();
             return db.ExecuteInsertScriptWithPk(script, parms);
         }
 
-        public List<ComprasDTO> Listar()
+        public List<ItemComprasView> Listar()
         {
-            string script = @"SELECT * FROM tb_compra";
+            string script = @"SELECT * FROM vw_compra_consultar";
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, null);
 
-            List<ComprasDTO> lista = new List<ComprasDTO>();
+            List<ItemComprasView> lista = new List<ItemComprasView>();
             while (reader.Read())
             {
-                ComprasDTO dto = new ComprasDTO();
+                ItemComprasView dto = new ItemComprasView();
                 dto.Id = reader.GetInt32("id_compra");
-                dto.ItemId = reader.GetInt32("id_item");
-                dto.Qtd = reader.GetInt32("qtd_comprado");
-                dto.Data = reader.GetString("dt_compra");
                 dto.FormaPagto = reader.GetString("ds_formaPagamento");
-                dto.Preco = reader.GetDecimal("vl_preco");
+                dto.Data = reader.GetString("dt_compra");
+                dto.QtdItem = reader.GetInt32("qtd_item");
+                dto.Total = reader.GetDecimal("vl_total");
 
                 lista.Add(dto);
             }
@@ -59,9 +53,9 @@ namespace Catiotro_s.classes.Classes.Compras
             return lista;
         }
 
-        public List<ComprasDTO> Consultar(string data)
+        public List<ItemComprasView> Consultar(string data)
         {
-            string script = @"SELECT * FROM tb_compra WHERE dt_compra LIKE @dt_compra";
+            string script = @"SELECT * FROM vw_compra_consultar WHERE dt_compra LIKE @dt_compra";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("dt_compra", data + "%"));
@@ -69,21 +63,21 @@ namespace Catiotro_s.classes.Classes.Compras
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
-            List<ComprasDTO> lista = new List<ComprasDTO>();
+            List<ItemComprasView> lista = new List<ItemComprasView>();
             while (reader.Read())
             {
-                ComprasDTO dto = new ComprasDTO();
-                dto.Id = reader.GetInt32("id_compra");
-                dto.ItemId = reader.GetInt32("id_item");
-                dto.Qtd = reader.GetInt32("qtd_comprado");
-                dto.Data = reader.GetString("dt_compra");
-                dto.FormaPagto = reader.GetString("ds_formaPagamento");
-                dto.Preco = reader.GetDecimal("vl_preco");
+                ItemComprasView view = new ItemComprasView();
+                view.Id = reader.GetInt32("id_compra");
+                view.FormaPagto = reader.GetString("ds_formaPagamento");
+                view.Data = reader.GetString("dt_compra");
+                view.QtdItem = reader.GetInt32("qtd_item");
+                view.Total = reader.GetDecimal("vl_total");
 
-                lista.Add(dto);
+                lista.Add(view);
             }
+
             reader.Close();
-            return lista;
+            return lista;                     
         }
     }
 }

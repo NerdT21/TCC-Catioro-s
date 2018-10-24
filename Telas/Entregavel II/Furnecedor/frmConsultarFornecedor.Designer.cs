@@ -171,6 +171,7 @@
             this.Controls.Add(this.dgvFornecedor);
             this.Name = "frmConsultarFornecedor";
             this.Size = new System.Drawing.Size(605, 388);
+            this.Load += new System.EventHandler(this.frmConsultarFornecedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

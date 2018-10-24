@@ -42,8 +42,8 @@ namespace Catiotro_s
         //    {
         //        MessageBox.Show("É preciso ser um administrador do sistema para acessar o cadastro de Logins.");
         //    }
-            
-            
+
+
         //}
 
         //private void btnEntrar_Click(object sender, EventArgs e)
@@ -104,21 +104,32 @@ namespace Catiotro_s
 
         private void lblRegistrar_Click_1(object sender, EventArgs e)
         {
-            LoginBusiness business = new LoginBusiness();
-            string user = txtUser.Text;
-            string pass = txtPass.Text;
-
-            LoginDTO usuario = business.Logar(user, pass);
-
-
-            if (usuario != null)
+            try
             {
-                frmCadastrarLogin tela = new frmCadastrarLogin();
-                tela.Show();
+                LoginBusiness business = new LoginBusiness();
+                string user = txtUser.Text;
+                string pass = txtPass.Text;
+
+                LoginDTO usuario = business.Logar(user, pass);
+
+
+                if (usuario != null)
+                {
+                    UserSession.UsuarioLogado = usuario;
+
+                    Menu tela = new Menu();
+                    tela.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Nome de usuário ou senha incorretos.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("É preciso ser um administrador do sistema para acessar o cadastro de Logins.");
+                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Catioro's Exception",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -132,6 +143,129 @@ namespace Catiotro_s
         private void pbxMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void Login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void Login_Layout(object sender, LayoutEventArgs e)
+        {
+
+        }
+
+        private void Login_KeyUp(object sender, KeyEventArgs e)
+        {
+
+
+        }
+
+        private void btnEntrar_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    LoginBusiness business = new LoginBusiness();
+                    string user = txtUser.Text;
+                    string pass = txtPass.Text;
+
+                    LoginDTO usuario = business.Logar(user, pass);
+
+
+                    if (usuario != null)
+                    {
+                        UserSession.UsuarioLogado = usuario;
+
+                        Menu tela = new Menu();
+                        tela.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nome de usuário ou senha incorretos.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocorreu um erro: " + ex.Message, "Catioro's Exception",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void txtPass_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    LoginBusiness business = new LoginBusiness();
+                    string user = txtUser.Text;
+                    string pass = txtPass.Text;
+
+                    LoginDTO usuario = business.Logar(user, pass);
+
+
+                    if (usuario != null)
+                    {
+                        UserSession.UsuarioLogado = usuario;
+
+                        Menu tela = new Menu();
+                        tela.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nome de usuário ou senha incorretos.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocorreu um erro: " + ex.Message, "Catioro's Exception",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void txtUser_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    LoginBusiness business = new LoginBusiness();
+                    string user = txtUser.Text;
+                    string pass = txtPass.Text;
+
+                    LoginDTO usuario = business.Logar(user, pass);
+
+
+                    if (usuario != null)
+                    {
+                        UserSession.UsuarioLogado = usuario;
+
+                        Menu tela = new Menu();
+                        tela.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nome de usuário ou senha incorretos.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocorreu um erro: " + ex.Message, "Catioro's Exception",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

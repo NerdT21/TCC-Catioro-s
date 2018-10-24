@@ -32,13 +32,13 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblprocurar = new System.Windows.Forms.Label();
             this.dgvProduto = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtMarca = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,23 +91,6 @@
             this.dgvProduto.TabIndex = 15;
             this.dgvProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellContentClick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(82, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Marca";
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.Location = new System.Drawing.Point(137, 68);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(192, 20);
-            this.txtMarca.TabIndex = 20;
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "Id";
@@ -147,6 +130,23 @@
             this.Column5.ReadOnly = true;
             this.Column5.Width = 150;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(82, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Marca";
+            // 
+            // txtMarca
+            // 
+            this.txtMarca.Location = new System.Drawing.Point(137, 68);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(192, 20);
+            this.txtMarca.TabIndex = 20;
+            // 
             // frmConsultarProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,6 +159,7 @@
             this.Controls.Add(this.dgvProduto);
             this.Name = "frmConsultarProduto";
             this.Size = new System.Drawing.Size(583, 405);
+            this.Load += new System.EventHandler(this.frmConsultarProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

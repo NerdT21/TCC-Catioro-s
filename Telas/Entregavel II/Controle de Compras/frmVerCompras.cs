@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Compras;
+using Catiotro_s.classes.Classes.Compras.ItemCompras;
 
 namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 {
@@ -22,7 +23,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
         void AutoCarregar()
         {
             ComprasBusiness bus = new ComprasBusiness();
-            List<ComprasDTO> dto = bus.Listar();
+            List<ItemComprasView> dto = bus.Listar();
 
             dgvCompras.AutoGenerateColumns = false;
             dgvCompras.DataSource = dto;
@@ -30,11 +31,10 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 
         void CarregarGrid()
         {
-            string nome = txtNome.Text;
             string data = mkbData.Text;
 
             ComprasBusiness bus = new ComprasBusiness();
-            List<ComprasDTO> dto = bus.Consultar(data);
+            List<ItemComprasView> dto = bus.Consultar(data);
 
             dgvCompras.AutoGenerateColumns = false;
             dgvCompras.DataSource = dto;

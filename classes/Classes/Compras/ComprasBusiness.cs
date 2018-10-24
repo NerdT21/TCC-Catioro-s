@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Catiotro_s.classes.Classes.Compras.Item;
+using Catiotro_s.classes.Classes.Compras.ItemCompras;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,23 +10,35 @@ namespace Catiotro_s.classes.Classes.Compras
 {
     public class ComprasBusiness
     {
-        public int Salvar(ComprasDTO dto)
+        public int Salvar(ComprasDTO dto, List<ItemDTO> item)
         {
             ComprasDatabase db = new ComprasDatabase();
-            return db.Salvar(dto);
+            int IdCompra = db.Salvar(dto);
+
+            ItemComprasBusiness buss = new ItemComprasBusiness();
+            foreach (ItemDTO i in item)
+            {
+                ItemComprasDTO itemDto = new ItemComprasDTO();
+                itemDto.CompraId = IdCompra;
+                itemDto.ItemId = i.Id;
+
+                buss.Salvar(itemDto);
+            }
+
+            return IdCompra;
         }
 
-        public List<ComprasDTO> Listar()
+        public List<ItemComprasView> Listar()
         {
             ComprasDatabase db = new ComprasDatabase();
             return db.Listar();
         }
 
-        public List<ComprasDTO> Consultar(string data)
+        public List<ItemComprasView> Consultar(string data)
         {
             ComprasDatabase db = new ComprasDatabase();
             return db.Consultar(data);
-        }
+        }      
     }
 }
 

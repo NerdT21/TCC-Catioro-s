@@ -105,7 +105,7 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.Black;
-            this.btnCadastrar.Location = new System.Drawing.Point(326, 255);
+            this.btnCadastrar.Location = new System.Drawing.Point(335, 255);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(112, 47);
             this.btnCadastrar.TabIndex = 42;
@@ -176,7 +176,7 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(249, 128);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 21);
+            this.label6.Size = new System.Drawing.Size(76, 21);
             this.label6.TabIndex = 33;
             this.label6.Text = "Telefone :";
             this.label6.Click += new System.EventHandler(this.label6_Click);
