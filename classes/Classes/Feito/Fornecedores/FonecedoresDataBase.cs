@@ -1,4 +1,5 @@
 ﻿using Catiotro_s.classes.Base;
+using Catiotro_s.classes.Classes.Feito.Fornecedores;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -117,9 +118,9 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         }
 
-        public List<FornecedoresDTO> Consultar(string nome, string cidade)
+        public List<FornecedorView> Consultar(string nome, string cidade)
         {
-            string script = @"SELECT * FROM tb_fornecedor WHERE nm_fornecedor LIKE @nm_fornecedor AND ds_cidade LIKE @ds_cidade";
+            string script = @"SELECT * FROM vw_consultarFornecedor WHERE nm_fornecedor LIKE @nm_fornecedor AND ds_cidade LIKE @ds_cidade";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_fornecedor", nome + "%"));
@@ -129,13 +130,13 @@ namespace Catiotro_s.classes.Classes.Cliente
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
-            List<FornecedoresDTO> lista = new List<FornecedoresDTO>();
+            List<FornecedorView> lista = new List<FornecedorView>();
             while (reader.Read())
             {
 
-                FornecedoresDTO add = new FornecedoresDTO();
+                FornecedorView add = new FornecedorView();
                 add.Id = reader.GetInt32("id_fornecedor");
-                add.IdEstado = reader.GetInt32("id_estado");
+                add.Estado = reader.GetString("nm_estado");
                 add.Nome = reader.GetString("nm_fornecedor");
                 add.Email = reader.GetString("ds_email");
                 add.CNPJ = reader.GetString("ds_cnpj");
@@ -150,20 +151,19 @@ namespace Catiotro_s.classes.Classes.Cliente
             return lista;
         }
 
-        public List<FornecedoresDTO> ListarPraGrid()
+        public List<FornecedorView> ListarPraGrid()
         {
-            string script = @"SELECT * FROM tb_fornecedor";
+            string script = @"SELECT * FROM vw_consultarFornecedor";
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, null);
 
-            List<FornecedoresDTO> lista = new List<FornecedoresDTO>();
+            List<FornecedorView> lista = new List<FornecedorView>();
             while (reader.Read())
             {
-
-                FornecedoresDTO add = new FornecedoresDTO();
+                FornecedorView add = new FornecedorView();
                 add.Id = reader.GetInt32("id_fornecedor");
-                add.IdEstado = reader.GetInt32("id_estado");
+                add.Estado = reader.GetString("nm_estado");
                 add.Nome = reader.GetString("nm_fornecedor");
                 add.Email = reader.GetString("ds_email");
                 add.CNPJ = reader.GetString("ds_cnpj");

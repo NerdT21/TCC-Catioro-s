@@ -71,6 +71,7 @@
     <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteBusiness.cs" />
     <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteDatabase.cs" />
     <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteDTO.cs" />
+    <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteView.cs" />
     <Compile Include="classes\Classes\Compras\ComprasBusiness.cs" />
     <Compile Include="classes\Classes\Compras\ComprasDatabase.cs" />
     <Compile Include="classes\Classes\Compras\ComprasDTO.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="classes\Classes\Feito\Fornecedores\FonecedoresBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Fornecedores\FonecedoresDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Fornecedores\FonecedoresDTO.cs" />
+    <Compile Include="classes\Classes\Feito\Fornecedores\FornecedorView.cs" />
     <Compile Include="classes\Classes\Feito\Funcionarios\FuncionariosBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Funcionarios\FuncionariosDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Funcionarios\FuncionariosDTO.cs" />

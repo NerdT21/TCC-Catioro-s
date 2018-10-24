@@ -73,9 +73,9 @@ namespace Catiotro_s.Consultar
             dgvFuncionario.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
             //Fonte
-            dgvDepto.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
-            dgvDepto.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
-            dgvDepto.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvFuncionario.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
+            dgvFuncionario.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvFuncionario.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
 
         private void btnProcurar_Click(object sender, EventArgs e)

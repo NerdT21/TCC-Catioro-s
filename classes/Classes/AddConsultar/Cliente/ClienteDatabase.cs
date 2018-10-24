@@ -1,4 +1,5 @@
 ﻿using Catiotro_s.classes.Base;
+using Catiotro_s.classes.Classes.AddConsultar.Cliente;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -100,24 +101,24 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         }
 
-        public List<ClienteDTO> Listar()
+        public List<ClienteView> Listar()
         {
-            string script = @"SELECT * FROM tb_cliente";
+            string script = @"SELECT * FROM vw_consultarCliente";
 
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, null);
 
-            List<ClienteDTO> lista = new List<ClienteDTO>();
+            List<ClienteView> lista = new List<ClienteView>();
             while (reader.Read())
             {
-                ClienteDTO dto = new ClienteDTO();
+                ClienteView dto = new ClienteView();
                 dto.id = reader.GetInt32("id_cliente");
                 dto.Nome = reader.GetString("nm_nome");
                 dto.Email = reader.GetString("ds_email");
                 dto.Rg = reader.GetString("ds_rg");
                 dto.Cpf = reader.GetString("ds_cpf");
-                dto.EstadoId = reader.GetInt32("id_estado");
+                dto.Estado = reader.GetString("nm_estado");
                 dto.Cidade = reader.GetString("ds_cidade");
                 dto.Cep = reader.GetString("ds_cep");
                 dto.Telefone = reader.GetString("ds_telefone");
@@ -130,9 +131,9 @@ namespace Catiotro_s.classes.Classes.Cliente
             return lista;
         }
 
-        public List<ClienteDTO> Consultar(string nome, string cpf)
+        public List<ClienteView> Consultar(string nome, string cpf)
         {
-            string script = @"SELECT * FROM tb_cliente WHERE nm_nome LIKE @nm_nome AND ds_cpf LIKE @ds_cpf";
+            string script = @"SELECT * FROM vw_consultarCliente WHERE nm_nome LIKE @nm_nome AND ds_cpf LIKE @ds_cpf";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_nome", nome + "%"));
@@ -141,16 +142,16 @@ namespace Catiotro_s.classes.Classes.Cliente
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
-            List<ClienteDTO> lista = new List<ClienteDTO>();
+            List<ClienteView> lista = new List<ClienteView>();
             while (reader.Read())
             {
-                ClienteDTO dto = new ClienteDTO();
+                ClienteView dto = new ClienteView();
                 dto.id = reader.GetInt32("id_cliente");
                 dto.Nome = reader.GetString("nm_nome");
                 dto.Email = reader.GetString("ds_email");
                 dto.Rg = reader.GetString("ds_rg");
                 dto.Cpf = reader.GetString("ds_cpf");
-                dto.EstadoId = reader.GetInt32("id_estado");
+                dto.Estado = reader.GetString("nm_estado");
                 dto.Cidade = reader.GetString("ds_cidade");
                 dto.Cep = reader.GetString("ds_cep");
                 dto.Telefone = reader.GetString("ds_telefone");

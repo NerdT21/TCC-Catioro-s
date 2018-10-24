@@ -111,7 +111,7 @@ namespace Catiotro_s.classes.Classes.Animal
                 animal.DtDataNasc = reader.GetString("dt_dataNasc");
                 animal.dsRaca = reader.GetString("ds_raca");
                 animal.dsSexo = reader.GetString("ds_sexo");
-                animal.IdCliente = reader.GetString("nm_nome");
+                animal.Cliente = reader.GetString("nm_nome");
                 animal.dsObs = reader.GetString("ds_obs");
 
                 animalL.Add(animal);
@@ -144,7 +144,7 @@ namespace Catiotro_s.classes.Classes.Animal
                 animal.DtDataNasc = reader.GetString("dt_dataNasc");
                 animal.dsRaca = reader.GetString("ds_raca");
                 animal.dsSexo = reader.GetString("ds_sexo");
-                animal.IdCliente = reader.GetString("nm_nome");
+                animal.Cliente = reader.GetString("nm_nome");
                 animal.dsObs = reader.GetString("ds_obs");
 
                 lista.Add(animal);
