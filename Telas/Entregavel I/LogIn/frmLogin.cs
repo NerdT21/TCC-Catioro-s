@@ -1,4 +1,5 @@
 ﻿using Catiotro_s.classes.Classes.Login;
+using Catiotro_s.CustomException.TelasException;
 using Catiotro_s.Telas.Entregavel_I.Login;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,11 @@ namespace Catiotro_s.Telas.Entregavel_I.LogIn
             }
             else
             {
-                MessageBox.Show("Nome de usuário ou senha incorretos.");
+                string msg = "Nome de usuário ou senha incorretos.";
+
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
             }
         }
 

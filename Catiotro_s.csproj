@@ -149,8 +149,28 @@
     <Compile Include="classes\Classes\Vendas\VendaBusiness.cs" />
     <Compile Include="classes\Classes\Vendas\VendaDatabase.cs" />
     <Compile Include="classes\Classes\Vendas\VendaDTO.cs" />
+    <Compile Include="Criptografia\MD5Cripto.cs" />
+    <Compile Include="CustomException\TelasException\frmAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomException\TelasException\frmAlert.Designer.cs">
+      <DependentUpon>frmAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomException\TelasException\frmException.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomException\TelasException\frmException.Designer.cs">
+      <DependentUpon>frmException.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomException\ValidacaoException.cs" />
+    <Compile Include="PlugIn\EmailPlugin.cs" />
     <Compile Include="PlugIn\ImagemPlugIn.cs" />
+    <Compile Include="Telas\Diferenciais\frmEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Diferenciais\frmEmail.Designer.cs">
+      <DependentUpon>frmEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Entregavel II\Produtos Compras\frmConsultarProdutos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -312,6 +332,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="favicon %281%29.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\icons8-error-48.png" />
     <None Include="Resources\icons8-cancel-30.png" />
     <None Include="Resources\icons8-cancel-481.png" />
     <None Include="Resources\icons8-edit-file-30.png" />
@@ -326,6 +347,15 @@
     <None Include="Resources\icons8-minimizar-janela-32.png" />
     <None Include="Resources\icons8-excluir-48.png" />
     <None Include="Resources\Catioro%27s Logo.jpeg" />
+    <EmbeddedResource Include="CustomException\TelasException\frmAlert.resx">
+      <DependentUpon>frmAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomException\TelasException\frmException.resx">
+      <DependentUpon>frmException.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Diferenciais\frmEmail.resx">
+      <DependentUpon>frmEmail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel II\Produtos Compras\frmConsultarProdutos.resx">
       <DependentUpon>frmConsultarProdutos.cs</DependentUpon>
     </EmbeddedResource>
