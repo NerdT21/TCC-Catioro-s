@@ -26,16 +26,16 @@ namespace Catiotro_s.classes.Classes.Estoque
             return db.Consultar(nome);
         }
 
-        public void Adicionar(int qtd, string nome)
+        public void Adicionar(int qtd, int id, string produto)
         {
             EstoqueDatabase db = new EstoqueDatabase();
-            db.Adicionar(qtd, nome);
+            db.Adicionar(qtd, id, produto);
         }
 
-        public void Remover(int qtd, string nome)
+        public void Remover(int qtd, int id, string produto)
         {
             EstoqueDatabase db = new EstoqueDatabase();
-            db.Remover(qtd, nome);
+            db.Remover(qtd, id, produto);
         }       
     }
 }

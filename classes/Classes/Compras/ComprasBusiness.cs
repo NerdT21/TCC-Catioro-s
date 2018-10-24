@@ -38,7 +38,13 @@ namespace Catiotro_s.classes.Classes.Compras
         {
             ComprasDatabase db = new ComprasDatabase();
             return db.Consultar(data);
-        }      
+        }
+
+        public List<ItemComprasView> ConsultarPorId(int id)
+        {
+            ComprasDatabase db = new ComprasDatabase();
+            return db.ConsultarPorId(id);
+        }
     }
 }
 

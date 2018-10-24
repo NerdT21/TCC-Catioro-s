@@ -28,6 +28,9 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
         }
 
         BindingList<ItemDTO> carrinhoAdd = new BindingList<ItemDTO>();
+        BindingList<int> ids = new BindingList<int>();
+        BindingList<int> quantd = new BindingList<int>();
+
         void DataParaHoje()
         {
             DateTime hoje = DateTime.Now;
@@ -174,10 +177,12 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             ItemDTO dto = cboProduto.SelectedItem as ItemDTO;
 
             int quantidade = Convert.ToInt32(nudQuantidade.Value);
+            quantd.Add(quantidade);
 
             for (int i = 0; i < quantidade; i++)
             {
                 carrinhoAdd.Add(dto);
+                ids.Add(dto.Id);
             }
 
             CarregarGrid();
@@ -191,12 +196,24 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             dto.FormaPagto = Convert.ToString(cboTipoPag.SelectedItem);
 
             ComprasBusiness buss = new ComprasBusiness();
-            buss.Salvar(dto, carrinhoAdd.ToList());
-
-
+            int id = buss.Salvar(dto, carrinhoAdd.ToList());
 
             EstoqueBusiness EstoqueBuss = new EstoqueBusiness();
-            EstoqueBuss.Adicionar();
+            List<EstoqueView> estoque = EstoqueBuss.Listar();
+
+            foreach (int item in ids)
+            {
+                foreach (EstoqueView i in estoque)
+                {
+                    foreach (var QTD in quantd)
+                    {
+                        if (item == i.ItemId)
+                        {
+                            EstoqueBuss.Adicionar(QTD, item, i.Produto);
+                        }
+                    }
+                }
+            }
 
             MessageBox.Show("Compra salva com sucesso!", "Catioro's", MessageBoxButtons.OK);
         }

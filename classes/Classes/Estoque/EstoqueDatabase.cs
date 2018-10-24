@@ -71,23 +71,26 @@ namespace Catiotro_s.classes.Classes.Estoque
             return lista;
         }
 
-        public void Adicionar(int qtd, string item)
+        public void Adicionar(int qtd, int id, string produto)
         {
-            string script = @"SELECT qtd_estocado + " + qtd + " FROM vw_estoque WHERE id_itemProduto = @id_itemProduto";
+            string script = @"SELECT qtd_estocado + " + qtd + " FROM vw_estoque WHERE id_itemProduto = @id_itemProduto " +
+                                                                                 "AND nm_produto LIKE @nm_produto";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_itemProduto", item));
+            parms.Add(new MySqlParameter("id_itemProduto", id));
+            parms.Add(new MySqlParameter("nm_produto", produto));
 
             Database db = new Database();
             db.ExecuteSelectScript(script, parms);
         }
 
-        public void Remover(int qtd, string item)
+        public void Remover(int qtd, int id, string produto)
         {
-            string script = @"SELECT qtd_estocado - " + qtd + " FROM vw_estoque WHERE id_itemProduto = @id_itemProduto";
-
+            string script = @"SELECT qtd_estocado - " + qtd + " FROM vw_estoque WHERE id_itemProduto = @id_itemProduto" +
+                                                                                 "AND nm_produto LIKE @nm_produto";
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_itemProduto", item));
+            parms.Add(new MySqlParameter("id_itemProduto", id));
+            parms.Add(new MySqlParameter("nm_produto", produto));
 
             Database db = new Database();
             db.ExecuteSelectScript(script, parms);

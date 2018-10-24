@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Agenda;
 using Catiotro_s.classes.Classes.Vendas;
 using Catiotro_s.classes.Classes.Login;
+using Catiotro_s.classes.Classes.Estoque;
 
 namespace Catiotro_s.Telas.Entregavel_III.Vendas
 {
@@ -20,6 +21,8 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
             InitializeComponent();
         }
         BindingList<ProdutoDTO> carrinhoAdd = new BindingList<ProdutoDTO>();
+        BindingList<int> ids = new BindingList<int>();
+        BindingList<int> quantd = new BindingList<int>();
 
         void CarregarGrid()
         {
@@ -32,10 +35,12 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
             ProdutoDTO dto = cboProduto.SelectedItem as ProdutoDTO;
 
             int quantidade = Convert.ToInt32(nudQuantidade.Value);
+            quantd.Add(quantidade);
 
             for (int i = 0; i < quantidade; i++)
             {
                 carrinhoAdd.Add(dto);
+                ids.Add(dto.Id);
             }
 
             CarregarGrid();
@@ -49,7 +54,24 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
             dto.FormaPagto = Convert.ToString(cboTipoPag.SelectedItem);
 
             VendaBusiness buss = new VendaBusiness();
-            buss.Salvar(dto, carrinhoAdd.ToList());
+            int id = buss.Salvar(dto, carrinhoAdd.ToList());
+
+            EstoqueBusiness EstoqueBuss = new EstoqueBusiness();
+            List<EstoqueView> estoque = EstoqueBuss.Listar();
+
+            foreach (int item in ids)
+            {
+                foreach (EstoqueView i in estoque)
+                {
+                    foreach (var QTD in quantd)
+                    {
+                        if (item == i.ItemId)
+                        {
+                            EstoqueBuss.Adicionar(QTD, item, i.Produto);
+                        }
+                    }
+                }
+            }
 
             MessageBox.Show("Venda efetuada com sucesso!", "Catioro's",
                 MessageBoxButtons.OK);
