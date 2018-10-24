@@ -65,11 +65,11 @@
     <Compile Include="classes\Classes\AddConsultar\Agenda\AgendaDataBase.cs" />
     <Compile Include="classes\Classes\AddConsultar\Agenda\AgendaDTO.cs" />
     <Compile Include="classes\Classes\AddConsultar\Animal\AnimalBusiness.cs" />
-    <Compile Include="classes\Classes\AddConsultar\Animal\AnimalDataBase.cs" />
+    <Compile Include="classes\Classes\AddConsultar\Animal\AnimalDatabase.cs" />
     <Compile Include="classes\Classes\AddConsultar\Animal\AnimalDTO.cs" />
     <Compile Include="classes\Classes\AddConsultar\Animal\AnimalView.cs" />
     <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteBusiness.cs" />
-    <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteDataBase.cs" />
+    <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteDatabase.cs" />
     <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteDTO.cs" />
     <Compile Include="classes\Classes\Compras\ComprasBusiness.cs" />
     <Compile Include="classes\Classes\Compras\ComprasDatabase.cs" />
