@@ -43,5 +43,10 @@ namespace Catiotro_s.classes.Classes.Cliente
             return db.ListarPraGrid();
         }
 
+        public List<FornecedoresDTO> ListarPraCombo()
+        {
+            FornecedoresDataBase db = new FornecedoresDataBase();
+            return db.ListarPraCombo();
+        }
     }
 }

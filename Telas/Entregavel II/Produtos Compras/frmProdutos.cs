@@ -24,7 +24,7 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
         void CarregarCombos()
         {
             FornecedoresBusiness buss = new FornecedoresBusiness();
-            FornecedoresDTO lista = buss.Listar();
+            List<FornecedoresDTO> lista = buss.ListarPraCombo();
 
             cboFornecedor.ValueMember = nameof(FornecedoresDTO.Id);
             cboFornecedor.DisplayMember = nameof(FornecedoresDTO.Nome);
@@ -33,7 +33,7 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            FornecedoresDTO fornecedor = new FornecedoresDTO();
+            FornecedoresDTO fornecedor = cboFornecedor.SelectedItem as FornecedoresDTO;
 
             ItemDTO dto = new ItemDTO();
             dto.Nome = txtNome.Text;

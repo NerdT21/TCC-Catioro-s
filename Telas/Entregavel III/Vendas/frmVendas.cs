@@ -19,6 +19,7 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
         public frmVendas()
         {
             InitializeComponent();
+            DataParaHoje();
         }
         BindingList<ProdutoDTO> carrinhoAdd = new BindingList<ProdutoDTO>();
         BindingList<int> ids = new BindingList<int>();
@@ -28,6 +29,17 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
         {
             dgvVendas.AutoGenerateColumns = false;
             dgvVendas.DataSource = carrinhoAdd;
+        }
+
+        void DataParaHoje()
+        {
+            DateTime hoje = DateTime.Now;
+            int dia = hoje.Day;
+            int mes = hoje.Month;
+            int ano = hoje.Year;
+
+            string data = dia + "/" + mes + "/" + ano;
+            mkbDataCompra.Text = data;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

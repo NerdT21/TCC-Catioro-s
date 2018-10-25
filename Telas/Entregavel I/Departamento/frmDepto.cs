@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.CustomException;
+using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Resgistros
 {
@@ -32,7 +33,11 @@ namespace Catiotro_s.Resgistros
             business.Salvar(dto);
 
             //Exibe de uma msg de suceso 
-            MessageBox.Show("Departamento cadastrado.", "Catioro's", MessageBoxButtons.OK);
+            string msg = "Departamento cadastrado.";
+
+            frmMessage tela = new frmMessage();
+            tela.LoadScreen(msg);
+            tela.ShowDialog();
         }
 
         public void CarregarGrid()
