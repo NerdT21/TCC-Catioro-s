@@ -35,9 +35,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtMsg = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbxClose = new System.Windows.Forms.PictureBox();
+            this.txtMsg = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -68,7 +68,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(229)))), ((int)(((byte)(26)))));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.pbxClose);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -89,7 +89,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(229)))), ((int)(((byte)(26)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(10, 152);
             this.panel3.Name = "panel3";
@@ -98,7 +98,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(229)))), ((int)(((byte)(26)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -107,23 +107,12 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(229)))), ((int)(((byte)(26)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(339, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(10, 162);
             this.panel1.TabIndex = 9;
-            // 
-            // txtMsg
-            // 
-            this.txtMsg.BackColor = System.Drawing.SystemColors.Window;
-            this.txtMsg.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMsg.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMsg.Location = new System.Drawing.Point(94, 47);
-            this.txtMsg.Multiline = true;
-            this.txtMsg.Name = "txtMsg";
-            this.txtMsg.Size = new System.Drawing.Size(215, 55);
-            this.txtMsg.TabIndex = 15;
             // 
             // pictureBox2
             // 
@@ -145,6 +134,14 @@
             this.pbxClose.TabIndex = 4;
             this.pbxClose.TabStop = false;
             this.pbxClose.Click += new System.EventHandler(this.pbxClose_Click);
+            // 
+            // txtMsg
+            // 
+            this.txtMsg.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMsg.Location = new System.Drawing.Point(103, 47);
+            this.txtMsg.Name = "txtMsg";
+            this.txtMsg.Size = new System.Drawing.Size(210, 55);
+            this.txtMsg.TabIndex = 21;
             // 
             // frmAlert
             // 
@@ -169,7 +166,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -184,6 +180,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox txtMsg;
+        private System.Windows.Forms.Label txtMsg;
     }
 }

@@ -83,6 +83,7 @@
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "Id";
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -91,12 +92,14 @@
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "Produto";
             this.Column2.HeaderText = "Produto";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
+            this.Column3.DataPropertyName = "Quantidade";
             this.Column3.HeaderText = "Quantidade";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -128,6 +131,7 @@
             this.brnBuscar.TabIndex = 3;
             this.brnBuscar.Text = "Buscar";
             this.brnBuscar.UseVisualStyleBackColor = true;
+            this.brnBuscar.Click += new System.EventHandler(this.brnBuscar_Click);
             // 
             // frmEstoque
             // 
@@ -149,11 +153,11 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvEstoque;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.TextBox txrProduto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button brnBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

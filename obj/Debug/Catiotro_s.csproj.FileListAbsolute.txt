@@ -152,6 +152,9 @@ C:\Users\Pc\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.csproj.CoreCompileIn
 C:\Users\Pc\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.csproj.CopyComplete
 C:\Users\Pc\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro's.exe
 C:\Users\Pc\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro's.pdb
+C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\bin\Debug\Catiotro's.exe.config
+C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\bin\Debug\Catiotro's.exe
+C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\bin\Debug\Catiotro's.pdb
 C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\bin\Debug\MySql.Data.dll
 C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\bin\Debug\Google.Protobuf.dll
 C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\bin\Debug\MySql.Data.xml
@@ -163,6 +166,7 @@ C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Consultar
 C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Consultar.frmConsultarCliente.resources
 C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Consultar.frmConsultarFornecedor.resources
 C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_I.Login.frmCadastrarLogin.resources
+C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Login.resources
 C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Menu.resources
 C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Resgistros.frmRegistrarAnimal.resources
 C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Resgistros.frmRegistrarCliente.resources
@@ -173,6 +177,8 @@ C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Propertie
 C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.csproj.GenerateResource.cache
 C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.csproj.CoreCompileInputs.cache
 C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.csproj.CopyComplete
+C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro's.exe
+C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro's.pdb
 C:\Users\INSTITUTO\Source\Repos\TCC-Catioro-s\bin\Debug\Catiotro's.exe.config
 C:\Users\INSTITUTO\Source\Repos\TCC-Catioro-s\bin\Debug\Catiotro's.exe
 C:\Users\INSTITUTO\Source\Repos\TCC-Catioro-s\bin\Debug\Catiotro's.pdb
@@ -207,7 +213,6 @@ C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Consultar.frmCo
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Consultar.frmConsultarCliente.resources
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Consultar.frmConsultarFornecedor.resources
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_I.Login.frmCadastrarLogin.resources
-C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Login.resources
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Menu.resources
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Resgistros.frmRegistrarAnimal.resources
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Resgistros.frmRegistrarCliente.resources
@@ -369,19 +374,11 @@ C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregave
 C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro_s.Telas.Entregavel_I.LogIn.frmLogin.resources
 C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro_s.CustomException.TelasException.frmException.resources
 C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro_s.CustomException.TelasException.frmAlert.resources
-C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\bin\Debug\Catiotros.exe.config
-C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\bin\Debug\Catiotros.exe
-C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\bin\Debug\Catiotros.pdb
-C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.CustomException.TelasException.frmAlert.resources
-C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.CustomException.TelasException.frmException.resources
-C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Diferenciais.frmEmail.resources
-C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_III.Produtos.frmConsultarProdutos.resources
-C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_III.Produtos.frmProdutos.resources
-C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_III.Vendas.frmVendas.resources
-C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_III.Vendas.frmVerVendas.resources
-C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_IV.Estoque.frmEstoque.resources
-C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_IV.Floxo_de_Caixa.frmFluxoDeCaixa.resources
-C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_I.Funcionários.frmAlterarFuncionarios.resources
-C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_I.LogIn.frmLogin.resources
-C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotros.exe
-C:\Users\Raian\Source\Repos\NerdT21\TCC-Catioro-s\obj\Debug\Catiotros.pdb
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.CustomException.TelasException.frmAlert.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.CustomException.TelasException.frmException.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Diferenciais.frmEmail.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_I.LogIn.frmLogin.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.CustomException.TelasException.frmMessage.resources
+C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro_s.CustomException.TelasException.frmMessage.resources
+C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro_s.CustomException.TelasException.frmQuestion.resources
+C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro_s.Telas.Diferenciais.frmEmail.resources

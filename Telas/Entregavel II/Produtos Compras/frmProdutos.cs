@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Compras.Item;
 using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.classes.Classes.Estoque;
+using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Telas.Entregavel_III.Produtos
 {
@@ -24,7 +25,7 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
         void CarregarCombos()
         {
             FornecedoresBusiness buss = new FornecedoresBusiness();
-            FornecedoresDTO lista = buss.Listar();
+            List<FornecedoresDTO> lista = buss.ListarPraCombo();
 
             cboFornecedor.ValueMember = nameof(FornecedoresDTO.Id);
             cboFornecedor.DisplayMember = nameof(FornecedoresDTO.Nome);
@@ -33,27 +34,41 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            FornecedoresDTO fornecedor = new FornecedoresDTO();
+            try
+            {
+                FornecedoresDTO fornecedor = cboFornecedor.SelectedItem as FornecedoresDTO;
 
-            ItemDTO dto = new ItemDTO();
-            dto.Nome = txtNome.Text;
-            dto.FornecedorId = fornecedor.Id;
-            dto.Descricao = txtDescricao.Text;
-            dto.Preco = Convert.ToDecimal(nudPreco.Value);
+                ItemDTO dto = new ItemDTO();
+                dto.Nome = txtNome.Text;
+                dto.FornecedorId = fornecedor.Id;
+                dto.Descricao = txtDescricao.Text;
+                dto.Preco = Convert.ToDecimal(nudPreco.Value);
 
-            ItemBusiness buss = new ItemBusiness();
-            buss.Salvar(dto);
+                ItemBusiness buss = new ItemBusiness();
+                buss.Salvar(dto);
 
-            EstoqueDTO estoque = new EstoqueDTO();
-            estoque.Produto = txtNome.Text;
-            estoque.ItemProdutoId = buss.Salvar(dto);
-            estoque.QtdEstocado = 0;
+                EstoqueDTO estoque = new EstoqueDTO();
+                estoque.Produto = txtNome.Text;
+                estoque.ItemProdutoId = buss.Salvar(dto);
+                estoque.QtdEstocado = 0;
 
-            EstoqueBusiness business = new EstoqueBusiness();
-            business.Salvar(estoque);
+                EstoqueBusiness business = new EstoqueBusiness();
+                business.Salvar(estoque);
 
-            MessageBox.Show("Item salvo com sucesso!", "Catioro's",
-                MessageBoxButtons.OK);
+                string msg = "Item salvo com sucesso!";
+
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }         
         }
     }
 }

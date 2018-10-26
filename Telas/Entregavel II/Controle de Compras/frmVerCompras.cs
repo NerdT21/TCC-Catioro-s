@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Compras;
 using Catiotro_s.classes.Classes.Compras.ItemCompras;
+using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 {
@@ -52,7 +53,19 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 
         private void btnProcurar_Click(object sender, EventArgs e)
         {
-            CarregarGrid();
+            try
+            {
+                CarregarGrid();
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            
         }
 
         private void frmVerCompras_Load(object sender, EventArgs e)

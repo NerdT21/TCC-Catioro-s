@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Vendas;
 using Catiotro_s.classes.Classes.Vendas.ProdutoVendas;
+using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Telas.Entregavel_III.Vendas
 {
@@ -72,7 +73,19 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
 
         private void btnProcurar_Click(object sender, EventArgs e)
         {
-            CarregarGrid();
+            try
+            {
+                CarregarGrid();
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+           
         }
     }
 }

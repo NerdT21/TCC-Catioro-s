@@ -46,7 +46,6 @@ namespace Catiotro_s.classes.Classes.Login
 
         public LoginDTO Logar(string usuario, string senha)
         {
-
             string script = @"SELECT * FROM tb_login WHERE nm_usuario = @nm_usuario AND ds_senha = @ds_senha";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
@@ -59,7 +58,6 @@ namespace Catiotro_s.classes.Classes.Login
             LoginDTO dto = null;
             if (reader.Read())
             {
-
                 dto = new LoginDTO();
                 dto.Id = reader.GetInt32("id_usuario");
                 dto.NmUsuario = reader.GetString("nm_funcionario");
@@ -69,9 +67,6 @@ namespace Catiotro_s.classes.Classes.Login
                 dto.PermicaoADM = reader.GetBoolean("pr_permissaoADM");
                 dto.PermicaoCadastro = reader.GetBoolean("pr_permissaoCadastro");
                 dto.PermicaoConsulta = reader.GetBoolean("pr_permissaoConsulta");
-
-
-
             }
 
             reader.Close();

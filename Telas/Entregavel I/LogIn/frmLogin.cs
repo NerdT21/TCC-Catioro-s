@@ -68,13 +68,20 @@ namespace Catiotro_s.Telas.Entregavel_I.LogIn
                 }
                 else
                 {
-                    MessageBox.Show("Nome de usuário ou senha incorretos.");
+                    string msg = "Nome de usuário ou senha incorretos.";
+
+                    frmAlert tela = new frmAlert();
+                    tela.LoadScreen(msg);
+                    tela.ShowDialog();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Catioro's Exception",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
             }
         }
 
@@ -101,13 +108,20 @@ namespace Catiotro_s.Telas.Entregavel_I.LogIn
                     }
                     else
                     {
-                        MessageBox.Show("Nome de usuário ou senha incorretos.");
+                        string msg = "Nome de usuário ou senha incorretos.";
+
+                        frmAlert tela = new frmAlert();
+                        tela.LoadScreen(msg);
+                        tela.ShowDialog();
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ocorreu um erro: " + ex.Message, "Catioro's Exception",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string msg = "Ocorreu um erro: " + ex.Message;
+
+                    frmException tela = new frmException();
+                    tela.LoadScreen(msg);
+                    tela.ShowDialog();
                 }
             }
         }
@@ -135,13 +149,20 @@ namespace Catiotro_s.Telas.Entregavel_I.LogIn
                     }
                     else
                     {
-                        MessageBox.Show("Nome de usuário ou senha incorretos.");
+                        string msg = "Nome de usuário ou senha incorretos.";
+
+                        frmAlert tela = new frmAlert();
+                        tela.LoadScreen(msg);
+                        tela.ShowDialog();
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ocorreu um erro: " + ex.Message, "Catioro's Exception",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string msg = "Ocorreu um erro: " + ex.Message;
+
+                    frmException tela = new frmException();
+                    tela.LoadScreen(msg);
+                    tela.ShowDialog();
                 }
             }
         }
