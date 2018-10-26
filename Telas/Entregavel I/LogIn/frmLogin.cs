@@ -1,6 +1,5 @@
 ﻿using Catiotro_s.classes.Classes.Login;
 using Catiotro_s.CustomException.TelasException;
-using Catiotro_s.Telas.Entregavel_I.Login;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -411,21 +411,21 @@ INSERT INTO tb_item(`id_item`, `nm_item`, `id_fornecedor`, `vl_preco`, `ds_item`
 
 -- VIEWs
 
-CREATE VIEW vw_compra_consultar AS
+ALTER VIEW vw_compra_consultar AS
 SELECT tb_compra.id_compra,
        tb_compra.ds_formaPagamento,
        tb_compra.dt_compra,
        count(tb_item_compra.id_itemCompra)   as qtd_item,
-       sum(tb_item_compra.id_itemCompra)     as qtd_comprado,
-       sum(tb_item.vl_preco * qtd_comprado)  as vl_total
+       sum(tb_item.vl_preco) as vl_total
 FROM tb_compra
 JOIN tb_item_compra
-  ON tb_compra.id_compra = tb_item_compra.id_itemCompra
+  ON tb_compra.id_compra = tb_item_compra.id_compra
 JOIN tb_item
   ON tb_item_compra.id_item = tb_item.id_item
 GROUP
   BY tb_compra.id_compra,
-	 tb_compra.dt_compra;
+       tb_compra.ds_formaPagamento,
+       tb_compra.dt_compra;
 
 
 CREATE VIEW vw_venda_consultar AS
@@ -519,7 +519,8 @@ CREATE VIEW vw_consultarCliente AS
 	FROM tb_cliente
     JOIN tb_estados
       ON tb_cliente.id_estado = tb_estados.nm_estado;
-           
+        
+
 -- SELECT Views
 
 USE CatiorosDB;
