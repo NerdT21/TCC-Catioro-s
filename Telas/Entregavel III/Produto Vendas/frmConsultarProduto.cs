@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Agenda;
-using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Telas.Entregavel_II.Produto
 {
@@ -51,19 +50,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
 
         private void btnProcurar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                CarregarGrid();
-            }
-            catch (Exception ex)
-            {
-                string msg = "Ocorreu um erro: " + ex.Message;
-
-                frmException tela = new frmException();
-                tela.LoadScreen(msg);
-                tela.ShowDialog();
-            }
-            
+            CarregarGrid();
         }
 
         private void txtprocurar_TextChanged(object sender, EventArgs e)
@@ -94,10 +81,6 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
             dgvProduto.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvProduto.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
-            //Fonte
-            dgvProduto.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
-            dgvProduto.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
-            dgvProduto.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
     }
 }
