@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Cliente;
+using Catiotro_s.classes.Classes.Feito.Fornecedores;
+using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Consultar
 {
@@ -22,7 +24,7 @@ namespace Catiotro_s.Consultar
         void AutoCarregar()
         {
             FornecedoresBusiness buss = new FornecedoresBusiness();
-            List<FornecedoresDTO> lista = buss.Listar();
+            List<FornecedorView> lista = buss.ListarPraGrid();
 
             dgvFornecedor.DataSource = lista;
         }
@@ -33,14 +35,25 @@ namespace Catiotro_s.Consultar
             string cidade = txtCidade.Text;
 
             FornecedoresBusiness buss = new FornecedoresBusiness();
-            List<FornecedoresDTO> lista = buss.Consultar(nome, cidade);
+            List<FornecedorView> lista = buss.Consultar(nome, cidade);
 
             dgvFornecedor.DataSource = lista;
         }
 
         private void btnProcurar_Click(object sender, EventArgs e)
         {
-            CarregarGrid();
+            try
+            {
+                CarregarGrid();
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }           
         }
 
         private void frmConsultarFornecedor_Load(object sender, EventArgs e)
@@ -65,6 +78,11 @@ namespace Catiotro_s.Consultar
             //Cabeça da GV
             dgvFornecedor.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvFornecedor.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+
+            //Fonte
+            dgvFornecedor.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
+            dgvFornecedor.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvFornecedor.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
     }
 }

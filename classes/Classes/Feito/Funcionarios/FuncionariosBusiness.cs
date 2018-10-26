@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Catiotro_s.classes.Classes.Feito.Funcionarios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,17 +25,17 @@ namespace Catiotro_s.classes.Classes.Cliente
             FuncionariosDataBase DB = new FuncionariosDataBase();
             DB.Remover(idfuncionario);
         }
-        public List<FuncionarioDTO> Listar()
+        public List<FuncionarioView> Listar()
         {
             FuncionariosDataBase DB = new FuncionariosDataBase();
-            List<FuncionarioDTO> funcionario = DB.Listar();
+            List<FuncionarioView> funcionario = DB.Listar();
             return funcionario;
         }
 
-        //public List<FuncionarioDTO> Consultar(string consult)
-        //{
-        //    FuncionariosDataBase db = new FuncionariosDataBase();
-        //    return db.Consultar(consult);
-        //}
+        public List<FuncionarioView> Consultar(string nome, string cpf)
+        {
+            FuncionariosDataBase db = new FuncionariosDataBase();
+            return db.Consultar(nome, cpf);
+        }
     }
 }

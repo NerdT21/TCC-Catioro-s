@@ -11,6 +11,7 @@ using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.classes.Classes.Agenda;
 using Catiotro_s.PlugIn;
 using MySql.Data.MySqlClient;
+using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Telas.Entregavel_I.Funcionários
 {
@@ -69,19 +70,26 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
 
                 MessageBox.Show("Funcionário cadastrado com suceso!!", "Catioro's", MessageBoxButtons.OK);
             }
-            catch (MySqlException ex)
+            catch (MySqlException mex)
             {
-                if (ex.Number == 1062)
+                if (mex.Number == 1062)
                 {
-                    MessageBox.Show("Funcionario já está cadastrado. Verifique se o RG ou CPF estão corretamento preenchidos ou se ele já esta no sistema.",
-                        "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    string msg = "Funcionario já está cadastrado. Verifique se o RG ou CPF estão corretamento preenchidos ou se ele já esta no sistema.";
+
+                    frmAlert tela = new frmAlert();
+                    tela.LoadScreen(msg);
+                    tela.ShowDialog();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
             }
-           
+
         }
 
         private void pbxFoto_Click(object sender, EventArgs e)

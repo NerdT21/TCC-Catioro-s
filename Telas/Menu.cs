@@ -2,8 +2,11 @@
 using Catiotro_s.Resgistros;
 using Catiotro_s.Telas.Entregavel_I;
 using Catiotro_s.Telas.Entregavel_I.Funcionários;
+using Catiotro_s.Telas.Entregavel_I.LogIn;
 using Catiotro_s.Telas.Entregavel_II.Controle_de_Compras;
 using Catiotro_s.Telas.Entregavel_III.Produtos;
+using Catiotro_s.Telas.Entregavel_IV.Estoque;
+using Catiotro_s.Telas.Entregavel_IV.Floxo_de_Caixa;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -91,7 +94,7 @@ namespace Catiotro_s
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Login tela = new Login();
+            frmLogin tela = new frmLogin();
             tela.Show();
             this.Close();
         }
@@ -204,6 +207,18 @@ namespace Catiotro_s
         private void itensToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Telas.Entregavel_II.Produto.frmConsultarProduto tela = new Telas.Entregavel_II.Produto.frmConsultarProduto();
+            OpenScreen(tela);
+        }
+
+        private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstoque tela = new frmEstoque();
+            OpenScreen(tela);
+        }
+
+        private void fluxoDeCaixaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFluxoDeCaixa tela = new frmFluxoDeCaixa();
             OpenScreen(tela);
         }
 

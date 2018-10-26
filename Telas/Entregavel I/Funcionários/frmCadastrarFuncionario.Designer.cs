@@ -98,7 +98,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(178, 148);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 17);
+            this.label5.Size = new System.Drawing.Size(57, 17);
             this.label5.TabIndex = 6;
             this.label5.Text = "Telefone";
             // 
@@ -182,7 +182,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(322, 213);
+            this.label2.Location = new System.Drawing.Point(313, 213);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(23, 17);
             this.label2.TabIndex = 19;
@@ -219,9 +219,9 @@
             // 
             this.cboUF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUF.FormattingEnabled = true;
-            this.cboUF.Location = new System.Drawing.Point(347, 212);
+            this.cboUF.Location = new System.Drawing.Point(340, 212);
             this.cboUF.Name = "cboUF";
-            this.cboUF.Size = new System.Drawing.Size(33, 21);
+            this.cboUF.Size = new System.Drawing.Size(47, 21);
             this.cboUF.TabIndex = 25;
             this.cboUF.SelectedIndexChanged += new System.EventHandler(this.cboUF_SelectedIndexChanged);
             // 
@@ -239,7 +239,7 @@
             this.cboDepto.FormattingEnabled = true;
             this.cboDepto.Location = new System.Drawing.Point(218, 245);
             this.cboDepto.Name = "cboDepto";
-            this.cboDepto.Size = new System.Drawing.Size(162, 21);
+            this.cboDepto.Size = new System.Drawing.Size(169, 21);
             this.cboDepto.TabIndex = 27;
             // 
             // button1

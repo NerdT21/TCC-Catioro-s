@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Catiotro_s.classes.Classes.Vendas;
+using Catiotro_s.classes.Classes.Vendas.ProdutoVendas;
+using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Telas.Entregavel_III.Vendas
 {
@@ -15,7 +18,29 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
         public frmVerVendas()
         {
             InitializeComponent();
+            AutoCarregar();
         }
+
+        void AutoCarregar()
+        {
+            VendaBusiness buss = new VendaBusiness();
+            List<ProdutoVendasView> lista = buss.Listar();
+
+            dgvVendas.AutoGenerateColumns = false;
+            dgvVendas.DataSource = lista;
+        }
+
+        void CarregarGrid()
+        {
+            string data = mkbData.Text;
+
+            VendaBusiness buss = new VendaBusiness();
+            List<ProdutoVendasView> lista = buss.Consultar(data);
+
+            dgvVendas.AutoGenerateColumns = false;
+            dgvVendas.DataSource = lista;
+        }
+
 
         private void frmVerVendas_Load(object sender, EventArgs e)
         {
@@ -40,6 +65,27 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
             dgvVendas.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvVendas.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
+            //Fonte
+            dgvVendas.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
+            dgvVendas.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvVendas.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+        }
+
+        private void btnProcurar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CarregarGrid();
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+           
         }
     }
 }

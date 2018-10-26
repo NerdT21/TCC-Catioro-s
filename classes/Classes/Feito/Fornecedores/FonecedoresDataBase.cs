@@ -1,4 +1,5 @@
 ﻿using Catiotro_s.classes.Base;
+using Catiotro_s.classes.Classes.Feito.Fornecedores;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace Catiotro_s.classes.Classes.Cliente
         {
 
             string script = @"INSERT INTO tb_fornecedor(id_estado,
-                                                        nm_fornecedor,
+                                                        id_fornecedor,
                                                         ds_email,
                                                         ds_cnpj,
                                                         ds_telefone,
@@ -25,7 +26,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                                                         ds_cep
                                                         )  VALUES (
                                                         @id_estado,
-                                                        @nm_fornecedor,
+                                                        @id_fornecedor,
                                                         @ds_email,
                                                         @ds_cnpj,
                                                         @ds_telefone,
@@ -34,7 +35,7 @@ namespace Catiotro_s.classes.Classes.Cliente
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_estado", fornecedor.IdEstado));
-            parms.Add(new MySqlParameter("nm_fornecedor", fornecedor.Nome));
+            parms.Add(new MySqlParameter("id_fornecedor", fornecedor.Nome));
             parms.Add(new MySqlParameter("ds_email", fornecedor.Email));
             parms.Add(new MySqlParameter("ds_cnpj", fornecedor.CNPJ));
             parms.Add(new MySqlParameter("ds_telefone", fornecedor.Telefone));
@@ -117,9 +118,9 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         }
 
-        public List<FornecedoresDTO> Consultar(string nome, string cidade)
+        public List<FornecedorView> Consultar(string nome, string cidade)
         {
-            string script = @"SELECT * FROM tb_fornecedor WHERE nm_fornecedor LIKE @nm_fornecedor AND ds_cidade LIKE @ds_cidade";
+            string script = @"SELECT * FROM vw_consultarFornecedor WHERE nm_fornecedor LIKE @nm_fornecedor AND ds_cidade LIKE @ds_cidade";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_fornecedor", nome + "%"));
@@ -129,10 +130,64 @@ namespace Catiotro_s.classes.Classes.Cliente
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 
-            List<FornecedoresDTO> lista = new List<FornecedoresDTO>();
+            List<FornecedorView> lista = new List<FornecedorView>();
             while (reader.Read())
             {
 
+                FornecedorView add = new FornecedorView();
+                add.Id = reader.GetInt32("id_fornecedor");
+                add.Estado = reader.GetString("nm_estado");
+                add.Nome = reader.GetString("nm_fornecedor");
+                add.Email = reader.GetString("ds_email");
+                add.CNPJ = reader.GetString("ds_cnpj");
+                add.Telefone = reader.GetString("ds_telefone");
+                add.Cidade = reader.GetString("ds_cidade");
+                add.CEP = reader.GetString("ds_cep");
+
+                lista.Add(add);
+            }
+
+            reader.Close();
+            return lista;
+        }
+
+        public List<FornecedorView> ListarPraGrid()
+        {
+            string script = @"SELECT * FROM vw_consultarFornecedor";
+
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
+
+            List<FornecedorView> lista = new List<FornecedorView>();
+            while (reader.Read())
+            {
+                FornecedorView add = new FornecedorView();
+                add.Id = reader.GetInt32("id_fornecedor");
+                add.Estado = reader.GetString("nm_estado");
+                add.Nome = reader.GetString("nm_fornecedor");
+                add.Email = reader.GetString("ds_email");
+                add.CNPJ = reader.GetString("ds_cnpj");
+                add.Telefone = reader.GetString("ds_telefone");
+                add.Cidade = reader.GetString("ds_cidade");
+                add.CEP = reader.GetString("ds_cep");
+
+                lista.Add(add);
+            }
+
+            reader.Close();
+            return lista;
+        }
+
+        public List<FornecedoresDTO> ListarPraCombo()
+        {
+            string script = @"SELECT * FROM tb_fornecedor";
+
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, null);
+
+            List<FornecedoresDTO> lista = new List<FornecedoresDTO>();
+            while (reader.Read())
+            {
                 FornecedoresDTO add = new FornecedoresDTO();
                 add.Id = reader.GetInt32("id_fornecedor");
                 add.IdEstado = reader.GetInt32("id_estado");

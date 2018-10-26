@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Catiotro_s.classes.Classes.AddConsultar.Cliente;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,13 +28,19 @@ namespace Catiotro_s.classes.Classes.Cliente
             DB.Remover(idcliente);
         }
 
-        public List<ClienteDTO> Listar()
+        public List<ClienteView> Listar()
         {
             ClienteDataBase DB = new ClienteDataBase();
             return DB.Listar();
         }
 
-        public List<ClienteDTO> Consultar(string nome, string cpf)
+        public List<ClienteDTO> ListarPraCombo()
+        {
+            ClienteDataBase DB = new ClienteDataBase();
+            return DB.ListarPraCombo();
+        }
+
+        public List<ClienteView> Consultar(string nome, string cpf)
         {
             ClienteDataBase DB = new ClienteDataBase();
             return DB.Consultar(nome, cpf);

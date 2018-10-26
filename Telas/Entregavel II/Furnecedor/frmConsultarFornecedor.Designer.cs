@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.dgvFornecedor = new System.Windows.Forms.DataGridView();
+            this.btnProcurar = new System.Windows.Forms.Button();
+            this.lblprocurar = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCidade = new System.Windows.Forms.TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,11 +42,6 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnProcurar = new System.Windows.Forms.Button();
-            this.lblprocurar = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtCidade = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,57 +62,6 @@
             this.dgvFornecedor.RowHeadersVisible = false;
             this.dgvFornecedor.Size = new System.Drawing.Size(573, 285);
             this.dgvFornecedor.TabIndex = 10;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Id";
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 30;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Nome";
-            this.Column2.HeaderText = "Nome";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Email";
-            this.Column3.HeaderText = "E-mail";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "CNPJ";
-            this.Column4.HeaderText = "CNPJ";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Telefone";
-            this.Column5.HeaderText = "Telefone";
-            this.Column5.Name = "Column5";
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "Cidade";
-            this.Column7.HeaderText = "Cidade";
-            this.Column7.Name = "Column7";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "IdEstado";
-            this.Column6.HeaderText = "Estado";
-            this.Column6.Name = "Column6";
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "CEP";
-            this.Column8.HeaderText = "CEP";
-            this.Column8.Name = "Column8";
             // 
             // btnProcurar
             // 
@@ -158,6 +107,57 @@
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(205, 20);
             this.txtCidade.TabIndex = 16;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Id";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 30;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Nome";
+            this.Column2.HeaderText = "Nome";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 150;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Email";
+            this.Column3.HeaderText = "E-mail";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "CNPJ";
+            this.Column4.HeaderText = "CNPJ";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Telefone";
+            this.Column5.HeaderText = "Telefone";
+            this.Column5.Name = "Column5";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "Cidade";
+            this.Column7.HeaderText = "Cidade";
+            this.Column7.Name = "Column7";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Estado";
+            this.Column6.HeaderText = "Estado";
+            this.Column6.Name = "Column6";
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "CEP";
+            this.Column8.HeaderText = "CEP";
+            this.Column8.Name = "Column8";
             // 
             // frmConsultarFornecedor
             // 
