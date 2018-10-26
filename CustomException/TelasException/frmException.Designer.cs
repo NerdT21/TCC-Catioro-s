@@ -33,15 +33,15 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pbxClose = new System.Windows.Forms.PictureBox();
-            this.txtMsg = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pbxClose = new System.Windows.Forms.PictureBox();
+            this.txtMsg = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -92,29 +92,6 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Catioro\'s Exception";
             // 
-            // pbxClose
-            // 
-            this.pbxClose.Image = global::Catiotro_s.Properties.Resources.icons8_excluir_filled_50;
-            this.pbxClose.Location = new System.Drawing.Point(305, 3);
-            this.pbxClose.Name = "pbxClose";
-            this.pbxClose.Size = new System.Drawing.Size(24, 22);
-            this.pbxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxClose.TabIndex = 4;
-            this.pbxClose.TabStop = false;
-            this.pbxClose.Click += new System.EventHandler(this.pbxClose_Click);
-            // 
-            // txtMsg
-            // 
-            this.txtMsg.BackColor = System.Drawing.SystemColors.Window;
-            this.txtMsg.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMsg.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMsg.Location = new System.Drawing.Point(101, 48);
-            this.txtMsg.Multiline = true;
-            this.txtMsg.Name = "txtMsg";
-            this.txtMsg.ReadOnly = true;
-            this.txtMsg.Size = new System.Drawing.Size(215, 55);
-            this.txtMsg.TabIndex = 7;
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -132,7 +109,7 @@
             this.button1.Location = new System.Drawing.Point(248, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 1;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -147,14 +124,33 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
+            // pbxClose
+            // 
+            this.pbxClose.Image = global::Catiotro_s.Properties.Resources.icons8_excluir_filled_50;
+            this.pbxClose.Location = new System.Drawing.Point(305, 3);
+            this.pbxClose.Name = "pbxClose";
+            this.pbxClose.Size = new System.Drawing.Size(24, 22);
+            this.pbxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxClose.TabIndex = 4;
+            this.pbxClose.TabStop = false;
+            this.pbxClose.Click += new System.EventHandler(this.pbxClose_Click);
+            // 
+            // txtMsg
+            // 
+            this.txtMsg.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMsg.Location = new System.Drawing.Point(102, 48);
+            this.txtMsg.Name = "txtMsg";
+            this.txtMsg.Size = new System.Drawing.Size(210, 55);
+            this.txtMsg.TabIndex = 21;
+            // 
             // frmException
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(349, 162);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.txtMsg);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -166,11 +162,10 @@
             this.Text = "frmException";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -183,8 +178,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbxClose;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox txtMsg;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label txtMsg;
     }
 }

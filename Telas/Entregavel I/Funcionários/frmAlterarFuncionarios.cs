@@ -1,6 +1,7 @@
 ﻿using Catiotro_s.classes.Classes.Agenda;
 using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.classes.Classes.Feito.Funcionarios;
+using Catiotro_s.Consultar;
 using Catiotro_s.CustomException.TelasException;
 using Catiotro_s.PlugIn;
 using System;
@@ -110,6 +111,8 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 frmMessage tela = new frmMessage();
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
+
+                this.Close();
             }
             catch (Exception ex)
             {

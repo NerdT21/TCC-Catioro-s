@@ -35,10 +35,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnNo = new System.Windows.Forms.Button();
-            this.txtMsg = new System.Windows.Forms.TextBox();
             this.btnYes = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbxClose = new System.Windows.Forms.PictureBox();
+            this.txtMsg = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -116,18 +116,6 @@
             this.btnNo.UseVisualStyleBackColor = true;
             this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
             // 
-            // txtMsg
-            // 
-            this.txtMsg.BackColor = System.Drawing.SystemColors.Window;
-            this.txtMsg.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMsg.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMsg.Location = new System.Drawing.Point(95, 45);
-            this.txtMsg.Multiline = true;
-            this.txtMsg.Name = "txtMsg";
-            this.txtMsg.ReadOnly = true;
-            this.txtMsg.Size = new System.Drawing.Size(215, 55);
-            this.txtMsg.TabIndex = 20;
-            // 
             // btnYes
             // 
             this.btnYes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -161,6 +149,14 @@
             this.pbxClose.TabStop = false;
             this.pbxClose.Click += new System.EventHandler(this.pbxClose_Click);
             // 
+            // txtMsg
+            // 
+            this.txtMsg.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMsg.Location = new System.Drawing.Point(102, 45);
+            this.txtMsg.Name = "txtMsg";
+            this.txtMsg.Size = new System.Drawing.Size(210, 55);
+            this.txtMsg.TabIndex = 20;
+            // 
             // frmQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,7 +180,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -198,8 +193,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnNo;
-        private System.Windows.Forms.TextBox txtMsg;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnYes;
+        private System.Windows.Forms.Label txtMsg;
     }
 }
