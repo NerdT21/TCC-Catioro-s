@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Catiotro_s.classes.Classes.Cliente
 {
-   public class FuncionarioDTO
+    public class FuncionarioDTO
     {
         public int Id { get; set; }
 

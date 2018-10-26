@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Catiotro_s.Telas.Entregavel_I.LogIn;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,7 @@ namespace Catiotro_s
                 Invoke(new Action(() =>
                 {
                     //Abre a Form de login
-                    Login frm = new Login();
+                    frmLogin frm = new frmLogin();
                     frm.Show();
                     Hide();
 

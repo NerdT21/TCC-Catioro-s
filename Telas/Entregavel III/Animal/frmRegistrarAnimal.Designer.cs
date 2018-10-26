@@ -200,7 +200,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Location = new System.Drawing.Point(73, 293);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(458, 10);
+            this.panel1.Size = new System.Drawing.Size(458, 5);
             this.panel1.TabIndex = 119;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 

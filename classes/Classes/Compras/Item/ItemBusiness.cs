@@ -14,7 +14,7 @@ namespace Catiotro_s.classes.Classes.Compras.Item
             return db.Salvar(dto);
         }
 
-        public ItemDTO Listar()
+        public List<ItemDTO> Listar()
         {
             ItemDatabase db = new ItemDatabase();
             return db.Listar();

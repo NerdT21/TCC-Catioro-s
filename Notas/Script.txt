@@ -147,7 +147,7 @@ CREATE TABLE `tb_salarioFamilia` (
 CREATE TABLE `tb_Depto` (
 	`id_depto` int NOT NULL AUTO_INCREMENT,
 	`nm_depto` varchar(50) NOT NULL,
-	`ds_depto` varchar(50) NOT NULL,
+	`ds_depto` varchar(300) NOT NULL,
 	PRIMARY KEY (`id_depto`)
 );
 
@@ -173,6 +173,7 @@ CREATE TABLE `tb_venda` (
 	`id_venda` int NOT NULL AUTO_INCREMENT,
     `dt_venda` varchar(10)NOT NULL,
     `id_usuario` int NOT NULL,
+    `ds_formaPagto` varchar(20) NOT NULL,
     PRIMARY KEY(`id_venda`),
     FOREIGN KEY(`id_usuario`)
     REFERENCES tb_login(`id_usuario`)
@@ -197,16 +198,7 @@ CREATE TABLE `tb_produtoVenda`(
     FOREIGN KEY(`id_venda`)
     REFERENCES tb_venda(`id_venda`)
 );
-    
 
-CREATE TABLE `tb_estoque` (
-	`id_estoque` int NOT NULL AUTO_INCREMENT,
-	`nm_produto` varchar(250) NOT NULL,
-	`id_compra` int NOT NULL,
-	`qtd_estocado` bigint NOT NULL,
-	`qtd_minima` bigint NOT NULL,
-	PRIMARY KEY (`id_estoque`)
-);
 
 CREATE TABLE `tb_item`(
 	`id_item` INT NOT NULL AUTO_INCREMENT,
@@ -240,6 +232,14 @@ CREATE TABLE `tb_item_compra`(
     REFERENCES tb_compra(`id_compra`)
 );
 
+CREATE TABLE `tb_estoque` (
+	`id_estoque` int NOT NULL AUTO_INCREMENT,
+    `id_itemProduto` int NOT NULL,
+	`nm_produto` varchar(250) NOT NULL,
+	`qtd_estocado` bigint NOT NULL,
+	PRIMARY KEY (`id_estoque`)
+);
+
 ALTER TABLE `tb_fornecedor` ADD CONSTRAINT `tb_fornecedor_fk0` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
 
 ALTER TABLE `tb_cliente` ADD CONSTRAINT `tb_cliente_fk0` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
@@ -250,7 +250,7 @@ ALTER TABLE `tb_historicoAnimal` ADD CONSTRAINT `tb_historicoAnimal_fk1` FOREIGN
 
 ALTER TABLE `tb_historicoAnimal` ADD CONSTRAINT `tb_historicoAnimal_fk2` FOREIGN KEY (`id_funcionario`) REFERENCES `tb_funcionario`(`id_funcionario`);
 
-ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk1` FOREIGN KEY (`id_depto`) REFERENCES `tb_Depto`(`id_depto`);
+ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk1` FOREIGN KEY (`id_depto`) REFERENCES `tb_Depto`(`id_depto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk2` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
 
@@ -273,9 +273,6 @@ ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk1` FOREI
 ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk2` FOREIGN KEY (`id_salFamilia`) REFERENCES `tb_salarioFamilia`(`id_salFamilia`);
 
 ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk3` FOREIGN KEY (`id_funcionario`) REFERENCES `tb_funcionario`(`id_funcionario`);
-
-ALTER TABLE `tb_estoque` ADD CONSTRAINT `tb_estoque_fk0` FOREIGN KEY (`id_compra`) REFERENCES `tb_compra`(`id_compra`);
-
 
 
 -- INSERTS
@@ -369,7 +366,7 @@ INSERT INTO tb_estados(`id_estado`,`nm_estado`)
              
               
 INSERT INTO tb_funcionario(`id_funcionario`, `ds_salario`,`id_depto`, `nm_nome`, `ds_email`,`ds_cpf`,`ds_rg`, `id_estado`,`ds_cidade`, `ds_cep`, `ds_telefone`,`img_funcionario`)
-					VALUES('1', '123432', '1', 'fdsgfsd', 'fdsafda', '542523', 'fdsaf', '1', 'fdaf', 'fdas', '3424453', '');
+					VALUES('1', '2500.00', '1', 'Jhonny', 'Jhonn@gmail.com', '253.256.256.21', '25.526.254-X', '1', 'São Paulo', '04556.000', '(11)22342-5652', '');
 
 INSERT INTO tb_inss(`id_inss`, `ds_salarioDeContribuicao`, `vl_aliquota`)
 			VALUES('1', '1659.38', '8');
@@ -418,8 +415,9 @@ CREATE VIEW vw_compra_consultar AS
 SELECT tb_compra.id_compra,
        tb_compra.ds_formaPagamento,
        tb_compra.dt_compra,
-       count(tb_item_compra.id_itemCompra)  as qtd_item,
-       sum(tb_item.vl_preco)                as vl_total
+       count(tb_item_compra.id_itemCompra)   as qtd_item,
+       sum(tb_item_compra.id_itemCompra)     as qtd_comprado,
+       sum(tb_item.vl_preco * qtd_comprado)  as vl_total
 FROM tb_compra
 JOIN tb_item_compra
   ON tb_compra.id_compra = tb_item_compra.id_itemCompra
@@ -429,6 +427,22 @@ GROUP
   BY tb_compra.id_compra,
 	 tb_compra.dt_compra;
 
+
+CREATE VIEW vw_venda_consultar AS
+SELECT tb_venda.id_venda,
+	   tb_venda.dt_venda,
+       tb_venda.ds_formaPagto,
+       count(tb_produtoVenda.id_produtoVenda) as qtd_item,
+       sum(tb_produto.vl_preco)				   as vl_total
+FROM tb_venda
+JOIN tb_produtoVenda
+  ON tb_venda.id_venda = tb_produtoVenda.id_produtoVenda
+JOIN tb_produto
+  ON tb_produtoVenda.id_produtoVenda = tb_produto.id_produto
+GROUP 
+  BY tb_venda.id_venda,
+     tb_venda.dt_venda;
+  
 
 CREATE VIEW vw_animal_nmcliente AS 
 	SELECT tb_animal.id_animal,
@@ -443,12 +457,80 @@ CREATE VIEW vw_animal_nmcliente AS
     FROM tb_animal
     JOIN tb_cliente
 		ON tb_animal.id_cliente = tb_cliente.id_cliente;
+        
+        
+CREATE VIEW vw_consultarFuncionario AS
+	SELECT tb_funcionario.id_funcionario,
+		   tb_funcionario.ds_salario, 
+           tb_Depto.nm_depto,
+           tb_funcionario.nm_nome,
+           tb_funcionario.ds_email,
+           tb_funcionario.ds_cpf,
+           tb_funcionario.ds_rg,
+           tb_estados.nm_estado,
+           tb_funcionario.ds_cidade,
+		   tb_funcionario.ds_cep,
+           tb_funcionario.ds_telefone,
+           tb_funcionario.img_funcionario
+	FROM tb_funcionario
+    JOIN tb_estados
+    ON tb_funcionario.id_estado = tb_estados.id_estado
+    JOIN tb_Depto
+    ON tb_funcionario.id_depto = tb_Depto.id_depto;
 
+
+CREATE VIEW vw_estoque AS
+	SELECT tb_estoque.id_estoque,
+		   tb_item_compra.id_item,	
+		   tb_estoque.nm_produto,
+           sum(tb_item_compra.id_item) as qtd_estocado
+	FROM tb_estoque
+	JOIN tb_item_compra
+	  ON tb_estoque.id_itemProduto = tb_item_compra.id_itemCompra
+	GROUP 
+	BY tb_estoque.id_estoque;
+
+
+CREATE VIEW vw_consultarFornecedor AS
+	SELECT tb_fornecedor.id_fornecedor,
+		   tb_fornecedor.nm_fornecedor,
+           tb_fornecedor.ds_cnpj,
+           tb_fornecedor.ds_email,
+           tb_fornecedor.ds_telefone,
+           tb_fornecedor.ds_cidade,
+           tb_estados.nm_estado,
+           tb_fornecedor.ds_cep
+	FROM tb_fornecedor
+    JOIN tb_estados
+      ON tb_fornecedor.id_estado = tb_estados.id_estado;
+      
+CREATE VIEW vw_consultarCliente AS
+	SELECT tb_cliente.id_cliente,
+		   tb_cliente.nm_nome,
+           tb_cliente.ds_cpf,
+           tb_cliente.ds_rg,
+           tb_cliente.ds_email,
+           tb_cliente.ds_telefone,
+           tb_cliente.dt_nasc,
+           tb_cliente.dt_dataCadastro,
+           tb_cliente.ds_cidade,
+           tb_estados.nm_estado,
+           tb_cliente.ds_cep
+	FROM tb_cliente
+    JOIN tb_estados
+      ON tb_cliente.id_estado = tb_estados.nm_estado;
+           
 -- SELECT Views
 
 USE CatiorosDB;
 SELECT * FROM vw_compra_consultar;
 SELECT * FROM vw_animal_nmcliente;
+SELECT * FROM vw_consultarFuncionario;
+SELECT * FROM vw_venda_consultar;
+SELECT * FROM vw_estoque;
+SELECT * FROM vw_consultarFornecedor;
+SELECT * FROM vw_consultarCliente;
+
 
 -- SELECT Tabelas
 
@@ -464,4 +546,9 @@ SELECT * FROM tb_compra;
 SELECT * FROM tb_item;
 SELECT * FROM tb_item_compra;
 SELECT * FROM tb_animal;
+SELECT * FROM tb_estoque;
+SELECT * FROM tb_cliente;
 
+-- calculos
+
+SELECT qtd_estocado - @qtd_vendido FROM tb_estoque WHERE nm_produto = @nm_produto;

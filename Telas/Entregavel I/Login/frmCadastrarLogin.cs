@@ -1,4 +1,12 @@
 ﻿using Catiotro_s.classes.Classes.Login;
+using Catiotro_s.Consultar;
+using Catiotro_s.CustomException.TelasException;
+using Catiotro_s.Resgistros;
+using Catiotro_s.Telas.Entregavel_I;
+using Catiotro_s.Telas.Entregavel_I.Funcionários;
+using Catiotro_s.Telas.Entregavel_I.LogIn;
+using Catiotro_s.Telas.Entregavel_II.Controle_de_Compras;
+using Catiotro_s.Telas.Entregavel_III.Produtos;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -21,6 +29,8 @@ namespace Catiotro_s.Telas.Entregavel_I.Login
 
         private void label6_Click(object sender, EventArgs e)
         {
+            frmLogin tela = new frmLogin();
+            tela.Show();
             this.Close();
         }
 
@@ -50,7 +60,11 @@ namespace Catiotro_s.Telas.Entregavel_I.Login
             {
                 if (txtSenha.Text != txtConfirm.Text)
                 {
-                    MessageBox.Show("Senha incorreta", "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    string msgm = "Senha incorreta!";
+
+                    frmAlert alert = new frmAlert();
+                    alert.LoadScreen(msgm);
+                    alert.ShowDialog();
                 }
 
                 LoginDTO dto = new LoginDTO();
@@ -65,21 +79,30 @@ namespace Catiotro_s.Telas.Entregavel_I.Login
                 LoginBusiness buss = new LoginBusiness();
                 buss.Salvar(dto);
 
-                MessageBox.Show("Novo usuário criado com sucesso!", "Catioro's", MessageBoxButtons.OK);
+                string msg = "Novo usuário criado com sucesso!";
 
-
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
             }
-            catch (MySqlException ex)
+            catch (MySqlException mex)
             {
-                if (ex.Number == 1062)
+                if (mex.Number == 1062)
                 {
-                    MessageBox.Show("O nome de usuário já existe.", "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    string msg = "O nome de usuário já existe.";
+
+                    frmAlert tela = new frmAlert();
+                    tela.LoadScreen(msg);
+                    tela.ShowDialog();
                 }
             }
-            catch (Exception es)
+            catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro: " + es.Message, "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                string msg = "Ocorreu um erro: " + ex.Message;
 
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
             }
         }
     }

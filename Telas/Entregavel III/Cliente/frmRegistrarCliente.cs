@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.classes.Classes.Agenda;
+using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Resgistros
 {
@@ -67,24 +68,40 @@ namespace Catiotro_s.Resgistros
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            EstadoDTO dto = cboUF.SelectedItem as EstadoDTO;
+            try
+            {
+                EstadoDTO dto = cboUF.SelectedItem as EstadoDTO;
 
-            ClienteDTO dta = new ClienteDTO();
-            dta.Nome = txtNome.Text;
-            dta.Email = txtEmail.Text;
-            dta.DataNascimento = mkbNascimento.Text;
-            dta.Rg = mkbRG.Text;
-            dta.Cpf = mkbCPF.Text;
-            dta.Telefone = mkbTelefone.Text;
-            dta.Cidade = txtCidade.Text;
-            dta.DataCadastro = mkbCadastro.Text;
-            dta.Cep = txtCEP.Text;
-            dta.EstadoId = Convert.ToInt32(dto.Id);           
+                ClienteDTO dta = new ClienteDTO();
+                dta.Nome = txtNome.Text;
+                dta.Email = txtEmail.Text;
+                dta.DataNascimento = mkbNascimento.Text;
+                dta.Rg = mkbRG.Text;
+                dta.Cpf = mkbCPF.Text;
+                dta.Telefone = mkbTelefone.Text;
+                dta.Cidade = txtCidade.Text;
+                dta.DataCadastro = mkbCadastro.Text;
+                dta.Cep = txtCEP.Text;
+                dta.EstadoId = Convert.ToInt32(dto.Id);
 
-            ClienteBusiness business = new ClienteBusiness();
-            business.Salvar(dta);
+                ClienteBusiness business = new ClienteBusiness();
+                business.Salvar(dta);
 
-            MessageBox.Show("Cliente Cadastrado com sucesso", "Catioro´s", MessageBoxButtons.OK);
+                string msg = "Cliente Cadastrado com sucesso";
+
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            catch (Exception ex )
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+           
         }
 
         private void pbxImagem_Click(object sender, EventArgs e)

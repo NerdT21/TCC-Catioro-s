@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Compras.Item;
+using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Telas.Entregavel_III.Produtos
 {
@@ -62,11 +63,26 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
             dgvProdutos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvProdutos.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
+            //Fonte
+            dgvProdutos.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
+            dgvProdutos.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+            dgvProdutos.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            CarregarGrid();
+            try
+            {
+                CarregarGrid();
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
         }
     }
 }

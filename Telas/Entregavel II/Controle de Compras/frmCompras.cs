@@ -12,6 +12,9 @@ using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.classes.Classes.Compras.Item;
 using Catiotro_s.classes.Classes.Compras;
 using Catiotro_s.classes.Classes.Login;
+using Catiotro_s.classes.Classes.Estoque;
+using Catiotro_s.classes.Classes.Compras.ItemCompras;
+using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 {
@@ -26,6 +29,8 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
         }
 
         BindingList<ItemDTO> carrinhoAdd = new BindingList<ItemDTO>();
+        BindingList<int> ids = new BindingList<int>();
+        BindingList<int> quantd = new BindingList<int>();
 
         void DataParaHoje()
         {
@@ -61,7 +66,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             //cboProduto
 
             ItemBusiness buss = new ItemBusiness();
-            ItemDTO lista = buss.Listar();
+            List<ItemDTO> lista = buss.Listar();
 
             cboProduto.ValueMember = nameof(ItemDTO.Id);
             cboProduto.DisplayMember = nameof(ItemDTO.Nome);
@@ -170,29 +175,75 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ItemDTO dto = cboProduto.SelectedItem as ItemDTO;
-
-            int quantidade = Convert.ToInt32(nudQuantidade.Value);
-
-            for (int i = 0; i < quantidade; i++)
+            try
             {
-                carrinhoAdd.Add(dto);
-            }
+                ItemDTO dto = cboProduto.SelectedItem as ItemDTO;
 
-            CarregarGrid();
+                int quantidade = Convert.ToInt32(nudQuantidade.Value);
+                quantd.Add(quantidade);
+
+                for (int i = 0; i < quantidade; i++)
+                {
+                    carrinhoAdd.Add(dto);
+                    ids.Add(dto.Id);
+                }
+
+                CarregarGrid();
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            
         }
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
-            ComprasDTO dto = new ComprasDTO();
-            dto.UsuarioId = UserSession.UsuarioLogado.Id;
-            dto.Data = mkbDataCompra.Text;
-            dto.FormaPagto = Convert.ToString(cboTipoPag.SelectedItem);
+            try
+            {
+                ComprasDTO dto = new ComprasDTO();
+                dto.UsuarioId = UserSession.UsuarioLogado.Id;
+                dto.Data = mkbDataCompra.Text;
+                dto.FormaPagto = Convert.ToString(cboTipoPag.SelectedItem);
 
-            ComprasBusiness buss = new ComprasBusiness();
-            buss.Salvar(dto, carrinhoAdd.ToList());
+                ComprasBusiness buss = new ComprasBusiness();
+                int id = buss.Salvar(dto, carrinhoAdd.ToList());
 
-            MessageBox.Show("Compra salva com sucesso!", "Catioro's", MessageBoxButtons.OK);
+                EstoqueBusiness EstoqueBuss = new EstoqueBusiness();
+                List<EstoqueView> estoque = EstoqueBuss.Listar();
+
+                foreach (int item in ids)
+                {
+                    foreach (EstoqueView i in estoque)
+                    {
+                        foreach (var QTD in quantd)
+                        {
+                            if (item == i.ItemId)
+                            {
+                                EstoqueBuss.Adicionar(QTD, item, i.Produto);
+                            }
+                        }
+                    }
+                }
+
+                string msg = "Compra salva com sucesso!";
+
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }          
         }
     }
 }

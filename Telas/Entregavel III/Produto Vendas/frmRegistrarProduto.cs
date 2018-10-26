@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Agenda;
+using Catiotro_s.classes.Classes.Estoque;
+using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Telas.Entregavel_II.Produto
 {
@@ -36,16 +38,40 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            ProdutoDTO dto = new ProdutoDTO();
-            dto.Nome = txtNome.Text;
-            dto.Marca = txtMarca.Text;
-            dto.Descricao = txtDesc.Text;
-            dto.Preco = nudPreco.Value;
+            try
+            {
+                ProdutoDTO dto = new ProdutoDTO();
+                dto.Nome = txtNome.Text;
+                dto.Marca = txtMarca.Text;
+                dto.Descricao = txtDesc.Text;
+                dto.Preco = nudPreco.Value;
 
-            ProdutoBusiness business = new ProdutoBusiness();
-            business.Salvar(dto);
+                ProdutoBusiness business = new ProdutoBusiness();
+                business.Salvar(dto);
 
-            MessageBox.Show("Produto Cadastrado com sucesso!", "Catioro's", MessageBoxButtons.OK);
+                EstoqueDTO estoque = new EstoqueDTO();
+                estoque.Produto = txtNome.Text;
+                estoque.ItemProdutoId = business.Salvar(dto);
+                estoque.QtdEstocado = 0;
+
+                EstoqueBusiness buss = new EstoqueBusiness();
+                buss.Salvar(estoque);
+
+                string msg = "Produto Cadastrado com sucesso!";
+
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+          
         }
 
         private void nudPreco_ValueChanged(object sender, EventArgs e)

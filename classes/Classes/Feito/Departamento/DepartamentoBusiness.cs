@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Catiotro_s.CustomException;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,33 @@ namespace Catiotro_s.classes.Classes.Cliente
     {
         public int Salvar(DeptoDTO depto)
         {
+            string nome = depto.Nome;
+            nome = nome.Trim();
+            int qtdNome = nome.Count();
+
+            if (qtdNome > 50)
+            {
+                throw new ValidacaoException("O campo 'Nome do Departamento' não pode possuir mais de 50 caracteres.");
+            }
+            else if (qtdNome == 0)
+            {
+                throw new ValidacaoException("O campo 'Nome do Departamento' não pode estar vazio.");
+            }
+
+            string desc = depto.Descricao;
+            desc = desc.Trim();
+            int qtdDesc = desc.Count();
+
+            if (qtdDesc > 300)
+            {
+                throw new ValidacaoException("O campo 'Descrição do Departamento' não pode possuir mais de 300 caracteres.");
+            }
+            else if (qtdDesc == 0)
+            {
+                throw new ValidacaoException("O campo 'Descrição do Departamento' não pode estar vazio.");
+            }
+
+
             DeptoDataBase DB = new DeptoDataBase ();
             int id = DB.Salvar(depto);
             return id;

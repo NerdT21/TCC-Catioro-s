@@ -75,6 +75,34 @@ namespace Catiotro_s.classes.Classes.Compras
 
                 lista.Add(view);
             }
+
+            reader.Close();
+            return lista;
+        }
+
+        public List<ItemComprasView> ConsultarPorId(int id)
+        {
+            string script = @"SELECT * FROM vw_compra_consultar WHERE id_compra LIKE @id_compra";
+
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_compra", id + "%"));
+
+            Database db = new Database();
+            MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
+
+            List<ItemComprasView> lista = new List<ItemComprasView>();
+            while (reader.Read())
+            {
+                ItemComprasView view = new ItemComprasView();
+                view.Id = reader.GetInt32("id_compra");
+                view.FormaPagto = reader.GetString("ds_formaPagamento");
+                view.Data = reader.GetString("dt_compra");
+                view.QtdItem = reader.GetInt32("qtd_item");
+                view.Total = reader.GetDecimal("vl_total");
+
+                lista.Add(view);
+            }
+
             reader.Close();
             return lista;
         }
