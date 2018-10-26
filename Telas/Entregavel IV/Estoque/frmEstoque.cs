@@ -17,12 +17,13 @@ namespace Catiotro_s.Telas.Entregavel_IV.Estoque
         public frmEstoque()
         {
             InitializeComponent();
+            AutoCarregarGrid();
         }
 
         void AutoCarregarGrid()
         {
             EstoqueBusiness buss = new EstoqueBusiness();
-            List<EstoqueView> list = buss.Listar();
+            List<EstoqueDTO> list = buss.Listar();
 
             dgvEstoque.AutoGenerateColumns = false;
             dgvEstoque.DataSource = list;

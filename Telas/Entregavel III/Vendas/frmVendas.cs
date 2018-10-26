@@ -83,23 +83,6 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
                 VendaBusiness buss = new VendaBusiness();
                 int id = buss.Salvar(dto, carrinhoAdd.ToList());
 
-                EstoqueBusiness EstoqueBuss = new EstoqueBusiness();
-                List<EstoqueView> estoque = EstoqueBuss.Listar();
-
-                foreach (int item in ids)
-                {
-                    foreach (EstoqueView i in estoque)
-                    {
-                        foreach (var QTD in quantd)
-                        {
-                            if (item == i.ItemId)
-                            {
-                                EstoqueBuss.Adicionar(QTD, item, i.Produto);
-                            }
-                        }
-                    }
-                }
-
                 string msg = "Venda efetuada com sucesso!";
 
                 frmMessage tela = new frmMessage();

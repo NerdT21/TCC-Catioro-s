@@ -213,23 +213,6 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
                 ComprasBusiness buss = new ComprasBusiness();
                 int id = buss.Salvar(dto, carrinhoAdd.ToList());
 
-                EstoqueBusiness EstoqueBuss = new EstoqueBusiness();
-                List<EstoqueView> estoque = EstoqueBuss.Listar();
-
-                foreach (int item in ids)
-                {
-                    foreach (EstoqueView i in estoque)
-                    {
-                        foreach (var QTD in quantd)
-                        {
-                            if (item == i.ItemId)
-                            {
-                                EstoqueBuss.Adicionar(QTD, item, i.Produto);
-                            }
-                        }
-                    }
-                }
-
                 string msg = "Compra salva com sucesso!";
 
                 frmMessage tela = new frmMessage();
@@ -243,7 +226,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
                 frmException tela = new frmException();
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
-            }          
-        }
+            }
+}
     }
 }

@@ -237,11 +237,23 @@
     <Compile Include="Telas\Entregavel IV\Estoque\frmEstoque.Designer.cs">
       <DependentUpon>frmEstoque.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Entregavel IV\Fluxo de Caixa\frmConsultarGastosAdicionais.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel IV\Fluxo de Caixa\frmConsultarGastosAdicionais.Designer.cs">
+      <DependentUpon>frmConsultarGastosAdicionais.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Entregavel IV\Fluxo de Caixa\frmFluxoDeCaixa.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Telas\Entregavel IV\Fluxo de Caixa\frmFluxoDeCaixa.Designer.cs">
       <DependentUpon>frmFluxoDeCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel IV\Fluxo de Caixa\frmGastoAdicional.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel IV\Fluxo de Caixa\frmGastoAdicional.Designer.cs">
+      <DependentUpon>frmGastoAdicional.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Entregavel I\FolhaDePagto.cs" />
     <Compile Include="Telas\Entregavel I\frmFolhaPagto.cs">
@@ -403,8 +415,14 @@
     <EmbeddedResource Include="Telas\Entregavel IV\Estoque\frmEstoque.resx">
       <DependentUpon>frmEstoque.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel IV\Fluxo de Caixa\frmConsultarGastosAdicionais.resx">
+      <DependentUpon>frmConsultarGastosAdicionais.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel IV\Fluxo de Caixa\frmFluxoDeCaixa.resx">
       <DependentUpon>frmFluxoDeCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel IV\Fluxo de Caixa\frmGastoAdicional.resx">
+      <DependentUpon>frmGastoAdicional.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel I\frmFolhaPagto.resx">
       <DependentUpon>frmFolhaPagto.cs</DependentUpon>
@@ -480,6 +498,8 @@
   <ItemGroup>
     <Content Include="Notas\Script.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="classes\Classes\FluxoDeCaixa\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

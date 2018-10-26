@@ -37,10 +37,10 @@
             this.dgvFluxoDeCaixa.AllowUserToAddRows = false;
             this.dgvFluxoDeCaixa.AllowUserToDeleteRows = false;
             this.dgvFluxoDeCaixa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFluxoDeCaixa.Location = new System.Drawing.Point(161, 138);
+            this.dgvFluxoDeCaixa.Location = new System.Drawing.Point(14, 55);
             this.dgvFluxoDeCaixa.Name = "dgvFluxoDeCaixa";
             this.dgvFluxoDeCaixa.ReadOnly = true;
-            this.dgvFluxoDeCaixa.Size = new System.Drawing.Size(240, 150);
+            this.dgvFluxoDeCaixa.Size = new System.Drawing.Size(554, 337);
             this.dgvFluxoDeCaixa.TabIndex = 0;
             // 
             // frmFluxoDeCaixa

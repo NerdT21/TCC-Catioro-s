@@ -14,28 +14,32 @@ namespace Catiotro_s.classes.Classes.Estoque
             return db.Salvar(dto);
         }
 
-        public List<EstoqueView> Listar()
+        public List<EstoqueDTO> Listar()
         {
             EstoqueDatabase db = new EstoqueDatabase();
             return db.Listar();
         }
 
+        public EstoqueDTO ListarCompraVenda()
+        {
+            EstoqueDatabase db = new EstoqueDatabase();
+            return db.ListarCompraVenda();
+        }
         public List<EstoqueView> Consultar(string nome)
         {
             EstoqueDatabase db = new EstoqueDatabase();
             return db.Consultar(nome);
         }
-
-        public void Adicionar(int qtd, int id, string produto)
+        public void Adicionar(int qtd, int idProduto)
         {
             EstoqueDatabase db = new EstoqueDatabase();
-            db.Adicionar(qtd, id, produto);
+            db.Adicionar(qtd, idProduto);
         }
 
-        public void Remover(int qtd, int id, string produto)
+        public void Remover(int qtd, int idProduto)
         {
             EstoqueDatabase db = new EstoqueDatabase();
-            db.Remover(qtd, id, produto);
-        }       
+            db.Remover(qtd, idProduto);
+        }
     }
 }

@@ -382,3 +382,4 @@ C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.CustomException
 C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro_s.CustomException.TelasException.frmMessage.resources
 C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro_s.CustomException.TelasException.frmQuestion.resources
 C:\Users\joaof\Source\Repos\Catioros-TCC\catioros-tela 12\Catioro_s Telas\obj\Debug\Catiotro_s.Telas.Diferenciais.frmEmail.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.CustomException.TelasException.frmQuestion.resources

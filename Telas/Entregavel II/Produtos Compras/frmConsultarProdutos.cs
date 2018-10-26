@@ -23,7 +23,7 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
         void AutoCarregar()
         {
             ItemBusiness dto = new ItemBusiness();
-            List<ItemDTO> lista = dto.ListarPraGrid();
+            List<ItemDTO> lista = dto.Listar();
 
             dgvProdutos.AutoGenerateColumns = false;
             dgvProdutos.DataSource = lista;

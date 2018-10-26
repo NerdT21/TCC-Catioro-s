@@ -1,5 +1,6 @@
 ﻿using Catiotro_s.classes.Classes.Compras.Item;
 using Catiotro_s.classes.Classes.Compras.ItemCompras;
+using Catiotro_s.classes.Classes.Estoque;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,9 @@ namespace Catiotro_s.classes.Classes.Compras
                 itemDto.ItemId = i.Id;
 
                 buss.Salvar(itemDto);
+
+                EstoqueBusiness estoqueBuss = new EstoqueBusiness();
+                estoqueBuss.Adicionar(1, i.Id);
             }
 
             return IdCompra;
