@@ -168,6 +168,12 @@
     <Compile Include="CustomException\TelasException\frmMessage.Designer.cs">
       <DependentUpon>frmMessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomException\TelasException\frmQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomException\TelasException\frmQuestion.Designer.cs">
+      <DependentUpon>frmQuestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomException\ValidacaoException.cs" />
     <Compile Include="PlugIn\EmailPlugin.cs" />
     <Compile Include="PlugIn\ImagemPlugIn.cs" />
@@ -338,6 +344,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="favicon %281%29.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\icons8-help-48.png" />
+    <None Include="Resources\icons8-help-48 %281%29.png" />
     <None Include="Resources\icons8-error-48.png" />
     <None Include="Resources\icons8-cancel-30.png" />
     <None Include="Resources\icons8-cancel-481.png" />
@@ -361,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomException\TelasException\frmMessage.resx">
       <DependentUpon>frmMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomException\TelasException\frmQuestion.resx">
+      <DependentUpon>frmQuestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Diferenciais\frmEmail.resx">
       <DependentUpon>frmEmail.cs</DependentUpon>

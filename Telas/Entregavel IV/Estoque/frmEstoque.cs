@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Estoque;
+using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Telas.Entregavel_IV.Estoque
 {
@@ -65,6 +66,23 @@ namespace Catiotro_s.Telas.Entregavel_IV.Estoque
             dgvEstoque.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
             dgvEstoque.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
             dgvEstoque.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+        }
+
+        private void brnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CarregarGrid();
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            
         }
     }
 }

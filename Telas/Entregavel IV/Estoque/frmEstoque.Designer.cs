@@ -32,12 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvEstoque = new System.Windows.Forms.DataGridView();
-            this.txrProduto = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.brnBuscar = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txrProduto = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.brnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +81,29 @@
             this.dgvEstoque.Size = new System.Drawing.Size(502, 280);
             this.dgvEstoque.TabIndex = 0;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Id";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 30;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "Produto";
+            this.Column2.HeaderText = "Produto";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Quantidade";
+            this.Column3.HeaderText = "Quantidade";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
             // txrProduto
             // 
             this.txrProduto.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -108,29 +131,7 @@
             this.brnBuscar.TabIndex = 3;
             this.brnBuscar.Text = "Buscar";
             this.brnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Id";
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 30;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "Produto";
-            this.Column2.HeaderText = "Produto";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Quantidade";
-            this.Column3.HeaderText = "Quantidade";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.brnBuscar.Click += new System.EventHandler(this.brnBuscar_Click);
             // 
             // frmEstoque
             // 

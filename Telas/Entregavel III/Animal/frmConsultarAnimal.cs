@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Animal;
 using Catiotro_s.classes.Classes.AddConsultar.Animal;
+using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Consultar
 {
@@ -60,7 +61,19 @@ namespace Catiotro_s.Consultar
 
         private void btnProcurar_Click(object sender, EventArgs e)
         {
-            CarregarGrid();
+            try
+            {
+                CarregarGrid();
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            
         }
 
         private void label1_Click_1(object sender, EventArgs e)

@@ -1,6 +1,7 @@
 ﻿using Catiotro_s.classes.Classes.Agenda;
 using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.classes.Classes.Feito.Funcionarios;
+using Catiotro_s.CustomException.TelasException;
 using Catiotro_s.PlugIn;
 using System;
 using System.Collections.Generic;
@@ -43,26 +44,38 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
 
         public void LoadScreen(FuncionarioView dto)
         {
-            this.dto = dto;
-            txtCidade.Text = dto.Cidade;
-            txtEmail.Text = dto.Email;
-            txtNome.Text = dto.Nome;
-            txtSalario.Text = dto.Salario.ToString();
-            mkbCEP.Text = dto.Cep;
-            mkbCPF.Text = dto.Cpf;
-            mkbRG.Text = dto.Rg;
-            mkbTelefone.Text = dto.Telefone;
-            cboDepto.SelectedItem = dto.Depto;
-            cboUF.SelectedItem = dto.Estado;
+            try
+            {
+                this.dto = dto;
+                txtCidade.Text = dto.Cidade;
+                txtEmail.Text = dto.Email;
+                txtNome.Text = dto.Nome;
+                txtSalario.Text = dto.Salario.ToString();
+                mkbCEP.Text = dto.Cep;
+                mkbCPF.Text = dto.Cpf;
+                mkbRG.Text = dto.Rg;
+                mkbTelefone.Text = dto.Telefone;
+                cboDepto.SelectedItem = dto.Depto;
+                cboUF.SelectedItem = dto.Estado;
 
-            if (dto.Imagem == null)
-            {
-                pbxFoto.Image = null;
+                if (dto.Imagem == null)
+                {
+                    pbxFoto.Image = null;
+                }
+                else
+                {
+                    pbxFoto.Image = ImagemPlugIn.ConverterParaImagem(dto.Imagem);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                pbxFoto.Image = ImagemPlugIn.ConverterParaImagem(dto.Imagem);
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
             }
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -92,12 +105,19 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 FuncionarioBusiness buss = new FuncionarioBusiness();
                 buss.Alterar(dto);
 
-                MessageBox.Show("Funcionário alterado com suceso!!", "Catioro's", MessageBoxButtons.OK);
+                string msg = "Funcionário alterado com sucesso!";
+
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Catioro's",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
             }
         }
     }

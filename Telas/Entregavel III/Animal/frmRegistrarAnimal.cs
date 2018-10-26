@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Animal;
 using Catiotro_s.classes.Classes.Agenda;
 using Catiotro_s.classes.Classes.Cliente;
+using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Resgistros
 {
@@ -91,9 +92,11 @@ namespace Catiotro_s.Resgistros
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            
+            try
+            {
                 ClienteDTO IdCliente = cboDono.SelectedItem as ClienteDTO;
-            //try
-            //{
+
                 AnimalDTO dto = new AnimalDTO();
                 dto.NomeAnimal = txtNomeAnimal.Text;
                 dto.Sexo = cboSexo.Text;
@@ -103,18 +106,26 @@ namespace Catiotro_s.Resgistros
                 dto.Obs = txtObs.Text;
                 dto.IdCliente = IdCliente.id;
                 dto.DataNasc = mkbDataNasc.Text;
-                
+
 
                 AnimalBusiness business = new AnimalBusiness();
                 business.Salvar(dto);
 
-                MessageBox.Show("Animal Cadastrado com sucesso");
-            //}
-            //catch (Exception ex)
-            //{ 
-            //    MessageBox.Show("Ocorreu um erro: " + ex.Message, "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-           
+                string msg = "Animal Cadastrado com sucesso!";
+
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+
 
         }
 

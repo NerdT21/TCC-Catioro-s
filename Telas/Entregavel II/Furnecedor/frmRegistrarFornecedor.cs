@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.classes.Classes.Agenda;
+using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Resgistros
 {
@@ -116,11 +117,19 @@ namespace Catiotro_s.Resgistros
                 FornecedoresBusiness business = new FornecedoresBusiness();
                 business.Salvar(dto);
 
-                MessageBox.Show("Fornecedor cadastrado com sucesso!", "Catioro´s", MessageBoxButtons.OK);
+                string msg = "Fornecedor cadastrado com sucesso!";
+
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Catioro's", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
             }
         }
 

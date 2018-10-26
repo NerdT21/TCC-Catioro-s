@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.Telas.Entregavel_I.Funcionários;
 using Catiotro_s.classes.Classes.Feito.Funcionarios;
+using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Consultar
 {
@@ -99,8 +100,11 @@ namespace Catiotro_s.Consultar
             {
                 if (funcionario == null)
                 {
-                    MessageBox.Show("Selecione um registro para alterar-lo.", "Catioro's",
-                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    string msg = "Selecione um registro para Altera-lo.";
+
+                    frmAlert tela = new frmAlert();
+                    tela.LoadScreen(msg);
+                    tela.ShowDialog();
                 }
                 else
                 {
@@ -111,32 +115,56 @@ namespace Catiotro_s.Consultar
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro: " +ex.Message, "Catioro's",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
             }
                     
         }
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            if (funcionario == null)
+            try
             {
-                MessageBox.Show("Selecione um registro para remove-lo.", "Catioro's",
-                       MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                DialogResult dialog = MessageBox.Show("Quer mesmo deletar o funcionário " + funcionario.Id + " do sistema?",
-                                            "Catioro's", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                if (dialog == DialogResult.Yes)
+                if (funcionario == null)
                 {
-                    FuncionarioBusiness buss = new FuncionarioBusiness();
-                    int Id = funcionario.Id;
-                    buss.Remover(Id);
+                    string msg = "Selecione um registro para remove-lo.";
 
-                    CarregarGrid();
+                    frmAlert tela = new frmAlert();
+                    tela.LoadScreen(msg);
+                    tela.ShowDialog();
+                }
+                else
+                {
+                    string msg = "Quer mesmo deletar o funcionário " + funcionario.Id + " do sistema?";
+
+                    frmQuestion tela = new frmQuestion();
+                    tela.LoadScreen(msg);
+                    tela.ShowDialog();
+
+                    bool botaoYes = tela.BotaoYes;
+
+                    if (botaoYes == true)
+                    {
+                        FuncionarioBusiness buss = new FuncionarioBusiness();
+                        int Id = funcionario.Id;
+                        buss.Remover(Id);
+
+                        CarregarGrid();
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+           
         }
     }
 }

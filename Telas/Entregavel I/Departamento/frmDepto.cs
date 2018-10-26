@@ -23,21 +23,33 @@ namespace Catiotro_s.Resgistros
 
         public void Cadastro()
         {
-            //Vai intanciar o DTO e dps joga um valor nesse DTO
-            classes.Classes.Cliente.DeptoDTO dto = new classes.Classes.Cliente.DeptoDTO();
-            dto.Nome = txtDepto.Text;
-            dto.Descricao = txtDecricao.Text;
+            try
+            {
+                //Vai intanciar o DTO e dps joga um valor nesse DTO
+                classes.Classes.Cliente.DeptoDTO dto = new classes.Classes.Cliente.DeptoDTO();
+                dto.Nome = txtDepto.Text;
+                dto.Descricao = txtDecricao.Text;
 
-            //Chama a função de salvar de business que em sua vez grava essas açoes no DTO 
-            classes.Classes.Cliente.DeptoBusiness business = new classes.Classes.Cliente.DeptoBusiness();
-            business.Salvar(dto);
+                //Chama a função de salvar de business que em sua vez grava essas açoes no DTO 
+                classes.Classes.Cliente.DeptoBusiness business = new classes.Classes.Cliente.DeptoBusiness();
+                business.Salvar(dto);
 
-            //Exibe de uma msg de suceso 
-            string msg = "Departamento cadastrado.";
+                //Exibe de uma msg de suceso 
+                string msg = "Departamento cadastrado.";
 
-            frmMessage tela = new frmMessage();
-            tela.LoadScreen(msg);
-            tela.ShowDialog();
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+           
         }
 
         public void CarregarGrid()
@@ -101,12 +113,19 @@ namespace Catiotro_s.Resgistros
             }
             catch (ValidacaoException vex)
             {
-                MessageBox.Show(vex.Message, "Catioro's Exception",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string msg = vex.Message;
+
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro" + ex.Message, "Error",  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
             }   
           
         }
@@ -118,25 +137,47 @@ namespace Catiotro_s.Resgistros
 
         private void dgvDepto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 3)
+            try
             {
-                DeptoDTO dto = dgvDepto.Rows[e.RowIndex].DataBoundItem as DeptoDTO;
-
-                DialogResult dialog = MessageBox.Show("Quer mesmo apagar o registro " + dto.Id + "??" + 
-                    "\n\n" + "obs: Ao apagar um departamento, todos os funcionários nele vinculados serão deletados.",
-                    "Catioro's", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                if (dialog == DialogResult.Yes)
+                if (e.ColumnIndex == 3)
                 {
-                    DeptoBusiness buss = new DeptoBusiness();
+                    DeptoDTO dto = dgvDepto.Rows[e.RowIndex].DataBoundItem as DeptoDTO;
 
-                    int IdDepto = dto.Id;
-                    buss.Remover(IdDepto);
+                    string msg = "Quer mesmo apagar o registro " + dto.Id + "??" +
+                        "\n\n" + "obs: Ao apagar um departamento, todos os funcionários nele vinculados serão deletados.";
 
-                    MessageBox.Show("Registo removido com sucesso!", "Catioro's", MessageBoxButtons.OK);
-                    CarregarGrid();
+                    frmQuestion tela = new frmQuestion();
+                    tela.LoadScreen(msg);
+                    tela.ShowDialog();
+
+                    bool botaoYes = tela.BotaoYes;
+
+                    if (botaoYes == true)
+                    {
+                        DeptoBusiness buss = new DeptoBusiness();
+
+                        int IdDepto = dto.Id;
+                        buss.Remover(IdDepto);
+
+                        string msgm = "Registo removido com sucesso!";
+
+                        frmMessage message = new frmMessage();
+                        message.LoadScreen(msgm);
+                        message.ShowDialog();
+
+                        CarregarGrid();
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+           
         }
     }
 }
