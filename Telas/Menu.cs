@@ -5,6 +5,8 @@ using Catiotro_s.Telas.Entregavel_I.Funcionários;
 using Catiotro_s.Telas.Entregavel_I.LogIn;
 using Catiotro_s.Telas.Entregavel_II.Controle_de_Compras;
 using Catiotro_s.Telas.Entregavel_III.Produtos;
+using Catiotro_s.Telas.Entregavel_III.Servicos;
+using Catiotro_s.Telas.Entregavel_III.Vendas;
 using Catiotro_s.Telas.Entregavel_IV.Estoque;
 using Catiotro_s.Telas.Entregavel_IV.Floxo_de_Caixa;
 using System;
@@ -191,19 +193,7 @@ namespace Catiotro_s
             Telas.Entregavel_II.Produto.frmRegistrarProduto tela = new Telas.Entregavel_II.Produto.frmRegistrarProduto();
             OpenScreen(tela);
         }
-
-        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCompras tela = new frmCompras();
-            OpenScreen(tela);
-        }
-
-        private void verComprasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmVerCompras tela = new frmVerCompras();
-            OpenScreen(tela);
-        }
-
+        
         private void itensToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Telas.Entregavel_II.Produto.frmConsultarProduto tela = new Telas.Entregavel_II.Produto.frmConsultarProduto();
@@ -219,6 +209,42 @@ namespace Catiotro_s
         private void fluxoDeCaixaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmFluxoDeCaixa tela = new frmFluxoDeCaixa();
+            OpenScreen(tela);
+        }
+
+        private void compraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCompras tela = new frmCompras();
+            OpenScreen(tela);
+        }
+
+        private void verComprasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmVerCompras tela = new frmVerCompras();
+            OpenScreen(tela);
+        }
+
+        private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVendas tela = new frmVendas();
+            OpenScreen(tela);
+        }
+
+        private void verVendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVerVendas tela = new frmVerVendas();
+            OpenScreen(tela);
+        }
+
+        private void serviçoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmServico tela = new frmServico();
+            OpenScreen(tela);
+        }
+
+        private void verServiçosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVerServicos tela = new frmVerServicos();
             OpenScreen(tela);
         }
 
