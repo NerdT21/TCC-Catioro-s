@@ -45,6 +45,8 @@
             this.mkbData = new System.Windows.Forms.MaskedTextBox();
             this.nudQtd = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrinho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQtd)).BeginInit();
@@ -142,9 +144,13 @@
             this.dgvCarrinho.AllowUserToAddRows = false;
             this.dgvCarrinho.AllowUserToDeleteRows = false;
             this.dgvCarrinho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCarrinho.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
             this.dgvCarrinho.Location = new System.Drawing.Point(306, 177);
             this.dgvCarrinho.Name = "dgvCarrinho";
             this.dgvCarrinho.ReadOnly = true;
+            this.dgvCarrinho.RowHeadersVisible = false;
             this.dgvCarrinho.Size = new System.Drawing.Size(203, 126);
             this.dgvCarrinho.TabIndex = 13;
             // 
@@ -186,6 +192,11 @@
             // 
             this.nudValor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudValor.Location = new System.Drawing.Point(403, 309);
+            this.nudValor.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.nudValor.Name = "nudValor";
             this.nudValor.Size = new System.Drawing.Size(106, 23);
             this.nudValor.TabIndex = 16;
@@ -217,6 +228,22 @@
             this.label7.Size = new System.Drawing.Size(69, 15);
             this.label7.TabIndex = 20;
             this.label7.Text = "Quantidade";
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "Nome";
+            this.Column1.HeaderText = "Nome";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Preco";
+            this.Column2.HeaderText = "Preço";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 70;
             // 
             // frmServico
             // 
@@ -269,5 +296,7 @@
         private System.Windows.Forms.MaskedTextBox mkbData;
         private System.Windows.Forms.NumericUpDown nudQtd;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }
