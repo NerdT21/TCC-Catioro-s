@@ -21,7 +21,19 @@ namespace Catiotro_s.Telas.Entregavel_I
         {
             InitializeComponent();
             CarregarCombos();
+            DataParaHoje();
             GerarCredenciais();
+        }
+
+        void DataParaHoje()
+        {
+            DateTime hoje = DateTime.Now;
+            int dia = hoje.Day;
+            int mes = hoje.Month;
+            int ano = hoje.Year;
+
+            string data = dia + "/" + mes + "/" + ano;
+            mkbData.Text = data;
         }
 
         void GerarCredenciais()
@@ -81,7 +93,7 @@ namespace Catiotro_s.Telas.Entregavel_I
     
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

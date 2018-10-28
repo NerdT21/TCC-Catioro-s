@@ -61,17 +61,14 @@
   <ItemGroup>
     <Compile Include="classes\Base\Connection.cs" />
     <Compile Include="classes\Base\DataBase.cs" />
-    <Compile Include="classes\Classes\AddConsultar\Agenda\AgendaBusiness.cs" />
-    <Compile Include="classes\Classes\AddConsultar\Agenda\AgendaDataBase.cs" />
-    <Compile Include="classes\Classes\AddConsultar\Agenda\AgendaDTO.cs" />
-    <Compile Include="classes\Classes\AddConsultar\Animal\AnimalBusiness.cs" />
-    <Compile Include="classes\Classes\AddConsultar\Animal\AnimalDatabase.cs" />
-    <Compile Include="classes\Classes\AddConsultar\Animal\AnimalDTO.cs" />
-    <Compile Include="classes\Classes\AddConsultar\Animal\AnimalView.cs" />
-    <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteBusiness.cs" />
-    <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteDatabase.cs" />
-    <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteDTO.cs" />
-    <Compile Include="classes\Classes\AddConsultar\Cliente\ClienteView.cs" />
+    <Compile Include="classes\Classes\Animal e Cliente\Animal\AnimalBusiness.cs" />
+    <Compile Include="classes\Classes\Animal e Cliente\Animal\AnimalDatabase.cs" />
+    <Compile Include="classes\Classes\Animal e Cliente\Animal\AnimalDTO.cs" />
+    <Compile Include="classes\Classes\Animal e Cliente\Animal\AnimalView.cs" />
+    <Compile Include="classes\Classes\Animal e Cliente\Cliente\ClienteBusiness.cs" />
+    <Compile Include="classes\Classes\Animal e Cliente\Cliente\ClienteDatabase.cs" />
+    <Compile Include="classes\Classes\Animal e Cliente\Cliente\ClienteDTO.cs" />
+    <Compile Include="classes\Classes\Animal e Cliente\Cliente\ClienteView.cs" />
     <Compile Include="classes\Classes\Compras\ComprasBusiness.cs" />
     <Compile Include="classes\Classes\Compras\ComprasDatabase.cs" />
     <Compile Include="classes\Classes\Compras\ComprasDTO.cs" />
@@ -94,9 +91,6 @@
     <Compile Include="classes\Classes\Feito\Estados\EstadoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Estados\EstadoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Estados\EstadoDTO.cs" />
-    <Compile Include="classes\Classes\AddConsultar\Ficha Animal\FichaAnimalBusiness.cs" />
-    <Compile Include="classes\Classes\AddConsultar\Ficha Animal\FichaAnimalDataBase.cs" />
-    <Compile Include="classes\Classes\AddConsultar\Ficha Animal\FichaAnimalDTO.cs" />
     <Compile Include="classes\Classes\Feito\Folha de pagamento\FPagamentoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Folha de pagamento\FPagamentoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Folha de pagamento\FPagamentoDTO.cs" />
@@ -114,24 +108,15 @@
     <Compile Include="classes\Classes\Feito\INSS\INSSBusiness.cs" />
     <Compile Include="classes\Classes\Feito\INSS\INSSDataBase.cs" />
     <Compile Include="classes\Classes\Feito\INSS\INSSDTO.cs" />
-    <Compile Include="classes\Classes\Feito\Pedido Item\PedidoItemBusiness.cs" />
-    <Compile Include="classes\Classes\Feito\Pedido Item\PedidoItemDataBase.cs" />
-    <Compile Include="classes\Classes\Feito\Pedido Item\PedidoItemDTO.cs" />
-    <Compile Include="classes\Classes\Feito\Pedido\PedidoBusiness.cs" />
-    <Compile Include="classes\Classes\Feito\Pedido\PedidoDataBase.cs" />
-    <Compile Include="classes\Classes\Feito\Pedido\PedidoDTO.cs" />
-    <Compile Include="classes\Classes\Feito\Produto\ProdutoBusiness.cs" />
-    <Compile Include="classes\Classes\Feito\Produto\ProdutoDataBase.cs" />
-    <Compile Include="classes\Classes\Feito\Produto\ProdutoDTO.cs" />
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaDTO.cs" />
-    <Compile Include="classes\Classes\Feito\Usuario\UsuarioBusiness.cs" />
-    <Compile Include="classes\Classes\Feito\Usuario\UsuarioDataBase.cs" />
-    <Compile Include="classes\Classes\Feito\Usuario\UsuarioDTO.cs" />
-    <Compile Include="classes\Classes\Feito\Vacina\VacinaBusiness.cs" />
-    <Compile Include="classes\Classes\Feito\Vacina\VacinaDataBase.cs" />
-    <Compile Include="classes\Classes\Feito\Vacina\VacinaDTO.cs" />
+    <Compile Include="classes\Classes\FluxoDeCaixa\FluxoBusiness.cs" />
+    <Compile Include="classes\Classes\FluxoDeCaixa\FluxoDatabase.cs" />
+    <Compile Include="classes\Classes\FluxoDeCaixa\FluxoDTO.cs" />
+    <Compile Include="classes\Classes\Gastos Adicionais\GastosBusiness.cs" />
+    <Compile Include="classes\Classes\Gastos Adicionais\GastosDatabase.cs" />
+    <Compile Include="classes\Classes\Gastos Adicionais\GastosDTO.cs" />
     <Compile Include="classes\Classes\Login\LoginBusiness.cs" />
     <Compile Include="classes\Classes\Login\LoginDatabase.cs" />
     <Compile Include="classes\Classes\Login\LoginDTO.cs" />
@@ -520,8 +505,6 @@
   <ItemGroup>
     <Content Include="Notas\Script.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="classes\Classes\FluxoDeCaixa\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

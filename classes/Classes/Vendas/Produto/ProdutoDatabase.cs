@@ -48,13 +48,14 @@ namespace Catiotro_s.classes.Classes.Vendas.Produto
             return lista;
         }
 
-        public List<ProdutoDTO> Consultar(string nome)
+        public List<ProdutoDTO> Consultar(string nome, string marca)
         {
-            string script = @"SELECT * FROM tb_produto WHERE nm_produto LIKE @nm_produto";
+            string script = @"SELECT * FROM tb_produto WHERE nm_produto LIKE @nm_produto ANd ds_marca LIKE @ds_marca";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_produto", nome + "%"));
-
+            parms.Add(new MySqlParameter("ds_marca", marca + "%"));
+            
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, parms);
 

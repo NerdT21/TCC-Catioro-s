@@ -1,5 +1,6 @@
 ﻿using Catiotro_s.classes.Classes.Agenda;
 using Catiotro_s.classes.Classes.Estoque;
+using Catiotro_s.classes.Classes.Vendas.Produto;
 using Catiotro_s.classes.Classes.Vendas.ProdutoVendas;
 using System;
 using System.Collections.Generic;

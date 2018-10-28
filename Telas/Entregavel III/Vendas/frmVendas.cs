@@ -12,6 +12,7 @@ using Catiotro_s.classes.Classes.Vendas;
 using Catiotro_s.classes.Classes.Login;
 using Catiotro_s.classes.Classes.Estoque;
 using Catiotro_s.CustomException.TelasException;
+using Catiotro_s.classes.Classes.Vendas.Produto;
 
 namespace Catiotro_s.Telas.Entregavel_III.Vendas
 {
@@ -81,7 +82,7 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
                 dto.FormaPagto = Convert.ToString(cboTipoPag.SelectedItem);
 
                 VendaBusiness buss = new VendaBusiness();
-                int id = buss.Salvar(dto, carrinhoAdd.ToList());
+                buss.Salvar(dto, carrinhoAdd.ToList());
 
                 string msg = "Venda efetuada com sucesso!";
 

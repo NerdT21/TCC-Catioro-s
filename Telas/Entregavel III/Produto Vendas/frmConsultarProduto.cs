@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Agenda;
+using Catiotro_s.classes.Classes.Vendas.Produto;
 
 namespace Catiotro_s.Telas.Entregavel_II.Produto
 {

@@ -20,10 +20,10 @@ namespace Catiotro_s.classes.Classes.Vendas.Produto
             return db.Listar();
         }
 
-        public List<ProdutoDTO> Consultar(string nome)
+        public List<ProdutoDTO> Consultar(string nome, string marca)
         {
             ProdutoDatabase db = new ProdutoDatabase();
-            return db.Consultar(nome);
+            return db.Consultar(nome, marca);
         }
 
     }

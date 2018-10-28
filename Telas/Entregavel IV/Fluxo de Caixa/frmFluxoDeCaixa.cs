@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Catiotro_s.classes.Classes.FluxoDeCaixa;
 
 namespace Catiotro_s.Telas.Entregavel_IV.Floxo_de_Caixa
 {
@@ -15,6 +16,16 @@ namespace Catiotro_s.Telas.Entregavel_IV.Floxo_de_Caixa
         public frmFluxoDeCaixa()
         {
             InitializeComponent();
+            AutoCarregar();
+        }
+
+        void AutoCarregar()
+        {
+            FluxoBusiness buss = new FluxoBusiness();
+            List<FluxoDTO> lista = buss.Listar();
+
+            dgvFluxoDeCaixa.AutoGenerateColumns = false;
+            dgvFluxoDeCaixa.DataSource = lista;
         }
 
         private void frmFluxoDeCaixa_Load(object sender, EventArgs e)

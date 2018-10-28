@@ -60,15 +60,17 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.mkbData = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudFaltas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImgFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
             // nudFaltas
             // 
-            this.nudFaltas.Location = new System.Drawing.Point(402, 169);
+            this.nudFaltas.Location = new System.Drawing.Point(406, 170);
             this.nudFaltas.Name = "nudFaltas";
-            this.nudFaltas.Size = new System.Drawing.Size(55, 20);
+            this.nudFaltas.Size = new System.Drawing.Size(60, 20);
             this.nudFaltas.TabIndex = 143;
             // 
             // panel1
@@ -91,7 +93,7 @@
             // 
             // txtSalFam
             // 
-            this.txtSalFam.Location = new System.Drawing.Point(297, 289);
+            this.txtSalFam.Location = new System.Drawing.Point(226, 297);
             this.txtSalFam.Name = "txtSalFam";
             this.txtSalFam.ReadOnly = true;
             this.txtSalFam.Size = new System.Drawing.Size(107, 20);
@@ -101,15 +103,15 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(295, 242);
+            this.label3.Location = new System.Drawing.Point(299, 245);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 20);
+            this.label3.Size = new System.Drawing.Size(110, 20);
             this.label3.TabIndex = 136;
             this.label3.Text = "Salário Família ";
             // 
             // TxtSalLiq
             // 
-            this.TxtSalLiq.Location = new System.Drawing.Point(405, 242);
+            this.TxtSalLiq.Location = new System.Drawing.Point(413, 246);
             this.TxtSalLiq.Name = "TxtSalLiq";
             this.TxtSalLiq.ReadOnly = true;
             this.TxtSalLiq.Size = new System.Drawing.Size(53, 20);
@@ -160,7 +162,7 @@
             // 
             // txtValTrans
             // 
-            this.txtValTrans.Location = new System.Drawing.Point(244, 244);
+            this.txtValTrans.Location = new System.Drawing.Point(248, 245);
             this.txtValTrans.Name = "txtValTrans";
             this.txtValTrans.ReadOnly = true;
             this.txtValTrans.Size = new System.Drawing.Size(51, 20);
@@ -168,7 +170,7 @@
             // 
             // txtINSS
             // 
-            this.txtINSS.Location = new System.Drawing.Point(172, 208);
+            this.txtINSS.Location = new System.Drawing.Point(176, 209);
             this.txtINSS.Name = "txtINSS";
             this.txtINSS.ReadOnly = true;
             this.txtINSS.Size = new System.Drawing.Size(67, 20);
@@ -176,15 +178,15 @@
             // 
             // txtIR
             // 
-            this.txtIR.Location = new System.Drawing.Point(381, 208);
+            this.txtIR.Location = new System.Drawing.Point(385, 209);
             this.txtIR.Name = "txtIR";
             this.txtIR.ReadOnly = true;
-            this.txtIR.Size = new System.Drawing.Size(76, 20);
+            this.txtIR.Size = new System.Drawing.Size(81, 20);
             this.txtIR.TabIndex = 126;
             // 
             // txtFGTS
             // 
-            this.txtFGTS.Location = new System.Drawing.Point(294, 208);
+            this.txtFGTS.Location = new System.Drawing.Point(298, 209);
             this.txtFGTS.Name = "txtFGTS";
             this.txtFGTS.ReadOnly = true;
             this.txtFGTS.Size = new System.Drawing.Size(55, 20);
@@ -210,9 +212,9 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(124, 243);
+            this.label9.Location = new System.Drawing.Point(128, 244);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(117, 20);
+            this.label9.Size = new System.Drawing.Size(115, 20);
             this.label9.TabIndex = 120;
             this.label9.Text = "Vale Transporte ";
             // 
@@ -220,7 +222,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(242, 207);
+            this.label8.Location = new System.Drawing.Point(246, 208);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 20);
             this.label8.TabIndex = 119;
@@ -230,7 +232,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(352, 207);
+            this.label7.Location = new System.Drawing.Point(356, 208);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(22, 20);
             this.label7.TabIndex = 118;
@@ -240,9 +242,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(354, 168);
+            this.label6.Location = new System.Drawing.Point(358, 169);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 20);
+            this.label6.Size = new System.Drawing.Size(50, 20);
             this.label6.TabIndex = 117;
             this.label6.Text = "Faltas ";
             // 
@@ -250,7 +252,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(251, 169);
+            this.label4.Location = new System.Drawing.Point(255, 170);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 20);
             this.label4.TabIndex = 116;
@@ -260,7 +262,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(124, 167);
+            this.label2.Location = new System.Drawing.Point(128, 168);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 115;
@@ -291,7 +293,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(124, 207);
+            this.label5.Location = new System.Drawing.Point(128, 208);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 20);
             this.label5.TabIndex = 144;
@@ -299,7 +301,7 @@
             // 
             // mkbHE
             // 
-            this.mkbHE.Location = new System.Drawing.Point(214, 169);
+            this.mkbHE.Location = new System.Drawing.Point(218, 170);
             this.mkbHE.Mask = "90:00";
             this.mkbHE.Name = "mkbHE";
             this.mkbHE.Size = new System.Drawing.Size(35, 20);
@@ -308,7 +310,7 @@
             // 
             // mkbAtraso
             // 
-            this.mkbAtraso.Location = new System.Drawing.Point(316, 168);
+            this.mkbAtraso.Location = new System.Drawing.Point(320, 169);
             this.mkbAtraso.Mask = "90:00";
             this.mkbAtraso.Name = "mkbAtraso";
             this.mkbAtraso.Size = new System.Drawing.Size(35, 20);
@@ -344,7 +346,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(176, 289);
+            this.label10.Location = new System.Drawing.Point(105, 297);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(112, 20);
             this.label10.TabIndex = 152;
@@ -360,10 +362,31 @@
             this.label13.TabIndex = 153;
             this.label13.Text = "Departamento";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(356, 295);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(41, 20);
+            this.label14.TabIndex = 154;
+            this.label14.Text = "Data";
+            // 
+            // mkbData
+            // 
+            this.mkbData.Location = new System.Drawing.Point(403, 295);
+            this.mkbData.Mask = "00/00/0000";
+            this.mkbData.Name = "mkbData";
+            this.mkbData.Size = new System.Drawing.Size(64, 20);
+            this.mkbData.TabIndex = 155;
+            this.mkbData.ValidatingType = typeof(System.DateTime);
+            // 
             // frmFolhaPagto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.mkbData);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnSalvar);
@@ -437,5 +460,7 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.MaskedTextBox mkbData;
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Agenda;
 using Catiotro_s.classes.Classes.Estoque;
 using Catiotro_s.CustomException.TelasException;
+using Catiotro_s.classes.Classes.Vendas.Produto;
 
 namespace Catiotro_s.Telas.Entregavel_II.Produto
 {
@@ -47,11 +48,11 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
                 dto.Preco = nudPreco.Value;
 
                 ProdutoBusiness business = new ProdutoBusiness();
-                business.Salvar(dto);
+                int pk = business.Salvar(dto);
 
                 EstoqueDTO estoque = new EstoqueDTO();
                 estoque.Produto = txtNome.Text;
-                estoque.ItemProdutoId = business.Salvar(dto);
+                estoque.ItemProdutoId = pk;
                 estoque.QtdEstocado = 0;
 
                 EstoqueBusiness buss = new EstoqueBusiness();

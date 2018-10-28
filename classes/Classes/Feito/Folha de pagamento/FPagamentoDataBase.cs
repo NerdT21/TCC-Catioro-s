@@ -13,27 +13,30 @@ namespace Catiotro_s.classes.Classes.Cliente
         public int Salvar (FPamentoDTO folha)
         {
 
-            string script = @"INSERT INTO tb_folha_de_pagamento(ds_horas_extras,
+            string script = @"INSERT INTO tb_folha_de_pagamento(ds_horasExtras,
                                                                 id_funcionario
                                                                 int_faltas,
-                                                                vl_salario_bruto,
-                                                                vl_imposto_e_renda,
+                                                                vl_salarioBruto,
+                                                                vl_impostoDeRenda,
                                                                 vl_ftgs,
-                                                                vl_vale_transporte,
+                                                                vl_valeTransporte,
                                                                 id_funcionario,
-                                                                vl_salario_liq,
+                                                                vl_salarioLiq,
                                                                 id_inss,
-                                                                id_sal_familia)
-                                                         VALUES (@ds_horas_extras,
-                                                                @int_faltas,
-                                                                @vl_salario_bruto,
-                                                                @vl_imposto_e_renda,
-                                                                @vl_ftgs,
-                                                                @vl_vale_transporte,
+                                                                id_sal_familia,
+                                                                dt_pagamento)
+                                                        VALUES (@ds_horasExtras,
                                                                 @id_funcionario,
-                                                                @vl_salario_liq,
+                                                                @int_faltas,
+                                                                @vl_salarioBruto,
+                                                                @vl_impostoDeRenda,
+                                                                @vl_ftgs,
+                                                                @vl_valeTransporte,
+                                                                @id_funcionario,
+                                                                @vl_salarioLiq,
                                                                 @id_inss,
-                                                                @id_sal_familia)";
+                                                                @id_sal_familia,
+                                                                @dt_pagamento)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("ds_horas_extras", folha.HorasExtras));

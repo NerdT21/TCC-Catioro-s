@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.dgvFluxoDeCaixa = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFluxoDeCaixa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -37,11 +41,46 @@
             this.dgvFluxoDeCaixa.AllowUserToAddRows = false;
             this.dgvFluxoDeCaixa.AllowUserToDeleteRows = false;
             this.dgvFluxoDeCaixa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFluxoDeCaixa.Location = new System.Drawing.Point(14, 55);
+            this.dgvFluxoDeCaixa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.dgvFluxoDeCaixa.Location = new System.Drawing.Point(37, 49);
             this.dgvFluxoDeCaixa.Name = "dgvFluxoDeCaixa";
             this.dgvFluxoDeCaixa.ReadOnly = true;
-            this.dgvFluxoDeCaixa.Size = new System.Drawing.Size(554, 337);
+            this.dgvFluxoDeCaixa.Size = new System.Drawing.Size(503, 308);
             this.dgvFluxoDeCaixa.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "DataReferencia";
+            this.Column1.HeaderText = "Data de Referência";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 130;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Ganhos";
+            this.Column2.HeaderText = "Total Ganhos";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Despesas";
+            this.Column3.HeaderText = "Total Despesas";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 130;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Saldo";
+            this.Column4.HeaderText = "Saldo Final";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // frmFluxoDeCaixa
             // 
@@ -59,5 +98,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvFluxoDeCaixa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
