@@ -49,7 +49,7 @@
             this.dgvFluxoDeCaixa.Location = new System.Drawing.Point(37, 49);
             this.dgvFluxoDeCaixa.Name = "dgvFluxoDeCaixa";
             this.dgvFluxoDeCaixa.ReadOnly = true;
-            this.dgvFluxoDeCaixa.Size = new System.Drawing.Size(503, 308);
+            this.dgvFluxoDeCaixa.Size = new System.Drawing.Size(504, 308);
             this.dgvFluxoDeCaixa.TabIndex = 0;
             // 
             // Column1
@@ -77,6 +77,7 @@
             // 
             // Column4
             // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column4.DataPropertyName = "Saldo";
             this.Column4.HeaderText = "Saldo Final";
             this.Column4.Name = "Column4";

@@ -12,6 +12,7 @@ using Catiotro_s.PlugIn;
 using FamosoAça.Screens.Entregavel_I;
 using System.Globalization;
 using Catiotro_s.classes.Classes.Feito.Funcionarios;
+using Catiotro_s.CustomException.TelasException;
 
 namespace Catiotro_s.Telas.Entregavel_I
 {
@@ -38,21 +39,33 @@ namespace Catiotro_s.Telas.Entregavel_I
 
         void GerarCredenciais()
         {
-            string nome = cboFuncionario.Text;
-            FuncionarioView dto = cboFuncionario.SelectedItem as FuncionarioView;
-
-            mkbCPF.Text = dto.Cpf;
-            txtSalario.Text = dto.Salario.ToString();
-            txtDepto.Text = dto.Depto.ToString();
-
-            if (dto.Imagem == string.Empty)
+            try
             {
-                pbxImgFuncionario.Image = null;
+                string nome = cboFuncionario.Text;
+                FuncionarioView dto = cboFuncionario.SelectedItem as FuncionarioView;
+
+                mkbCPF.Text = dto.Cpf;
+                txtSalario.Text = dto.Salario.ToString();
+                txtDepto.Text = dto.Depto.ToString();
+
+                if (dto.Imagem == string.Empty)
+                {
+                    pbxImgFuncionario.Image = null;
+                }
+                else
+                {
+                    pbxImgFuncionario.Image = ImagemPlugIn.ConverterParaImagem(dto.Imagem);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                pbxImgFuncionario.Image = ImagemPlugIn.ConverterParaImagem(dto.Imagem);
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
             }
+           
         }
 
         void CarregarCombos()
@@ -72,18 +85,30 @@ namespace Catiotro_s.Telas.Entregavel_I
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            FolhaPagto pagto = new FolhaPagto();
-            pagto.Salario = Convert.ToDecimal(txtSalario.Text);
-            pagto.Faltas = Convert.ToInt32(nudFaltas.Value);
-            pagto.HoraExtra = Convert.ToDateTime(mkbAtraso.Text);
-            pagto.Atrasos = Convert.ToDateTime(mkbHE.Text);
+            try
+            {
+                FolhaPagto pagto = new FolhaPagto();
+                pagto.Salario = Convert.ToDecimal(txtSalario.Text);
+                pagto.Faltas = Convert.ToInt32(nudFaltas.Value);
+                pagto.HoraExtra = Convert.ToDateTime(mkbAtraso.Text);
+                pagto.Atrasos = Convert.ToDateTime(mkbHE.Text);
 
-            txtINSS.Text = pagto.CalcularINSS().ToString("F2");
-            txtIR.Text = pagto.CalcularIR().ToString("F2");
-            txtFGTS.Text = pagto.CalcularFGTS().ToString("F2");
-            txtSalFam.Text = pagto.VerificarSalarioFamilia().ToString("F2");
-            txtValTrans.Text = pagto.CalcularValeTransporte().ToString("F2");
-            TxtSalLiq.Text = pagto.CalcularSalarioLiquido().ToString("F2");
+                txtINSS.Text = pagto.CalcularINSS().ToString("F2");
+                txtIR.Text = pagto.CalcularIR().ToString("F2");
+                txtFGTS.Text = pagto.CalcularFGTS().ToString("F2");
+                txtSalFam.Text = pagto.VerificarSalarioFamilia().ToString("F2");
+                txtValTrans.Text = pagto.CalcularValeTransporte().ToString("F2");
+                TxtSalLiq.Text = pagto.CalcularSalarioLiquido().ToString("F2");
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            
         }
 
         private void cboFuncionario_SelectedIndexChanged(object sender, EventArgs e)
@@ -93,7 +118,40 @@ namespace Catiotro_s.Telas.Entregavel_I
     
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                FuncionarioDTO funcionario = cboFuncionario.SelectedItem as FuncionarioDTO;
+
+                FPamentoDTO dto = new FPamentoDTO();
+                dto.HorasExtras = mkbHE.Text;
+                dto.Faltas = Convert.ToInt32(nudFaltas.Value);
+                dto.SalBruto = Convert.ToDecimal(txtSalario.Text);
+                dto.ImpostoRenda = Convert.ToDecimal(txtIR.Text);
+                dto.Fgts = Convert.ToDecimal(txtFGTS.Text);
+                dto.VLTars = Convert.ToDecimal(txtValTrans.Text);
+                dto.IdFuncio = funcionario.Id;
+                dto.SalLiq = Convert.ToDecimal(TxtSalLiq.Text);
+                dto.Inss = Convert.ToDecimal(txtINSS.Text);
+                dto.SalFamilia = Convert.ToDecimal(txtSalFam.Text);
+                dto.Data = mkbData.Text;
+
+                FPagamentoBusiness buss = new FPagamentoBusiness();
+                buss.Salvar(dto);
+
+                string msg = "Pagamento salvo com sucesso!";
+
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }      
         }
     }
 }

@@ -26,9 +26,11 @@ namespace Catiotro_s.classes.Classes.Cliente
        
         public decimal SalLiq { get; set; }
 
-        public int Inss { get; set; }
+        public decimal Inss { get; set; }
 
-        public int SalFamilia { get; set; }
+        public decimal SalFamilia { get; set; }
+
+        public string Data { get; set; }
         
     }
 }

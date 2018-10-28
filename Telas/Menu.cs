@@ -9,6 +9,7 @@ using Catiotro_s.Telas.Entregavel_III.Servicos;
 using Catiotro_s.Telas.Entregavel_III.Vendas;
 using Catiotro_s.Telas.Entregavel_IV.Estoque;
 using Catiotro_s.Telas.Entregavel_IV.Floxo_de_Caixa;
+using Catiotro_s.Telas.Entregavel_IV.Fluxo_de_Caixa;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -236,15 +237,38 @@ namespace Catiotro_s
             OpenScreen(tela);
         }
 
-        private void serviçoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void compraEVendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void verServiçosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmVerServicos tela = new frmVerServicos();
+            OpenScreen(tela);
+        }
+
+        private void serviçoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmServico tela = new frmServico();
             OpenScreen(tela);
         }
 
-        private void verServiçosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void pamentosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmVerServicos tela = new frmVerServicos();
+            frmVerFolha tela = new frmVerFolha();
+            OpenScreen(tela);
+        }
+
+        private void gastosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGastoAdicional tela = new frmGastoAdicional();
+            OpenScreen(tela);
+        }
+
+        private void verGastosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultarGastosAdicionais tela = new frmConsultarGastosAdicionais();
             OpenScreen(tela);
         }
 

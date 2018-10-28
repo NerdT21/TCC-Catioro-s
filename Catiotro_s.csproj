@@ -263,6 +263,12 @@
     <Compile Include="Telas\Entregavel I\frmFolhaPagto.Designer.cs">
       <DependentUpon>frmFolhaPagto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Entregavel I\frmVerFolha.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel I\frmVerFolha.Designer.cs">
+      <DependentUpon>frmVerFolha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Entregavel I\Funcionários\frmAlterarFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -433,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel I\frmFolhaPagto.resx">
       <DependentUpon>frmFolhaPagto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel I\frmVerFolha.resx">
+      <DependentUpon>frmVerFolha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel I\Funcionários\frmAlterarFuncionarios.resx">
       <DependentUpon>frmAlterarFuncionarios.cs</DependentUpon>

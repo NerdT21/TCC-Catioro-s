@@ -14,22 +14,20 @@ namespace Catiotro_s.classes.Classes.Cliente
             int id = DB.Salvar(folhapag);
             return id;
         }
-        public void Alterar(FPamentoDTO folhapag)
-        {
-            FPagamentoDataBase DB = new FPagamentoDataBase();
-            DB.Alterar(folhapag);
-        }
+      
         public void Remover(int idfolhapag)
         {
             FPagamentoDataBase DB = new FPagamentoDataBase();
             DB.Remover(idfolhapag);
         }
+
         public List<FPamentoDTO> Listar()
         {
             FPagamentoDataBase DB = new FPagamentoDataBase();
             List<FPamentoDTO> folhapag = DB.Listar();
             return folhapag;
         }
+
         public List<FPamentoDTO> Consultar(string consult)
         {
             FPagamentoDataBase db = new FPagamentoDataBase();
