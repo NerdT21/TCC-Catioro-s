@@ -145,7 +145,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(348, 277);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 17);
+            this.label7.Size = new System.Drawing.Size(65, 17);
             this.label7.TabIndex = 34;
             this.label7.Text = "Sub. Total";
             // 
@@ -283,6 +283,7 @@
             this.Controls.Add(this.cboProduto);
             this.Name = "frmVendas";
             this.Size = new System.Drawing.Size(583, 405);
+            this.Load += new System.EventHandler(this.frmVendas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).EndInit();
             this.ResumeLayout(false);

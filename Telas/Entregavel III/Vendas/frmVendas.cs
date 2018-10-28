@@ -23,8 +23,7 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
             DataParaHoje();
         }
         BindingList<ProdutoDTO> carrinhoAdd = new BindingList<ProdutoDTO>();
-        BindingList<int> ids = new BindingList<int>();
-        BindingList<int> quantd = new BindingList<int>();
+        BindingList<decimal> valor = new BindingList<decimal>();
 
         void CarregarGrid()
         {
@@ -50,15 +49,16 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
                 ProdutoDTO dto = cboProduto.SelectedItem as ProdutoDTO;
 
                 int quantidade = Convert.ToInt32(nudQuantidade.Value);
-                quantd.Add(quantidade);
 
                 for (int i = 0; i < quantidade; i++)
                 {
                     carrinhoAdd.Add(dto);
-                    ids.Add(dto.Id);
                 }
 
                 CarregarGrid();
+
+                valor.Add(dto.Preco * quantidade);
+                txtPrecoTotal.Text = Convert.ToString(valor.Sum());
             }
             catch (Exception ex)
             {
@@ -98,6 +98,11 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
                 tela.ShowDialog();
             }
            
+        }
+
+        private void frmVendas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

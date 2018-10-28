@@ -126,9 +126,6 @@
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Salario Familha\SFamilhaDTO.cs" />
-    <Compile Include="classes\Classes\Feito\Servico\ServicoBusiness.cs" />
-    <Compile Include="classes\Classes\Feito\Servico\ServicoDataBase.cs" />
-    <Compile Include="classes\Classes\Feito\Servico\ServicoDTO.cs" />
     <Compile Include="classes\Classes\Feito\Usuario\UsuarioBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Usuario\UsuarioDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Usuario\UsuarioDTO.cs" />
@@ -139,6 +136,13 @@
     <Compile Include="classes\Classes\Login\LoginDatabase.cs" />
     <Compile Include="classes\Classes\Login\LoginDTO.cs" />
     <Compile Include="classes\Classes\Login\UserSession.cs" />
+    <Compile Include="classes\Classes\Servico\ServicoBusiness.cs" />
+    <Compile Include="classes\Classes\Servico\ServicoDatabase.cs" />
+    <Compile Include="classes\Classes\Servico\ServicoDTO.cs" />
+    <Compile Include="classes\Classes\Servico\ServicoItem\ServicoItemBusiness.cs" />
+    <Compile Include="classes\Classes\Servico\ServicoItem\ServicoItemDatabase.cs" />
+    <Compile Include="classes\Classes\Servico\ServicoItem\ServicoItemDTO.cs" />
+    <Compile Include="classes\Classes\Servico\ServicoView.cs" />
     <Compile Include="classes\Classes\Vendas\ProdutoVendas\ProdutoVendasBusiness.cs" />
     <Compile Include="classes\Classes\Vendas\ProdutoVendas\ProdutoVendasDatabase.cs" />
     <Compile Include="classes\Classes\Vendas\ProdutoVendas\ProdutoVendasDTO.cs" />
@@ -182,6 +186,18 @@
     </Compile>
     <Compile Include="Telas\Diferenciais\frmEmail.Designer.cs">
       <DependentUpon>frmEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Servicos\frmServico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Servicos\frmServico.Designer.cs">
+      <DependentUpon>frmServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Servicos\frmVerServicos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Servicos\frmVerServicos.Designer.cs">
+      <DependentUpon>frmVerServicos.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\Entregavel II\Produtos Compras\frmConsultarProdutos.cs">
       <SubType>UserControl</SubType>
@@ -387,6 +403,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Diferenciais\frmEmail.resx">
       <DependentUpon>frmEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel III\Servicos\frmServico.resx">
+      <DependentUpon>frmServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel III\Servicos\frmVerServicos.resx">
+      <DependentUpon>frmVerServicos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel II\Produtos Compras\frmConsultarProdutos.resx">
       <DependentUpon>frmConsultarProdutos.cs</DependentUpon>

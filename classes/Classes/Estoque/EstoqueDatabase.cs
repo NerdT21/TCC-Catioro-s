@@ -92,28 +92,28 @@ namespace Catiotro_s.classes.Classes.Estoque
         }
         public void Adicionar(int qtd, int idProduto)
         {
-            string script = @"UPDATE tb_estoque SET id_itemProduto = @id_itemProduto
-                                              WHERE qtd_estocado = qtd_estocado + @qtd_estocado";
+            string script = @"UPDATE tb_estoque SET qtd_estocado = qtd_estocado + @qtd_estocado
+                                              WHERE id_itemProduto = @id_itemProduto";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_itemProduto", idProduto));
             parms.Add(new MySqlParameter("qtd_estocado", qtd));
 
             Database db = new Database();
-            db.ExecuteInsertScriptWithPk(script, parms);
+            db.ExecuteInsertScript(script, parms);
         }
 
         public void Remover(int qtd, int idProduto)
         {
-            string script = @"UPDATE tb_estoque SET id_itemProduto = @id_itemProduto
-                                              WHERE qtd_estocado = qtd_estocado - @qtd_estocado";
+            string script = @"UPDATE tb_estoque SET qtd_estocado = qtd_estocado - @qtd_estocado
+                                              WHERE id_itemProduto = @id_itemProduto";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_itemProduto", idProduto));
             parms.Add(new MySqlParameter("qtd_estocado", qtd));
 
             Database db = new Database();
-            db.ExecuteInsertScriptWithPk(script, parms);
+            db.ExecuteInsertScript(script, parms);
         }
     }
 }

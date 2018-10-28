@@ -29,8 +29,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
         }
 
         BindingList<ItemDTO> carrinhoAdd = new BindingList<ItemDTO>();
-        BindingList<int> ids = new BindingList<int>();
-        BindingList<int> quantd = new BindingList<int>();
+        BindingList<decimal> valor = new BindingList<decimal>();
 
         void DataParaHoje()
         {
@@ -180,15 +179,16 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
                 ItemDTO dto = cboProduto.SelectedItem as ItemDTO;
 
                 int quantidade = Convert.ToInt32(nudQuantidade.Value);
-                quantd.Add(quantidade);
 
                 for (int i = 0; i < quantidade; i++)
                 {
                     carrinhoAdd.Add(dto);
-                    ids.Add(dto.Id);
                 }
 
                 CarregarGrid();
+
+                valor.Add(dto.Preco * quantidade);
+                txtPrecoTotal.Text = Convert.ToString(valor.Sum());
             }
             catch (Exception ex)
             {
@@ -211,7 +211,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
                 dto.FormaPagto = Convert.ToString(cboTipoPag.SelectedItem);
 
                 ComprasBusiness buss = new ComprasBusiness();
-                int id = buss.Salvar(dto, carrinhoAdd.ToList());
+                buss.Salvar(dto, carrinhoAdd.ToList());
 
                 string msg = "Compra salva com sucesso!";
 

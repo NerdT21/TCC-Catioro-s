@@ -32,7 +32,7 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
             cboFornecedor.DataSource = lista;
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
@@ -45,11 +45,11 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
                 dto.Preco = Convert.ToDecimal(nudPreco.Value);
 
                 ItemBusiness buss = new ItemBusiness();
-                buss.Salvar(dto);
+                int pk = buss.Salvar(dto);
 
                 EstoqueDTO estoque = new EstoqueDTO();
                 estoque.Produto = txtNome.Text;
-                estoque.ItemProdutoId = buss.Salvar(dto);
+                estoque.ItemProdutoId = pk;
                 estoque.QtdEstocado = 0;
 
                 EstoqueBusiness business = new EstoqueBusiness();
@@ -68,7 +68,7 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
                 frmException tela = new frmException();
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
-            }         
+            }
         }
     }
 }

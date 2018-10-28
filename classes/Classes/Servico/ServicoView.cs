@@ -4,18 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Catiotro_s.classes.Classes.Agenda
+namespace Catiotro_s.classes.Classes.Servico
 {
-  public  class ServicoDTO
+    public class ServicoView
     {
         public int Id { get; set; }
 
-        public int IdAnimal { get; set; }
+        public string Animal { get; set; }
+
+        public string Cliente { get; set; }
+
+        public string Data { get; set; }
 
         public string Servico { get; set; }
 
         public decimal Valor { get; set; }
-
-        public string Duracao { get; set; }
     }
 }
