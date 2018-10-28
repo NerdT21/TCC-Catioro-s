@@ -14,14 +14,6 @@ CREATE TABLE `tb_fornecedor` (
 	PRIMARY KEY (`id_fornecedor`)
 );
 
-CREATE TABLE `tb_vacina` (
-	`id_vacina` int(50) NOT NULL AUTO_INCREMENT,
-	`nm_vacina` varchar(50) NOT NULL,
-	`qtd_doses` int NOT NULL,
-	`ds_vacina` varchar(200) NOT NULL,
-	PRIMARY KEY (`id_vacina`)
-);
-
 CREATE TABLE `tb_cliente` (
 	`id_cliente` int NOT NULL AUTO_INCREMENT,
 	`nm_nome` varchar(255) NOT NULL,
@@ -35,15 +27,6 @@ CREATE TABLE `tb_cliente` (
 	`dt_nasc` varchar(20) NOT NULL,
 	`dt_dataCadastro` varchar(20) NOT NULL,
 	PRIMARY KEY (`id_cliente`)
-);
-
-CREATE TABLE `tb_historicoAnimal` (
-	`id_historico` int NOT NULL AUTO_INCREMENT,
-	`id_animal` int NOT NULL,
-	`id_vacina` int NOT NULL,
-	`ds_dose` int NOT NULL,
-	`id_funcionario` int NOT NULL,
-	PRIMARY KEY (`id_historico`)
 );
 
 CREATE TABLE `tb_funcionario` (
@@ -60,23 +43,6 @@ CREATE TABLE `tb_funcionario` (
 	`ds_telefone` varchar(15) NOT NULL,
 	`img_funcionario` longblob NOT NULL,
 	PRIMARY KEY (`id_funcionario`)
-);
-
-CREATE TABLE `tb_pedido` (
-	`id_pedido` int NOT NULL AUTO_INCREMENT,
-	`id_cliente` int NOT NULL,
-	`vl_valor` DECIMAL(15,2) NOT NULL,
-	`id_formaPagto` int NOT NULL,
-	`ds_hora` varchar(20) NOT NULL,
-	`ds_data` varchar(20) NOT NULL,
-	PRIMARY KEY (`id_pedido`)
-);
-
-CREATE TABLE `tb_item_pedido` (
-	`id_itemPedido` int NOT NULL AUTO_INCREMENT,
-	`id_pedido` int NOT NULL,
-	`id_produto` int NOT NULL,
-	PRIMARY KEY (`id_itemPedido`)
 );
 
 CREATE TABLE `tb_animal` (
@@ -101,15 +67,15 @@ CREATE TABLE `tb_estados` (
 CREATE TABLE `tb_folhaDePagamento` (
 	`id_folhaPagto` int NOT NULL AUTO_INCREMENT,
 	`ds_horasExtras` varchar(10) NOT NULL,
-	`int_faltas` int(2) NOT NULL,
+	`int_faltas` int NOT NULL,
 	`vl_salarioBruto` DECIMAL(15,2) NOT NULL,
 	`vl_impostoDeRenda` DECIMAL(15,2) NOT NULL,
 	`vl_ftgs` DECIMAL(15,2) NOT NULL,
 	`vl_valeTransporte` DECIMAL(15,2) NOT NULL,
 	`id_funcionario` int NOT NULL,
 	`vl_salarioLiq` DECIMAL(15,2) NOT NULL,
-	`id_inss` int NOT NULL,
-	`id_salFamilia` int NOT NULL,
+	`vl_inss` decimal(15,2) NOT NULL,
+	`vl_salFamilia` decimal(15,2) NOT NULL,
     `dt_pagamento` varchar(10) NOT NULL,
 	PRIMARY KEY (`id_folhaPagto`)
 );
@@ -265,23 +231,9 @@ ALTER TABLE `tb_fornecedor` ADD CONSTRAINT `tb_fornecedor_fk0` FOREIGN KEY (`id_
 
 ALTER TABLE `tb_cliente` ADD CONSTRAINT `tb_cliente_fk0` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
 
-ALTER TABLE `tb_historicoAnimal` ADD CONSTRAINT `tb_historicoAnimal_fk0` FOREIGN KEY (`id_animal`) REFERENCES `tb_animal`(`id_animal`);
-
-ALTER TABLE `tb_historicoAnimal` ADD CONSTRAINT `tb_historicoAnimal_fk1` FOREIGN KEY (`id_vacina`) REFERENCES `tb_vacina`(`id_vacina`);
-
-ALTER TABLE `tb_historicoAnimal` ADD CONSTRAINT `tb_historicoAnimal_fk2` FOREIGN KEY (`id_funcionario`) REFERENCES `tb_funcionario`(`id_funcionario`);
-
 ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk1` FOREIGN KEY (`id_depto`) REFERENCES `tb_Depto`(`id_depto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE `tb_funcionario` ADD CONSTRAINT `tb_funcionario_fk2` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados`(`id_estado`);
-
-ALTER TABLE `tb_pedido` ADD CONSTRAINT `tb_pedido_fk0` FOREIGN KEY (`id_cliente`) REFERENCES `tb_cliente`(`id_cliente`);
-
-ALTER TABLE `tb_pedido` ADD CONSTRAINT `tb_pedido_fk1` FOREIGN KEY (`id_formaPagto`) REFERENCES `tb_formaDePagamento`(`id_formaPagto`);
-
-ALTER TABLE `tb_item_pedido` ADD CONSTRAINT `tb_item_pedido_fk0` FOREIGN KEY (`id_pedido`) REFERENCES `tb_pedido`(`id_pedido`);
-
-ALTER TABLE `tb_item_pedido` ADD CONSTRAINT `tb_item_pedido_fk1` FOREIGN KEY (`id_produto`) REFERENCES `tb_produto`(`id_produto`);
 
 ALTER TABLE `tb_animal` ADD CONSTRAINT `tb_animal_fk1` FOREIGN KEY (`id_cliente`) REFERENCES `tb_cliente`(`id_cliente`);
 
@@ -571,12 +523,12 @@ CREATE VIEW vw_ganhos AS
         BY DATE(dt_venda);
         
         
-DROP VIEW vw_despesas;
-CREATE VIEW vw_despesas AS
+-- DROP VIEW vw_despesas;
+ALTER VIEW vw_despesas AS
 	SELECT sum(vl_total) vl_total, dt_referencia 
       FROM 
       ( 
-		SELECT DATE(dt_compra)					    dt_referencia,
+		SELECT (dt_compra)					    dt_referencia,
                 sum(vl_total) 						vl_total 
 		  FROM vw_compra_consultar 					c 
           JOIN tb_item_compra 						ci 
@@ -584,7 +536,7 @@ CREATE VIEW vw_despesas AS
 		  JOIN tb_item 								p 
             ON p.id_item = ci.id_item
 		 GROUP
-            BY DATE(dt_compra) 
+            BY (dt_compra) 
 		UNION 
 			SELECT DATE(dt_gasto) 		    		dt_referencia,
                     sum(vl_gasto)     				vl_total 
@@ -641,6 +593,7 @@ SELECT * FROM vw_consultarFornecedor;
 SELECT * FROM vw_consultarCliente;
 SELECT * FROM vw_servico;
 SELECT * FROM vw_consultar_fluxodecaixa;
+SELECT * FROM vw_despesas;
 
 -- SELECT Tabelas
 
@@ -660,6 +613,8 @@ SELECT * FROM tb_estoque;
 SELECT * FROM tb_cliente;
 SELECT * FROM tb_servicos;
 SELECT * FROM tb_produto;
+SELECT * FROM tb_folhaDePagamento;
+SELECT * FROM tb_compra;
 
 -- calculos
 
