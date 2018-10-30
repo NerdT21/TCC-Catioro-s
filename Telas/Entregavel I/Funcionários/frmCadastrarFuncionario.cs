@@ -107,5 +107,30 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
         {
 
         }
+
+        private void mkbCEP_KeyUp(object sender, KeyEventArgs e)
+        {       
+            if (e.KeyData == Keys.Enter)
+            {
+                try
+                {
+                    var ws = new WSCorreios.AtendeClienteClient();
+                    var resposta = ws.consultaCEP(mkbCEP.Text);
+
+                    txtEndereco.Text = resposta.end;
+                    txtCidade.Text = resposta.cidade;
+                    cboUF.Text = resposta.uf;
+
+                }
+                catch (Exception cex)
+                {
+                    string msg = "Não foi possível encontrar o CEP";
+
+                    frmAlert tela = new frmAlert();
+                    tela.LoadScreen(msg);
+                    tela.ShowDialog();
+                }
+            }
+        }
     }
 }

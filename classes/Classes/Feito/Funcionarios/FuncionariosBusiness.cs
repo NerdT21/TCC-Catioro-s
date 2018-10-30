@@ -11,9 +11,18 @@ namespace Catiotro_s.classes.Classes.Cliente
     {
         public int Salvar(FuncionarioDTO funcionario)
         {
+            string nome = funcionario.Nome;
+            nome = nome.Trim();
+            int qtdNome = nome.Count();
+
+            if (qtdNome )
+            {
+
+            }
+
+
             FuncionariosDataBase DB = new FuncionariosDataBase();
-            int id = DB.Salvar(funcionario);
-            return id;
+            return DB.Salvar(funcionario);
         }
         public void Alterar(FuncionarioDTO funcionario)
         {

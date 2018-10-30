@@ -40,6 +40,8 @@ CREATE TABLE `tb_funcionario` (
 	`id_estado` int NOT NULL,
 	`ds_cidade` varchar(50) NOT NULL,
 	`ds_cep` varchar(10) NOT NULL,
+    `ds_rua` varchar(200) NOT NULL,
+    `ds_numero` int,
 	`ds_telefone` varchar(15) NOT NULL,
 	`img_funcionario` longblob NOT NULL,
 	PRIMARY KEY (`id_funcionario`)
@@ -443,6 +445,8 @@ CREATE VIEW vw_consultarFuncionario AS
            tb_estados.nm_estado,
            tb_funcionario.ds_cidade,
 		   tb_funcionario.ds_cep,
+           tb_funcionario.ds_rua,
+           tb_funcionario.ds_numero,
            tb_funcionario.ds_telefone,
            tb_funcionario.img_funcionario
 	FROM tb_funcionario
