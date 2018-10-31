@@ -12,6 +12,7 @@ using Catiotro_s.classes.Classes.Agenda;
 using Catiotro_s.PlugIn;
 using MySql.Data.MySqlClient;
 using Catiotro_s.CustomException.TelasException;
+using Catiotro_s.CustomException;
 
 namespace Catiotro_s.Telas.Entregavel_I.Funcionários
 {
@@ -63,6 +64,8 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 dto.Cidade = txtCidade.Text;
                 dto.IdEstado = estado.Id;
                 dto.Cep = mkbCEP.Text;
+                dto.Rua = txtEndereco.Text;
+                dto.Numero = Convert.ToInt32(txtNum.Text);
                 dto.Imagem = ImagemPlugIn.ConverterParaString(pbxFoto.Image);
 
                 FuncionarioBusiness buss = new FuncionarioBusiness();
@@ -74,13 +77,21 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
             {
                 if (mex.Number == 1062)
                 {
-                    string msg = "Funcionario já está cadastrado. Verifique se o RG ou CPF estão corretamento preenchidos ou se ele já esta no sistema.";
+                    string msg = "Funcionario já está cadastrado. Verifique se o CPF está corretamente preenchido ou se ele já esta no sistema.";
 
                     frmAlert tela = new frmAlert();
                     tela.LoadScreen(msg);
                     tela.ShowDialog();
                 }
             }
+            catch (ValidacaoException vex)
+            {
+                string msg = vex.Message;
+
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }  
             catch (Exception ex)
             {
                 string msg = "Ocorreu um erro: " + ex.Message;

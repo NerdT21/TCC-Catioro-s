@@ -2,6 +2,7 @@
 using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.classes.Classes.Feito.Funcionarios;
 using Catiotro_s.Consultar;
+using Catiotro_s.CustomException;
 using Catiotro_s.CustomException.TelasException;
 using Catiotro_s.PlugIn;
 using System;
@@ -53,6 +54,8 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 txtNome.Text = dto.Nome;
                 txtSalario.Text = dto.Salario.ToString();
                 mkbCEP.Text = dto.Cep;
+                txtEndereco.Text = dto.Rua;
+                txtNum.Text = dto.Numero.ToString();
                 mkbCPF.Text = dto.Cpf;
                 mkbRG.Text = dto.Rg;
                 mkbTelefone.Text = dto.Telefone;
@@ -101,6 +104,8 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 dto.Cidade = txtCidade.Text;
                 dto.IdEstado = estado.Id;
                 dto.Cep = mkbCEP.Text;
+                dto.Rua = txtEndereco.Text;
+                dto.Numero = Convert.ToInt32(txtNum.Text);
                 dto.Imagem = ImagemPlugIn.ConverterParaString(pbxFoto.Image);
 
                 FuncionarioBusiness buss = new FuncionarioBusiness();
@@ -113,6 +118,14 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 tela.ShowDialog();
 
                 this.Close();
+            }
+            catch (ValidacaoException vex)
+            {
+                string msg = vex.Message;
+
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
             }
             catch (Exception ex)
             {

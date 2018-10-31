@@ -88,6 +88,10 @@
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoDTO.cs" />
+    <Compile Include="Validacoes\ValidarCPF_CNPJ.cs" />
+    <Compile Include="Validacoes\ValidarData.cs" />
+    <Compile Include="Validacoes\ValidarEmail.cs" />
+    <Compile Include="Validacoes\ValidarTelefone.cs" />
     <Content Include="Notas\Esqueleto Business.txt" />
     <Content Include="Notas\Esqueleto Database.txt" />
     <Compile Include="classes\Classes\Feito\Estados\EstadoBusiness.cs" />

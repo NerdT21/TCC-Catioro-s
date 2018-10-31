@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlterarFuncionarios));
-            this.cboDepto = new System.Windows.Forms.ComboBox();
-            this.mkbCEP = new System.Windows.Forms.MaskedTextBox();
-            this.cboUF = new System.Windows.Forms.ComboBox();
-            this.txtCidade = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.mkbTelefone = new System.Windows.Forms.MaskedTextBox();
@@ -47,76 +40,24 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pbxFoto = new System.Windows.Forms.PictureBox();
+            this.txtNum = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtEndereco = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cboDepto = new System.Windows.Forms.ComboBox();
+            this.mkbCEP = new System.Windows.Forms.MaskedTextBox();
+            this.cboUF = new System.Windows.Forms.ComboBox();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFoto)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cboDepto
-            // 
-            this.cboDepto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboDepto.FormattingEnabled = true;
-            this.cboDepto.Location = new System.Drawing.Point(211, 219);
-            this.cboDepto.Name = "cboDepto";
-            this.cboDepto.Size = new System.Drawing.Size(167, 21);
-            this.cboDepto.TabIndex = 73;
-            // 
-            // mkbCEP
-            // 
-            this.mkbCEP.Location = new System.Drawing.Point(415, 187);
-            this.mkbCEP.Mask = "00000-000";
-            this.mkbCEP.Name = "mkbCEP";
-            this.mkbCEP.Size = new System.Drawing.Size(62, 20);
-            this.mkbCEP.TabIndex = 72;
-            // 
-            // cboUF
-            // 
-            this.cboUF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboUF.FormattingEnabled = true;
-            this.cboUF.Location = new System.Drawing.Point(330, 186);
-            this.cboUF.Name = "cboUF";
-            this.cboUF.Size = new System.Drawing.Size(48, 21);
-            this.cboUF.TabIndex = 71;
-            // 
-            // txtCidade
-            // 
-            this.txtCidade.Location = new System.Drawing.Point(167, 186);
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(137, 20);
-            this.txtCidade.TabIndex = 70;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(115, 187);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 17);
-            this.label12.TabIndex = 69;
-            this.label12.Text = "Cidade";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(115, 219);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 17);
-            this.label6.TabIndex = 68;
-            this.label6.Text = "Departamento";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(307, 187);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 17);
-            this.label2.TabIndex = 67;
-            this.label2.Text = "UF";
             // 
             // txtSalario
             // 
@@ -214,16 +155,6 @@
             this.label4.TabIndex = 56;
             this.label4.Text = "Salário";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(382, 188);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 17);
-            this.label3.TabIndex = 55;
-            this.label3.Text = "CEP";
-            // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(230, 26);
@@ -269,12 +200,122 @@
             this.pbxFoto.TabIndex = 54;
             this.pbxFoto.TabStop = false;
             // 
+            // txtNum
+            // 
+            this.txtNum.Location = new System.Drawing.Point(442, 216);
+            this.txtNum.Name = "txtNum";
+            this.txtNum.Size = new System.Drawing.Size(44, 20);
+            this.txtNum.TabIndex = 86;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(414, 217);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(24, 17);
+            this.label11.TabIndex = 85;
+            this.label11.Text = "Nº";
+            // 
+            // txtEndereco
+            // 
+            this.txtEndereco.Location = new System.Drawing.Point(153, 217);
+            this.txtEndereco.Name = "txtEndereco";
+            this.txtEndereco.Size = new System.Drawing.Size(258, 20);
+            this.txtEndereco.TabIndex = 79;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(81, 220);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(63, 17);
+            this.label10.TabIndex = 84;
+            this.label10.Text = "Endereço";
+            // 
+            // cboDepto
+            // 
+            this.cboDepto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDepto.FormattingEnabled = true;
+            this.cboDepto.Location = new System.Drawing.Point(255, 249);
+            this.cboDepto.Name = "cboDepto";
+            this.cboDepto.Size = new System.Drawing.Size(169, 21);
+            this.cboDepto.TabIndex = 80;
+            // 
+            // mkbCEP
+            // 
+            this.mkbCEP.Location = new System.Drawing.Point(153, 184);
+            this.mkbCEP.Mask = "00000-000";
+            this.mkbCEP.Name = "mkbCEP";
+            this.mkbCEP.Size = new System.Drawing.Size(62, 20);
+            this.mkbCEP.TabIndex = 76;
+            // 
+            // cboUF
+            // 
+            this.cboUF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUF.FormattingEnabled = true;
+            this.cboUF.Location = new System.Drawing.Point(439, 183);
+            this.cboUF.Name = "cboUF";
+            this.cboUF.Size = new System.Drawing.Size(47, 21);
+            this.cboUF.TabIndex = 78;
+            // 
+            // txtCidade
+            // 
+            this.txtCidade.Location = new System.Drawing.Point(274, 183);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(137, 20);
+            this.txtCidade.TabIndex = 77;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(222, 184);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(49, 17);
+            this.label12.TabIndex = 83;
+            this.label12.Text = "Cidade";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(157, 252);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 17);
+            this.label6.TabIndex = 82;
+            this.label6.Text = "Departamento";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(412, 184);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 17);
+            this.label2.TabIndex = 81;
+            this.label2.Text = "UF";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(117, 187);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 17);
+            this.label3.TabIndex = 75;
+            this.label3.Text = "CEP";
+            // 
             // frmAlterarFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 366);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtNum);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtEndereco);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.cboDepto);
             this.Controls.Add(this.mkbCEP);
             this.Controls.Add(this.cboUF);
@@ -282,6 +323,8 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtSalario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mkbTelefone);
@@ -293,7 +336,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.pbxFoto);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
@@ -310,13 +352,6 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cboDepto;
-        private System.Windows.Forms.MaskedTextBox mkbCEP;
-        private System.Windows.Forms.ComboBox cboUF;
-        private System.Windows.Forms.TextBox txtCidade;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MaskedTextBox mkbTelefone;
@@ -328,9 +363,20 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pbxFoto;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNum;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtEndereco;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cboDepto;
+        private System.Windows.Forms.MaskedTextBox mkbCEP;
+        private System.Windows.Forms.ComboBox cboUF;
+        private System.Windows.Forms.TextBox txtCidade;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
