@@ -36,6 +36,10 @@ namespace Catiotro_s.classes.Classes.Cliente
             {
                 throw new ValidacaoException("O campo 'Salário' deve ser definido.");
             }
+            else if (salario == 0.00m)
+            {
+                throw new ValidacaoException("O campo 'Salário' não pode ser zero");
+            }
 
             // ============================ CIDADE =============================
 

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlterarFuncionarios));
-            this.txtSalario = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.mkbTelefone = new System.Windows.Forms.MaskedTextBox();
             this.mkbRG = new System.Windows.Forms.MaskedTextBox();
@@ -56,15 +55,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.nudSalario = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSalario)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtSalario
-            // 
-            this.txtSalario.Location = new System.Drawing.Point(379, 122);
-            this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(83, 20);
-            this.txtSalario.TabIndex = 66;
             // 
             // panel1
             // 
@@ -80,7 +74,7 @@
             this.mkbTelefone.Mask = "(00)00000-0000";
             this.mkbTelefone.Name = "mkbTelefone";
             this.mkbTelefone.Size = new System.Drawing.Size(82, 20);
-            this.mkbTelefone.TabIndex = 64;
+            this.mkbTelefone.TabIndex = 5;
             // 
             // mkbRG
             // 
@@ -88,7 +82,7 @@
             this.mkbRG.Mask = "00.000.000-A";
             this.mkbRG.Name = "mkbRG";
             this.mkbRG.Size = new System.Drawing.Size(83, 20);
-            this.mkbRG.TabIndex = 63;
+            this.mkbRG.TabIndex = 4;
             // 
             // mkbCPF
             // 
@@ -96,7 +90,7 @@
             this.mkbCPF.Mask = "000.000.000-00";
             this.mkbCPF.Name = "mkbCPF";
             this.mkbCPF.Size = new System.Drawing.Size(82, 20);
-            this.mkbCPF.TabIndex = 62;
+            this.mkbCPF.TabIndex = 3;
             // 
             // label8
             // 
@@ -123,7 +117,7 @@
             this.txtEmail.Location = new System.Drawing.Point(230, 52);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(229, 20);
-            this.txtEmail.TabIndex = 59;
+            this.txtEmail.TabIndex = 2;
             // 
             // label7
             // 
@@ -160,7 +154,8 @@
             this.txtNome.Location = new System.Drawing.Point(230, 26);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(229, 20);
-            this.txtNome.TabIndex = 53;
+            this.txtNome.TabIndex = 1;
+            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // label1
             // 
@@ -183,7 +178,7 @@
             this.button1.Location = new System.Drawing.Point(230, 289);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 50);
-            this.button1.TabIndex = 74;
+            this.button1.TabIndex = 13;
             this.button1.Text = "Alterar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
@@ -205,7 +200,8 @@
             this.txtNum.Location = new System.Drawing.Point(442, 216);
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(44, 20);
-            this.txtNum.TabIndex = 86;
+            this.txtNum.TabIndex = 11;
+            this.txtNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
             // 
             // label11
             // 
@@ -222,7 +218,8 @@
             this.txtEndereco.Location = new System.Drawing.Point(153, 217);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(258, 20);
-            this.txtEndereco.TabIndex = 79;
+            this.txtEndereco.TabIndex = 10;
+            this.txtEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // label10
             // 
@@ -241,7 +238,7 @@
             this.cboDepto.Location = new System.Drawing.Point(255, 249);
             this.cboDepto.Name = "cboDepto";
             this.cboDepto.Size = new System.Drawing.Size(169, 21);
-            this.cboDepto.TabIndex = 80;
+            this.cboDepto.TabIndex = 12;
             // 
             // mkbCEP
             // 
@@ -249,7 +246,7 @@
             this.mkbCEP.Mask = "00000-000";
             this.mkbCEP.Name = "mkbCEP";
             this.mkbCEP.Size = new System.Drawing.Size(62, 20);
-            this.mkbCEP.TabIndex = 76;
+            this.mkbCEP.TabIndex = 7;
             // 
             // cboUF
             // 
@@ -258,14 +255,15 @@
             this.cboUF.Location = new System.Drawing.Point(439, 183);
             this.cboUF.Name = "cboUF";
             this.cboUF.Size = new System.Drawing.Size(47, 21);
-            this.cboUF.TabIndex = 78;
+            this.cboUF.TabIndex = 9;
             // 
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(274, 183);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(137, 20);
-            this.txtCidade.TabIndex = 77;
+            this.txtCidade.TabIndex = 8;
+            this.txtCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // label12
             // 
@@ -307,11 +305,30 @@
             this.label3.TabIndex = 75;
             this.label3.Text = "CEP";
             // 
+            // nudSalario
+            // 
+            this.nudSalario.DecimalPlaces = 2;
+            this.nudSalario.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudSalario.Location = new System.Drawing.Point(379, 124);
+            this.nudSalario.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudSalario.Name = "nudSalario";
+            this.nudSalario.Size = new System.Drawing.Size(83, 20);
+            this.nudSalario.TabIndex = 6;
+            // 
             // frmAlterarFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 366);
+            this.Controls.Add(this.nudSalario);
             this.Controls.Add(this.txtNum);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtEndereco);
@@ -325,7 +342,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtSalario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mkbTelefone);
             this.Controls.Add(this.mkbRG);
@@ -344,6 +360,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catioro\'s";
             ((System.ComponentModel.ISupportInitialize)(this.pbxFoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSalario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,7 +369,6 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MaskedTextBox mkbTelefone;
         private System.Windows.Forms.MaskedTextBox mkbRG;
@@ -378,5 +394,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown nudSalario;
     }
 }

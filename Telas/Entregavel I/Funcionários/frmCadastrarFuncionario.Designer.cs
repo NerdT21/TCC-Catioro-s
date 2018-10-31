@@ -35,14 +35,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.mkbRG = new System.Windows.Forms.MaskedTextBox();
             this.mkbCPF = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.mkbTelefone = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtSalario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -56,7 +54,10 @@
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtNum = new System.Windows.Forms.TextBox();
+            this.nudSalario = new System.Windows.Forms.NumericUpDown();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSalario)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -75,6 +76,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(229, 20);
             this.txtNome.TabIndex = 1;
+            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmCadastrarFuncionario_KeyPress);
             // 
             // label3
             // 
@@ -102,7 +104,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(178, 148);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 17);
+            this.label5.Size = new System.Drawing.Size(57, 17);
             this.label5.TabIndex = 6;
             this.label5.Text = "Telefone";
             // 
@@ -115,13 +117,6 @@
             this.label7.Size = new System.Drawing.Size(44, 17);
             this.label7.TabIndex = 8;
             this.label7.Text = "E-mail";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(238, 78);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(229, 20);
-            this.txtEmail.TabIndex = 2;
             // 
             // mkbRG
             // 
@@ -175,13 +170,6 @@
             this.panel1.Size = new System.Drawing.Size(577, 5);
             this.panel1.TabIndex = 17;
             // 
-            // txtSalario
-            // 
-            this.txtSalario.Location = new System.Drawing.Point(387, 148);
-            this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(83, 20);
-            this.txtSalario.TabIndex = 6;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -218,6 +206,7 @@
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(137, 20);
             this.txtCidade.TabIndex = 8;
+            this.txtCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCidade_KeyPress);
             // 
             // cboUF
             // 
@@ -255,7 +244,7 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::Catiotro_s.Properties.Resources.icons8_save_26;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(258, 323);
+            this.button1.Location = new System.Drawing.Point(241, 329);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 43);
             this.button1.TabIndex = 13;
@@ -267,6 +256,7 @@
             // pbxFoto
             // 
             this.pbxFoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbxFoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxFoto.Image = ((System.Drawing.Image)(resources.GetObject("pbxFoto.Image")));
             this.pbxFoto.Location = new System.Drawing.Point(44, 55);
             this.pbxFoto.Name = "pbxFoto";
@@ -291,7 +281,8 @@
             this.txtEndereco.Location = new System.Drawing.Point(137, 242);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(258, 20);
-            this.txtEndereco.TabIndex = 11;
+            this.txtEndereco.TabIndex = 10;
+            this.txtEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmCadastrarFuncionario_KeyPress);
             // 
             // label11
             // 
@@ -308,12 +299,40 @@
             this.txtNum.Location = new System.Drawing.Point(426, 241);
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(44, 20);
-            this.txtNum.TabIndex = 26;
+            this.txtNum.TabIndex = 11;
+            this.txtNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
+            // 
+            // nudSalario
+            // 
+            this.nudSalario.DecimalPlaces = 2;
+            this.nudSalario.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudSalario.Location = new System.Drawing.Point(387, 148);
+            this.nudSalario.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudSalario.Name = "nudSalario";
+            this.nudSalario.Size = new System.Drawing.Size(83, 20);
+            this.nudSalario.TabIndex = 6;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(238, 81);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(229, 20);
+            this.txtEmail.TabIndex = 2;
             // 
             // frmCadastrarFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.nudSalario);
             this.Controls.Add(this.txtNum);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtEndereco);
@@ -326,14 +345,12 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtSalario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mkbTelefone);
             this.Controls.Add(this.mkbRG);
             this.Controls.Add(this.mkbCPF);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -344,7 +361,9 @@
             this.Name = "frmCadastrarFuncionario";
             this.Size = new System.Drawing.Size(583, 405);
             this.Load += new System.EventHandler(this.frmCadastrarFuncionario_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmCadastrarFuncionario_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pbxFoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSalario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,14 +378,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.MaskedTextBox mkbRG;
         private System.Windows.Forms.MaskedTextBox mkbCPF;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.MaskedTextBox mkbTelefone;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label12;
@@ -379,5 +396,7 @@
         private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtNum;
+        private System.Windows.Forms.NumericUpDown nudSalario;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }

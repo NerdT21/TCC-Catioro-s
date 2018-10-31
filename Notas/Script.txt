@@ -35,7 +35,7 @@ CREATE TABLE `tb_funcionario` (
 	`id_depto` int NOT NULL,
 	`nm_nome` varchar(50) NOT NULL,
 	`ds_email` varchar(50) NOT NULL,
-	`ds_cpf` varchar(50) NOT NULL,
+	`ds_cpf` varchar(50) NOT NULL UNIQUE,
 	`ds_rg` varchar(50) NOT NULL,
 	`id_estado` int NOT NULL,
 	`ds_cidade` varchar(50) NOT NULL,
@@ -243,12 +243,6 @@ ALTER TABLE `tb_servicos` ADD CONSTRAINT `tb_servicos_fk0` FOREIGN KEY (`id_anim
 
 ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk0` FOREIGN KEY (`id_funcionario`) REFERENCES `tb_funcionario`(`id_funcionario`);
 
-ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk1` FOREIGN KEY (`id_inss`) REFERENCES `tb_inss`(`id_inss`);
-
-ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk2` FOREIGN KEY (`id_salFamilia`) REFERENCES `tb_salarioFamilia`(`id_salFamilia`);
-
-ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk3` FOREIGN KEY (`id_funcionario`) REFERENCES `tb_funcionario`(`id_funcionario`);
-
 
 -- INSERTS
 
@@ -339,10 +333,6 @@ INSERT INTO tb_estados(`id_estado`,`nm_estado`)
 INSERT INTO tb_estados(`id_estado`,`nm_estado`)
 				VALUES('27','TO');
              
-              
-INSERT INTO tb_funcionario(`id_funcionario`, `ds_salario`,`id_depto`, `nm_nome`, `ds_email`,`ds_cpf`,`ds_rg`, `id_estado`,`ds_cidade`, `ds_cep`, `ds_telefone`,`img_funcionario`)
-					VALUES('1', '2500.00', '1', 'Jhonny', 'Jhonn@gmail.com', '253.256.256.21', '25.526.254-X', '1', 'São Paulo', '04556.000', '(11)22342-5652', '');
-
 INSERT INTO tb_inss(`id_inss`, `ds_salarioDeContribuicao`, `vl_aliquota`)
 			VALUES('1', '1659.38', '8');
             
@@ -528,7 +518,7 @@ CREATE VIEW vw_ganhos AS
         
         
 -- DROP VIEW vw_despesas;
-ALTER VIEW vw_despesas AS
+CREATE VIEW vw_despesas AS
 	SELECT sum(vl_total) vl_total, dt_referencia 
       FROM 
       ( 

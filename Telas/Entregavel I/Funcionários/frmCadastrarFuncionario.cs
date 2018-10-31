@@ -56,7 +56,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 FuncionarioDTO dto = new FuncionarioDTO();
                 dto.Nome = txtNome.Text;
                 dto.Rg = mkbRG.Text;
-                dto.Salario = Convert.ToDecimal(txtSalario.Text);
+                dto.Salario = nudSalario.Value;
                 dto.Cpf = mkbCPF.Text;
                 dto.Telefone = mkbTelefone.Text;
                 dto.Email = txtEmail.Text;
@@ -65,7 +65,16 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 dto.IdEstado = estado.Id;
                 dto.Cep = mkbCEP.Text;
                 dto.Rua = txtEndereco.Text;
-                dto.Numero = Convert.ToInt32(txtNum.Text);
+
+                if (txtNum.Text == string.Empty)
+                {
+                    dto.Numero = 0;
+                }
+                else
+                {
+                    dto.Numero = Convert.ToInt32(txtNum.Text);
+                }
+
                 dto.Imagem = ImagemPlugIn.ConverterParaString(pbxFoto.Image);
 
                 FuncionarioBusiness buss = new FuncionarioBusiness();
@@ -91,7 +100,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 frmAlert tela = new frmAlert();
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
-            }  
+            }
             catch (Exception ex)
             {
                 string msg = "Ocorreu um erro: " + ex.Message;
@@ -100,7 +109,6 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
             }
-
         }
 
         private void pbxFoto_Click(object sender, EventArgs e)
@@ -141,6 +149,42 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                     tela.LoadScreen(msg);
                     tela.ShowDialog();
                 }
+            }
+        }
+
+        private void frmCadastrarFuncionario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == true || char.IsWhiteSpace(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == true || char.IsWhiteSpace(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }
