@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.classes.Classes.Feito.Fornecedores;
 using Catiotro_s.CustomException.TelasException;
+using Catiotro_s.Telas.Entregavel_II.Furnecedor;
 
 namespace Catiotro_s.Consultar
 {
@@ -123,7 +124,20 @@ namespace Catiotro_s.Consultar
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
+            if (fornecedor == null)
+            {
+                string msg = "Selecione um fornecedor para altera-lo.";
 
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            else
+            {
+                frmAlterarFornecedor tela = new frmAlterarFornecedor();
+                tela.LoadScreen(fornecedor);
+                tela.ShowDialog();
+            }
         }
     }
 }

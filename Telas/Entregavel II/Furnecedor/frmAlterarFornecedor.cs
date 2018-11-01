@@ -34,7 +34,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Furnecedor
             cboEstado.DisplayMember = nameof(EstadoDTO.Estado);
             cboEstado.DataSource = lista;
         }
-        void LoadScreen(FornecedorView view)
+        public void LoadScreen(FornecedorView view)
         {
             fornecedor = view;
             txtNome.Text = fornecedor.Nome;
