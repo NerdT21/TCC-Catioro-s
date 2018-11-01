@@ -26,12 +26,14 @@ namespace Catiotro_s.classes.Classes.Cliente
 
         public string Cep { get; set; }
 
+        public string Rua { get; set; }
+
+        public int Numero { get; set; }
+
         public string Cidade { get; set; }
 
         public string Telefone { get; set; }
 
         public string Imagem { get; set; }
-
-
     }
 }

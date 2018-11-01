@@ -21,6 +21,8 @@ namespace Catiotro_s.classes.Classes.Cliente
                                                               ds_cpf,
                                                               ds_rg,
                                                               ds_cep,
+                                                              ds_rua,
+                                                              ds_numero,
                                                               ds_cidade,
                                                               ds_telefone,
                                                               img_funcionario)
@@ -32,6 +34,8 @@ namespace Catiotro_s.classes.Classes.Cliente
                                                               @ds_cpf,
                                                               @ds_rg,
                                                               @ds_cep,
+                                                              @ds_rua,
+                                                              @ds_numero,
                                                               @ds_cidade,
                                                               @ds_telefone,
                                                               @img_funcionario)";
@@ -45,6 +49,8 @@ namespace Catiotro_s.classes.Classes.Cliente
             parms.Add(new MySqlParameter("ds_cpf", funcio.Cpf));
             parms.Add(new MySqlParameter("ds_rg", funcio.Rg));
             parms.Add(new MySqlParameter("ds_cep", funcio.Cep));
+            parms.Add(new MySqlParameter("ds_rua", funcio.Rua));
+            parms.Add(new MySqlParameter("ds_numero", funcio.Numero));
             parms.Add(new MySqlParameter("ds_cidade", funcio.Cidade));
             parms.Add(new MySqlParameter("ds_telefone", funcio.Telefone));
             parms.Add(new MySqlParameter("img_funcionario", funcio.Imagem));
@@ -66,6 +72,8 @@ namespace Catiotro_s.classes.Classes.Cliente
                                                         id_estado = @id_estado,                
                                                         ds_cidade = @ds_cidade,
                                                         ds_cep = @ds_cep,
+                                                        ds_rua = @ds_rua,
+                                                        ds_numero = @ds_numero,    
                                                         ds_telefone = @ds_telefone,
                                                         img_funcionario = @img_funcionario
                                                         WHERE id_funcionario = @id_funcionario";
@@ -81,6 +89,8 @@ namespace Catiotro_s.classes.Classes.Cliente
             parms.Add(new MySqlParameter("id_estado", funcio.IdEstado));
             parms.Add(new MySqlParameter("ds_cidade", funcio.Cidade));
             parms.Add(new MySqlParameter("ds_cep", funcio.Cep));
+            parms.Add(new MySqlParameter("ds_rua", funcio.Rua));
+            parms.Add(new MySqlParameter("ds_numero", funcio.Numero));
             parms.Add(new MySqlParameter("ds_telefone", funcio.Telefone));
             parms.Add(new MySqlParameter("img_funcionario", funcio.Imagem));
 
@@ -119,6 +129,8 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Cpf = reader.GetString("ds_cpf");
                 add.Rg = reader.GetString("ds_rg");
                 add.Cep = reader.GetString("ds_cep");
+                add.Rua = reader.GetString("ds_rua");
+                add.Numero = reader.GetInt32("ds_numero");
                 add.Cidade = reader.GetString("ds_cidade");
                 add.Telefone = reader.GetString("ds_telefone");
                 add.Imagem = reader.GetString("img_funcionario");
@@ -153,6 +165,8 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Cpf = reader.GetString("ds_cpf");
                 add.Rg = reader.GetString("ds_rg");
                 add.Cep = reader.GetString("ds_cep");
+                add.Rua = reader.GetString("ds_rua");
+                add.Numero = reader.GetInt32("ds_numero");
                 add.Cidade = reader.GetString("ds_cidade");
                 add.Telefone = reader.GetString("ds_telefone");
                 add.Imagem = reader.GetString("img_funcionario");

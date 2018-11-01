@@ -29,17 +29,40 @@ CREATE TABLE `tb_cliente` (
 	PRIMARY KEY (`id_cliente`)
 );
 
+use CatiorosDB;
+SELECt * FROm tb_login;
+
+CREATE TABLE `tb_login` (
+	`id_usuario` int NOT NULL AUTO_INCREMENT,
+    `nm_funcionario` varchar(50) NOT NULL,
+	`nm_usuario` varchar(50) NOT NULL UNIQUE,
+	`ds_senha` varchar(20) NOT NULL,
+    `ds_email` varchar(150) NOT NULL UNIQUE,
+	`pr_permissaoADM` bool NOT NULL,
+    `pr_permissaoAtendente` bool NOT NULL,
+    `pr_permissaoFinanceiro` bool NOT NULL,
+    `pr_permissaoVendedor` bool NOT NULL,
+    `pr_permissaoCompras` bool NOT NULL,
+    `pr_permissaoServicos` bool NOT NULL,
+    `pr_permissaoPagamentos` bool NOT NULL, 
+    `pr_permissaoFornecedores` bool NOT NULL, 
+    `pr_permissaoProdutos` bool NOT NULL,
+	PRIMARY KEY (`id_usuario`)
+);
+
 CREATE TABLE `tb_funcionario` (
 	`id_funcionario` int NOT NULL AUTO_INCREMENT,
 	`ds_salario` DECIMAL(15,2) NOT NULL,
 	`id_depto` int NOT NULL,
 	`nm_nome` varchar(50) NOT NULL,
 	`ds_email` varchar(50) NOT NULL,
-	`ds_cpf` varchar(50) NOT NULL,
+	`ds_cpf` varchar(50) NOT NULL UNIQUE,
 	`ds_rg` varchar(50) NOT NULL,
 	`id_estado` int NOT NULL,
 	`ds_cidade` varchar(50) NOT NULL,
 	`ds_cep` varchar(10) NOT NULL,
+    `ds_rua` varchar(200) NOT NULL,
+    `ds_numero` int,
 	`ds_telefone` varchar(15) NOT NULL,
 	`img_funcionario` longblob NOT NULL,
 	PRIMARY KEY (`id_funcionario`)
@@ -107,18 +130,6 @@ CREATE TABLE `tb_Depto` (
 	`nm_depto` varchar(50) NOT NULL,
 	`ds_depto` varchar(300) NOT NULL,
 	PRIMARY KEY (`id_depto`)
-);
-
-CREATE TABLE `tb_login` (
-	`id_usuario` int NOT NULL AUTO_INCREMENT,
-    `nm_funcionario` varchar(50) NOT NULL,
-	`nm_usuario` varchar(50) NOT NULL UNIQUE,
-	`ds_senha` varchar(20) NOT NULL,
-    `ds_email` varchar(150) NOT NULL UNIQUE,
-	`pr_permissaoADM` bool NOT NULL,
-	`pr_permissaoCadastro` bool NOT NULL,
-	`pr_permissaoConsulta` bool NOT NULL,
-	PRIMARY KEY (`id_usuario`)
 );
 
 CREATE TABLE `tb_formaDePagamento` (
@@ -241,17 +252,11 @@ ALTER TABLE `tb_servicos` ADD CONSTRAINT `tb_servicos_fk0` FOREIGN KEY (`id_anim
 
 ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk0` FOREIGN KEY (`id_funcionario`) REFERENCES `tb_funcionario`(`id_funcionario`);
 
-ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk1` FOREIGN KEY (`id_inss`) REFERENCES `tb_inss`(`id_inss`);
-
-ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk2` FOREIGN KEY (`id_salFamilia`) REFERENCES `tb_salarioFamilia`(`id_salFamilia`);
-
-ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk3` FOREIGN KEY (`id_funcionario`) REFERENCES `tb_funcionario`(`id_funcionario`);
-
 
 -- INSERTS
 
-INSERT INTO tb_login(`id_usuario`,`nm_funcionario`, `nm_usuario`, `ds_senha`,`ds_email`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`)
-		      VALUES('1','adm', 'adm', 'adm','adm', '1', '1', '1');
+INSERT INTO tb_login(`id_usuario`,`nm_funcionario`, `nm_usuario`, `ds_senha`,`ds_email`, `pr_permissaoAdm`, `pr_permissaoAtendente`, `pr_permissaoFinanceiro`, `pr_permissaoVendedor`, `pr_permissaoCompras`, `pr_permissaoServicos`, `pr_permissaoPagamentos`, `pr_permissaoFornecedores`, `pr_permissaoProdutos`)
+		      VALUES('1','NerdTeen', 'NerdT', 'NerdT2018','nerdt21@gmail.com', '1', '1', '1', '1', '1', '1', '1', '1', '1');
               
 INSERT INTO tb_Depto(`id_depto`, `nm_depto`, `ds_depto`)
               VALUES('1','nome','descrudas');
@@ -337,10 +342,6 @@ INSERT INTO tb_estados(`id_estado`,`nm_estado`)
 INSERT INTO tb_estados(`id_estado`,`nm_estado`)
 				VALUES('27','TO');
              
-              
-INSERT INTO tb_funcionario(`id_funcionario`, `ds_salario`,`id_depto`, `nm_nome`, `ds_email`,`ds_cpf`,`ds_rg`, `id_estado`,`ds_cidade`, `ds_cep`, `ds_telefone`,`img_funcionario`)
-					VALUES('1', '2500.00', '1', 'Jhonny', 'Jhonn@gmail.com', '253.256.256.21', '25.526.254-X', '1', 'São Paulo', '04556.000', '(11)22342-5652', '');
-
 INSERT INTO tb_inss(`id_inss`, `ds_salarioDeContribuicao`, `vl_aliquota`)
 			VALUES('1', '1659.38', '8');
             
@@ -443,6 +444,8 @@ CREATE VIEW vw_consultarFuncionario AS
            tb_estados.nm_estado,
            tb_funcionario.ds_cidade,
 		   tb_funcionario.ds_cep,
+           tb_funcionario.ds_rua,
+           tb_funcionario.ds_numero,
            tb_funcionario.ds_telefone,
            tb_funcionario.img_funcionario
 	FROM tb_funcionario
@@ -524,7 +527,7 @@ CREATE VIEW vw_ganhos AS
         
         
 -- DROP VIEW vw_despesas;
-ALTER VIEW vw_despesas AS
+CREATE VIEW vw_despesas AS
 	SELECT sum(vl_total) vl_total, dt_referencia 
       FROM 
       ( 

@@ -1,5 +1,6 @@
 ﻿using Catiotro_s.classes.Classes.Login;
 using Catiotro_s.Consultar;
+using Catiotro_s.CustomException;
 using Catiotro_s.CustomException.TelasException;
 using Catiotro_s.Resgistros;
 using Catiotro_s.Telas.Entregavel_I;
@@ -30,7 +31,7 @@ namespace Catiotro_s.Telas.Entregavel_I.LogIn
 
         private void label6_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void frmCadastrarLogin_Load(object sender, EventArgs e)
@@ -38,24 +39,9 @@ namespace Catiotro_s.Telas.Entregavel_I.LogIn
 
         }
 
-        private void ckbAdm_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckbAdm.Checked == true)
-            {
-                ckbCadastar.Checked = true;
-                ckbConsultar.Checked = true;
-            }
-
-            if (ckbConsultar.Checked == false)
-            {
-                ckbCadastar.Checked = false;
-                ckbConsultar.Checked = false;
-            }
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,24 +56,33 @@ namespace Catiotro_s.Telas.Entregavel_I.LogIn
                     alert.LoadScreen(msgm);
                     alert.ShowDialog();
                 }
+                else
+                {
+                    LoginDTO dto = new LoginDTO();
+                    dto.Nome = txtUsuario.Text;
+                    dto.Senha = txtSenha.Text;
+                    dto.NmUsuario = txtNome.Text;
+                    dto.Email = txtEmail.Text;
+                    dto.PermicaoADM = ckbAdm.Checked;
+                    dto.PermicaoAtendente = ckbAtendente.Checked;
+                    dto.PermicaoCompras = ckbCompras.Checked;
+                    dto.PermicaoFinanceiro = ckbFinanceiro.Checked;
+                    dto.PermicaoFuncionarios = ckbPagamentos.Checked;
+                    dto.PermicaoServicos = ckbServico.Checked;
+                    dto.PermicaoVendedor = ckbVendas.Checked;
+                    dto.PermicaoFornecedor = ckbFornecedores.Checked;
+                    dto.PermicaoProdutos = ckbProdutos.Checked;
 
-                LoginDTO dto = new LoginDTO();
-                dto.Nome = txtUsuario.Text;
-                dto.Senha = txtSenha.Text;
-                dto.NmUsuario = txtNome.Text;
-                dto.Email = txtEmail.Text;
-                dto.PermicaoADM = ckbAdm.Checked;
-                dto.PermicaoCadastro = ckbCadastar.Checked;
-                dto.PermicaoConsulta = ckbConsultar.Checked;
+                    LoginBusiness buss = new LoginBusiness();
+                    buss.Salvar(dto);
 
-                LoginBusiness buss = new LoginBusiness();
-                buss.Salvar(dto);
+                    string msg = "Novo usuário criado com sucesso!";
 
-                string msg = "Novo usuário criado com sucesso!";
+                    frmMessage tela = new frmMessage();
+                    tela.LoadScreen(msg);
+                    tela.ShowDialog();
+                }
 
-                frmMessage tela = new frmMessage();
-                tela.LoadScreen(msg);
-                tela.ShowDialog();
             }
             catch (MySqlException mex)
             {
@@ -99,6 +94,14 @@ namespace Catiotro_s.Telas.Entregavel_I.LogIn
                     tela.LoadScreen(msg);
                     tela.ShowDialog();
                 }
+            }
+            catch (ValidacaoException vex)
+            {
+                string msg = vex.Message;
+
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -116,7 +119,80 @@ namespace Catiotro_s.Telas.Entregavel_I.LogIn
             tela.Show();
             this.Close();
         }
+
+        private void ckbAdm_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ckbFinanceiro_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ckbAtendente_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ckbAdm_CheckedChanged_2(object sender, EventArgs e)
+        {
+            if (ckbAdm.Checked == true)
+            {
+                string msg = "Ao definir esse usuário com permissão ADM, ele terá acesso a todas as funções do sistema." +
+                    "\n Deseja mesmo torná-lo ADM?";
+
+                frmQuestion tela = new frmQuestion();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+
+                bool click = tela.BotaoYes;
+
+                if (click == true)
+                {
+                    ckbAtendente.Checked = true;
+                    ckbCompras.Checked = true;
+                    ckbFinanceiro.Checked = true;
+                    ckbPagamentos.Checked = true;
+                    ckbServico.Checked = true;
+                    ckbVendas.Checked = true;
+                    ckbFornecedores.Checked = true;
+                    ckbProdutos.Checked = true;
+                }
+            }
+            else
+            {
+                ckbAtendente.Checked = false;
+                ckbCompras.Checked = false;
+                ckbFinanceiro.Checked = false;
+                ckbPagamentos.Checked = false;
+                ckbServico.Checked = false;
+                ckbVendas.Checked = false;
+                ckbFornecedores.Checked = false;
+                ckbProdutos.Checked = false;
+            }
+        }
     }
 }
-   
+
 

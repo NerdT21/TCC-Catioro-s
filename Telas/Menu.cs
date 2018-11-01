@@ -1,4 +1,5 @@
-﻿using Catiotro_s.Consultar;
+﻿using Catiotro_s.classes.Classes.Login;
+using Catiotro_s.Consultar;
 using Catiotro_s.Resgistros;
 using Catiotro_s.Telas.Entregavel_I;
 using Catiotro_s.Telas.Entregavel_I.Funcionários;
@@ -27,6 +28,77 @@ namespace Catiotro_s
         public Menu()
         {
             InitializeComponent();
+            VerificarPermissoes();
+        }
+
+        void VerificarPermissoes()
+        {
+            if (UserSession.UsuarioLogado.PermicaoADM == false)
+            {
+                if (UserSession.UsuarioLogado.PermicaoAtendente == false)
+                {
+                    animalToolStripMenuItem.Enabled = false;
+                    clienteToolStripMenuItem.Enabled = false;
+                    clienteToolStripMenuItem1.Enabled = false;
+                    animalToolStripMenuItem1.Enabled = false;
+                }
+
+                if (UserSession.UsuarioLogado.PermicaoCompras == false)
+                {
+                    compraToolStripMenuItem.Enabled = false;
+                    verComprasToolStripMenuItem1.Enabled = false;
+                }
+
+                if (UserSession.UsuarioLogado.PermicaoVendedor == false)
+                {
+                    verVendasToolStripMenuItem.Enabled = false;
+                    vendaToolStripMenuItem.Enabled = false;
+                }
+
+                if (UserSession.UsuarioLogado.PermicaoFinanceiro == false)
+                {
+                    financeiroToolStripMenuItem.Enabled = false;
+                    gastosToolStripMenuItem.Enabled = false;
+                    verGastosToolStripMenuItem.Enabled = false;
+                }
+
+                if (UserSession.UsuarioLogado.PermicaoFuncionarios == false)
+                {
+                    funcionáriosToolStripMenuItem.Enabled = false;
+                    funcionáriosToolStripMenuItem1.Enabled = false;
+                    folhaDePagamentoToolStripMenuItem.Enabled = false;
+                    pamentosToolStripMenuItem.Enabled = false;
+                    departamentosToolStripMenuItem.Enabled = false;
+                }
+
+                if (UserSession.UsuarioLogado.PermicaoServicos == false)
+                {
+                    serviçoToolStripMenuItem1.Enabled = false;
+                    verServiçosToolStripMenuItem1.Enabled = false;
+                }
+
+                if (UserSession.UsuarioLogado.PermicaoFornecedor == false)
+                {
+                    fornecedorToolStripMenuItem.Enabled = false;
+                    fornecedorToolStripMenuItem1.Enabled = false;
+                }
+
+                if (UserSession.UsuarioLogado.PermicaoProdutos == false)
+                {
+                    produtoToolStripMenuItem1.Enabled = false;
+                    itensToolStripMenuItem.Enabled = false;
+                    produtoToolStripMenuItem2.Enabled = false;
+                    itensToolStripMenuItem1.Enabled = false;
+                }
+
+                if (UserSession.UsuarioLogado.PermicaoVendedor == false &&
+                    UserSession.UsuarioLogado.PermicaoCompras == false &&
+                    UserSession.UsuarioLogado.PermicaoServicos == false && 
+                    UserSession.UsuarioLogado.PermicaoFinanceiro == false)
+                {
+                    compraEVendaToolStripMenuItem.Enabled = false;
+                }
+            }
         }
 
         public void OpenScreen(UserControl control)
@@ -270,6 +342,16 @@ namespace Catiotro_s
         {
             frmConsultarGastosAdicionais tela = new frmConsultarGastosAdicionais();
             OpenScreen(tela);
+        }
+
+        private void financeiroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
 
         private void pnlTopo_MouseDown(object sender, MouseEventArgs e)
