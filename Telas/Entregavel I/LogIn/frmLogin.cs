@@ -67,7 +67,7 @@ namespace Catiotro_s.Telas.Entregavel_I.LogIn
                 }
                 else
                 {
-                    string msg = "Nome de usuário ou senha incorretos.";
+                    string msg = "É preciso ser um administrador do sistema para acessar o cadastro de usuários.";
 
                     frmAlert tela = new frmAlert();
                     tela.LoadScreen(msg);

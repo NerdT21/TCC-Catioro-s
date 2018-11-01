@@ -21,10 +21,20 @@ namespace Catiotro_s.classes.Classes.Login
 
         public bool PermicaoADM { get; set; }
 
-        public bool PermicaoCadastro { get; set; }
+        public bool PermicaoAtendente { get; set; }
 
-        public bool PermicaoConsulta { get; set; }
+        public bool PermicaoFinanceiro { get; set; }
 
+        public bool PermicaoVendedor { get; set; }
 
+        public bool PermicaoCompras { get; set; }
+
+        public bool PermicaoServicos { get; set; }
+
+        public bool PermicaoFuncionarios { get; set; }
+
+        public bool PermicaoProdutos { get; set; }
+        
+        public bool PermicaoFornecedor { get; set; }
     }
 }

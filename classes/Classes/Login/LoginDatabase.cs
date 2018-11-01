@@ -14,29 +14,47 @@ namespace Catiotro_s.classes.Classes.Login
         public int Salvar(LoginDTO dto)
         {
 
-            string script = @"INSERT INTO tb_login(nm_usuario,
-                                                   nm_funcionario,
+            string script = @"INSERT INTO tb_login(nm_funcionario,
+                                                   nm_usuario,             
                                                    ds_senha,
                                                    ds_email,
                                                    pr_permissaoADM,
-                                                   pr_permissaoCadastro,
-                                                   pr_permissaoConsulta)
-                                           VALUES (@nm_usuario,
-                                                   @nm_funcionario,
+                                                   pr_permissaoAtendente,
+                                                   pr_permissaoFinanceiro,
+                                                   pr_permissaoVendedor,
+                                                   pr_permissaoCompras,
+                                                   pr_permissaoServicos,
+                                                   pr_permissaoPagamentos,
+                                                   pr_permissaoFornecedores,
+                                                   pr_permissaoProdutos)
+                                           VALUES (@nm_funcionario,
+                                                   @nm_usuario,
                                                    @ds_senha,
                                                    @ds_email,
                                                    @pr_permissaoADM,
-                                                   @pr_permissaoCadastro,
-                                                   @pr_permissaoConsulta)";
+                                                   @pr_permissaoAtendente,
+                                                   @pr_permissaoFinanceiro,
+                                                   @pr_permissaoVendedor,
+                                                   @pr_permissaoCompras,
+                                                   @pr_permissaoServicos,
+                                                   @pr_permissaoPagamentos,
+                                                   @pr_permissaoFornecedores,
+                                                   @pr_permissaoProdutos)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("nm_usuario", dto.Nome));
             parms.Add(new MySqlParameter("nm_funcionario", dto.NmUsuario));
+            parms.Add(new MySqlParameter("nm_usuario", dto.Nome));
             parms.Add(new MySqlParameter("ds_senha", dto.Senha));
             parms.Add(new MySqlParameter("ds_email", dto.Email));
             parms.Add(new MySqlParameter("pr_permissaoADM", dto.PermicaoADM));
-            parms.Add(new MySqlParameter("pr_permissaoCadastro", dto.PermicaoCadastro));
-            parms.Add(new MySqlParameter("pr_permissaoConsulta", dto.PermicaoConsulta));
+            parms.Add(new MySqlParameter("pr_permissaoAtendente", dto.PermicaoAtendente));
+            parms.Add(new MySqlParameter("pr_permissaoFinanceiro", dto.PermicaoFinanceiro));
+            parms.Add(new MySqlParameter("pr_permissaoVendedor", dto.PermicaoVendedor));
+            parms.Add(new MySqlParameter("pr_permissaoCompras", dto.PermicaoCompras));
+            parms.Add(new MySqlParameter("pr_permissaoServicos", dto.PermicaoServicos));
+            parms.Add(new MySqlParameter("pr_permissaoPagamentos", dto.PermicaoFuncionarios));
+            parms.Add(new MySqlParameter("pr_permissaoFornecedores", dto.PermicaoFornecedor));
+            parms.Add(new MySqlParameter("pr_permissaoProdutos", dto.PermicaoProdutos));
 
             Database db = new Database();
             int pk = db.ExecuteInsertScriptWithPk(script, parms);
@@ -65,8 +83,14 @@ namespace Catiotro_s.classes.Classes.Login
                 dto.Senha = reader.GetString("ds_senha");
                 dto.Email = reader.GetString("ds_email");
                 dto.PermicaoADM = reader.GetBoolean("pr_permissaoADM");
-                dto.PermicaoCadastro = reader.GetBoolean("pr_permissaoCadastro");
-                dto.PermicaoConsulta = reader.GetBoolean("pr_permissaoConsulta");
+                dto.PermicaoAtendente = reader.GetBoolean("pr_permissaoAtendente");
+                dto.PermicaoFinanceiro = reader.GetBoolean("pr_permissaoFinanceiro");
+                dto.PermicaoVendedor = reader.GetBoolean("pr_permissaoVendedor");
+                dto.PermicaoCompras = reader.GetBoolean("pr_permissaoCompras");
+                dto.PermicaoServicos = reader.GetBoolean("pr_permissaoServicos");
+                dto.PermicaoFuncionarios = reader.GetBoolean("pr_permissaoPagamentos");
+                dto.PermicaoFornecedor = reader.GetBoolean("pr_permissaoFornecedores");
+                dto.PermicaoProdutos = reader.GetBoolean("pr_permissaoProdutos");
             }
 
             reader.Close();

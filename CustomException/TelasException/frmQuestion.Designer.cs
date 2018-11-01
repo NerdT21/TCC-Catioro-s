@@ -30,19 +30,19 @@
         {
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pbxClose = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnNo = new System.Windows.Forms.Button();
             this.btnYes = new System.Windows.Forms.Button();
+            this.btnNo = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pbxClose = new System.Windows.Forms.PictureBox();
             this.txtMsg = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -65,6 +65,17 @@
             this.label1.Size = new System.Drawing.Size(116, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Catioro\'s Question";
+            // 
+            // pbxClose
+            // 
+            this.pbxClose.Image = global::Catiotro_s.Properties.Resources.icons8_excluir_filled_50;
+            this.pbxClose.Location = new System.Drawing.Point(305, 3);
+            this.pbxClose.Name = "pbxClose";
+            this.pbxClose.Size = new System.Drawing.Size(24, 22);
+            this.pbxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxClose.TabIndex = 4;
+            this.pbxClose.TabStop = false;
+            this.pbxClose.Click += new System.EventHandler(this.pbxClose_Click);
             // 
             // panel3
             // 
@@ -104,18 +115,6 @@
             this.panel5.Size = new System.Drawing.Size(329, 37);
             this.panel5.TabIndex = 17;
             // 
-            // btnNo
-            // 
-            this.btnNo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNo.Location = new System.Drawing.Point(248, 8);
-            this.btnNo.Name = "btnNo";
-            this.btnNo.Size = new System.Drawing.Size(75, 23);
-            this.btnNo.TabIndex = 0;
-            this.btnNo.Text = "No";
-            this.btnNo.UseVisualStyleBackColor = true;
-            this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
-            // 
             // btnYes
             // 
             this.btnYes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -128,33 +127,34 @@
             this.btnYes.UseVisualStyleBackColor = true;
             this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             // 
+            // btnNo
+            // 
+            this.btnNo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNo.Location = new System.Drawing.Point(248, 8);
+            this.btnNo.Name = "btnNo";
+            this.btnNo.Size = new System.Drawing.Size(75, 23);
+            this.btnNo.TabIndex = 0;
+            this.btnNo.Text = "No";
+            this.btnNo.UseVisualStyleBackColor = true;
+            this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Catiotro_s.Properties.Resources.icons8_help_48__1_;
-            this.pictureBox2.Location = new System.Drawing.Point(26, 45);
+            this.pictureBox2.Location = new System.Drawing.Point(19, 45);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(59, 55);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 19;
             this.pictureBox2.TabStop = false;
             // 
-            // pbxClose
-            // 
-            this.pbxClose.Image = global::Catiotro_s.Properties.Resources.icons8_excluir_filled_50;
-            this.pbxClose.Location = new System.Drawing.Point(305, 3);
-            this.pbxClose.Name = "pbxClose";
-            this.pbxClose.Size = new System.Drawing.Size(24, 22);
-            this.pbxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxClose.TabIndex = 4;
-            this.pbxClose.TabStop = false;
-            this.pbxClose.Click += new System.EventHandler(this.pbxClose_Click);
-            // 
             // txtMsg
             // 
             this.txtMsg.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMsg.Location = new System.Drawing.Point(102, 45);
+            this.txtMsg.Location = new System.Drawing.Point(84, 45);
             this.txtMsg.Name = "txtMsg";
-            this.txtMsg.Size = new System.Drawing.Size(210, 55);
+            this.txtMsg.Size = new System.Drawing.Size(249, 55);
             this.txtMsg.TabIndex = 20;
             // 
             // frmQuestion
@@ -176,9 +176,9 @@
             this.Text = "frmQuestion";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxClose)).EndInit();
             this.ResumeLayout(false);
 
         }
