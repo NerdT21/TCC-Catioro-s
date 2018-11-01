@@ -39,9 +39,13 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnDeletar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,19 +58,22 @@
             this.Column3,
             this.Column4,
             this.Column5,
+            this.Column8,
             this.Column7,
             this.Column6,
-            this.Column8});
+            this.Column9,
+            this.Column10});
             this.dgvFornecedor.Location = new System.Drawing.Point(17, 81);
             this.dgvFornecedor.Name = "dgvFornecedor";
             this.dgvFornecedor.RowHeadersVisible = false;
-            this.dgvFornecedor.Size = new System.Drawing.Size(573, 285);
+            this.dgvFornecedor.Size = new System.Drawing.Size(573, 257);
             this.dgvFornecedor.TabIndex = 10;
+            this.dgvFornecedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellContentClick);
             // 
             // btnProcurar
             // 
             this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcurar.Location = new System.Drawing.Point(482, 25);
+            this.btnProcurar.Location = new System.Drawing.Point(513, 25);
             this.btnProcurar.Name = "btnProcurar";
             this.btnProcurar.Size = new System.Drawing.Size(77, 45);
             this.btnProcurar.TabIndex = 14;
@@ -78,7 +85,7 @@
             // 
             this.lblprocurar.AutoSize = true;
             this.lblprocurar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblprocurar.Location = new System.Drawing.Point(50, 29);
+            this.lblprocurar.Location = new System.Drawing.Point(22, 25);
             this.lblprocurar.Name = "lblprocurar";
             this.lblprocurar.Size = new System.Drawing.Size(53, 21);
             this.lblprocurar.TabIndex = 12;
@@ -86,7 +93,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(109, 29);
+            this.txtNome.Location = new System.Drawing.Point(81, 25);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(205, 20);
             this.txtNome.TabIndex = 13;
@@ -95,7 +102,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(45, 53);
+            this.label1.Location = new System.Drawing.Point(17, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 21);
             this.label1.TabIndex = 15;
@@ -103,7 +110,7 @@
             // 
             // txtCidade
             // 
-            this.txtCidade.Location = new System.Drawing.Point(109, 55);
+            this.txtCidade.Location = new System.Drawing.Point(81, 51);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(205, 20);
             this.txtCidade.TabIndex = 16;
@@ -141,6 +148,12 @@
             this.Column5.HeaderText = "Telefone";
             this.Column5.Name = "Column5";
             // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "CEP";
+            this.Column8.HeaderText = "CEP";
+            this.Column8.Name = "Column8";
+            // 
             // Column7
             // 
             this.Column7.DataPropertyName = "Cidade";
@@ -153,16 +166,52 @@
             this.Column6.HeaderText = "Estado";
             this.Column6.Name = "Column6";
             // 
-            // Column8
+            // Column9
             // 
-            this.Column8.DataPropertyName = "CEP";
-            this.Column8.HeaderText = "CEP";
-            this.Column8.Name = "Column8";
+            this.Column9.DataPropertyName = "Rua";
+            this.Column9.HeaderText = "Rua";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "Numero";
+            this.Column10.HeaderText = "Número";
+            this.Column10.Name = "Column10";
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.Image = global::Catiotro_s.Properties.Resources.icons8_edit_file_30;
+            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlterar.Location = new System.Drawing.Point(17, 344);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(94, 37);
+            this.btnAlterar.TabIndex = 17;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
+            // btnDeletar
+            // 
+            this.btnDeletar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletar.Image = global::Catiotro_s.Properties.Resources.icons8_cancel_30;
+            this.btnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeletar.Location = new System.Drawing.Point(117, 344);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(94, 37);
+            this.btnDeletar.TabIndex = 19;
+            this.btnDeletar.Text = "Deletar";
+            this.btnDeletar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click_1);
             // 
             // frmConsultarFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnDeletar);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnProcurar);
@@ -191,8 +240,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btnDeletar;
     }
 }

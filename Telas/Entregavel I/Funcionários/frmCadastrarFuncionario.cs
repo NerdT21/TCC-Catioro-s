@@ -187,5 +187,10 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 e.Handled = true;
             }
         }
+
+        private void mkbCEP_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }

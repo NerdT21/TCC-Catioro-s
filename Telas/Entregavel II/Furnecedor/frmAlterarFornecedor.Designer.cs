@@ -1,16 +1,16 @@
-﻿namespace Catiotro_s.Resgistros
+﻿namespace Catiotro_s.Telas.Entregavel_II.Furnecedor
 {
-    partial class frmRegistrarFornecedor
+    partial class frmAlterarFornecedor
     {
-        /// <summary> 
-        /// Variável de designer necessária.
+        /// <summary>
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Limpar os recursos que estão sendo usados.
+        /// <summary>
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,15 +20,19 @@
             base.Dispose(disposing);
         }
 
-        #region Código gerado pelo Designer de Componentes
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Método necessário para suporte ao Designer - não modifique 
-        /// o conteúdo deste método com o editor de código.
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtRua = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.mkbCep = new System.Windows.Forms.MaskedTextBox();
             this.cboEstado = new System.Windows.Forms.ComboBox();
             this.lblBairro = new System.Windows.Forms.Label();
@@ -43,10 +47,6 @@
             this.lblCidadeF = new System.Windows.Forms.Label();
             this.lblestado = new System.Windows.Forms.Label();
             this.lblCNPJ = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtRua = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNumero = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -72,13 +72,46 @@
             this.groupBox1.Controls.Add(this.lblestado);
             this.groupBox1.Controls.Add(this.lblCNPJ);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(74, 23);
+            this.groupBox1.Location = new System.Drawing.Point(53, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(461, 291);
-            this.groupBox1.TabIndex = 119;
+            this.groupBox1.TabIndex = 121;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cadastro de Fornecedores";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.groupBox1.Text = "Alteração de Fornecedores";
+            // 
+            // txtNumero
+            // 
+            this.txtNumero.Location = new System.Drawing.Point(379, 244);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(60, 25);
+            this.txtNumero.TabIndex = 136;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(347, 249);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 20);
+            this.label2.TabIndex = 135;
+            this.label2.Text = "Nº";
+            // 
+            // txtRua
+            // 
+            this.txtRua.Location = new System.Drawing.Point(86, 248);
+            this.txtRua.Name = "txtRua";
+            this.txtRua.Size = new System.Drawing.Size(252, 25);
+            this.txtRua.TabIndex = 134;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(43, 249);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 20);
+            this.label1.TabIndex = 133;
+            this.label1.Text = "Rua";
             // 
             // mkbCep
             // 
@@ -87,7 +120,6 @@
             this.mkbCep.Name = "mkbCep";
             this.mkbCep.Size = new System.Drawing.Size(58, 25);
             this.mkbCep.TabIndex = 132;
-            this.mkbCep.KeyUp += new System.Windows.Forms.KeyEventHandler(this.mkbCep_KeyUp);
             // 
             // cboEstado
             // 
@@ -133,7 +165,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(215, 25);
             this.txtNome.TabIndex = 127;
-            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // lblNomeJuridico
             // 
@@ -176,7 +207,6 @@
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(123, 25);
             this.txtCidade.TabIndex = 122;
-            this.txtCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // lblCidadeF
             // 
@@ -208,67 +238,35 @@
             this.lblCNPJ.TabIndex = 119;
             this.lblCNPJ.Text = "CNPJ";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(43, 249);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 20);
-            this.label1.TabIndex = 133;
-            this.label1.Text = "Rua";
-            // 
-            // txtRua
-            // 
-            this.txtRua.Location = new System.Drawing.Point(86, 248);
-            this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(252, 25);
-            this.txtRua.TabIndex = 134;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(347, 249);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 20);
-            this.label2.TabIndex = 135;
-            this.label2.Text = "Nº";
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.Location = new System.Drawing.Point(379, 244);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(60, 25);
-            this.txtNumero.TabIndex = 136;
-            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = global::Catiotro_s.Properties.Resources.icons8_save_26;
+            this.button1.Image = global::Catiotro_s.Properties.Resources.icons8_edit_file_30;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(240, 330);
+            this.button1.Location = new System.Drawing.Point(237, 307);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 47);
-            this.button1.TabIndex = 116;
-            this.button1.Text = "Cadastrar";
+            this.button1.Size = new System.Drawing.Size(99, 47);
+            this.button1.TabIndex = 120;
+            this.button1.Text = "Alterar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // frmRegistrarFornecedor
+            // frmAlterarFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(567, 366);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
-            this.Name = "frmRegistrarFornecedor";
-            this.Size = new System.Drawing.Size(605, 388);
-            this.Load += new System.EventHandler(this.RegistrarFornecedor_Load);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "frmAlterarFornecedor";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "frmAlterarFornecedor";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -276,8 +274,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtRua;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox mkbCep;
         private System.Windows.Forms.ComboBox cboEstado;
         private System.Windows.Forms.Label lblBairro;
@@ -292,9 +294,6 @@
         private System.Windows.Forms.Label lblCidadeF;
         private System.Windows.Forms.Label lblestado;
         private System.Windows.Forms.Label lblCNPJ;
-        private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtRua;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

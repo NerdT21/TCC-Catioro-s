@@ -23,7 +23,9 @@ namespace Catiotro_s.classes.Classes.Cliente
                                                         ds_cnpj,
                                                         ds_telefone,
                                                         ds_cidade,
-                                                        ds_cep
+                                                        ds_cep,
+                                                        ds_rua,
+                                                        ds_numero    
                                                         )  VALUES (
                                                         @id_estado,
                                                         @id_fornecedor,
@@ -31,7 +33,9 @@ namespace Catiotro_s.classes.Classes.Cliente
                                                         @ds_cnpj,
                                                         @ds_telefone,
                                                         @ds_cidade,
-                                                        @ds_cep)";
+                                                        @ds_cep,
+                                                        @ds_rua,
+                                                        @ds_numero)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_estado", fornecedor.IdEstado));
@@ -41,6 +45,8 @@ namespace Catiotro_s.classes.Classes.Cliente
             parms.Add(new MySqlParameter("ds_telefone", fornecedor.Telefone));
             parms.Add(new MySqlParameter("ds_cidade", fornecedor.Cidade));
             parms.Add(new MySqlParameter("ds_cep", fornecedor.CEP));
+            parms.Add(new MySqlParameter("ds_rua", fornecedor.Rua));
+            parms.Add(new MySqlParameter("ds_numero", fornecedor.Numero));
 
             Database db = new Database();
             int pk = db.ExecuteInsertScriptWithPk(script, parms);
@@ -57,7 +63,9 @@ namespace Catiotro_s.classes.Classes.Cliente
                                                         ds_cnpj = @ds_cnpj,
                                                         ds_telefone = @ds_telefone,
                                                         ds_cidade = @ds_cidade,
-                                                        ds_cep = @ds_cep
+                                                        ds_cep = @ds_cep,
+                                                        ds_rua = @ds_rua,
+                                                        ds_numero = @ds_numero
                                                         WHERE id_fornecedor = @id_fornecedor";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
@@ -68,6 +76,8 @@ namespace Catiotro_s.classes.Classes.Cliente
             parms.Add(new MySqlParameter("ds_telefone", fornecedor.Telefone));
             parms.Add(new MySqlParameter("ds_cidade", fornecedor.Cidade));
             parms.Add(new MySqlParameter("ds_cep", fornecedor.CEP));
+            parms.Add(new MySqlParameter("ds_rua", fornecedor.Rua));
+            parms.Add(new MySqlParameter("ds_numero", fornecedor.Numero));
 
             Database db = new Database();
             db.ExecuteInsertScriptWithPk(script, parms);
@@ -100,7 +110,6 @@ namespace Catiotro_s.classes.Classes.Cliente
             FornecedoresDTO add = null;
             while (reader.Read())
             {
-
                 add = new FornecedoresDTO();
                 add.Id = reader.GetInt32("id_fornecedor");
                 add.IdEstado = reader.GetInt32("id_estado");
@@ -110,12 +119,11 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Telefone = reader.GetString("ds_telefone");
                 add.Cidade = reader.GetString("ds_cidade");
                 add.CEP = reader.GetString("ds_cep");
+                add.Rua = reader.GetString("ds_rua");
+                add.Numero = reader.GetInt32("ds_numero");
             }
-
             reader.Close();
-
             return add;
-
         }
 
         public List<FornecedorView> Consultar(string nome, string cidade)
@@ -133,7 +141,6 @@ namespace Catiotro_s.classes.Classes.Cliente
             List<FornecedorView> lista = new List<FornecedorView>();
             while (reader.Read())
             {
-
                 FornecedorView add = new FornecedorView();
                 add.Id = reader.GetInt32("id_fornecedor");
                 add.Estado = reader.GetString("nm_estado");
@@ -143,10 +150,11 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Telefone = reader.GetString("ds_telefone");
                 add.Cidade = reader.GetString("ds_cidade");
                 add.CEP = reader.GetString("ds_cep");
+                add.Rua = reader.GetString("ds_rua");
+                add.Numero = reader.GetInt32("ds_numero");
 
                 lista.Add(add);
             }
-
             reader.Close();
             return lista;
         }
@@ -170,6 +178,8 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Telefone = reader.GetString("ds_telefone");
                 add.Cidade = reader.GetString("ds_cidade");
                 add.CEP = reader.GetString("ds_cep");
+                add.Rua = reader.GetString("ds_rua");
+                add.Numero = reader.GetInt32("ds_numero");
 
                 lista.Add(add);
             }
@@ -197,6 +207,8 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Telefone = reader.GetString("ds_telefone");
                 add.Cidade = reader.GetString("ds_cidade");
                 add.CEP = reader.GetString("ds_cep");
+                add.Rua = reader.GetString("ds_rua");
+                add.Numero = reader.GetInt32("ds_numero");
 
                 lista.Add(add);
             }

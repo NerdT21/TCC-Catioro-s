@@ -23,5 +23,9 @@ namespace Catiotro_s.classes.Classes.Cliente
         public string Telefone { get; set; }
 
         public string Email { get; set; }
+
+        public string Rua { get; set; }
+
+        public int Numero { get; set; }
     }
 }

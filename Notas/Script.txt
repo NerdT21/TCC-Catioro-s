@@ -4,13 +4,15 @@ USE CatiorosDB;
 
 CREATE TABLE `tb_fornecedor` (
 	`id_fornecedor` int NOT NULL AUTO_INCREMENT,
-	`nm_fornecedor` varchar(255) NOT NULL,
+	`nm_fornecedor` varchar(200) NOT NULL,
 	`ds_email` varchar(100) NOT NULL,
 	`ds_cnpj` varchar(25) NOT NULL,
 	`ds_telefone` varchar(14) NOT NULL,
 	`id_estado` int NOT NULL,
 	`ds_cidade` varchar(50) NOT NULL,
 	`ds_cep` varchar(50) NOT NULL,
+    `ds_rua` varchar(200) NOT NULL,
+    `ds_numero` int,
 	PRIMARY KEY (`id_fornecedor`)
 );
 

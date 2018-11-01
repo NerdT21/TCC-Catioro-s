@@ -84,5 +84,46 @@ namespace Catiotro_s.Consultar
             dgvFornecedor.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
             dgvFornecedor.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
+
+        FornecedorView fornecedor;
+        private void dgvFornecedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            fornecedor = dgvFornecedor.Rows[e.RowIndex].DataBoundItem as FornecedorView;
+        }
+        private void btnDeletar_Click_1(object sender, EventArgs e)
+        {
+            if (fornecedor == null)
+            {
+                string msg = "Selecione um fornecedor para deleta-lo.";
+
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            else
+            {
+                string mensagem = "Quer mesmo apagar o Fornecedor " + fornecedor.Id + " do sistema?" +
+                    "\n obs: ao apagar um fornecedor, todos os outros registros nele vinculados serão apagados.";
+
+                frmQuestion tela = new frmQuestion();
+                tela.LoadScreen(mensagem);
+                tela.ShowDialog();
+
+                bool click = tela.BotaoYes;
+
+                if (click == true)
+                {
+                    FornecedoresBusiness buss = new FornecedoresBusiness();
+                    buss.Remover(fornecedor.Id);
+
+                    CarregarGrid();
+                }              
+            }           
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
