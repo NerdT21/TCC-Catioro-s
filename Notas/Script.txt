@@ -29,6 +29,27 @@ CREATE TABLE `tb_cliente` (
 	PRIMARY KEY (`id_cliente`)
 );
 
+use CatiorosDB;
+SELECt * FROm tb_login;
+
+CREATE TABLE `tb_login` (
+	`id_usuario` int NOT NULL AUTO_INCREMENT,
+    `nm_funcionario` varchar(50) NOT NULL,
+	`nm_usuario` varchar(50) NOT NULL UNIQUE,
+	`ds_senha` varchar(20) NOT NULL,
+    `ds_email` varchar(150) NOT NULL UNIQUE,
+	`pr_permissaoADM` bool NOT NULL,
+    `pr_permissaoAtendente` bool NOT NULL,
+    `pr_permissaoFinanceiro` bool NOT NULL,
+    `pr_permissaoVendedor` bool NOT NULL,
+    `pr_permissaoCompras` bool NOT NULL,
+    `pr_permissaoServicos` bool NOT NULL,
+    `pr_permissaoPagamentos` bool NOT NULL, 
+    `pr_permissaoFornecedores` bool NOT NULL, 
+    `pr_permissaoProdutos` bool NOT NULL,
+	PRIMARY KEY (`id_usuario`)
+);
+
 CREATE TABLE `tb_funcionario` (
 	`id_funcionario` int NOT NULL AUTO_INCREMENT,
 	`ds_salario` DECIMAL(15,2) NOT NULL,
@@ -109,18 +130,6 @@ CREATE TABLE `tb_Depto` (
 	`nm_depto` varchar(50) NOT NULL,
 	`ds_depto` varchar(300) NOT NULL,
 	PRIMARY KEY (`id_depto`)
-);
-
-CREATE TABLE `tb_login` (
-	`id_usuario` int NOT NULL AUTO_INCREMENT,
-    `nm_funcionario` varchar(50) NOT NULL,
-	`nm_usuario` varchar(50) NOT NULL UNIQUE,
-	`ds_senha` varchar(20) NOT NULL,
-    `ds_email` varchar(150) NOT NULL UNIQUE,
-	`pr_permissaoADM` bool NOT NULL,
-	`pr_permissaoCadastro` bool NOT NULL,
-	`pr_permissaoConsulta` bool NOT NULL,
-	PRIMARY KEY (`id_usuario`)
 );
 
 CREATE TABLE `tb_formaDePagamento` (
@@ -246,8 +255,8 @@ ALTER TABLE `tb_folhaDePagamento` ADD CONSTRAINT `tb_folhaDePagamento_fk0` FOREI
 
 -- INSERTS
 
-INSERT INTO tb_login(`id_usuario`,`nm_funcionario`, `nm_usuario`, `ds_senha`,`ds_email`, `pr_permissaoAdm`, `pr_permissaoCadastro`, `pr_permissaoConsulta`)
-		      VALUES('1','adm', 'adm', 'adm','adm', '1', '1', '1');
+INSERT INTO tb_login(`id_usuario`,`nm_funcionario`, `nm_usuario`, `ds_senha`,`ds_email`, `pr_permissaoAdm`, `pr_permissaoAtendente`, `pr_permissaoFinanceiro`, `pr_permissaoVendedor`, `pr_permissaoCompras`, `pr_permissaoServicos`, `pr_permissaoPagamentos`, `pr_permissaoFornecedores`, `pr_permissaoProdutos`)
+		      VALUES('1','NerdTeen', 'NerdT', 'NerdT2018','nerdt21@gmail.com', '1', '1', '1', '1', '1', '1', '1', '1', '1');
               
 INSERT INTO tb_Depto(`id_depto`, `nm_depto`, `ds_depto`)
               VALUES('1','nome','descrudas');
