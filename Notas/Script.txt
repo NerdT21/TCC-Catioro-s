@@ -18,21 +18,21 @@ CREATE TABLE `tb_fornecedor` (
 
 CREATE TABLE `tb_cliente` (
 	`id_cliente` int NOT NULL AUTO_INCREMENT,
-	`nm_nome` varchar(255) NOT NULL,
+	`nm_nome` varchar(100) NOT NULL,
 	`ds_email` varchar(100) NOT NULL,
     `ds_rg` varchar(25) NOT NULL,
 	`ds_cpf` varchar(25) NOT NULL,
 	`id_estado` int NOT NULL,
 	`ds_cidade` varchar(50) NOT NULL,
 	`ds_cep` varchar(16) NOT NULL,
+    `ds_rua` varchar(150) NOT NULL,
+    `ds_numero` int,
 	`ds_telefone` varchar(20) NOT NULL,
 	`dt_nasc` varchar(20) NOT NULL,
 	`dt_dataCadastro` varchar(20) NOT NULL,
+    `img_cliente` longblob,
 	PRIMARY KEY (`id_cliente`)
 );
-
-use CatiorosDB;
-SELECt * FROm tb_login;
 
 CREATE TABLE `tb_login` (
 	`id_usuario` int NOT NULL AUTO_INCREMENT,
@@ -72,14 +72,15 @@ CREATE TABLE `tb_funcionario` (
 
 CREATE TABLE `tb_animal` (
 	`id_animal` int NOT NULL AUTO_INCREMENT,
-	`nm_animal` varchar(100) NOT NULL,
-	`ds_pelagem` varchar(300) NOT NULL,
-    `ds_corPelagem` varchar(50) NOT NULL,
+	`nm_animal` varchar(50) NOT NULL,
+	`ds_pelagem` varchar(50) NOT NULL,
+    `ds_corPelagem` varchar(20) NOT NULL,
 	`dt_dataNasc` varchar(10) NOT NULL,
-	`ds_raca` varchar(50) NOT NULL,
+	`ds_raca` varchar(25) NOT NULL,
 	`ds_sexo` varchar(5) NOT NULL,
 	`id_cliente` int NOT NULL,
-	`ds_obs` varchar(300) NOT NULL,
+	`ds_obs` varchar(1000),
+    `img_animal` longblob,
 	PRIMARY KEY (`id_animal`)
 );
 
@@ -154,7 +155,7 @@ CREATE TABLE `tb_produto` (
 	`id_produto` int NOT NULL AUTO_INCREMENT,
 	`nm_produto` varchar(50) NOT NULL,
 	`ds_marca` varchar(100) NOT NULL,
-	`ds_produto` varchar(250) NOT NULL,
+	`ds_produto` varchar(300) NOT NULL,
     `vl_preco` decimal(15,2) NOT NULL,
 	PRIMARY KEY (`id_produto`)
 );
@@ -378,12 +379,7 @@ INSERT INTO tb_impostoDeRenda(`id_impostoRenda`, `ds_baseDeCalculo`, `vl_aliquot
                        
 INSERT INTO tb_impostoDeRenda(`id_impostoRenda`, `ds_baseDeCalculo`, `vl_aliquota`, `vl_deducao`)
 					   VALUES('5', '4664.68', '27.5', '869.36');
-
-INSERT INTO tb_fornecedor VALUES('1', 'Cobasi' ,'cobasi@gmail.com', '123.123.123/00021', '(11)53536-2563', '1', 'São Paulo', '05236-000');
 					
-INSERT INTO tb_item(`id_item`, `nm_item`, `id_fornecedor`, `vl_preco`, `ds_item`)
-			VALUES ('1', 'Ração', '1', '35.90', 'Comida para cães');
-
 
 -- VIEWs
 
@@ -584,8 +580,17 @@ FROM
              vl_saldo; 
              
 
-  
 
+CREATE VIEW vw_item AS
+	SELECT tb_item.id_item,
+           tb_item.nm_item, 
+           tb_fornecedor.nm_fornecedor,
+           tb_item.ds_item,
+           tb_item.vl_preco
+	FROM tb_item
+    JOIN tb_fornecedor
+      ON tb_item.id_fornecedor = tb_fornecedor.nm_fornecedor;
+  
 -- SELECT Views
 
 USE CatiorosDB;
@@ -599,6 +604,7 @@ SELECT * FROM vw_consultarCliente;
 SELECT * FROM vw_servico;
 SELECT * FROM vw_consultar_fluxodecaixa;
 SELECT * FROM vw_despesas;
+SELECT * FROM vw_item;
 
 -- SELECT Tabelas
 
@@ -623,5 +629,5 @@ SELECT * FROM tb_compra;
 
 -- calculos
 
-SELECT qtd_estocado - @qtd_vendido FROM tb_estoque WHERE nm_produto = @nm_produto;
-UPDATE tb_estoque SET qtd_estocado = qtd_estocado + 3 WHERE id_itemProduto = 5;
+-- SELECT qtd_estocado - @qtd_vendido FROM tb_estoque WHERE nm_produto = @nm_produto;
+-- UPDATE tb_estoque SET qtd_estocado = qtd_estocado + 3 WHERE id_itemProduto = 5;

@@ -123,8 +123,6 @@
     <Compile Include="Validacoes\ValidarData.cs" />
     <Compile Include="Validacoes\ValidarEmail.cs" />
     <Compile Include="Validacoes\ValidarTelefone.cs" />
-    <Content Include="Notas\Esqueleto Business.txt" />
-    <Content Include="Notas\Esqueleto Database.txt" />
     <Compile Include="classes\Classes\Feito\Estados\EstadoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Estados\EstadoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Estados\EstadoDTO.cs" />
