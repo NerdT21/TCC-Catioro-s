@@ -56,7 +56,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.mkbHE = new System.Windows.Forms.MaskedTextBox();
             this.mkbAtraso = new System.Windows.Forms.MaskedTextBox();
-            this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -317,18 +316,6 @@
             this.mkbAtraso.TabIndex = 147;
             this.mkbAtraso.ValidatingType = typeof(System.DateTime);
             // 
-            // btnLimpar
-            // 
-            this.btnLimpar.BackColor = System.Drawing.Color.Transparent;
-            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLimpar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Location = new System.Drawing.Point(141, 347);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(114, 41);
-            this.btnLimpar.TabIndex = 148;
-            this.btnLimpar.Text = "Limpar ";
-            this.btnLimpar.UseVisualStyleBackColor = false;
-            // 
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
@@ -390,7 +377,6 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.mkbAtraso);
             this.Controls.Add(this.mkbHE);
             this.Controls.Add(this.label5);
@@ -456,7 +442,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox mkbHE;
         private System.Windows.Forms.MaskedTextBox mkbAtraso;
-        private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label13;

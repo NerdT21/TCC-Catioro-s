@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.classes.Classes.Agenda;
 using Catiotro_s.CustomException.TelasException;
+using Catiotro_s.CustomException;
 
 namespace Catiotro_s.Resgistros
 {
@@ -95,15 +96,20 @@ namespace Catiotro_s.Resgistros
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
             }
-            catch (Exception ex )
+            catch (ValidacaoException vex)
+            {
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(vex.Message);
+                tela.ShowDialog();
+            }
+            catch (Exception ex)
             {
                 string msg = "Ocorreu um erro: " + ex.Message;
 
                 frmException tela = new frmException();
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
-            }
-           
+            }          
         }
 
         private void pbxImagem_Click(object sender, EventArgs e)

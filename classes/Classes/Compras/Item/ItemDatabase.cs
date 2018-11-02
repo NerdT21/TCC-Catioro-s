@@ -32,6 +32,25 @@ namespace Catiotro_s.classes.Classes.Compras.Item
             return db.ExecuteInsertScriptWithPk(script, parms);
         }
 
+        public void Alterar(ItemDTO dto)
+        {
+            string script = @"UPDATE tb_item SET nm_item = @nm_item,
+                                                 id_fornecedor = @id_fornecedor,
+                                                 vl_preco = @vl_preco,
+                                                 ds_item = @ds_item
+                                           WHERE id_item = @id_item";
+
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_item", dto.Id));
+            parms.Add(new MySqlParameter("nm_item", dto.Nome));
+            parms.Add(new MySqlParameter("id_fornecedor", dto.FornecedorId));
+            parms.Add(new MySqlParameter("vl_preco", dto.Preco));
+            parms.Add(new MySqlParameter("ds_item", dto.Descricao));
+
+            Database db = new Database();
+            db.ExecuteInsertScript(script, parms);
+        }
+
         public List<ItemView> Listar()
         {
             string script = @"SELECT * FROM tb_item";

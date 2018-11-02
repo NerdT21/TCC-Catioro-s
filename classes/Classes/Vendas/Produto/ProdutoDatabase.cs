@@ -25,6 +25,25 @@ namespace Catiotro_s.classes.Classes.Vendas.Produto
             return db.ExecuteInsertScriptWithPk(script, parms);
         }
 
+        public void Alterar(ProdutoDTO dto)
+        {
+            string script = @"UPDATE tb_produto SET nm_produto = @nm_produto,
+                                                    ds_marca = @ds_marca,
+                                                    ds_produto = @ds_produto,
+                                                    vl_preco = @vl_preco
+                                              WHERE id_produto = @ id_produto";
+
+            List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_produto", dto.Id));
+            parms.Add(new MySqlParameter("nm_produto", dto.Nome));
+            parms.Add(new MySqlParameter("ds_marca", dto.Marca));
+            parms.Add(new MySqlParameter("ds_produto", dto.Descricao));
+            parms.Add(new MySqlParameter("vl_preco", dto.Preco));
+
+            Database db = new Database();
+            db.ExecuteInsertScript(script, parms);
+        }
+
         public List<ProdutoDTO> Listar()
         {
             string script = @"SELECT * FROM tb_produto";

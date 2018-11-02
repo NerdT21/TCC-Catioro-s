@@ -89,11 +89,35 @@
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoDTO.cs" />
+    <Compile Include="Telas\Entregavel III\Animal\frmAlterarAnimal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Animal\frmAlterarAnimal.Designer.cs">
+      <DependentUpon>frmAlterarAnimal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Cliente\frmAlterarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Cliente\frmAlterarCliente.Designer.cs">
+      <DependentUpon>frmAlterarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Produto Vendas\frmAlterarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel III\Produto Vendas\frmAlterarProduto.Designer.cs">
+      <DependentUpon>frmAlterarProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Entregavel II\Furnecedor\frmAlterarFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Telas\Entregavel II\Furnecedor\frmAlterarFornecedor.Designer.cs">
       <DependentUpon>frmAlterarFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Entregavel II\Produtos Compras\frmAlterarItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Entregavel II\Produtos Compras\frmAlterarItem.Designer.cs">
+      <DependentUpon>frmAlterarItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Validacoes\ValidarCPF_CNPJ.cs" />
     <Compile Include="Validacoes\ValidarData.cs" />
@@ -554,6 +578,15 @@
     <EmbeddedResource Include="Telas\Diferenciais\frmEmail.resx">
       <DependentUpon>frmEmail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel III\Animal\frmAlterarAnimal.resx">
+      <DependentUpon>frmAlterarAnimal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel III\Cliente\frmAlterarCliente.resx">
+      <DependentUpon>frmAlterarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel III\Produto Vendas\frmAlterarProduto.resx">
+      <DependentUpon>frmAlterarProduto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel III\Servicos\frmServico.resx">
       <DependentUpon>frmServico.cs</DependentUpon>
     </EmbeddedResource>
@@ -562,6 +595,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel II\Furnecedor\frmAlterarFornecedor.resx">
       <DependentUpon>frmAlterarFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Entregavel II\Produtos Compras\frmAlterarItem.resx">
+      <DependentUpon>frmAlterarItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel II\Produtos Compras\frmConsultarProdutos.resx">
       <DependentUpon>frmConsultarProdutos.cs</DependentUpon>

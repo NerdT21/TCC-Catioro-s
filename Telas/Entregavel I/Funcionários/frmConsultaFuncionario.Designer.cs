@@ -159,9 +159,11 @@
             // Column1
             // 
             this.Column1.DataPropertyName = "Id";
+            this.Column1.Frozen = true;
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column1.Width = 30;
             // 
             // Column2

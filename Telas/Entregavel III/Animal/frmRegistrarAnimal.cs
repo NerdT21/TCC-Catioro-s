@@ -11,6 +11,7 @@ using Catiotro_s.classes.Classes.Animal;
 using Catiotro_s.classes.Classes.Agenda;
 using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.CustomException.TelasException;
+using Catiotro_s.CustomException;
 
 namespace Catiotro_s.Resgistros
 {
@@ -21,18 +22,15 @@ namespace Catiotro_s.Resgistros
             InitializeComponent();
             CarregarCombos();
         }
+
         void CarregarCombos()
         {
-
             ClienteBusiness biss = new ClienteBusiness();
             List<ClienteDTO> lista = biss.ListarPraCombo();
 
-            //DisplayMember = Motra,ValueMember=oque de verdade , DataSource = Lista
             cboDono.ValueMember = nameof(ClienteDTO.id);
             cboDono.DisplayMember = nameof(ClienteDTO.Nome);
             cboDono.DataSource = lista;
-
-
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -97,8 +95,7 @@ namespace Catiotro_s.Resgistros
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            
+        {          
             try
             {
                 ClienteDTO IdCliente = cboDono.SelectedItem as ClienteDTO;
@@ -112,7 +109,7 @@ namespace Catiotro_s.Resgistros
                 dto.Obs = txtObs.Text;
                 dto.IdCliente = IdCliente.id;
                 dto.DataNasc = mkbDataNasc.Text;
-
+                dto.Imagem = PlugIn.ImagemPlugIn.ConverterParaString(pbxImagem.Image);
 
                 AnimalBusiness business = new AnimalBusiness();
                 business.Salvar(dto);
@@ -123,6 +120,12 @@ namespace Catiotro_s.Resgistros
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
             }
+            catch (ValidacaoException vex)
+            {
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(vex.Message);
+                tela.ShowDialog();
+            }
             catch (Exception ex)
             {
                 string msg = "Ocorreu um erro: " + ex.Message;
@@ -131,8 +134,6 @@ namespace Catiotro_s.Resgistros
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
             }
-
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

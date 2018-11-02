@@ -44,7 +44,7 @@ namespace Catiotro_s.classes.Classes.Gastos_Adicionais
             }
             else if (qtdDesc == 0)
             {
-                throw new ValidacaoException("A descrição é obrigatória.")
+                throw new ValidacaoException("A descrição é obrigatória.");
             }
 
 

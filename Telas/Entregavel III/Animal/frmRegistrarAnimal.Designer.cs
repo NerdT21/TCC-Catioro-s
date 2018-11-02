@@ -42,11 +42,11 @@
             this.txtObs = new System.Windows.Forms.TextBox();
             this.cboSexo = new System.Windows.Forms.ComboBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cboDono = new System.Windows.Forms.ComboBox();
             this.lblnasc = new System.Windows.Forms.Label();
             this.mkbDataNasc = new System.Windows.Forms.MaskedTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pbxImagem = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagem)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNomeAnimal
@@ -188,16 +188,6 @@
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(124, 123);
-            this.pictureBox1.TabIndex = 118;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // cboDono
             // 
             this.cboDono.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -226,6 +216,16 @@
             this.mkbDataNasc.TabIndex = 122;
             this.mkbDataNasc.ValidatingType = typeof(System.DateTime);
             // 
+            // pbxImagem
+            // 
+            this.pbxImagem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbxImagem.Location = new System.Drawing.Point(20, 19);
+            this.pbxImagem.Name = "pbxImagem";
+            this.pbxImagem.Size = new System.Drawing.Size(124, 123);
+            this.pbxImagem.TabIndex = 118;
+            this.pbxImagem.TabStop = false;
+            this.pbxImagem.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // frmRegistrarAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,7 +233,7 @@
             this.Controls.Add(this.mkbDataNasc);
             this.Controls.Add(this.lblnasc);
             this.Controls.Add(this.cboDono);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbxImagem);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.cboSexo);
             this.Controls.Add(this.txtObs);
@@ -251,7 +251,7 @@
             this.Name = "frmRegistrarAnimal";
             this.Size = new System.Drawing.Size(605, 388);
             this.Load += new System.EventHandler(this.RegistrarAnimal_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,7 +273,7 @@
         private System.Windows.Forms.TextBox txtObs;
         private System.Windows.Forms.ComboBox cboSexo;
         private System.Windows.Forms.Button btnRegistrar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxImagem;
         private System.Windows.Forms.ComboBox cboDono;
         private System.Windows.Forms.Label lblnasc;
         private System.Windows.Forms.MaskedTextBox mkbDataNasc;

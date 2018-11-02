@@ -26,6 +26,6 @@ namespace Catiotro_s.classes.Classes.AddConsultar.Animal
 
         public string dsObs { get; set; }
 
-
+        public string Imagem { get; set; }
     }
 }

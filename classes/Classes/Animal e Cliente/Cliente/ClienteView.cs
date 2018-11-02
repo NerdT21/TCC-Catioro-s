@@ -33,5 +33,7 @@ namespace Catiotro_s.classes.Classes.AddConsultar.Cliente
         public string DataNascimento { get; set; }
 
         public string DataCadastro { get; set; }
+
+        public string Imagem { get; set; }
     }
 }
