@@ -11,6 +11,7 @@ using Catiotro_s.classes.Classes.Compras.Item;
 using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.classes.Classes.Estoque;
 using Catiotro_s.CustomException.TelasException;
+using Catiotro_s.CustomException;
 
 namespace Catiotro_s.Telas.Entregavel_III.Produtos
 {
@@ -59,6 +60,12 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
 
                 frmMessage tela = new frmMessage();
                 tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            catch (ValidacaoException vex)
+            {
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(vex.Message);
                 tela.ShowDialog();
             }
             catch (Exception ex)

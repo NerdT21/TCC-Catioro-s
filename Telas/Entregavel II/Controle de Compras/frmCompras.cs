@@ -15,6 +15,7 @@ using Catiotro_s.classes.Classes.Login;
 using Catiotro_s.classes.Classes.Estoque;
 using Catiotro_s.classes.Classes.Compras.ItemCompras;
 using Catiotro_s.CustomException.TelasException;
+using Catiotro_s.CustomException;
 
 namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 {
@@ -44,14 +45,14 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
 
         void CarregarTxt()
         {
-            ItemDTO item = cboProduto.SelectedItem as ItemDTO;
+            ItemView item = cboProduto.SelectedItem as ItemView;
 
             if (item.Nome != null)
             {
                 txtProduto.Text = item.Nome;
 
                 txtPrecoTotal.Text = Convert.ToString(item.Preco);
-                txtFornecedor.Text = item.FornecedorId.ToString();
+                txtFornecedor.Text = item.Fornecedor;
             }
             else
             {
@@ -65,7 +66,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             //cboProduto
 
             ItemBusiness buss = new ItemBusiness();
-            List<ItemDTO> lista = buss.Listar();
+            List<ItemView> lista = buss.Listar();
 
             cboProduto.ValueMember = nameof(ItemDTO.Id);
             cboProduto.DisplayMember = nameof(ItemDTO.Nome);
@@ -219,6 +220,14 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
             }
+            catch (ValidacaoException vex)
+            {
+                string msg = vex.Message;
+
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
             catch (Exception ex)
             {
                 string msg = "Ocorreu um erro: " + ex.Message;
@@ -227,6 +236,6 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
             }
-}
+        }
     }
 }

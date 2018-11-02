@@ -21,10 +21,21 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
         public frmVendas()
         {
             InitializeComponent();
+            CarregarCombos();
             DataParaHoje();
         }
         BindingList<ProdutoDTO> carrinhoAdd = new BindingList<ProdutoDTO>();
         BindingList<decimal> valor = new BindingList<decimal>();
+
+        void CarregarCombos()
+        {
+            ProdutoBusiness buss = new ProdutoBusiness();
+            List<ProdutoDTO> lista = buss.Listar();
+
+            cboProduto.ValueMember = nameof(ProdutoDTO.Id);
+            cboProduto.DisplayMember = nameof(ProdutoDTO.Nome);
+            cboProduto.DataSource = lista;
+        }
 
         void CarregarGrid()
         {
@@ -104,6 +115,12 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
         private void frmVendas_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboProduto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string produto = cboProduto.SelectedItem.ToString();
+            txtProduto.Text = produto;
         }
     }
 }

@@ -82,6 +82,8 @@ namespace Catiotro_s.Resgistros
                 dta.Cidade = txtCidade.Text;
                 dta.DataCadastro = mkbCadastro.Text;
                 dta.Cep = txtCEP.Text;
+                dta.Rua = txtRua.Text;
+                dta.Numero = Convert.ToInt32(txtNumero.Text);
                 dta.EstadoId = Convert.ToInt32(dto.Id);
 
                 ClienteBusiness business = new ClienteBusiness();
@@ -112,6 +114,55 @@ namespace Catiotro_s.Resgistros
             if (result == DialogResult.OK)
             {
                 pbxImagem.ImageLocation = dialog.FileName;
+            }
+        }
+
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == true || char.IsWhiteSpace(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCEP_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                try
+                {
+                    var ws = new WSCorreios.AtendeClienteClient();
+                    var resposta = ws.consultaCEP(txtCEP.Text);
+
+                    txtRua.Text = resposta.end;
+                    txtCidade.Text = resposta.cidade;
+                    cboUF.Text = resposta.uf;
+
+                }
+                catch (Exception)
+                {
+                    string msg = "Não foi possível encontrar o CEP";
+
+                    frmAlert tela = new frmAlert();
+                    tela.LoadScreen(msg);
+                    tela.ShowDialog();
+                }
             }
         }
     }

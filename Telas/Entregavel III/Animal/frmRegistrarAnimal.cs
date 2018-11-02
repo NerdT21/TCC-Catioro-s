@@ -87,7 +87,13 @@ namespace Catiotro_s.Resgistros
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            OpenFileDialog dialog = new OpenFileDialog();
+            DialogResult result = dialog.ShowDialog();
 
+            if (result == DialogResult.OK)
+            {
+                pbxImagem.ImageLocation = dialog.FileName;
+            }
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -132,6 +138,18 @@ namespace Catiotro_s.Resgistros
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtNomeAnimal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == true || char.IsWhiteSpace(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

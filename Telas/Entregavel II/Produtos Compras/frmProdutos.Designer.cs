@@ -56,7 +56,7 @@
             this.txtNome.Location = new System.Drawing.Point(193, 63);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(192, 25);
-            this.txtNome.TabIndex = 4;
+            this.txtNome.TabIndex = 1;
             // 
             // label2
             // 
@@ -95,7 +95,7 @@
             this.cboFornecedor.Location = new System.Drawing.Point(193, 113);
             this.cboFornecedor.Name = "cboFornecedor";
             this.cboFornecedor.Size = new System.Drawing.Size(192, 21);
-            this.cboFornecedor.TabIndex = 9;
+            this.cboFornecedor.TabIndex = 2;
             // 
             // nudPreco
             // 
@@ -106,9 +106,14 @@
             0,
             0});
             this.nudPreco.Location = new System.Drawing.Point(193, 264);
+            this.nudPreco.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.nudPreco.Name = "nudPreco";
             this.nudPreco.Size = new System.Drawing.Size(90, 20);
-            this.nudPreco.TabIndex = 10;
+            this.nudPreco.TabIndex = 4;
             // 
             // txtDescricao
             // 
@@ -116,8 +121,8 @@
             this.txtDescricao.Location = new System.Drawing.Point(193, 157);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(192, 90);
-            this.txtDescricao.TabIndex = 11;
+            this.txtDescricao.Size = new System.Drawing.Size(192, 87);
+            this.txtDescricao.TabIndex = 3;
             // 
             // btnSave
             // 
@@ -125,7 +130,7 @@
             this.btnSave.Location = new System.Drawing.Point(226, 322);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(129, 48);
-            this.btnSave.TabIndex = 12;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Salvar";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);

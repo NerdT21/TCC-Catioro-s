@@ -23,7 +23,7 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
         void AutoCarregar()
         {
             ItemBusiness dto = new ItemBusiness();
-            List<ItemDTO> lista = dto.Listar();
+            List<ItemView> lista = dto.Listar();
 
             dgvProdutos.AutoGenerateColumns = false;
             dgvProdutos.DataSource = lista;
@@ -32,9 +32,10 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
         void CarregarGrid()
         {
             string nome = txtNome.Text;
+            string fornecedor = txtFornecedor.Text;
 
             ItemBusiness dto = new ItemBusiness();
-            List<ItemDTO> lista = dto.Consultar(nome);
+            List<ItemView> lista = dto.Consultar(nome, fornecedor);
 
             dgvProdutos.AutoGenerateColumns = false;
             dgvProdutos.DataSource = lista;
@@ -83,6 +84,11 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -51,7 +51,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Data de Compra";
+            this.label2.Text = "Data da Compra";
             // 
             // mkbData
             // 

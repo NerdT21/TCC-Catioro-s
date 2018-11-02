@@ -38,6 +38,8 @@
             this.txtDono = new System.Windows.Forms.MaskedTextBox();
             this.cboProduto = new System.Windows.Forms.ComboBox();
             this.dgvCarrinho = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@
             this.mkbData = new System.Windows.Forms.MaskedTextBox();
             this.nudQtd = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrinho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudValor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQtd)).BeginInit();
@@ -114,6 +114,7 @@
             // 
             // cboAnimal
             // 
+            this.cboAnimal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboAnimal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboAnimal.FormattingEnabled = true;
             this.cboAnimal.Location = new System.Drawing.Point(128, 38);
@@ -132,6 +133,7 @@
             // 
             // cboProduto
             // 
+            this.cboProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProduto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboProduto.FormattingEnabled = true;
             this.cboProduto.Location = new System.Drawing.Point(179, 177);
@@ -153,6 +155,22 @@
             this.dgvCarrinho.RowHeadersVisible = false;
             this.dgvCarrinho.Size = new System.Drawing.Size(203, 126);
             this.dgvCarrinho.TabIndex = 13;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "Nome";
+            this.Column1.HeaderText = "Nome";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Preco";
+            this.Column2.HeaderText = "Preço";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 70;
             // 
             // btnAdd
             // 
@@ -190,6 +208,7 @@
             // 
             // nudValor
             // 
+            this.nudValor.DecimalPlaces = 2;
             this.nudValor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudValor.Location = new System.Drawing.Point(403, 309);
             this.nudValor.Maximum = new decimal(new int[] {
@@ -228,22 +247,6 @@
             this.label7.Size = new System.Drawing.Size(69, 15);
             this.label7.TabIndex = 20;
             this.label7.Text = "Quantidade";
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.DataPropertyName = "Nome";
-            this.Column1.HeaderText = "Nome";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Preco";
-            this.Column2.HeaderText = "Preço";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 70;
             // 
             // frmServico
             // 

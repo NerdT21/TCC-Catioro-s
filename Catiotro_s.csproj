@@ -81,6 +81,7 @@
     <Compile Include="classes\Classes\Compras\Item\ItemBusiness.cs" />
     <Compile Include="classes\Classes\Compras\Item\ItemDatabase.cs" />
     <Compile Include="classes\Classes\Compras\Item\ItemDTO.cs" />
+    <Compile Include="classes\Classes\Compras\Item\ItemView.cs" />
     <Compile Include="classes\Classes\Estoque\EstoqueBusiness.cs" />
     <Compile Include="classes\Classes\Estoque\EstoqueDatabase.cs" />
     <Compile Include="classes\Classes\Estoque\EstoqueDTO.cs" />

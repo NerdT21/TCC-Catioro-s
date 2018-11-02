@@ -11,6 +11,7 @@ using Catiotro_s.classes.Classes.Agenda;
 using Catiotro_s.classes.Classes.Estoque;
 using Catiotro_s.CustomException.TelasException;
 using Catiotro_s.classes.Classes.Vendas.Produto;
+using Catiotro_s.CustomException;
 
 namespace Catiotro_s.Telas.Entregavel_II.Produto
 {
@@ -61,6 +62,13 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
                 string msg = "Produto Cadastrado com sucesso!";
 
                 frmMessage tela = new frmMessage();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            catch (ValidacaoException vex)
+            {
+                string msg = vex.Message;
+                frmAlert tela = new frmAlert();
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
             }
