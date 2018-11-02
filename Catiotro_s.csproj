@@ -403,6 +403,30 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="favicon %281%29.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\Backgorund 221.jpg" />
+    <None Include="Resources\Backgorund 21.jpg" />
+    <None Include="Resources\Backgorund 22.jpg" />
+    <None Include="Resources\Backgorund 201.jpg" />
+    <None Include="Resources\Backgorund 20.jpg" />
+    <None Include="Resources\Backgorund 19.jpg" />
+    <None Include="Resources\Backgorund 18.jpg" />
+    <None Include="Resources\Backgorund 17.jpg" />
+    <None Include="Resources\Backgorund 16.jpg" />
+    <None Include="Resources\Backgorund 14.jpg" />
+    <None Include="Resources\Backgorund 131.jpg" />
+    <None Include="Resources\Backgorund 13.jpg" />
+    <None Include="Resources\Backgorund 12.jpg" />
+    <None Include="Resources\Backgorund 11.jpg" />
+    <None Include="Resources\Backgorund 10.jpg" />
+    <None Include="Resources\Backgorund 09.jpg" />
+    <None Include="Resources\Backgorund 08.jpg" />
+    <None Include="Resources\Backgorund 07.jpg" />
+    <None Include="Resources\Backgorund 06.jpg" />
+    <None Include="Resources\Backgorund 05.jpg" />
+    <None Include="Resources\Backgorund 04.jpg" />
+    <None Include="Resources\Backgorund 03.jpg" />
+    <None Include="Resources\Backgorund 02.jpg" />
+    <None Include="Resources\Backgorund 01.png" />
     <None Include="Service References\WSCorreios\Catiotro_s.WSCorreios.atualizaPagamentoNaEntregaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

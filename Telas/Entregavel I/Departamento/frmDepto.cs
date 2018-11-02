@@ -72,9 +72,6 @@ namespace Catiotro_s.Resgistros
             dgvDepto.DataSource = dto;
         }
 
-
-
-
         private void frmRegistrarDepartamento_Load(object sender, EventArgs e)
         {
             //Design das Linhas
@@ -104,38 +101,7 @@ namespace Catiotro_s.Resgistros
             dgvDepto.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-            try
-            {           
-                Cadastro();
-                CarregarGrid();
-            }
-            catch (ValidacaoException vex)
-            {
-                string msg = vex.Message;
-
-                frmAlert tela = new frmAlert();
-                tela.LoadScreen(msg);
-                tela.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                string msg = "Ocorreu um erro: " + ex.Message;
-
-                frmException tela = new frmException();
-                tela.LoadScreen(msg);
-                tela.ShowDialog();
-            }   
-          
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            CarregarGrid();
-        }
-
-        private void dgvDepto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDepto_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -143,8 +109,8 @@ namespace Catiotro_s.Resgistros
                 {
                     DeptoDTO dto = dgvDepto.Rows[e.RowIndex].DataBoundItem as DeptoDTO;
 
-                    string msg = "Quer mesmo apagar o registro " + dto.Id + "??" +
-                        "\n\n" + "obs: Ao apagar um departamento, todos os funcionários nele vinculados serão deletados.";
+                    string msg = "Quer mesmo apagar o registro " + dto.Id + "?" +
+                        "\n" + "obs: Ao apagar um departamento, todos os funcionários nele vinculados serão deletados.";
 
                     frmQuestion tela = new frmQuestion();
                     tela.LoadScreen(msg);
@@ -177,7 +143,37 @@ namespace Catiotro_s.Resgistros
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
             }
-           
+        }
+
+        private void btnCadastrar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                Cadastro();
+                CarregarGrid();
+            }
+            catch (ValidacaoException vex)
+            {
+                string msg = vex.Message;
+
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
+
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+
+        }
+
+        private void btnSalvar_Click_1(object sender, EventArgs e)
+        {
+            CarregarGrid();
         }
     }
 }
