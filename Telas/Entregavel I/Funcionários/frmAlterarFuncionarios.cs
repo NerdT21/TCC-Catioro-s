@@ -78,8 +78,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 frmException tela = new frmException();
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
-            }
-           
+            }         
         }
 
         private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
