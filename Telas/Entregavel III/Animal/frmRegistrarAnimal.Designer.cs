@@ -189,11 +189,14 @@
             this.btnRegistrar.BackColor = System.Drawing.Color.White;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(237, 315);
+            this.btnRegistrar.Image = global::Catiotro_s.Properties.Resources.icons8_save_26;
+            this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrar.Location = new System.Drawing.Point(249, 315);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(124, 56);
+            this.btnRegistrar.Size = new System.Drawing.Size(112, 56);
             this.btnRegistrar.TabIndex = 117;
             this.btnRegistrar.Text = "Cadastrar";
+            this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 

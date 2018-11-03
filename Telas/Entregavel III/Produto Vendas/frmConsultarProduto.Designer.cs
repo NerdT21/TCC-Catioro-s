@@ -48,11 +48,14 @@
             this.btnProcurar.BackColor = System.Drawing.Color.White;
             this.btnProcurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcurar.Location = new System.Drawing.Point(487, 34);
+            this.btnProcurar.Image = global::Catiotro_s.Properties.Resources.icons8_search_26;
+            this.btnProcurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProcurar.Location = new System.Drawing.Point(479, 34);
             this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(74, 47);
+            this.btnProcurar.Size = new System.Drawing.Size(82, 47);
             this.btnProcurar.TabIndex = 18;
             this.btnProcurar.Text = "Buscar";
+            this.btnProcurar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProcurar.UseVisualStyleBackColor = false;
             this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 

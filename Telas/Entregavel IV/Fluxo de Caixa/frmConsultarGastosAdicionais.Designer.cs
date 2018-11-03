@@ -94,7 +94,7 @@
             this.Data.AutoSize = true;
             this.Data.BackColor = System.Drawing.Color.White;
             this.Data.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Data.Location = new System.Drawing.Point(24, 67);
+            this.Data.Location = new System.Drawing.Point(24, 65);
             this.Data.Name = "Data";
             this.Data.Size = new System.Drawing.Size(31, 15);
             this.Data.TabIndex = 2;
@@ -105,17 +105,20 @@
             this.btnBuscar.BackColor = System.Drawing.Color.White;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(478, 57);
+            this.btnBuscar.Image = global::Catiotro_s.Properties.Resources.icons8_search_26;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(488, 57);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(88, 34);
+            this.btnBuscar.Size = new System.Drawing.Size(76, 34);
             this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // mkbData
             // 
-            this.mkbData.Location = new System.Drawing.Point(62, 67);
+            this.mkbData.Location = new System.Drawing.Point(61, 62);
             this.mkbData.Mask = "00/00/0000";
             this.mkbData.Name = "mkbData";
             this.mkbData.Size = new System.Drawing.Size(70, 20);
