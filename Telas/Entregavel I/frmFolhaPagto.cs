@@ -33,8 +33,16 @@ namespace Catiotro_s.Telas.Entregavel_I
             int mes = hoje.Month;
             int ano = hoje.Year;
 
-            string data = dia + "/" + mes + "/" + ano;
-            mkbData.Text = data;
+            if (dia < 10)
+            {
+                string data = "0" + dia + "/" + mes + "/" + ano;
+                mkbData.Text = data;
+            }
+            else
+            {
+                string data = dia + "/" + mes + "/" + ano;
+                mkbData.Text = data;
+            }
         }
 
         void GerarCredenciais()

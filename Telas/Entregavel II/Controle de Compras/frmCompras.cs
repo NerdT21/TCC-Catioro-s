@@ -39,8 +39,17 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             int mes = hoje.Month;
             int ano = hoje.Year;
 
-            string data = dia + "/" + mes + "/" + ano;
-            mkbDataCompra.Text = data;
+            if (dia < 10)
+            {
+                string data = "0" + dia + "/" + mes + "/" + ano;
+                mkbDataCompra.Text = data;
+            }
+            else
+            {
+                string data = dia + "/" + mes + "/" + ano;
+                mkbDataCompra.Text = data;
+            }
+            
         }
 
         void CarregarTxt()

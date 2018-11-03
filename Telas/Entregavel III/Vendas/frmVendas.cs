@@ -50,8 +50,16 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
             int mes = hoje.Month;
             int ano = hoje.Year;
 
-            string data = dia + "/" + mes + "/" + ano;
-            mkbDataCompra.Text = data;
+            if (dia < 10)
+            {
+                string data = "0" + dia + "/" + mes + "/" + ano;
+                mkbDataCompra.Text = data;
+            }
+            else
+            {
+                string data = dia + "/" + mes + "/" + ano;
+                mkbDataCompra.Text = data;
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

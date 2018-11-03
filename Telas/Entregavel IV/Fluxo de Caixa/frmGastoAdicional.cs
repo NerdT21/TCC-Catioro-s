@@ -27,8 +27,16 @@ namespace Catiotro_s.Telas.Entregavel_IV.Fluxo_de_Caixa
             int mes = hoje.Month;
             int ano = hoje.Year;
 
-            string data = dia + "/" + mes + "/" + ano;
-            mkbData.Text = data;
+            if (dia < 10)
+            {
+                string data = "0" + dia + "/" + mes + "/" + ano;
+                mkbData.Text = data;
+            }
+            else
+            {
+                string data = dia + "/" + mes + "/" + ano;
+                mkbData.Text = data;
+            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
