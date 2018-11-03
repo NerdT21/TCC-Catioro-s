@@ -136,6 +136,7 @@
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(44, 23);
             this.txtNum.TabIndex = 42;
+            this.txtNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress);
             // 
             // label11
             // 
@@ -202,6 +203,7 @@
             this.mkbCEP.Name = "mkbCEP";
             this.mkbCEP.Size = new System.Drawing.Size(62, 23);
             this.mkbCEP.TabIndex = 37;
+            this.mkbCEP.KeyUp += new System.Windows.Forms.KeyEventHandler(this.mkbCEP_KeyUp_1);
             // 
             // cboUF
             // 
@@ -220,6 +222,7 @@
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(137, 23);
             this.txtCidade.TabIndex = 38;
+            this.txtCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // label12
             // 
@@ -376,6 +379,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(229, 23);
             this.txtNome.TabIndex = 27;
+            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // label1
             // 
@@ -392,7 +396,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_221;
+            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_222;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCadastrarFuncionario";

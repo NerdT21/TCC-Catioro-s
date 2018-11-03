@@ -403,6 +403,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="favicon %281%29.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\Backgorund 23.jpg" />
+    <None Include="Resources\Catioro%27s Logo1.jpeg" />
+    <None Include="Resources\Backgorund 22.png" />
     <None Include="Resources\Backgorund 221.jpg" />
     <None Include="Resources\Backgorund 21.jpg" />
     <None Include="Resources\Backgorund 22.jpg" />

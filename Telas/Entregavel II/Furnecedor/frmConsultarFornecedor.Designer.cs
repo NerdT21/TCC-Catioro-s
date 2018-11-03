@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvFornecedor = new System.Windows.Forms.DataGridView();
-            this.btnProcurar = new System.Windows.Forms.Button();
-            this.lblprocurar = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtCidade = new System.Windows.Forms.TextBox();
-            this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnDeletar = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +39,13 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnProcurar = new System.Windows.Forms.Button();
+            this.lblprocurar = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.btnDeletar = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,20 +73,97 @@
             this.dgvFornecedor.TabIndex = 10;
             this.dgvFornecedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellContentClick);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Id";
+            this.Column1.Frozen = true;
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 30;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Nome";
+            this.Column2.HeaderText = "Nome";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 150;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Email";
+            this.Column3.HeaderText = "E-mail";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "CNPJ";
+            this.Column4.HeaderText = "CNPJ";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Telefone";
+            this.Column5.HeaderText = "Telefone";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "CEP";
+            this.Column8.HeaderText = "CEP";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "Cidade";
+            this.Column7.HeaderText = "Cidade";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Estado";
+            this.Column6.HeaderText = "Estado";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "Rua";
+            this.Column9.HeaderText = "Rua";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "Numero";
+            this.Column10.HeaderText = "Número";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
             // btnProcurar
             // 
+            this.btnProcurar.BackColor = System.Drawing.Color.White;
+            this.btnProcurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProcurar.Location = new System.Drawing.Point(513, 25);
             this.btnProcurar.Name = "btnProcurar";
             this.btnProcurar.Size = new System.Drawing.Size(77, 45);
             this.btnProcurar.TabIndex = 14;
             this.btnProcurar.Text = "Procurar";
-            this.btnProcurar.UseVisualStyleBackColor = true;
+            this.btnProcurar.UseVisualStyleBackColor = false;
             this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // lblprocurar
             // 
             this.lblprocurar.AutoSize = true;
+            this.lblprocurar.BackColor = System.Drawing.Color.White;
             this.lblprocurar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblprocurar.Location = new System.Drawing.Point(22, 25);
             this.lblprocurar.Name = "lblprocurar";
@@ -104,6 +181,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(17, 49);
             this.label1.Name = "label1";
@@ -118,22 +196,10 @@
             this.txtCidade.Size = new System.Drawing.Size(205, 20);
             this.txtCidade.TabIndex = 16;
             // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterar.Image = global::Catiotro_s.Properties.Resources.icons8_edit_file_30;
-            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlterar.Location = new System.Drawing.Point(17, 344);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(94, 37);
-            this.btnAlterar.TabIndex = 17;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
-            // 
             // btnDeletar
             // 
+            this.btnDeletar.BackColor = System.Drawing.Color.White;
+            this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeletar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeletar.Image = global::Catiotro_s.Properties.Resources.icons8_cancel_30;
             this.btnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -143,77 +209,31 @@
             this.btnDeletar.TabIndex = 19;
             this.btnDeletar.Text = "Deletar";
             this.btnDeletar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.UseVisualStyleBackColor = false;
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click_1);
             // 
-            // Column1
+            // btnAlterar
             // 
-            this.Column1.DataPropertyName = "Id";
-            this.Column1.Frozen = true;
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 30;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Nome";
-            this.Column2.HeaderText = "Nome";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Email";
-            this.Column3.HeaderText = "E-mail";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "CNPJ";
-            this.Column4.HeaderText = "CNPJ";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Telefone";
-            this.Column5.HeaderText = "Telefone";
-            this.Column5.Name = "Column5";
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "CEP";
-            this.Column8.HeaderText = "CEP";
-            this.Column8.Name = "Column8";
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "Cidade";
-            this.Column7.HeaderText = "Cidade";
-            this.Column7.Name = "Column7";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Estado";
-            this.Column6.HeaderText = "Estado";
-            this.Column6.Name = "Column6";
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "Rua";
-            this.Column9.HeaderText = "Rua";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "Numero";
-            this.Column10.HeaderText = "Número";
-            this.Column10.Name = "Column10";
+            this.btnAlterar.BackColor = System.Drawing.Color.White;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.Image = global::Catiotro_s.Properties.Resources.icons8_edit_file_30;
+            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlterar.Location = new System.Drawing.Point(17, 344);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(94, 37);
+            this.btnAlterar.TabIndex = 17;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // frmConsultarFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_222;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.txtCidade);

@@ -78,39 +78,8 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
 
         private void frmCadastrarFuncionario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar) == true || char.IsWhiteSpace(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txtNum_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsNumber(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txtCidade_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsLetter(e.KeyChar) == true || char.IsWhiteSpace(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-        }
+            
+        } 
 
         private void mkbCEP_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
@@ -233,5 +202,53 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
             }
         }
 
+        private void mkbCEP_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                try
+                {
+                    var ws = new WSCorreios.AtendeClienteClient();
+                    var resposta = ws.consultaCEP(mkbCEP.Text);
+
+                    txtEndereco.Text = resposta.end;
+                    txtCidade.Text = resposta.cidade;
+                    cboUF.Text = resposta.uf;
+
+                }
+                catch (Exception cex)
+                {
+                    string msg = "Não foi possível encontrar o CEP";
+
+                    frmAlert tela = new frmAlert();
+                    tela.LoadScreen(msg);
+                    tela.ShowDialog();
+                }
+            }
+        }
+
+        private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == true || char.IsWhiteSpace(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

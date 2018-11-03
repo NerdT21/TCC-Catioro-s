@@ -81,30 +81,6 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
             }         
         }
 
-        private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsLetter(e.KeyChar) == true || char.IsWhiteSpace(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txtNum_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsNumber(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-        }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             try
@@ -208,6 +184,60 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 g.DrawLine(borderPen, new Point(rect.X, rect.Y), new Point(rect.X + box.Padding.Left, rect.Y));
                 //Top2
                 g.DrawLine(borderPen, new Point(rect.X + box.Padding.Left + (int)(strSize.Width), rect.Y), new Point(rect.X + rect.Width, rect.Y));
+            }
+        }
+
+        private void txtNome_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == true || char.IsWhiteSpace(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNum_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == true || char.IsWhiteSpace(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtEndereco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void mkbCEP_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                try
+                {
+                    var ws = new WSCorreios.AtendeClienteClient();
+                    var resposta = ws.consultaCEP(mkbCEP.Text);
+
+                    txtEndereco.Text = resposta.end;
+                    txtCidade.Text = resposta.cidade;
+                    cboUF.Text = resposta.uf;
+
+                }
+                catch (Exception cex)
+                {
+                    string msg = "Não foi possível encontrar o CEP";
+
+                    frmAlert tela = new frmAlert();
+                    tela.LoadScreen(msg);
+                    tela.ShowDialog();
+                }
             }
         }
     }

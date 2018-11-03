@@ -93,7 +93,7 @@
             this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.MediumBlue;
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.groupBox1.Location = new System.Drawing.Point(25, 2);
             this.groupBox1.Name = "groupBox1";
@@ -137,6 +137,7 @@
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(44, 23);
             this.txtNum.TabIndex = 42;
+            this.txtNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNum_KeyPress_1);
             // 
             // label11
             // 
@@ -157,6 +158,7 @@
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(258, 23);
             this.txtEndereco.TabIndex = 41;
+            this.txtEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEndereco_KeyPress);
             // 
             // label10
             // 
@@ -205,6 +207,7 @@
             this.mkbCEP.Name = "mkbCEP";
             this.mkbCEP.Size = new System.Drawing.Size(62, 23);
             this.mkbCEP.TabIndex = 37;
+            this.mkbCEP.KeyUp += new System.Windows.Forms.KeyEventHandler(this.mkbCEP_KeyUp);
             // 
             // cboUF
             // 
@@ -223,6 +226,7 @@
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(137, 23);
             this.txtCidade.TabIndex = 38;
+            this.txtCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress_1);
             // 
             // label12
             // 
@@ -388,6 +392,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(229, 23);
             this.txtNome.TabIndex = 27;
+            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress_1);
             // 
             // label1
             // 
@@ -405,7 +410,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_221;
+            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_222;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(567, 366);
             this.Controls.Add(this.groupBox1);

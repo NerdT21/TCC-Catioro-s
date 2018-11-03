@@ -190,14 +190,15 @@
             // 
             // Departamento
             // 
-            this.Departamento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Departamento.DataPropertyName = "Nome";
-            this.Departamento.HeaderText = "Nome Do Departamento";
+            this.Departamento.HeaderText = "Nome";
             this.Departamento.Name = "Departamento";
             this.Departamento.ReadOnly = true;
+            this.Departamento.Width = 135;
             // 
             // Column2
             // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column2.DataPropertyName = "Descricao";
             this.Column2.HeaderText = "Descrição";
             this.Column2.Name = "Column2";
@@ -248,7 +249,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_221;
+            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_222;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -276,12 +277,12 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvDepto;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.TextBox txtProcurarDepto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Departamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewImageColumn Column1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.TextBox txtProcurarDepto;
     }
 }

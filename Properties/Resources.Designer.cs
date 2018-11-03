@@ -303,9 +303,39 @@ namespace Catiotro_s.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Backgorund_222 {
+            get {
+                object obj = ResourceManager.GetObject("Backgorund 222", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Backgorund_23 {
+            get {
+                object obj = ResourceManager.GetObject("Backgorund 23", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Catioro_s_Logo {
             get {
                 object obj = ResourceManager.GetObject("Catioro\'s Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Catioro_s_Logo1 {
+            get {
+                object obj = ResourceManager.GetObject("Catioro\'s Logo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

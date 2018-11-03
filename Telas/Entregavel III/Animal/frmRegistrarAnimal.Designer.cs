@@ -46,14 +46,16 @@
             this.lblnasc = new System.Windows.Forms.Label();
             this.mkbDataNasc = new System.Windows.Forms.MaskedTextBox();
             this.pbxImagem = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagem)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNomeAnimal
             // 
             this.lblNomeAnimal.AutoSize = true;
+            this.lblNomeAnimal.BackColor = System.Drawing.Color.White;
             this.lblNomeAnimal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeAnimal.Location = new System.Drawing.Point(150, 41);
+            this.lblNomeAnimal.Location = new System.Drawing.Point(161, 52);
             this.lblNomeAnimal.Name = "lblNomeAnimal";
             this.lblNomeAnimal.Size = new System.Drawing.Size(44, 17);
             this.lblNomeAnimal.TabIndex = 0;
@@ -62,8 +64,9 @@
             // lblObs
             // 
             this.lblObs.AutoSize = true;
+            this.lblObs.BackColor = System.Drawing.Color.White;
             this.lblObs.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObs.Location = new System.Drawing.Point(93, 187);
+            this.lblObs.Location = new System.Drawing.Point(104, 198);
             this.lblObs.Name = "lblObs";
             this.lblObs.Size = new System.Drawing.Size(32, 17);
             this.lblObs.TabIndex = 1;
@@ -73,8 +76,9 @@
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
+            this.lblSexo.BackColor = System.Drawing.Color.White;
             this.lblSexo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSexo.Location = new System.Drawing.Point(150, 68);
+            this.lblSexo.Location = new System.Drawing.Point(161, 79);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(36, 17);
             this.lblSexo.TabIndex = 2;
@@ -84,8 +88,9 @@
             // lblCorPelo
             // 
             this.lblCorPelo.AutoSize = true;
+            this.lblCorPelo.BackColor = System.Drawing.Color.White;
             this.lblCorPelo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorPelo.Location = new System.Drawing.Point(295, 159);
+            this.lblCorPelo.Location = new System.Drawing.Point(306, 170);
             this.lblCorPelo.Name = "lblCorPelo";
             this.lblCorPelo.Size = new System.Drawing.Size(103, 17);
             this.lblCorPelo.TabIndex = 3;
@@ -95,8 +100,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(151, 96);
+            this.label5.Location = new System.Drawing.Point(162, 107);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 17);
             this.label5.TabIndex = 4;
@@ -105,8 +111,9 @@
             // lblTipoPelo
             // 
             this.lblTipoPelo.AutoSize = true;
+            this.lblTipoPelo.BackColor = System.Drawing.Color.White;
             this.lblTipoPelo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoPelo.Location = new System.Drawing.Point(17, 159);
+            this.lblTipoPelo.Location = new System.Drawing.Point(28, 170);
             this.lblTipoPelo.Name = "lblTipoPelo";
             this.lblTipoPelo.Size = new System.Drawing.Size(108, 17);
             this.lblTipoPelo.TabIndex = 7;
@@ -115,8 +122,9 @@
             // lblNomeDono
             // 
             this.lblNomeDono.AutoSize = true;
+            this.lblNomeDono.BackColor = System.Drawing.Color.White;
             this.lblNomeDono.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeDono.Location = new System.Drawing.Point(299, 68);
+            this.lblNomeDono.Location = new System.Drawing.Point(310, 79);
             this.lblNomeDono.Name = "lblNomeDono";
             this.lblNomeDono.Size = new System.Drawing.Size(99, 17);
             this.lblNomeDono.TabIndex = 8;
@@ -124,7 +132,7 @@
             // 
             // txtNomeAnimal
             // 
-            this.txtNomeAnimal.Location = new System.Drawing.Point(200, 41);
+            this.txtNomeAnimal.Location = new System.Drawing.Point(211, 52);
             this.txtNomeAnimal.Name = "txtNomeAnimal";
             this.txtNomeAnimal.Size = new System.Drawing.Size(198, 20);
             this.txtNomeAnimal.TabIndex = 9;
@@ -132,7 +140,7 @@
             // 
             // txtRaca
             // 
-            this.txtRaca.Location = new System.Drawing.Point(200, 94);
+            this.txtRaca.Location = new System.Drawing.Point(211, 105);
             this.txtRaca.Name = "txtRaca";
             this.txtRaca.Size = new System.Drawing.Size(161, 20);
             this.txtRaca.TabIndex = 10;
@@ -140,7 +148,7 @@
             // 
             // txtTipoPelo
             // 
-            this.txtTipoPelo.Location = new System.Drawing.Point(131, 158);
+            this.txtTipoPelo.Location = new System.Drawing.Point(142, 169);
             this.txtTipoPelo.Name = "txtTipoPelo";
             this.txtTipoPelo.Size = new System.Drawing.Size(153, 20);
             this.txtTipoPelo.TabIndex = 11;
@@ -148,7 +156,7 @@
             // 
             // txtCorPelo
             // 
-            this.txtCorPelo.Location = new System.Drawing.Point(404, 158);
+            this.txtCorPelo.Location = new System.Drawing.Point(415, 169);
             this.txtCorPelo.Name = "txtCorPelo";
             this.txtCorPelo.Size = new System.Drawing.Size(163, 20);
             this.txtCorPelo.TabIndex = 12;
@@ -157,7 +165,7 @@
             // 
             // txtObs
             // 
-            this.txtObs.Location = new System.Drawing.Point(131, 187);
+            this.txtObs.Location = new System.Drawing.Point(142, 198);
             this.txtObs.Multiline = true;
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(436, 89);
@@ -171,28 +179,29 @@
             this.cboSexo.Items.AddRange(new object[] {
             "Macho",
             "Fêmea"});
-            this.cboSexo.Location = new System.Drawing.Point(200, 67);
+            this.cboSexo.Location = new System.Drawing.Point(211, 78);
             this.cboSexo.Name = "cboSexo";
             this.cboSexo.Size = new System.Drawing.Size(84, 21);
             this.cboSexo.TabIndex = 17;
             // 
             // btnRegistrar
             // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.White;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(237, 308);
+            this.btnRegistrar.Location = new System.Drawing.Point(237, 315);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(124, 56);
             this.btnRegistrar.TabIndex = 117;
             this.btnRegistrar.Text = "Cadastrar";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // cboDono
             // 
             this.cboDono.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDono.FormattingEnabled = true;
-            this.cboDono.Location = new System.Drawing.Point(404, 67);
+            this.cboDono.Location = new System.Drawing.Point(415, 78);
             this.cboDono.Name = "cboDono";
             this.cboDono.Size = new System.Drawing.Size(163, 21);
             this.cboDono.TabIndex = 120;
@@ -200,8 +209,9 @@
             // lblnasc
             // 
             this.lblnasc.AutoSize = true;
+            this.lblnasc.BackColor = System.Drawing.Color.White;
             this.lblnasc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnasc.Location = new System.Drawing.Point(367, 94);
+            this.lblnasc.Location = new System.Drawing.Point(378, 105);
             this.lblnasc.Name = "lblnasc";
             this.lblnasc.Size = new System.Drawing.Size(127, 17);
             this.lblnasc.TabIndex = 121;
@@ -209,7 +219,7 @@
             // 
             // mkbDataNasc
             // 
-            this.mkbDataNasc.Location = new System.Drawing.Point(500, 94);
+            this.mkbDataNasc.Location = new System.Drawing.Point(511, 105);
             this.mkbDataNasc.Mask = "00/00/0000";
             this.mkbDataNasc.Name = "mkbDataNasc";
             this.mkbDataNasc.Size = new System.Drawing.Size(67, 20);
@@ -219,17 +229,31 @@
             // pbxImagem
             // 
             this.pbxImagem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbxImagem.Location = new System.Drawing.Point(20, 19);
+            this.pbxImagem.Location = new System.Drawing.Point(31, 30);
             this.pbxImagem.Name = "pbxImagem";
             this.pbxImagem.Size = new System.Drawing.Size(124, 123);
             this.pbxImagem.TabIndex = 118;
             this.pbxImagem.TabStop = false;
             this.pbxImagem.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(15, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(579, 306);
+            this.groupBox1.TabIndex = 123;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Cadastrar Animal";
+            this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
+            // 
             // frmRegistrarAnimal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_222;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.mkbDataNasc);
             this.Controls.Add(this.lblnasc);
             this.Controls.Add(this.cboDono);
@@ -248,6 +272,7 @@
             this.Controls.Add(this.lblSexo);
             this.Controls.Add(this.lblObs);
             this.Controls.Add(this.lblNomeAnimal);
+            this.Controls.Add(this.groupBox1);
             this.Name = "frmRegistrarAnimal";
             this.Size = new System.Drawing.Size(605, 388);
             this.Load += new System.EventHandler(this.RegistrarAnimal_Load);
@@ -277,5 +302,6 @@
         private System.Windows.Forms.ComboBox cboDono;
         private System.Windows.Forms.Label lblnasc;
         private System.Windows.Forms.MaskedTextBox mkbDataNasc;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

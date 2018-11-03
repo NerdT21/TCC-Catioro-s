@@ -62,7 +62,7 @@
             this.Column6,
             this.Column7,
             this.Column10});
-            this.dgvFolha.Location = new System.Drawing.Point(13, 81);
+            this.dgvFolha.Location = new System.Drawing.Point(13, 59);
             this.dgvFolha.Name = "dgvFolha";
             this.dgvFolha.ReadOnly = true;
             this.dgvFolha.RowHeadersVisible = false;
@@ -71,6 +71,7 @@
             // 
             // Column1
             // 
+            this.Column1.Frozen = true;
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -146,6 +147,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_222;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.dgvFolha);
             this.Name = "frmVerFolha";
             this.Size = new System.Drawing.Size(583, 405);
