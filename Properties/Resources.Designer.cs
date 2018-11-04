@@ -343,6 +343,16 @@ namespace Catiotro_s.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_business_management_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-business-management-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_cancel_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-cancel-30", resourceCulture);
@@ -366,6 +376,56 @@ namespace Catiotro_s.Properties {
         internal static System.Drawing.Bitmap icons8_cancel_481 {
             get {
                 object obj = ResourceManager.GetObject("icons8-cancel-481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_carteira_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-carteira-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cash_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cash-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_comprar_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-comprar-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_discount_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-discount-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_discount_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-discount-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -433,6 +493,16 @@ namespace Catiotro_s.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_fluxo_de_caixa_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-fluxo-de-caixa-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_help_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-help-48", resourceCulture);
@@ -453,6 +523,16 @@ namespace Catiotro_s.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_histórico_de_pagamento_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-histórico-de-pagamento-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_minimizar_janela_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-minimizar-janela-32", resourceCulture);
@@ -466,6 +546,16 @@ namespace Catiotro_s.Properties {
         internal static System.Drawing.Bitmap icons8_plus_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-plus-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_product_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-product-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -496,6 +586,16 @@ namespace Catiotro_s.Properties {
         internal static System.Drawing.Bitmap icons8_search_26 {
             get {
                 object obj = ResourceManager.GetObject("icons8-search-26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_support_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-support-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -403,6 +403,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="favicon %281%29.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\icons8-cash-48.png" />
+    <None Include="Resources\icons8-discount-48.png" />
+    <None Include="Resources\icons8-discount-40.png" />
+    <None Include="Resources\icons8-comprar-48.png" />
+    <None Include="Resources\icons8-fluxo-de-caixa-48.png" />
+    <None Include="Resources\icons8-carteira-48.png" />
+    <None Include="Resources\icons8-business-management-64.png" />
+    <None Include="Resources\icons8-support-48.png" />
+    <None Include="Resources\icons8-product-48.png" />
+    <None Include="Resources\icons8-histórico-de-pagamento-48.png" />
     <None Include="Resources\Backgorund 23.jpg" />
     <None Include="Resources\Catioro%27s Logo1.jpeg" />
     <None Include="Resources\Backgorund 22.png" />
