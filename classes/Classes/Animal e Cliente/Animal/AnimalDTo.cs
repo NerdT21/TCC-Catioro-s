@@ -26,7 +26,7 @@ namespace Catiotro_s.classes.Classes.Animal
 
         public string Obs { get; set; }
 
-
+        public string Imagem { get; set; }
     }
 }
 

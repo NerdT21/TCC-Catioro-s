@@ -39,18 +39,24 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMarca = new System.Windows.Forms.TextBox();
+            this.btnAlterar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // btnProcurar
             // 
+            this.btnProcurar.BackColor = System.Drawing.Color.White;
+            this.btnProcurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcurar.Location = new System.Drawing.Point(487, 34);
+            this.btnProcurar.Image = global::Catiotro_s.Properties.Resources.icons8_search_26;
+            this.btnProcurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProcurar.Location = new System.Drawing.Point(479, 34);
             this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(61, 47);
+            this.btnProcurar.Size = new System.Drawing.Size(82, 47);
             this.btnProcurar.TabIndex = 18;
             this.btnProcurar.Text = "Buscar";
-            this.btnProcurar.UseVisualStyleBackColor = true;
+            this.btnProcurar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnProcurar.UseVisualStyleBackColor = false;
             this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // txtNome
@@ -64,6 +70,7 @@
             // lblprocurar
             // 
             this.lblprocurar.AutoSize = true;
+            this.lblprocurar.BackColor = System.Drawing.Color.White;
             this.lblprocurar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblprocurar.Location = new System.Drawing.Point(3, 34);
             this.lblprocurar.Name = "lblprocurar";
@@ -87,13 +94,14 @@
             this.dgvProduto.Name = "dgvProduto";
             this.dgvProduto.ReadOnly = true;
             this.dgvProduto.RowHeadersVisible = false;
-            this.dgvProduto.Size = new System.Drawing.Size(577, 303);
+            this.dgvProduto.Size = new System.Drawing.Size(577, 261);
             this.dgvProduto.TabIndex = 15;
             this.dgvProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellContentClick);
             // 
             // Column1
             // 
             this.Column1.DataPropertyName = "Id";
+            this.Column1.Frozen = true;
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -133,6 +141,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(82, 67);
             this.label1.Name = "label1";
@@ -147,10 +156,29 @@
             this.txtMarca.Size = new System.Drawing.Size(192, 20);
             this.txtMarca.TabIndex = 20;
             // 
+            // btnAlterar
+            // 
+            this.btnAlterar.BackColor = System.Drawing.Color.White;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.Image = global::Catiotro_s.Properties.Resources.icons8_edit_file_30;
+            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlterar.Location = new System.Drawing.Point(7, 365);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(94, 37);
+            this.btnAlterar.TabIndex = 21;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
             // frmConsultarProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_222;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnProcurar);
@@ -179,5 +207,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button btnAlterar;
     }
 }

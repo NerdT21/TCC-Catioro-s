@@ -12,6 +12,7 @@ using Catiotro_s.classes.Classes.AddConsultar.Animal;
 using Catiotro_s.classes.Classes.Compras.Item;
 using Catiotro_s.classes.Classes.Servicos;
 using Catiotro_s.CustomException.TelasException;
+using Catiotro_s.CustomException;
 
 namespace Catiotro_s.Telas.Entregavel_III.Servicos
 {
@@ -48,10 +49,10 @@ namespace Catiotro_s.Telas.Entregavel_III.Servicos
             cboAnimal.DataSource = animalDTO;
 
             ItemBusiness itemBuss = new ItemBusiness();
-            List<ItemDTO> itemDTO = itemBuss.Listar();
+            List<ItemView> itemDTO = itemBuss.Listar();
 
-            cboProduto.ValueMember = nameof(ItemDTO.Id);
-            cboProduto.DisplayMember = nameof(ItemDTO.Nome);
+            cboProduto.ValueMember = nameof(ItemView.Id);
+            cboProduto.DisplayMember = nameof(ItemView.Nome);
             cboProduto.DataSource = itemDTO;
         }
 
@@ -114,6 +115,12 @@ namespace Catiotro_s.Telas.Entregavel_III.Servicos
 
                 frmMessage tela = new frmMessage();
                 tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            catch (ValidacaoException vex)
+            {
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(vex.Message);
                 tela.ShowDialog();
             }
             catch (Exception ex)

@@ -1,6 +1,7 @@
 ﻿using Catiotro_s.classes.Classes.Compras.Item;
 using Catiotro_s.classes.Classes.Compras.ItemCompras;
 using Catiotro_s.classes.Classes.Estoque;
+using Catiotro_s.CustomException;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,14 @@ namespace Catiotro_s.classes.Classes.Compras
     {
         public int Salvar(ComprasDTO dto, List<ItemDTO> item)
         {
+            string pagto = dto.FormaPagto;
+            int qtdPagto = pagto.Count();
+
+            if (qtdPagto == 0)
+            {
+                throw new ValidacaoException("Defina uma forma de pagamento.");
+            }
+
             ComprasDatabase db = new ComprasDatabase();
             int IdCompra = db.Salvar(dto);
 

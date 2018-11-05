@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Agenda;
 using Catiotro_s.classes.Classes.Vendas.Produto;
+using Catiotro_s.CustomException.TelasException;
+using Catiotro_s.Telas.Entregavel_III.Produto_Vendas;
 
 namespace Catiotro_s.Telas.Entregavel_II.Produto
 {
@@ -44,9 +46,11 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
 
         }
 
+        ProdutoDTO produto;
+
         private void dgvFornecedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            produto = dgvProduto.Rows[e.RowIndex].DataBoundItem as ProdutoDTO;
         }
 
         private void btnProcurar_Click(object sender, EventArgs e)
@@ -82,6 +86,26 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
             dgvProduto.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(255, 255, 255);
             dgvProduto.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
 
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (produto == null)
+            {
+                string msg = "selecione um registro para alterá-lo";
+
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            else
+            {
+                frmAlterarProduto form = new frmAlterarProduto();
+                form.LoadScreen(produto);
+                form.ShowDialog();
+
+                CarregarGrid();
+            }
         }
     }
 }

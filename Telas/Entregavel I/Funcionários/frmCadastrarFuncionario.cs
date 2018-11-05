@@ -46,7 +46,47 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void cboUF_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mkbCEP_KeyUp(object sender, KeyEventArgs e)
+        {       
+            if (e.KeyData == Keys.Enter)
+            {
+                try
+                {
+                    var ws = new WSCorreios.AtendeClienteClient();
+                    var resposta = ws.consultaCEP(mkbCEP.Text);
+
+                    txtEndereco.Text = resposta.end;
+                    txtCidade.Text = resposta.cidade;
+                    cboUF.Text = resposta.uf;
+
+                }
+                catch (Exception cex)
+                {
+                    string msg = "Não foi possível encontrar o CEP";
+
+                    frmAlert tela = new frmAlert();
+                    tela.LoadScreen(msg);
+                    tela.ShowDialog();
+                }
+            }
+        }
+
+        private void frmCadastrarFuncionario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        } 
+
+        private void mkbCEP_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -111,7 +151,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
             }
         }
 
-        private void pbxFoto_Click(object sender, EventArgs e)
+        private void pbxFoto_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
             DialogResult result = dialog.ShowDialog();
@@ -122,13 +162,48 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
             }
         }
 
-        private void cboUF_SelectedIndexChanged(object sender, EventArgs e)
+        private void groupBox1_Paint(object sender, PaintEventArgs e)
         {
+            GroupBox box = sender as GroupBox;
+            DrawGroupBox(box, e.Graphics, Color.Black, Color.FromArgb(0, 116, 186), Color.Transparent);
 
         }
 
-        private void mkbCEP_KeyUp(object sender, KeyEventArgs e)
-        {       
+        private void DrawGroupBox(GroupBox box, Graphics g, Color textColor, Color borderColor, Color backgroundColor)
+        {
+            if (box != null)
+            {
+                Brush textBrush = new SolidBrush(textColor);
+                Brush borderBrush = new SolidBrush(borderColor);
+                Pen borderPen = new Pen(borderBrush);
+                SizeF strSize = g.MeasureString(box.Text, box.Font);
+                Rectangle rect = new Rectangle(box.ClientRectangle.X,
+                                               box.ClientRectangle.Y + (int)(strSize.Height / 2),
+                                               box.ClientRectangle.Width - 1,
+                                               box.ClientRectangle.Height - (int)(strSize.Height / 2) - 1);
+
+                // Coloque a cor do background aqui
+                // g.Clear(backgroundColor);
+
+                // Draw text
+                // g.DrawString(box.Text, box.Font, textBrush, box.Padding.Left, 0);
+
+                // Drawing Border
+                //Left
+                g.DrawLine(borderPen, rect.Location, new Point(rect.X, rect.Y + rect.Height));
+                //Right
+                g.DrawLine(borderPen, new Point(rect.X + rect.Width, rect.Y), new Point(rect.X + rect.Width, rect.Y + rect.Height));
+                //Bottom
+                g.DrawLine(borderPen, new Point(rect.X, rect.Y + rect.Height), new Point(rect.X + rect.Width, rect.Y + rect.Height));
+                //Top1
+                g.DrawLine(borderPen, new Point(rect.X, rect.Y), new Point(rect.X + box.Padding.Left, rect.Y));
+                //Top2
+                g.DrawLine(borderPen, new Point(rect.X + box.Padding.Left + (int)(strSize.Width), rect.Y), new Point(rect.X + rect.Width, rect.Y));
+            }
+        }
+
+        private void mkbCEP_KeyUp_1(object sender, KeyEventArgs e)
+        {
             if (e.KeyData == Keys.Enter)
             {
                 try
@@ -152,7 +227,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
             }
         }
 
-        private void frmCadastrarFuncionario_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar) == true || char.IsWhiteSpace(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
             {
@@ -174,23 +249,6 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
             {
                 e.Handled = true;
             }
-        }
-
-        private void txtCidade_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsLetter(e.KeyChar) == true || char.IsWhiteSpace(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void mkbCEP_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
         }
     }
 }

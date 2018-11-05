@@ -2,6 +2,7 @@
 using Catiotro_s.classes.Classes.Estoque;
 using Catiotro_s.classes.Classes.Servico;
 using Catiotro_s.classes.Classes.Servico.ServicoItem;
+using Catiotro_s.CustomException;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,20 @@ namespace Catiotro_s.classes.Classes.Servicos
     {
         public int Salvar(ServicoDTO dto, List<ItemDTO> item)
         {
+            //-------------DESCRIÇÃO
+            string desc = dto.Servico;
+            desc = desc.Trim();
+            int qtdDesc = desc.Count();
+
+            if (qtdDesc > 1000)
+            {
+                throw new ValidacaoException("A descrição não pode passar de 1000 caracteres.");
+            }
+            else if (qtdDesc == 0)
+            {
+                throw new ValidacaoException("A descrição é obrigatória.");
+            }
+
             ServicoDatabase db = new ServicoDatabase();
             int pk = db.Salvar(dto);
 

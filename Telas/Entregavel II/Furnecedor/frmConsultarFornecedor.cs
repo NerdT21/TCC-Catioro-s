@@ -137,6 +137,8 @@ namespace Catiotro_s.Consultar
                 frmAlterarFornecedor tela = new frmAlterarFornecedor();
                 tela.LoadScreen(fornecedor);
                 tela.ShowDialog();
+
+                CarregarGrid();
             }
         }
     }

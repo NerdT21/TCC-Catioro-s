@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.dgvGastos = new System.Windows.Forms.DataGridView();
-            this.Data = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.mkbData = new System.Windows.Forms.MaskedTextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.mkbData = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGastos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,36 +54,6 @@
             this.dgvGastos.RowHeadersVisible = false;
             this.dgvGastos.Size = new System.Drawing.Size(549, 297);
             this.dgvGastos.TabIndex = 0;
-            // 
-            // Data
-            // 
-            this.Data.AutoSize = true;
-            this.Data.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Data.Location = new System.Drawing.Point(24, 67);
-            this.Data.Name = "Data";
-            this.Data.Size = new System.Drawing.Size(31, 15);
-            this.Data.TabIndex = 2;
-            this.Data.Text = "Data";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(478, 57);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(88, 34);
-            this.btnBuscar.TabIndex = 4;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // mkbData
-            // 
-            this.mkbData.Location = new System.Drawing.Point(62, 67);
-            this.mkbData.Mask = "00/00/0000";
-            this.mkbData.Name = "mkbData";
-            this.mkbData.Size = new System.Drawing.Size(70, 20);
-            this.mkbData.TabIndex = 5;
-            this.mkbData.ValidatingType = typeof(System.DateTime);
             // 
             // Column1
             // 
@@ -119,10 +89,48 @@
             this.Column5.HeaderText = "Descrição";
             this.Column5.Name = "Column5";
             // 
+            // Data
+            // 
+            this.Data.AutoSize = true;
+            this.Data.BackColor = System.Drawing.Color.White;
+            this.Data.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Data.Location = new System.Drawing.Point(24, 65);
+            this.Data.Name = "Data";
+            this.Data.Size = new System.Drawing.Size(31, 15);
+            this.Data.TabIndex = 2;
+            this.Data.Text = "Data";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.White;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Image = global::Catiotro_s.Properties.Resources.icons8_search_26;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(488, 57);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(76, 34);
+            this.btnBuscar.TabIndex = 4;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // mkbData
+            // 
+            this.mkbData.Location = new System.Drawing.Point(61, 62);
+            this.mkbData.Mask = "00/00/0000";
+            this.mkbData.Name = "mkbData";
+            this.mkbData.Size = new System.Drawing.Size(70, 20);
+            this.mkbData.TabIndex = 5;
+            this.mkbData.ValidatingType = typeof(System.DateTime);
+            // 
             // frmConsultarGastosAdicionais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_222;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.mkbData);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.Data);

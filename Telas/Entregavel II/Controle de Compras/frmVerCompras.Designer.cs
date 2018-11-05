@@ -33,25 +33,26 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.mkbData = new System.Windows.Forms.MaskedTextBox();
-            this.btnProcurar = new System.Windows.Forms.Button();
             this.dgvCompras = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnProcurar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(83, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Data de Compra";
+            this.label2.Text = "Data da Compra";
             // 
             // mkbData
             // 
@@ -61,20 +62,6 @@
             this.mkbData.Size = new System.Drawing.Size(63, 20);
             this.mkbData.TabIndex = 4;
             this.mkbData.ValidatingType = typeof(System.DateTime);
-            // 
-            // btnProcurar
-            // 
-            this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcurar.Image = global::Catiotro_s.Properties.Resources.icons8_search_26;
-            this.btnProcurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProcurar.Location = new System.Drawing.Point(426, 66);
-            this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(94, 45);
-            this.btnProcurar.TabIndex = 7;
-            this.btnProcurar.Text = "Procurar";
-            this.btnProcurar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnProcurar.UseVisualStyleBackColor = true;
-            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // dgvCompras
             // 
@@ -158,10 +145,28 @@
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
+            // btnProcurar
+            // 
+            this.btnProcurar.BackColor = System.Drawing.Color.White;
+            this.btnProcurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProcurar.Image = global::Catiotro_s.Properties.Resources.icons8_search_26;
+            this.btnProcurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProcurar.Location = new System.Drawing.Point(426, 66);
+            this.btnProcurar.Name = "btnProcurar";
+            this.btnProcurar.Size = new System.Drawing.Size(94, 45);
+            this.btnProcurar.TabIndex = 7;
+            this.btnProcurar.Text = "Procurar";
+            this.btnProcurar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnProcurar.UseVisualStyleBackColor = false;
+            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
+            // 
             // frmVerCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_222;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.dgvCompras);
             this.Controls.Add(this.btnProcurar);
             this.Controls.Add(this.mkbData);

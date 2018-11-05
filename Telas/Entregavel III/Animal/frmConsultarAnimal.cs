@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Animal;
 using Catiotro_s.classes.Classes.AddConsultar.Animal;
 using Catiotro_s.CustomException.TelasException;
+using Catiotro_s.Telas.Entregavel_III.Animal;
 
 namespace Catiotro_s.Consultar
 {
@@ -44,9 +45,11 @@ namespace Catiotro_s.Consultar
 
         }
 
+        AnimalView animal;
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            animal = dgvAnimal.Rows[e.RowIndex].DataBoundItem as AnimalView;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -108,6 +111,55 @@ namespace Catiotro_s.Consultar
             dgvAnimal.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
             dgvAnimal.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
             dgvAnimal.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (animal == null)
+            {
+                string msg = "Selecione um registro para alterá-lo";
+
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            else
+            {
+                frmAlterarAnimal screen = new frmAlterarAnimal();
+                screen.LoadScreen(animal);
+                screen.ShowDialog();
+
+                CarregarGrid();
+            }          
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+            if (animal == null)
+            {
+                string msg = "Selecione um registro para removê-lo";
+
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            else
+            {
+                string msg = "Quer mesmo remover o registro " + animal.Id + "?";
+                frmQuestion tela = new frmQuestion();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+
+                bool click = tela.BotaoYes;
+
+                if (click == true)
+                {
+                    AnimalBusiness buss = new AnimalBusiness();
+                    buss.Remover(animal.Id);
+
+                    CarregarGrid();
+                }
+            }
         }
     }
 }

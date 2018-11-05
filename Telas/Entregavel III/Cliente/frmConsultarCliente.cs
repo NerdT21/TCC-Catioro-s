@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Cliente;
 using Catiotro_s.classes.Classes.AddConsultar.Cliente;
 using Catiotro_s.CustomException.TelasException;
+using Catiotro_s.Telas.Entregavel_III.Cliente;
 
 namespace Catiotro_s.Consultar
 {
@@ -86,6 +87,62 @@ namespace Catiotro_s.Consultar
             dgvCliente.RowHeadersDefaultCellStyle.Font = new Font("SegoeUI", 12);
             dgvCliente.RowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
             dgvCliente.AlternatingRowsDefaultCellStyle.Font = new Font("SegoeUI", 10);
+        }
+
+        ClienteView cliente;
+
+        private void dgvCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cliente = dgvCliente.Rows[e.RowIndex].DataBoundItem as ClienteView;
+        }
+
+        private void btnAlterar_Click_1(object sender, EventArgs e)
+        {
+            if (cliente == null)
+            {
+                string msg = "Selecione um registro para alterá-lo.";
+                frmAlert alert = new frmAlert();
+                alert.LoadScreen(msg);
+                alert.ShowDialog();
+            }
+            else
+            {
+                frmAlterarCliente tela = new frmAlterarCliente();
+                tela.LoadScreen(cliente);
+                tela.ShowDialog();
+
+                CarregarGrid();
+            }
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+            if (cliente == null)
+            {
+                string msg = "Selecione um registro para removê-lo.";
+                frmAlert alert = new frmAlert();
+                alert.LoadScreen(msg);
+                alert.ShowDialog();
+            }
+            else
+            {
+                string msgm = "Quer mesmo apagar o registro " + cliente.id + "?" +
+                    "\nObs: ao apagar este cliente, todos os outros registros nele vinculados serão perdidos.";
+
+                frmQuestion tela = new frmQuestion();
+                tela.LoadScreen(msgm);
+                tela.ShowDialog();
+
+                bool click = tela.BotaoYes;
+
+                if (click == true)
+                {
+                    ClienteBusiness buss = new ClienteBusiness();
+                    buss.Remover(cliente.id);
+
+                    CarregarGrid();
+                }
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Catiotro_s.classes.Classes.Compras.Item;
 using Catiotro_s.CustomException.TelasException;
+using Catiotro_s.Telas.Entregavel_II.Produtos_Compras;
 
 namespace Catiotro_s.Telas.Entregavel_III.Produtos
 {
@@ -23,7 +24,7 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
         void AutoCarregar()
         {
             ItemBusiness dto = new ItemBusiness();
-            List<ItemDTO> lista = dto.Listar();
+            List<ItemView> lista = dto.Listar();
 
             dgvProdutos.AutoGenerateColumns = false;
             dgvProdutos.DataSource = lista;
@@ -32,9 +33,10 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
         void CarregarGrid()
         {
             string nome = txtNome.Text;
+            string fornecedor = txtFornecedor.Text;
 
             ItemBusiness dto = new ItemBusiness();
-            List<ItemDTO> lista = dto.Consultar(nome);
+            List<ItemView> lista = dto.Consultar(nome, fornecedor);
 
             dgvProdutos.AutoGenerateColumns = false;
             dgvProdutos.DataSource = lista;
@@ -83,6 +85,37 @@ namespace Catiotro_s.Telas.Entregavel_III.Produtos
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        ItemView item;
+
+        private void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            item = dgvProdutos.Rows[e.RowIndex].DataBoundItem as ItemView;
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (item == null)
+            {
+                string msg = "Selecione um item para alterá-lo.";
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            else
+            {
+                frmAlterarItem tela = new frmAlterarItem();
+                tela.LoadScreen(item);
+                tela.ShowDialog();
+
+                CarregarGrid();
+            }   
         }
     }
 }

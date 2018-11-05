@@ -111,6 +111,8 @@ namespace Catiotro_s.Consultar
                     frmAlterarFuncionarios screen = new frmAlterarFuncionarios();
                     screen.LoadScreen(funcionario);
                     screen.ShowDialog();
+
+                    CarregarGrid();
                 }
             }
             catch (Exception ex)
