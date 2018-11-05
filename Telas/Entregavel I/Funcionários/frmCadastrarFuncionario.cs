@@ -120,7 +120,9 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 FuncionarioBusiness buss = new FuncionarioBusiness();
                 buss.Salvar(dto);
 
-                MessageBox.Show("Funcionário cadastrado com suceso!!", "Catioro's", MessageBoxButtons.OK);
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen("Funcionário cadastrado com suceso!!");
+                tela.ShowDialog();
             }
             catch (MySqlException mex)
             {

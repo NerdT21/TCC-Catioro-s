@@ -1,6 +1,7 @@
 ﻿using Catiotro_s.classes.Classes.Login;
 using Catiotro_s.Consultar;
 using Catiotro_s.Resgistros;
+using Catiotro_s.Telas.Diferenciais;
 using Catiotro_s.Telas.Entregavel_I;
 using Catiotro_s.Telas.Entregavel_I.Funcionários;
 using Catiotro_s.Telas.Entregavel_I.LogIn;
@@ -352,6 +353,12 @@ namespace Catiotro_s
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void emailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEmail tela = new frmEmail();
+            tela.Show();
         }
 
         private void pnlTopo_MouseDown(object sender, MouseEventArgs e)

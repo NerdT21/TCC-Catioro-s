@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,66 +10,49 @@ namespace Catiotro_s.PlugIn
 {
     public class EmailPlugin
     {
-        public bool envioOK;                 // Define o estado atual de envio do email
-        public string emailDestinatario;  // email que receberá a mensagem
-        public string assunto;                 // assunto da mensagem 
-        public string mensagem;            // mensagem do email
+        public string Para { get; set; }
+        public string Assunto { get; set; }
+        public string Mensagem { get; set; }
 
-        //Aqui deve ser os dados da sua conta de email
-        public string emailAdm;        // Conta de email válida
-        public string servidor;           // Servidor da conta de email
-        public string senha;              // Define a senha da conta de email valida
 
         MailMessage email = new MailMessage();
 
-        public bool EnviarEmail()
+        public void Enviar()
         {
-            try
+            Task.Factory.StartNew(() =>
             {
-                // Configura o corpo da mensagem a ser enviada
-                email.From = new MailAddress(emailAdm); // cria obj com email iformado
-                email.To.Add(emailDestinatario);
-                email.Subject = assunto;
-                email.Body = mensagem;
+                //-----> https://myaccount.google.com/lesssecureapps?pli=1
+                string remetente = "catioros.inn@gmail.com";
+                string senha = "projetofrei";
 
-                //Cria o objeto do cliente servidor 
+                email.From = new MailAddress(remetente);
+                email.To.Add(this.Para);
+
+                email.Subject = this.Assunto;
+                email.Body = this.Mensagem;
+                email.IsBodyHtml = true;
+
                 SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
 
-                //verifica qual servidor enviará a mensagem. 
-                if (servidor == "gmail.com")
-                {
-                    smtp.Host = "smtp.gmail.com";
-                    smtp.Port = 587;
-                    smtp.EnableSsl = true;
-                }
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential(remetente, senha);
 
-                if (servidor == "yahoo.com.br")
-                {
-                    smtp.Host = "smtp.mail.yahoo.br";
-                    smtp.Port = 587;
-                }
-
-                if (servidor == "hotmail.com")
-                {
-                    smtp.Host = "smtp.live.com";
-                    smtp.Port = 25;
-                    smtp.EnableSsl = true;
-                }
-
-                // Cria um objeto do servidor com a senha e login informado na classe ConfiguracaoLogin.
-                // O objeto usa seu email e sua senha e faz o envio do email através destes dados.
-                smtp.Credentials = new System.Net.NetworkCredential(emailAdm, senha);
                 smtp.Send(email);
 
-                //Define o estado de envio do email como ok.
-                envioOK = true;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro ao enviar e-mail: " + ex.Message);
-            }
-
-            return envioOK;
+            });
         }
+
+
+        public void AdicionarAnexo(string arquivo)
+        {
+            Attachment inline = new Attachment(arquivo);
+            this.email.Attachments.Add(inline);
+        }
+    
+
     }
 }
+

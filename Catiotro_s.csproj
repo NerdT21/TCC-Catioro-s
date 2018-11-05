@@ -403,6 +403,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="favicon %281%29.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\icons8-visível-41.png" />
+    <None Include="Resources\icons8-visível-40.png" />
     <None Include="Resources\icons8-cash-48.png" />
     <None Include="Resources\icons8-discount-48.png" />
     <None Include="Resources\icons8-discount-40.png" />

@@ -1,4 +1,5 @@
-﻿using Catiotro_s.PlugIn;
+﻿using Catiotro_s.CustomException.TelasException;
+using Catiotro_s.PlugIn;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,50 +20,122 @@ namespace Catiotro_s.Telas.Diferenciais
         }
 
         EmailPlugin email = new EmailPlugin();
-
-        void InicializeValores()
-        {          
-            email.envioOK = false;
-            email.emailDestinatario = txtPara.Text;
-            email.assunto = txtAssunto.Text;
-            email.mensagem = txtMsg.Text;
-
-            email.emailAdm = txtDe.Text;
-
-            string validador = txtDe.Text;
-            int qtdCaracteres = validador.Length;
-            int posicaoArroba = validador.IndexOf("@");
-
-            int posicaoServidor = qtdCaracteres - posicaoArroba; 
-
-            string servidor = validador.Substring(posicaoArroba, posicaoServidor);
-
-            if (servidor == "@gmail.com")
-            {
-                email.servidor = "gmail.com";
-            }
-            else
-            {
-                email.servidor = "hotmail.com";
-            }
-
-
-            email.senha = txtSenha.Text;
-        }
-
-        void Email()
-        {
-            InicializeValores();
-            if (email.EnviarEmail())
-                MessageBox.Show("Email enviado com sucesso!!!");
-            else
-                MessageBox.Show("Erro ao enviar o email");
-
-        }
-
+  
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            Email();
+            try
+            {
+                email.Para = txtPara.Text;
+                email.Assunto = txtAssunto.Text;
+                email.Mensagem = txtMsg.Text;
+
+                email.Enviar();
+
+                frmMessage tela = new frmMessage();
+                tela.LoadScreen("E-mail enviado!");
+                tela.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen("Não foi possível enviar o email.");
+                tela.ShowDialog();
+            }
+            
+        }
+
+        private void DrawGroupBox(GroupBox box, Graphics g, Color textColor, Color borderColor, Color backgroundColor)
+        {
+            if (box != null)
+            {
+                Brush textBrush = new SolidBrush(textColor);
+                Brush borderBrush = new SolidBrush(borderColor);
+                Pen borderPen = new Pen(borderBrush);
+                SizeF strSize = g.MeasureString(box.Text, box.Font);
+                Rectangle rect = new Rectangle(box.ClientRectangle.X,
+                                               box.ClientRectangle.Y + (int)(strSize.Height / 2),
+                                               box.ClientRectangle.Width - 1,
+                                               box.ClientRectangle.Height - (int)(strSize.Height / 2) - 1);
+
+                // Coloque a cor do background aqui
+                // g.Clear(backgroundColor);
+
+                // Draw text
+                // g.DrawString(box.Text, box.Font, textBrush, box.Padding.Left, 0);
+
+                // Drawing Border
+                //Left
+                g.DrawLine(borderPen, rect.Location, new Point(rect.X, rect.Y + rect.Height));
+                //Right
+                g.DrawLine(borderPen, new Point(rect.X + rect.Width, rect.Y), new Point(rect.X + rect.Width, rect.Y + rect.Height));
+                //Bottom
+                g.DrawLine(borderPen, new Point(rect.X, rect.Y + rect.Height), new Point(rect.X + rect.Width, rect.Y + rect.Height));
+                //Top1
+                g.DrawLine(borderPen, new Point(rect.X, rect.Y), new Point(rect.X + box.Padding.Left, rect.Y));
+                //Top2
+                g.DrawLine(borderPen, new Point(rect.X + box.Padding.Left + (int)(strSize.Width), rect.Y), new Point(rect.X + rect.Width, rect.Y));
+            }
+        }
+
+        private void groupBox2_Paint(object sender, PaintEventArgs e)
+        {
+            GroupBox box = sender as GroupBox;
+            DrawGroupBox(box, e.Graphics, Color.Black, Color.FromArgb(0, 116, 186), Color.Transparent);
+        }
+
+        private void groupBox3_Paint(object sender, PaintEventArgs e)
+        {
+            GroupBox box = sender as GroupBox;
+            DrawGroupBox(box, e.Graphics, Color.Black, Color.FromArgb(0, 116, 186), Color.Transparent);
+        }
+
+        private void btnAnexar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog janela = new OpenFileDialog();
+            janela.ShowDialog();
+
+            txtAnexo.Text = janela.FileName;
+
+            email.AdicionarAnexo(janela.FileName);
+        }
+
+        private bool mover;
+        private int cX, cY;
+        private void pnlTopo_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                cX = e.X;
+                cY = e.Y;
+                mover = true;
+            }
+        }
+
+        private void pnlTopo_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                mover = false;
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pnlTopo_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mover)
+            {
+                this.Left += e.X - (cX - pnlTopo.Left);
+                this.Top += e.Y - (cY - pnlTopo.Top);
+            }
         }
     }
 }

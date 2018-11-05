@@ -175,5 +175,15 @@ namespace Catiotro_s.Telas.Entregavel_I.LogIn
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void button1_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtPass.PasswordChar = '\0';
+        }
+
+        private void button1_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtPass.PasswordChar = '*';
+        }
     }
 }

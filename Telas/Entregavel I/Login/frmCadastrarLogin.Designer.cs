@@ -42,15 +42,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ckbProdutos = new System.Windows.Forms.CheckBox();
+            this.ckbFornecedores = new System.Windows.Forms.CheckBox();
+            this.ckbPagamentos = new System.Windows.Forms.CheckBox();
             this.ckbServico = new System.Windows.Forms.CheckBox();
             this.ckbCompras = new System.Windows.Forms.CheckBox();
             this.ckbVendas = new System.Windows.Forms.CheckBox();
             this.ckbFinanceiro = new System.Windows.Forms.CheckBox();
             this.ckbAtendente = new System.Windows.Forms.CheckBox();
             this.ckbAdm = new System.Windows.Forms.CheckBox();
-            this.ckbPagamentos = new System.Windows.Forms.CheckBox();
-            this.ckbFornecedores = new System.Windows.Forms.CheckBox();
-            this.ckbProdutos = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -97,6 +97,7 @@
             this.groupBox1.TabIndex = 84;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Usuário";
+            this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox2_Paint);
             // 
             // txtConfirm
             // 
@@ -203,6 +204,40 @@
             this.groupBox2.TabIndex = 85;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Permissões";
+            this.groupBox2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox2_Paint);
+            // 
+            // ckbProdutos
+            // 
+            this.ckbProdutos.AutoSize = true;
+            this.ckbProdutos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbProdutos.Location = new System.Drawing.Point(105, 93);
+            this.ckbProdutos.Name = "ckbProdutos";
+            this.ckbProdutos.Size = new System.Drawing.Size(74, 19);
+            this.ckbProdutos.TabIndex = 93;
+            this.ckbProdutos.Text = "Produtos";
+            this.ckbProdutos.UseVisualStyleBackColor = true;
+            // 
+            // ckbFornecedores
+            // 
+            this.ckbFornecedores.AutoSize = true;
+            this.ckbFornecedores.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbFornecedores.Location = new System.Drawing.Point(6, 93);
+            this.ckbFornecedores.Name = "ckbFornecedores";
+            this.ckbFornecedores.Size = new System.Drawing.Size(97, 19);
+            this.ckbFornecedores.TabIndex = 92;
+            this.ckbFornecedores.Text = "Fornecedores";
+            this.ckbFornecedores.UseVisualStyleBackColor = true;
+            // 
+            // ckbPagamentos
+            // 
+            this.ckbPagamentos.AutoSize = true;
+            this.ckbPagamentos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbPagamentos.Location = new System.Drawing.Point(6, 70);
+            this.ckbPagamentos.Name = "ckbPagamentos";
+            this.ckbPagamentos.Size = new System.Drawing.Size(94, 19);
+            this.ckbPagamentos.TabIndex = 91;
+            this.ckbPagamentos.Text = "Funcionários";
+            this.ckbPagamentos.UseVisualStyleBackColor = true;
             // 
             // ckbServico
             // 
@@ -232,7 +267,7 @@
             this.ckbVendas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbVendas.Location = new System.Drawing.Point(105, 24);
             this.ckbVendas.Name = "ckbVendas";
-            this.ckbVendas.Size = new System.Drawing.Size(63, 19);
+            this.ckbVendas.Size = new System.Drawing.Size(64, 19);
             this.ckbVendas.TabIndex = 87;
             this.ckbVendas.Text = "Vendas";
             this.ckbVendas.UseVisualStyleBackColor = true;
@@ -271,39 +306,6 @@
             this.ckbAdm.Text = "ADM";
             this.ckbAdm.UseVisualStyleBackColor = true;
             this.ckbAdm.CheckedChanged += new System.EventHandler(this.ckbAdm_CheckedChanged_2);
-            // 
-            // ckbPagamentos
-            // 
-            this.ckbPagamentos.AutoSize = true;
-            this.ckbPagamentos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbPagamentos.Location = new System.Drawing.Point(6, 70);
-            this.ckbPagamentos.Name = "ckbPagamentos";
-            this.ckbPagamentos.Size = new System.Drawing.Size(94, 19);
-            this.ckbPagamentos.TabIndex = 91;
-            this.ckbPagamentos.Text = "Funcionários";
-            this.ckbPagamentos.UseVisualStyleBackColor = true;
-            // 
-            // ckbFornecedores
-            // 
-            this.ckbFornecedores.AutoSize = true;
-            this.ckbFornecedores.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbFornecedores.Location = new System.Drawing.Point(6, 93);
-            this.ckbFornecedores.Name = "ckbFornecedores";
-            this.ckbFornecedores.Size = new System.Drawing.Size(97, 19);
-            this.ckbFornecedores.TabIndex = 92;
-            this.ckbFornecedores.Text = "Fornecedores";
-            this.ckbFornecedores.UseVisualStyleBackColor = true;
-            // 
-            // ckbProdutos
-            // 
-            this.ckbProdutos.AutoSize = true;
-            this.ckbProdutos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbProdutos.Location = new System.Drawing.Point(105, 93);
-            this.ckbProdutos.Name = "ckbProdutos";
-            this.ckbProdutos.Size = new System.Drawing.Size(74, 19);
-            this.ckbProdutos.TabIndex = 93;
-            this.ckbProdutos.Text = "Produtos";
-            this.ckbProdutos.UseVisualStyleBackColor = true;
             // 
             // frmCadastrarLogin
             // 

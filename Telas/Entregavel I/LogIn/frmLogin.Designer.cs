@@ -40,6 +40,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pbxMinimize = new System.Windows.Forms.PictureBox();
             this.pbxClose = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -55,7 +56,7 @@
             this.lblRegistrar.AutoSize = true;
             this.lblRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblRegistrar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistrar.Location = new System.Drawing.Point(109, 144);
+            this.lblRegistrar.Location = new System.Drawing.Point(124, 143);
             this.lblRegistrar.Name = "lblRegistrar";
             this.lblRegistrar.Size = new System.Drawing.Size(49, 13);
             this.lblRegistrar.TabIndex = 35;
@@ -66,7 +67,7 @@
             // 
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEntrar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrar.Location = new System.Drawing.Point(80, 99);
+            this.btnEntrar.Location = new System.Drawing.Point(95, 98);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(111, 37);
             this.btnEntrar.TabIndex = 34;
@@ -116,7 +117,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(252, 0);
+            this.panel1.Location = new System.Drawing.Point(288, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(10, 177);
             this.panel1.TabIndex = 36;
@@ -136,7 +137,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 164);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(252, 13);
+            this.panel2.Size = new System.Drawing.Size(288, 13);
             this.panel2.TabIndex = 37;
             // 
             // panel4
@@ -157,14 +158,27 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(10, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(242, 26);
+            this.panel5.Size = new System.Drawing.Size(278, 26);
             this.panel5.TabIndex = 39;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::Catiotro_s.Properties.Resources.icons8_visível_41;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(247, 70);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(34, 24);
+            this.button1.TabIndex = 40;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
+            this.button1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button1_MouseUp);
             // 
             // pbxMinimize
             // 
             this.pbxMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxMinimize.Image = ((System.Drawing.Image)(resources.GetObject("pbxMinimize.Image")));
-            this.pbxMinimize.Location = new System.Drawing.Point(190, 2);
+            this.pbxMinimize.Location = new System.Drawing.Point(221, 2);
             this.pbxMinimize.Name = "pbxMinimize";
             this.pbxMinimize.Size = new System.Drawing.Size(23, 22);
             this.pbxMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -176,7 +190,7 @@
             // 
             this.pbxClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxClose.Image = ((System.Drawing.Image)(resources.GetObject("pbxClose.Image")));
-            this.pbxClose.Location = new System.Drawing.Point(219, 2);
+            this.pbxClose.Location = new System.Drawing.Point(250, 2);
             this.pbxClose.Name = "pbxClose";
             this.pbxClose.Size = new System.Drawing.Size(23, 22);
             this.pbxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -198,7 +212,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(262, 177);
+            this.ClientSize = new System.Drawing.Size(298, 177);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
@@ -239,5 +254,6 @@
         private System.Windows.Forms.PictureBox pbxMinimize;
         private System.Windows.Forms.PictureBox pbxClose;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button button1;
     }
 }
