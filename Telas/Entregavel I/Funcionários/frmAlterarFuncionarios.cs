@@ -203,7 +203,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
 
         private void txtNum_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar) == true || char.IsWhiteSpace(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
+            if (char.IsNumber(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
             {
                 e.Handled = false;
             }

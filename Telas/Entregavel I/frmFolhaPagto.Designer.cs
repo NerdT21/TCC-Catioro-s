@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFolhaPagto));
             this.nudFaltas = new System.Windows.Forms.NumericUpDown();
             this.mkbCPF = new System.Windows.Forms.MaskedTextBox();
-            this.txtSalFam = new System.Windows.Forms.TextBox();
+            this.txtSalLiquido = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.TxtSalLiq = new System.Windows.Forms.TextBox();
+            this.TxtSalFam = new System.Windows.Forms.TextBox();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.cboFuncionario = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -84,13 +84,13 @@
             this.mkbCPF.Size = new System.Drawing.Size(84, 20);
             this.mkbCPF.TabIndex = 139;
             // 
-            // txtSalFam
+            // txtSalLiquido
             // 
-            this.txtSalFam.Location = new System.Drawing.Point(226, 312);
-            this.txtSalFam.Name = "txtSalFam";
-            this.txtSalFam.ReadOnly = true;
-            this.txtSalFam.Size = new System.Drawing.Size(107, 20);
-            this.txtSalFam.TabIndex = 137;
+            this.txtSalLiquido.Location = new System.Drawing.Point(226, 312);
+            this.txtSalLiquido.Name = "txtSalLiquido";
+            this.txtSalLiquido.ReadOnly = true;
+            this.txtSalLiquido.Size = new System.Drawing.Size(107, 20);
+            this.txtSalLiquido.TabIndex = 137;
             // 
             // label3
             // 
@@ -103,13 +103,13 @@
             this.label3.TabIndex = 136;
             this.label3.Text = "Salário Família ";
             // 
-            // TxtSalLiq
+            // TxtSalFam
             // 
-            this.TxtSalLiq.Location = new System.Drawing.Point(413, 261);
-            this.TxtSalLiq.Name = "TxtSalLiq";
-            this.TxtSalLiq.ReadOnly = true;
-            this.TxtSalLiq.Size = new System.Drawing.Size(53, 20);
-            this.TxtSalLiq.TabIndex = 135;
+            this.TxtSalFam.Location = new System.Drawing.Point(413, 261);
+            this.TxtSalFam.Name = "TxtSalFam";
+            this.TxtSalFam.ReadOnly = true;
+            this.TxtSalFam.Size = new System.Drawing.Size(53, 20);
+            this.TxtSalFam.TabIndex = 135;
             // 
             // btnCalcular
             // 
@@ -430,9 +430,9 @@
             this.Controls.Add(this.nudFaltas);
             this.Controls.Add(this.mkbCPF);
             this.Controls.Add(this.pbxImgFuncionario);
-            this.Controls.Add(this.txtSalFam);
+            this.Controls.Add(this.txtSalLiquido);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.TxtSalLiq);
+            this.Controls.Add(this.TxtSalFam);
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.cboFuncionario);
             this.Controls.Add(this.label12);
@@ -467,9 +467,9 @@
         private System.Windows.Forms.NumericUpDown nudFaltas;
         private System.Windows.Forms.MaskedTextBox mkbCPF;
         private System.Windows.Forms.PictureBox pbxImgFuncionario;
-        private System.Windows.Forms.TextBox txtSalFam;
+        private System.Windows.Forms.TextBox txtSalLiquido;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TxtSalLiq;
+        private System.Windows.Forms.TextBox TxtSalFam;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.ComboBox cboFuncionario;
         private System.Windows.Forms.Label label12;

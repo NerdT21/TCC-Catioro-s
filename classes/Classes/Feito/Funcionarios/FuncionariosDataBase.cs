@@ -128,16 +128,16 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Id = reader.GetInt32("id_funcionario");
                 add.Salario = reader.GetInt32("ds_salario");
                 add.Depto = reader.GetString("nm_depto");
-                add.Estado = reader.GetString("nm_estado");
                 add.Nome = reader.GetString("nm_nome");
                 add.Email = reader.GetString("ds_email");
                 add.Cpf = reader.GetString("ds_cpf");
                 add.Rg = reader.GetString("ds_rg");
+                add.Estado = reader.GetString("nm_estado");
+                add.Cidade = reader.GetString("ds_cidade");
                 add.Cep = reader.GetString("ds_cep");
                 add.Rua = reader.GetString("ds_rua");
                 add.Numero = reader.GetInt32("ds_numero");
-                add.Complemento = reader.GetString("ds_complemento");
-                add.Cidade = reader.GetString("ds_cidade");
+                add.Complemento = reader.GetString("ds_complemento");                                                                               
                 add.Telefone = reader.GetString("ds_telefone");
                 add.Imagem = reader.GetString("img_funcionario");
 
@@ -165,16 +165,16 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Id = reader.GetInt32("id_funcionario");
                 add.Salario = reader.GetInt32("ds_salario");
                 add.Depto = reader.GetString("nm_depto");
-                add.Estado = reader.GetString("nm_estado");
                 add.Nome = reader.GetString("nm_nome");
                 add.Email = reader.GetString("ds_email");
                 add.Cpf = reader.GetString("ds_cpf");
                 add.Rg = reader.GetString("ds_rg");
+                add.Estado = reader.GetString("nm_estado");
+                add.Cidade = reader.GetString("ds_cidade");
                 add.Cep = reader.GetString("ds_cep");
                 add.Rua = reader.GetString("ds_rua");
                 add.Numero = reader.GetInt32("ds_numero");
                 add.Complemento = reader.GetString("ds_complemento");
-                add.Cidade = reader.GetString("ds_cidade");
                 add.Telefone = reader.GetString("ds_telefone");
                 add.Imagem = reader.GetString("img_funcionario");
 

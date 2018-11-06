@@ -31,6 +31,7 @@ namespace Catiotro_s.classes.Classes.Feito.Funcionarios
         public int Numero { get; set; }
 
         public string Complemento { get; set; }
+
         public string Cidade { get; set; }
 
         public string Telefone { get; set; }

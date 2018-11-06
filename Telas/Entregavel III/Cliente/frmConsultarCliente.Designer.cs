@@ -71,7 +71,7 @@
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.ReadOnly = true;
             this.dgvCliente.RowHeadersVisible = false;
-            this.dgvCliente.Size = new System.Drawing.Size(573, 265);
+            this.dgvCliente.Size = new System.Drawing.Size(549, 265);
             this.dgvCliente.TabIndex = 10;
             this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellContentClick);
             // 
@@ -254,7 +254,7 @@
             this.Controls.Add(this.lblprocurar);
             this.Controls.Add(this.dgvCliente);
             this.Name = "frmConsultarCliente";
-            this.Size = new System.Drawing.Size(605, 388);
+            this.Size = new System.Drawing.Size(583, 405);
             this.Load += new System.EventHandler(this.frmConsultarCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);

@@ -104,9 +104,9 @@ namespace Catiotro_s.Telas.Entregavel_I
                 txtINSS.Text = pagto.CalcularINSS().ToString("F2");
                 txtIR.Text = pagto.CalcularIR().ToString("F2");
                 txtFGTS.Text = pagto.CalcularFGTS().ToString("F2");
-                txtSalFam.Text = pagto.VerificarSalarioFamilia().ToString("F2");
+                TxtSalFam.Text = pagto.VerificarSalarioFamilia().ToString("F2");
                 txtValTrans.Text = pagto.CalcularValeTransporte().ToString("F2");
-                TxtSalLiq.Text = pagto.CalcularSalarioLiquido().ToString("F2");
+                txtSalLiquido.Text = pagto.CalcularSalarioLiquido().ToString("F2");
             }
             catch (Exception ex)
             {
@@ -138,9 +138,9 @@ namespace Catiotro_s.Telas.Entregavel_I
                 dto.Fgts = Convert.ToDecimal(txtFGTS.Text);
                 dto.VLTars = Convert.ToDecimal(txtValTrans.Text);
                 dto.IdFuncio = funcionario.Id;
-                dto.SalLiq = Convert.ToDecimal(TxtSalLiq.Text);
+                dto.SalLiq = Convert.ToDecimal(txtSalLiquido.Text);
                 dto.Inss = Convert.ToDecimal(txtINSS.Text);
-                dto.SalFamilia = Convert.ToDecimal(txtSalFam.Text);
+                dto.SalFamilia = Convert.ToDecimal(TxtSalFam.Text);
                 dto.Data = mkbData.Text;
 
                 FPagamentoBusiness buss = new FPagamentoBusiness();

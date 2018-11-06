@@ -40,8 +40,8 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 ProdutoDTO dto = new ProdutoDTO();
                 dto.Nome = txtNome.Text;
                 dto.Marca = txtMarca.Text;
@@ -64,22 +64,22 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
                 frmMessage tela = new frmMessage();
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
-            }
-            catch (ValidacaoException vex)
-            {
-                string msg = vex.Message;
-                frmAlert tela = new frmAlert();
-                tela.LoadScreen(msg);
-                tela.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                string msg = "Ocorreu um erro: " + ex.Message;
+            //}
+            //catch (ValidacaoException vex)
+            //{
+            //    string msg = vex.Message;
+            //    frmAlert tela = new frmAlert();
+            //    tela.LoadScreen(msg);
+            //    tela.ShowDialog();
+            //}
+            //catch (Exception ex)
+            //{
+            //    string msg = "Ocorreu um erro: " + ex.Message;
 
-                frmException tela = new frmException();
-                tela.LoadScreen(msg);
-                tela.ShowDialog();
-            }
+            //    frmException tela = new frmException();
+            //    tela.LoadScreen(msg);
+            //    tela.ShowDialog();
+            //}
           
         }
 
