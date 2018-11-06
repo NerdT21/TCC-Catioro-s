@@ -27,6 +27,7 @@ CREATE TABLE `tb_cliente` (
 	`ds_cep` varchar(16) NOT NULL,
     `ds_rua` varchar(150) NOT NULL,
     `ds_numero` int,
+    `ds_complemento` varchar(5),
 	`ds_telefone` varchar(20) NOT NULL,
 	`dt_nasc` varchar(20) NOT NULL,
 	`dt_dataCadastro` varchar(20) NOT NULL,
@@ -57,7 +58,7 @@ CREATE TABLE `tb_funcionario` (
 	`ds_salario` DECIMAL(15,2) NOT NULL,
 	`id_depto` int NOT NULL,
 	`nm_nome` varchar(50) NOT NULL,
-	`ds_email` varchar(50) NOT NULL,
+	`ds_email` varchar(50) NOT NULL UNIQUE,
 	`ds_cpf` varchar(50) NOT NULL UNIQUE,
 	`ds_rg` varchar(50) NOT NULL,
 	`id_estado` int NOT NULL,
@@ -65,6 +66,7 @@ CREATE TABLE `tb_funcionario` (
 	`ds_cep` varchar(10) NOT NULL,
     `ds_rua` varchar(200) NOT NULL,
     `ds_numero` int,
+    `ds_complemento` varchar(5),
 	`ds_telefone` varchar(15) NOT NULL,
 	`img_funcionario` longblob NOT NULL,
 	PRIMARY KEY (`id_funcionario`)
@@ -444,6 +446,7 @@ CREATE VIEW vw_consultarFuncionario AS
 		   tb_funcionario.ds_cep,
            tb_funcionario.ds_rua,
            tb_funcionario.ds_numero,
+           tb_funcionario.ds_complemento,
            tb_funcionario.ds_telefone,
            tb_funcionario.img_funcionario
 	FROM tb_funcionario
