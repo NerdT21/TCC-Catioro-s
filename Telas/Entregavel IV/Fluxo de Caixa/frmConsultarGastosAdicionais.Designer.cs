@@ -92,7 +92,7 @@
             // Data
             // 
             this.Data.AutoSize = true;
-            this.Data.BackColor = System.Drawing.Color.White;
+            this.Data.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Data.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Data.Location = new System.Drawing.Point(24, 65);
             this.Data.Name = "Data";

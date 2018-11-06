@@ -32,14 +32,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvVendas = new System.Windows.Forms.DataGridView();
-            this.mkbData = new System.Windows.Forms.MaskedTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnProcurar = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mkbData = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnProcurar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,42 +85,6 @@
             this.dgvVendas.Size = new System.Drawing.Size(434, 227);
             this.dgvVendas.TabIndex = 13;
             // 
-            // mkbData
-            // 
-            this.mkbData.Location = new System.Drawing.Point(199, 77);
-            this.mkbData.Mask = "00/00/0000";
-            this.mkbData.Name = "mkbData";
-            this.mkbData.Size = new System.Drawing.Size(63, 20);
-            this.mkbData.TabIndex = 11;
-            this.mkbData.ValidatingType = typeof(System.DateTime);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(88, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 17);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Data de Compra";
-            // 
-            // btnProcurar
-            // 
-            this.btnProcurar.BackColor = System.Drawing.Color.White;
-            this.btnProcurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcurar.Image = global::Catiotro_s.Properties.Resources.icons8_search_26;
-            this.btnProcurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProcurar.Location = new System.Drawing.Point(414, 63);
-            this.btnProcurar.Name = "btnProcurar";
-            this.btnProcurar.Size = new System.Drawing.Size(94, 45);
-            this.btnProcurar.TabIndex = 12;
-            this.btnProcurar.Text = "Procurar";
-            this.btnProcurar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnProcurar.UseVisualStyleBackColor = false;
-            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "Id";
@@ -161,6 +125,42 @@
             this.Column6.HeaderText = "Total";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
+            // 
+            // mkbData
+            // 
+            this.mkbData.Location = new System.Drawing.Point(199, 77);
+            this.mkbData.Mask = "00/00/0000";
+            this.mkbData.Name = "mkbData";
+            this.mkbData.Size = new System.Drawing.Size(63, 20);
+            this.mkbData.TabIndex = 11;
+            this.mkbData.ValidatingType = typeof(System.DateTime);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(88, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 17);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Data de Compra";
+            // 
+            // btnProcurar
+            // 
+            this.btnProcurar.BackColor = System.Drawing.Color.White;
+            this.btnProcurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProcurar.Image = global::Catiotro_s.Properties.Resources.icons8_search_26;
+            this.btnProcurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProcurar.Location = new System.Drawing.Point(414, 63);
+            this.btnProcurar.Name = "btnProcurar";
+            this.btnProcurar.Size = new System.Drawing.Size(94, 45);
+            this.btnProcurar.TabIndex = 12;
+            this.btnProcurar.Text = "Procurar";
+            this.btnProcurar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnProcurar.UseVisualStyleBackColor = false;
+            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // frmVerVendas
             // 

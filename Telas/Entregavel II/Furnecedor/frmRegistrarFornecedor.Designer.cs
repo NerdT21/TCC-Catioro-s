@@ -94,7 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(371, 201);
             this.label2.Name = "label2";
@@ -113,7 +113,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(52, 201);
             this.label1.Name = "label1";
@@ -145,7 +145,7 @@
             // 
             this.lblBairro.AccessibleRole = System.Windows.Forms.AccessibleRole.IpAddress;
             this.lblBairro.AutoSize = true;
-            this.lblBairro.BackColor = System.Drawing.Color.White;
+            this.lblBairro.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblBairro.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBairro.Location = new System.Drawing.Point(48, 165);
             this.lblBairro.Name = "lblBairro";
@@ -165,11 +165,11 @@
             // lbltelefone
             // 
             this.lbltelefone.AutoSize = true;
-            this.lbltelefone.BackColor = System.Drawing.Color.White;
+            this.lbltelefone.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbltelefone.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltelefone.Location = new System.Drawing.Point(199, 103);
             this.lbltelefone.Name = "lbltelefone";
-            this.lbltelefone.Size = new System.Drawing.Size(66, 20);
+            this.lbltelefone.Size = new System.Drawing.Size(67, 20);
             this.lbltelefone.TabIndex = 128;
             this.lbltelefone.Text = "Telefone";
             // 
@@ -185,7 +185,7 @@
             // lblNomeJuridico
             // 
             this.lblNomeJuridico.AutoSize = true;
-            this.lblNomeJuridico.BackColor = System.Drawing.Color.White;
+            this.lblNomeJuridico.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblNomeJuridico.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeJuridico.Location = new System.Drawing.Point(30, 36);
             this.lblNomeJuridico.Name = "lblNomeJuridico";
@@ -204,7 +204,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.BackColor = System.Drawing.Color.White;
+            this.lblEmail.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(34, 66);
             this.lblEmail.Name = "lblEmail";
@@ -233,7 +233,7 @@
             // lblCidadeF
             // 
             this.lblCidadeF.AutoSize = true;
-            this.lblCidadeF.BackColor = System.Drawing.Color.White;
+            this.lblCidadeF.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblCidadeF.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCidadeF.Location = new System.Drawing.Point(152, 165);
             this.lblCidadeF.Name = "lblCidadeF";
@@ -244,7 +244,7 @@
             // lblestado
             // 
             this.lblestado.AutoSize = true;
-            this.lblestado.BackColor = System.Drawing.Color.White;
+            this.lblestado.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblestado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblestado.Location = new System.Drawing.Point(343, 165);
             this.lblestado.Name = "lblestado";
@@ -255,11 +255,11 @@
             // lblCNPJ
             // 
             this.lblCNPJ.AutoSize = true;
-            this.lblCNPJ.BackColor = System.Drawing.Color.White;
+            this.lblCNPJ.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblCNPJ.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCNPJ.Location = new System.Drawing.Point(41, 100);
             this.lblCNPJ.Name = "lblCNPJ";
-            this.lblCNPJ.Size = new System.Drawing.Size(41, 20);
+            this.lblCNPJ.Size = new System.Drawing.Size(42, 20);
             this.lblCNPJ.TabIndex = 119;
             this.lblCNPJ.Text = "CNPJ";
             // 

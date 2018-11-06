@@ -121,7 +121,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 buss.Salvar(dto);
 
                 frmMessage tela = new frmMessage();
-                tela.LoadScreen("Funcionário cadastrado com suceso!!");
+                tela.LoadScreen("Funcionário cadastrado com sucesso!");
                 tela.ShowDialog();
             }
             catch (MySqlException mex)

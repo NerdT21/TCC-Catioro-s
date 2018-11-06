@@ -62,7 +62,7 @@
             // lblnasc
             // 
             this.lblnasc.AutoSize = true;
-            this.lblnasc.BackColor = System.Drawing.Color.White;
+            this.lblnasc.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblnasc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnasc.Location = new System.Drawing.Point(358, 103);
             this.lblnasc.Name = "lblnasc";
@@ -146,7 +146,7 @@
             // lblNomeDono
             // 
             this.lblNomeDono.AutoSize = true;
-            this.lblNomeDono.BackColor = System.Drawing.Color.White;
+            this.lblNomeDono.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblNomeDono.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeDono.Location = new System.Drawing.Point(290, 77);
             this.lblNomeDono.Name = "lblNomeDono";
@@ -157,7 +157,7 @@
             // lblTipoPelo
             // 
             this.lblTipoPelo.AutoSize = true;
-            this.lblTipoPelo.BackColor = System.Drawing.Color.White;
+            this.lblTipoPelo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblTipoPelo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoPelo.Location = new System.Drawing.Point(8, 168);
             this.lblTipoPelo.Name = "lblTipoPelo";
@@ -168,7 +168,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(142, 105);
             this.label5.Name = "label5";
@@ -179,7 +179,7 @@
             // lblCorPelo
             // 
             this.lblCorPelo.AutoSize = true;
-            this.lblCorPelo.BackColor = System.Drawing.Color.White;
+            this.lblCorPelo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblCorPelo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCorPelo.Location = new System.Drawing.Point(286, 168);
             this.lblCorPelo.Name = "lblCorPelo";
@@ -190,7 +190,7 @@
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
-            this.lblSexo.BackColor = System.Drawing.Color.White;
+            this.lblSexo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblSexo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSexo.Location = new System.Drawing.Point(141, 77);
             this.lblSexo.Name = "lblSexo";
@@ -201,7 +201,7 @@
             // lblObs
             // 
             this.lblObs.AutoSize = true;
-            this.lblObs.BackColor = System.Drawing.Color.White;
+            this.lblObs.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblObs.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblObs.Location = new System.Drawing.Point(84, 196);
             this.lblObs.Name = "lblObs";
@@ -212,7 +212,7 @@
             // lblNomeAnimal
             // 
             this.lblNomeAnimal.AutoSize = true;
-            this.lblNomeAnimal.BackColor = System.Drawing.Color.White;
+            this.lblNomeAnimal.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblNomeAnimal.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeAnimal.Location = new System.Drawing.Point(141, 50);
             this.lblNomeAnimal.Name = "lblNomeAnimal";
