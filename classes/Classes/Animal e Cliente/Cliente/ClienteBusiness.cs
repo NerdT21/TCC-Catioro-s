@@ -147,7 +147,15 @@ namespace Catiotro_s.classes.Classes.Cliente
                 }
             }
 
-             
+            // ============================ NUMERO =============================
+
+            int numero = cliente.Numero;
+
+            if (numero > 100000)
+            {
+                throw new ValidacaoException("O número informado é muito grande.");
+            }
+
             ClienteDataBase DB = new ClienteDataBase();
             int id = DB.Salvar(cliente);
             return id;
@@ -290,7 +298,14 @@ namespace Catiotro_s.classes.Classes.Cliente
                 }
             }
 
+            // ============================ NUMERO =============================
 
+            int numero = cliente.Numero;
+
+            if (numero > 100000)
+            {
+                throw new ValidacaoException("O número informado é muito grande.");
+            }
 
             ClienteDataBase DB = new ClienteDataBase();
             DB.Alterar(cliente);

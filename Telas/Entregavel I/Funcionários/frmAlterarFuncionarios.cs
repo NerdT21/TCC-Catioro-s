@@ -61,6 +61,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 mkbTelefone.Text = dto.Telefone;
                 cboDepto.SelectedItem = dto.Depto;
                 cboUF.Text = dto.Estado;
+                txtComplemento.Text = dto.Complemento;
 
                 if (dto.Imagem == null)
                 {
@@ -106,6 +107,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 dto.Rua = txtEndereco.Text;
                 dto.Numero = Convert.ToInt32(txtNum.Text);
                 dto.Imagem = ImagemPlugIn.ConverterParaString(pbxFoto.Image);
+                dto.Complemento = txtComplemento.Text;
 
                 FuncionarioBusiness buss = new FuncionarioBusiness();
                 buss.Alterar(dto);
@@ -213,7 +215,12 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
 
         private void txtEndereco_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            string caracteres = "@#$%&*(){}][?;:><º!¨¨°";
+
+            if (caracteres.Contains(e.KeyChar.ToString()))
+            {
+                e.Handled = true;
+            }
         }
 
         private void mkbCEP_KeyUp(object sender, KeyEventArgs e)

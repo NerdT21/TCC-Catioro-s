@@ -105,6 +105,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 dto.IdEstado = estado.Id;
                 dto.Cep = mkbCEP.Text;
                 dto.Rua = txtEndereco.Text;
+                dto.Complemento = txtComplemento.Text;
 
                 if (txtNum.Text == string.Empty)
                 {
@@ -248,6 +249,21 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 e.Handled = false;
             }
             else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEndereco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string caracteres = "@#$%&*(){}][?;:><º!¨¨°";
+            
+            if (caracteres.Contains(e.KeyChar.ToString()))
             {
                 e.Handled = true;
             }

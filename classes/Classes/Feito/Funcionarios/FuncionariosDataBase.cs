@@ -23,6 +23,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                                                               ds_cep,
                                                               ds_rua,
                                                               ds_numero,
+                                                              ds_complemento,
                                                               ds_cidade,
                                                               ds_telefone,
                                                               img_funcionario)
@@ -36,6 +37,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                                                               @ds_cep,
                                                               @ds_rua,
                                                               @ds_numero,
+                                                              @ds_complemento,
                                                               @ds_cidade,
                                                               @ds_telefone,
                                                               @img_funcionario)";
@@ -51,6 +53,7 @@ namespace Catiotro_s.classes.Classes.Cliente
             parms.Add(new MySqlParameter("ds_cep", funcio.Cep));
             parms.Add(new MySqlParameter("ds_rua", funcio.Rua));
             parms.Add(new MySqlParameter("ds_numero", funcio.Numero));
+            parms.Add(new MySqlParameter("ds_complemento", funcio.Complemento));
             parms.Add(new MySqlParameter("ds_cidade", funcio.Cidade));
             parms.Add(new MySqlParameter("ds_telefone", funcio.Telefone));
             parms.Add(new MySqlParameter("img_funcionario", funcio.Imagem));
@@ -74,6 +77,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                                                         ds_cep = @ds_cep,
                                                         ds_rua = @ds_rua,
                                                         ds_numero = @ds_numero,    
+                                                        ds_complemento = @ds_complemento,
                                                         ds_telefone = @ds_telefone,
                                                         img_funcionario = @img_funcionario
                                                         WHERE id_funcionario = @id_funcionario";
@@ -91,6 +95,7 @@ namespace Catiotro_s.classes.Classes.Cliente
             parms.Add(new MySqlParameter("ds_cep", funcio.Cep));
             parms.Add(new MySqlParameter("ds_rua", funcio.Rua));
             parms.Add(new MySqlParameter("ds_numero", funcio.Numero));
+            parms.Add(new MySqlParameter("ds_complemento", funcio.Complemento));
             parms.Add(new MySqlParameter("ds_telefone", funcio.Telefone));
             parms.Add(new MySqlParameter("img_funcionario", funcio.Imagem));
 
@@ -131,6 +136,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Cep = reader.GetString("ds_cep");
                 add.Rua = reader.GetString("ds_rua");
                 add.Numero = reader.GetInt32("ds_numero");
+                add.Complemento = reader.GetString("ds_complemento");
                 add.Cidade = reader.GetString("ds_cidade");
                 add.Telefone = reader.GetString("ds_telefone");
                 add.Imagem = reader.GetString("img_funcionario");
@@ -167,6 +173,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Cep = reader.GetString("ds_cep");
                 add.Rua = reader.GetString("ds_rua");
                 add.Numero = reader.GetInt32("ds_numero");
+                add.Complemento = reader.GetString("ds_complemento");
                 add.Cidade = reader.GetString("ds_cidade");
                 add.Telefone = reader.GetString("ds_telefone");
                 add.Imagem = reader.GetString("img_funcionario");

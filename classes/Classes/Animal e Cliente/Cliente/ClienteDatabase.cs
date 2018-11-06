@@ -22,6 +22,9 @@ namespace Catiotro_s.classes.Classes.Cliente
                                            id_estado,
                                            ds_cidade,
                                            ds_cep,
+                                           ds_rua,
+                                           ds_numero,
+                                           ds_complemento,
                                            ds_telefone,
                                            dt_nasc,
                                            dt_dataCadastro)                                           
@@ -32,6 +35,9 @@ namespace Catiotro_s.classes.Classes.Cliente
                                            @id_estado,
                                            @ds_cidade,
                                            @ds_cep,
+                                           @ds_rua,
+                                           @ds_numero,
+                                           @ds_complemento,
                                            @ds_telefone,
                                            @dt_nasc,
                                            @dt_dataCadastro)";
@@ -44,6 +50,9 @@ namespace Catiotro_s.classes.Classes.Cliente
             parms.Add(new MySqlParameter("id_estado", cliente.EstadoId));
             parms.Add(new MySqlParameter("ds_cidade", cliente.Cidade));
             parms.Add(new MySqlParameter("ds_cep", cliente.Cep));
+            parms.Add(new MySqlParameter("ds_rua", cliente.Rua));
+            parms.Add(new MySqlParameter("ds_numero", cliente.Numero));
+            parms.Add(new MySqlParameter("ds_complemento", cliente.Complemento));
             parms.Add(new MySqlParameter("ds_telefone", cliente.Telefone));
             parms.Add(new MySqlParameter("dt_nasc", cliente.DataNascimento));
             parms.Add(new MySqlParameter("dt_dataCadastro", cliente.DataCadastro));
@@ -64,6 +73,9 @@ namespace Catiotro_s.classes.Classes.Cliente
                                                     id_estado = @id_estado,
                                                     ds_cidade  = @ds_cidade,
                                                     ds_cep = @ds_cep,
+                                                    ds_rua = @ds_rua,
+                                                    ds_numero = @ds_numero,
+                                                    ds_complemento = @ds_complemento, 
                                                     ds_email = @ds_email,
                                                     ds_telefone = @ds_telefone,
                                                     dt_nasc = @dt_nasc,
@@ -71,6 +83,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                                               WHERE id_cliente = @id_cliente";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
+            parms.Add(new MySqlParameter("id_cliente", cliente.id));
             parms.Add(new MySqlParameter("nm_nome", cliente.Nome));
             parms.Add(new MySqlParameter("ds_cpf", cliente.Cpf));
             parms.Add(new MySqlParameter("ds_email", cliente.Email));
@@ -78,6 +91,9 @@ namespace Catiotro_s.classes.Classes.Cliente
             parms.Add(new MySqlParameter("id_estado", cliente.EstadoId));
             parms.Add(new MySqlParameter("ds_cidade", cliente.Cidade));
             parms.Add(new MySqlParameter("ds_cep", cliente.Cep));
+            parms.Add(new MySqlParameter("ds_rua", cliente.Rua));
+            parms.Add(new MySqlParameter("ds_numero", cliente.Numero));
+            parms.Add(new MySqlParameter("ds_complemento", cliente.Complemento));
             parms.Add(new MySqlParameter("ds_telefone", cliente.Telefone));
             parms.Add(new MySqlParameter("dt_nasc", cliente.DataNascimento));
             parms.Add(new MySqlParameter("dt_dataCadastro", cliente.DataCadastro));
@@ -121,6 +137,9 @@ namespace Catiotro_s.classes.Classes.Cliente
                 dto.Estado = reader.GetString("nm_estado");
                 dto.Cidade = reader.GetString("ds_cidade");
                 dto.Cep = reader.GetString("ds_cep");
+                dto.Rua = reader.GetString("ds_rua");
+                dto.Numero = reader.GetInt32("ds_numero");
+                dto.Complemento = reader.GetString("ds_complemento");
                 dto.Telefone = reader.GetString("ds_telefone");
                 dto.DataNascimento = reader.GetString("dt_nasc");
                 dto.DataCadastro = reader.GetString("dt_dataCadastro");
@@ -148,9 +167,12 @@ namespace Catiotro_s.classes.Classes.Cliente
                 dto.Email = reader.GetString("ds_email");
                 dto.Rg = reader.GetString("ds_rg");
                 dto.Cpf = reader.GetString("ds_cpf");
-                dto.EstadoId = reader.GetInt32("id_estado");
+                dto.EstadoId = reader.GetInt32("nm_estado");
                 dto.Cidade = reader.GetString("ds_cidade");
                 dto.Cep = reader.GetString("ds_cep");
+                dto.Rua = reader.GetString("ds_rua");
+                dto.Numero = reader.GetInt32("ds_numero");
+                dto.Complemento = reader.GetString("ds_complemento");
                 dto.Telefone = reader.GetString("ds_telefone");
                 dto.DataNascimento = reader.GetString("dt_nasc");
                 dto.DataCadastro = reader.GetString("dt_dataCadastro");
@@ -184,6 +206,9 @@ namespace Catiotro_s.classes.Classes.Cliente
                 dto.Estado = reader.GetString("nm_estado");
                 dto.Cidade = reader.GetString("ds_cidade");
                 dto.Cep = reader.GetString("ds_cep");
+                dto.Rua = reader.GetString("ds_rua");
+                dto.Numero = reader.GetInt32("ds_numero");
+                dto.Complemento = reader.GetString("ds_complemento");
                 dto.Telefone = reader.GetString("ds_telefone");
                 dto.DataNascimento = reader.GetString("dt_nasc");
                 dto.DataCadastro = reader.GetString("dt_dataCadastro");

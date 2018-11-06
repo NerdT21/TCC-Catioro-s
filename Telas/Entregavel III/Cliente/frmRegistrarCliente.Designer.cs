@@ -56,15 +56,19 @@
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.pbxImagem = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtComplemento = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagem)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtCidade
             // 
+            this.txtCidade.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCidade.Location = new System.Drawing.Point(248, 191);
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(156, 20);
-            this.txtCidade.TabIndex = 38;
+            this.txtCidade.Size = new System.Drawing.Size(156, 23);
+            this.txtCidade.TabIndex = 8;
             this.txtCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // panel1
@@ -77,19 +81,21 @@
             // 
             // mkbNascimento
             // 
+            this.mkbNascimento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mkbNascimento.Location = new System.Drawing.Point(172, 106);
             this.mkbNascimento.Mask = "00/00/0000";
             this.mkbNascimento.Name = "mkbNascimento";
-            this.mkbNascimento.Size = new System.Drawing.Size(72, 20);
-            this.mkbNascimento.TabIndex = 30;
+            this.mkbNascimento.Size = new System.Drawing.Size(72, 23);
+            this.mkbNascimento.TabIndex = 3;
             this.mkbNascimento.ValidatingType = typeof(System.DateTime);
             // 
             // txtEmail
             // 
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(145, 78);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(259, 20);
-            this.txtEmail.TabIndex = 28;
+            this.txtEmail.Size = new System.Drawing.Size(259, 23);
+            this.txtEmail.TabIndex = 2;
             // 
             // btnCadastrar
             // 
@@ -103,7 +109,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(248, 323);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(112, 47);
-            this.btnCadastrar.TabIndex = 42;
+            this.btnCadastrar.TabIndex = 14;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCadastrar.UseVisualStyleBackColor = false;
@@ -115,30 +121,33 @@
             this.mkbTelefone.Mask = "(00)00000-0000";
             this.mkbTelefone.Name = "mkbTelefone";
             this.mkbTelefone.Size = new System.Drawing.Size(83, 20);
-            this.mkbTelefone.TabIndex = 32;
+            this.mkbTelefone.TabIndex = 4;
             // 
             // mkbCPF
             // 
+            this.mkbCPF.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mkbCPF.Location = new System.Drawing.Point(161, 135);
             this.mkbCPF.Mask = "000.000.000-00";
             this.mkbCPF.Name = "mkbCPF";
-            this.mkbCPF.Size = new System.Drawing.Size(83, 20);
-            this.mkbCPF.TabIndex = 34;
+            this.mkbCPF.Size = new System.Drawing.Size(83, 23);
+            this.mkbCPF.TabIndex = 5;
             // 
             // mkbRG
             // 
+            this.mkbRG.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mkbRG.Location = new System.Drawing.Point(321, 132);
             this.mkbRG.Mask = "00.000.000-0";
             this.mkbRG.Name = "mkbRG";
-            this.mkbRG.Size = new System.Drawing.Size(83, 20);
-            this.mkbRG.TabIndex = 35;
+            this.mkbRG.Size = new System.Drawing.Size(83, 23);
+            this.mkbRG.TabIndex = 6;
             // 
             // txtNome
             // 
+            this.txtNome.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(145, 46);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(259, 20);
-            this.txtNome.TabIndex = 25;
+            this.txtNome.Size = new System.Drawing.Size(259, 23);
+            this.txtNome.TabIndex = 1;
             this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // label8
@@ -246,7 +255,7 @@
             this.cboUF.Location = new System.Drawing.Point(476, 190);
             this.cboUF.Name = "cboUF";
             this.cboUF.Size = new System.Drawing.Size(44, 21);
-            this.cboUF.TabIndex = 45;
+            this.cboUF.TabIndex = 9;
             this.cboUF.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label10
@@ -263,22 +272,25 @@
             // 
             // txtCEP
             // 
+            this.txtCEP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCEP.Location = new System.Drawing.Point(118, 191);
             this.txtCEP.Mask = "99999-999";
             this.txtCEP.Name = "txtCEP";
-            this.txtCEP.Size = new System.Drawing.Size(58, 20);
-            this.txtCEP.TabIndex = 103;
+            this.txtCEP.Size = new System.Drawing.Size(58, 23);
+            this.txtCEP.TabIndex = 7;
             this.txtCEP.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtCEP_MaskInputRejected);
             this.txtCEP.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCEP_KeyUp);
             // 
             // mkbCadastro
             // 
+            this.mkbCadastro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mkbCadastro.Location = new System.Drawing.Point(207, 261);
             this.mkbCadastro.Mask = "00/00/0000";
             this.mkbCadastro.Name = "mkbCadastro";
-            this.mkbCadastro.Size = new System.Drawing.Size(67, 20);
-            this.mkbCadastro.TabIndex = 108;
+            this.mkbCadastro.Size = new System.Drawing.Size(67, 23);
+            this.mkbCadastro.TabIndex = 12;
             this.mkbCadastro.ValidatingType = typeof(System.DateTime);
+            this.mkbCadastro.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mkbCadastro_MaskInputRejected);
             // 
             // label13
             // 
@@ -306,10 +318,11 @@
             // 
             // txtRua
             // 
+            this.txtRua.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRua.Location = new System.Drawing.Point(118, 223);
             this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(286, 20);
-            this.txtRua.TabIndex = 111;
+            this.txtRua.Size = new System.Drawing.Size(286, 23);
+            this.txtRua.TabIndex = 10;
             this.txtRua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // label11
@@ -326,16 +339,18 @@
             // 
             // txtNumero
             // 
+            this.txtNumero.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumero.Location = new System.Drawing.Point(476, 223);
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(44, 20);
-            this.txtNumero.TabIndex = 113;
+            this.txtNumero.Size = new System.Drawing.Size(44, 23);
+            this.txtNumero.TabIndex = 11;
             this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // pbxImagem
             // 
             this.pbxImagem.BackColor = System.Drawing.Color.White;
             this.pbxImagem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbxImagem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxImagem.Location = new System.Drawing.Point(425, 41);
             this.pbxImagem.Name = "pbxImagem";
             this.pbxImagem.Size = new System.Drawing.Size(112, 113);
@@ -347,6 +362,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txtComplemento);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(55, 16);
             this.groupBox1.Name = "groupBox1";
@@ -355,6 +372,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastrar Cliente";
             this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
+            // 
+            // txtComplemento
+            // 
+            this.txtComplemento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComplemento.Location = new System.Drawing.Point(422, 242);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(44, 23);
+            this.txtComplemento.TabIndex = 13;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(327, 244);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(90, 17);
+            this.label12.TabIndex = 56;
+            this.label12.Text = "Complemento";
             // 
             // frmRegistrarCliente
             // 
@@ -395,6 +431,8 @@
             this.Size = new System.Drawing.Size(605, 388);
             this.Load += new System.EventHandler(this.RegistrarCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagem)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,5 +467,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtComplemento;
+        private System.Windows.Forms.Label label12;
     }
 }
