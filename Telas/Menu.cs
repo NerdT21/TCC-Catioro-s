@@ -361,6 +361,12 @@ namespace Catiotro_s
             tela.Show();
         }
 
+        private void siteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSite tela = new frmSite();
+            tela.Show();
+        }
+
         private void pnlTopo_MouseDown(object sender, MouseEventArgs e)
         {
            //Codigo pra mexer a tela 

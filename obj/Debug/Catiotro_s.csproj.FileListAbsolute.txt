@@ -403,3 +403,4 @@ C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregave
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_III.Cliente.frmAlterarCliente.resources
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_III.Produto_Vendas.frmAlterarProduto.resources
 C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Entregavel_II.Produtos_Compras.frmAlterarItem.resources
+C:\Users\infod32\Source\Repos\TCC-Catioro-s\obj\Debug\Catiotro_s.Telas.Diferenciais.frmSite.resources

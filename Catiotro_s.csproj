@@ -89,6 +89,12 @@
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoDTO.cs" />
+    <Compile Include="Telas\Diferenciais\frmSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Diferenciais\frmSite.Designer.cs">
+      <DependentUpon>frmSite.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Entregavel III\Animal\frmAlterarAnimal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -616,6 +622,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Diferenciais\frmEmail.resx">
       <DependentUpon>frmEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Diferenciais\frmSite.resx">
+      <DependentUpon>frmSite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel III\Animal\frmAlterarAnimal.resx">
       <DependentUpon>frmAlterarAnimal.cs</DependentUpon>

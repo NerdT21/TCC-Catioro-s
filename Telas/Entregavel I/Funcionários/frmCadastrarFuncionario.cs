@@ -88,8 +88,8 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 DeptoDTO depto = cboDepto.SelectedItem as DeptoDTO;
                 EstadoDTO estado = cboUF.SelectedItem as EstadoDTO;
 
@@ -124,34 +124,34 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 frmMessage tela = new frmMessage();
                 tela.LoadScreen("Funcionário cadastrado com sucesso!");
                 tela.ShowDialog();
-            //}
-            //catch (MySqlException mex)
-            //{
-            //    if (mex.Number == 1062)
-            //    {
-            //        string msg = "Funcionario já está cadastrado. Verifique se o CPF está corretamente preenchido ou se ele já esta no sistema.";
+            }
+            catch (MySqlException mex)
+            {
+                if (mex.Number == 1062)
+                {
+                    string msg = "Funcionario já está cadastrado. Verifique se o CPF está corretamente preenchido ou se ele já esta no sistema.";
 
-            //        frmAlert tela = new frmAlert();
-            //        tela.LoadScreen(msg);
-            //        tela.ShowDialog();
-            //    }
-            //}
-            //catch (ValidacaoException vex)
-            //{
-            //    string msg = vex.Message;
+                    frmAlert tela = new frmAlert();
+                    tela.LoadScreen(msg);
+                    tela.ShowDialog();
+                }
+            }
+            catch (ValidacaoException vex)
+            {
+                string msg = vex.Message;
 
-            //    frmAlert tela = new frmAlert();
-            //    tela.LoadScreen(msg);
-            //    tela.ShowDialog();
-            //}
-            //catch (Exception ex)
-            //{
-            //    string msg = "Ocorreu um erro: " + ex.Message;
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                string msg = "Ocorreu um erro: " + ex.Message;
 
-            //    frmException tela = new frmException();
-            //    tela.LoadScreen(msg);
-            //    tela.ShowDialog();
-            //}
+                frmException tela = new frmException();
+                tela.LoadScreen(msg);
+                tela.ShowDialog();
+            }
         }
 
         private void pbxFoto_Click_1(object sender, EventArgs e)

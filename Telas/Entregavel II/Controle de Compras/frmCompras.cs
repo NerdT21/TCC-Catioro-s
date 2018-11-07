@@ -26,7 +26,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             InitializeComponent();
             CarregarCombos();
             DataParaHoje();
-            CarregarTxt();
+            //CarregarTxt();
         }
 
         BindingList<ItemDTO> carrinhoAdd = new BindingList<ItemDTO>();
