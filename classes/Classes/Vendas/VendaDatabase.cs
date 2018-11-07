@@ -14,17 +14,17 @@ namespace Catiotro_s.classes.Classes.Vendas
         public int Salvar(VendaDTO dto)
         {
             string script = @"INSERT INTO tb_venda(
-                                            id_usuario,
-                                            dt_compra,
-                                            ds_formaPagamento)                                                                     
-                                     VALUES(@id_usuario,
-                                            @dt_compra, 
-                                            @ds_formaPagamento)";
+                                           id_usuario,
+                                           dt_venda,
+                                           ds_formaPagto)                                                                     
+                                    VALUES(@id_usuario,
+                                           @dt_venda, 
+                                           @ds_formaPagto)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_usuario", dto.IdUsuario));
-            parms.Add(new MySqlParameter("dt_compra", dto.Data));
-            parms.Add(new MySqlParameter("ds_formaPagamento", dto.FormaPagto));
+            parms.Add(new MySqlParameter("dt_venda", dto.Data));
+            parms.Add(new MySqlParameter("ds_formaPagto", dto.FormaPagto));
 
             Database db = new Database();
             return db.ExecuteInsertScriptWithPk(script, parms);
