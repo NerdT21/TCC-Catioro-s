@@ -358,7 +358,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(174, 125);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 17);
+            this.label5.Size = new System.Drawing.Size(57, 17);
             this.label5.TabIndex = 36;
             this.label5.Text = "Telefone";
             // 
@@ -387,6 +387,7 @@
             // pbxFoto
             // 
             this.pbxFoto.BackColor = System.Drawing.Color.White;
+            this.pbxFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbxFoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pbxFoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxFoto.Image = ((System.Drawing.Image)(resources.GetObject("pbxFoto.Image")));

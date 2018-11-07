@@ -230,7 +230,7 @@
             // 
             this.mkbRG.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mkbRG.Location = new System.Drawing.Point(291, 123);
-            this.mkbRG.Mask = "00.000.000-0";
+            this.mkbRG.Mask = "00.000.000-A";
             this.mkbRG.Name = "mkbRG";
             this.mkbRG.Size = new System.Drawing.Size(83, 23);
             this.mkbRG.TabIndex = 125;
@@ -275,7 +275,7 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(218, 97);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 20);
+            this.label6.Size = new System.Drawing.Size(66, 20);
             this.label6.TabIndex = 123;
             this.label6.Text = "Telefone";
             // 

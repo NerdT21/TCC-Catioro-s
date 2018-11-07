@@ -235,6 +235,7 @@
             this.pbxImagem.Location = new System.Drawing.Point(31, 30);
             this.pbxImagem.Name = "pbxImagem";
             this.pbxImagem.Size = new System.Drawing.Size(124, 123);
+            this.pbxImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImagem.TabIndex = 118;
             this.pbxImagem.TabStop = false;
             this.pbxImagem.Click += new System.EventHandler(this.pictureBox1_Click);
