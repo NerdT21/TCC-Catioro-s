@@ -264,7 +264,7 @@ INSERT INTO tb_login(`id_usuario`,`nm_funcionario`, `nm_usuario`, `ds_senha`,`ds
 		      VALUES('1','NerdTeen', 'NerdT', 'NerdT2018','nerdt21@gmail.com', '1', '1', '1', '1', '1', '1', '1', '1', '1');
               
 INSERT INTO tb_Depto(`id_depto`, `nm_depto`, `ds_depto`)
-              VALUES('1','nome','descrudas');
+              VALUES('1','Gerência','Responsável por gerenciar e supervisar todos os outros departamentos da empresa.');
               
 INSERT INTO tb_estados(`id_estado`,`nm_estado`)
 				VALUES('1','AC');
@@ -516,7 +516,16 @@ CREATE VIEW vw_servico AS
 	JOIN tb_cliente
 	  ON tb_animal.id_cliente = tb_cliente.id_cliente;
     
-    
+    CREATE VIEW vw_item AS
+	SELECT tb_item.id_item,
+           tb_item.nm_item, 
+           tb_fornecedor.nm_fornecedor,
+           tb_item.ds_item,
+           tb_item.vl_preco
+	FROM tb_item
+    JOIN tb_fornecedor
+      ON tb_item.id_fornecedor = tb_fornecedor.id_fornecedor;
+  
     
 -- ============== VIEW do fluxo de caixa    
     
@@ -588,17 +597,7 @@ FROM
              vl_total_despesas,
              vl_saldo; 
              
-
-CREATE VIEW vw_item AS
-	SELECT tb_item.id_item,
-           tb_item.nm_item, 
-           tb_fornecedor.nm_fornecedor,
-           tb_item.ds_item,
-           tb_item.vl_preco
-	FROM tb_item
-    JOIN tb_fornecedor
-      ON tb_item.id_fornecedor = tb_fornecedor.nm_fornecedor;
-  
+             
 -- SELECT Views
 
 USE CatiorosDB;

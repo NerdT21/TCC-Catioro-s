@@ -116,7 +116,7 @@ namespace Catiotro_s.Resgistros
                 dto.Telefone = txtTelefone.Text;
                 dto.IdEstado = estado.Id;
                 dto.Rua = txtRua.Text;
-                dto.Numero = Convert.ToInt32(txtNumero.Text);
+                dto.Numero = txtNumero.Text;
 
                 FornecedoresBusiness business = new FornecedoresBusiness();
                 business.Salvar(dto);
@@ -200,7 +200,7 @@ namespace Catiotro_s.Resgistros
                     cboEstado.Text = resposta.uf;
 
                 }
-                catch (Exception cex)
+                catch (Exception)
                 {
                     string msg = "Não foi possível encontrar o CEP";
 

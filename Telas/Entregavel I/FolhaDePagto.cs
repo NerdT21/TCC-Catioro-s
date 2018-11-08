@@ -9,10 +9,11 @@ namespace FamosoAça.Screens.Entregavel_I
 {
     public class FolhaPagto
     {
-        public decimal Salario { get; set; }
-        public DateTime HoraExtra { get; set; }
-        public int Faltas { get; set; }
-        public DateTime Atrasos { get; set; }
+        public decimal Salario { private get; set; }
+        public DateTime HoraExtra { private get; set; }
+        public int Faltas { private get; set; }
+        public DateTime Atrasos { private get; set; }
+        public int Domingos { private get; set; }
 
         private decimal CalcularSalarioHora()
         {

@@ -119,7 +119,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Cidade = reader.GetString("ds_cidade");
                 add.CEP = reader.GetString("ds_cep");
                 add.Rua = reader.GetString("ds_rua");
-                add.Numero = reader.GetInt32("ds_numero");
+                add.Numero = reader.GetString("ds_numero");
             }
             reader.Close();
             return add;
@@ -150,7 +150,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Cidade = reader.GetString("ds_cidade");
                 add.CEP = reader.GetString("ds_cep");
                 add.Rua = reader.GetString("ds_rua");
-                add.Numero = reader.GetInt32("ds_numero");
+                add.Numero = reader.GetString("ds_numero");
 
                 lista.Add(add);
             }
@@ -178,7 +178,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Cidade = reader.GetString("ds_cidade");
                 add.CEP = reader.GetString("ds_cep");
                 add.Rua = reader.GetString("ds_rua");
-                add.Numero = reader.GetInt32("ds_numero");
+                add.Numero = reader.GetString("ds_numero");
 
                 lista.Add(add);
             }
@@ -207,7 +207,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Cidade = reader.GetString("ds_cidade");
                 add.CEP = reader.GetString("ds_cep");
                 add.Rua = reader.GetString("ds_rua");
-                add.Numero = reader.GetInt32("ds_numero");
+                add.Numero = reader.GetString("ds_numero");
 
                 lista.Add(add);
             }

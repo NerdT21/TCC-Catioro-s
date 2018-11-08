@@ -134,12 +134,15 @@ namespace Catiotro_s.classes.Classes.Cliente
 
             // ============================ NUMERO =============================
 
-            int numero = funcionario.Numero;
+            string numero = funcionario.Numero;
+            numero = numero.Trim();
+            int qtdNumero = numero.Count();
 
-            if (numero > 100000)
+            if (qtdNumero > 6)
             {
                 throw new ValidacaoException("O número informado é muito grande.");
             }
+
 
             FuncionariosDataBase DB = new FuncionariosDataBase();
             return DB.Salvar(funcionario);
@@ -264,12 +267,15 @@ namespace Catiotro_s.classes.Classes.Cliente
 
             // ============================ NUMERO =============================
 
-            int numero = funcionario.Numero;
+            string numero = funcionario.Numero;
+            numero = numero.Trim();
+            int qtdNumero = numero.Count();
 
-            if (numero > 100000)
+            if (qtdNumero > 6)
             {
                 throw new ValidacaoException("O número informado é muito grande.");
             }
+
 
             FuncionariosDataBase DB = new FuncionariosDataBase();
             DB.Alterar(funcionario);

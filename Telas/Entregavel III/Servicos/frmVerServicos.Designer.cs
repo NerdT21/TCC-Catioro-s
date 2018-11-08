@@ -169,6 +169,7 @@
             this.Controls.Add(this.dgvServicos);
             this.Name = "frmVerServicos";
             this.Size = new System.Drawing.Size(583, 405);
+            this.Load += new System.EventHandler(this.frmVerServicos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

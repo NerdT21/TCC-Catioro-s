@@ -84,7 +84,7 @@ namespace Catiotro_s.Resgistros
                 dta.DataCadastro = mkbCadastro.Text;
                 dta.Cep = txtCEP.Text;
                 dta.Rua = txtRua.Text;
-                dta.Numero = Convert.ToInt32(txtNumero.Text);
+                dta.Numero = txtNumero.Text;
                 dta.EstadoId = Convert.ToInt32(dto.Id);
                 dta.Complemento = txtComplemento.Text;
 

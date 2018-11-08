@@ -138,7 +138,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                 dto.Cidade = reader.GetString("ds_cidade");
                 dto.Cep = reader.GetString("ds_cep");
                 dto.Rua = reader.GetString("ds_rua");
-                dto.Numero = reader.GetInt32("ds_numero");
+                dto.Numero = reader.GetString("ds_numero");
                 dto.Complemento = reader.GetString("ds_complemento");
                 dto.Telefone = reader.GetString("ds_telefone");
                 dto.DataNascimento = reader.GetString("dt_nasc");
@@ -172,12 +172,11 @@ namespace Catiotro_s.classes.Classes.Cliente
                 dto.Cidade = reader.GetString("ds_cidade");
                 dto.Cep = reader.GetString("ds_cep");
                 dto.Rua = reader.GetString("ds_rua");
-                dto.Numero = reader.GetInt32("ds_numero");
+                dto.Numero = reader.GetString("ds_numero");
                 dto.Complemento = reader.GetString("ds_complemento");
                 dto.Telefone = reader.GetString("ds_telefone");
                 dto.DataNascimento = reader.GetString("dt_nasc");
                 dto.DataCadastro = reader.GetString("dt_dataCadastro");
-                dto.Imagem = reader.GetString("img_cliente");
 
                 lista.Add(dto);
             }
@@ -209,7 +208,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                 dto.Cidade = reader.GetString("ds_cidade");
                 dto.Cep = reader.GetString("ds_cep");
                 dto.Rua = reader.GetString("ds_rua");
-                dto.Numero = reader.GetInt32("ds_numero");
+                dto.Numero = reader.GetString("ds_numero");
                 dto.Complemento = reader.GetString("ds_complemento");
                 dto.Telefone = reader.GetString("ds_telefone");
                 dto.DataNascimento = reader.GetString("dt_nasc");

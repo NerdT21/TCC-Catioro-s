@@ -137,6 +137,7 @@
             this.Controls.Add(this.dgvGastos);
             this.Name = "frmConsultarGastosAdicionais";
             this.Size = new System.Drawing.Size(583, 405);
+            this.Load += new System.EventHandler(this.frmConsultarGastosAdicionais_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGastos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

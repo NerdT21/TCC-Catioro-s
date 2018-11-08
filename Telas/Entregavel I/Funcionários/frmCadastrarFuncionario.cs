@@ -65,7 +65,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                     cboUF.Text = resposta.uf;
 
                 }
-                catch (Exception cex)
+                catch (Exception)
                 {
                     string msg = "Não foi possível encontrar o CEP";
 
@@ -106,15 +106,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 dto.Cep = mkbCEP.Text;
                 dto.Rua = txtEndereco.Text;
                 dto.Complemento = txtComplemento.Text;
-
-                if (txtNum.Text == string.Empty)
-                {
-                    dto.Numero = 0;
-                }
-                else
-                {
-                    dto.Numero = Convert.ToInt32(txtNum.Text);
-                }
+                dto.Numero = txtNum.Text;
 
                 dto.Imagem = ImagemPlugIn.ConverterParaString(pbxFoto.Image);
 
@@ -219,7 +211,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                     cboUF.Text = resposta.uf;
 
                 }
-                catch (Exception cex)
+                catch (Exception)
                 {
                     string msg = "Não foi possível encontrar o CEP";
 

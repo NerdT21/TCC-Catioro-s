@@ -35,7 +35,7 @@ namespace Catiotro_s.Telas.Diferenciais
                 tela.LoadScreen("E-mail enviado!");
                 tela.ShowDialog();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 frmAlert tela = new frmAlert();
                 tela.LoadScreen("Não foi possível enviar o email.");

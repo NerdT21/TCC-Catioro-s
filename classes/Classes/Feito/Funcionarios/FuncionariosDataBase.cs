@@ -136,7 +136,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Cidade = reader.GetString("ds_cidade");
                 add.Cep = reader.GetString("ds_cep");
                 add.Rua = reader.GetString("ds_rua");
-                add.Numero = reader.GetInt32("ds_numero");
+                add.Numero = reader.GetString("ds_numero");
                 add.Complemento = reader.GetString("ds_complemento");                                                                               
                 add.Telefone = reader.GetString("ds_telefone");
                 add.Imagem = reader.GetString("img_funcionario");
@@ -173,7 +173,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Cidade = reader.GetString("ds_cidade");
                 add.Cep = reader.GetString("ds_cep");
                 add.Rua = reader.GetString("ds_rua");
-                add.Numero = reader.GetInt32("ds_numero");
+                add.Numero = reader.GetString("ds_numero");
                 add.Complemento = reader.GetString("ds_complemento");
                 add.Telefone = reader.GetString("ds_telefone");
                 add.Imagem = reader.GetString("img_funcionario");
