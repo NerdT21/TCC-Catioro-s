@@ -41,9 +41,9 @@ namespace Catiotro_s.classes.Classes.Vendas
             while (reader.Read())
             {
                 ProdutoVendasView dto = new ProdutoVendasView();
-                dto.Id = reader.GetInt32("id_compra");
-                dto.FormaPagto = reader.GetString("ds_formaPagamento");
-                dto.Data = reader.GetString("dt_compra");
+                dto.Id = reader.GetInt32("id_venda");
+                dto.FormaPagto = reader.GetString("ds_formaPagto");
+                dto.Data = reader.GetString("dt_venda");
                 dto.QtdItem = reader.GetInt32("qtd_item");
                 dto.Total = reader.GetDecimal("vl_total");
 
