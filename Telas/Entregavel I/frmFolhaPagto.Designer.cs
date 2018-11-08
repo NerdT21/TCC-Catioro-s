@@ -63,16 +63,23 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtPercent = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.nudDom = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nudFaltas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImgFuncionario)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDom)).BeginInit();
             this.SuspendLayout();
             // 
             // nudFaltas
             // 
-            this.nudFaltas.Location = new System.Drawing.Point(406, 185);
+            this.nudFaltas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudFaltas.Location = new System.Drawing.Point(374, 185);
             this.nudFaltas.Name = "nudFaltas";
-            this.nudFaltas.Size = new System.Drawing.Size(60, 20);
+            this.nudFaltas.Size = new System.Drawing.Size(45, 23);
             this.nudFaltas.TabIndex = 143;
             // 
             // mkbCPF
@@ -241,7 +248,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(358, 184);
+            this.label6.Location = new System.Drawing.Point(328, 184);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 20);
             this.label6.TabIndex = 117;
@@ -252,7 +259,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(255, 185);
+            this.label4.Location = new System.Drawing.Point(228, 184);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 20);
             this.label4.TabIndex = 116;
@@ -263,11 +270,12 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(128, 183);
+            this.label2.Location = new System.Drawing.Point(4, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 115;
             this.label2.Text = "Horas extra ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -306,19 +314,22 @@
             // 
             // mkbHE
             // 
-            this.mkbHE.Location = new System.Drawing.Point(218, 185);
+            this.mkbHE.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mkbHE.Location = new System.Drawing.Point(87, 29);
             this.mkbHE.Mask = "90:00";
             this.mkbHE.Name = "mkbHE";
-            this.mkbHE.Size = new System.Drawing.Size(35, 20);
+            this.mkbHE.Size = new System.Drawing.Size(35, 23);
             this.mkbHE.TabIndex = 146;
             this.mkbHE.ValidatingType = typeof(System.DateTime);
+            this.mkbHE.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mkbHE_MaskInputRejected);
             // 
             // mkbAtraso
             // 
-            this.mkbAtraso.Location = new System.Drawing.Point(320, 184);
+            this.mkbAtraso.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mkbAtraso.Location = new System.Drawing.Point(293, 184);
             this.mkbAtraso.Mask = "90:00";
             this.mkbAtraso.Name = "mkbAtraso";
-            this.mkbAtraso.Size = new System.Drawing.Size(35, 20);
+            this.mkbAtraso.Size = new System.Drawing.Size(35, 23);
             this.mkbAtraso.TabIndex = 147;
             this.mkbAtraso.ValidatingType = typeof(System.DateTime);
             // 
@@ -404,6 +415,12 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.nudDom);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.txtPercent);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.mkbHE);
+            this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(39, 153);
             this.groupBox3.Name = "groupBox3";
@@ -412,6 +429,44 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Credenciais da folha";
             this.groupBox3.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox3_Paint);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(125, 31);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(21, 20);
+            this.label15.TabIndex = 147;
+            this.label15.Text = "%";
+            // 
+            // txtPercent
+            // 
+            this.txtPercent.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPercent.Location = new System.Drawing.Point(150, 29);
+            this.txtPercent.Name = "txtPercent";
+            this.txtPercent.Size = new System.Drawing.Size(34, 23);
+            this.txtPercent.TabIndex = 148;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(381, 32);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(78, 20);
+            this.label16.TabIndex = 158;
+            this.label16.Text = "Domingos";
+            // 
+            // nudDom
+            // 
+            this.nudDom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudDom.Location = new System.Drawing.Point(456, 31);
+            this.nudDom.Name = "nudDom";
+            this.nudDom.Size = new System.Drawing.Size(45, 23);
+            this.nudDom.TabIndex = 158;
             // 
             // frmFolhaPagto
             // 
@@ -425,7 +480,6 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.mkbAtraso);
-            this.Controls.Add(this.mkbHE);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.nudFaltas);
             this.Controls.Add(this.mkbCPF);
@@ -448,7 +502,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
@@ -457,6 +510,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudFaltas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImgFuncionario)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -498,5 +554,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.NumericUpDown nudDom;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtPercent;
+        private System.Windows.Forms.Label label15;
     }
 }

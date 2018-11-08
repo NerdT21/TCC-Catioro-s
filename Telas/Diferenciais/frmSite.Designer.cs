@@ -98,7 +98,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 29);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 542);
+            this.panel2.Size = new System.Drawing.Size(10, 750);
             this.panel2.TabIndex = 7;
             // 
             // panel1
@@ -107,14 +107,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(887, 29);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 542);
+            this.panel1.Size = new System.Drawing.Size(10, 750);
             this.panel1.TabIndex = 8;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(10, 561);
+            this.panel4.Location = new System.Drawing.Point(10, 769);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(877, 10);
             this.panel4.TabIndex = 9;
@@ -125,15 +125,15 @@
             this.webBrowser1.Location = new System.Drawing.Point(10, 29);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(877, 532);
+            this.webBrowser1.Size = new System.Drawing.Size(877, 740);
             this.webBrowser1.TabIndex = 10;
-            this.webBrowser1.Url = new System.Uri("https://nerdt21.wixsite.com/catiroro", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("https://nerdt21.wixsite.com/catiroros", System.UriKind.Absolute);
             // 
             // frmSite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 571);
+            this.ClientSize = new System.Drawing.Size(897, 779);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
