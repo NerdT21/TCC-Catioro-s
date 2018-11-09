@@ -138,22 +138,23 @@
             // lblprocurar
             // 
             this.lblprocurar.AutoSize = true;
-            this.lblprocurar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblprocurar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblprocurar.Location = new System.Drawing.Point(11, 21);
+            this.lblprocurar.BackColor = System.Drawing.Color.Transparent;
+            this.lblprocurar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblprocurar.Location = new System.Drawing.Point(26, 26);
             this.lblprocurar.Name = "lblprocurar";
-            this.lblprocurar.Size = new System.Drawing.Size(104, 21);
+            this.lblprocurar.Size = new System.Drawing.Size(89, 17);
             this.lblprocurar.TabIndex = 7;
             this.lblprocurar.Text = "Nome animal";
             this.lblprocurar.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnProcurar
             // 
-            this.btnProcurar.BackColor = System.Drawing.Color.White;
+            this.btnProcurar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.btnProcurar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnProcurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcurar.Image = global::Catiotro_s.Properties.Resources.icons8_search_26;
+            this.btnProcurar.ForeColor = System.Drawing.Color.White;
+            this.btnProcurar.Image = global::Catiotro_s.Properties.Resources.icons8_search_24;
             this.btnProcurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProcurar.Location = new System.Drawing.Point(478, 29);
             this.btnProcurar.Name = "btnProcurar";
@@ -174,20 +175,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 50);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(32, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 21);
+            this.label1.Size = new System.Drawing.Size(81, 17);
             this.label1.TabIndex = 12;
             this.label1.Text = "Nome dono";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // btnAlterar
             // 
-            this.btnAlterar.BackColor = System.Drawing.Color.White;
+            this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.ForeColor = System.Drawing.Color.White;
             this.btnAlterar.Image = global::Catiotro_s.Properties.Resources.icons8_edit_file_30;
             this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAlterar.Location = new System.Drawing.Point(15, 365);
@@ -201,9 +203,10 @@
             // 
             // btnDeletar
             // 
-            this.btnDeletar.BackColor = System.Drawing.Color.White;
+            this.btnDeletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeletar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletar.ForeColor = System.Drawing.Color.White;
             this.btnDeletar.Image = global::Catiotro_s.Properties.Resources.icons8_cancel_30;
             this.btnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeletar.Location = new System.Drawing.Point(115, 365);
@@ -219,7 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_222;
+            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Plano_de_Fundo_Catioro_s_DEFINITIVO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.btnAlterar);

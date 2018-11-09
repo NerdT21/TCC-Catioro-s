@@ -409,6 +409,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="favicon %281%29.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\icons8-plus-321.png" />
+    <None Include="Resources\icons8-search-24.png" />
+    <None Include="Resources\icons8-save-261.png" />
+    <None Include="Resources\icons8-performance-de-vendas-40.png" />
+    <None Include="Resources\Plano de Fundo Catioro%27s DEFINITIVO.png" />
+    <None Include="Resources\Plano de Fundo Catioro%27s SemFondo.png" />
+    <None Include="Resources\Plano de Fundo Catioro%27s.png" />
     <None Include="Resources\icons8-website-48.png" />
     <None Include="Resources\icons8-email-40.png" />
     <None Include="Resources\icons8-visível-filled-50.png" />

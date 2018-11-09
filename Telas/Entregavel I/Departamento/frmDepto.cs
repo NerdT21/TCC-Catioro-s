@@ -179,7 +179,7 @@ namespace Catiotro_s.Resgistros
         private void groupBox2_Paint(object sender, PaintEventArgs e)
         {
             GroupBox box = sender as GroupBox;
-            DrawGroupBox(box, e.Graphics, Color.Black, Color.FromArgb(0, 116, 186), Color.Transparent);
+            DrawGroupBox(box, e.Graphics, Color.FromArgb(0, 116, 186), Color.FromArgb(0, 116, 186), Color.Transparent);
         }
 
         private void DrawGroupBox(GroupBox box, Graphics g, Color textColor, Color borderColor, Color backgroundColor)
@@ -198,8 +198,8 @@ namespace Catiotro_s.Resgistros
                 // Coloque a cor do background aqui
                 // g.Clear(backgroundColor);
 
-                // Draw text
-                // g.DrawString(box.Text, box.Font, textBrush, box.Padding.Left, 0);
+                //Draw text
+                //g.DrawString(box.Text, box.Font, textBrush, box.Padding.Left, 0);
 
                 // Drawing Border
                 //Left

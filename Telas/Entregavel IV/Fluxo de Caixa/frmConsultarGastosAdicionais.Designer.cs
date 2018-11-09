@@ -92,22 +92,23 @@
             // Data
             // 
             this.Data.AutoSize = true;
-            this.Data.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Data.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Data.Location = new System.Drawing.Point(24, 65);
+            this.Data.BackColor = System.Drawing.Color.Transparent;
+            this.Data.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Data.Location = new System.Drawing.Point(24, 63);
             this.Data.Name = "Data";
-            this.Data.Size = new System.Drawing.Size(31, 15);
+            this.Data.Size = new System.Drawing.Size(36, 17);
             this.Data.TabIndex = 2;
             this.Data.Text = "Data";
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.White;
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Image = global::Catiotro_s.Properties.Resources.icons8_search_26;
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Image = global::Catiotro_s.Properties.Resources.icons8_search_24;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(488, 57);
+            this.btnBuscar.Location = new System.Drawing.Point(488, 53);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(76, 34);
             this.btnBuscar.TabIndex = 4;
@@ -129,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_222;
+            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Plano_de_Fundo_Catioro_s_DEFINITIVO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.mkbData);
             this.Controls.Add(this.btnBuscar);

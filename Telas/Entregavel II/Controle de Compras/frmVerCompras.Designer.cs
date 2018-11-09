@@ -46,11 +46,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(83, 86);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(83, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 17);
+            this.label2.Size = new System.Drawing.Size(107, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Data da Compra";
             // 
@@ -147,10 +147,11 @@
             // 
             // btnProcurar
             // 
-            this.btnProcurar.BackColor = System.Drawing.Color.White;
+            this.btnProcurar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.btnProcurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcurar.Image = global::Catiotro_s.Properties.Resources.icons8_search_26;
+            this.btnProcurar.ForeColor = System.Drawing.Color.White;
+            this.btnProcurar.Image = global::Catiotro_s.Properties.Resources.icons8_search_24;
             this.btnProcurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProcurar.Location = new System.Drawing.Point(426, 66);
             this.btnProcurar.Name = "btnProcurar";
@@ -165,7 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_222;
+            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Plano_de_Fundo_Catioro_s_DEFINITIVO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.dgvCompras);
             this.Controls.Add(this.btnProcurar);

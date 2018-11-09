@@ -69,7 +69,7 @@
             this.dgvFornecedor.Name = "dgvFornecedor";
             this.dgvFornecedor.ReadOnly = true;
             this.dgvFornecedor.RowHeadersVisible = false;
-            this.dgvFornecedor.Size = new System.Drawing.Size(573, 257);
+            this.dgvFornecedor.Size = new System.Drawing.Size(552, 275);
             this.dgvFornecedor.TabIndex = 10;
             this.dgvFornecedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellContentClick);
             // 
@@ -149,12 +149,13 @@
             // 
             // btnProcurar
             // 
-            this.btnProcurar.BackColor = System.Drawing.Color.White;
+            this.btnProcurar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.btnProcurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcurar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcurar.Image = global::Catiotro_s.Properties.Resources.icons8_search_26;
+            this.btnProcurar.ForeColor = System.Drawing.Color.White;
+            this.btnProcurar.Image = global::Catiotro_s.Properties.Resources.icons8_search_24;
             this.btnProcurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProcurar.Location = new System.Drawing.Point(504, 26);
+            this.btnProcurar.Location = new System.Drawing.Point(483, 25);
             this.btnProcurar.Name = "btnProcurar";
             this.btnProcurar.Size = new System.Drawing.Size(86, 45);
             this.btnProcurar.TabIndex = 14;
@@ -166,11 +167,11 @@
             // lblprocurar
             // 
             this.lblprocurar.AutoSize = true;
-            this.lblprocurar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblprocurar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblprocurar.Location = new System.Drawing.Point(22, 25);
+            this.lblprocurar.BackColor = System.Drawing.Color.Transparent;
+            this.lblprocurar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblprocurar.Location = new System.Drawing.Point(27, 25);
             this.lblprocurar.Name = "lblprocurar";
-            this.lblprocurar.Size = new System.Drawing.Size(53, 21);
+            this.lblprocurar.Size = new System.Drawing.Size(45, 17);
             this.lblprocurar.TabIndex = 12;
             this.lblprocurar.Text = "Nome";
             // 
@@ -184,11 +185,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 49);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(22, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 21);
+            this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 15;
             this.label1.Text = "Cidade";
             // 
@@ -201,12 +202,13 @@
             // 
             // btnDeletar
             // 
-            this.btnDeletar.BackColor = System.Drawing.Color.White;
+            this.btnDeletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeletar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletar.ForeColor = System.Drawing.Color.White;
             this.btnDeletar.Image = global::Catiotro_s.Properties.Resources.icons8_cancel_30;
             this.btnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeletar.Location = new System.Drawing.Point(117, 344);
+            this.btnDeletar.Location = new System.Drawing.Point(114, 362);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(94, 37);
             this.btnDeletar.TabIndex = 19;
@@ -217,12 +219,13 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.BackColor = System.Drawing.Color.White;
+            this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.ForeColor = System.Drawing.Color.White;
             this.btnAlterar.Image = global::Catiotro_s.Properties.Resources.icons8_edit_file_30;
             this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlterar.Location = new System.Drawing.Point(17, 344);
+            this.btnAlterar.Location = new System.Drawing.Point(14, 362);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(94, 37);
             this.btnAlterar.TabIndex = 17;
@@ -235,7 +238,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_222;
+            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Plano_de_Fundo_Catioro_s_DEFINITIVO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.btnAlterar);
@@ -246,7 +249,7 @@
             this.Controls.Add(this.lblprocurar);
             this.Controls.Add(this.dgvFornecedor);
             this.Name = "frmConsultarFornecedor";
-            this.Size = new System.Drawing.Size(605, 388);
+            this.Size = new System.Drawing.Size(583, 405);
             this.Load += new System.EventHandler(this.frmConsultarFornecedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).EndInit();
             this.ResumeLayout(false);

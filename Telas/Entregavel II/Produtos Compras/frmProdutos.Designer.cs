@@ -46,10 +46,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(74, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 17);
+            this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome";
             // 
@@ -65,10 +65,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(43, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 17);
+            this.label2.Size = new System.Drawing.Size(77, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "Fornecedor";
             // 
@@ -76,10 +76,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(77, 234);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 17);
+            this.label3.Size = new System.Drawing.Size(42, 17);
             this.label3.TabIndex = 6;
             this.label3.Text = "Preço";
             // 
@@ -87,7 +87,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(53, 130);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 17);
@@ -134,14 +134,15 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.White;
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Image = global::Catiotro_s.Properties.Resources.icons8_save_26;
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Image = global::Catiotro_s.Properties.Resources.icons8_save_261;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(258, 332);
+            this.btnSave.Location = new System.Drawing.Point(252, 332);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(81, 48);
+            this.btnSave.Size = new System.Drawing.Size(85, 48);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Salvar";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -160,6 +161,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(186)))));
             this.groupBox1.Location = new System.Drawing.Point(93, 34);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(389, 282);
@@ -172,7 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_222;
+            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Plano_de_Fundo_Catioro_s_DEFINITIVO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox1);

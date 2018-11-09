@@ -563,9 +563,29 @@ namespace Catiotro_s.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_performance_de_vendas_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-performance-de-vendas-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_plus_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-plus-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_plus_321 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-plus-321", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -593,9 +613,29 @@ namespace Catiotro_s.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_save_261 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-save-261", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_save_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-save-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -656,6 +696,36 @@ namespace Catiotro_s.Properties {
         internal static System.Drawing.Bitmap icons8_website_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-website-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Plano_de_Fundo_Catioro_s {
+            get {
+                object obj = ResourceManager.GetObject("Plano de Fundo Catioro\'s", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Plano_de_Fundo_Catioro_s_DEFINITIVO {
+            get {
+                object obj = ResourceManager.GetObject("Plano de Fundo Catioro\'s DEFINITIVO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Plano_de_Fundo_Catioro_s_SemFondo {
+            get {
+                object obj = ResourceManager.GetObject("Plano de Fundo Catioro\'s SemFondo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

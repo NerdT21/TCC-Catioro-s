@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSite));
             this.pnlTopo = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pbxMinimize = new System.Windows.Forms.PictureBox();
-            this.pbxClose = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pbxMinimize = new System.Windows.Forms.PictureBox();
+            this.pbxClose = new System.Windows.Forms.PictureBox();
             this.pnlTopo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMinimize)).BeginInit();
@@ -58,6 +58,43 @@
             this.pnlTopo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTopo_MouseMove);
             this.pnlTopo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTopo_MouseUp);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 29);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(10, 581);
+            this.panel2.TabIndex = 7;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(887, 29);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 581);
+            this.panel1.TabIndex = 8;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(10, 600);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(877, 10);
+            this.panel4.TabIndex = 9;
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(10, 29);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(877, 571);
+            this.webBrowser1.TabIndex = 10;
+            this.webBrowser1.Url = new System.Uri("https://nerdt21.wixsite.com/catiroros", System.UriKind.Absolute);
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
@@ -72,7 +109,7 @@
             // 
             this.pbxMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxMinimize.Image = ((System.Drawing.Image)(resources.GetObject("pbxMinimize.Image")));
-            this.pbxMinimize.Location = new System.Drawing.Point(837, 3);
+            this.pbxMinimize.Location = new System.Drawing.Point(838, 3);
             this.pbxMinimize.Name = "pbxMinimize";
             this.pbxMinimize.Size = new System.Drawing.Size(23, 22);
             this.pbxMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -84,7 +121,7 @@
             // 
             this.pbxClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbxClose.Image = ((System.Drawing.Image)(resources.GetObject("pbxClose.Image")));
-            this.pbxClose.Location = new System.Drawing.Point(866, 3);
+            this.pbxClose.Location = new System.Drawing.Point(867, 3);
             this.pbxClose.Name = "pbxClose";
             this.pbxClose.Size = new System.Drawing.Size(23, 22);
             this.pbxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -92,48 +129,11 @@
             this.pbxClose.TabStop = false;
             this.pbxClose.Click += new System.EventHandler(this.pbxClose_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 29);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 750);
-            this.panel2.TabIndex = 7;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(887, 29);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 750);
-            this.panel1.TabIndex = 8;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(10, 769);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(877, 10);
-            this.panel4.TabIndex = 9;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(10, 29);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(877, 740);
-            this.webBrowser1.TabIndex = 10;
-            this.webBrowser1.Url = new System.Uri("https://nerdt21.wixsite.com/catiroros", System.UriKind.Absolute);
-            // 
             // frmSite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 779);
+            this.ClientSize = new System.Drawing.Size(897, 610);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);

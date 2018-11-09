@@ -113,23 +113,23 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 17);
+            this.label1.Size = new System.Drawing.Size(50, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Animal";
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.White;
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = global::Catiotro_s.Properties.Resources.icons8_search_26;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(494, 35);
+            this.btnBuscar.Location = new System.Drawing.Point(494, 29);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(81, 31);
+            this.btnBuscar.Size = new System.Drawing.Size(81, 37);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -140,10 +140,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(211, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 17);
+            this.label2.Size = new System.Drawing.Size(36, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Data";
             // 

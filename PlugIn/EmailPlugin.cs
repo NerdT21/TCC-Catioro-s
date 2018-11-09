@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Catiotro_s.CustomException.TelasException;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -19,37 +20,53 @@ namespace Catiotro_s.PlugIn
 
         public void Enviar()
         {
-            Task.Factory.StartNew(() =>
+            try
             {
-                //-----> https://myaccount.google.com/lesssecureapps?pli=1
-                string remetente = "catioros.inn@gmail.com";
-                string senha = "projetofrei";
+                Task.Factory.StartNew(() =>
+                {
+                    //-----> https://myaccount.google.com/lesssecureapps?pli=1
+                    string remetente = "catioros.inn@gmail.com";
+                    string senha = "projetofrei";
 
-                email.From = new MailAddress(remetente);
-                email.To.Add(this.Para);
+                    email.From = new MailAddress(remetente);
+                    email.To.Add(this.Para);
 
-                email.Subject = this.Assunto;
-                email.Body = this.Mensagem;
-                email.IsBodyHtml = true;
+                    email.Subject = this.Assunto;
+                    email.Body = this.Mensagem;
+                    email.IsBodyHtml = true;
 
-                SmtpClient smtp = new SmtpClient();
-                smtp.Host = "smtp.gmail.com";
-                smtp.Port = 587;
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.Port = 587;
 
-                smtp.EnableSsl = true;
-                smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential(remetente, senha);
+                    smtp.EnableSsl = true;
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = new NetworkCredential(remetente, senha);
 
-                smtp.Send(email);
+                    smtp.Send(email);
 
-            });
+                });
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ocorreu um erro.");
+            }
+            
         }
 
 
         public void AdicionarAnexo(string arquivo)
         {
-            Attachment inline = new Attachment(arquivo);
-            this.email.Attachments.Add(inline);
+            try
+            {
+                Attachment inline = new Attachment(arquivo);
+                this.email.Attachments.Add(inline);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Ocorreu um erro.");
+            }
+           
         }
     
 

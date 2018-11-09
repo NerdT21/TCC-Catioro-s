@@ -19,17 +19,37 @@ namespace Catiotro_s.Telas.Diferenciais
             InitializeComponent();
         }
 
-        EmailPlugin email = new EmailPlugin();
+        EmailPlugin Email = new EmailPlugin();
   
         private void btnEnviar_Click(object sender, EventArgs e)
         {
             try
             {
-                email.Para = txtPara.Text;
-                email.Assunto = txtAssunto.Text;
-                email.Mensagem = txtMsg.Text;
+                string email = txtPara.Text;
+                email = email.Trim();
 
-                email.Enviar();
+                Validacoes.ValidarEmail validEmail = new Validacoes.ValidarEmail();
+
+                bool mail = validEmail.VerificarEmail(email);
+
+                if (mail == false)
+                {
+                    throw new Exception();
+                }
+
+                string msg = txtMsg.Text;
+                int qtdMsg = msg.Count();
+
+                if (qtdMsg == 0)
+                {
+                    throw new Exception();
+                }
+
+                Email.Para = txtPara.Text;
+                Email.Assunto = txtAssunto.Text;
+                Email.Mensagem = txtMsg.Text;
+
+                Email.Enviar();
 
                 frmMessage tela = new frmMessage();
                 tela.LoadScreen("E-mail enviado!");
@@ -38,7 +58,7 @@ namespace Catiotro_s.Telas.Diferenciais
             catch (Exception)
             {
                 frmAlert tela = new frmAlert();
-                tela.LoadScreen("Não foi possível enviar o email.");
+                tela.LoadScreen("Não foi possível enviar o email. \nVerifique se o destinatário está correto.");
                 tela.ShowDialog();
             }
             
@@ -91,12 +111,22 @@ namespace Catiotro_s.Telas.Diferenciais
 
         private void btnAnexar_Click(object sender, EventArgs e)
         {
-            OpenFileDialog janela = new OpenFileDialog();
-            janela.ShowDialog();
+            try
+            {
+                OpenFileDialog janela = new OpenFileDialog();
+                janela.ShowDialog();
 
-            txtAnexo.Text = janela.FileName;
+                txtAnexo.Text = janela.FileName;
 
-            email.AdicionarAnexo(janela.FileName);
+                Email.AdicionarAnexo(janela.FileName);
+            }
+            catch (Exception)
+            {
+                frmAlert tela = new frmAlert();
+                tela.LoadScreen("Não foi possível adicionar este anexo.");
+                tela.ShowDialog();
+            }
+           
         }
 
         private bool mover;
@@ -127,6 +157,11 @@ namespace Catiotro_s.Telas.Diferenciais
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void pnlTopo_MouseMove(object sender, MouseEventArgs e)

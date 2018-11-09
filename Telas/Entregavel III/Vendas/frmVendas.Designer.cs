@@ -52,8 +52,10 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Image = global::Catiotro_s.Properties.Resources.icons8_plus_32;
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Image = global::Catiotro_s.Properties.Resources.icons8_plus_321;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.Location = new System.Drawing.Point(185, 259);
             this.btnAdd.Name = "btnAdd";
@@ -61,7 +63,7 @@
             this.btnAdd.TabIndex = 41;
             this.btnAdd.Text = "Add";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtPrecoTotal
@@ -123,11 +125,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(333, 275);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 17);
+            this.label7.Size = new System.Drawing.Size(67, 17);
             this.label7.TabIndex = 34;
             this.label7.Text = "Sub. Total";
             // 
@@ -147,11 +149,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(34, 106);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 17);
+            this.label4.Size = new System.Drawing.Size(119, 17);
             this.label4.TabIndex = 32;
             this.label4.Text = "Nome do Produto";
             // 
@@ -166,44 +168,44 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(11, 220);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 17);
+            this.label6.Size = new System.Drawing.Size(145, 17);
             this.label6.TabIndex = 30;
             this.label6.Text = "Forma De Pagamento ";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(44, 181);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 17);
+            this.label5.Size = new System.Drawing.Size(107, 17);
             this.label5.TabIndex = 29;
             this.label5.Text = "Data de Compra";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(73, 141);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 17);
+            this.label3.Size = new System.Drawing.Size(79, 17);
             this.label3.TabIndex = 28;
             this.label3.Text = "Quantidade";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(95, 42);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(90, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 17);
+            this.label1.Size = new System.Drawing.Size(58, 17);
             this.label1.TabIndex = 26;
             this.label1.Text = "Produto";
             // 
@@ -226,15 +228,17 @@
             // 
             // btnVender
             // 
+            this.btnVender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.btnVender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVender.ForeColor = System.Drawing.Color.White;
             this.btnVender.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVender.Location = new System.Drawing.Point(224, 330);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(115, 50);
             this.btnVender.TabIndex = 42;
             this.btnVender.Text = "Emitir";
-            this.btnVender.UseVisualStyleBackColor = true;
+            this.btnVender.UseVisualStyleBackColor = false;
             this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
             // 
             // frmVendas
@@ -242,7 +246,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_222;
+            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Plano_de_Fundo_Catioro_s_DEFINITIVO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btnVender);
             this.Controls.Add(this.btnAdd);
