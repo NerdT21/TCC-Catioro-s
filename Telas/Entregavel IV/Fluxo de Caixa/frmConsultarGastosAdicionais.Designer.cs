@@ -42,6 +42,8 @@
             // 
             // dgvGastos
             // 
+            this.dgvGastos.AllowUserToAddRows = false;
+            this.dgvGastos.AllowUserToDeleteRows = false;
             this.dgvGastos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGastos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -51,6 +53,7 @@
             this.Column5});
             this.dgvGastos.Location = new System.Drawing.Point(17, 93);
             this.dgvGastos.Name = "dgvGastos";
+            this.dgvGastos.ReadOnly = true;
             this.dgvGastos.RowHeadersVisible = false;
             this.dgvGastos.Size = new System.Drawing.Size(549, 297);
             this.dgvGastos.TabIndex = 0;
@@ -60,6 +63,7 @@
             this.Column1.DataPropertyName = "Id";
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Width = 30;
             // 
             // Column4
@@ -67,6 +71,7 @@
             this.Column4.DataPropertyName = "Data";
             this.Column4.HeaderText = "Data";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             this.Column4.Width = 80;
             // 
             // Column2
@@ -74,6 +79,7 @@
             this.Column2.DataPropertyName = "Nome";
             this.Column2.HeaderText = "Nome";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             this.Column2.Width = 130;
             // 
             // Column3
@@ -81,6 +87,7 @@
             this.Column3.DataPropertyName = "Valor";
             this.Column3.HeaderText = "Valor";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column5
             // 
@@ -88,6 +95,7 @@
             this.Column5.DataPropertyName = "Descricao";
             this.Column5.HeaderText = "Descrição";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Data
             // 
@@ -136,6 +144,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.Data);
             this.Controls.Add(this.dgvGastos);
+            this.DoubleBuffered = true;
             this.Name = "frmConsultarGastosAdicionais";
             this.Size = new System.Drawing.Size(583, 405);
             this.Load += new System.EventHandler(this.frmConsultarGastosAdicionais_Load);
