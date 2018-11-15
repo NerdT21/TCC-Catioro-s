@@ -84,8 +84,9 @@ namespace Catiotro_s.Resgistros
                 dta.DataCadastro = mkbCadastro.Text;
                 dta.Cep = txtCEP.Text;
                 dta.Rua = txtRua.Text;
-                dta.Numero = Convert.ToInt32(txtNumero.Text);
+                dta.Numero = txtNumero.Text;
                 dta.EstadoId = Convert.ToInt32(dto.Id);
+                dta.Complemento = txtComplemento.Text;
 
                 ClienteBusiness business = new ClienteBusiness();
                 business.Salvar(dta);
@@ -137,9 +138,16 @@ namespace Catiotro_s.Resgistros
 
         private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
         {
+            string caracteres = "@#$%&*(){}][?;:><º!¨¨°";
+
+          
             if (char.IsLetter(e.KeyChar) == true || char.IsWhiteSpace(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
             {
                 e.Handled = false;
+            }
+            else if (caracteres.Contains(e.KeyChar.ToString()))
+            {
+                e.Handled = true;
             }
             else
             {
@@ -210,6 +218,11 @@ namespace Catiotro_s.Resgistros
                 //Top2
                 g.DrawLine(borderPen, new Point(rect.X + box.Padding.Left + (int)(strSize.Width), rect.Y), new Point(rect.X + rect.Width, rect.Y));
             }
+        }
+
+        private void mkbCadastro_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }

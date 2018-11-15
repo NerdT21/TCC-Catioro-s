@@ -61,15 +61,10 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 mkbTelefone.Text = dto.Telefone;
                 cboDepto.SelectedItem = dto.Depto;
                 cboUF.Text = dto.Estado;
+                txtComplemento.Text = dto.Complemento;
 
-                if (dto.Imagem == null)
-                {
-                    pbxFoto.Image = null;
-                }
-                else
-                {
-                    pbxFoto.Image = ImagemPlugIn.ConverterParaImagem(dto.Imagem);
-                }
+                pbxFoto.Image = ImagemPlugIn.ConverterParaImagem(dto.Imagem);
+                
             }
             catch (Exception ex)
             {
@@ -104,8 +99,9 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 dto.IdEstado = estado.Id;
                 dto.Cep = mkbCEP.Text;
                 dto.Rua = txtEndereco.Text;
-                dto.Numero = Convert.ToInt32(txtNum.Text);
+                dto.Numero = txtNum.Text;
                 dto.Imagem = ImagemPlugIn.ConverterParaString(pbxFoto.Image);
+                dto.Complemento = txtComplemento.Text;
 
                 FuncionarioBusiness buss = new FuncionarioBusiness();
                 buss.Alterar(dto);
@@ -201,7 +197,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
 
         private void txtNum_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar) == true || char.IsWhiteSpace(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
+            if (char.IsNumber(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
             {
                 e.Handled = false;
             }
@@ -213,7 +209,12 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
 
         private void txtEndereco_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            string caracteres = "@#$%&*(){}][?;:><º!¨¨°";
+
+            if (caracteres.Contains(e.KeyChar.ToString()))
+            {
+                e.Handled = true;
+            }
         }
 
         private void mkbCEP_KeyUp(object sender, KeyEventArgs e)
@@ -230,7 +231,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                     cboUF.Text = resposta.uf;
 
                 }
-                catch (Exception cex)
+                catch (Exception)
                 {
                     string msg = "Não foi possível encontrar o CEP";
 

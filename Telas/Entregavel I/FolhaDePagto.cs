@@ -9,34 +9,42 @@ namespace FamosoAça.Screens.Entregavel_I
 {
     public class FolhaPagto
     {
-        public decimal Salario { get; set; }
-        public DateTime HoraExtra { get; set; }
-        public int Faltas { get; set; }
-        public DateTime Atrasos { get; set; }
+        public decimal Salario { private get; set; }
+        public DateTime HoraExtra { private get; set; }
+        public int Percentual { private get; set; }
+        public int Faltas { private get; set; }
+        public DateTime Atrasos { private get; set; }
+        public int Domingos { private get; set; }
+        
 
-        private decimal CalcularSalarioHora()
+        private decimal CalcularSalarioHora() //OK
         {
             decimal salario = this.Salario / 220;
             return salario;
         }
 
-        private decimal CalcularHoraExtra()
+        private decimal CalcularHoraExtra() //OK
         {
+            int percentual = this.Percentual;
             decimal horaPorDia = CalcularSalarioHora();
-            decimal AddPorHora = horaPorDia * (50 / 100);
+            decimal AddPorHora = horaPorDia * ((decimal)percentual / 100);
 
             int convertToDecimal = this.HoraExtra.Hour;
 
-            decimal horaExtra = (horaPorDia + AddPorHora) * convertToDecimal;
+            decimal horaExtra = (horaPorDia + AddPorHora) * convertToDecimal; //soma e multiplica
             return horaExtra;
         }
 
-        private int CalcularFaltas()
+        private decimal CalcularFaltas()
         {
             int faltas = this.Faltas;
             if (faltas > 0)
             {
-                return 0;
+                decimal salario = this.Salario;
+                
+                decimal conta = (salario / 30) * faltas;
+
+                return conta;
             }
             else
             {
@@ -45,12 +53,18 @@ namespace FamosoAça.Screens.Entregavel_I
 
         }
 
-        private decimal CalcularDSR()
+        private decimal CalcularDSR() //OK
         {
             decimal horaExtra = CalcularHoraExtra();
-            decimal dsr = (horaExtra / 26) * 4;
+            int faltas = this.Faltas;
+            int domingos = this.Domingos;
+
+            int descontoDom = 4 - domingos;
+            int descontoDia = 26 - faltas;
+
+            decimal dsr = (horaExtra / descontoDia) * descontoDom;
             return dsr;
-        }            
+        }         
 
         private decimal CalcularAtraso()
         {
@@ -62,7 +76,7 @@ namespace FamosoAça.Screens.Entregavel_I
             return Atraso;
         }
 
-        private decimal CalcularBaseINSS()
+        private decimal CalcularBaseINSS() // OK - MUDAR O INT NO HORAATRASO que pode dar problema por causa dos minutos
         {
             decimal salario = this.Salario;
             decimal HoraExtra = CalcularHoraExtra();
@@ -77,7 +91,7 @@ namespace FamosoAça.Screens.Entregavel_I
            
         }
 
-        public decimal CalcularINSS()
+        public decimal CalcularINSS() // OK
         {
             decimal baseInss = CalcularBaseINSS(); 
 
@@ -123,7 +137,7 @@ namespace FamosoAça.Screens.Entregavel_I
             return baseIr;
         }
 
-        public decimal CalcularIR()
+        public decimal CalcularIR() //OK
         {
             decimal baseIr = CalcularBaseIR();
 
@@ -184,19 +198,19 @@ namespace FamosoAça.Screens.Entregavel_I
             }
         }
 
-        public decimal CalcularFGTS()
+        public decimal CalcularFGTS() // não é salário, é a base do INSS
         {
             decimal salario = this.Salario;
             return salario * ((decimal)8 / 100);
         }
 
-        public decimal CalcularValeTransporte()
+        public decimal CalcularValeTransporte() //OK
         {
             decimal salario = this.Salario;
             return salario * ((decimal)6 / 100);
         }
 
-        public decimal VerificarSalarioFamilia()
+        public decimal VerificarSalarioFamilia() //OK
         {
             decimal salario = this.Salario;
 

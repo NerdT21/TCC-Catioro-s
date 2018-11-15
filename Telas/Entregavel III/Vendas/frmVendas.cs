@@ -117,7 +117,7 @@ namespace Catiotro_s.Telas.Entregavel_III.Vendas
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
             }
-           
+
         }
 
         private void frmVendas_Load(object sender, EventArgs e)

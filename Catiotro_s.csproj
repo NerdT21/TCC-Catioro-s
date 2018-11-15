@@ -89,6 +89,12 @@
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoBusiness.cs" />
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoDataBase.cs" />
     <Compile Include="classes\Classes\Feito\Departamento\DepartamentoDTO.cs" />
+    <Compile Include="Telas\Diferenciais\frmSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Diferenciais\frmSite.Designer.cs">
+      <DependentUpon>frmSite.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Entregavel III\Animal\frmAlterarAnimal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -403,6 +409,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="favicon %281%29.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\icons8-plus-321.png" />
+    <None Include="Resources\icons8-search-24.png" />
+    <None Include="Resources\icons8-save-261.png" />
+    <None Include="Resources\icons8-performance-de-vendas-40.png" />
+    <None Include="Resources\Plano de Fundo Catioro%27s DEFINITIVO.png" />
+    <None Include="Resources\Plano de Fundo Catioro%27s SemFondo.png" />
+    <None Include="Resources\Plano de Fundo Catioro%27s.png" />
+    <None Include="Resources\icons8-website-48.png" />
+    <None Include="Resources\icons8-email-40.png" />
+    <None Include="Resources\icons8-visível-filled-50.png" />
+    <None Include="Resources\icons8-invisível-24.png" />
     <None Include="Resources\icons8-visível-41.png" />
     <None Include="Resources\icons8-visível-40.png" />
     <None Include="Resources\icons8-cash-48.png" />
@@ -614,6 +631,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Diferenciais\frmEmail.resx">
       <DependentUpon>frmEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Diferenciais\frmSite.resx">
+      <DependentUpon>frmSite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Entregavel III\Animal\frmAlterarAnimal.resx">
       <DependentUpon>frmAlterarAnimal.cs</DependentUpon>

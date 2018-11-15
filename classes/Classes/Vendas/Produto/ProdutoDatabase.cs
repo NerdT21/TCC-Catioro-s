@@ -12,8 +12,8 @@ namespace Catiotro_s.classes.Classes.Vendas.Produto
     {
         public int Salvar(ProdutoDTO dto)
         {
-            string script = @"INSERT INTO tb_produto(id_produto, nm_produto, ds_marca, ds_produto, vl_preco)
-                                               VALUES(@id_produto, @nm_produto, @ds_marca, @ds_produto, @vl_preco)";
+            string script = @"INSERT INTO tb_produto(nm_produto, ds_marca, ds_produto, vl_preco)
+                                               VALUES(@nm_produto, @ds_marca, @ds_produto, @vl_preco)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("nm_produto", dto.Nome));

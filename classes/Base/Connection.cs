@@ -12,7 +12,7 @@ namespace Catiotro_s.classes.Base
 
         public MySqlConnection Create()
         {
-            string connectionString = "server=104.214.59.125; database=CatiorosDB; uid=nsf; password=nsf@2018; SslMode=none";
+            string connectionString = "server=70.37.57.127; database=CatiorosDB; uid=nsf; password=nsf@2018; SslMode=none";
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
             return connection;

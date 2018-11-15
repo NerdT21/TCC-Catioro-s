@@ -50,6 +50,7 @@ namespace Catiotro_s.Telas.Entregavel_III.Cliente
             mkbNascimento.Text = dto.DataNascimento;
             mkbRG.Text = dto.Rg;
             mkbTelefone.Text = dto.Telefone;
+            txtComplemento.Text = dto.Complemento;
 
             if (dto.Imagem == null)
             {
@@ -91,8 +92,9 @@ namespace Catiotro_s.Telas.Entregavel_III.Cliente
                 dta.DataCadastro = mkbCadastro.Text;
                 dta.Cep = txtCEP.Text;
                 dta.Rua = txtRua.Text;
-                dta.Numero = Convert.ToInt32(txtNumero.Text);
+                dta.Numero = txtNumero.Text;
                 dta.EstadoId = Convert.ToInt32(dto.Id);
+                dta.Complemento = txtComplemento.Text;
 
                 ClienteBusiness business = new ClienteBusiness();
                 business.Alterar(dta);
@@ -156,6 +158,25 @@ namespace Catiotro_s.Telas.Entregavel_III.Cliente
                 g.DrawLine(borderPen, new Point(rect.X, rect.Y), new Point(rect.X + box.Padding.Left, rect.Y));
                 //Top2
                 g.DrawLine(borderPen, new Point(rect.X + box.Padding.Left + (int)(strSize.Width), rect.Y), new Point(rect.X + rect.Width, rect.Y));
+            }
+        }
+
+        private void txtRua_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string caracteres = "@#$%&*(){}][?;:><º!¨¨°";
+
+
+            if (char.IsLetter(e.KeyChar) == true || char.IsWhiteSpace(e.KeyChar) == true || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else if (caracteres.Contains(e.KeyChar.ToString()))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

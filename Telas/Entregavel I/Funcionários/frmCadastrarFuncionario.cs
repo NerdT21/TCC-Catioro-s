@@ -65,7 +65,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                     cboUF.Text = resposta.uf;
 
                 }
-                catch (Exception cex)
+                catch (Exception)
                 {
                     string msg = "Não foi possível encontrar o CEP";
 
@@ -105,15 +105,8 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 dto.IdEstado = estado.Id;
                 dto.Cep = mkbCEP.Text;
                 dto.Rua = txtEndereco.Text;
-
-                if (txtNum.Text == string.Empty)
-                {
-                    dto.Numero = 0;
-                }
-                else
-                {
-                    dto.Numero = Convert.ToInt32(txtNum.Text);
-                }
+                dto.Complemento = txtComplemento.Text;
+                dto.Numero = txtNum.Text;
 
                 dto.Imagem = ImagemPlugIn.ConverterParaString(pbxFoto.Image);
 
@@ -121,7 +114,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                 buss.Salvar(dto);
 
                 frmMessage tela = new frmMessage();
-                tela.LoadScreen("Funcionário cadastrado com suceso!!");
+                tela.LoadScreen("Funcionário cadastrado com sucesso!");
                 tela.ShowDialog();
             }
             catch (MySqlException mex)
@@ -218,7 +211,7 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
                     cboUF.Text = resposta.uf;
 
                 }
-                catch (Exception cex)
+                catch (Exception)
                 {
                     string msg = "Não foi possível encontrar o CEP";
 
@@ -251,6 +244,26 @@ namespace Catiotro_s.Telas.Entregavel_I.Funcionários
             {
                 e.Handled = true;
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEndereco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string caracteres = "@#$%&*(){}][?;:><º!¨¨°";
+            
+            if (caracteres.Contains(e.KeyChar.ToString()))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNum_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }

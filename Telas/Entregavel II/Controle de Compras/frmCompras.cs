@@ -26,10 +26,10 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
             InitializeComponent();
             CarregarCombos();
             DataParaHoje();
-            CarregarTxt();
+            //CarregarTxt();
         }
 
-        BindingList<ItemDTO> carrinhoAdd = new BindingList<ItemDTO>();
+        BindingList<ItemView> carrinhoAdd = new BindingList<ItemView>();
         BindingList<decimal> valor = new BindingList<decimal>();
 
         void DataParaHoje()
@@ -186,7 +186,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Controle_de_Compras
         {
             try
             {
-                ItemDTO dto = cboProduto.SelectedItem as ItemDTO;
+                ItemView dto = cboProduto.SelectedItem as ItemView;
 
                 int quantidade = Convert.ToInt32(nudQuantidade.Value);
 

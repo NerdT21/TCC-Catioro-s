@@ -65,7 +65,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Furnecedor
                 dto.Telefone = txtTelefone.Text;
                 dto.IdEstado = estado.Id;
                 dto.Rua = txtRua.Text;
-                dto.Numero = Convert.ToInt32(txtNumero.Text);
+                dto.Numero = txtNumero.Text;
 
                 FornecedoresBusiness business = new FornecedoresBusiness();
                 business.Alterar(dto);

@@ -115,24 +115,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 58);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(54, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 20);
+            this.label1.Size = new System.Drawing.Size(119, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nome do Produto";
             // 
             // brnBuscar
             // 
-            this.brnBuscar.BackColor = System.Drawing.Color.White;
+            this.brnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(186)))));
             this.brnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.brnBuscar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brnBuscar.Location = new System.Drawing.Point(442, 49);
+            this.brnBuscar.ForeColor = System.Drawing.Color.White;
+            this.brnBuscar.Image = global::Catiotro_s.Properties.Resources.icons8_search_24;
+            this.brnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.brnBuscar.Location = new System.Drawing.Point(455, 49);
             this.brnBuscar.Name = "brnBuscar";
-            this.brnBuscar.Size = new System.Drawing.Size(104, 39);
+            this.brnBuscar.Size = new System.Drawing.Size(91, 39);
             this.brnBuscar.TabIndex = 3;
             this.brnBuscar.Text = "Buscar";
+            this.brnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.brnBuscar.UseVisualStyleBackColor = false;
             this.brnBuscar.Click += new System.EventHandler(this.brnBuscar_Click);
             // 
@@ -140,7 +144,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Backgorund_222;
+            this.BackgroundImage = global::Catiotro_s.Properties.Resources.Plano_de_Fundo_Catioro_s_DEFINITIVO;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.brnBuscar);
             this.Controls.Add(this.label1);

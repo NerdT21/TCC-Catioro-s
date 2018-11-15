@@ -17,32 +17,31 @@ namespace Catiotro_s.classes.Classes.Cliente
         public int Salvar(FornecedoresDTO fornecedor)
         {
 
-            string script = @"INSERT INTO tb_fornecedor(id_estado,
-                                                        id_fornecedor,
+            string script = @"INSERT INTO tb_fornecedor(nm_fornecedor,
                                                         ds_email,
                                                         ds_cnpj,
                                                         ds_telefone,
+                                                        id_estado,
                                                         ds_cidade,
                                                         ds_cep,
                                                         ds_rua,
-                                                        ds_numero    
-                                                        )  VALUES (
-                                                        @id_estado,
-                                                        @id_fornecedor,
+                                                        ds_numero)
+                                                 VALUES(@nm_fornecedor,
                                                         @ds_email,
                                                         @ds_cnpj,
                                                         @ds_telefone,
+                                                        @id_estado,
                                                         @ds_cidade,
                                                         @ds_cep,
                                                         @ds_rua,
                                                         @ds_numero)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
-            parms.Add(new MySqlParameter("id_estado", fornecedor.IdEstado));
-            parms.Add(new MySqlParameter("id_fornecedor", fornecedor.Nome));
+            parms.Add(new MySqlParameter("nm_fornecedor", fornecedor.Nome));
             parms.Add(new MySqlParameter("ds_email", fornecedor.Email));
             parms.Add(new MySqlParameter("ds_cnpj", fornecedor.CNPJ));
             parms.Add(new MySqlParameter("ds_telefone", fornecedor.Telefone));
+            parms.Add(new MySqlParameter("id_estado", fornecedor.IdEstado));
             parms.Add(new MySqlParameter("ds_cidade", fornecedor.Cidade));
             parms.Add(new MySqlParameter("ds_cep", fornecedor.CEP));
             parms.Add(new MySqlParameter("ds_rua", fornecedor.Rua));
@@ -120,7 +119,7 @@ namespace Catiotro_s.classes.Classes.Cliente
                 add.Cidade = reader.GetString("ds_cidade");
                 add.CEP = reader.GetString("ds_cep");
                 add.Rua = reader.GetString("ds_rua");
-                add.Numero = reader.GetInt32("ds_numero");
+                add.Numero = reader.GetString("ds_numero");
             }
             reader.Close();
             return add;
@@ -143,15 +142,15 @@ namespace Catiotro_s.classes.Classes.Cliente
             {
                 FornecedorView add = new FornecedorView();
                 add.Id = reader.GetInt32("id_fornecedor");
-                add.Estado = reader.GetString("nm_estado");
                 add.Nome = reader.GetString("nm_fornecedor");
                 add.Email = reader.GetString("ds_email");
                 add.CNPJ = reader.GetString("ds_cnpj");
                 add.Telefone = reader.GetString("ds_telefone");
+                add.Estado = reader.GetString("nm_estado");
                 add.Cidade = reader.GetString("ds_cidade");
                 add.CEP = reader.GetString("ds_cep");
                 add.Rua = reader.GetString("ds_rua");
-                add.Numero = reader.GetInt32("ds_numero");
+                add.Numero = reader.GetString("ds_numero");
 
                 lista.Add(add);
             }
@@ -171,15 +170,15 @@ namespace Catiotro_s.classes.Classes.Cliente
             {
                 FornecedorView add = new FornecedorView();
                 add.Id = reader.GetInt32("id_fornecedor");
-                add.Estado = reader.GetString("nm_estado");
                 add.Nome = reader.GetString("nm_fornecedor");
                 add.Email = reader.GetString("ds_email");
                 add.CNPJ = reader.GetString("ds_cnpj");
                 add.Telefone = reader.GetString("ds_telefone");
+                add.Estado = reader.GetString("nm_estado");
                 add.Cidade = reader.GetString("ds_cidade");
                 add.CEP = reader.GetString("ds_cep");
                 add.Rua = reader.GetString("ds_rua");
-                add.Numero = reader.GetInt32("ds_numero");
+                add.Numero = reader.GetString("ds_numero");
 
                 lista.Add(add);
             }
@@ -200,15 +199,15 @@ namespace Catiotro_s.classes.Classes.Cliente
             {
                 FornecedoresDTO add = new FornecedoresDTO();
                 add.Id = reader.GetInt32("id_fornecedor");
-                add.IdEstado = reader.GetInt32("id_estado");
                 add.Nome = reader.GetString("nm_fornecedor");
                 add.Email = reader.GetString("ds_email");
                 add.CNPJ = reader.GetString("ds_cnpj");
                 add.Telefone = reader.GetString("ds_telefone");
+                add.IdEstado = reader.GetInt32("id_estado");
                 add.Cidade = reader.GetString("ds_cidade");
                 add.CEP = reader.GetString("ds_cep");
                 add.Rua = reader.GetString("ds_rua");
-                add.Numero = reader.GetInt32("ds_numero");
+                add.Numero = reader.GetString("ds_numero");
 
                 lista.Add(add);
             }

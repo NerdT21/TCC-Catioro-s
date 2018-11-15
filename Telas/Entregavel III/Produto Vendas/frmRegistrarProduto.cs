@@ -80,7 +80,7 @@ namespace Catiotro_s.Telas.Entregavel_II.Produto
                 tela.LoadScreen(msg);
                 tela.ShowDialog();
             }
-          
+
         }
 
         private void nudPreco_ValueChanged(object sender, EventArgs e)

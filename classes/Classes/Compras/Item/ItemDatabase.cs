@@ -53,7 +53,7 @@ namespace Catiotro_s.classes.Classes.Compras.Item
 
         public List<ItemView> Listar()
         {
-            string script = @"SELECT * FROM tb_item";
+            string script = @"SELECT * FROM vw_item";
 
             Database db = new Database();
             MySqlDataReader reader = db.ExecuteSelectScript(script, null);

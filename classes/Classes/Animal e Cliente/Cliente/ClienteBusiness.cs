@@ -147,7 +147,17 @@ namespace Catiotro_s.classes.Classes.Cliente
                 }
             }
 
-             
+            // ============================ NUMERO =============================
+
+            string numero = cliente.Numero;
+            numero = numero.Trim();
+            int qtdNumero = numero.Count();
+
+            if (qtdNumero > 6)
+            {
+                throw new ValidacaoException("O número informado é muito grande.");
+            }
+
             ClienteDataBase DB = new ClienteDataBase();
             int id = DB.Salvar(cliente);
             return id;
@@ -290,6 +300,16 @@ namespace Catiotro_s.classes.Classes.Cliente
                 }
             }
 
+            // ============================ NUMERO =============================
+
+            string numero = cliente.Numero;
+            numero = numero.Trim();
+            int qtdNumero = numero.Count();
+
+            if (qtdNumero > 6)
+            {
+                throw new ValidacaoException("O número informado é muito grande.");
+            }
 
 
             ClienteDataBase DB = new ClienteDataBase();

@@ -12,7 +12,7 @@ namespace Catiotro_s.classes.Classes.Compras
 {
     public class ComprasBusiness
     {
-        public int Salvar(ComprasDTO dto, List<ItemDTO> item)
+        public int Salvar(ComprasDTO dto, List<ItemView> item)
         {
             string pagto = dto.FormaPagto;
             int qtdPagto = pagto.Count();
@@ -26,7 +26,7 @@ namespace Catiotro_s.classes.Classes.Compras
             int IdCompra = db.Salvar(dto);
 
             ItemComprasBusiness buss = new ItemComprasBusiness();
-            foreach (ItemDTO i in item)
+            foreach (ItemView i in item)
             {
                 ItemComprasDTO itemDto = new ItemComprasDTO();
                 itemDto.CompraId = IdCompra;

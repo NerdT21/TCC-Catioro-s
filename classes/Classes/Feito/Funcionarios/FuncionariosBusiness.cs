@@ -132,6 +132,17 @@ namespace Catiotro_s.classes.Classes.Cliente
                 throw new ValidacaoException("Telefone inválido");
             }
 
+            // ============================ NUMERO =============================
+
+            string numero = funcionario.Numero;
+            numero = numero.Trim();
+            int qtdNumero = numero.Count();
+
+            if (qtdNumero > 6)
+            {
+                throw new ValidacaoException("O número informado é muito grande.");
+            }
+
 
             FuncionariosDataBase DB = new FuncionariosDataBase();
             return DB.Salvar(funcionario);
@@ -252,6 +263,17 @@ namespace Catiotro_s.classes.Classes.Cliente
             if (t == false)
             {
                 throw new ValidacaoException("Telefone inválido");
+            }
+
+            // ============================ NUMERO =============================
+
+            string numero = funcionario.Numero;
+            numero = numero.Trim();
+            int qtdNumero = numero.Count();
+
+            if (qtdNumero > 6)
+            {
+                throw new ValidacaoException("O número informado é muito grande.");
             }
 
 

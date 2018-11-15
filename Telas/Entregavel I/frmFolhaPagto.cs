@@ -98,15 +98,17 @@ namespace Catiotro_s.Telas.Entregavel_I
                 FolhaPagto pagto = new FolhaPagto();
                 pagto.Salario = Convert.ToDecimal(txtSalario.Text);
                 pagto.Faltas = Convert.ToInt32(nudFaltas.Value);
-                pagto.HoraExtra = Convert.ToDateTime(mkbAtraso.Text);
-                pagto.Atrasos = Convert.ToDateTime(mkbHE.Text);
+                pagto.HoraExtra = Convert.ToDateTime(mkbHE.Text);
+                pagto.Atrasos = Convert.ToDateTime(mkbAtraso.Text);
+                pagto.Domingos = Convert.ToInt32(nudDom.Value);
+                pagto.Percentual = Convert.ToInt32(txtPercent.Text);
 
                 txtINSS.Text = pagto.CalcularINSS().ToString("F2");
                 txtIR.Text = pagto.CalcularIR().ToString("F2");
                 txtFGTS.Text = pagto.CalcularFGTS().ToString("F2");
-                txtSalFam.Text = pagto.VerificarSalarioFamilia().ToString("F2");
+                TxtSalFam.Text = pagto.VerificarSalarioFamilia().ToString("F2");
                 txtValTrans.Text = pagto.CalcularValeTransporte().ToString("F2");
-                TxtSalLiq.Text = pagto.CalcularSalarioLiquido().ToString("F2");
+                txtSalLiquido.Text = pagto.CalcularSalarioLiquido().ToString("F2");
             }
             catch (Exception ex)
             {
@@ -138,9 +140,9 @@ namespace Catiotro_s.Telas.Entregavel_I
                 dto.Fgts = Convert.ToDecimal(txtFGTS.Text);
                 dto.VLTars = Convert.ToDecimal(txtValTrans.Text);
                 dto.IdFuncio = funcionario.Id;
-                dto.SalLiq = Convert.ToDecimal(TxtSalLiq.Text);
+                dto.SalLiq = Convert.ToDecimal(txtSalLiquido.Text);
                 dto.Inss = Convert.ToDecimal(txtINSS.Text);
-                dto.SalFamilia = Convert.ToDecimal(txtSalFam.Text);
+                dto.SalFamilia = Convert.ToDecimal(TxtSalFam.Text);
                 dto.Data = mkbData.Text;
 
                 FPagamentoBusiness buss = new FPagamentoBusiness();
@@ -205,6 +207,16 @@ namespace Catiotro_s.Telas.Entregavel_I
                 //Top2
                 g.DrawLine(borderPen, new Point(rect.X + box.Padding.Left + (int)(strSize.Width), rect.Y), new Point(rect.X + rect.Width, rect.Y));
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mkbHE_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }

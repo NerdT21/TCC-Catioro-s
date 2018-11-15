@@ -14,17 +14,17 @@ namespace Catiotro_s.classes.Classes.Vendas
         public int Salvar(VendaDTO dto)
         {
             string script = @"INSERT INTO tb_venda(
-                                            id_usuario,
-                                            dt_compra,
-                                            ds_formaPagamento)                                                                     
-                                     VALUES(@id_usuario,
-                                            @dt_compra, 
-                                            @ds_formaPagamento)";
+                                           id_usuario,
+                                           dt_venda,
+                                           ds_formaPagto)                                                                     
+                                    VALUES(@id_usuario,
+                                           @dt_venda, 
+                                           @ds_formaPagto)";
 
             List<MySqlParameter> parms = new List<MySqlParameter>();
             parms.Add(new MySqlParameter("id_usuario", dto.IdUsuario));
-            parms.Add(new MySqlParameter("dt_compra", dto.Data));
-            parms.Add(new MySqlParameter("ds_formaPagamento", dto.FormaPagto));
+            parms.Add(new MySqlParameter("dt_venda", dto.Data));
+            parms.Add(new MySqlParameter("ds_formaPagto", dto.FormaPagto));
 
             Database db = new Database();
             return db.ExecuteInsertScriptWithPk(script, parms);
@@ -41,9 +41,9 @@ namespace Catiotro_s.classes.Classes.Vendas
             while (reader.Read())
             {
                 ProdutoVendasView dto = new ProdutoVendasView();
-                dto.Id = reader.GetInt32("id_compra");
-                dto.FormaPagto = reader.GetString("ds_formaPagamento");
-                dto.Data = reader.GetString("dt_compra");
+                dto.Id = reader.GetInt32("id_venda");
+                dto.FormaPagto = reader.GetString("ds_formaPagto");
+                dto.Data = reader.GetString("dt_venda");
                 dto.QtdItem = reader.GetInt32("qtd_item");
                 dto.Total = reader.GetDecimal("vl_total");
 
